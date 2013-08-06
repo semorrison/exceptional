@@ -1,0 +1,168 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      4899,        158]
+NotebookOptionsPosition[      4210,        129]
+NotebookOutlinePosition[      4567,        145]
+CellTagsIndexPosition[      4524,        142]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Dynamic", "[", "canonicalLabellingCounter", "]"}]], "Input",
+ CellChangeTimes->{{3.5847599203658743`*^9, 3.584759924318882*^9}}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[$CellContext`canonicalLabellingCounter, StandardForm],
+  ImageSizeCache->{23., {1., 9.}}]], "Output",
+ CellChangeTimes->{3.5847599322201347`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Do", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "k"}], "}"}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Diagrams", "[", 
+     RowBox[{"n", ",", "k"}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"AbortProtect", "[", 
+     RowBox[{"SaveDiagrams", "[", "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "5", ",", "9"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"k", ",", "0", ",", "4"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.584760176291877*^9, 3.58476022489186*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", "0"}], "}"}]], "Print",
+ CellChangeTimes->{{3.584760209000278*^9, 3.5847602335324783`*^9}, 
+   3.5847603587508287`*^9, 3.58476045248888*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", "1"}], "}"}]], "Print",
+ CellChangeTimes->{{3.584760209000278*^9, 3.5847602335324783`*^9}, 
+   3.5847603587508287`*^9, 3.584760452742175*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", "2"}], "}"}]], "Print",
+ CellChangeTimes->{{3.584760209000278*^9, 3.5847602335324783`*^9}, 
+   3.5847603587508287`*^9, 3.5847604529512043`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", "3"}], "}"}]], "Print",
+ CellChangeTimes->{{3.584760209000278*^9, 3.5847602335324783`*^9}, 
+   3.5847603587508287`*^9, 3.5847604531271067`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", "4"}], "}"}]], "Print",
+ CellChangeTimes->{{3.584760209000278*^9, 3.5847602335324783`*^9}, 
+   3.5847603587508287`*^9, 3.584760453206481*^9}]
+}, Open  ]],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{3.584760228911892*^9, 3.5847602887512608`*^9, 
+  3.584760432859174*^9, 3.584760463593533*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SaveDiagrams", "[", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"FileExistsQ", "[", 
+        RowBox[{"FileNameJoin", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"NotebookDirectory", "[", "]"}], ",", 
+           "\"\<diagramsByVertexNumber.m\>\""}], "}"}], "]"}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"DownValues", "[", "diagramsByVertexNumber", "]"}], "=", 
+        RowBox[{
+         RowBox[{"Get", "[", 
+          RowBox[{"FileNameJoin", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"NotebookDirectory", "[", "]"}], ",", 
+             "\"\<diagramsByVertexNumber.m\>\""}], "}"}], "]"}], "]"}], "~", 
+         "Join", "~", 
+         RowBox[{"DownValues", "[", "diagramsByVertexNumber", "]"}]}]}]}], 
+      "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Put", "[", 
+      RowBox[{
+       RowBox[{"DownValues", "[", "diagramsByVertexNumber", "]"}], ",", 
+       RowBox[{"FileNameJoin", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"NotebookDirectory", "[", "]"}], ",", 
+          "\"\<diagramsByVertexNumber.m\>\""}], "}"}], "]"}]}], "]"}], 
+     ";"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.584759530266903*^9, 3.584759615364674*^9}, {
+  3.584760108811051*^9, 3.58476014212437*^9}}]
+},
+WindowSize->{740, 867},
+WindowMargins->{{429, Automatic}, {Automatic, 29}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 152, 2, 28, "Input"],
+Cell[734, 26, 179, 3, 28, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[950, 34, 634, 16, 97, "Input"],
+Cell[CellGroupData[{
+Cell[1609, 54, 189, 4, 21, "Print"],
+Cell[1801, 60, 190, 4, 21, "Print"],
+Cell[1994, 66, 192, 4, 21, "Print"],
+Cell[2189, 72, 192, 4, 21, "Print"],
+Cell[2384, 78, 190, 4, 21, "Print"]
+}, Open  ]],
+Cell[2589, 85, 148, 2, 62, "Output"]
+}, Open  ]],
+Cell[2752, 90, 1454, 37, 165, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
