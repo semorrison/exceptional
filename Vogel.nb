@@ -1,19 +1,12 @@
-(* Content-type: application/vnd.wolfram.mathematica *)
-
-(*** Wolfram Notebook File ***)
-(* http://www.wolfram.com/nb *)
-
-(* CreatedBy='Mathematica 9.0' *)
-
 (*CacheID: 234*)
 (* Internal cache information:
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
-NotebookDataPosition[       157,          7]
+NotebookDataPosition[         0,          0]
 NotebookDataLength[     57773,       1551]
-NotebookOptionsPosition[     55971,       1488]
-NotebookOutlinePosition[     56326,       1504]
-CellTagsIndexPosition[     56283,       1501]
+NotebookOptionsPosition[     55814,       1481]
+NotebookOutlinePosition[     56169,       1497]
+CellTagsIndexPosition[     56126,       1494]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1503,58 +1496,57 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[557, 20, 131, 1, 30, "Text"],
+Cell[400, 13, 131, 1, 30, "Text"],
 Cell[CellGroupData[{
-Cell[713, 25, 92, 1, 80, "Section"],
+Cell[556, 18, 92, 1, 80, "Section"],
 Cell[CellGroupData[{
-Cell[830, 30, 156, 3, 28, "Input"],
-Cell[989, 35, 11352, 280, 195, "Output"]
+Cell[673, 23, 156, 3, 28, "Input"],
+Cell[832, 28, 11352, 280, 195, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12378, 320, 562, 15, 28, "Input"],
-Cell[12943, 337, 635, 19, 50, "Output"]
+Cell[12221, 313, 562, 15, 28, "Input"],
+Cell[12786, 330, 635, 19, 50, "Output"]
 }, Open  ]],
-Cell[13593, 359, 782, 20, 28, "Input"],
+Cell[13436, 352, 782, 20, 28, "Input"],
 Cell[CellGroupData[{
-Cell[14400, 383, 449, 12, 31, "Input"],
-Cell[14852, 397, 362, 8, 28, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[15251, 410, 331, 8, 28, "Input"],
-Cell[15585, 420, 1356, 34, 46, "Output"]
+Cell[14243, 376, 449, 12, 31, "Input"],
+Cell[14695, 390, 362, 8, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16978, 459, 274, 7, 28, "Input"],
-Cell[17255, 468, 13686, 345, 200, "Output"]
-}, Open  ]],
-Cell[30956, 816, 233, 5, 28, "Input"],
-Cell[31192, 823, 980, 24, 46, "Input"],
-Cell[CellGroupData[{
-Cell[32197, 851, 449, 12, 31, "Input"],
-Cell[32649, 865, 371, 8, 28, "Output"]
+Cell[15094, 403, 331, 8, 28, "Input"],
+Cell[15428, 413, 1356, 34, 46, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[33057, 878, 356, 9, 28, "Input"],
-Cell[33416, 889, 1184, 31, 46, "Output"]
+Cell[16821, 452, 274, 7, 28, "Input"],
+Cell[17098, 461, 13686, 345, 200, "Output"]
+}, Open  ]],
+Cell[30799, 809, 233, 5, 28, "Input"],
+Cell[31035, 816, 980, 24, 46, "Input"],
+Cell[CellGroupData[{
+Cell[32040, 844, 449, 12, 31, "Input"],
+Cell[32492, 858, 371, 8, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[34637, 925, 484, 13, 28, "Input"],
-Cell[35124, 940, 14798, 382, 197, "Output"]
+Cell[32900, 871, 356, 9, 28, "Input"],
+Cell[33259, 882, 1184, 31, 46, "Output"]
 }, Open  ]],
-Cell[49937, 1325, 1128, 26, 63, "Input"],
-Cell[51068, 1353, 538, 11, 28, "Input"],
-Cell[51609, 1366, 119, 3, 28, "Input"],
-Cell[51731, 1371, 494, 11, 28, "Input"],
-Cell[52228, 1384, 119, 3, 28, "Input"],
-Cell[52350, 1389, 1110, 26, 63, "Input"],
-Cell[53463, 1417, 461, 11, 28, "Input"],
-Cell[53927, 1430, 119, 3, 28, "Input"],
-Cell[54049, 1435, 211, 5, 28, "Input"],
-Cell[54263, 1442, 846, 21, 63, "Input"],
-Cell[55112, 1465, 843, 20, 63, "Input"]
+Cell[CellGroupData[{
+Cell[34480, 918, 484, 13, 28, "Input"],
+Cell[34967, 933, 14798, 382, 197, "Output"]
+}, Open  ]],
+Cell[49780, 1318, 1128, 26, 63, "Input"],
+Cell[50911, 1346, 538, 11, 28, "Input"],
+Cell[51452, 1359, 119, 3, 28, "Input"],
+Cell[51574, 1364, 494, 11, 28, "Input"],
+Cell[52071, 1377, 119, 3, 28, "Input"],
+Cell[52193, 1382, 1110, 26, 63, "Input"],
+Cell[53306, 1410, 461, 11, 28, "Input"],
+Cell[53770, 1423, 119, 3, 28, "Input"],
+Cell[53892, 1428, 211, 5, 28, "Input"],
+Cell[54106, 1435, 846, 21, 63, "Input"],
+Cell[54955, 1458, 843, 20, 63, "Input"]
 }, Open  ]]
 }
 ]
 *)
 
-(* End of internal cache information *)
