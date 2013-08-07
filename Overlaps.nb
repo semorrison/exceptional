@@ -1,0 +1,158 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      5100,        149]
+NotebookOptionsPosition[      4629,        127]
+NotebookOutlinePosition[      4986,        143]
+CellTagsIndexPosition[      4943,        140]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+This relies on the Polyhedra.nb notebook; run everything up to and including \
+\"Enumerating Diagrams\".\
+\>", "Text",
+ CellChangeTimes->{{3.584815939206612*^9, 3.584815959143021*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DiagramsWithoutSquares", "[", 
+  RowBox[{"6", ",", "2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.584815462884345*^9, 3.58481547275593*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"Diagram", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "10000000", ",", "10000001", ",", "10000002", ",", "10000003", ",", 
+       "10000004", ",", "10000005"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"Y", "[", 
+       RowBox[{"10000000", ",", "10000006", ",", "10000007"}], "]"}], " ", 
+      RowBox[{"Y", "[", 
+       RowBox[{"10000001", ",", "10000008", ",", "10000006"}], "]"}], " ", 
+      RowBox[{"Y", "[", 
+       RowBox[{"10000002", ",", "10000009", ",", "10000008"}], "]"}], " ", 
+      RowBox[{"Y", "[", 
+       RowBox[{"10000003", ",", "10000010", ",", "10000011"}], "]"}], " ", 
+      RowBox[{"Y", "[", 
+       RowBox[{"10000004", ",", "10000012", ",", "10000010"}], "]"}], " ", 
+      RowBox[{"Y", "[", 
+       RowBox[{"10000005", ",", "10000013", ",", "10000012"}], "]"}], " ", 
+      RowBox[{"Y", "[", 
+       RowBox[{"10000007", ",", "10000014", ",", "10000013"}], "]"}], " ", 
+      RowBox[{"Y", "[", 
+       RowBox[{"10000009", ",", "10000011", ",", "10000014"}], "]"}]}]}], 
+    "]"}], ",", 
+   RowBox[{"Diagram", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "10000000", ",", "10000001", ",", "10000002", ",", "10000003", ",", 
+       "10000004", ",", "10000005"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"Y", "[", 
+       RowBox[{"10000000", ",", "10000006", ",", "10000007"}], "]"}], " ", 
+      RowBox[{"Y", "[", 
+       RowBox[{"10000001", ",", "10000008", ",", "10000006"}], "]"}], " ", 
+      RowBox[{"Y", "[", 
+       RowBox[{"10000002", ",", "10000010", ",", "10000011"}], "]"}], " ", 
+      RowBox[{"Y", "[", 
+       RowBox[{"10000003", ",", "10000012", ",", "10000010"}], "]"}], " ", 
+      RowBox[{"Y", "[", 
+       RowBox[{"10000004", ",", "10000013", ",", "10000012"}], "]"}], " ", 
+      RowBox[{"Y", "[", 
+       RowBox[{"10000005", ",", "10000007", ",", "10000009"}], "]"}], " ", 
+      RowBox[{"Y", "[", 
+       RowBox[{"10000008", ",", "10000011", ",", "10000014"}], "]"}], " ", 
+      RowBox[{"Y", "[", 
+       RowBox[{"10000009", ",", "10000014", ",", "10000013"}], "]"}]}]}], 
+    "]"}], ",", 
+   RowBox[{"Diagram", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "10000000", ",", "10000001", ",", "10000002", ",", "10000003", ",", 
+       "10000004", ",", "10000005"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"Y", "[", 
+       RowBox[{"10000000", ",", "10000006", ",", "10000007"}], "]"}], " ", 
+      RowBox[{"Y", "[", 
+       RowBox[{"10000001", ",", "10000010", ",", "10000011"}], "]"}], " ", 
+      RowBox[{"Y", "[", 
+       RowBox[{"10000002", ",", "10000012", ",", "10000010"}], "]"}], " ", 
+      RowBox[{"Y", "[", 
+       RowBox[{"10000003", ",", "10000013", ",", "10000012"}], "]"}], " ", 
+      RowBox[{"Y", "[", 
+       RowBox[{"10000004", ",", "10000008", ",", "10000009"}], "]"}], " ", 
+      RowBox[{"Y", "[", 
+       RowBox[{"10000005", ",", "10000007", ",", "10000008"}], "]"}], " ", 
+      RowBox[{"Y", "[", 
+       RowBox[{"10000006", ",", "10000011", ",", "10000014"}], "]"}], " ", 
+      RowBox[{"Y", "[", 
+       RowBox[{"10000009", ",", "10000014", ",", "10000013"}], "]"}]}]}], 
+    "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.584815467716755*^9, 3.584815474253812*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "/@", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"FindAdjacentPolygons", "[", 
+     RowBox[{"5", ",", "5"}], "]"}], "/@", "%"}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.584815485227051*^9, 3.584815497096218*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "1", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{{3.5848154918490334`*^9, 3.584815497545343*^9}}]
+}, Open  ]]
+},
+WindowSize->{740, 752},
+WindowMargins->{{310, Automatic}, {Automatic, 49}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 194, 4, 30, "Text"],
+Cell[CellGroupData[{
+Cell[776, 28, 163, 3, 28, "Input"],
+Cell[942, 33, 3236, 75, 267, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4215, 113, 244, 6, 28, "Input"],
+Cell[4462, 121, 151, 3, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
