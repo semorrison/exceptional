@@ -1,0 +1,85 @@
+\documentclass[12pt]{amsart}
+\usepackage{amssymb}
+\usepackage{cite}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{mdwtab}
+\usepackage{mathtools}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyphenat}
+\usepackage{enumitem}
+\usepackage{ifpdf}
+\ifpdf
+  \usepackage[pdftex]{graphicx}
+  \usepackage[pdftex,margin=1in]{geometry}
+  \usepackage[bookmarks=true, bookmarksopen=true,%
+    bookmarksdepth=3,bookmarksopenlevel=2,%
+    colorlinks=true,%
+    linkcolor=blue,%
+    citecolor=blue,%
+    filecolor=blue,%
+    menucolor=blue,%
+    urlcolor=blue]{hyperref}
+  \hypersetup{pdftitle={The quantum exceptional series}}
+  \hypersetup{pdfauthor={Scott Morrison, Noah Snyder, and Dylan P. Thurston}}
+\else
+  \usepackage[dvips]{graphicx}
+  \usepackage[dvips,margin=1in]{geometry}
+  % Use hyperref with all features turned off even in DVI mode, since
+  % the .aux file format changes
+  \usepackage[draft]{hyperref}
+\fi
+\usepackage{url}
+
+\input{macros}
+\input{defs}
+
+\begin{document}
+\title{The quantum exceptional series}
+
+\author[Morrison]{Scott Morrison}
+\address{Canberra, Australia}
+\email{scott@tqft.net}
+
+\author[Snyder]{Noah Snyder}
+\address{Bloomington, Indiana, USA}
+\email{nsnyder1@indiana.edu} % Noah, do you prefer a different e-mail address?
+
+\author[Thurston]{Dylan~P.~Thurston}
+\address{Bloomington, Indiana, USA}
+\email{dpthurst@indiana.edu}
+
+\begin{abstract}
+  We find a single two-parameter skein relation on trivalent graphs,
+  the \emph{quantum IHX relation}, that specializes to a skein
+  relation associated to each exceptional Lie algebra. If a slight
+  strengthening of Deligne's conjecture on the existence of a
+  (classical) exceptional series is true, then this relation
+  determines a new two-variable quantum exceptional polynomial, at
+  least as a power series near $q=1$. The
+  single quantum IHX relation specializes to both the classical IHX
+  (or Jacobi) relation that holds for every Lie algebra and to the
+  Vogel relation holding for the exceptional series.
+
+  We find a conjectural basis for the space of diagrams with $n$ loose
+  ends modulo the quantum IHX relation for $0 \le n \le 7$, with
+  dimensionas agreeing with the classical computations. We use the
+  skein relation to compute the (conjectural) quantum exceptional
+  polynomial for all knots with up to $8$ crossings, in particular
+  determining (unconditionally) the values of the quantum polynomials
+  for the exceptional Lie algebras in the adjoint representation on
+  these knots.
+\end{abstract}
+
+%\subjclass[2000]{Primary xxx; Secondary xxx}
+%\keywords{}
+
+\maketitle
+
+\tableofcontents
+
+\bibliographystyle{hamsplain}
+\bibliography{}
+
+\end{document}
