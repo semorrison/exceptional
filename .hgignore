@@ -3,9 +3,10 @@ syntax: glob
 
 *.m.gz
 
-matrices
+code/matrices
 
-
+*.pdf
+*.toc
 *.aux
 *.fdb_latexmk
 *.log
