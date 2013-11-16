@@ -3,7 +3,7 @@ syntax: glob
 
 *.m.gz
 
-code/matrices
+matrices
 
 *.pdf
 *.toc
