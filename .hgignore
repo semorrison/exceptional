@@ -4,6 +4,7 @@ syntax: glob
 *.m.gz
 
 matrices
+bibliography
 
 *.pdf
 *.toc
@@ -12,4 +13,5 @@ matrices
 *.log
 *.out
 *.synctex.gz
-
+*.bbl
+*.blg

@@ -85,6 +85,10 @@ Here are some things Scott is hoping to work on soon:
 \item write a link evaluator using the clasp switch relation (in progress)
 \item compute the action of the 3-strand braid group on diagrams with 4
 boundary points
+\begin{itemize}
+\item find the eigenvalues of the generators and the scalar by which the full twist
+acts; compare against Tuba-Wenzl \cite{MR1815266}.
+\end{itemize}
 \item try to compute the 3-strand braid group action on a basis for the 3-boxes
 \begin{itemize}
 \item perhaps even try to compute the structure coefficients for a basis for
@@ -99,14 +103,20 @@ obtain a linear identity in the polyhedron
 rational functions in 2 variables is very slow
 \item perhaps finding the value at particular points and interpolating is worth
 a try?
+\item perhaps linear algebra with rational functions in \emph{one} variable,
+then interpolating for the second, is also worth a try!
 \end{itemize}
 \item write a human readable summary of the computer calculation that braided +
 $1,0,1,1,5,\leq16$ implies a planar pentasquare reduction formula
 \item derive the planar pentasquare reduction formula directly from quantum IHX
+\begin{quote}
+``From your formula to get a planar pentasquare reduction, first note the second term can be rewritten using Jacobi as a difference of two planar diagrams.  Then we need to look at the third term, which is harder (there has to be one hard term because we haven't used Vogel's relation yet).  Use Vogel's relation to replace the square with a crossing and planar stuff.  This gives five terms,  three of which are easily rewritten to be planar.  Of the remaining two, one of them you can pull a Y through a crossing and then use Vogel to rewrite the crossing as planar stuff, and the other you can use Vogel directly on the crossing to get planar terms including a pentasquare.''
+---Noah
+\end{quote}
 \end{itemize}
 Feel free to advise or criticize these plans!
 
-\bibliographystyle{hamsplain}
+\bibliographystyle{amsplain}
 \bibliography{bibliography/bibliography}
 
 \end{document}
