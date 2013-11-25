@@ -32,7 +32,7 @@ ToGraph[z_]:=(If[!FreeQ[z,Diagram],Print["bad argument passed to ToGraph: ",z];A
 PolyhedraNames={};
 
 
-getDirectory[]:=NotebookDirectory[]/.NotebookDirectory[$Failed]:>"~/projects/exceptional/code/"
+getDirectory[]:=getDirectory[]=NotebookDirectory[]/.NotebookDirectory[$Failed]:>"~/projects/exceptional/code/"
 
 
 SavePolyhedraNames[]:=Put[PolyhedraNames,FileNameJoin[{getDirectory[],"polyhedraNames.m"}]];
@@ -556,7 +556,7 @@ $RecursionLimit=4000;
 rowReduce[token_]:=rowReduce[token,1]
 rowReduce[token_,k_]:=Module[{R,P,j,K},
 Print[k];
-If[!FileExistsQ[rowFile[token,k]],Print["No row file!"],
+If[!FileExistsQ[rowFile[token,k]],Print["No row file: ",rowFile[token,k]],
 R=Get[rowFile[token,k]];
 If[DeleteCases[Union[Take[R,k-1]],0]=!={},Print["Row "<>ToString[k]<>" doesn't look right!"]; Abort[]];
 If[R[[k]]===0,
