@@ -1,1 +1,1 @@
-cat polyhedra.m det.m | math
+cat Polyhedra.m det.m | math
