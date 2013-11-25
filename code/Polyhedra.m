@@ -547,7 +547,7 @@ DistributeDefinitions[rowFile,matrixDirectory];
 ]
 
 
-SetParallel[4]
+SetParallel[$ProcessorCount]
 
 
 $RecursionLimit=4000;
