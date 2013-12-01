@@ -164,7 +164,7 @@ NumberOfInternalFaces[d:Diagram[boundary_,contents_]]:=NumberOfInternalFaces[d]=
 Clear[Diagram]
 
 
-Diagram/:Diagram[{A___,b_,C___},c1_]Diagram[{D___,b_,E___},c2_]:=Diagram[{A,E,D,C},c1 c2]
+Diagram/:Diagram[{A___,b_,C___},c1_]Diagram[{D___,b_,E___},c2_]:=Diagram[{A,E,D,C},Collect[c1 c2,_Y|_P,Together]]
 Diagram[{A___,b_,b_,C___},contents_]:=Diagram[{A,C},contents]
 Diagram[{b_,A___,b_},contents_]:=Diagram[{A},contents]
 
@@ -185,20 +185,20 @@ K0=10000000;
 
 
 Clear[canonicalLabelling]
-canonicalLabelling[d:Diagram[boundary_,contents_]]:=canonicalLabelling[d]=Module[{limit=20,m0=K0,m,labels,newLabels,newBoundary,Yrule,c,t,r,sortOrder},
+canonicalLabelling[d:Diagram[boundary_,contents_]]:=canonicalLabelling[d]=Module[{limit=20,m0=K0,m,labels,newLabels,newBoundary,boundaryReplacements,Yrule,c,t,r,sortOrder},
 canonicalLabellingCounter--;
 sortOrder[2]=0;
 sortOrder[1]=1;
 sortOrder[_]=2;
-labels=Union[Cases[contents,_Integer,\[Infinity]]];
+labels=Union[Flatten[Cases[contents,x:(_Y|_P):>List@@x,\[Infinity]]]];
 newLabels=Thread[labels->Range[Length[labels]]];
 m:=(m0++);
 newBoundary=Table[m,{Length[boundary]}];
 boundaryReplacements=Thread[(boundary/.newLabels)->newBoundary];
-c=timesToList[contents/.newLabels/.boundaryReplacements];
+c=timesToList[contents/.(x:(_Y|_P):>(x/.newLabels/.boundaryReplacements))];
 Yrule=y_Y:>Sort[{y,RotateLeft[y],RotateRight[y]}][[1]];
 c=c/.Yrule;
-While[c=!=0\[And]limit-->0\[And]!FreeQ[c,n_Integer/;n<K0],
+While[c=!=0\[And]limit-->0\[And]!FreeQ[c,n_Integer/;n<K0\[And]Count[c,_Y]>0],
 t=SortBy[Cases[c,_Y],With[{ns=Sort[Cases[(List@@#),n_/;n>=K0]]},{sortOrder[Length[ns]],ns}]&][[1]];
 r=If[Count[List@@t,n_/;n<K0]==1,
 Cases[List@@t,n_/;n<K0][[1]]->m,
@@ -624,6 +624,25 @@ AddDiagramReduction[{1,0,1,1,4}][ApplySquareRelation[squareRelation]]
 
 
 ApplyDiagramReductions[{1,0,1,1,4}][Prism[5]/.PolyhedraNames]
+
+
+BraidingInnerProducts[m_]:=Module[{diagrams,innerProducts,v},
+diagrams=Take[Diagrams[4,_<=2],m];
+innerProducts=Outer[InnerProduct,diagrams, diagrams];
+v={Q^2 d,Q^-2 d,Q b d,Q^-1 b d,t b d,U};
+(#[[1]]~Join~{#[[2]]}&/@Transpose[{innerProducts,Take[v,m]}])~Join~{Take[v,m]~Join~{Hopf}}
+]
+
+
+
+Clear[Crossing]
+Crossing[m_]:=Crossing[m]=Module[{s},
+s=Solve[Det[BraidingInnerProducts[m]]==0,Hopf][[1]];
+Together[-Most[NullSpace[BraidingInnerProducts[m]/.s][[1]]]]
+]
+
+
+R[m_][a_Integer,b_Integer,c_Integer,d_Integer]:=Diagram[{a,b,c,d},Crossing[m].(refreshInternalLabels/@Take[Diagrams[4,_<=2],m])[[All,2]]/.Thread[{10000000,10000001,10000002,10000003}->{a,b,c,d}]]
 
 
 
