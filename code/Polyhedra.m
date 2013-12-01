@@ -596,34 +596,13 @@ diagonals[token_]:=Table[Get[rowFile[token,i]][[i]],{i,1,Length[Get[rowFile[toke
 det[token_,k_:1]:=(rowReduce[token,k];Factor[Times@@diagonals[token]])
 
 
-Factor[Det[Outer[InnerProduct,Take[Diagrams[4,0],3],Take[Diagrams[4,0],3]]]]
+AddPolyhedraEvaluations[{1,0,1,1,4}][{Cube->(2 b d (b^4+b^3 t-2 b^2 t^2+t^4+d t^4))/(b d+t+d t)}];
 
 
-Factor[Det[InnerProducts[4,0]]]
-
-
-Factor[Det[InnerProducts[4,1]]]
-
-
-Solve[%==0,Cube]
-
-
-AddPolyhedraEvaluations[{1,0,1,1,4}][%]
-
-
-NullSpace[InnerProducts[4,1]/.PolyhedraEvaluationRules[{1,0,1,1,4}]]
-
-
-squareRelation=-Most[%[[1]]]
-
-
-Together[ApplySquareRelation[squareRelation][Cube/.PolyhedraNames]-(Cube/.PolyhedraEvaluationRules[{1,0,1,1,4}])]
+squareRelation={(b^3+b^2 t-b t^2)/(b d+t+d t),(b^3+b^2 t-b t^2)/(b d+t+d t),(-b^2+t^2+d t^2)/(b d+t+d t),(-b^2+t^2+d t^2)/(b d+t+d t)};
 
 
 AddDiagramReduction[{1,0,1,1,4}][ApplySquareRelation[squareRelation]]
-
-
-ApplyDiagramReductions[{1,0,1,1,4}][Prism[5]/.PolyhedraNames]
 
 
 BraidingInnerProducts[m_]:=Module[{diagrams,innerProducts,v},
