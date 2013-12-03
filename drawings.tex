@@ -1,0 +1,163 @@
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\usetikzlibrary{arrows,backgrounds,patterns,scopes,external,
+    decorations.pathreplacing,
+    decorations.pathmorphing
+}
+
+\newlength{\fuzzwidth}
+\setlength{\fuzzwidth}{2.5pt}
+\newlength{\arrowlength}
+\setlength{\arrowlength}{8pt}
+\newlength{\arrowwidth}
+\setlength{\arrowwidth}{.75pt}
+\newlength{\pointrad}
+\setlength{\pointrad}{1.5pt}
+\newlength{\linewid}
+\setlength{\linewid}{1.5pt}
+\newlength{\circlerad}
+\setlength{\circlerad}{16pt}
+\newlength{\smcirclerad}
+\setlength{\smcirclerad}{8pt}
+\newcommand{\fillcolor}{black!60}
+\newcommand{\fuzzcolor}{black!25}
+\newcommand{\arrowcolor}{black!25}
+\newcommand{\covercolor}{black!0}
+\newcommand{\graycolor}{black!55}
+\newcommand{\graylightcolor}{black!40}
+
+
+\newcommand{\coverwidthfuzz}{6pt}
+\newcommand{\coverwidth}{3.5pt}
+\newcommand{\coverwidththin}{3.25pt}
+\newcommand{\coverwidththick}{3.75pt}
+
+\newlength{\linewidthin}
+\setlength{\linewidthin}{1.25pt}
+\newlength{\linewidthick}
+\setlength{\linewidthick}{1.75pt}
+
+
+
+\tikzset{
+	coverline/.style={
+	preaction={draw,line width=\coverwidth,\covercolor}}, 
+	coverlinethin/.style={
+	preaction={draw,line width=\coverwidththin,\covercolor}}, 
+	coverlinethick/.style={
+	preaction={draw,line width=\coverwidththick,\covercolor}}, 
+	coverlineleft/.style={
+	preaction={draw,line width=\coverwidthfuzz,\covercolor,decorate,decoration={curveto,amplitude=0,raise=.35*\fuzzwidth}}}, %%% Notice this number was tweaked, 	
+coverlinelefttail/.style={
+	preaction={draw,line width=\coverwidthfuzz,\covercolor,decorate,decoration={curveto,amplitude=0,raise=.35*\fuzzwidth,pre=moveto,pre length=2pt}}}, %%% Notice this number was tweaked, probably will not look good if parameters change.  Again here, pre removes the raise option.
+        fuzzlefttail/.style={
+        preaction={draw,line width=\fuzzwidth,\fuzzcolor,decorate,decoration={curveto,pre=moveto,pre length=2pt,amplitude=0,raise=.5*\fuzzwidth}}}, %%% This does not work --- somehow pre breaks the raise function.
+        linestylethin/.style={line width=\linewidthin},
+        linestylethick/.style={line width=\linewidthick},
+        linestylegray/.style={line width=\linewid,\graycolor},
+        linestylegraylight/.style={line width=\linewid,\graylightcolor}
+}
+\tikzset{
+        fuzzright/.style={
+        preaction={draw,line width=\fuzzwidth,\fuzzcolor,decorate,decoration={curveto,amplitude=0,raise=-.5*\fuzzwidth}}},
+        fuzzleft/.style={
+        preaction={draw,line width=\fuzzwidth,\fuzzcolor,decorate,decoration={curveto,amplitude=0,raise=.5*\fuzzwidth}}},
+        fuzzrightpre/.style={ %%% Doesn't work
+        preaction={draw,line width=2pt,\fuzzcolor,decorate,decoration={curveto,amplitude=0,raise=-1pt,pre=moveto,pre length=12pt}}},
+        fuzzleftpre/.style={ %%% Doesn't work
+        preaction={draw,line width=2pt,\fuzzcolor,decorate,decoration={curveto,post=moveto,post length=32pt,amplitude=0,raise=1pt}}},        
+        outstyle/.style={\arrowcolor, line width=\arrowwidth},
+        linestyle/.style={line width=\linewid}
+}
+
+\newcommand{\lilarrow}{
+\draw[->] (0,0) -- (1,0);
+}
+
+\newcommand{\cb}{\raisebox{.6ex-.5\height}}
+
+
+%%%% These draw triple or quadruple set of arrows of length 0.5 cm
+\DeclareMathOperator{\rightdoublearrows} {{\; \begin{tikzpicture} \foreach \y in {0.05, 0.15} { \draw [-stealth] (0, \y) -- +(0.5, 0);} \; \end{tikzpicture}}}
+\DeclareMathOperator{\leftdoublearrows} {{\; \begin{tikzpicture} \foreach \y in {0.05, 0.15} { \draw [stealth-] (0, \y) -- +(0.5, 0);} \; \end{tikzpicture}}}
+\DeclareMathOperator{\righttriplearrows} {{\; \begin{tikzpicture} \foreach \y in {0, 0.1, 0.2} { \draw [-stealth] (0, \y) -- +(0.5, 0);} \; \end{tikzpicture}}}
+\DeclareMathOperator{\lefttriplearrows} {{\; \begin{tikzpicture} \foreach \y in {0, 0.1, 0.2} { \draw [stealth-] (0, \y) -- +(0.5, 0);} \; \end{tikzpicture}}}
+\DeclareMathOperator{\rightquadarrows} {{\; \begin{tikzpicture} \foreach \y in {-0.05, 0.05, 0.15, 0.25} { \draw [-stealth] (0, \y) -- +(0.5, 0);} \; \end{tikzpicture}}}
+\DeclareMathOperator{\leftquadarrows} {{\; \begin{tikzpicture} \foreach \y in {-0.05, 0.05, 0.15, 0.25} { \draw [stealth-] (0, \y) -- +(0.5, 0);} \; \end{tikzpicture}}}
+
+\newcommand{\ngon}[2][0]{
+\begin{tikzpicture}[baseline=-0.5ex]
+\foreach \x in {1, ..., #2}
+	\draw (360*\x/#2+#1:.8cm)--(360*\x/#2+#1:.5cm);
+\foreach \x in {1, ..., #2}
+	\draw (360*\x/#2+#1:.5cm) .. controls +(360*\x/#2+120+#1:.3cm) and +(360*\x/#2+360/#2-120+#1:.3cm) .. (360*\x/#2+360/#2+#1:.5cm);
+\end{tikzpicture}
+}
+
+\newcommand{\drawI}{ \begin{tikzpicture}[baseline=-0.5ex]
+ 	\draw (0,.2) .. controls +(30:.3cm) .. (45:.8cm);
+ 	\draw (0,.2) .. controls +(150:.3cm) .. (135:.8cm);
+	\draw (0,.2) -- (0,-.2);
+ 	\draw (0,-.2) .. controls +(-30:.3cm) .. (-45:.8cm);
+ 	\draw (0,-.2) .. controls +(-150:.3cm) .. (-135:.8cm);
+\end{tikzpicture}
+}
+
+\newcommand{\drawH}{ \begin{tikzpicture}[baseline=-0.5ex,rotate=90]
+ 	\draw (0,.2) .. controls +(30:.3cm) .. (45:.8cm);
+ 	\draw (0,.2) .. controls +(150:.3cm) .. (135:.8cm);
+	\draw (0,.2) -- (0,-.2);
+ 	\draw (0,-.2) .. controls +(-30:.3cm) .. (-45:.8cm);
+ 	\draw (0,-.2) .. controls +(-150:.3cm) .. (-135:.8cm);
+\end{tikzpicture}}
+
+\newcommand{\twostrandid}{\begin{tikzpicture}[baseline=-0.5ex]
+	\draw (45:.8cm) .. controls (0,0) .. (135:.8cm);
+	\draw (-45:.8cm) .. controls (0,0) .. (-135:.8cm);
+\end{tikzpicture}}
+
+\newcommand{\cupcap}{\begin{tikzpicture}[baseline=-0.5ex,rotate=90]
+	\draw (45:.8cm) .. controls (0,0) .. (135:.8cm);
+	\draw (-45:.8cm) .. controls (0,0) .. (-135:.8cm);
+\end{tikzpicture}}
+
+\newcommand{\symcross}{\begin{tikzpicture}[baseline=-0.5ex]
+	\draw (45:.8cm) -- (-135:.8cm);
+	\draw (-45:.8cm) -- (135:.8cm);
+\end{tikzpicture}}
+
+\newcommand{\braidcross}{\begin{tikzpicture}[baseline=-0.5ex]
+	\draw (45:.8cm) -- (45:.1cm);
+	\draw (45:-.8cm) -- (45:-.1cm);	
+	\draw (-45:.8cm) -- (135:.8cm);
+\end{tikzpicture}}
+
+
+\newcommand{\drawX}{ \begin{tikzpicture}[baseline=-0.5ex,rotate=90]
+ 	\draw (.2,.3) .. controls +(30:.3cm) .. (45:.8cm);
+ 	\draw (.2,.3) .. controls +(150:.3cm) .. (-135:.8cm);
+	\draw (.2,.3) -- (.2,-.3);
+ 	\draw (.2,-.3) .. controls +(-30:.3cm) .. (-45:.8cm);
+% 	\draw (.2,-.3) .. controls +(-150:.3cm) .. (135:.8cm);;
+ 	\draw (.2,-.3) .. controls +(-150:.3cm) .. (200:.24cm);
+	\draw (-.3, .1) -- (-.55,.55);
+\end{tikzpicture}}
+
+
+\newcommand{\pentagon}{
+\begin{tikzpicture}[scale=.12,baseline=-2]
+\draw (36:1) -- (108:1) -- (180:1) -- (252:1) -- (-36:1) -- (36:1);
+\end{tikzpicture}
+}
+
+\newcommand{\psq}{
+\begin{tikzpicture}[scale=.15,baseline=-2]
+\draw (36:1) -- (108:1) -- (180:1) -- (252:1) -- (-36:1) -- (36:1) -- +(1.2,0) -- ($(-36:1)+(1.2,0)$) -- (-36:1);
+\end{tikzpicture}
+}
+
+\newcommand{\sqsq}{
+\begin{tikzpicture}[scale=.15]
+\draw (0,0) -- (2,0) -- (2,1) -- (0,1) -- cycle (1,0) -- (1,1);
+\end{tikzpicture}
+}
