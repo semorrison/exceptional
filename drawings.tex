@@ -86,7 +86,7 @@ coverlinelefttail/.style={
 \DeclareMathOperator{\leftquadarrows} {{\; \begin{tikzpicture} \foreach \y in {-0.05, 0.05, 0.15, 0.25} { \draw [stealth-] (0, \y) -- +(0.5, 0);} \; \end{tikzpicture}}}
 
 \newcommand{\ngon}[2][0]{
-\begin{tikzpicture}[baseline=-0.5ex]
+\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
 \foreach \x in {1, ..., #2}
 	\draw (360*\x/#2+#1:.8cm)--(360*\x/#2+#1:.5cm);
 \foreach \x in {1, ..., #2}
@@ -94,7 +94,7 @@ coverlinelefttail/.style={
 \end{tikzpicture}
 }
 
-\newcommand{\drawI}{ \begin{tikzpicture}[baseline=-0.5ex]
+\newcommand{\drawI}{ \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
  	\draw (0,.2) .. controls +(30:.3cm) .. (45:.8cm);
  	\draw (0,.2) .. controls +(150:.3cm) .. (135:.8cm);
 	\draw (0,.2) -- (0,-.2);
@@ -103,7 +103,7 @@ coverlinelefttail/.style={
 \end{tikzpicture}
 }
 
-\newcommand{\drawH}{ \begin{tikzpicture}[baseline=-0.5ex,rotate=90]
+\newcommand{\drawH}{ \begin{tikzpicture}[baseline=-0.5ex,rotate=90,scale=0.8]
  	\draw (0,.2) .. controls +(30:.3cm) .. (45:.8cm);
  	\draw (0,.2) .. controls +(150:.3cm) .. (135:.8cm);
 	\draw (0,.2) -- (0,-.2);
@@ -111,29 +111,29 @@ coverlinelefttail/.style={
  	\draw (0,-.2) .. controls +(-150:.3cm) .. (-135:.8cm);
 \end{tikzpicture}}
 
-\newcommand{\twostrandid}{\begin{tikzpicture}[baseline=-0.5ex]
+\newcommand{\twostrandid}{\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
 	\draw (45:.8cm) .. controls (0,0) .. (135:.8cm);
 	\draw (-45:.8cm) .. controls (0,0) .. (-135:.8cm);
 \end{tikzpicture}}
 
-\newcommand{\cupcap}{\begin{tikzpicture}[baseline=-0.5ex,rotate=90]
+\newcommand{\cupcap}{\begin{tikzpicture}[baseline=-0.5ex,rotate=90,scale=0.8]
 	\draw (45:.8cm) .. controls (0,0) .. (135:.8cm);
 	\draw (-45:.8cm) .. controls (0,0) .. (-135:.8cm);
 \end{tikzpicture}}
 
-\newcommand{\symcross}{\begin{tikzpicture}[baseline=-0.5ex]
+\newcommand{\symcross}{\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
 	\draw (45:.8cm) -- (-135:.8cm);
 	\draw (-45:.8cm) -- (135:.8cm);
 \end{tikzpicture}}
 
-\newcommand{\braidcross}{\begin{tikzpicture}[baseline=-0.5ex]
+\newcommand{\braidcross}{\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
 	\draw (45:.8cm) -- (45:.1cm);
 	\draw (45:-.8cm) -- (45:-.1cm);	
 	\draw (-45:.8cm) -- (135:.8cm);
 \end{tikzpicture}}
 
 
-\newcommand{\drawX}{ \begin{tikzpicture}[baseline=-0.5ex,rotate=90]
+\newcommand{\drawcrossX}{ \begin{tikzpicture}[baseline=-0.5ex,rotate=90,scale=0.8]
  	\draw (.2,.3) .. controls +(30:.3cm) .. (45:.8cm);
  	\draw (.2,.3) .. controls +(150:.3cm) .. (-135:.8cm);
 	\draw (.2,.3) -- (.2,-.3);
