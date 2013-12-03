@@ -21,7 +21,7 @@
     filecolor=blue,%
     menucolor=blue,%
     urlcolor=blue]{hyperref}
-  \hypersetup{pdftitle={The quantum exceptional series}}
+  \hypersetup{pdftitle={Towards the quantum exceptional series}}
   \hypersetup{pdfauthor={Scott Morrison, Noah Snyder, and Dylan P. Thurston}}
 \else
   \usepackage[dvips]{graphicx}
@@ -34,9 +34,10 @@
 
 \input{macros}
 \input{defs}
+\input{drawings}
 
 \begin{document}
-\title{The quantum exceptional series}
+\title{Towards the quantum exceptional series}
 
 \author[Morrison]{Scott Morrison}
 \address{Mathematical Sciences Institute, Australian National University}
@@ -52,22 +53,25 @@
 
 \begin{abstract}
   We find a single two-parameter skein relation on trivalent graphs,
-  the \emph{quantum IHX relation}, that specializes to a skein
-  relation associated to each exceptional Lie algebra. If a slight
+  the \emph{quantum exceptional relation}, that specializes to a skein
+  relation associated to each exceptional Lie algebra (in the adjoint
+  representation). If a slight
   strengthening of Deligne's conjecture on the existence of a
   (classical) exceptional series is true, then this relation
-  determines a new two-variable quantum exceptional polynomial, at
+  holds for a new two-variable quantum exceptional polynomial, at
   least as a power series near $q=1$. The
-  single quantum IHX relation specializes to both the classical IHX
-  (or Jacobi) relation that holds for every Lie algebra and to the
-  Vogel relation holding for the exceptional series.
+  single quantum exceptional relation implies both the
+  Jacobi relation (true for every Lie algebra) and
+  the Vogel relation holding for the exceptional series.
 
   We find a conjectural basis for the space of diagrams with $n$ loose
-  ends modulo the quantum IHX relation for $0 \le n \le 7$, with
-  dimensions agreeing with the classical computations. We use the
-  skein relation to compute the (conjectural) quantum exceptional
-  polynomial for all knots with up to $8$ crossings, in particular
-  determining (unconditionally) the values of the quantum polynomials
+  ends modulo the quantum exceptional relation for $n \le 7$, with
+  dimensions agreeing with the classical computations, and compute
+  the matrix of inner products. (Dimensions of idempotents?)
+  We use the
+  skein relation to compute the conjectural quantum exceptional
+  polynomial for many knots, in particular
+  determining unconditionally the values of the quantum polynomials
   for the exceptional Lie algebras in the adjoint representation on
   these knots.
 \end{abstract}
@@ -78,6 +82,96 @@
 \maketitle
 
 \tableofcontents
+
+\section{Outline}
+\label{sec:outline}
+
+\begin{enumerate}
+\item Introduction
+  \begin{enumerate}
+  \item Classical exceptional background
+    \begin{enumerate}
+    \item Jacobi and Vogel relations
+    \item Reduction conjecture
+    \item Consistency conjecture
+    \item Something about the $n$-box space, or perhaps delay. (Could
+      ask for finite-dimensionality, or positive-definite pairing
+    \end{enumerate}
+  \item Quantum exceptional results and conjectures
+    \begin{enumerate}
+    \item Skein relations
+      \begin{enumerate}
+      \item Framing change
+      \item New relation (state uniqueness)
+      \item Implies both classical relations in $q \to 1$ limit
+      \item Mention other consequences, including double-crossing switch
+      \end{enumerate}
+    \item Conjectures: Reduction, consistency, $n$-box space
+    \item Classical consistency $\Rightarrow$ quantum consistency.
+    \end{enumerate}
+  \item Dimensions of $n$-box spaces
+  \item Evaluations we can compute easily
+    \begin{enumerate}
+    \item Exceptional computations hard previously
+    \item With double-clasp switch
+    \item Knots with width $\le$ 3
+    \end{enumerate}
+  \end{enumerate}
+\item Background: More on classical conjectures, etc.
+\item Quantum exceptional relation: Uniqueness given dimensions of spaces
+\item \dots
+\end{enumerate}
+
+\section{The quantum exceptional relation}
+\label{sec:relation}
+
+\begin{theorem}
+  Suppose that $Q$ is a skein theory on framed trivalent graphs so that
+  \begin{itemize}
+  \item a circle has a scalar value;
+  \item a self-loop takes has value $0$;
+  \item changing the framing by~$1$ multiplies by a scalar $v^{12}$;
+  \item crossing two strands near a vertex multiplies by a scalar; and
+  \item the six diagrams (\dots) satisfy a linear relation.
+  \end{itemize}
+  (For instance, we may assume that the dimension of the space of
+  $n$-boxes for $n=0,\dots,4$ is $1$, $0$, $1$, $1$, and $\le 5$.)
+  Then, if $v^{12} \ne 1$, either $Q$ vanishes on all trivalent graphs
+  or it satisfies the quantum exceptional relation.
+\end{theorem}
+
+\[
+\ngon[45]{4}
+ =
+\;
+\drawI
+\; + \;
+ \drawH
+\;
+ + a
+\left[ \;
+\twostrandid
+\; + \;
+ \cupcap
+\; + \symcross \; \right],
+\]
+
+\[
+v^{-3} \;
+\drawX
+\;+ v \;
+\drawI
+\; -v^{-1} \;
+ \drawH
+\;
+ + \alpha
+\left[\; \braidcross \;
+ + v^{-4}\;
+\twostrandid
+\; + v^{4} \;
+ \cupcap \;
+ \right] \; = \; 0
+\]
 
 \section{Scratch}
 Here are some things Scott is hoping to work on soon:
