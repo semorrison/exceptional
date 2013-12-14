@@ -323,6 +323,12 @@ Diagram[edgesLeftOfCycle[Ys,{a,b,c,d}],Times@@Ys]
 ]]
 
 
+FindPentagons[dd_Diagram]:=Cases[Faces[dd],Face[a_,b_,c_,d_,e_]:>Module[{Ys},
+Ys=Cases[dd[[2]],y_Y/;Count[y,a|b|c|d|e]==2];
+Diagram[edgesLeftOfCycle[Ys,{a,b,c,d,e}],Times@@Ys]
+]]
+
+
 FindAdjacentPolygons[n1_,n2_][dd_Diagram]:=FindAdjacentPolygons[n1,n2][dd]=
 Module[{faces=Faces[dd],pairs,unpackPair,bdy},
 pairs=Flatten[Table[{f1,f2},{f1,Cases[faces,f_Face/;Length[f]==n1]},{f2,Cases[faces,f_Face/;Length[f]==n2\[And]Length[Intersection[f,f1]]==1]}],1];
@@ -415,6 +421,16 @@ diff=Complement[timesToList[contents],timesToList[square[[2]]]];
 If[Length[diff]!=Length[timesToList[contents]]-Length[timesToList[square[[2]]]],Print["uh oh"];Abort[]];
 Sum[relation[[k]]Diagram[bdy,(Times@@diff)(refreshInternalLabels[Diagrams[4,0][[k]]][[2]]/.replacement)],{k,1,4}]],
 {square,FindSquares[D]}
+]
+
+
+ApplyPentagonRelation[relation_][D:Diagram[bdy_,contents_]]:=Table[
+Module[{newBoundary=pentagon[[1]],replacement,diff},
+replacement=Thread[Diagrams[5,0][[1,1]]->newBoundary];
+diff=Complement[timesToList[contents],timesToList[pentagon[[2]]]];
+If[Length[diff]!=Length[timesToList[contents]]-Length[timesToList[pentagon[[2]]]],Print["uh oh"];Abort[]];
+Sum[relation[[k]]Diagram[bdy,(Times@@diff)(refreshInternalLabels[Diagrams[5,0][[k]]][[2]]/.replacement)],{k,1,10}]],
+{pentagon,FindPentagons[D]}
 ]
 
 
