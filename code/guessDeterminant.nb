@@ -1,0 +1,360 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     12782,        351]
+NotebookOptionsPosition[     12322,        332]
+NotebookOutlinePosition[     12678,        348]
+CellTagsIndexPosition[     12635,        345]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "guessPolynomial", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"guessPolynomial", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"0", "..."}], "}"}], ",", 
+    RowBox[{"primes", ":", 
+     RowBox[{"{", "___Integer", "}"}]}]}], "]"}], ":=", 
+  "0"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"guessPolynomial", "[", 
+   RowBox[{
+    RowBox[{"values", ":", 
+     RowBox[{"{", "___Integer", "}"}]}], ",", 
+    RowBox[{"primes", ":", 
+     RowBox[{"{", "___Integer", "}"}]}]}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"guessPolynomial", "[", 
+    RowBox[{"values", ",", "primes"}], "]"}], "=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"residues", ",", "crt", ",", "next"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"(*", " ", 
+      RowBox[{
+       RowBox[{"Print", "[", "values", "]"}], ";"}], " ", "*)"}], 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"residues", "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Mod", "[", 
+          RowBox[{
+           RowBox[{
+           "#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], ",", 
+           RowBox[{
+           "#", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], ",", 
+           RowBox[{
+            RowBox[{"-", 
+             RowBox[{
+             "#", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}], 
+            "/", "2"}]}], "]"}], "&"}], "/@", 
+        RowBox[{"Transpose", "[", 
+         RowBox[{"{", 
+          RowBox[{"values", ",", "primes"}], "}"}], "]"}]}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"crt", "=", 
+       RowBox[{"Mod", "[", 
+        RowBox[{
+         RowBox[{"ChineseRemainder", "[", 
+          RowBox[{"residues", ",", "primes"}], "]"}], ",", 
+         RowBox[{"Times", "@@", "primes"}], ",", 
+         RowBox[{
+          RowBox[{"-", 
+           RowBox[{"(", 
+            RowBox[{"Times", "@@", "primes"}], ")"}]}], "/", "2"}]}], "]"}]}],
+       ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+        RowBox[{"Print", "[", "residues", "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", "crt", "]"}], ";"}], " ", "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Abs", "[", 
+          RowBox[{"crt", "/", 
+           RowBox[{"(", 
+            RowBox[{"Times", "@@", "primes"}], ")"}]}], "]"}], "<", 
+         RowBox[{"1", "/", "10"}]}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"next", "=", 
+          RowBox[{"guessPolynomial", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"values", "-", "crt"}], ")"}], "/", "primes"}], ",", 
+            "primes"}], "]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"next", "===", "$Failed"}], ",", "\[IndentingNewLine]", 
+           "$Failed", ",", "\[IndentingNewLine]", 
+           RowBox[{"crt", "+", 
+            RowBox[{"t", " ", "next"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+        ",", "\[IndentingNewLine]", "$Failed"}], "\[IndentingNewLine]", 
+       "]"}]}]}], "\[IndentingNewLine]", "]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.5948837136026907`*^9, 3.594883813937195*^9}, {
+  3.594883848677854*^9, 3.5948839523633623`*^9}, {3.594883982519341*^9, 
+  3.5948840254256496`*^9}, {3.5948842361425323`*^9, 3.5948842708542233`*^9}, {
+  3.5948843267759447`*^9, 3.594884399125389*^9}, {3.594884439551682*^9, 
+  3.5948844584803467`*^9}, {3.594884509951005*^9, 3.594884516083198*^9}, {
+  3.5948845938206797`*^9, 3.594884594117758*^9}, {3.5950314054272738`*^9, 
+  3.595031407024362*^9}, {3.595031656862858*^9, 3.595031680617538*^9}, {
+  3.595031866205323*^9, 3.5950318765346403`*^9}, {3.595107471009067*^9, 
+  3.595107486505979*^9}, {3.595107752200481*^9, 3.595107789933433*^9}, {
+  3.5951219770083923`*^9, 3.595121981015811*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"guessPolynomialRoot", "[", 
+   RowBox[{
+    RowBox[{"values", ":", 
+     RowBox[{"{", "___Integer", "}"}]}], ",", 
+    RowBox[{"primes", ":", 
+     RowBox[{"{", "___Integer", "}"}]}]}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "e", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "values", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], "<", 
+       "0"}], ",", 
+      RowBox[{"-", 
+       RowBox[{"guessPolynomialRoot", "[", 
+        RowBox[{
+         RowBox[{"-", "values"}], ",", "primes"}], "]"}]}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"e", "=", 
+        RowBox[{"GCD", "@@", 
+         RowBox[{"Flatten", "[", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"FactorInteger", "/@", "values"}], ")"}], 
+           "\[LeftDoubleBracket]", 
+           RowBox[{"All", ",", "All", ",", "2"}], "\[RightDoubleBracket]"}], 
+          "]"}]}]}], ";", "\[IndentingNewLine]", 
+       SuperscriptBox[
+        RowBox[{"guessPolynomial", "[", 
+         RowBox[{
+          SuperscriptBox["values", 
+           RowBox[{"1", "/", "e"}]], ",", "primes"}], "]"}], "e"]}]}], 
+     "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",\
+
+ CellChangeTimes->{{3.595121701411786*^9, 3.595121713954083*^9}, {
+  3.595121772155691*^9, 3.5951217848197603`*^9}, {3.595121838328092*^9, 
+  3.595121882436841*^9}, {3.595121937566072*^9, 3.595122062436385*^9}, {
+  3.5951221004238462`*^9, 3.595122104910706*^9}, {3.5951221624738007`*^9, 
+  3.5951221631536427`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"guessTwoVariablePolynomialFactors", "[", 
+   RowBox[{
+    RowBox[{"polynomials", ":", 
+     RowBox[{"{", "___Times", "}"}]}], ",", "primes_List"}], "]"}], ":=", 
+  "\[IndentingNewLine]", 
+  RowBox[{"Product", "[", 
+   RowBox[{
+    RowBox[{"guessTwoVariablePolynomialFactors", "[", 
+     RowBox[{
+      RowBox[{"polynomials", "\[LeftDoubleBracket]", 
+       RowBox[{"All", ",", "i"}], "\[RightDoubleBracket]"}], ",", "primes"}], 
+     "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"i", ",", "1", ",", 
+      RowBox[{"Length", "[", 
+       RowBox[{
+       "polynomials", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+       "]"}]}], "}"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"guessTwoVariablePolynomialFactors", "[", 
+   RowBox[{
+    RowBox[{"polynomials", ":", 
+     RowBox[{"{", "___Integer", "}"}]}], ",", "primes_List"}], "]"}], ":=", 
+  RowBox[{"guessPolynomialRoot", "[", 
+   RowBox[{"polynomials", ",", "primes"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"guessTwoVariablePolynomialFactors", "[", 
+   RowBox[{
+    RowBox[{"polynomials", ":", 
+     RowBox[{"{", "___Power", "}"}]}], ",", "primes_List"}], "]"}], ":=", 
+  SuperscriptBox[
+   RowBox[{"guessTwoVariablePolynomialFactors", "[", 
+    RowBox[{
+     RowBox[{"polynomials", "\[LeftDoubleBracket]", 
+      RowBox[{"All", ",", "1"}], "\[RightDoubleBracket]"}], ",", "primes"}], 
+    "]"}], 
+   RowBox[{"polynomials", "\[LeftDoubleBracket]", 
+    RowBox[{"1", ",", "2"}], 
+    "\[RightDoubleBracket]"}]]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"guessTwoVariablePolynomialFactors", "[", 
+   RowBox[{"polynomials_List", ",", "primes_List"}], "]"}], ":=", 
+  RowBox[{"guessTwoVariablePolynomial", "[", 
+   RowBox[{"polynomials", ",", "primes"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.59512227377251*^9, 3.5951223054762163`*^9}, {
+  3.5951223591201487`*^9, 3.595122507428495*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"guessTwoVariablePolynomial", "[", 
+    RowBox[{"polynomials_List", ",", "primes_List"}], "]"}], "/;", 
+   RowBox[{
+    RowBox[{"Length", "[", 
+     RowBox[{"Union", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Exponent", "[", 
+         RowBox[{"#", ",", "d"}], "]"}], "&"}], "/@", "polynomials"}], "]"}], 
+     "]"}], "\[Equal]", "1"}]}], ":=", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"guessPolynomial", "[", 
+       RowBox[{"#", ",", "primes"}], "]"}], "&"}], "/@", 
+     RowBox[{"Transpose", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"CoefficientList", "[", 
+         RowBox[{"#", ",", "d"}], "]"}], "&"}], "/@", "polynomials"}], 
+      "]"}]}], ")"}], ".", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     SuperscriptBox["d", "i"], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "0", ",", 
+       RowBox[{"Exponent", "[", 
+        RowBox[{
+         RowBox[{
+         "polynomials", "\[LeftDoubleBracket]", "1", 
+          "\[RightDoubleBracket]"}], ",", "d"}], "]"}]}], "}"}]}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.595031418475068*^9, 3.595031540367523*^9}, {
+  3.59503158517528*^9, 3.595031587689775*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"computeDetSpecialization", "[", 
+   RowBox[{"matrix_", ",", "d0_", ",", "t0_", ",", "tag_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"FileExistsQ", "[", 
+         RowBox[{"rowFile", "[", 
+          RowBox[{"tag", ",", "1"}], "]"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"writeMatrix", "[", 
+        RowBox[{"tag", ",", 
+         RowBox[{"matrix", "/.", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"d", "\[Rule]", "d0"}], ",", 
+            RowBox[{"t", "\[Rule]", "t0"}]}], "}"}]}]}], "]"}]}], 
+      "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+     RowBox[{"det", "[", "tag", "]"}]}]}], "\[IndentingNewLine]", 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.595108065491219*^9, 3.595108131313052*^9}, {
+  3.595108393079302*^9, 3.595108418577548*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"guessDeterminant", "[", 
+   RowBox[{"matrix_", ",", "tag_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"result", "=", 
+       RowBox[{"{", "$Failed", "}"}]}], ",", 
+      RowBox[{"n", "=", 
+       RowBox[{"-", "1"}]}], ",", "p"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"p", "[", "n_", "]"}], ":=", 
+      RowBox[{"Prime", "[", 
+       RowBox[{
+        SuperscriptBox["2", "n"], "1000"}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"While", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"FreeQ", "[", 
+         RowBox[{"result", ",", "$Failed"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Print", "[", "n", "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"Print", "[", "result", "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"n", "++"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"result", "=", 
+         RowBox[{"guessTwoVariablePolynomialFactors", "[", 
+          RowBox[{
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"computeDetSpecialization", "[", 
+              RowBox[{"matrix", ",", "d", ",", 
+               RowBox[{"p", "[", "k", "]"}], ",", 
+               RowBox[{"tag", "<>", "\"\<_tp\>\"", "<>", 
+                RowBox[{"ToString", "[", 
+                 RowBox[{"p", "[", "k", "]"}], "]"}]}]}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}], ",", 
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"p", "[", "k", "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}]}], "]"}]}], 
+        ";"}]}], "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+     "result"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.603496423421262*^9, 3.603496649904768*^9}, {
+  3.603496691193083*^9, 3.60349669690765*^9}}]
+},
+WindowSize->{740, 867},
+WindowMargins->{{28, Automatic}, {Automatic, 64}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 3931, 97, 335, "Input"],
+Cell[4491, 119, 1638, 43, 138, "Input"],
+Cell[6132, 164, 1924, 47, 168, "Input"],
+Cell[8059, 213, 1239, 37, 104, "Input"],
+Cell[9301, 252, 997, 26, 114, "Input"],
+Cell[10301, 280, 2017, 50, 230, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
