@@ -164,7 +164,10 @@ NumberOfInternalFaces[d:Diagram[boundary_,contents_]]:=NumberOfInternalFaces[d]=
 Clear[Diagram]
 
 
-Diagram/:Diagram[{A___,b_,C___},c1_]Diagram[{D___,b_,E___},c2_]:=Diagram[{A,E,D,C},Collect[c1 c2,_Y|_P,Together]]
+Diagram/:Diagram[{A___,b_,C___},c1_]Diagram[{D___,b_,E___},c2_]:=Module[{newContents},
+newContents=Collect[c1 c2,_Y|_P,Together];
+Diagram[{A,E,D,C},newContents]
+]
 Diagram[{A___,b_,b_,C___},contents_]:=Diagram[{A,C},contents]
 Diagram[{b_,A___,b_},contents_]:=Diagram[{A},contents]
 
@@ -198,15 +201,17 @@ boundaryReplacements=Thread[(boundary/.newLabels)->newBoundary];
 c=timesToList[contents/.(x:(_Y|_P):>(x/.newLabels/.boundaryReplacements))];
 Yrule=y_Y:>Sort[{y,RotateLeft[y],RotateRight[y]}][[1]];
 c=c/.Yrule;
-While[c=!=0\[And]limit-->0\[And]!FreeQ[c,n_Integer/;n<K0\[And]Count[c,_Y]>0],
-t=SortBy[Cases[c,_Y],With[{ns=Sort[Cases[(List@@#),n_/;n>=K0]]},{sortOrder[Length[ns]],ns}]&][[1]];
+While[c=!=0\[And]limit-->0\[And]!FreeQ[Cases[c,x:(_Y|_P):>List@@x,\[Infinity]],n_Integer/;n<K0]\[And]Count[c,_Y]>0,
+t=SortBy[Cases[c,_Y,\[Infinity]],With[{ns=Sort[Cases[(List@@#),n_/;n>=K0]]},{sortOrder[Length[ns]],ns}]&][[1]];
 r=If[Count[List@@t,n_/;n<K0]==1,
 Cases[List@@t,n_/;n<K0][[1]]->m,
 t[[Mod[Position[List@@t,n_/;n>=K0][[1,1]],3]+1]]->m
 ];
-c=c/.r;
+Print[r];
+c=c/.(z:(_Y|_P):>(z/.r));
 c=c/.Yrule;
 ];
+If[limit<0,Print["canonicalLabelling took too long! ",d];Abort[]];
 Diagram[newBoundary,If[Head[contents]===List,Sort[c],Times@@c]]
 ]
 canonicalLabelling[d:Diagram[{},_]]:=d
