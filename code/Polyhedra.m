@@ -207,7 +207,6 @@ r=If[Count[List@@t,n_/;n<K0]==1,
 Cases[List@@t,n_/;n<K0][[1]]->m,
 t[[Mod[Position[List@@t,n_/;n>=K0][[1,1]],3]+1]]->m
 ];
-Print[r];
 c=c/.(z:(_Y|_P):>(z/.r));
 c=c/.Yrule;
 ];
