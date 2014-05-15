@@ -32,7 +32,7 @@ ToGraph[z_]:=(If[!FreeQ[z,Diagram],Print["bad argument passed to ToGraph: ",z];A
 PolyhedraNames={};
 
 
-getDirectory[]:=getDirectory[]=NotebookDirectory[]/.NotebookDirectory[$Failed]:>AbsoluteFileName["~/projects/exceptional/code/"]
+getDirectory[]:=getDirectory[]=AbsoluteFileName["~/projects/exceptional/code/"]
 
 
 SavePolyhedraNames[]:=Put[PolyhedraNames,FileNameJoin[{getDirectory[],"polyhedraNames.m"}]];
@@ -543,6 +543,9 @@ LoadPolyhedraEvaluations[]:=Module[{},
 If[FileExistsQ[FileNameJoin[{getDirectory[],"polyhedraEvaluations.m"}]],
 Get[FileNameJoin[{getDirectory[],"polyhedraEvaluations.m"}]]];
 ]
+
+
+getDirectory[]:=getDirectory[]=AbsoluteFileName["~/projects/exceptional/code/"]
 
 
 matrixDirectory=FileNameJoin[{getDirectory[],"..","matrices"}];
