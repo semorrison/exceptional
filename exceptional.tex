@@ -31,6 +31,7 @@
   \usepackage[draft]{hyperref}
 \fi
 \usepackage{url}
+\usepackage{todonotes}
 
 \input{macros}
 \input{defs}
@@ -151,7 +152,7 @@ which can be put in the form
  + w \left[ \;\twostrandid\; + \;\cupcap\; + \;\symcross\; \right]
 \label{eq:classical-except}
 \end{equation}
-for varying values of~$b$.
+for varying values of~$w$.
 
 \begin{theorem}[Vogel]
   For the following Lie groups, the skein theory of the Lie bracket
@@ -189,20 +190,20 @@ representation.)
   parameters that have been used, along with their involution and who
   introduced them.
   \begin{itemize}
-  \item $a = \mu/6$; involution $a \mapsto -a-1/6$ \cite{MR1378507};
-  \item $\lambda = -\mu$; involution $\lambda \mapsto 1-\lambda$ \cite{MR1378507};
-  \item $\mu$ as in the table above; involution $\mu \mapsto -1-\mu$ \cite{MR1411045};
-  \item $\nu = 1/\mu$; involution $\nu \mapsto -\nu/(\nu+1)$
+  \item $a = \mu/6$; involution $a \leftrightarrow -a-1/6$ \cite{MR1378507};
+  \item $\lambda = -\mu$; involution $\lambda \leftrightarrow 1-\lambda$ \cite{MR1378507};
+  \item $\mu$ as in the table above; involution $\mu \leftrightarrow -1-\mu$ \cite{MR1411045};
+  \item $\nu = 1/\mu$; involution $\nu \leftrightarrow -\nu/(\nu+1)$
     \cite{MR1952563};
   \item the dual Coxeter number $h^\vee = 6/\mu$
     \cite{MR1952563};
   \item the number $w$ in Equation~\eqref{eq:classical-except}, with
     $w=\mu(1+\mu)/2$; appearing in the 1995 preprint
     version of Vogel's paper \cite{MR2769234};
-\smargin{DPT: This doesn't seem consistent with Deligne and Cohen-de Man.}
+\DPTtodo{This doesn't seem consistent with Deligne and Cohen-de Man.}
   \item the two non-trivial eigenvalues of the Casimir on $\Sym^2
     \fg$, or more invariantly their ratio $\alpha/\beta =
-    -\frac{1+\mu}{\mu}$; involution $\alpha/\beta \mapsto
+    -\frac{1+\mu}{\mu}$; involution $\alpha/\beta \leftrightarrow
     \beta/\alpha$ \cite{MR2769234}; and
   \item the dimension of the Lie algebra $d = \dim \mathfrak{g} =
     -2\frac{(\mu-5)(\mu+6)}{\mu(\mu+1)}$.
@@ -220,23 +221,9 @@ Dylan's TODO:
 \section{The quantum exceptional relation}
 \label{sec:relation}
 
-\begin{theorem}
-  Suppose that $Q$ is a skein theory on embedded, framed trivalent graphs so that
-  \begin{itemize}
-  \item a circle has a scalar value;
-  \item a self-loop takes has value $0$;
-  \item changing the framing by~$1$ multiplies by a scalar $v^{12}$;
-  \item crossing two strands near a vertex multiplies by a scalar; and
-  \item the six diagrams (\dots) satisfy a linear relation.
-  \end{itemize}
-  (For instance, we may assume that the dimension of the space of
-  $n$-boxes for $n=0,\dots,4$ is $1$, $0$, $1$, $1$, and $\le 5$.)
-  Then, if $v^{12} \ne 1$, either $Q$ vanishes on all trivalent graphs
-  or it satisfies the quantum exceptional relation.
-\end{theorem}
-
-
-\[
+The main equation we are interested in is the \emph{quantum
+  exceptional relation}:
+\begin{equation}
 v^{-3} \;
 \drawcrossX
 \;+ v \;
@@ -250,8 +237,66 @@ v^{-3} \;
 \twostrandid
 \; + v^{4} \;
  \cupcap \;
- \right] \; = \; 0
-\]
+ \right] \; = \; 0\label{eq:quant-except}
+\end{equation}
+In fact, this relation turns out to be quite universal.
+
+\begin{theorem}
+  Suppose that $Q$ is a skein theory on embedded, framed trivalent
+  graphs over a base ring with $12$'th roots of unity so that the
+  dimension of the $n$-box space for $n=0,1,2,3,4$ is at most
+  $1,0,1,1,5$, respectively. In particular, this implies that changing
+  the framing by~$1$ changes the value by a scalar, denoted
+  $v^{12}$. Then, up to changing $v$ by a root of unity, either $Q$
+  vanishes on all trivalent graphs or it satisfies the quantum
+  exceptional relation \eqref{eq:quant-except}.
+\end{theorem}
+
+In fact, the conditions we need are somewhat weaker; we don't need to
+know the exact dimensions, just that certain diagrams are linearly
+independent. We do not spell out the details here.
+
+\begin{figure}
+  \caption{Local relations}
+  \label{fig:local-relations}
+\end{figure}
+\begin{proof}
+  First, we have several relations that automatically hold true
+  locally:
+\DPTtodo{Add local relations: unknot; framing change; vertex framing
+  change. Use the \texttt{hobby} package.}
+  \begin{align*}
+    \ngon{2}\;&= b\;\nvertex{2}&
+      \ngon{3}\; &= t\;\nvertex{3}
+  \end{align*}
+  (Some words about framing change at the vertex. By possibly changing
+  square root $v^6$ of $v^{12}$, get sign above)
+
+  By assumption, the space spanned by the six diagrams
+  \[
+  \twostrandid\;,\qquad\cupcap\;,\qquad\braidcross\;,
+    \qquad\drawH\;,\qquad\drawI\;,\qquad\drawcrossX\;
+   \]
+   is at most $5$-dimensional.
+   These six diagrams should be thought of as having the symmetries of
+   a tetrahedron (up to framing change):
+\DPTtodo{Picture: cycle three of the strands}
+   up to powers of $\pm v^k$, they are permuted by the operation~$R$
+   that cyclically rotating
+   three of the strands.
+
+   Repeat $R$ three times is same as changing framing on remaining
+   strand by~$1$. $v^{-4}\cdot R$ cubes to the identity. Eigenvalues
+   are $1$, $e^{2\pi i/3}$, and $e^{-2\pi i/3}$.
+
+   Thus, among the three eigenspaces of $v^{-4}\cdot R$, at least one
+   is at most one-dimensional. WLOG, assume that the eigenspace with
+   eigenvalue~$1$ is at most one-dimensional.
+
+   Derive quantum exceptional.
+\end{proof}
+
+
 
 \section{Scratch}
 Here are some things Scott is hoping to work on soon:
