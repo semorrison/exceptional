@@ -1,6 +1,7 @@
+\usepackage{fp}
 \usepackage{tikz}
 \usetikzlibrary{matrix}
-\usetikzlibrary{arrows,backgrounds,patterns,scopes,external,
+\usetikzlibrary{arrows,backgrounds,patterns,scopes,external,hobby,
     decorations.pathreplacing,
     decorations.pathmorphing
 }
@@ -38,7 +39,7 @@
 \setlength{\linewidthick}{1.75pt}
 
 
-
+\tikzset{use Hobby shortcut}
 \tikzset{
 	coverline/.style={
 	preaction={draw,line width=\coverwidth,\covercolor}}, 
@@ -101,21 +102,27 @@ coverlinelefttail/.style={
 \end{tikzpicture}
 }
 
+\newcommand{\unknot}{
+\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
+  \draw (0,0) circle (.6cm);
+\end{tikzpicture}
+}
+
 \newcommand{\drawI}{ \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
- 	\draw (0,.2) .. controls +(30:.3cm) .. (45:.8cm);
- 	\draw (0,.2) .. controls +(150:.3cm) .. (135:.8cm);
+ 	\draw (0,.2) -- (45:.8cm);
+ 	\draw (0,.2) -- (135:.8cm);
 	\draw (0,.2) -- (0,-.2);
- 	\draw (0,-.2) .. controls +(-30:.3cm) .. (-45:.8cm);
- 	\draw (0,-.2) .. controls +(-150:.3cm) .. (-135:.8cm);
+ 	\draw (0,-.2) -- (-45:.8cm);
+ 	\draw (0,-.2) -- (-135:.8cm);
 \end{tikzpicture}
 }
 
 \newcommand{\drawH}{ \begin{tikzpicture}[baseline=-0.5ex,rotate=90,scale=0.8]
- 	\draw (0,.2) .. controls +(30:.3cm) .. (45:.8cm);
- 	\draw (0,.2) .. controls +(150:.3cm) .. (135:.8cm);
+ 	\draw (0,.2) -- (45:.8cm);
+ 	\draw (0,.2) -- (135:.8cm);
 	\draw (0,.2) -- (0,-.2);
- 	\draw (0,-.2) .. controls +(-30:.3cm) .. (-45:.8cm);
- 	\draw (0,-.2) .. controls +(-150:.3cm) .. (-135:.8cm);
+ 	\draw (0,-.2) -- (-45:.8cm);
+ 	\draw (0,-.2) -- (-135:.8cm);
 \end{tikzpicture}}
 
 \newcommand{\onestrandid}{\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
@@ -123,13 +130,13 @@ coverlinelefttail/.style={
 \end{tikzpicture}}
 
 \newcommand{\twostrandid}{\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
-	\draw (45:.8cm) .. controls (0,0) .. (135:.8cm);
-	\draw (-45:.8cm) .. controls (0,0) .. (-135:.8cm);
+	\draw (45:.8cm) to [curve through=(90:.3cm)] (135:.8cm);
+	\draw (-45:.8cm) to [curve through=(-90:.3cm)] (-135:.8cm);
 \end{tikzpicture}}
 
 \newcommand{\cupcap}{\begin{tikzpicture}[baseline=-0.5ex,rotate=90,scale=0.8]
-	\draw (45:.8cm) .. controls (0,0) .. (135:.8cm);
-	\draw (-45:.8cm) .. controls (0,0) .. (-135:.8cm);
+	\draw (45:.8cm) to [curve through=(90:.3cm)] (135:.8cm);
+	\draw (-45:.8cm) to [curve through=(-90:.3cm)] (-135:.8cm);
 \end{tikzpicture}}
 
 \newcommand{\symcross}{\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
@@ -138,22 +145,41 @@ coverlinelefttail/.style={
 \end{tikzpicture}}
 
 \newcommand{\braidcross}{\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
-	\draw (45:.8cm) -- (45:.1cm);
-	\draw (45:-.8cm) -- (45:-.1cm);	
-	\draw (-45:.8cm) -- (135:.8cm);
+	\draw (45:.8cm) -- (-135:.8cm);
+	\draw[line width=1mm,white,double=black] (-45:.8cm) -- (135:.8cm);
 \end{tikzpicture}}
 
 
-\newcommand{\drawcrossX}{ \begin{tikzpicture}[baseline=-0.5ex,rotate=90,scale=0.8]
- 	\draw (.2,.3) .. controls +(30:.3cm) .. (45:.8cm);
- 	\draw (.2,.3) .. controls +(150:.3cm) .. (-135:.8cm);
+\newcommand{\drawcrossX}{ \begin{tikzpicture}[baseline=-0.5ex,scale=0.8,rotate=90]
+ 	\draw ([out angle=30].2,.3) .. (45:.8cm);
 	\draw (.2,.3) -- (.2,-.3);
- 	\draw (.2,-.3) .. controls +(-30:.3cm) .. (-45:.8cm);
-% 	\draw (.2,-.3) .. controls +(-150:.3cm) .. (135:.8cm);;
- 	\draw (.2,-.3) .. controls +(-150:.3cm) .. (200:.24cm);
-	\draw (-.3, .1) -- (-.55,.55);
+ 	\draw ([out angle=-30].2,-.3) .. (-45:.8cm);
+        \draw ([out angle=-150].2,-.3) ..([in angle=-70]135:.8cm);
+ 	\draw[line width=1mm,white,double=black]
+              ([out angle=150].2,.3) .. ([in angle=70]-135:.8cm);
 \end{tikzpicture}}
 
+\newcommand{\twist}{
+  \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
+    \draw[line width=1mm,white,double=black]
+       ([out angle=-15]135:.8cm)..([blank=soft]-60:.4cm)..(-120:.4cm)..([in angle=-165]45:.8cm);
+    \draw[line width=1mm,white,double=black,use previous Hobby path={invert soft blanks,disjoint}];
+  \end{tikzpicture}}
+
+\newcommand{\twistvertex}{
+\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
+  \draw (0,-0.5)--(0,-0.8);
+  \draw ([out angle=-170]30:0.8cm)..([in angle=150](0,-0.5);
+  \draw[line width=1mm,white,double=black]
+        ([out angle=-10]150:0.8cm)..([in angle=30](0,-0.5);
+\end{tikzpicture}}
+
+\newcommand{\loopvertex}{
+\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
+  \draw (0,-0.5)--(0,-0.8);
+  \draw ([out angle=150]0,-0.5)..(-0.02,0.6)..(0.02,0.6)..([in angle=30]0,-0.5);
+\end{tikzpicture}
+}
 
 \newcommand{\pentagon}{
 \begin{tikzpicture}[scale=.12,baseline=-2]
