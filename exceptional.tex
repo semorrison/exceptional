@@ -256,18 +256,16 @@ In fact, the conditions we need are somewhat weaker; we don't need to
 know the exact dimensions, just that certain diagrams are linearly
 independent. We do not spell out the details here.
 
-\begin{figure}
-  \caption{Local relations}
-  \label{fig:local-relations}
-\end{figure}
 \begin{proof}
   First, we have several relations that automatically hold true
   locally:
-\DPTtodo{Add local relations: unknot; framing change; vertex framing
-  change. Use the \texttt{hobby} package.}
   \begin{align*}
-    \ngon{2}\;&= b\;\nvertex{2}&
-      \ngon{3}\; &= t\;\nvertex{3}
+    \unknot\; &= d&
+      \twist\; &= v^{12}\;\onestrandid&
+        \twistvertex\; &= -v^6\;\nvertex[-90]{3}\\[5pt]
+    \loopvertex\;&=0&
+      \ngon{2}\;&= b\;\onestrandid&
+        \ngon[-90]{3}\; &= t\;\nvertex[-90]{3}
   \end{align*}
   (Some words about framing change at the vertex. By possibly changing
   square root $v^6$ of $v^{12}$, get sign above)
