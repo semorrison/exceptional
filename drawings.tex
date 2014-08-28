@@ -38,6 +38,7 @@
 \newlength{\linewidthick}
 \setlength{\linewidthick}{1.75pt}
 
+\tikzset{cdlabel/.style={execute at begin node=$\scriptstyle,execute at end node=$}}
 
 \tikzset{use Hobby shortcut}
 \tikzset{
@@ -168,10 +169,10 @@ coverlinelefttail/.style={
 
 \newcommand{\twistvertex}{
 \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
-  \draw (0,-0.5)--(0,-0.8);
-  \draw ([out angle=-170]30:0.8cm)..([in angle=150](0,-0.5);
+  \draw (0,-0.4)--(0,-0.8);
+  \draw ([out angle=-170]30:0.8cm)..([in angle=160](0,-0.4);
   \draw[line width=1mm,white,double=black]
-        ([out angle=-10]150:0.8cm)..([in angle=30](0,-0.5);
+        ([out angle=-10]150:0.8cm)..([in angle=20](0,-0.4);
 \end{tikzpicture}}
 
 \newcommand{\loopvertex}{
@@ -180,6 +181,27 @@ coverlinelefttail/.style={
   \draw ([out angle=150]0,-0.5)..(-0.02,0.6)..(0.02,0.6)..([in angle=30]0,-0.5);
 \end{tikzpicture}
 }
+
+\newcommand{\idtangle}{
+\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
+\draw (0,0) node {$D$};
+\draw[densely dashed] (0,0) circle (.5cm);
+\draw (45:.5cm) -- (45:1.1cm);
+\draw (135:.5cm) -- (135:1.1cm);
+\draw (-45:.5cm) -- (-45:1.1cm);
+\draw (-135:.5cm) -- (-135:1.1cm);
+\end{tikzpicture}}
+    
+\newcommand{\Rcycle}{
+\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
+\draw (0,0) node {$D$};
+\draw[densely dashed] (0,0) circle (.4cm);
+\draw (45:.4cm) -- (45:1.1cm);
+\draw ([out angle=-70]-45:.4cm) .. (-90:.7cm) .. ([in angle=0]-135:1.1cm);
+\draw ([out angle=-160]-135:.4cm) .. (180:.7cm) .. ([in angle=-90]135:1.1cm);
+\draw[line width=0.8mm,white,double=black]
+      ([out angle=90]135:.4cm) .. (45:.7cm) .. ([in angle=90]-45:1.1cm);
+\end{tikzpicture}}
 
 \newcommand{\pentagon}{
 \begin{tikzpicture}[scale=.12,baseline=-2]
@@ -198,3 +220,4 @@ coverlinelefttail/.style={
 \draw (0,0) -- (2,0) -- (2,1) -- (0,1) -- cycle (1,0) -- (1,1);
 \end{tikzpicture}
 }
+

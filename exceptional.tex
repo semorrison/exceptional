@@ -12,7 +12,7 @@
 \usepackage{ifpdf}
 \ifpdf
   \usepackage[pdftex]{graphicx}
-  \usepackage[pdftex,margin=1in]{geometry}
+  \usepackage[pdftex,margin=1.25in]{geometry}
   \usepackage[bookmarks=true, bookmarksopen=true,%
     bookmarksdepth=3,bookmarksopenlevel=2,%
     colorlinks=true,%
@@ -237,61 +237,120 @@ v^{-3} \;
 \twostrandid
 \; + v^{4} \;
  \cupcap \;
- \right] \; = \; 0\label{eq:quant-except}
+ \right] = 0.\label{eq:quant-except}
 \end{equation}
 In fact, this relation turns out to be quite universal.
 
-\begin{theorem}
-  Suppose that $Q$ is a skein theory on embedded, framed trivalent
-  graphs over a base ring with $12$'th roots of unity so that the
-  dimension of the $n$-box space for $n=0,1,2,3,4$ is at most
-  $1,0,1,1,5$, respectively. In particular, this implies that changing
-  the framing by~$1$ changes the value by a scalar, denoted
-  $v^{12}$. Then, up to changing $v$ by a root of unity, either $Q$
-  vanishes on all trivalent graphs or it satisfies the quantum
-  exceptional relation \eqref{eq:quant-except}.
-\end{theorem}
+For the remainder of this section, suppose that we are working in a
+skein theory on embedded, framed trivalent graphs.
 
-In fact, the conditions we need are somewhat weaker; we don't need to
-know the exact dimensions, just that certain diagrams are linearly
-independent. We do not spell out the details here.
-
-\begin{proof}
-  First, we have several relations that automatically hold true
-  locally:
+\begin{proposition}
+  If the dimension of the $n$-box space for $n=0,1,2,3$ is $1,0,1,1$,
+  respectively, then we have the relations
   \begin{align*}
     \unknot\; &= d&
-      \twist\; &= v^{12}\;\onestrandid&
-        \twistvertex\; &= -v^6\;\nvertex[-90]{3}\\[5pt]
+      \twist\; &= s^2\;\onestrandid&
+        \twistvertex\; &= -s\;\nvertex[-90]{3}\\[5pt]
     \loopvertex\;&=0&
       \ngon{2}\;&= b\;\onestrandid&
         \ngon[-90]{3}\; &= t\;\nvertex[-90]{3}
   \end{align*}
-  (Some words about framing change at the vertex. By possibly changing
-  square root $v^6$ of $v^{12}$, get sign above)
+  for some parameters $d, b, t, s$ in the base ring.
+\end{proposition}
 
+\begin{proof}
+  Most of these are immediate from the assumption. The one fact that
+  is not immediate is the relation between the coefficients of
+  twisting a vertex ($-s$ above) and changing framing ($s^2$
+  above). Twisting a vertex twice can be turned into three framing
+  changes. (Standard argument\dots)
+\end{proof}
+
+\begin{theorem}
+  Suppose that $Q$ is a skein theory on embedded, framed trivalent
+  graphs so that the dimension of the $n$-box space for $n=0,1,2,3,4$
+  is at most $1,0,1,1,5$, respectively. Suppose that the scalar $s$
+  above has three distinct cube roots and at least one sixth root.
+  Then, for some choice of~$v$, either $Q$ vanishes on all trivalent
+  graphs or it satisfies the quantum exceptional relation
+  \eqref{eq:quant-except}.
+\end{theorem}
+
+In fact, the conditions we need are somewhat weaker; for instance, we
+don't need to know the exact dimensions, just that certain diagrams
+are linearly dependent. We do not spell out the details here.
+
+\begin{proof}
+  Let $v$ be a sixth root of $s$ (arbitrary for the moment).
   By assumption, the space spanned by the six diagrams
   \[
   \twostrandid\;,\qquad\cupcap\;,\qquad\braidcross\;,
-    \qquad\drawH\;,\qquad\drawI\;,\qquad\drawcrossX\;
-   \]
-   is at most $5$-dimensional.
-   These six diagrams should be thought of as having the symmetries of
-   a tetrahedron (up to framing change):
-\DPTtodo{Picture: cycle three of the strands}
-   up to powers of $\pm v^k$, they are permuted by the operation~$R$
-   that cyclically rotating
-   three of the strands.
+    \qquad\drawI\;,\qquad\drawH\;,\qquad\drawcrossX\;
+  \]
+  is at most $5$-dimensional.  These six diagrams should be thought
+  of as having the symmetries of a tetrahedron (up to framing
+  change). More precisely, consider the operation~$R$ that cyclically
+  rotates three of the input strands.
+  \[
+  R\left(\,\,\idtangle\,\,\right) = \Rcycle.
+  \]
+  The operation~$R$ permutes the six diagrams above up to powers of $\pm
+  v^k$:
+  \begin{align*}
+    \begin{tikzpicture}
+      \node[inner sep=5pt] (A) at (150:1.4cm) {\twostrandid};
+      \node[inner sep=5pt] (B) at (30:1.4cm) {\cupcap};
+      \node[inner sep=5pt] (C) at (-90:1.4cm) {\braidcross};
+      \draw[|->,bend left=15] (A) to node[above,cdlabel] {v^{-12}} (B);
+      \draw[|->,bend left=15] (B) to (C);
+      \draw[|->,bend left=15] (C) to (A);
+    \end{tikzpicture}&&
+    \begin{tikzpicture}
+      \node[inner sep=5pt] (D) at (150:1.4cm) {\drawI};
+      \node[inner sep=5pt] (E) at (30:1.4cm) {\drawH};
+      \node[inner sep=5pt] (F) at (-90:1.4cm) {\drawcrossX};
+      \draw[|->,bend left=15] (D) to node[above,cdlabel] {-v^{-6}} (E);
+      \draw[|->,bend left=15] (E) to node[below right,cdlabel] {\!\!-v^{-6}} (F);
+      \draw[|->,bend left=15] (F) to (D);
+    \end{tikzpicture}
+  \end{align*}
+  The notation means, for instance, that
+  \[
+  R\left(\,\,\twostrandid\,\,\right) = v^{-12}\,\,\cupcap\,\,.
+  \]
+  Notice that $R^3$ acts by multiplication by $v^{-12}$. (Indeed,
+  $R^3$ does not permute the strands, and is equivalent by
+  Reidemeister moves to changing the
+  framing on the upper-right strand by~$-1$.)
 
-   Repeat $R$ three times is same as changing framing on remaining
-   strand by~$1$. $v^{-4}\cdot R$ cubes to the identity. Eigenvalues
-   are $1$, $e^{2\pi i/3}$, and $e^{-2\pi i/3}$.
+  In particular, the possible
+  eigenvalues for $R$ are $v^{-4}$, $\omega v^{-4}$, and
+  $\omega^{-1} v^{-4}$, where $\omega$ is a primitive cube root of
+  unity (which exists by assumption on the base ring). At least one of
+  the three eigenspaces is at
+  most one-dimensional. By possibly changing the choice of $v$ as a
+  root of $-v^6$, we can assume that the eigenspace for $v^{-4}$ is at
+  most one-dimensional. This then implies that there is a relation of
+  the form
+  \begin{equation*}
+\beta \left[v^{-3} \;
+\drawcrossX
+\;+ v \;
+\drawI
+\; -v^{-1} \;
+ \drawH
+\;\right]
+ + \alpha
+\left[\; \braidcross \;
+ + v^{-4}\;
+\twostrandid
+\; + v^{4} \;
+ \cupcap \;\right]=0.\label{eq:quant-except-a}
+  \end{equation*}
 
-   Thus, among the three eigenspaces of $v^{-4}\cdot R$, at least one
-   is at most one-dimensional. WLOG, assume that the eigenspace with
-   eigenvalue~$1$ is at most one-dimensional.
-
-   Derive quantum exceptional.
+  If $\beta \ne 0$, we are done. If $\beta = 0$, the relation reduces
+  to the Kauffman bracket relation for the Jones polynomial.
+\DPTtodo{Prove that trivalent vertices are inconsistent}
 \end{proof}
 
 
