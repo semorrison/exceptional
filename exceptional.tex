@@ -247,14 +247,17 @@ skein theory on embedded, framed trivalent graphs.
 \begin{proposition}
   If the dimension of the $n$-box space for $n=0,1,2,3$ is $1,0,1,1$,
   respectively, then we have the relations
-  \begin{align*}
-    \unknot\; &= d&
-      \twist\; &= s^2\;\onestrandid&
+  \begin{equation}
+    \label{eq:simple-rels}
+  \begin{aligned}
+    \unknot\; &= d&\qquad
+      \twist\; &= s^2\;\onestrandid&\qquad
         \twistvertex\; &= -s\;\nvertex[-90]{3}\\[5pt]
     \loopvertex\;&=0&
       \ngon{2}\;&= b\;\onestrandid&
         \ngon[-90]{3}\; &= t\;\nvertex[-90]{3}
-  \end{align*}
+  \end{aligned}
+  \end{equation}
   for some parameters $d, b, t, s$ in the base ring.
 \end{proposition}
 
@@ -268,15 +271,15 @@ skein theory on embedded, framed trivalent graphs.
 \DPTtodo{This is standard, but needs pictures or a reference}
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}\label{thm:quant-except}
   Suppose that $Q$ is a skein theory over a field on embedded, framed
   trivalent
   graphs so that the dimension of the $n$-box space for $n=0,1,2,3,4$
   is at most $1,0,1,1,5$, respectively. Suppose that the scalar $s$
   above has three distinct cube roots and at least one sixth root.
-  Then, for some choice of~$v$, either $Q$ vanishes on all trivalent
+  Then either $Q$ vanishes on all trivalent
   graphs or it satisfies the quantum exceptional relation
-  \eqref{eq:quant-except}.
+  \eqref{eq:quant-except} for some choice of~$v$ with $v^6 = s$.
 \end{theorem}
 
 In fact, the conditions we need are somewhat weaker; for instance, we
@@ -370,7 +373,29 @@ assuming that a trivalent vertex is not~$0$.
   quantum exceptional relation in a degenerate way}
 \end{proof}
 
+\begin{proposition}
+  If a skein theory satisfies the quantum exceptional
+  relation~\eqref{eq:quant-except} and the reduction
+  relations~\eqref{eq:simple-rels} with $v^{20} \ne 1$, then the
+  parameters satisfy
+\DPTtodo{Equation for $t$ currently does not agree with old notes.}
+  \begin{align}
+    s &= v^6\label{eq:s-v-rel}\\
+    b &= -\frac{\alpha(d + v^8 + v^{-8})}{v^5 - v^{-5}}\label{eq:b-rel}\\
+%    b(v^5 - v^{-5}) + \alpha d + \alpha (v^8 + v^{-8}) &= 0\label{eq:b-rel}\\
+    t &= \frac{b + \alpha(v^5 + v^{-5})}{v^2 - v^{-2}}\label{eq:b-t-rel}.
+%    b - t(v^2 - v^{-2}) + \alpha (v^5 - v^{-5}) &= 0.\label{eq:b-t-rel}
+  \end{align}
+\end{proposition}
 
+\begin{proof}
+  Equation~\eqref{eq:s-v-rel} is part of
+  Theorem~\ref{thm:quant-except}. Equation~\eqref{eq:b-rel} follows
+  from closing off Equation~\eqref{eq:quant-except} with a cap and
+  solving for~$b$. Equation~\eqref{eq:b-t-rel} follows from closing
+  off Equation~\eqref{eq:quant-except} with a trivalent vertex with
+  one free end and solving for~$t$.
+\end{proof}
 
 \section{Scratch}
 Here are some things Scott is hoping to work on soon:
