@@ -233,9 +233,9 @@ v^{-3} \;
 \;
  + \alpha
 \left[\; \braidcross \;
- + v^{-4}\;
+ + v^{4}\;
 \twostrandid
-\; + v^{4} \;
+\; + v^{-4} \;
  \cupcap \;
  \right] = 0.\label{eq:quant-except}
 \end{equation}
@@ -259,7 +259,7 @@ skein theory on embedded, framed trivalent graphs.
 \end{proposition}
 
 \begin{proof}
-\DPTtodo{Add claim: trivalent vertex is rotationally symmetric}
+\NStodo{Add claim: trivalent vertex is rotationally symmetric}
   Most of these are immediate from the assumption. The one fact that
   is not immediate is the relation between the coefficients of
   twisting a vertex ($-s$ above) and changing framing ($s^2$
@@ -345,16 +345,29 @@ are linearly dependent. We do not spell out the details here.
 \;\right]
  + \alpha
 \left[\; \braidcross \;
- + v^{-4}\;
+ + v^{4}\;
 \twostrandid
-\; + v^{4} \;
- \cupcap \;\right]=0.\label{eq:quant-except-a}
+\; + v^{-4} \;
+ \cupcap \;\right]=0.
   \end{equation*}
 
   If $\beta \ne 0$, we are done. If $\beta = 0$, the relation reduces
-  to the Kauffman bracket relation for the Jones polynomial.
-\DPTtodo{Prove that trivalent vertices are necessarily trivial or the golden
-  category}
+  to the Kauffman bracket relation for the Jones polynomial:
+\[
+\braidcross \;
+ + v^{4}\;
+\twostrandid
+\; + v^{-4} \;
+ \cupcap\;=0.
+\]
+Closing this relation off with a trivalent vertex on the bottom yields
+\begin{align*}
+  \twistvertex + v^{-4}\; \nvertex[-90]{3} &= 0,
+\end{align*}
+so $-v^6 + v^{-4} = 0$, or $v^{10}=1$,
+assuming that a trivalent vertex is not~$0$.
+\NStodo{Explain that you get the golden category, and still have
+  quantum exceptional relation in a degenerate way}
 \end{proof}
 
 
