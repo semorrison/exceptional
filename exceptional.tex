@@ -210,13 +210,10 @@ representation.)
   \end{itemize}
 \end{remark}
 
-Dylan's TODO:
-\begin{itemize}
-\item Formulate the two conjectures: consistency and sufficiency of
-  the relations
-\item Figure out the Conjecture in Section 7.5 of Vogel's published
-  paper. Does it relate?
-\end{itemize}
+\DPTtodo{Formulate the two conjectures: consistency and sufficiency of
+  the relations}
+\DPTtodo{Figure out the Conjecture in \cite[Section
+  7.5]{MR2769234}. Does it relate?}
 
 \section{The quantum exceptional relation}
 \label{sec:relation}
@@ -330,8 +327,8 @@ are linearly dependent. We do not spell out the details here.
   framing on the upper-right strand by~$-1$.)
 
   In particular, the possible
-  eigenvalues for $R$ are $v^{-4}$, $\omega v^{-4}$, and
-  $\omega^{-1} v^{-4}$, where $\omega$ is a primitive cube root of
+  eigenvalues for $R$ are $v^{-4}$, $\omega_3 v^{-4}$, and
+  $\omega_3^{-1} v^{-4}$, where $\omega_3$ is a primitive cube root of
   unity (which exists by assumption on the base ring). At least one of
   the three eigenspaces is at
   most one-dimensional. By possibly changing the choice of $v$ as a
@@ -376,28 +373,45 @@ assuming that a trivalent vertex is not~$0$.
 \begin{proposition}
   If a skein theory satisfies the quantum exceptional
   relation~\eqref{eq:quant-except} and the reduction
-  relations~\eqref{eq:simple-rels} with $v^{20} \ne 1$, then the
+  relations~\eqref{eq:simple-rels} with $v^{40} \ne 1$, then the
   parameters satisfy
-\DPTtodo{Equation for $t$ currently does not agree with old notes.}
   \begin{align}
     s &= v^6\label{eq:s-v-rel}\\
     b &= -\frac{\alpha(d + v^8 + v^{-8})}{v^5 - v^{-5}}\label{eq:b-rel}\\
 %    b(v^5 - v^{-5}) + \alpha d + \alpha (v^8 + v^{-8}) &= 0\label{eq:b-rel}\\
-    t &= \frac{b + \alpha(v^5 + v^{-5})}{v^2 - v^{-2}}\label{eq:b-t-rel}.
-%    b - t(v^2 - v^{-2}) + \alpha (v^5 - v^{-5}) &= 0.\label{eq:b-t-rel}
+    t &= \frac{b - \alpha(v^5 - v^{-5})}{v^2 + v^{-2}}\label{eq:b-t-rel}.
+%    b - t(v^2 + v^{-2}) - \alpha (v^5 - v^{-5}) &= 0.\label{eq:b-t-rel}
   \end{align}
 \end{proposition}
 
 \begin{proof}
   Equation~\eqref{eq:s-v-rel} is part of
   Theorem~\ref{thm:quant-except}. Equation~\eqref{eq:b-rel} follows
-  from closing off Equation~\eqref{eq:quant-except} with a cap and
-  solving for~$b$. Equation~\eqref{eq:b-t-rel} follows from closing
-  off Equation~\eqref{eq:quant-except} with a trivalent vertex with
-  one free end and solving for~$t$.
+  from closing off Equation~\eqref{eq:quant-except} with a cap, and
+  then solving for~$b$. Equation~\eqref{eq:b-t-rel} follows from
+  closing off Equation~\eqref{eq:quant-except} by attaching two ends
+  to a trivalent vertex, and then solving for~$t$.
+
+  The condition that $v^{40} \ne 1$ guarantees that we do not divide
+  by~$0$.
 \end{proof}
 
 \section{Scratch}
+Here are some things remaining for Dylan (or maybe Noah) to write
+up/think about:
+\begin{itemize}
+\item Deriving the square-reduction relation using the quantum exceptional
+\item Deriving the crossing change relation from the quantum
+  exceptional relation, or maybe from another dimensionality (or
+  maybe eigenvalue) argument
+\item The F4--E6 family in this context
+\item Showing there is an eigenvalue for the twist with eigenvalue
+  $-1$, and finding the eigenvector
+\item Naturally introducing a new parameter, $w$, an eigenvalue of
+  rotation, and using it here to get nice formulas. Use ability to
+  renormalize vertices.
+\end{itemize}
+
 Here are some things Scott is hoping to work on soon:
 \begin{itemize}
 \item write a link evaluator using the clasp switch relation (in progress)
