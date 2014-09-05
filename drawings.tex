@@ -186,10 +186,10 @@ coverlinelefttail/.style={
 \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
 \draw (0,0) node {$D$};
 \draw[densely dashed] (0,0) circle (.5cm);
-\draw (45:.5cm) -- (45:1.1cm);
-\draw (135:.5cm) -- (135:1.1cm);
-\draw (-45:.5cm) -- (-45:1.1cm);
-\draw (-135:.5cm) -- (-135:1.1cm);
+\draw (45:.5cm) -- (45:0.8cm);
+\draw (135:.5cm) -- (135:0.8cm);
+\draw (-45:.5cm) -- (-45:0.8cm);
+\draw (-135:.5cm) -- (-135:0.8cm);
 \end{tikzpicture}}
     
 \newcommand{\Rcycle}{
@@ -201,6 +201,19 @@ coverlinelefttail/.style={
 \draw ([out angle=-160]-135:.4cm) .. (180:.7cm) .. ([in angle=-90]135:1.1cm);
 \draw[line width=0.8mm,white,double=black]
       ([out angle=90]135:.4cm) .. (45:.7cm) .. ([in angle=90]-45:1.1cm);
+\end{tikzpicture}}
+
+\newcommand{\ladder}{
+\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
+\draw (0,0) node {$D$};
+\draw[densely dashed] (0,0) circle (.5cm);
+\draw (135:.5cm) -- (135:0.9cm);
+\draw (-135:.5cm) -- (-135:0.9cm);
+\draw ([out angle=45]45:.5cm) .. ([in angle=150]0.8,0.5);
+\draw ([out angle=-45]-45:.5cm) .. ([in angle=-150]0.8,-0.5);
+\draw (0.8,0.5)--(0.8,-0.5);
+\draw ([out angle=30]0.8,0.5) .. ([in angle=-135]1.2,0.636);
+\draw ([out angle=-30]0.8,-0.5) .. ([in angle=135]1.2,-0.636);
 \end{tikzpicture}}
 
 \newcommand{\pentagon}{
