@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     12782,        351]
-NotebookOptionsPosition[     12322,        332]
-NotebookOutlinePosition[     12678,        348]
-CellTagsIndexPosition[     12635,        345]
+NotebookDataLength[     11741,        322]
+NotebookOptionsPosition[     11322,        304]
+NotebookOutlinePosition[     11678,        320]
+CellTagsIndexPosition[     11635,        317]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -252,34 +252,6 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"computeDetSpecialization", "[", 
-   RowBox[{"matrix_", ",", "d0_", ",", "t0_", ",", "tag_"}], "]"}], ":=", 
-  RowBox[{"Module", "[", 
-   RowBox[{
-    RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{"If", "[", 
-      RowBox[{
-       RowBox[{"!", 
-        RowBox[{"FileExistsQ", "[", 
-         RowBox[{"rowFile", "[", 
-          RowBox[{"tag", ",", "1"}], "]"}], "]"}]}], ",", 
-       "\[IndentingNewLine]", 
-       RowBox[{"writeMatrix", "[", 
-        RowBox[{"tag", ",", 
-         RowBox[{"matrix", "/.", 
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{"d", "\[Rule]", "d0"}], ",", 
-            RowBox[{"t", "\[Rule]", "t0"}]}], "}"}]}]}], "]"}]}], 
-      "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
-     RowBox[{"det", "[", "tag", "]"}]}]}], "\[IndentingNewLine]", 
-   "]"}]}]], "Input",
- CellChangeTimes->{{3.595108065491219*^9, 3.595108131313052*^9}, {
-  3.595108393079302*^9, 3.595108418577548*^9}}],
-
-Cell[BoxData[
- RowBox[{
   RowBox[{"guessDeterminant", "[", 
    RowBox[{"matrix_", ",", "tag_"}], "]"}], ":=", 
   RowBox[{"Module", "[", 
@@ -351,8 +323,7 @@ Cell[557, 20, 3931, 97, 335, "Input"],
 Cell[4491, 119, 1638, 43, 138, "Input"],
 Cell[6132, 164, 1924, 47, 168, "Input"],
 Cell[8059, 213, 1239, 37, 104, "Input"],
-Cell[9301, 252, 997, 26, 114, "Input"],
-Cell[10301, 280, 2017, 50, 230, "Input"]
+Cell[9301, 252, 2017, 50, 230, "Input"]
 }
 ]
 *)
