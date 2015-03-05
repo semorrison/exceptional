@@ -605,9 +605,9 @@ Clear[K];
 ClearSystemCache[];
 ,{m,k+1,L}];
 ];
-];
 If[k<Length[R],
 rowReduce[token,k+1]
+]
 ]
 ];
 ]
