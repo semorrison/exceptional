@@ -1,0 +1,149 @@
+\documentclass[12pt]{amsart}
+\usepackage{amssymb}
+\usepackage{cite}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{mdwtab}
+\usepackage{mathtools}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyphenat}
+\usepackage{enumitem}
+\usepackage{ifpdf}
+\ifpdf
+  \usepackage[pdftex]{graphicx}
+  \usepackage[pdftex,margin=1.25in]{geometry}
+  \usepackage[bookmarks=true, bookmarksopen=true,%
+    bookmarksdepth=3,bookmarksopenlevel=2,%
+    colorlinks=true,%
+    linkcolor=blue,%
+    citecolor=blue,%
+    filecolor=blue,%
+    menucolor=blue,%
+    urlcolor=blue]{hyperref}
+\else
+  \usepackage[dvips]{graphicx}
+  \usepackage[dvips,margin=1in]{geometry}
+  % Use hyperref with all features turned off even in DVI mode, since
+  % the .aux file format changes
+  \usepackage[draft]{hyperref}
+\fi
+\usepackage{url}
+\usepackage{todonotes}
+
+\input{macros}
+\input{defs}
+\DeclareMathOperator{\Tw}{Tw}
+\DeclareMathOperator{\HTw}{HTw}
+\DeclareMathOperator{\Fr}{Fr}
+
+\begin{document}
+\title{Multiplicities in the quantum exceptional series}
+
+For the classical exceptional series, Deligne \cite{MR1378507} gives
+decomposition formulas for up to the third tensor power of the adjoint
+representation. He also gives information about plethysm (which
+representation of the symmetric group things appear in). Stripping
+the plethysm information out, we have
+
+\begin{align*}
+  X_1^{\otimes 0} &\simeq 1\\
+  X_1^{\otimes 1} &\simeq X_1\\
+  X_1^{\otimes 2} &\simeq 1 \oplus X_1 \oplus X_2 \oplus Y_2^{(*)}\\
+  X_1^{\otimes 3} &\simeq 1 \oplus 5X_1 \oplus 4X_2 \oplus 3Y_2^{(*)} \oplus X_3
+                    \oplus Y_3^{(*)} \oplus 3A \oplus 2C^{(*)}.
+\end{align*}
+The notation $Y_2^{(*)}$, for instance, means $Y_2 \oplus
+Y_2^*$. Recall that $X_1 = \fg$.
+
+In an exceptional quantum group, we expect $X_1^{\otimes n}$ to have
+commuting representations of $U_q(\fg)$ and of $B_n$. Of course
+representations of $B_n$ are much more complicated than
+representations of $S_n$, so the simple plethysm-type formulas aren't
+going to make a lot of sense. The four different copies of (for instance)
+$X_2$ inside of $X_1^{\otimes 3}$, which appear in three different
+representations of $S_3$ in the plethysm formulas, presumably come
+from a single irreducible representation of $B_3$ which happens to
+become reducible at $q=1$.
+
+In our diagrammatic calculus, we have no direct access to the
+representation $X_1^{\otimes 3}$, since every diagram that we write
+down is by definition invariant. Instead, we can compute the 6-box
+space, which is $\End(X_1^{\otimes 3})$ and comes with a left and
+right action by $B_3$. All the multiplicities end up getting squared
+when we do that. Note that
+\[
+80 = 1 + 5^2 + 4^2 + 2\cdot 3^2 + 1 + 2\cdot 1 + 3^2 + 2\cdot 2^2.
+\]
+
+To sort out which representation is which, we look at the center of
+the braid group, the full-twist operator $\Tw_n$. In general, Braid
+group representations break up as a direct sum of representations with
+different eigenvalues of this full twist. It is also related to the
+quadratic Casimir. To get that relation more precise, it's a little
+better to look at a related operator, the framing change operator
+$\Fr$, which does a Reidemeister 1 move to the entire bundle of
+strands. This is the same as doing a full twist and adding a kink
+(Reidemeister 1) to each strand individually. As such, we have
+\[
+\Fr = v^{-12n} \Tw,
+\]
+since the framing change on each strand contributes a factor of
+$v^{-12}$.
+
+For $n=2$, we also have the half-twist operator $\HTw_2$, which does
+only a half-twist. (This makes sense in general, but is only central
+for $n=2$.)
+
+The data for all representations up to the third tensor power is shown
+in Table~\ref{tab:e-vals}. The ``Casimir'' column comes directly from
+Deligne (using $a = -\lambda/6$ and $a^* = (-1+\lambda)/6$). For the
+representations appearing in $\fg^{\otimes 2}$, the eigenvalue for the
+half-twist was computed directly. There is an evident relation between
+the the Casimir eigenvalue and the framing change eigenvalue, which
+should follow by considering the Kontsevich integral. The factor of
+$-12$ presumably comes from the choice of how to normalize a
+bubble. On the remaining lines, the same pattern relating the Casimir
+to the framing change was extended.
+
+\begin{table}
+  \centering
+\medskip
+\begin{tabular}{cccccccccc}
+  \toprule
+      &         &   \multicolumn{4}{c}{Eigenvalues}    & \multicolumn{4}{c}{Multiplicities} \\
+  \cmidrule(lr){3-6} \cmidrule(l){7-10}
+  Rep & Casimir & $\Fr$ & $\HTw_2$ & $\Tw_2$ & $\Tw_3$ & $\fg^{\otimes0}$ & $\fg^{\otimes1}$ & $\fg^{\otimes2}$ & $\fg^{\otimes3}$\\ \midrule
+  1   & 0       & 1     & $v^{12}$ & $v^{24}$ & $v^{36}$
+      & 1 & 0 & 1 & 1\\[3pt]
+  $\fg=X_1$ & 1 & $v^{-12}$ & $-v^6$ & $v^{12}$ & $v^{24}$
+      &   & 1 & 1 & 5\\[3pt]
+  $X_2$ & 2     & $v^{-24}$ & $-1$ & $1$      & $v^{12}$
+      &   &   & 1 & 4\\[3pt]
+  $Y_2$ & $2 - \frac{\lambda}{3}$ & $v^{-24}w^4$ & $w^2$ & $w^4$ & $v^{12}w^4$
+      &   &   & 1 & 3\\[3pt]
+  $Y_2^*$ & $\frac{5}{3} + \frac{\lambda}{3}$ & $v^{-20}w^{-4}$ & $v^2 w^{-2}$ & $v^4 w^{-4}$ & $v^{16}w^{-4}$
+      &   &   & 1 & 3\\[3pt]
+  $X_3$ & $3$ & $v^{-36}$ & & & $1$ &&&& 1\\[3pt]
+  $Y_3$ & $3 - \lambda$ & $v^{-36}w^{12}$ &&& $w^{12}$ &&&& 1\\[3pt]
+  $Y_3^*$ & $2 + \lambda$ & $v^{-24}w^{-12}$ &&& $v^{12}w^{-12}$ &&&& 1\\[3pt]
+  $A$ & $\frac{8}{3}$ & $v^{-32}$ &&& $v^4$ &&&& 3\\[3pt]
+  $C$ & $3 - \frac{\lambda}{2}$ & $v^{-36}w^6$ &&& $w^6$ &&&& 2\\[3pt]
+  $C^*$ & $\frac{5}{2} + \frac{\lambda}{2}$ & $v^{-30}w^{-6}$ &&& $v^6w^{-6}$ &&&& 2\\[3pt]
+  \bottomrule
+\end{tabular}
+\medskip
+\caption{Eigenvalues and multiplicities for representations appearing in $\fg^{\otimes n}$ for $n \le 3$.}
+\label{tab:e-vals}
+\end{table}
+
+\bibliographystyle{amsalpha}
+\bibliography{bibliography/bibliography}
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
