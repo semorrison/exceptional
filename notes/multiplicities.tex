@@ -137,6 +137,107 @@ to the framing change was extended.
 \label{tab:e-vals}
 \end{table}
 
+\begin{table}
+  \centering
+  \begin{tabular}{ccccccccc}
+    \toprule
+    &&&\multicolumn{5}{c}{Braid gen e-val.} \\ \cmidrule(l){4-8}
+    Rep & Mult & $\Tw_3$ & $v^{12}$ & $-v^{-6}$ & $-1$ & $w^2$ & $v^2w^{-2}$ \\
+    \midrule
+    $1$ & 1 & $v^{36}$ & 0 & 1 & 0 & 0 & 0 \\[2pt]
+    $X_1$ & 5 & $v^{24}$ & 1 & 1 & 1 & 1 & 1 \\[2pt]
+    $X_2$ & 4 & $v^{12}$ & 0 & 1 & 1 & 1 & 1 \\[2pt]
+    $Y_2$ & 3 & $v^{12}w^4$ & 0 & 1 & 1 & 1 & 0 \\[2pt]
+    $Y_2^*$ & 3 & $v^{16}w^{-4}$ & 0 & 1 & 1 & 0 & 1 \\[2pt]
+    $X_3$ & 1 & $1$ & 0 & 0 & 1 & 0 & 0 \\[2pt]
+    $Y_3$ & 1 & $w^{12}$ & 0 & 0 & 0 & 1 & 0 \\[2pt]
+    $Y_3^*$ & 1 & $v^{12}w^{-12}$ & 0 & 0 & 0 & 0 & -1 \\[2pt]
+    $A$ & 3 & $v^4$ & 0 & 0 & 1 & 1 & 1\\[2pt]
+    $C$ & 2 & $w^6$ & 0 & 0 & 1 & 1 & 0\\[2pt]
+    $C^*$ & 2 & $v^6w^{-6}$ & 0 & 0 & 1 & 0 & 1\\
+    \bottomrule
+  \end{tabular}
+  \medskip
+  \caption{Decomposition of the third tensor power into eigenspaces of a braid generator}\label{tab:braid-gen}
+\end{table}
+
+For each of the representations appearing in the third tensor power,
+we can deduce the eigenspace decomposition of the braid
+generator. Suppose we have a $d$-dimensional action of the braid
+group, and consider the determinant of the full twist operator. If the
+braid generator has eigenvalues $\lambda_1,\dots,\lambda_d$ and the
+full twist has eigenvalue $\lambda_{\text{tot}}$, this is
+\[
+(\lambda_1\lambda_2\cdots\lambda_d)^6 = (\lambda_{\text{tot}})^d.
+\]
+On the other hand, each $\lambda_i$ must be in the set
+$\{v^{12},-v^{-6},-1,w^2,v^2w^{-2}\}$, since we can factor through a
+projection on to one of the irreducible representations appearing in
+$\fg^{\otimes2}$. In each case, this uniquely determines the
+$\lambda_i$. The results are shown in Table~\ref{tab:braid-gen}. We
+could also read this off from Deligne's formulas for decomposition of
+tensor powers. For instance, reading down the ``$-1$'' eigenvalue
+column of Table~\ref{tab:braid-gen} tells us that
+\[
+X_2 \otimes \fg \simeq X_1 \oplus X_2 \oplus Y_2^{(*)} \oplus X_3
+\oplus A \oplus C^{(*)},
+\]
+since $X_2$ is the representation in $\fg^{\otimes2}$ where the braid
+generator has eigenvalue $-1$.
+
+We can also conjecturally do the fourth tensor power. Cohen--de-Man
+\cite{MR1381778} say that the fourth tensor power should decompose as
+\begin{multline*}
+\fg^{\otimes4} = 5\cdot 1 \oplus 16X_1 \oplus 23X_2 \oplus 18Y_2^{(*)}
+  \oplus 21A \oplus 16C^{(*)} \oplus 12X_3 \oplus 6Y_3^{(*)} \\
+  \oplus 6D^{(*)} \oplus 8E \oplus 6F^{(*)} \oplus 3G^{(*)} \oplus 2H^{(*)}
+    \oplus 3I^{(*)} \oplus 3J \oplus X_4 \oplus Y_4^{(*)}
+\end{multline*}
+
+This is compatible (by computing dimension of endomorphism spaces)
+with the conjectured dimensions of the $n$-box space, following
+Cohen--de-Man's claim that exceptional representations of $F_4$ do not
+degenerate up to the fourth tensor power:
+\[
+\begin{tabular}{rr}
+  \toprule
+  $n$ & Dim\\ \midrule
+  0 & 1 \\ 1 & 0 \\ 2 & 1 \\ 3 & 1 \\ 4 & 5 \\ 5 & 16 \\
+  6 & 80 \\ 7 & 436 \\ 8 & 2891 \\ 9 & 22248 \\ 10 & $\ge 198774$ \\
+  \bottomrule
+\end{tabular}
+\]
+For the representations newly appearing in the fourth tensor power, we
+have Casimirs and eigenvalues below. The decomposition formulas also
+tell us the eigenvalues of the full twist on three strands within each
+of these representations and the eigenvalues of a braid
+generator. It's not clear what that buys us, however.
+
+\begin{table}
+  \centering
+  \medskip
+  \begin{tabular}{ccccccccccc}
+    \toprule
+%     &&&&&\multicolumn{5}{c}{Twist eigenvals}\\ \cmidrule(l){6-10}
+    Rep & Mult & Casimir & $\Fr$ & $\Tw_4$ \\ \midrule
+%      $v^{12}$ & $-v^6$ & $1$ & $w^2$ & $v^2w^{-2}$ \\ \midrule
+    $J$ & 3 & $\frac{20}{6}$ & $v^{-40}$ & $v^8$ \\[3pt]
+    $E$ & 8 & $\frac{21}{6}$ & $v^{-42}$ & $v^6$ \\[3pt]
+    $F$ & 6 & $\frac{22 - 2\lambda}{6}$ & $v^{-44}w^4$ & $v^4w^4$ \\[3pt]
+    $D$ & 6 & $\frac{22 - 4\lambda}{6}$ & $v^{-44}w^8$ & $v^4w^8$ \\[3pt]
+    $X_4$ & 1 & $\frac{24}{6}$ & $v^{-48}$ & 1\\[3pt]
+    $I$ & 3 & $\frac{24 - 4\lambda}{6}$ & $v^{-48}w^8$ & $w^8$\\[3pt]
+    $H$ & 2 & $\frac{24 - 6\lambda}{6}$ & $v^{-48}w^{12}$ & $w^{12}$\\[3pt]
+    $G$ & 3 & $\frac{24 - 8\lambda}{6}$ & $v^{-48}w^{16}$ & $w^{16}$ \\[3pt]
+    $Y_4$ & 1 & $\frac{24 - 12\lambda}{6}$ & $v^{-48}w^{24}$ & $w^{24}$ \\[3pt]
+    \bottomrule
+  \end{tabular}
+  \medskip
+  \caption{Representations in the fourth tensor power. The
+    representations have been sorted by the value of the Casimir.}
+  \label{tab:fourth-tensor}
+\end{table}
+
 \bibliographystyle{amsalpha}
 \bibliography{bibliography/bibliography}
 
