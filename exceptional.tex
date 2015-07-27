@@ -72,9 +72,10 @@
   We use the
   skein relation to compute the conjectural quantum exceptional
   polynomial for many knots, in particular
-  determining unconditionally the values of the quantum polynomials
-  for the exceptional Lie algebras in the adjoint representation on
-  these knots.
+  determining (unconditionally) the values of the quantum polynomials
+  for the exceptional Lie algebras on
+  these knots. The knots we can compute for include all knots with up
+  to 11 (12?) crossings.
 \end{abstract}
 
 %\subjclass[2000]{Primary xxx; Secondary xxx}
@@ -84,20 +85,9 @@
 
 \tableofcontents
 
-\section{Outline}
-\label{sec:outline}
-
 \begin{enumerate}
 \item Introduction
   \begin{enumerate}
-  \item Classical exceptional background
-    \begin{enumerate}
-    \item Jacobi and Vogel relations
-    \item Reduction conjecture
-    \item Consistency conjecture
-    \item Something about the $n$-box space, or perhaps delay. (Could
-      ask for finite-dimensionality, or positive-definite pairing
-    \end{enumerate}
   \item Quantum exceptional results and conjectures
     \begin{enumerate}
     \item Skein relations
@@ -109,6 +99,8 @@
       \end{enumerate}
     \item Conjectures: Reduction, consistency, $n$-box space
     \item Classical consistency $\Rightarrow$ quantum consistency.
+
+      Kontsevich integral argument
     \end{enumerate}
   \item Dimensions of $n$-box spaces
   \item Evaluations we can compute easily
@@ -116,17 +108,110 @@
     \item Exceptional computations hard previously
     \item With double-clasp switch
     \item Knots with width $\le$ 3
+    \item Knots and links with Conway graph with width $\le 3$,
+      including all 11-crossing diagrams and probably all 12-crossing
+      knots.
     \end{enumerate}
   \end{enumerate}
-\item Background: More on classical conjectures, etc.
-\item Quantum exceptional relation: Uniqueness given dimensions of spaces
-\item \dots
+\item Classical exceptional background
+  \begin{enumerate}
+  \item Jacobi and Vogel relations
+  \item Reduction conjecture
+  \item Consistency conjecture
+  \item Something about the $n$-box space, or perhaps delay. (Could
+    ask for finite-dimensionality, or positive-definite pairing
+  \end{enumerate}
+\item Quantum exceptional relation: Uniqueness given dimensions of
+  spaces
+\item Computations for $n$-box space, $n \le 6$
+\item Computations for knots with Conway width $\le 6$
+  \begin{enumerate}
+  \item Define Conway graph of a diagram, Conway width
+  \item Show that 11-crossing knots have Conway width $\le 6$
+  \end{enumerate}
+\item Known points on the quantum exceptional family
+  \begin{enumerate}
+  \item $U_q(\fg)$ for $\fg$ in Deligne's list in the adjoint
+    representation
+  \item $U_q(\fg)$ for $\fg$ in the $F_4$ family
+
+    At $q=1$, these have $v^6=-1$ (since the trivalent vertex is
+    symmetric). This family has only a finite number of points.
+  \end{enumerate}
 \end{enumerate}
 
 \section{Introduction}
 \label{sec:introduction}
 
-\subsection{The classical exceptional series}
+In this paper, we study a conjectural \emph{quantum exceptional
+  series}. To give a first statement of the conjecture, consider the
+field of rational functions in two variables $v$ and~$w$, and define
+\begin{align*}
+[k\lambda + n] &= w^kv^n - w^{-k}v^{-n}\\
+\{k\lambda + n\} &= w^k v^n + w^{-k} v^{-n} = \frac{[2k+2n]}{[k+n]}.
+\end{align*}
+This is analogous to ``quantum integer'' notation, adapted to a
+two-variable setting, but note that there is no denominator.
+\DPTtodo{Will need names for field of rational functions, as well as
+  rings with various denominators}
+
+Now consider the vector space of framed, embedded trivalent graphs in
+$\RR^3$, modulo local skein relations that let us reduce unknots,
+monogons, bigons, and triangles, and let us change framings along
+edges and at vertices:
+  \begin{equation}
+    \label{eq:simple-rels-spec}
+  \begin{aligned}
+    \unknot\; &= d&\quad
+    \loopvertex\;&=0\\[5pt]
+      \ngon{2}\;&= b\;\onestrandid&
+        \ngon[-90]{3}\; &= t\;\nvertex[-90]{3}\\[5pt]
+      \twist\; &= v^{12}\;\onestrandid&
+        \twistvertex\; &= -v^{6}\;\nvertex[-90]{3}
+  \end{aligned}
+  \end{equation}
+where
+\begin{align*}
+  d &= -\frac{\{2\}[\lambda+5][\lambda-6]}{[\lambda][\lambda-1]}\\
+  b &= \frac{\{\lambda+2\}\{\lambda-3\}[3]}{[1]}\\
+  t &= \{1\}\bigl(\{1\}w^2/v + (v^4 - v^2 - 1 - v^{-2} + v^{-4}) +
+      \{1\}v/w^2\bigr).
+\end{align*}
+To these skein relations, we add the \emph{quantum IHX relation}
+\begin{equation}
+v^{-3} \;
+\drawcrossX
+\;+ v \;
+\drawI
+\; -v^{-1} \;
+ \drawH
+\;
+ - \frac{[\lambda][\lambda-1]}{[1]}
+\left[\; \braidcross \;
+ + v^{4}\;
+\twostrandid
+\; + v^{-4} \;
+ \cupcap \;
+ \right] = 0.\label{eq:quant-except-spec}
+\end{equation}
+\begin{conjecture}
+  The vector space over $\QQ(v,w)$ of framed, embedded trivalent
+  graphs with $n$ free ends modulo the local skein relations in
+  \eqref{eq:simple-rels-spec} and~\eqref{eq:quant-except-spec} has
+  dimension $1,0,1,1,5,16,80$ for $n=0,1,2,3,4,5,6$, respectively, and
+  is finite-dimensional for all~$n$. In particular, these relations
+  suffice to evaluate any closed framed trivalent graph to a rational
+  function in $v$ and~$w$.
+\end{conjecture}
+In fact these relations are quite general. With some mild assumptions
+on the base ring, any skein theory where the $n$-box space has
+dimension at most $1,0,1,1,5$ for $n=0,1,2,3,4$ satisfies
+relation~\eqref{eq:quant-except-spec}. See
+Theorem~\ref{thm:quant-except}.
+
+
+
+\section{The classical exceptional series}
 \label{sec:classical-except}
 
 (Introduce Jacobi skein from Lie algebras.)
@@ -301,8 +386,11 @@ skein theory on embedded, framed trivalent graphs.
   \eqref{eq:quant-except} for some choice of~$v$ with $v^6 = s$.
 \end{theorem}
 
-In fact, the conditions we need are somewhat weaker; for instance, we
-don't need to know the exact dimensions, just that certain diagrams
+In fact, the conditions we need for the conclusion of
+Theorem~\ref{thm:quant-except} are somewhat weaker than stated. In
+particular, we
+don't need to know the exact dimensions of the $n$-box spaces, just
+that certain diagrams
 are linearly dependent. We do not spell out the details here.
 
 \begin{proof}
