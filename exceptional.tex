@@ -113,17 +113,24 @@
       knots.
     \end{enumerate}
   \end{enumerate}
-\item Classical exceptional background
+\item Classical exceptional series
   \begin{enumerate}
   \item Jacobi and Vogel relations
   \item Reduction conjecture
   \item Consistency conjecture
   \item Something about the $n$-box space, or perhaps delay. (Could
-    ask for finite-dimensionality, or positive-definite pairing
+    ask for finite-dimensionality, or positive-definite pairing)
   \end{enumerate}
 \item Quantum exceptional relation: Uniqueness given dimensions of
   spaces
 \item Computations for $n$-box space, $n \le 6$
+  \begin{enumerate}
+  \item Inner products approach
+  \item Explicit derivation approach
+  \item Denominators
+  \end{enumerate}
+\item Kontsevich integral argument: classical conjecture implies
+  quantum conjecture
 \item Computations for knots with Conway width $\le 6$
   \begin{enumerate}
   \item Define Conway graph of a diagram, Conway width
@@ -198,16 +205,20 @@ v^{-3} \;
   The vector space over $\QQ(v,w)$ of framed, embedded trivalent
   graphs with $n$ free ends modulo the local skein relations in
   \eqref{eq:simple-rels-spec} and~\eqref{eq:quant-except-spec} has
-  dimension $1,0,1,1,5,16,80$ for $n=0,1,2,3,4,5,6$, respectively, and
+  dimension $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$ for $n=0,1,2,3,4,5,6$, respectively, and
   is finite-dimensional for all~$n$. In particular, these relations
   suffice to evaluate any closed framed trivalent graph to a rational
   function in $v$ and~$w$.
 \end{conjecture}
-In fact these relations are quite general. With some mild assumptions
-on the base ring, any skein theory where the $n$-box space has
-dimension at most $1,0,1,1,5$ for $n=0,1,2,3,4$ satisfies
-relation~\eqref{eq:quant-except-spec}. See
-Theorem~\ref{thm:quant-except}.
+
+\begin{remark}
+  The relations above are quite general. With some mild assumptions on
+  the base ring, any skein theory where the $n$-box space has
+  dimension at most $1,0,1,1,5$ for $n=0,1,2,3,4$ satisfies a version
+  of relation~\eqref{eq:quant-except-spec}. See
+  Theorem~\ref{thm:quant-except} in Section~\ref{sec:relation} for a
+  precise statement.
+\end{remark}
 
 
 
@@ -233,6 +244,7 @@ value~$6$, which implies the value of a trivalent bubble.
 In addition, Vogel observed that all the exceptional Lie algebras
 satisfy another relation, the \emph{classical exceptional relation},
 which can be put in the form
+\DPTtodo{Need to rename $w$, as we reuse it}
 \begin{equation}
 \ngon[45]{4}\; = \;\drawI\; + \;\drawH\;
  + w \left[ \;\twostrandid\; + \;\cupcap\; + \;\symcross\; \right]
@@ -270,8 +282,8 @@ decompositions of the adjoint representation), and invariant under
 outer automorphisms (or symmetries of the Dynkin diagram).
 
 \begin{remark}
-  Almost every paper on the exceptional series introduces its own
-  parameter. We hold with this tradition by introducing the
+  Almost every paper on the exceptional series introduces at least one new
+  parameter for the series. We hold with this tradition by introducing the
   parameter~$w$ above. For reference, here is a list of the various
   parameters that have been used, along with how they are related to
   the parameter $\mu$ and who introduced them. It is often natural to
@@ -279,13 +291,15 @@ outer automorphisms (or symmetries of the Dynkin diagram).
   ambiguous, with two values for each group; if this applies, the
   involution relating the two values is also listed.
   \begin{enumerate}
-  \item $a = \mu/6$; involution $a \leftrightarrow -a-1/6$ \cite{MR1378507}.
+  \item $a_D = \mu/6$; involution $a \leftrightarrow -a-1/6$ \cite{MR1378507}.
   \item $\lambda = -\mu$; involution $\lambda \leftrightarrow 1-\lambda$ \cite{MR1378507}.
   \item $\mu$ as in the table above; involution $\mu \leftrightarrow -1-\mu$ \cite{MR1411045}.
   \item $\nu = 1/\mu$; involution $\nu \leftrightarrow -\nu/(\nu+1)$
     \cite{MR1952563}.
   \item The dual Coxeter number $h^\vee = 6/\mu$
     \cite{MR1952563}.
+  \item The dimension of an associated triality algebra $a_{LM} =
+    2(1-\mu)/\mu$ \cite{MR1933384}.
   \item The number $w$ in Equation~\eqref{eq:classical-except}, with
     $w=\mu(1+\mu)/2$. This appears to be the first time it has been
     published, but it appeared in earlier preprint
@@ -297,9 +311,9 @@ outer automorphisms (or symmetries of the Dynkin diagram).
     \]
     With vertices normalized by
     Equation~\eqref{eq:classical-bigon-trigon}, we have $\alpha = -\mu$ and
-    $\beta = 1+\mu$.
-    The involution switches $\alpha$ and $\beta$
-    \cite{MR2769234}. The usual quadratic Casimir is $12 - 2\psi_L$.
+    $\beta = 1+\mu$ \cite{MR2769234}.
+    The involution switches $\alpha$ and $\beta$. The usual quadratic
+    Casimir is $12 - 2\psi_L$.
   \item The dimension of the Lie algebra $d = \dim \mathfrak{g} =
     -2\frac{(\mu-5)(\mu+6)}{\mu(\mu+1)}$.
   \end{enumerate}
