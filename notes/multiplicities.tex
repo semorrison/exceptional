@@ -38,7 +38,24 @@
 \DeclareMathOperator{\Fr}{Fr}
 
 \begin{document}
-\title{Multiplicities in the quantum exceptional series}
+\title{Irreducible representatinos in the quantum exceptional series}
+
+\author[Morrison]{Scott Morrison}
+\address{Mathematical Sciences Institute, Australian National University}
+\email{scott.morrison@anu.edu.au}
+
+\author[Snyder]{Noah Snyder}
+\address{Bloomington, Indiana, USA}
+\email{nsnyder1@indiana.edu} % Noah, do you prefer a different e-mail address?
+
+\author[Thurston]{Dylan~P.~Thurston}
+\address{Bloomington, Indiana, USA}
+\email{dpthurst@indiana.edu}
+
+\maketitle
+
+\section{Multiplicities}
+\label{sec:multiplicities}
 
 For the classical exceptional series, Deligne \cite{MR1378507} gives
 decomposition formulas for up to the third tensor power of the adjoint
@@ -208,7 +225,8 @@ degenerate up to the fourth tensor power:
 \end{tabular}
 \]
 For the representations newly appearing in the fourth tensor power, we
-have Casimirs and eigenvalues below. The decomposition formulas also
+have Casimirs and eigenvalues in Table~\ref{tab:fourth-tensor}. The
+decomposition formulas also
 tell us the eigenvalues of the full twist on three strands within each
 of these representations and the eigenvalues of a braid
 generator. It's not clear what that buys us, however.
@@ -237,6 +255,93 @@ generator. It's not clear what that buys us, however.
     representations have been sorted by the value of the Casimir.}
   \label{tab:fourth-tensor}
 \end{table}
+
+\section{Quantum dimensions}
+\label{sec:quantum-dimensions}
+
+We can also compute the quantum dimensions of the representations in
+Table~\ref{tab:e-vals}. As expected, they all factor into products of
+linear terms. We use the notation
+\[
+[a\lambda + b] = w^av^b - w^{-a}v^{-b}.
+\]
+Then we have
+\begin{align*}
+  \dim(1) &= 1 \\
+  \dim(X_1) &= \frac{[4][\lambda+5][\lambda-6]}{[2][\lambda][\lambda-1]}\\
+  \dim(X_3) &= \pm \frac{[4][5][\lambda+5][\lambda+4][\lambda-5][\lambda-6][2\lambda+4][2\lambda-6][3\lambda+3][3\lambda-6]}
+                 {[1][2][\lambda+1][\lambda][\lambda-1][\lambda-2][2\lambda][2\lambda-2][3\lambda][3\lambda-3]}\\
+  \dim(Y3) &= \pm v^* w^* \frac{[4][5][6][\lambda+5][\lambda-4][\lambda-5][\lambda-6][2\lambda-4][5\lambda-6]}
+                     {[2][\lambda][\lambda-1][\lambda-2][2\lambda][2\lambda-1][2\lambda-2][3\lambda][3\lambda-1]}
+\end{align*}
+
+Graphically, we can plot these formulas as follows. A $\bullet$ at
+$(x,y)$ means that there is a factor of $[x+y\lambda]$ in the
+numerator, and a $\times$ at $(x,y)$ means that there is a factor of
+$[x+y\lambda]$ in the denominator. In particular, if there is a mark
+at $(x,y)$, there will be the same mark at $(-x,-y)$. The $y$ axis is
+drawn slanted to properly reflect the symmetries of the theory
+($w \mapsto v/w$).
+
+Note the similarities with the kinds of factors that come out of the
+Weyl character formula.
+\begingroup
+\newcommand{\pnode}[2]{
+  \node at (#1,#2) {$\bullet$};
+  \node at (-#1,-#2) {$\bullet$};
+}
+\newcommand{\mnode}[2]{
+  \node at (#1,#2) {$\times$};
+  \node at (-#1,-#2) {$\times$};
+}
+\newcommand{\axes}[2]{
+  \draw (-#1-0.5,0) to (#1+0.5,0);
+  \draw (0,-#2-0.5) to (0,#2+0.5);
+  \foreach \x in {-#1,...,#1}
+    \foreach \y in {-#2,...,#2}
+      \fill (\x,\y) circle [radius=0.5pt];
+}
+
+$\dim(X_1)$:
+\[
+\begin{tikzpicture}[x=0.4cm,y={(0.2cm,0.4cm)}]
+  \axes{7}{2};
+  \pnode{4}{0}; \pnode{5}{1}; \pnode{-6}{1};
+  \mnode{2}{0};
+  \mnode{0}{1};
+  \mnode{-1}{1};
+\end{tikzpicture}
+\]
+
+$\dim(X_3)$:
+\[
+\begin{tikzpicture}[x=0.4cm,y={(0.2cm,0.4cm)}]
+  \axes{7}{4};
+  \pnode{4}{0}; \pnode{5}{0};
+  \pnode{5}{1}; \pnode{4}{1}; \pnode{-5}{1}; \pnode{-6}{1};
+  \pnode{4}{2}; \pnode{-6}{2};
+  \pnode{3}{3}; \pnode{-6}{3};
+  \mnode{1}{0}; \mnode{2}{0};
+  \mnode{1}{1}; \mnode{0}{1}; \mnode{-1}{1}; \mnode{-2}{1};
+  \mnode{0}{2}; \mnode{-2}{2};
+  \mnode{0}{3}; \mnode{-3}{3};
+\end{tikzpicture}
+\]
+
+$\dim(Y_3)$:
+\[
+\begin{tikzpicture}[x=0.4cm,y={(0.2cm,0.4cm)}]
+  \axes{7}{5};
+  \pnode{4}{0}; \pnode{5}{0}; \pnode{6}{0};
+  \pnode{5}{1}; \pnode{-4}{1}; \pnode{-5}{1}; \pnode{-6}{1};
+  \pnode{-4}{2}; \pnode{-6}{5};
+  \mnode{2}{0};
+  \mnode{0}{1}; \mnode{-1}{1}; \mnode{-2}{1};
+  \mnode{0}{2}; \mnode{-1}{2}; \mnode{-2}{2};
+  \mnode{0}{3}; \mnode{-1}{3};
+\end{tikzpicture}
+\]
+\endgroup
 
 \bibliographystyle{amsalpha}
 \bibliography{bibliography/bibliography}
