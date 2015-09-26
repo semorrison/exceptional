@@ -269,9 +269,13 @@ Then we have
 \begin{align*}
   \dim(1) &= 1 \\
   \dim(X_1) &= \frac{[4][\lambda+5][\lambda-6]}{[2][\lambda][\lambda-1]}\\
+  \dim(X_2) &= \frac{[5][\lambda+5][\lambda+3][\lambda-4][\lambda-6][2\lambda+4][2\lambda-6]}
+                  {[1][\lambda+2][\lambda][\lambda-1][\lambda-3][2\lambda][2\lambda-2]}\\
+  \dim(Y_2) &= \frac{[4][5][6][\lambda+5][\lambda-4][3\lambda-6]}
+                 {[2][\lambda][\lambda-1][\lambda-2][2\lambda][2\lambda-1]}\\
   \dim(X_3) &= \pm \frac{[4][5][\lambda+5][\lambda+4][\lambda-5][\lambda-6][2\lambda+4][2\lambda-6][3\lambda+3][3\lambda-6]}
                  {[1][2][\lambda+1][\lambda][\lambda-1][\lambda-2][2\lambda][2\lambda-2][3\lambda][3\lambda-3]}\\
-  \dim(Y3) &= \pm v^* w^* \frac{[4][5][6][\lambda+5][\lambda-4][\lambda-5][\lambda-6][2\lambda-4][5\lambda-6]}
+  \dim(Y_3) &= \pm v^* w^* \frac{[4][5][6][\lambda+5][\lambda-4][\lambda-5][\lambda-6][2\lambda-4][5\lambda-6]}
                      {[2][\lambda][\lambda-1][\lambda-2][2\lambda][2\lambda-1][2\lambda-2][3\lambda][3\lambda-1]}
 \end{align*}
 
@@ -310,6 +314,32 @@ $\dim(X_1)$:
   \mnode{2}{0};
   \mnode{0}{1};
   \mnode{-1}{1};
+\end{tikzpicture}
+\]
+
+$\dim(X_2)$:
+\[
+\begin{tikzpicture}[x=0.4cm,y={(0.2cm,0.4cm)}]
+  \axes{7}{3};
+  \pnode{5}{0};
+  \pnode{5}{1}; \pnode{3}{1}; \pnode{-4}{1}; \pnode{-6}{1};
+  \pnode{4}{2}; \pnode{-6}{2};
+  \mnode{1}{0};
+  \mnode{2}{1}; \mnode{0}{1}; \mnode{-1}{1}; \mnode{-3}{1};
+  \mnode{0}{2}; \mnode{-2}{2};
+\end{tikzpicture}
+\]
+
+$\dim(Y_2)$:
+\[
+\begin{tikzpicture}[x=0.4cm,y={(0.2cm,0.4cm)}]
+  \axes{7}{3};
+  \pnode{4}{0}; \pnode{5}{0}; \pnode{6}{0};
+  \pnode{5}{1}; \pnode{-4}{1};
+  \pnode{-6}{3};
+  \mnode{2}{0};
+  \mnode{0}{1}; \mnode{-1}{1}; \mnode{-2}{1};
+  \mnode{0}{2}; \mnode{-1}{2};
 \end{tikzpicture}
 \]
 
