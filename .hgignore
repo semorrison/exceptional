@@ -8,8 +8,10 @@ syntax: glob
 matrices
 bibliography
 
-*.pdf
+exceptional.pdf
+notes/*.pdf
 *.toc
+*.fls
 *.aux
 *.fdb_latexmk
 *.log
