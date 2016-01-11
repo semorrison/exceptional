@@ -201,26 +201,53 @@ v^{-3} \;
  \cupcap \;
  \right] = 0.\label{eq:quant-except-spec}
 \end{equation}
-\begin{conjecture}
-  The vector space over $\QQ(v,w)$ of framed, embedded trivalent
-  graphs with $n$ free ends modulo the local skein relations in
-  \eqref{eq:simple-rels-spec} and~\eqref{eq:quant-except-spec} has
-  dimension $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$ for $n=0,1,2,3,4,5,6$, respectively, and
-  is finite-dimensional for all~$n$. In particular, these relations
-  suffice to evaluate any closed framed trivalent graph to a rational
-  function in $v$ and~$w$.
+
+We conjecture that the skein relations above suffice to evaluate
+uniquely every framed knotted trivalent graph. In fact we split the
+conjecture up into different parts.
+
+\DPTtodo{Introduced some placeholder terminology here so I could state
+  the conjectures more precisely. Feel free to change it.}
+Let $R$ be the ring $\QQ[v,w,v - v^{-1},w - w^{-1}, w/v - v/w]$, that
+is, the minimal ring for which all of the denominators in the skein
+relations are defined. Let $\Skq{n,m}$ be the \emph{skein algebra vector space}
+of framed, embedded trivalent $(n,m)$ tangles modulo the
+local skein relations in \eqref{eq:simple-rels-spec}
+and~\eqref{eq:quant-except-spec}. The different vector spaces
+$\Skq{n,m}$ combine into a category $\Skqcat$ where the objects are
+integers and the morphisms from $n$ to $m$ are elements of $\Skq{n,m}$.
+
+\begin{conjecture}[Quantum consistency]
+  \label{conj:quant-consist}
+  There is a category $\mathsf{QExcept}$ where the objects are
+  integers and morphisms are finite-dimensional, free $R$-modules, and
+  a functor $\eval$ from $\Skqcat$ to $M_n$, that is the identity on
+  objects and surjective on morphisms after extending scalars to
+  $\QQ(v,w)$. Furthermore, $\mathsf{QExcept}(n,m)$ has dimension
+  $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
+  for $n+m=0,1,2,3,4,5,6$, respectively, and $\eval$ takes a single
+  strand and a trivalent vertex to generators of the respective
+  morphism spaces.
 \end{conjecture}
 
-\begin{remark}
+\DPTtodo{Is this too weak? To derive square reduction, we do assume
+  something more about the denominators, so we probably do need to
+  extend scalars at least a little. Would be nice to have a version of
+  sufficiency that doesn't assume consistency}
+\begin{conjecture}[Quantum sufficiency]
+  \label{conj:quant-suffic}
+  After extending scalars to $\QQ(v,w)$, the functor $\eval$
+  conjectured above is injective on each morphism space. In
+  particular, these relations suffice to evaluate any closed framed
+  trivalent graph to a rational function in $v$ and~$w$.
+\end{conjecture}
+
   The relations above are quite general. With some mild assumptions on
   the base ring, any skein theory where the $n$-box space has
   dimension at most $1,0,1,1,5$ for $n=0,1,2,3,4$ satisfies a version
   of relation~\eqref{eq:quant-except-spec}. See
   Theorem~\ref{thm:quant-except} in Section~\ref{sec:relation} for a
   precise statement.
-\end{remark}
-
-
 
 \section{The classical exceptional series}
 \label{sec:classical-except}
