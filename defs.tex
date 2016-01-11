@@ -64,6 +64,7 @@
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
 \newtheorem{proposition}{Proposition}
+\numberwithin{proposition}{section}
 \newtheorem{lemma}[proposition]{Lemma}
 \newtheorem{corollary}[proposition]{Corollary}
 \newtheorem{claim}[proposition]{Claim}
@@ -91,6 +92,13 @@
 \newcommand{\NStodo}[1]{\todo[color=blue!40]{#1}}
 \newcommand{\citationneeded}{\ \parbox{1.25in}{\todo[inline]{citation needed}}\ }
 \newcommand{\referenceneeded}{\ \parbox{1.35in}{\todo[inline]{reference needed}}\ }
+
+% Commands for exceptional paper
+\newcommand{\Sk}[1]{\mathop{\mathrm{Sk}}(#1)}
+\newcommand{\Skq}[1]{\mathop{\mathrm{Sk}_q}(#1)}
+\newcommand{\Skcat}{\mathop{\mathsf{Sk}}}
+\newcommand{\Skqcat}{\mathop{\mathsf{Sk}_q}}
+\DeclareMathOperator{\eval}{eval}
 
 %%% Local Variables: 
 %%% mode: latex
