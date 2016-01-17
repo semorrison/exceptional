@@ -1,0 +1,104 @@
+\documentclass[12pt]{amsart}
+\usepackage{amssymb}
+\usepackage{cite}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{mdwtab}
+\usepackage{mathtools}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyphenat}
+\usepackage{enumitem}
+\usepackage{ifpdf}
+\ifpdf
+  \usepackage[pdftex]{graphicx}
+  \usepackage[pdftex,margin=1.25in]{geometry}
+  \usepackage[bookmarks=true, bookmarksopen=true,%
+    bookmarksdepth=3,bookmarksopenlevel=2,%
+    colorlinks=true,%
+    linkcolor=blue,%
+    citecolor=blue,%
+    filecolor=blue,%
+    menucolor=blue,%
+    urlcolor=blue]{hyperref}
+\else
+  \usepackage[dvips]{graphicx}
+  \usepackage[dvips,margin=1in]{geometry}
+  % Use hyperref with all features turned off even in DVI mode, since
+  % the .aux file format changes
+  \usepackage[draft]{hyperref}
+\fi
+\usepackage{url}
+\usepackage{todonotes}
+
+\input{macros}
+\input{defs}
+\DeclareMathOperator{\Tw}{Tw}
+\DeclareMathOperator{\HTw}{HTw}
+\DeclareMathOperator{\Fr}{Fr}
+
+\begin{document}
+\title{Link invariants from the quantum exceptional series}
+
+\author[Morrison]{Scott Morrison}
+\address{Mathematical Sciences Institute, Australian National University}
+\email{scott.morrison@anu.edu.au}
+
+\author[Snyder]{Noah Snyder}
+\address{Bloomington, Indiana, USA}
+\email{nsnyder1@indiana.edu} % Noah, do you prefer a different e-mail address?
+
+\author[Thurston]{Dylan~P.~Thurston}
+\address{Bloomington, Indiana, USA}
+\email{dpthurst@indiana.edu}
+
+\maketitle
+
+\newcommand{\V}{\mathcal{P}}
+\newcommand{\nn}[1]{{\color{red}[[#1]]}}
+
+\section{Link invariants}
+\subsection{Matrices}
+Recall that we have candidate bases for $\V_n = \operatorname{Hom}(1 \to V^{\otimes n})$, for $n$ at most 6.
+In this section, we obtain matrices for the operators braiding and rotation operators on $\V_n$.
+\nn{diagrams defining these as the rotation and the braiding}.
+
+We have a pairing $\langle , \rangle: \V_n \otimes \V \to \V_0$ defined by \nn{diagram}, and for many 
+(conjecturally all) diagrams in $\V_0$ we can use the relations to evaluate to a rational function 
+in $v$ and $w$. Of course, our basis is far from orthonormal with respect to this pairing!
+We find, however, that up to $n=6$, we can evaluate all matrix entries of
+$M = \left(\langle e_i, e_j \rangle\right)_{i,j}$,
+but rather unfortunately inverting this matrix is computationally infeasible \nn{for which n?}.
+(Recall that arithmetic over $\mathcal{Q}(v,w)$ is inefficient.)
+
+Now, given an operator $T: \V_n \to \V_n$, the associated matrix with respect to our chosen basis is
+$[T] = AM^{-1}$, where $A = \left(\langle T e_i, e_j \rangle\right)_{i,j}$. Again, we find that for
+$T$ either the braiding or the rotation, we can evaluate all of the matrix entries of the $A$ 
+as rational functions. Even though directly inverting $M$ is infeasible, we find that we can
+calculate the product $A M^{-1}$ in each case.
+(Nevertheless this remains a difficult calculation. \nn{some explanation of what we do, with the CRT})
+
+\nn{Explicit matrices are available with the {\tt arXiv} sources of this article.}
+
+\subsection{Limited planar operations}
+Thinking of the vector space $\V_n$ as forming a planar algebra, 
+at this point we have limited access to the full set of operations indexed. We can compute
+$cap : \V_n \to \V_{n-2}$, 
+$cup : \V_n \to V_{n+2}$, 
+$\rho: \V_n \to \V_n$, 
+$m_{4,4,2} : \V_4 \otimes \V_4 \to \V_4$,
+$m_{6,4,2} : \V_6 \otimes \V_4 \to \V_6$, 
+and finally $m_{4,4,1} : \V_4 \otimes \V_4 \to V_6$.
+
+\nn{explain how we actually compute these maps, from above!}
+
+
+\subsection{6-box presentations of links}
+Typically, we may choose to think about a diagrammatically defined tangle invariant as a 
+morphism of planar algebras $\operatorname{Tangle} \to \mathcal{Q}$ for some planar algebra 
+$\mathcal{Q}$,
+sending the crossing to a suitable element of $\mathcal{Q}_4$. In our case only know a 
+limited set of operations in the target planar algebra
+
+
+\end{document}
