@@ -67,14 +67,15 @@ We have a pairing $\langle , \rangle: \V_n \otimes \V \to \V_0$ defined by \nn{d
 (conjecturally all) diagrams in $\V_0$ we can use the relations to evaluate to a rational function 
 in $v$ and $w$. Of course, our basis is far from orthonormal with respect to this pairing!
 We find, however, that up to $n=6$, we can evaluate all matrix entries of
-$M = \left(\langle e_i, e_j \rangle\right)_{i,j}$,
-but rather unfortunately inverting this matrix is computationally infeasible \nn{for which n?}.
-(Recall that arithmetic over $\mathcal{Q}(v,w)$ is inefficient.)
+$M_n = \left(\langle e_i, e_j \rangle\right)_{i,j}$,
+but rather unfortunately inverting this matrix is computationally infeasible for $n=6$.
+(Recall that arithmetic over $\mathcal{Q}(v,w)$ is quite inefficient!)
 
-Now, given an operator $T: \V_n \to \V_n$, the associated matrix with respect to our chosen basis is
-$[T] = AM^{-1}$, where $A = \left(\langle T e_i, e_j \rangle\right)_{i,j}$. Again, we find that for
-$T$ either the braiding or the rotation, we can evaluate all of the matrix entries of the $A$ 
-as rational functions. Even though directly inverting $M$ is infeasible, we find that we can
+Now, given an operator $T: \V_n \to \V_m$, the associated matrix with respect to our chosen basis is
+$AM_m^{-1}$, where $A = \left(\langle T e_i, e_j \rangle\right)_{i,j}$. Again, we find that for
+$T$ any of the rotation, the braiding, the cup, the cap, the fuse, and the fork, 
+we can evaluate all of the matrix entries of $A$ as rational functions. 
+Even though directly inverting $M$ is infeasible, we find that we can
 calculate the product $A M^{-1}$ in each case.
 (Nevertheless this remains a difficult calculation. \nn{some explanation of what we do, with the CRT})
 
@@ -82,23 +83,84 @@ calculate the product $A M^{-1}$ in each case.
 
 \subsection{Limited planar operations}
 Thinking of the vector space $\V_n$ as forming a planar algebra, 
-at this point we have limited access to the full set of operations indexed. We can compute
+at this point we have limited access to the full set of operations indexed by planar tangle. We can compute
 $cap : \V_n \to \V_{n-2}$, 
 $cup : \V_n \to V_{n+2}$, 
 $\rho: \V_n \to \V_n$, 
 $m_{4,4,2} : \V_4 \otimes \V_4 \to \V_4$,
 $m_{6,4,2} : \V_6 \otimes \V_4 \to \V_6$, 
-and finally $m_{4,4,1} : \V_4 \otimes \V_4 \to V_6$.
+and finally $m_{4,4,1} : \V_4 \otimes \V_4 \to V_6$ (which in fact can be built out of the others).
 
 \nn{explain how we actually compute these maps, from above!}
 
 
-\subsection{6-box presentations of links}
+\subsection{Links with Conway width 6}
 Typically, we may choose to think about a diagrammatically defined tangle invariant as a 
 morphism of planar algebras $\operatorname{Tangle} \to \mathcal{Q}$ for some planar algebra 
 $\mathcal{Q}$,
-sending the crossing to a suitable element of $\mathcal{Q}_4$. In our case only know a 
-limited set of operations in the target planar algebra
+sending the crossing to a suitable element of $\mathcal{Q}_4$. In our case we only know a 
+limited set of operations in the target planar algebra, and so can only compute the invariants
+of links which we can generate from the crossing using those available planar operations.
+
+\begin{definition}
+The \emph{width} of a planar graph generically embedded in the plane is the maximum number of intersections with a
+horizontal line. The width of a planar graph is the minimum width over all generic embeddings.
+
+The \emph{Conway width} of a 4-valent planar graph is the width of the graph after repeatedly collapsing all digons.
+The Conway width of a link is the Conway width of its shadow.
+\end{definition}
+
+It is easy to see that with the available planar operations, we can evaluate all Conway width 6 links.
+
+\begin{lemma}
+All knots and links with at most 12 crossings except 
+the alternating link with shadow the cuboctahedron 
+have Conway width at most 6.
+\end{lemma}
+\begin{proof}
+\nn{... Conway}
+\end{proof}
+In fact, all prime knots up to 11 crossings have width at most 6, 
+with \nn{which? how many?} exceptions, 
+which are all Montesinos knots, and are easily seen to have Conway width 4.
+
+The obvious greedy algorithm (repeatedly collapse digons, when that is not possible apply 
+$m_{4,4,1}$ to merge two 4-boxes into a 6-box, and afterwards hope that $m_{6,4,2}$ 
+suffices to combine all remaining 4-boxes into that 6-box) works on all but one prime knot up to
+12 crossings, except \nn{... is it worth explaining this? perhaps it illustrates the greedy algorithm}
+
+\subsection{Knotted trivalent graphs}
+\nn{just some examples}
+\nn{including the unknotted dodecahedron}
+
+\subsection{A 2-variable polynomial invariant}
+Using the above observations, we have computed the (conjectural!) invariant $\xi$ of all
+prime links up to 11 crossings, and all prime knots up to 12 crossings. We observe that the values
+of $\xi$ are always of the form
+$$\xi(L) - d^{k} = 
+\frac{[3][4][\lambda-6][\lambda+5]}{[1][2][\lambda-1]^{k+1} [\lambda]^{k+1}} \mathcal E(L),$$
+where $d = \xi(\textrm{unknot}) = ...$, $k$ is the number of components of $L$, 
+and $\mathcal E(L)$ is some Laurent polynomial
+(not just a rational function) in $v$ and $w$.
+These polynomials $\mathcal E (L)$ are tabulated
+\nn{ at ...}, and in machine readable format as \nn{...} in the {\tt arXiv} sources.
+
+It would be desirable to verify that these computed invariants specialize correctly to the
+quantum link invariants of the adjoint representations of the exceptional Lie algebras.
+Unfortunately, these invariants have previously been rather hard to compute, so there is little
+available to check against. The Lie algebra $\mathfrak{sl}_2$ lies on the exceptional curve, and
+so the 2nd coloured Jones polynomial 
+(that is, colored by the 3-dimensional adjoint representation) 
+should be the \nn{$w = ...,  v= ...$} specialisation. This is indeed the case for all the links
+tabulated above.
+
+Even for the adjoint representation of $G_2$, an earlier program by the first author
+for computing quantum knot invariants gets only as far as the trefoil. Sure enough, we have
+$$\xi(3_1) = ...$$
+which at \nn{$w = ...,  v= ...$} gives \nn{...}
+
+The fact that $\xi(12^n_{...}) = ...$ suggests that the $E_8$ adjoint quantum knot invariant should be
+$$...$$, but previous methods haven't come close to computing this.
 
 
 \end{document}
