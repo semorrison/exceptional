@@ -1,41 +1,8 @@
 \documentclass[12pt]{amsart}
-\usepackage{amssymb}
-\usepackage{cite}
-\usepackage{array}
-\usepackage{booktabs}
-\usepackage{mdwtab}
-\usepackage{mathtools}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{hyphenat}
-\usepackage{enumitem}
-\usepackage{ifpdf}
-\ifpdf
-  \usepackage[pdftex]{graphicx}
-  \usepackage[pdftex,margin=1.25in]{geometry}
-  \usepackage[bookmarks=true, bookmarksopen=true,%
-    bookmarksdepth=3,bookmarksopenlevel=2,%
-    colorlinks=true,%
-    linkcolor=blue,%
-    citecolor=blue,%
-    filecolor=blue,%
-    menucolor=blue,%
-    urlcolor=blue]{hyperref}
-\else
-  \usepackage[dvips]{graphicx}
-  \usepackage[dvips,margin=1in]{geometry}
-  % Use hyperref with all features turned off even in DVI mode, since
-  % the .aux file format changes
-  \usepackage[draft]{hyperref}
-\fi
-\usepackage{url}
-\usepackage{todonotes}
 
+\input{packages}
 \input{macros}
 \input{defs}
-\DeclareMathOperator{\Tw}{Tw}
-\DeclareMathOperator{\HTw}{HTw}
-\DeclareMathOperator{\Fr}{Fr}
 
 \begin{document}
 \title{Link invariants from the quantum exceptional series}
@@ -55,43 +22,99 @@
 \maketitle
 
 \newcommand{\V}{\mathcal{P}}
-\newcommand{\nn}[1]{{\color{red}[[#1]]}}
+
 
 \section{Link invariants}
 \subsection{Matrices}
 Recall that we have candidate bases for $\V_n = \operatorname{Hom}(1 \to V^{\otimes n})$, for $n$ at most 6.
-In this section, we obtain matrices for the operators braiding and rotation operators on $\V_n$.
-\nn{diagrams defining these as the rotation and the braiding}.
+In this section, we obtain matrices for the braiding and rotation operators on $\V_n$.
 
-We have a pairing $\langle , \rangle: \V_n \otimes \V \to \V_0$ defined by \nn{diagram}, and for many 
+We have a pairing $\langle - , - \rangle: \V_n \otimes \V \to \V_0$ defined by 
+\[
+  \langle x, y \rangle =
+  \begin{tikzpicture}[baseline]
+    \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {$x$};
+    \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em, right=0.5cm of x] (y) {$y$};
+    \draw (x.90) to[in=90, out=90] (y.90);
+    \draw (x.135) to[in=90, out=90] (y.45);
+    \draw (x.45) to[in=90, out=90] (y.135);
+  \end{tikzpicture}
+\]
+and for many 
 (conjecturally all) diagrams in $\V_0$ we can use the relations to evaluate to a rational function 
-in $v$ and $w$. Of course, our basis is far from orthonormal with respect to this pairing!
+in \(\QQ(v,w)\). Of course, our basis is far from orthonormal with respect to this pairing!
 We find, however, that up to $n=6$, we can evaluate all matrix entries of
 $M_n = \left(\langle e_i, e_j \rangle\right)_{i,j}$,
 but rather unfortunately inverting this matrix is computationally infeasible for $n=6$.
-(Recall that arithmetic over $\mathcal{Q}(v,w)$ is quite inefficient!)
+(Recall that arithmetic over $\QQ(v,w)$ is quite inefficient!)
 
 Now, given an operator $T: \V_n \to \V_m$, the associated matrix with respect to our chosen basis is
-$AM_m^{-1}$, where $A = \left(\langle T e_i, e_j \rangle\right)_{i,j}$. Again, we find that for
-$T$ any of the rotation, the braiding, the cup, the cap, the fuse, and the fork, 
-we can evaluate all of the matrix entries of $A$ as rational functions. 
+$AM_m^{-1}$, where $A = \left(\langle T e_i, e_j \rangle\right)_{i,j}$. We find that for
+$T$ any of 
+\begin{align*}
+  (\rho_n : \V_n \to \V_n) & = 
+    \begin{tikzpicture}[baseline]
+      \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
+      \draw (x.90) -- ++(0,0.5);
+      \draw (x.45) -- ++(0,0.5);
+      \draw (x.135) to[in=90, out=90] ++(-0.75,0) 
+                     to[in=180,out=-90] ($(x.-90)+(0,-0.25)$) 
+                     to[out=0,in=-90] ($(x.45)+(0.75,0)$)
+                     -- ++(0,0.5);
+    \end{tikzpicture} \\
+  (\beta_n : \V_n \to \V_n) & = 
+  \\
+  (\cap_n : \V_n \to \V_{n-2}) & = 
+  \\
+  (\cup_n : \V_n \to \V_{n+2}) & = 
+  \\
+  (\fork_n : \V_n \to \V_{n+1}) & = 
+  \\
+  (\fuse_n : \V_n \to \V_{n-1}) & = 
+  \\
+  (H_n : \V_n \to \V_n) & = 
+\end{align*}
+for values of $n$ so that source and target are amongst $\V_0, \ldots, \V_6$,
+we can evaluate all of the matrix entries of $A$ as rational functions.
+(Even though $H_n = \rho_{n}^{-1} \fuse_n \rho_{n+1} \fork_n$, 
+this does not allow us to compute the matrix for $H_6$, so we need to find this directly.)
+
 Even though directly inverting $M$ is infeasible, we find that we can
 calculate the product $A M^{-1}$ in each case.
 (Nevertheless this remains a difficult calculation. \nn{some explanation of what we do, with the CRT})
 
-\nn{Explicit matrices are available with the {\tt arXiv} sources of this article.}
+Explicit matrices are available with the {\tt arXiv} sources of this article, as the files {\tt /matrices/OP-n.m}, where {\tt OP} is one of {\tt rotation}, {\tt braiding}, {\tt cup}, {\tt cap}, {\tt fork}, {\tt fuse}, {\tt H}. The matrices are written in terms of the variables $d, v$. \SMtodo{actually create these files}
 
 \subsection{Limited planar operations}
-Thinking of the vector space $\V_n$ as forming a planar algebra, 
-at this point we have limited access to the full set of operations indexed by planar tangle. We can compute
-$cap : \V_n \to \V_{n-2}$, 
-$cup : \V_n \to V_{n+2}$, 
-$\rho: \V_n \to \V_n$, 
-$m_{4,4,2} : \V_4 \otimes \V_4 \to \V_4$,
-$m_{6,4,2} : \V_6 \otimes \V_4 \to \V_6$, 
-and finally $m_{4,4,1} : \V_4 \otimes \V_4 \to V_6$ (which in fact can be built out of the others).
+Thinking of the vector spaces $\V_n$ as forming a planar algebra, 
+at this point we have limited access to the full set of operations indexed by planar tangle. We have computed above
+$\cap_n : \V_n \to \V_{n-2}$, 
+$\cup_n : \V_n \to V_{n+2}$, and
+$\rho_n: \V_n \to \V_n$. We can also find
+\begin{align*}
+(m_{4,4,2} : \V_4 \otimes \V_4 \to \V_4) & = ... \\
+(m_{4,6,2} : \V_4 \otimes \V_6 \to \V_6) & = ... \\
+\intertext{and}
+(m_{4,4,1} : \V_4 \otimes \V_4 \to \V_6) & = ... 
+\end{align*}
+ as follows.
 
-\nn{explain how we actually compute these maps, from above!}
+Recall that our chosen basis for $\V_4$ is
+\[
+  \left(
+    ...
+  \right)
+\]
+Expressed in our chosen bases, we then have 
+\begin{align*}
+  m_{4,n,2}((x_1, x_2, x_3, x_4, x_5) \otimes y)
+    & = x_1 \cup_{n-2}\cap_n y \\
+      & \quad + x_2 y \\
+      & \quad + x_3 \fork_{n-1}\fuse_n y \\
+      & \quad + x_4 H_n y \\
+      & \quad + x_5 \beta y.
+\end{align*}
+Finally, we can write $m_{4,4,1}$ in terms of the other operations, as \nn{...}
 
 
 \subsection{Links with Conway width 6}

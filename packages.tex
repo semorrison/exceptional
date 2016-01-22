@@ -1,0 +1,34 @@
+\usepackage{amssymb}
+\usepackage{cite}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{mdwtab}
+\usepackage{mathtools}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyphenat}
+\usepackage{enumitem}
+\usepackage{ifpdf}
+\ifpdf
+  \usepackage[pdftex]{graphicx}
+  \usepackage[pdftex,margin=1.25in]{geometry}
+  \usepackage[bookmarks=true, bookmarksopen=true,%
+    bookmarksdepth=3,bookmarksopenlevel=2,%
+    colorlinks=true,%
+    linkcolor=blue,%
+    citecolor=blue,%
+    filecolor=blue,%
+    menucolor=blue,%
+    urlcolor=blue]{hyperref}
+\else
+  \usepackage[dvips]{graphicx}
+  \usepackage[dvips,margin=1in]{geometry}
+  % Use hyperref with all features turned off even in DVI mode, since
+  % the .aux file format changes
+  \usepackage[draft]{hyperref}
+\fi
+\usepackage{url}
+\usepackage{todonotes}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+\usetikzlibrary{calc}
