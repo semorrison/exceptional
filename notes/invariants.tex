@@ -136,19 +136,22 @@ The Conway width of a link is the Conway width of its shadow.
 It is easy to see that with the available planar operations, we can evaluate all Conway width 6 links.
 
 \begin{lemma}
-All knots and links with at most 12 crossings except 
-the alternating link with shadow the cuboctahedron 
+All knots and links with at most 12 crossings with two exceptions \nn{...}
 have Conway width at most 6.
 \end{lemma}
 \begin{proof}
-\nn{... Conway}
+The Conway width of a link is the width of the Conway basic polyhedron obtained after collapsing all digons.
+One can enumerate the basic polyhedron with $n$ vertices using Brinkmann and McKay's {\tt plantri} program \cite{MR2357364,MR2186681}, with the command {\tt plantri -qda -c2 <n+2>}. All basic polyhedra with less than 12 vertices have width at most 6, and of the 12 vertex basic polyhedra all but 12C (the cuboctahedron) and 12G (using the naming scheme from \cite{MR679310}) have width at most 6.
+These graphs, made into alternating links, are the two exceptions described above.
 \end{proof}
-In fact, almost all prime knots up to 11 crossings have width at most 6, 
+In fact, almost all prime knots up to 11 crossings have bridge number at most 3, and hence width at most 6, 
 with 15 exceptions, all Montesinos knots. Montesinos knots
 are easily seen to have Conway width 4.%
 \footnote{The exceptions are 11a43, 11a44, 11a47, 11a57, 11a231,
   11a263, 11n71, 11n72, 11n73, 11n74, 11n75, 11n76, 11n77, 11n78, and
-  11n81.}
+  11n81. \cite{1208.4233}}
+Interestingly all knots with at most 14 \nn{perhaps further} crossings have Conway width at most 6.
+If we were able to work with Conway width 8, we could nearly exhaust the available tables of knots and links; every Conway basic polyhedron with at most 19 \nn{perhaps more?} vertices has width at most 8.
 
 The obvious greedy algorithm (repeatedly collapse digons, when that is not possible apply 
 $m_{4,4,1}$ to merge two 4-boxes into a 6-box, and afterwards hope that $m_{6,4,2}$ 
@@ -185,8 +188,12 @@ for computing quantum knot invariants gets only as far as the trefoil. Sure enou
 $$\xi(3_1) = ...$$
 which at \nn{$w = ...,  v= ...$} gives \nn{...}
 
+\nn{check using the adjoint representation skein theory provided by Greg; many errors in his formulas!}
+
 The fact that $\xi(12^n_{...}) = ...$ suggests that the $E_8$ adjoint quantum knot invariant should be
 $$...$$, but previous methods haven't come close to computing this.
 
+\bibliographystyle{amsalpha}
+\bibliography{../bibliography/bibliography}
 
 \end{document}
