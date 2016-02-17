@@ -1,0 +1,543 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18289,        533]
+NotebookOptionsPosition[     16915,        483]
+NotebookOutlinePosition[     17295,        500]
+CellTagsIndexPosition[     17252,        497]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"AppendTo", "[", 
+   RowBox[{"$Path", ",", "\"\<~/projects/KnotTheory/trunk/\>\""}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.6279467223218184`*^9, 3.627946817228487*^9}, {
+   3.627946848258802*^9, 3.627946879119302*^9}, 3.6279469146657696`*^9, {
+   3.629506489600542*^9, 3.6295064933038363`*^9}, {3.648644123157957*^9, 
+   3.648644145415345*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "KnotTheory`"}]], "Input",
+ CellChangeTimes->{{3.627946822338113*^9, 3.6279468274164886`*^9}}],
+
+Cell[BoxData["\<\"Loading KnotTheory` version of January 20, 2015, \
+10:42:19.1122.\\nRead more at http://katlas.org/wiki/KnotTheory.\"\>"], \
+"Print",
+ CellChangeTimes->{
+  3.661919393255608*^9, 3.66201337652029*^9, 3.6620136051989183`*^9, 
+   3.66227217738531*^9, 3.662328129906715*^9, 3.6623284119045887`*^9, 
+   3.662335670297122*^9, 3.662501581608604*^9, 3.662501694832432*^9, 
+   3.662502141085951*^9, 3.6625027150650997`*^9, 3.662502778625128*^9, 
+   3.662503272075802*^9, 3.66250336871999*^9, 3.662506905491955*^9, 
+   3.66253230578553*^9, {3.662537941302761*^9, 3.6625379612443027`*^9}, 
+   3.662600022475444*^9, 3.662679126146308*^9, 3.66287849413221*^9, 
+   3.6629275302124853`*^9, 3.662927594685916*^9, 3.663974249169065*^9, 
+   3.6645019675329733`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"<<", "QuantumGroups`"}]], "Input",
+ CellChangeTimes->{{3.6625379340040283`*^9, 3.6625379503928423`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Loading QuantumGroups` version 2.0\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"Read more at \
+http://katlas.math.toronto.edu/wiki/QuantumGroups\"\>"}],
+  SequenceForm[
+  "Loading QuantumGroups` version 2.0\n", 
+   "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6628784942004337`*^9, 3.6629275302825327`*^9, 
+  3.662927594750842*^9, 3.663974249236247*^9, 3.664501967668172*^9}],
+
+Cell[BoxData["\<\"Remember to set QuantumGroupsDataDirectory[] to the \
+appropriate path, if you've downloaded precomputed data.\"\>"], "Print",
+ CellChangeTimes->{3.6628784942004337`*^9, 3.6629275302825327`*^9, 
+  3.662927594750842*^9, 3.663974249236247*^9, 3.664501967671598*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"br", "=", 
+   RowBox[{"BraidingMap", "[", 
+    RowBox[{"G2", ",", 
+     SuperscriptBox[
+      RowBox[{
+       RowBox[{"Irrep", "[", "G2", "]"}], "[", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0"}], "}"}], "]"}], 
+      RowBox[{"\[CircleTimes]", "2"}]], ",", "FundamentalBasis"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.664501972384921*^9, 3.664501990345282*^9}, {
+  3.6645021981696453`*^9, 3.664502199048023*^9}, {3.66450223220842*^9, 
+  3.664502251542295*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"\[Beta]", "=", "FundamentalBasis"}], ";"}]], "Input",
+ CellChangeTimes->{{3.6626211716299334`*^9, 3.662621172777326*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"DualityPairing", "[", 
+   RowBox[{"\[CapitalGamma]_", ",", "V_", ",", "\[Beta]_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "decomposition", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"decomposition", "=", 
+      RowBox[{"InverseDecompositionMap", "[", 
+       RowBox[{"\[CapitalGamma]", ",", 
+        RowBox[{
+         RowBox[{"DualRepresentation", "[", "V", "]"}], "\[CircleTimes]", 
+         "V"}], ",", "\[Beta]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"qDimension", "[", "\[CapitalGamma]", "]"}], "[", "V", "]"}], 
+      RowBox[{
+       RowBox[{"DirectSumProjectionMap", "[", 
+        RowBox[{"\[CapitalGamma]", ",", 
+         RowBox[{"Codomain", "[", "decomposition", "]"}], ",", "1", ",", 
+         "\[Beta]"}], "]"}], ".", "decomposition"}]}]}]}], 
+   "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DualityCopairing", "[", 
+   RowBox[{"\[CapitalGamma]_", ",", "V_", ",", "\[Beta]_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "decomposition", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"decomposition", "=", 
+      RowBox[{"DecompositionMap", "[", 
+       RowBox[{"\[CapitalGamma]", ",", 
+        RowBox[{"V", "\[CircleTimes]", 
+         RowBox[{"DualRepresentation", "[", "V", "]"}]}], ",", "\[Beta]"}], 
+       "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"decomposition", ".", 
+      RowBox[{"DirectSumInclusionMap", "[", 
+       RowBox[{"\[CapitalGamma]", ",", 
+        RowBox[{"Domain", "[", "decomposition", "]"}], ",", "1", ",", 
+        "\[Beta]"}], "]"}]}]}]}], "\[IndentingNewLine]", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.6626212180007563`*^9, 3.6626213454346733`*^9}, {
+  3.662621381038001*^9, 3.662621412416019*^9}, {3.66262144260785*^9, 
+  3.6626214545260983`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Fork", "=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "decomposition", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"decomposition", "=", 
+       RowBox[{"DecompositionMap", "[", 
+        RowBox[{"G2", ",", 
+         SuperscriptBox[
+          RowBox[{
+           RowBox[{"Irrep", "[", "G2", "]"}], "[", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "0"}], "}"}], "]"}], 
+          RowBox[{"\[CircleTimes]", "2"}]], ",", "\[Beta]"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"decomposition", ".", 
+       RowBox[{"DirectSumInclusionMap", "[", 
+        RowBox[{"G2", ",", 
+         RowBox[{"Domain", "[", "decomposition", "]"}], ",", "2", ",", 
+         "\[Beta]"}], "]"}]}]}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.662679449363896*^9, 3.662679469820671*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PullDownTopLeftCorner", "[", 
+   RowBox[{"F", ":", 
+    RowBox[{"RepresentationTensor", "[", 
+     RowBox[{"\[CapitalGamma]_", ",", 
+      RowBox[{"V_", "\[CircleTimes]", "W_"}], ",", "\[Beta]_", ",", "Z_", ",",
+       "\[Beta]_", ",", "_"}], "]"}]}], "]"}], ":=", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"DirectSumProjectionMap", "[", 
+    RowBox[{"\[CapitalGamma]", ",", 
+     RowBox[{"DirectSum", "[", "W", "]"}], ",", "1", ",", "\[Beta]"}], "]"}], 
+   ".", 
+   RowBox[{"InverseDecompositionMap", "[", 
+    RowBox[{"\[CapitalGamma]", ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Irrep", "[", "\[CapitalGamma]", "]"}], "[", 
+       RowBox[{"ZeroVector", "[", 
+        RowBox[{"Rank", "[", "\[CapitalGamma]", "]"}], "]"}], "]"}], 
+      "\[CircleTimes]", "W"}], ",", "\[Beta]"}], "]"}], ".", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"DualityPairing", "[", 
+      RowBox[{"\[CapitalGamma]", ",", "V", ",", "\[Beta]"}], "]"}], 
+     "\[CircleTimes]", 
+     RowBox[{"IdentityMap", "[", 
+      RowBox[{"\[CapitalGamma]", ",", "W", ",", "\[Beta]"}], "]"}]}], ")"}], 
+   ".", 
+   RowBox[{"Associator", "[", 
+    RowBox[{"\[CapitalGamma]", ",", 
+     RowBox[{"DualRepresentation", "[", "V", "]"}], ",", "V", ",", "W", ",", 
+     "\[Beta]"}], "]"}], ".", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"IdentityMap", "[", 
+      RowBox[{"\[CapitalGamma]", ",", 
+       RowBox[{"DualRepresentation", "[", "V", "]"}], ",", "\[Beta]"}], "]"}],
+      "\[CircleTimes]", "F"}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.662622427294496*^9, 3.662622650570427*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"PullUpBottomRightCorner", "[", 
+   RowBox[{"F", ":", 
+    RowBox[{"RepresentationTensor", "[", 
+     RowBox[{"\[CapitalGamma]_", ",", "U_", ",", "\[Beta]_", ",", 
+      RowBox[{"V_", "\[CircleTimes]", "W_"}], ",", "\[Beta]_", ",", "_"}], 
+     "]"}]}], "]"}], ":=", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"F", "\[CircleTimes]", 
+     RowBox[{"IdentityMap", "[", 
+      RowBox[{"\[CapitalGamma]", ",", 
+       RowBox[{"DualRepresentation", "[", "W", "]"}], ",", "\[Beta]"}], 
+      "]"}]}], ")"}], ".", 
+   RowBox[{"Associator", "[", 
+    RowBox[{"\[CapitalGamma]", ",", "V", ",", "W", ",", 
+     RowBox[{"DualRepresentation", "[", "W", "]"}], ",", "\[Beta]"}], "]"}], 
+   ".", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"IdentityMap", "[", 
+      RowBox[{"\[CapitalGamma]", ",", "V", ",", "\[Beta]"}], "]"}], 
+     "\[CircleTimes]", 
+     RowBox[{"DualityCopairing", "[", 
+      RowBox[{"\[CapitalGamma]", ",", "W", ",", "\[Beta]"}], "]"}]}], ")"}], 
+   ".", 
+   RowBox[{"DecompositionMap", "[", 
+    RowBox[{"\[CapitalGamma]", ",", 
+     RowBox[{"V", "\[CircleTimes]", 
+      RowBox[{
+       RowBox[{"Irrep", "[", "\[CapitalGamma]", "]"}], "[", 
+       RowBox[{"ZeroVector", "[", 
+        RowBox[{"Rank", "[", "\[CapitalGamma]", "]"}], "]"}], "]"}]}], ",", 
+     "\[Beta]"}], "]"}], ".", 
+   RowBox[{"DirectSumInclusionMap", "[", 
+    RowBox[{"\[CapitalGamma]", ",", 
+     RowBox[{"DirectSum", "[", "V", "]"}], ",", "1", ",", "\[Beta]"}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6626227529913273`*^9, 3.662622954522828*^9}, {
+  3.6626230265957403`*^9, 3.662623027620735*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Fuse", "=", 
+   RowBox[{"PullDownTopLeftCorner", "[", "Fork", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6626794599055777`*^9, 3.6626794720968513`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Fuse", ".", "Fork"}], "-", 
+   RowBox[{
+    RowBox[{"(", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"-", "1"}], "-", 
+       SuperscriptBox["q", "2"], "-", 
+       SuperscriptBox["q", "4"], "-", 
+       SuperscriptBox["q", "8"], "-", 
+       SuperscriptBox["q", "10"], "-", 
+       SuperscriptBox["q", "12"]}], 
+      SuperscriptBox["q", "6"]], ")"}], 
+    RowBox[{"IdentityMap", "[", 
+     RowBox[{"G2", ",", 
+      RowBox[{
+       RowBox[{"Irrep", "[", "G2", "]"}], "[", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0"}], "}"}], "]"}], ",", "\[Beta]"}], "]"}]}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.662679475022311*^9, 3.6626795113396673`*^9}, 
+   3.664502171150894*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"H", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"IdentityMap", "[", 
+       RowBox[{"G2", ",", 
+        RowBox[{
+         RowBox[{"Irrep", "[", "G2", "]"}], "[", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", "0"}], "}"}], "]"}], ",", "\[Beta]"}], "]"}], 
+      "\[CircleTimes]", "Fuse"}], ")"}], ".", 
+    RowBox[{"InverseAssociator", "[", 
+     RowBox[{"G2", ",", 
+      RowBox[{
+       RowBox[{"Irrep", "[", "G2", "]"}], "[", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0"}], "}"}], "]"}], ",", 
+      RowBox[{
+       RowBox[{"Irrep", "[", "G2", "]"}], "[", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0"}], "}"}], "]"}], ",", 
+      RowBox[{
+       RowBox[{"Irrep", "[", "G2", "]"}], "[", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0"}], "}"}], "]"}], ",", "\[Beta]"}], "]"}], ".", 
+    RowBox[{"(", 
+     RowBox[{"Fork", "\[CircleTimes]", 
+      RowBox[{"IdentityMap", "[", 
+       RowBox[{"G2", ",", 
+        RowBox[{
+         RowBox[{"Irrep", "[", "G2", "]"}], "[", 
+         RowBox[{"{", 
+          RowBox[{"1", ",", "0"}], "}"}], "]"}], ",", "\[Beta]"}], "]"}]}], 
+     ")"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.662679525717422*^9, 3.662679607980794*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"capital", " ", "iota"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"\[CapitalIota]", "=", 
+    RowBox[{"Fork", ".", "Fuse"}]}], ";"}]}]], "Input",
+ CellChangeTimes->{{3.6626796259964943`*^9, 3.662679655905355*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CupCap", "=", 
+   RowBox[{
+    RowBox[{"DualityCopairing", "[", 
+     RowBox[{"G2", ",", 
+      RowBox[{
+       RowBox[{"Irrep", "[", "G2", "]"}], "[", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0"}], "}"}], "]"}], ",", "\[Beta]"}], "]"}], ".", 
+    RowBox[{"DualityPairing", "[", 
+     RowBox[{"G2", ",", 
+      RowBox[{
+       RowBox[{"Irrep", "[", "G2", "]"}], "[", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0"}], "}"}], "]"}], ",", "\[Beta]"}], "]"}]}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.662679710222677*^9, 3.66267971896066*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"raw", "[", "F_RepresentationTensor", "]"}], ":=", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{"Cases", "[", 
+    RowBox[{
+     RowBox[{"F", "\[LeftDoubleBracket]", 
+      RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], ",", 
+     RowBox[{"m_Matrix", "\[RuleDelayed]", 
+      RowBox[{"Last", "[", "m", "]"}]}], ",", "\[Infinity]"}], "]"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.662679204319201*^9, 3.6626792354188347`*^9}, {
+  3.6626792713083973`*^9, 3.662679273904871*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NullSpace", "[", 
+  RowBox[{"Transpose", "[", 
+   RowBox[{"raw", "/@", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"H", ".", "H"}], ",", 
+      RowBox[{"IdentityMap", "[", 
+       RowBox[{"G2", ",", 
+        SuperscriptBox[
+         RowBox[{
+          RowBox[{"Irrep", "[", "G2", "]"}], "[", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "0"}], "}"}], "]"}], 
+         RowBox[{"\[CircleTimes]", "2"}]], ",", "\[Beta]"}], "]"}], ",", 
+      "CupCap", ",", "\[CapitalIota]", ",", "H"}], "}"}]}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.662679611974381*^9, 3.662679612364959*^9}, {
+  3.662679659129518*^9, 3.6626796894147673`*^9}, {3.6626797224485397`*^9, 
+  3.662679732210375*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    FractionBox[
+     SuperscriptBox["q", "2"], 
+     RowBox[{"1", "+", 
+      SuperscriptBox["q", "4"]}]], ",", 
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{"1", "+", 
+       SuperscriptBox["q", "2"], "+", 
+       SuperscriptBox["q", "4"]}], 
+      RowBox[{"1", "+", 
+       SuperscriptBox["q", "4"]}]]}], ",", 
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{"1", "+", 
+       SuperscriptBox["q", "2"], "+", 
+       SuperscriptBox["q", "4"]}], 
+      RowBox[{"1", "+", 
+       SuperscriptBox["q", "4"]}]]}], ",", "1", ",", "1"}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.664502168273753*^9, 3.664502191183523*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NullSpace", "[", 
+  RowBox[{"Transpose", "[", 
+   RowBox[{"raw", "/@", 
+    RowBox[{"{", 
+     RowBox[{"br", ",", 
+      RowBox[{"IdentityMap", "[", 
+       RowBox[{"G2", ",", 
+        SuperscriptBox[
+         RowBox[{
+          RowBox[{"Irrep", "[", "G2", "]"}], "[", 
+          RowBox[{"{", 
+           RowBox[{"1", ",", "0"}], "}"}], "]"}], 
+         RowBox[{"\[CircleTimes]", "2"}]], ",", "\[Beta]"}], "]"}], ",", 
+      "CupCap", ",", "\[CapitalIota]", ",", "H"}], "}"}]}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.662679611974381*^9, 3.662679612364959*^9}, {
+  3.662679659129518*^9, 3.6626796894147673`*^9}, {3.6626797224485397`*^9, 
+  3.662679732210375*^9}, {3.664502203924347*^9, 3.664502204008725*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "1"}], "-", 
+     FractionBox["1", 
+      SuperscriptBox["q", "2"]]}], ",", 
+    SuperscriptBox["q", "2"], ",", 
+    FractionBox["1", 
+     SuperscriptBox["q", "4"]], ",", 
+    FractionBox["1", 
+     SuperscriptBox["q", "2"]], ",", "1"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.664502205248118*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NullSpace", "[", 
+  RowBox[{"Transpose", "[", 
+   RowBox[{
+    RowBox[{"raw", "/@", 
+     RowBox[{"{", 
+      RowBox[{"br", ",", 
+       RowBox[{"IdentityMap", "[", 
+        RowBox[{"G2", ",", 
+         SuperscriptBox[
+          RowBox[{
+           RowBox[{"Irrep", "[", "G2", "]"}], "[", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "0"}], "}"}], "]"}], 
+          RowBox[{"\[CircleTimes]", "2"}]], ",", "\[Beta]"}], "]"}], ",", 
+       "CupCap", ",", "\[CapitalIota]", ",", "H"}], "}"}]}], "/.", 
+    RowBox[{"q", "\[Rule]", "\[ImaginaryI]"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.662679611974381*^9, 3.662679612364959*^9}, {
+  3.662679659129518*^9, 3.6626796894147673`*^9}, {3.6626797224485397`*^9, 
+  3.662679732210375*^9}, {3.664502203924347*^9, 3.664502204008725*^9}, {
+  3.664502261511263*^9, 3.66450226303463*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"0", ",", 
+    RowBox[{"-", "1"}], ",", "1", ",", 
+    RowBox[{"-", "1"}], ",", "1"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.664502263812574*^9}]
+}, Open  ]]
+},
+Evaluator->"Local (2)",
+WindowSize->{808, 911},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September 9, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 389, 8, 28, "Input"],
+Cell[CellGroupData[{
+Cell[972, 32, 123, 2, 28, "Input"],
+Cell[1098, 36, 765, 12, 38, "Print"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1900, 53, 128, 2, 28, "Input"],
+Cell[CellGroupData[{
+Cell[2053, 59, 491, 10, 38, "Print"],
+Cell[2547, 71, 281, 3, 38, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[2855, 78, 515, 14, 35, "Input"],
+Cell[3373, 94, 156, 3, 28, "Input"],
+Cell[3532, 99, 1902, 43, 148, "Input"],
+Cell[5437, 144, 894, 23, 96, "Input"],
+Cell[6334, 169, 1598, 39, 114, "Input"],
+Cell[7935, 210, 1645, 40, 114, "Input"],
+Cell[9583, 252, 192, 4, 28, "Input"],
+Cell[9778, 258, 737, 23, 54, "Input"],
+Cell[10518, 283, 1248, 36, 63, "Input"],
+Cell[11769, 321, 289, 7, 46, "Input"],
+Cell[12061, 330, 592, 17, 46, "Input"],
+Cell[12656, 349, 509, 12, 28, "Input"],
+Cell[CellGroupData[{
+Cell[13190, 365, 723, 19, 35, "Input"],
+Cell[13916, 386, 690, 23, 53, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14643, 414, 743, 18, 35, "Input"],
+Cell[15389, 434, 393, 13, 51, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15819, 452, 868, 20, 57, "Input"],
+Cell[16690, 474, 209, 6, 28, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
