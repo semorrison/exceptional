@@ -6,7 +6,8 @@ syntax: glob
 *.m.gz
 
 matrices
-bibliography
+bibliography/.svn
+bibliography/*.tex
 
 exceptional.pdf
 notes/*.pdf
