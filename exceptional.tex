@@ -327,8 +327,8 @@ Thinking of the vector spaces $\V_n$ as forming a planar algebra,
 at this point we have limited access to the full set of operations indexed by
 planar tangles. We have computed above
 $\cap_n : \V_n \to \V_{n-2}$, 
-$\cup_n : \V_n \to V_{n+2}$, and
-$\rho_n: \V_n \to \V_n$. We can also find
+$\cup_{n-2} : \V_{n-2} \to V_n$, and
+$\rho_n: \V_n \to \V_n$ for $n \leq 6$. We can also find
 \begin{align*}
 (m_{4,4,2} : \V_4 \otimes \V_4 \to \V_4) & = ... \\
 (m_{4,6,2} : \V_4 \otimes \V_6 \to \V_6) & = ... \\
@@ -872,105 +872,110 @@ We now consider two candidates bases, $\cB^{\text{planar}}$ and $\cB^{\text{brai
 
 \newcommand{\diagram}[2]{\mathfig{#1}{graphs/urn:sha1:#2.pdf}}
 
+In order to write these compactly, we introduce the following notations: $D_
+{*k}$ denotes the diagram $D$ along with all $k$ of its inequivalent rotations
+(when $D$ has $n$ boundary points, $k$ divides $n$), and $D_{*k!}$ denotes the
+diagram $D$ along with the first $k$ of its counterclockwise rotations, even
+though these do not exhaust all of the inequivalent rotations.
+
 We define them as follows:
 \begin{align*}
-\cB^{*}_2 & = \left\{ \right\} \\
-\cB^{*}_3 & = \left\{ \right\}
-\end{align*}
-\begin{align*}
-\cB^{\text{planar}}_4 & = \left\{  \right\} \\
-\cB^{\text{planar}}_5 & = \left\{  \right\} \\
-\cB^{\text{planar}}_6 & = \left\{ 
-  \text{ all 2 rotations of \diagram{0.1}{a906b4797b1a0522970b8c97cdb5415a37a14d50}},
-  \text{ all 3 rotations of \diagram{0.1}{1d5fda6573f6e14e019449f842ce86389a666ef3}}, \right.\displaybreak[1] \\
-  & \qquad 
-  \text{ all 6 rotations of \diagram{0.1}{51e3597810ca80c60ccbf5ca773dc5f60cc05c26}},
-  \text{ all 6 rotations of \diagram{0.1}{760566cf41c94808243c3091c5f724575b58def2}}, \displaybreak[1] \\
-  & \qquad 
-  \text{ all 3 rotations of \diagram{0.1}{36f1b77eb343f84d3afe9767721856dae4fad1b}},
-  \text{ all 6 rotations of \diagram{0.1}{7faa515ce21febe73dc79066d0a32573cf6951a8}}, \displaybreak[1] \\
-  & \qquad 
-  \text{ all 3 rotations of \diagram{0.1}{1baad19a7b800a28edd9aa033244492c73330c5b}},
-  \text{ all 3 rotations of \diagram{0.1}{2ea46d95045afa05d7bd0c8f2dc292ea8d6b000b}}, \displaybreak[1] \\
-  & \qquad 
-  \text{ all 2 rotations of \diagram{0.1}{f357e0b86229ce63736f2ab08989fc2a2f1db2f6}},
-  \text{ all 6 rotations of \diagram{0.1}{d0933ddaf142ecb016df91e1cc0762ab4cc30985}}, \displaybreak[1] \\
-  & \qquad 
-  \text{ all 3 rotations of \diagram{0.1}{a15b7af68d41b9e913156373e080ad2096b76fe}},
-  \text{ all 6 rotations of \diagram{0.1}{cf51f65ba0c14cf15e713f6b099ed1e838e8b36b}}, \displaybreak[1] \\
-  & \qquad 
-  \text{ all 6 rotations of \diagram{0.1}{c149b820be2b7d1e7c4b136864ecf03d6d48513c}},
-  \text{ all 6 rotations of \diagram{0.1}{e2072b35dc85bb5c685bc5a889493ee86bf3da8d}}, \displaybreak[1] \\
-  & \qquad 
-  \text{ all 6 rotations of \diagram{0.1}{63ea103b950fa114bda8149d575a29b8eaf74920}},
-  \text{ the only rotation of \diagram{0.1}{7de6a0854fa495f044e12f0708481932e9cb121e}}, \displaybreak[1] \\
-  & \qquad 
-  \text{ all 3 rotations of \diagram{0.1}{49bc9767ee6402dfea4c3919f407e7a9dc9d8b59}},
-  \text{ only 4 rotations of \diagram{0.1}{6a3eb98050b8a853009b33fa4bddd634b51b0efd}}, \displaybreak[1] \\
-  & \qquad 
-  \text{ only 3 rotations of \diagram{0.1}{b849c60b70156f6044cc8c10b49bd07cd358cde7}}, 
-  \text{ only 1 rotation of \diagram{0.1}{34fabf27c9ebd1f6ece3151ab5f9cde18b1ca09b}}, \displaybreak[1] \\
-  & \qquad 
-  \left.
-  \text{ only 1 rotation of \diagram{0.1}{5004f6fa7f2aa5d72b882308ff24d97dcd8aa047}}
-\right\}
-\end{align*}
-Is this right? What happens to the pentapent? \diagram{0.1}{55f53ebaabfb09b3d4727e4b45c3637b0ed8f84c}
-What about \diagram{0.1}{c44c9c3e568ce2218151df6d19f09681f6a6e4d8}?
+\cB^{\text{braided}}_2 & = \cB^{\text{planar}}_2 = \left\{ \diagram
+{0.1}{1f3bf4bb66a4388fb2984eb673be4539182b0256}\right\} \\
+\cB^{\text{braided}}_3 & = \cB^{\text{planar}}_3 = \left\{ \diagram
+{0.1}{a7ce858dc75f8bbfee5e1b9837d3d13991f48637} \right\}
+\end{align*} 
 \begin{align*}
 \cB^{\text{braided}}_4 & = \left\{ 
-  \text{ all 2 rotations of \diagram{0.1}{34a876bb5dae61c3ae047f077a51c37b92ee0789}},
-  \text{ all 2 rotations of \diagram{0.1}{a3a76e07ebde41b851fc63a935929666fca9dcd6}}, \right. \displaybreak[1] \\
-  & \qquad
-  \left.
-  \text{ only 1 rotation of \diagram{0.1}{d4f429174ebdeb2777a6e5c1f7d726caca7350cd}}
+  \diagram{0.1}{34a876bb5dae61c3ae047f077a51c37b92ee0789}_{*2},
+  \diagram{0.1}{a3a76e07ebde41b851fc63a935929666fca9dcd6}_{*2},
+  \diagram{0.1}{d4f429174ebdeb2777a6e5c1f7d726caca7350cd}_{*1!}
   \right\} \\
 \cB^{\text{braided}}_5 & = \left\{ 
-  \text{ all 5 rotations of \diagram{0.1}{e55fafbd03afa4f32c7a584ff8fc14d93149f64e}},
-  \text{ all 5 rotations of \diagram{0.1}{7852166906e0c69e28a717a274dd63ebb2dd14bf}}, \right. \displaybreak[1] \\
-  & \qquad
-  \left.
-  \text{ all 5 rotations of \diagram{0.1}{25d22603781a5a699a84b26b177c0c228abe0e7a}},
-  \text{ only 1 rotation of \diagram{0.1}{6c16eee9baf0b996fa06ef435e4f0229abade522}}
+  \diagram{0.1}{e55fafbd03afa4f32c7a584ff8fc14d93149f64e}_{*5},
+  \diagram{0.1}{7852166906e0c69e28a717a274dd63ebb2dd14bf}_{*5},
+  \diagram{0.1}{25d22603781a5a699a84b26b177c0c228abe0e7a}_{*5},
+  \diagram{0.1}{6c16eee9baf0b996fa06ef435e4f0229abade522}_{*1!}
   \right\} \\
-\cB^{\text{braided}}_6 & = \left\{ 
-  \text{all 2 rotations of \diagram{0.1}{a906b4797b1a0522970b8c97cdb5415a37a14d50}},
-  \text{ all 3 rotations of \diagram{0.1}{1d5fda6573f6e14e019449f842ce86389a666ef3}}, \right. \displaybreak[1] \\
-  & \qquad 
-  \text{ all 6 rotations of \diagram{0.1}{e9f2d2b49d091b0935f5fbd5087a91496a8aea65}},
-  \text{ all 3 rotations of \diagram{0.1}{ae1c9ad2880e168051d75739ff9ac571f47d5418}}, \displaybreak[1] \\
-  & \qquad 
-  \text{ only 1 rotation of \diagram{0.1}{435c40660d57b8d767e9699896b711416756716b}},
-  \text{ all 3 rotations of \diagram{0.1}{3b78ddd6226e5dcf91391aad721c40afb6d9dce7}}, \displaybreak[1] \\
+\cB^{\text{braided}}_6 & = \Big\{ 
+  \diagram{0.1}{a906b4797b1a0522970b8c97cdb5415a37a14d50}_{*2},
+  \diagram{0.1}{1d5fda6573f6e14e019449f842ce86389a666ef3}_{*3},
+  \diagram{0.1}{e9f2d2b49d091b0935f5fbd5087a91496a8aea65}_{*6},
+  \diagram{0.1}{ae1c9ad2880e168051d75739ff9ac571f47d5418}_{*3},
+  \diagram{0.1}{435c40660d57b8d767e9699896b711416756716b}_{*1!},
+  \diagram{0.1}{3b78ddd6226e5dcf91391aad721c40afb6d9dce7}_{*3}, \displaybreak
+  [1] \\
   & \qquad
-  \text{ all 6 rotations of \diagram{0.1}{c46af9af2acf5cc00e83232f57fbe67cc3a43b22}},
-  \text{ all 6 rotations of \diagram{0.1}{6b9f6a4077a98d93b7ef68d31d192895cca8de84}}, \displaybreak[1] \\
+  \diagram{0.1}{c46af9af2acf5cc00e83232f57fbe67cc3a43b22}_{*6},
+  \diagram{0.1}{6b9f6a4077a98d93b7ef68d31d192895cca8de84}_{*6},
+  \diagram{0.1}{562a17e80676bec7f61ae4cf18c3cc7c22b9f761}_{*6},
+  \diagram{0.1}{2e79238a0fa16c77b7e1b0762abafe754d1f7725}_{*1!}
+  \diagram{0.1}{392d6cefb5870ced299b7f7140b7253a42e32c47}_{*6},
+  \diagram{0.1}{6457494dd06c026dc17137d37534cc940ba96844}_{*6}, \displaybreak[1]
+  \\
   & \qquad
-  \text{ all 6 rotations of \diagram{0.1}{562a17e80676bec7f61ae4cf18c3cc7c22b9f761}},
-  \text{ only 1 rotation of \diagram{0.1}{2e79238a0fa16c77b7e1b0762abafe754d1f7725}}, \displaybreak[1] \\
+  \diagram{0.1}{8b6e9125e28b6e81350cac1329d9e353792cf06}_{*3!},
+  \diagram{0.1}{3b74991ad2c977fa674f4891439a048a05ac0525}_{*3},
+  \diagram{0.1}{1baad19a7b800a28edd9aa033244492c73330c5b}_{*3},
+  \diagram{0.1}{11a1b489797895c39addff508158f439338f2bd8}_{*3},
+  \diagram{0.1}{6aaaa92365996498480cfebe7eeb211bb34dca33}_{*6},
+  \diagram{0.1}{82157c05fd8fcf68cf7cd7327cbcee5b7bd885a0}_{*2}, \displaybreak
+  [1] \\
   & \qquad
-  \text{ all 6 rotations of \diagram{0.1}{392d6cefb5870ced299b7f7140b7253a42e32c47}},
-  \text{ all 6 rotations of \diagram{0.1}{6457494dd06c026dc17137d37534cc940ba96844}}, \displaybreak[1] \\
-  & \qquad
-  \text{ only 3 rotations of \diagram{0.1}{8b6e9125e28b6e81350cac1329d9e353792cf06}},
-  \text{ all 3 rotations of \diagram{0.1}{3b74991ad2c977fa674f4891439a048a05ac0525}}, \displaybreak[1] \\ 
-  & \qquad
-  \text{ all 3 rotations of \diagram{0.1}{1baad19a7b800a28edd9aa033244492c73330c5b}},
-  \text{ all 3 rotations of \diagram{0.1}{11a1b489797895c39addff508158f439338f2bd8}}, \displaybreak[1] \\
-  & \qquad
-  \text{ all 6 rotations of \diagram{0.1}{6aaaa92365996498480cfebe7eeb211bb34dca33}},
-  \text{ all 2 rotations of \diagram{0.1}{82157c05fd8fcf68cf7cd7327cbcee5b7bd885a0}}, \displaybreak[1] \\
-  & \qquad
-  \text{ all 6 rotations of \diagram{0.1}{8dfbd4e54baa5d5755c7a7cef5ae974c6a737cac}},
-  \text{ only 4 rotations of \diagram{0.1}{8a27a57e82333b072ffb4d5b78de022da5c0852b}}, \displaybreak[1] \\
-  & \qquad
-\left.
-  \text{ and \diagram{0.1}{88b8c27ab39d49cf9e9fdf6be821e0d1c86a5c31}}
-\right\}
+  \diagram{0.1}{8dfbd4e54baa5d5755c7a7cef5ae974c6a737cac}_{*6},
+  \diagram{0.1}{8a27a57e82333b072ffb4d5b78de022da5c0852b}_{*4!},
+  \diagram{0.1}{88b8c27ab39d49cf9e9fdf6be821e0d1c86a5c31}_{*1}
+\Big\}
 \end{align*}
 In most of the cases above where we only take some of the rotations of a given diagram, it is because the other rotations
-are already isotopic (using 3-dimensional isotopies) to the chosen ones. The exception is that we only take 4 out of the 6 possible rotations of \diagram{0.1}{8dfbd4e54baa5d5755c7a7cef5ae974c6a737cac}. This will \nn{probably} be discussed below.
+are already isotopic (using 3-dimensional isotopies) to the chosen ones. The exception is that we only take 4 out of the 6 possible rotations of \diagram{0.1}{8a27a57e82333b072ffb4d5b78de022da5c0852b}. This will \nn{probably} be discussed below.
 
+\begin{align*}
+\cB^{\text{planar}}_4 & = \left\{ 
+  \diagram{0.1}{34a876bb5dae61c3ae047f077a51c37b92ee0789}_{*2},
+  \diagram{0.1}{a3a76e07ebde41b851fc63a935929666fca9dcd6}_{*2},
+  \diagram{0.1}{ac38f78879901186d72dd46debb629071d8a75cc}_{*1}
+  \right\} \\
+\cB^{\text{planar}}_5 & = \left\{ 
+  \diagram{0.1}{e55fafbd03afa4f32c7a584ff8fc14d93149f64e}_{*5},
+  \diagram{0.1}{25d22603781a5a699a84b26b177c0c228abe0e7a}_{*5},
+\diagram{0.1}{175489e116757578e7d6a10f33f29bd527db673c}_{*1},
+\diagram{0.1}{fcc4cb12bd0293b0149f2355e09590e48a13cec3}_{*5}
+  \right\} \\
+\cB^{\text{planar}}_6 & = \Big\{ 
+  \diagram{0.1}{a906b4797b1a0522970b8c97cdb5415a37a14d50}_{*2},
+  \diagram{0.1}{1d5fda6573f6e14e019449f842ce86389a666ef3}_{*3},
+  \diagram{0.1}{51e3597810ca80c60ccbf5ca773dc5f60cc05c26}_{*6},
+  \diagram{0.1}{760566cf41c94808243c3091c5f724575b58def2}_{*6},
+  \diagram{0.1}{36f1b77eb343f84d3afe9767721856dae4fad1b}_{*3},
+  \diagram{0.1}{7faa515ce21febe73dc79066d0a32573cf6951a8}_{*3},
+  \displaybreak
+  [1] \\
+  & \qquad 
+  \diagram{0.1}{1baad19a7b800a28edd9aa033244492c73330c5b}_{*3},
+  \diagram{0.1}{2ea46d95045afa05d7bd0c8f2dc292ea8d6b000b}_{*3},
+  \diagram{0.1}{f357e0b86229ce63736f2ab08989fc2a2f1db2f6}_{*2},
+  \diagram{0.1}{d0933ddaf142ecb016df91e1cc0762ab4cc30985}_{*6},
+  \diagram{0.1}{a15b7af68d41b9e913156373e080ad2096b76fe}_{*3},
+  \diagram{0.1}{cf51f65ba0c14cf15e713f6b099ed1e838e8b36b}_{*6}, \displaybreak
+  [1] \\
+  & \qquad 
+  \diagram{0.1}{c149b820be2b7d1e7c4b136864ecf03d6d48513c}_{*6},
+  \diagram{0.1}{e2072b35dc85bb5c685bc5a889493ee86bf3da8d}_{*6},
+  \diagram{0.1}{63ea103b950fa114bda8149d575a29b8eaf74920}_{*6},
+  \diagram{0.1}{7de6a0854fa495f044e12f0708481932e9cb121e}_{*1},
+  \diagram{0.1}{49bc9767ee6402dfea4c3919f407e7a9dc9d8b59}_{*3},
+  \diagram{0.1}{6a3eb98050b8a853009b33fa4bddd634b51b0efd}_{*4!}, \displaybreak
+  [1] \\
+  & \qquad 
+  \diagram{0.1}{b849c60b70156f6044cc8c10b49bd07cd358cde7}_{*3!}, 
+  \diagram{0.1}{34fabf27c9ebd1f6ece3151ab5f9cde18b1ca09b}_{*1!},
+  \diagram{0.1}{5004f6fa7f2aa5d72b882308ff24d97dcd8aa047}_{*1!}
+\Big\}
+\end{align*}
+\nn{Is this right? What happens to the pentapent \diagram{0.1}
+{55f53ebaabfb09b3d4727e4b45c3637b0ed8f84c}?
+What about \diagram{0.1}{c44c9c3e568ce2218151df6d19f09681f6a6e4d8}?}
 
 \section{Scratch}
 Here are some things remaining for Dylan (or maybe Noah) to write
