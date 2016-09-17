@@ -230,7 +230,10 @@ Conjecturally, based on work of Deligne, Cvitanovic, Vogel, and others, there is
 
 \nn{value of trefoil goes here}
 
-In order to explain how we calculate these knot polynomials, let us first recall Vogel's conjectural skein theoretic description of Deligne's classical exceptional series.  We first recall the spherical tensor category of Jacobi diagrams $\mathrm{Jac}_d$.  Here the objects are collections of $n$ points on the line and the morphism spaces from $n$ to $m$ consist of linear combinations planar graphs in a rectangle with $n$ boundary points on the bottom, $m$ boundary points at the top, and consisting of trivalent vertices and $4$-valent symmetric crossings modulo planar isotopy, the usual Reidemeister 2 and 3 relations for a symmetric crossing, and the following circle, lollipop, bigon, anti-symmetry, and Jacobi relations.
+In order to explain how we calculate these knot polynomials, let us first recall Vogel's conjectural skein theoretic description of Deligne's classical exceptional series.  We first recall the spherical tensor category of Jacobi diagrams $\mathrm{Jac}_d$.  
+
+\begin{definition}
+The objects of $\mathrm{Jac}_d$ are collections of $n$ points on the line and the morphism spaces from $n$ to $m$ consist of linear combinations planar graphs in a rectangle with $n$ boundary points on the bottom, $m$ boundary points at the top, and consisting of trivalent vertices and $4$-valent symmetric crossings modulo planar isotopy, the usual Reidemeister 2 and 3 relations for a symmetric crossing, and the following circle, lollipop, bigon, anti-symmetry, and Jacobi relations.
 
 \begin{equation}
 \drawI\; - \;\drawH\; + \;\drawcrossX\; = 0.
@@ -243,6 +246,7 @@ In order to explain how we calculate these knot polynomials, let us first recall
 \end{align}
 
 \nn{Missing anti-symmetry of bracket, symmetry of Killing, and circle relations}
+\end{definition}
 
 If $\mathfrak{g}$ is a simple Lie algebra object in a symmetric tensor category with dimension $d$, by the diagram calculus  the symmetric tensor category of finite dimensional representations of $\mathfrak{g}$ takes a functor from $\mathrm{Jac}_d$, where we interpret each strand as a copy of $\mathfrak{g}$, each cup or cap using the Killing form, each trivalent vertex as the Lie bracket, and each crossing as the usual symmetric braiding.  In addition, indpendently Cvitanovic and Vogel observed that all the exceptional Lie algebras satisfy another relation, the \emph{classical exceptional relation},
 which can be put in the form
