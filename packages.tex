@@ -1,13 +1,19 @@
+%auto-ignore
+%this ensures the arxiv doesn't try to start TeXing here.
+%!TEX root=exceptional.tex
 \usepackage{amssymb}
-\usepackage{cite}
 \usepackage{array}
 \usepackage{booktabs}
 \usepackage{mdwtab}
 \usepackage{mathtools}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{libertine}
+\usepackage[libertine]{newtxmath}
 \usepackage{hyphenat}
 \usepackage{enumitem}
+\usepackage{xcolor}
+\definecolor{medium-blue}{rgb}{0,0,0.65}
 \usepackage{ifpdf}
 \ifpdf
   \usepackage[pdftex]{graphicx}
@@ -15,11 +21,13 @@
   \usepackage[bookmarks=true, bookmarksopen=true,%
     bookmarksdepth=3,bookmarksopenlevel=2,%
     colorlinks=true,%
-    linkcolor=blue,%
-    citecolor=blue,%
+    linkcolor=purple,%
+    citecolor=medium-blue,%
     filecolor=blue,%
     menucolor=blue,%
-    urlcolor=blue]{hyperref}
+    urlcolor=medium-blue]{hyperref}
+  \hypersetup{pdftitle={Towards the quantum exceptional series}}
+  \hypersetup{pdfauthor={Scott Morrison, Noah Snyder, and Dylan P. Thurston}}
 \else
   \usepackage[dvips]{graphicx}
   \usepackage[dvips,margin=1in]{geometry}
@@ -33,3 +41,22 @@
 \usetikzlibrary{shapes}
 \usetikzlibrary{calc}
 \usetikzlibrary{knots}
+
+\usepackage[backend=biber,style=alphabetic,doi=false,isbn=false,url=false,minnames=6,maxnames=6]{biblatex}
+\setcounter{biburlnumpenalty}{9000}
+\setcounter{biburllcpenalty}{1000}
+\setcounter{biburlucpenalty}{8000}
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}
+\renewbibmacro*{volume+number+eid}{%
+  \printtext{vol.}
+  \printfield{volume}%
+  \setunit*{\addnbspace}% NEW (optional); there's also \addnbthinspace
+  \printfield{number}%
+  \setunit{\addcomma\space}%
+  \printfield{eid}}
+\DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\usepackage{silence}
+% Filter warnings issued by package biblatex starting with "Patching footnotes failed"
+\WarningFilter{biblatex}{Patching footnotes failed}
+\addbibresource{bibliography/bibliography.bib}

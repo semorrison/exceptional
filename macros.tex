@@ -1,3 +1,120 @@
+%auto-ignore
+%this ensures the arxiv doesn't try to start TeXing here.
+%!TEX root=exceptional.tex
+
+% General use
+\newcommand{\RR}{\mathbb R}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\QQ}{\mathbb Q}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\EE}{\mathbb E}
+\newcommand{\HH}{\mathbb H}
+\newcommand{\NN}{\mathbb N}
+
+\newcommand{\comma}{\mathbin ,}
+\newcommand{\conn}{\mathbin \#}
+\newcommand{\sltwo}{{{\mathfrak{sl}}_2}}
+\renewcommand{\sl}{\mathfrak{sl}}
+\newcommand{\gl}{\mathfrak{gl}}
+\newcommand{\fg}{{\mathfrak g}}
+\newcommand{\co}{\colon\thinspace}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\abs}[1]{{\lvert #1 \rvert}}
+\newcommand{\norm}[1]{{\lVert #1 \rVert}}
+\newcommand{\OneHalf}{{\textstyle\frac{1}{2}}}
+
+% Synonyms for commands I never remember
+\newcommand{\isom}{\cong}
+\newcommand{\superset}{\supset}
+\newcommand{\bigcircle}{\bigcirc}
+\newcommand{\contains}{\ni}
+\newcommand{\tensor}{\otimes}
+\newcommand{\bdy}{\partial}
+
+% Stupid overloading.
+\newcommand{\lbracket}{[}
+\newcommand{\rbracket}{]}
+
+% Various operators.
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\Ad}{Ad}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\im}{im}
+
+% Linear groups
+\DeclareMathOperator{\ISO}{\mathit{ISO}}
+\DeclareMathOperator{\SO}{\mathit{SO}}
+\DeclareMathOperator{\GL}{\mathit{GL}}
+\DeclareMathOperator{\SL}{\mathit{SL}}
+\DeclareMathOperator{\PSL}{\mathit{PSL}}
+
+% citations
+\newcommand{\arxiv}[1]{\href{http://arxiv.org/abs/#1}{\tt arXiv:\nolinkurl{#1}}}
+\newcommand{\doi}[1]{\href{http://dx.doi.org/#1}{{\tt DOI:#1}}}
+\newcommand{\euclid}[1]{\href{http://projecteuclid.org/getRecord?id=#1}{{\tt #1}}}
+\newcommand{\mathscinet}[1]{\href{http://www.ams.org/mathscinet-getitem?mr=#1}{\tt #1}}
+\newcommand{\googlebooks}[1]{(preview at \href{http://books.google.com/books?id=#1}{google books})}
+\renewcommand{\googlebooks}[1]{}
+\newcommand{\numdam}[1]{\href{http://www.numdam.org/item?id=#1}{\tt #1}}
+
+% Theorems
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\numberwithin{proposition}{section}
+\newtheorem{lemma}[proposition]{Lemma}
+\newtheorem{corollary}[proposition]{Corollary}
+\newtheorem{claim}[proposition]{Claim}
+\newtheorem{conjecture}[proposition]{Conjecture}
+\newtheorem{observation}[proposition]{Observation}
+
+\theoremstyle{definition}
+\newtheorem{definition}[proposition]{Definition}
+\newtheorem{exercise}[proposition]{Exercise}
+\newtheorem{question}[proposition]{Question}
+\newtheorem{problem}[proposition]{Problem}
+
+\theoremstyle{remark}
+\newtheorem{example}[proposition]{Example}
+%\newtheorem{hint}[proposition]{Hint}
+\newtheorem{remark}[proposition]{Remark}
+%\newtheorem{apology}[proposition]{Apology}
+%\newtheorem{warning}[proposition]{Warning}
+
+% Hyphenation.
+\hyphenation{Thurs-ton}
+
+%ToDoNotes:
+\newcommand{\nn}[1]{{\color[rgb]{.2,.5,.6}[[#1]]}}
+\newcommand{\DPTtodo}[1]{\todo[color=green!40]{#1}}
+\newcommand{\NStodo}[1]{\todo[color=blue!40]{#1}}
+\newcommand{\SMtodo}[1]{\todo[color=red!40]{#1}}
+\newcommand{\citationneeded}{\ \parbox{1.25in}{\todo[inline]{citation needed}}\ }
+\newcommand{\referenceneeded}{\ \parbox{1.35in}{\todo[inline]{reference needed}}\ }
+
+% Commands for exceptional paper
+\newcommand{\Sk}[1]{\mathop{\mathrm{Sk}}(#1)}
+\newcommand{\Skq}[1]{\mathop{\mathrm{Sk}_q}(#1)}
+\newcommand{\Skcat}{\mathop{\mathsf{Sk}}}
+\newcommand{\Skqcat}{\mathop{\mathsf{Sk}_q}}
+\DeclareMathOperator{\eval}{eval}
+
+\DeclareMathOperator{\Tw}{Tw}
+\DeclareMathOperator{\HTw}{HTw}
+\DeclareMathOperator{\Fr}{Fr}
+
+\DeclareMathOperator{\fork}{fork}
+\DeclareMathOperator{\fuse}{fuse}
+
+
+
 % A binary operator with a subscript on both sides (and correct spacing)
 % Name stands for subscript-operator-subscript
 \newcommand{\sos}[3]{\mathbin{{}_{#1}\mathord#2_{#3}}}
