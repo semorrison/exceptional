@@ -224,13 +224,50 @@ Dylan's earlier proposal for an outline.
 \section{Introduction}
 \label{sec:introduction}
 
-There are two main 2-variable knot polynomials: the HOMFLY-PT polynomial and the Kauffman polynomial.  The HOMFLY-PT polynomial interpolates between the Reshetikhin--Turaev invariants of the standard representation of $U_q(\mathfrak{gl}_n)$, while the Kauffman polynomial does the same for the standard representations of quantum $U_q(\mathfrak{o}_n)$ (or, in a slightly different form, the standard representations of $U_q(\mathfrak{sp}_n)$).  The two variable nature of these knot polynomials come from the two parameters $n$ and $q$.  One can think of this process in two steps: first show that there's a family of Lie algebra objects in symmetric tensor categories which interpolate between the $\mathfrak{gl}_n$ yielding something called $\mathfrak{gl}_t$, and second quantizing these Lie algebra objects.   This quantization can be done systematically using the Kontsevich integral, provided it converges.  Conjecturally, based on work of Deligne, Vogel, and others, there is a third $1$-parameter family of Lie algebra objects in symmetric tensor categories called the exceptional series which interpolates between $\mathfrak{sl}_2$, $\mathfrak{sl}_3$, $\mathfrak{so}_8$, $\mathfrak{g}_2$, $\mathfrak{f}_4$, $\mathfrak{e}_6$, $\mathfrak{e}_7$, and $\mathfrak{e}_8$.  If the classical exceptional family exists, we should again expect a quantization yielding a 2-variable exceptional knot polynomial.  In this paper we give a conjectural skein theoretic description of this exceptional knot polynomial, furthermore we prove that these skein relations must hold for the exceptional knot polynomial if it exists, and we use these skein relations to do many computations.  In particular, we are able to calculate the value of this knot polynomial (if it exists) on all knots of Conway girth 6, which includes all knots of 12 or fewer crossings.  For example, we compute the following value for the trefoil.
+There are two main 2-variable knot polynomials: the HOMFLY-PT polynomial and the Kauffman polynomial.  The HOMFLY-PT polynomial interpolates between the Reshetikhin--Turaev invariants of the standard representation of $U_q(\mathfrak{gl}_n)$, while the Kauffman polynomial does the same for the standard representations of quantum $U_q(\mathfrak{o}_n)$ (or, in a slightly different form, the standard representations of $U_q(\mathfrak{sp}_n)$).  The two variable nature of these knot polynomials come from the two parameters $n$ and $q$.  One can think of this process in two steps: first construct a family of Lie algebra objects in symmetric tensor categories which interpolate between the $\mathfrak{gl}_n$ yielding something called $\mathfrak{gl}_t$, and second quantize these Lie algebra objects.   This quantization can be done systematically using the Kontsevich integral, provided it converges.
+
+Conjecturally, based on work of Deligne, Cvitanovic, Vogel, and others, there is a third $1$-parameter family of Lie algebra objects in symmetric tensor categories called the exceptional series which interpolates between the adjoint representations $\mathfrak{sl}_2$, $\mathfrak{sl}_3$, $\mathfrak{so}_8$, $\mathfrak{g}_2$, $\mathfrak{f}_4$, $\mathfrak{e}_6$, $\mathfrak{e}_7$, and $\mathfrak{e}_8$.  If this classical exceptional family exists, we should again expect a quantization yielding a 2-variable exceptional knot polynomial.  In this paper we give a conjectural skein theoretic description of this exceptional knot polynomial, furthermore we prove that these skein relations must hold for the exceptional knot polynomial if it exists, and we use these skein relations to do many computations.  In particular, we are able to calculate the value of this knot polynomial (if it exists) on all knots of Conway girth 6, which includes all knots of 12 or fewer crossings.  For example, we compute the following value for the trefoil.
+
+\nn{value of trefoil goes here}
+
+In order to explain how we calculate these knot polynomials, let us first recall Vogel's conjectural skein theoretic description of Deligne's classical exceptional series.  We first recall the spherical tensor category of Jacobi diagrams $\mathrm{Jac}_d$.  Here the objects are collections of $n$ points on the line and the morphism spaces from $n$ to $m$ consist of linear combinations planar graphs in a rectangle with $n$ boundary points on the bottom, $m$ boundary points at the top, and consisting of trivalent vertices and $4$-valent symmetric crossings modulo planar isotopy, the usual Reidemeister 2 and 3 relations for a symmetric crossing, and the following circle, lollipop, bigon, anti-symmetry, and Jacobi relations.
+
+\begin{equation}
+\drawI\; - \;\drawH\; + \;\drawcrossX\; = 0.
+\label{eq:IHX}
+\end{equation}
+\begin{align}
+\ngon{2}\; &= 6\;\onestrandid &
+  \ngon{3}\; &= 3\;\nvertex{3}
+  \label{eq:classical-bigon-trigon}
+\end{align}
+
+\nn{Missing anti-symmetry of bracket, symmetry of Killing, and circle relations}
+
+If $\mathfrak{g}$ is a simple Lie algebra object in a symmetric tensor category with dimension $d$, by the diagram calculus  the symmetric tensor category of finite dimensional representations of $\mathfrak{g}$ takes a functor from $\mathrm{Jac}_d$, where we interpret each strand as a copy of $\mathfrak{g}$, each cup or cap using the Killing form, each trivalent vertex as the Lie bracket, and each crossing as the usual symmetric braiding.  In addition, indpendently Cvitanovic and Vogel observed that all the exceptional Lie algebras satisfy another relation, the \emph{classical exceptional relation},
+which can be put in the form
+\nn{Rewrite in terms of $d$ variable}
+\begin{equation}
+\ngon[45]{4}\; = \;\drawI\; + \;\drawH\;
+ + w \left[ \;\twostrandid\; + \;\cupcap\; + \;\symcross\; \right]
+\label{eq:classical-except}
+\end{equation}
+
+\begin{conjecture}
+The symmetric tensor category $\mathrm{Jac}_d$ modulo Vogel's exceptional relation is nonzero, has a finite dimensional spaces of $n$-boundary point diagrams, and a $1$-dimensional space of $0$-boundary point diagrams.
+\end{conjecture}
+
+A positive answer to this conjecture would give a construction of an exceptional series passing through each of the exceptional Lie algebras, as conjectured by Deligne.  One should think of this conjecture as having two parts: first a uniqueness conjecture saying that the spaces are finite dimensional and the $0$-boundary point space is $1$-dimensional, and second a consistency conjecture saying that the category is nonzero.  Morally, the uniqueness conjecture is about being able to simplify complicated diagrams, while the existence conjecture is about the well-definedness of such evaluations.  Although both conjectures are completely open, we would expect uniqueness to be easier than existence.
+
+The main result of this paper is a quantum version of this conjecture.
 
 
 
+ 
 
+Note that unconditionally, these 2-variable knot polynomials must specialize at particular values of $w$ to give the quantum invariants of the adjoint representations of the actual Lie algebras.  To our knowledge these are the first calculations of the quantum knot polynomials of large knots for say $\mathfrak{e}_8$, and they are much more efficient than doing the calculations directly in $U_q(\mathfrak{e}_8)$.  Also unconditionally we show that our skein relations give a well-defined $80$-dimensional representation of the affine $6$-strand braid group.  Using our skein relations, we also compute the quantum versions of Cohen--De Man's formulas for the dimensions of the objects appearing in the third tensor power of adjoint representation in the exceptional series.
 
-
+Finally, we consider what happens when $v$ specializes to a $12$th or $10$th root of unity, where some of our skein relations have vanishing denominators.  It turns out that there is still a natural way to define these specializations, and they recover some interesting examples including the classical exceptional series, the classical $\mathbb{g}_2$ series, the classical $\mathbb{f}_4$ series, Deligne's interpolated symmetric group categories, and a possible new example related to the ABA free product from \cite{???}.
 
 
 \section{Calculations}
