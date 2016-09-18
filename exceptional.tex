@@ -130,16 +130,49 @@ quantum conjecture.
 \section{Introduction}
 \label{sec:introduction}
 
-There are two main 2-variable knot polynomials: the HOMFLY-PT polynomial and the Kauffman polynomial.  The HOMFLY-PT polynomial interpolates between the Reshetikhin--Turaev invariants of the standard representation of $U_q(\mathfrak{gl}_n)$, while the Kauffman polynomial does the same for the standard representations of quantum $U_q(\mathfrak{o}_n)$ (or, in a slightly different form, the standard representations of $U_q(\mathfrak{sp}_n)$).  The two variable nature of these knot polynomials come from the two parameters $n$ and $q$.  One can think of this process in two steps: first construct a family of Lie algebra objects in symmetric tensor categories which interpolate between the $\mathfrak{gl}_n$ yielding something called $\mathfrak{gl}_t$, and second quantize these Lie algebra objects.   This quantization can be done systematically using the Kontsevich integral, provided it converges.
+There are two main 2-variable knot polynomials: the HOMFLY-PT polynomial and
+the Kauffman polynomial.  The HOMFLY-PT polynomial interpolates between the
+Reshetikhin--Turaev invariants of the standard representation of
+$U_q(\mathfrak{gl}_n)$, while the Kauffman polynomial does the same for the
+standard representations of quantum $U_q(\mathfrak{o}_n)$ (or, in a slightly
+different form, the standard representations of $U_q(\mathfrak{sp}_n)$).  The
+two variable nature of these knot polynomials come from the two parameters $n$
+and $q$.  One can think of this process in two steps: first construct a family
+of Lie algebra objects in symmetric tensor categories which interpolate
+between the $\mathfrak{gl}_n$ yielding something called $\mathfrak{gl}_t$, and
+second quantize these Lie algebra objects.   This quantization can be done
+systematically using the Kontsevich integral, provided it converges.
 
-Conjecturally, based on work of Deligne, Cvitanovic, Vogel, and others, there is a third $1$-parameter family of Lie algebra objects in symmetric tensor categories called the exceptional series which interpolates between the adjoint representations $\mathfrak{sl}_2$, $\mathfrak{sl}_3$, $\mathfrak{so}_8$, $\mathfrak{g}_2$, $\mathfrak{f}_4$, $\mathfrak{e}_6$, $\mathfrak{e}_7$, and $\mathfrak{e}_8$.  If this classical exceptional family exists, we should again expect a quantization yielding a 2-variable exceptional knot polynomial.  In this paper we give a conjectural skein theoretic description of this exceptional knot polynomial, furthermore we prove that these skein relations must hold for the exceptional knot polynomial if it exists, and we use these skein relations to do many computations.  In particular, we are able to calculate the value of this knot polynomial (if it exists) on all knots of Conway girth 6, which includes all knots of 12 or fewer crossings.  For example, we compute the following value for the trefoil.
+Conjecturally, based on work of Deligne, Cvitanovic, Vogel, and others, there
+is a third $1$-parameter family of Lie algebra objects in symmetric tensor
+categories called the exceptional series which interpolates between the
+adjoint representations $\mathfrak{sl}_2$, $\mathfrak{sl}_3$,
+$\mathfrak{so}_8$, $\mathfrak{g}_2$, $\mathfrak{f}_4$, $\mathfrak{e}_6$,
+$\mathfrak{e}_7$, and $\mathfrak{e}_8$.  If this classical exceptional family
+exists, we should again expect a quantization yielding a 2-variable
+exceptional knot polynomial.  In this paper we give a conjectural skein
+theoretic description of this exceptional knot polynomial, furthermore we
+prove that these skein relations must hold for the exceptional knot polynomial
+if it exists, and we use these skein relations to do many computations.  In
+particular, we are able to calculate the value of this knot polynomial (if it
+exists) on all knots of Conway girth 6, which includes all knots of 12 or
+fewer crossings.  For example, we compute the following value for the trefoil.
 
 \nn{value of trefoil goes here}
 
-In order to explain how we calculate these knot polynomials, let us first recall Vogel's conjectural skein theoretic description of Deligne's classical exceptional series.  We first recall the spherical tensor category of Jacobi diagrams $\mathrm{Jac}_d$.  
+In order to explain how we calculate these knot polynomials, let us first
+recall Vogel's conjectural skein theoretic description of Deligne's classical
+exceptional series.  We first recall the spherical tensor category of Jacobi
+diagrams $\mathrm{Jac}_d$.
 
 \begin{definition}
-The objects of $\mathrm{Jac}_d$ are collections of $n$ points on the line and the morphism spaces from $n$ to $m$ consist of linear combinations planar graphs in a rectangle with $n$ boundary points on the bottom, $m$ boundary points at the top, and consisting of trivalent vertices and $4$-valent symmetric crossings modulo planar isotopy, the usual Reidemeister 2 and 3 relations for a symmetric crossing, and the following circle, lollipop, bigon, anti-symmetry, and Jacobi relations.
+The objects of $\mathrm{Jac}_d$ are collections of $n$ points on the line and
+the morphism spaces from $n$ to $m$ consist of linear combinations planar
+graphs in a rectangle with $n$ boundary points on the bottom, $m$ boundary
+points at the top, and consisting of trivalent vertices and $4$-valent
+symmetric crossings modulo planar isotopy, the usual Reidemeister 2 and 3
+relations for a symmetric crossing, and the following circle, lollipop, bigon,
+anti-symmetry, and Jacobi relations.
 
 \begin{equation}
 \drawI\; - \;\drawH\; + \;\drawcrossX\; = 0.
@@ -154,8 +187,15 @@ The objects of $\mathrm{Jac}_d$ are collections of $n$ points on the line and th
 \nn{Missing anti-symmetry of bracket, symmetry of Killing, and circle relations}
 \end{definition}
 
-If $\mathfrak{g}$ is a simple Lie algebra object in a symmetric tensor category with dimension $d$, by the diagram calculus  the symmetric tensor category of finite dimensional representations of $\mathfrak{g}$ takes a functor from $\mathrm{Jac}_d$, where we interpret each strand as a copy of $\mathfrak{g}$, each cup or cap using the Killing form, each trivalent vertex as the Lie bracket, and each crossing as the usual symmetric braiding.  In addition, indpendently Cvitanovic and Vogel observed that all the exceptional Lie algebras satisfy another relation, the \emph{classical exceptional relation},
-which can be put in the form
+If $\mathfrak{g}$ is a simple Lie algebra object in a symmetric tensor
+category with dimension $d$, by the diagram calculus  the symmetric tensor
+category of finite dimensional representations of $\mathfrak{g}$ takes a
+functor from $\mathrm{Jac}_d$, where we interpret each strand as a copy of
+$\mathfrak{g}$, each cup or cap using the Killing form, each trivalent vertex
+as the Lie bracket, and each crossing as the usual symmetric braiding.  In
+addition, indpendently Cvitanovic and Vogel observed that all the exceptional
+Lie algebras satisfy another relation, the \emph{classical exceptional
+relation}, which can be put in the form
 \nn{Rewrite in terms of $d$ variable}
 \begin{equation}
 \ngon[45]{4}\; = \;\drawI\; + \;\drawH\;
@@ -164,20 +204,40 @@ which can be put in the form
 \end{equation}
 
 \begin{conjecture}
-The symmetric tensor category $\mathrm{Jac}_d$ modulo Vogel's exceptional relation has a finite dimensional spaces of $n$-boundary point diagrams, and a $1$-dimensional space of $0$-boundary point diagrams.
+The symmetric tensor category $\mathrm{Jac}_d$ modulo Vogel's exceptional
+relation has a finite dimensional spaces of $n$-boundary point diagrams, and a
+$1$-dimensional space of $0$-boundary point diagrams.
 \end{conjecture}
 
-A positive answer to this conjecture would give a construction of an exceptional series passing through each of the exceptional Lie algebras, as conjectured by Deligne.  One should think of this conjecture as having two parts: first a uniqueness conjecture saying that the spaces are finite dimensional and the $0$-boundary point space is at most $1$-dimensional, and second a consistency conjecture saying that the category is nonzero.  Morally, the uniqueness conjecture is about being able to simplify complicated diagrams, while the existence conjecture is about the well-definedness of such evaluations.  Although both conjectures are completely open, we would expect uniqueness to be easier than existence.
+A positive answer to this conjecture would give a construction of an
+exceptional series passing through each of the exceptional Lie algebras, as
+conjectured by Deligne.  One should think of this conjecture as having two
+parts: first a uniqueness conjecture saying that the spaces are finite
+dimensional and the $0$-boundary point space is at most $1$-dimensional, and
+second a consistency conjecture saying that the category is nonzero.  Morally,
+the uniqueness conjecture is about being able to simplify complicated
+diagrams, while the existence conjecture is about the well-definedness of such
+evaluations.  Although both conjectures are completely open, we would expect
+uniqueness to be easier than existence.
 
-The main result of this paper is a quantum version of this conjecture.  Before stating this conjecture we fix some notation that is analogous to ``quantum integer'' notation, adapted to a
-two-variable setting, but note that there is no denominator.
-.  \begin{align*}
+The main result of this paper is a quantum version of this conjecture.  Before
+stating this conjecture we fix some notation that is analogous to ``quantum
+integer'' notation, adapted to a two-variable setting, but note that there is
+no denominator.
+\begin{align*}
 [k\lambda + n] &= w^kv^n - w^{-k}v^{-n}\\
 \{k\lambda + n\} &= w^k v^n + w^{-k} v^{-n} = \frac{[2k+2n]}{[k+n]}.
 \end{align*}
 
 \begin{definition}
-Let \nn{name?} be the ribbon category whose objects are collections of $n$ points on a line, and whose morphisms spaces from $n$ to $m$ consist of linear combinations planar graphs in a rectangle with $n$ boundary points on the bottom, $m$ boundary points at the top, and consisting of trivalent vertices and $4$-valent braided crossings modulo planar isotopy, the usual Reidemeister 2 and 3 relations for a symmetric crossing, and the following circle, lollipop, bigon, triangle, quantum anti-symmetry, and quantum Jacobi relations.
+Let \nn{name?} be the ribbon category whose objects are collections of $n$
+points on a line, and whose morphisms spaces from $n$ to $m$ consist of linear
+combinations planar graphs in a rectangle with $n$ boundary points on the
+bottom, $m$ boundary points at the top, and consisting of trivalent vertices
+and $4$-valent braided crossings modulo planar isotopy, the usual Reidemeister
+2 and 3 relations for a symmetric crossing, and the following circle,
+lollipop, bigon, triangle, quantum anti-symmetry, and quantum Jacobi
+relations.
 \end{definition}
 
 
@@ -262,12 +322,11 @@ integers and the morphisms from $n$ to $m$ are elements of $\Skq{n,m}$.
   trivalent graph to a rational function in $v$ and~$w$.
 \end{conjecture}
 
-  The relations above are quite general. With some mild assumptions on
-  the base ring, any skein theory where the $n$-box space has
-  dimension at most $1,0,1,1,5$ for $n=0,1,2,3,4$ satisfies a version
-  of relation~\eqref{eq:quant-except-spec}. See
-  Theorem~\ref{thm:quant-except} in Section~\ref{sec:relation} for a
-  precise statement.
+The relations above are quite general. With some mild assumptions on the base
+ring, any skein theory where the $n$-box space has dimension at most
+$1,0,1,1,5$ for $n=0,1,2,3,4$ satisfies a version of relation~\eqref{eq
+:quant-except-spec}. See Theorem~\ref{thm:quant-except} in
+Section~\ref{sec:relation} for a precise statement.
 
 
 
@@ -277,9 +336,26 @@ integers and the morphisms from $n$ to $m$ are elements of $\Skq{n,m}$.
 
  
 
-Note that unconditionally, these 2-variable knot polynomials must specialize at particular values of $w$ to give the quantum invariants of the adjoint representations of the actual Lie algebras.  To our knowledge these are the first calculations of the quantum knot polynomials of large knots for say $\mathfrak{e}_8$, and they are much more efficient than doing the calculations directly in $U_q(\mathfrak{e}_8)$.  Also unconditionally we show that our skein relations give a well-defined $80$-dimensional representation of the affine $6$-strand braid group.  Using our skein relations, we also compute the quantum versions of Cohen--De Man's formulas for the dimensions of the objects appearing in the third tensor power of adjoint representation in the exceptional series.
+Note that unconditionally, these 2-variable knot polynomials must specialize
+at particular values of $w$ to give the quantum invariants of the adjoint
+representations of the actual Lie algebras.  To our knowledge these are the
+first calculations of the quantum knot polynomials of large knots for say
+$\mathfrak{e}_8$, and they are much more efficient than doing the calculations
+directly in $U_q(\mathfrak{e}_8)$.  Also unconditionally we show that our
+skein relations give a well-defined $80$-dimensional representation of the
+affine $6$-strand braid group.  Using our skein relations, we also compute the
+quantum versions of Cohen--De Man's formulas for the dimensions of the objects
+appearing in the third tensor power of adjoint representation in the
+exceptional series.
 
-Finally, we consider what happens when $v$ specializes to a $12$th or $10$th root of unity, where some of our skein relations have vanishing denominators.  It turns out that there is still a natural way to define these specializations, and they recover some interesting examples including the classical exceptional series, the classical $\mathbb{g}_2$ series, the classical $\mathbb{f}_4$ series, Deligne's interpolated symmetric group categories, and a possible new example related to the ABA free product from \cite{???}.
+Finally, we consider what happens when $v$ specializes to a $12$th or $10$th
+root of unity, where some of our skein relations have vanishing denominators.
+It turns out that there is still a natural way to define these
+specializations, and they recover some interesting examples including the
+classical exceptional series, the classical $\mathfrak{g}_2$ series, the
+classical $\mathfrak{f}_4$ series, Deligne's interpolated symmetric group
+categories, and a possible new example related to the ABA free product from
+\cite{???}.
 
 
 \section{Main results}
@@ -324,12 +400,12 @@ inequivalent rotations.
 We define them as follows:
 \begin{align*}
 \cB^{\text{braided}}_0 & = \cB^{\text{planar}}_0 = \left\{ \diagram
-{0.1}{8093b057e0fa058603d83e620c4490c7774731e}\right\}
-\cB^{\text{braided}}_1 & = \cB^{\text{planar}}_1 = \left\{ \right\}
+{0.1}{8093b057e0fa058603d83e620c4490c7774731e}_{*1}\right\} &
+\cB^{\text{braided}}_1 & = \cB^{\text{planar}}_1 = \Bigg\{ \quad \Bigg\} \\
 \cB^{\text{braided}}_2 & = \cB^{\text{planar}}_2 = \left\{ \diagram
-{0.1}{1f3bf4bb66a4388fb2984eb673be4539182b0256}\right\}
+{0.1}{1f3bf4bb66a4388fb2984eb673be4539182b0256}_{*1} \right\} &
 \cB^{\text{braided}}_3 & = \cB^{\text{planar}}_3 = \left\{ \diagram
-{0.1}{a7ce858dc75f8bbfee5e1b9837d3d13991f48637} \right\}
+{0.1}{a7ce858dc75f8bbfee5e1b9837d3d13991f48637}_{*1} \right\}
 \end{align*} 
 \begin{align*}
 \cB^{\text{braided}}_4 & = \left\{ 
@@ -343,7 +419,7 @@ We define them as follows:
   \diagram{0.1}{25d22603781a5a699a84b26b177c0c228abe0e7a}_{*5},
   \diagram{0.1}{6c16eee9baf0b996fa06ef435e4f0229abade522}_{*1!}
   \right\} \\
-\cB^{\text{braided}}_6 & = \Big\{ 
+\cB^{\text{braided}}_6 & = \Bigg\{ 
   \diagram{0.1}{a906b4797b1a0522970b8c97cdb5415a37a14d50}_{*2},
   \diagram{0.1}{1d5fda6573f6e14e019449f842ce86389a666ef3}_{*3},
   \diagram{0.1}{e9f2d2b49d091b0935f5fbd5087a91496a8aea65}_{*6},
@@ -371,7 +447,7 @@ We define them as follows:
   \diagram{0.1}{8dfbd4e54baa5d5755c7a7cef5ae974c6a737cac}_{*6},
   \diagram{0.1}{8a27a57e82333b072ffb4d5b78de022da5c0852b}_{*4!},
   \diagram{0.1}{88b8c27ab39d49cf9e9fdf6be821e0d1c86a5c31}_{*1}
-\Big\}
+\Bigg\}
 \end{align*}
 In most of the cases above where we only take some of the rotations of a given diagram, it is because the other rotations
 are already isotopic (using 3-dimensional isotopies) to the chosen ones. The exception is that we only take 4 out of the 6 possible rotations of \diagram{0.1}{8a27a57e82333b072ffb4d5b78de022da5c0852b}. This will \nn{probably} be discussed below.
@@ -388,7 +464,7 @@ are already isotopic (using 3-dimensional isotopies) to the chosen ones. The exc
 \diagram{0.1}{175489e116757578e7d6a10f33f29bd527db673c}_{*1},
 \diagram{0.1}{fcc4cb12bd0293b0149f2355e09590e48a13cec3}_{*5}
   \right\} \\
-\cB^{\text{planar}}_6 & = \Big\{ 
+\cB^{\text{planar}}_6 & = \Bigg\{ 
   \diagram{0.1}{a906b4797b1a0522970b8c97cdb5415a37a14d50}_{*2},
   \diagram{0.1}{1d5fda6573f6e14e019449f842ce86389a666ef3}_{*3},
   \diagram{0.1}{51e3597810ca80c60ccbf5ca773dc5f60cc05c26}_{*6},
@@ -417,7 +493,7 @@ are already isotopic (using 3-dimensional isotopies) to the chosen ones. The exc
   \diagram{0.1}{b849c60b70156f6044cc8c10b49bd07cd358cde7}_{*3!}, 
   \diagram{0.1}{34fabf27c9ebd1f6ece3151ab5f9cde18b1ca09b}_{*1!},
   \diagram{0.1}{5004f6fa7f2aa5d72b882308ff24d97dcd8aa047}_{*1!}
-\Big\} 
+\Bigg\} 
 \end{align*}
 \nn{Is this right? What happens to the pentapent \diagram{0.1}
 {55f53ebaabfb09b3d4727e4b45c3637b0ed8f84c}?
@@ -620,10 +696,17 @@ It is easy to see that with the available planar operations, we can evaluate
 all Conway width 6 links.
 
 \begin{lemma}
-All knots and links with at most 12 crossings with two exceptions \nn{...}
-%cuboctahedron
-%"6b969ad34943159c1b087025ff1c65ac4b8d994a"
-%PlanarGraph(35,Vector(List(), List((5,6), (4,9), (3,8), (2,7)), List((2,6), (10,7), (9,18), (8,17)), List((8,6), (15,17), (14,27), (13,26)), List((10,18), (3,7), (19,8), (18,35)), List((18,18), (26,35), (25,46), (24,45)), List((24,18), (31,45), (15,27), (9,17)), List((26,46), (19,35), (35,8), (34,54)), List((34,46), (42,54), (41,65), (40,64)), List((40,46), (47,64), (31,27), (25,45)), List((42,65), (35,54), (4,8), (50,9)), List((50,65), (5,9), (13,6), (56,26)), List((56,65), (14,26), (47,27), (41,64))),Vector((2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0)),0)
+All knots and links with at most 12 crossings with the two exceptions
+$$
+\diagram{0.2}{6b969ad34943159c1b087025ff1c65ac4b8d994a} \qquad
+\diagram{0.2}{feb24773385198782432feba31063d5d0e7023e1}
+$$
+% 12C = cuboctahedron
+% 6b969ad34943159c1b087025ff1c65ac4b8d994a
+% PlanarGraph(35,Vector(List(), List((5,6), (4,9), (3,8), (2,7)), List((2,6), (10,7), (9,18), (8,17)), List((8,6), (15,17), (14,27), (13,26)), List((10,18), (3,7), (19,8), (18,35)), List((18,18), (26,35), (25,46), (24,45)), List((24,18), (31,45), (15,27), (9,17)), List((26,46), (19,35), (35,8), (34,54)), List((34,46), (42,54), (41,65), (40,64)), List((40,46), (47,64), (31,27), (25,45)), List((42,65), (35,54), (4,8), (50,9)), List((50,65), (5,9), (13,6), (56,26)), List((56,65), (14,26), (47,27), (41,64))),Vector((2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0)),0)
+% 12G
+% feb24773385198782432feba31063d5d0e7023e1
+% PlanarGraph(46,Vector(List(), List((5,6), (4,9), (3,8), (2,7)), List((2,6), (10,7), (9,18), (8,17)), List((8,6), (15,17), (14,27), (13,26)), List((13,6), (20,26), (19,36), (5,9)), List((26,36), (25,46), (24,45), (19,9)), List((20,36), (14,26), (30,27), (26,46)), List((10,18), (3,7), (34,8), (33,54)), List((4,8), (24,9), (40,45), (34,54)), List((25,45), (47,46), (46,75), (40,54)), List((54,75), (53,86), (33,18), (46,54)), List((15,27), (9,17), (53,18), (57,86)), List((47,75), (30,46), (57,27), (54,86))),Vector((2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0)),0)
 have Conway width at most 6.
 \end{lemma}
 \begin{proof}
