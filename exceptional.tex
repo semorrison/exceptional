@@ -143,27 +143,30 @@ between the $\mathfrak{gl}_n$ yielding something called $\mathfrak{gl}_t$, and
 second quantize these Lie algebra objects.   This quantization can be done
 systematically using the Kontsevich integral, provided it converges.
 
-Conjecturally, based on work of Deligne, Cvitanovic, Vogel, and others, there
-is a third $1$-parameter family of Lie algebra objects in symmetric tensor
-categories called the exceptional series which interpolates between the
-adjoint representations $\mathfrak{sl}_2$, $\mathfrak{sl}_3$,
+Work of Deligne, Cvitanovic, Vogel, and others, can be summarised as a
+conjecture that there is a third 1-parameter family of Lie algebra objects in
+symmetric tensor categories, called the (classical) exceptional series.
+This should interpolate between the
+adjoint representation theories of $\mathfrak{sl}_2$, $\mathfrak{sl}_3$,
 $\mathfrak{so}_8$, $\mathfrak{g}_2$, $\mathfrak{f}_4$, $\mathfrak{e}_6$,
 $\mathfrak{e}_7$, and $\mathfrak{e}_8$.  If this classical exceptional family
 exists, we should again expect a quantization yielding a 2-variable
 exceptional knot polynomial.  In this paper we give a conjectural skein
-theoretic description of this exceptional knot polynomial, furthermore we
-prove that these skein relations must hold for the exceptional knot polynomial
-if it exists, and we use these skein relations to do many computations.  In
+theoretic description of this exceptional knot polynomial. In fact, we
+prove that these relations must hold if the exceptional knot polynomial
+exists.
+
+We can use these skein relations to do many computations.  In
 particular, we are able to calculate the value of this knot polynomial (if it
-exists) on all knots of Conway girth 6, which includes all knots of 12 or
+exists!) on all knots of Conway girth 6, which includes all knots of 12 or
 fewer crossings.  For example, we compute the following value for the trefoil.
 
 \nn{value of trefoil goes here}
 
 In order to explain how we calculate these knot polynomials, let us first
 recall Vogel's conjectural skein theoretic description of Deligne's classical
-exceptional series.  We first recall the spherical tensor category of Jacobi
-diagrams $\mathrm{Jac}_d$.
+exceptional series.  We begin with the spherical tensor category of Jacobi
+diagrams, $\mathrm{Jac}_d$.
 
 \begin{definition}
 The objects of $\mathrm{Jac}_d$ are collections of $n$ points on the line and
@@ -205,20 +208,21 @@ relation}, which can be put in the form
 
 \begin{conjecture}
 The symmetric tensor category $\mathrm{Jac}_d$ modulo Vogel's exceptional
-relation has a finite dimensional spaces of $n$-boundary point diagrams, and a
+relation has a finite dimensional space of $n$-boundary point diagrams for
+every $n$, and in particular a
 $1$-dimensional space of $0$-boundary point diagrams.
 \end{conjecture}
 
 A positive answer to this conjecture would give a construction of an
 exceptional series passing through each of the exceptional Lie algebras, as
 conjectured by Deligne.  One should think of this conjecture as having two
-parts: first a uniqueness conjecture saying that the spaces are finite
+parts: first a uniqueness conjecture saying that all the spaces are finite
 dimensional and the $0$-boundary point space is at most $1$-dimensional, and
-second a consistency conjecture saying that the category is nonzero.  Morally,
-the uniqueness conjecture is about being able to simplify complicated
-diagrams, while the existence conjecture is about the well-definedness of such
-evaluations.  Although both conjectures are completely open, we would expect
-uniqueness to be easier than existence.
+second a consistency conjecture saying that the category is nonzero.
+Morally, the uniqueness conjecture says that we can evaluate complicated
+diagrams, while the existence conjecture says that this evaluation is well-
+defined (i.e. independent of choices along the way). Although both conjectures
+are completely open, we would expect uniqueness to be easier than existence.
 
 The main result of this paper is a quantum version of this conjecture.  Before
 stating this conjecture we fix some notation that is analogous to ``quantum
