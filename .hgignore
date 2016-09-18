@@ -5,9 +5,10 @@ syntax: glob
 
 *.m.gz
 
-matrices
 bibliography/.svn
 bibliography/*.tex
+
+code2/matrices
 
 exceptional.pdf
 notes/*.pdf

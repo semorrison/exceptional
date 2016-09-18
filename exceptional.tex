@@ -125,68 +125,6 @@ quantum conjecture.
 \item Corner cases from the classification.
 \end{enumerate}
 
-Dylan's earlier proposal for an outline.
-\begin{enumerate}
-\item Introduction
-  \begin{enumerate}
-  \item Quantum exceptional results and conjectures
-    \begin{enumerate}
-    \item Skein relations
-      \begin{enumerate}
-      \item Framing change
-      \item New relation (state uniqueness)
-      \item Implies both classical relations in $q \to 1$ limit
-      \item Mention other consequences, including double-crossing switch
-      \end{enumerate}
-    \item Conjectures: Reduction, consistency, $n$-box space
-    \item Classical consistency $\Rightarrow$ quantum consistency.
-
-      Kontsevich integral argument
-    \end{enumerate}
-  \item Dimensions of $n$-box spaces
-  \item Evaluations we can compute easily
-    \begin{enumerate}
-    \item Exceptional computations hard previously
-    \item With double-clasp switch
-    \item Knots with width $\le $ 3
-    \item Knots and links with Conway graph width $\le 6$,
-      including all 11-crossing diagrams and all 12-crossing
-      knots.
-    \end{enumerate}
-  \end{enumerate}
-\item Classical exceptional series
-  \begin{enumerate}
-  \item Jacobi and Vogel relations
-  \item Reduction conjecture
-  \item Consistency conjecture
-  \item Something about the $n$-box space, or perhaps delay. (Could
-    ask for finite-dimensionality, or positive-definite pairing)
-  \end{enumerate}
-\item Quantum exceptional relation: Uniqueness given dimensions of
-  spaces
-\item Computations for $n$-box space, $n \le 6$
-  \begin{enumerate}
-  \item Inner products approach
-  \item Explicit derivation approach
-  \item Denominators
-  \end{enumerate}
-\item Kontsevich integral argument: classical conjecture implies
-  quantum conjecture
-\item Computations for knots with Conway width $\le 6$
-  \begin{enumerate}
-  \item Define Conway graph of a diagram, Conway width
-  \item Show that 11-crossing knots have Conway width $\le 6$
-  \end{enumerate}
-\item Known points on the quantum exceptional family
-  \begin{enumerate}
-  \item $U_q(\fg)$ for $\fg$ in Deligne's list in the adjoint
-    representation
-  \item $U_q(\fg)$ for $\fg$ in the $F_4$ family
-
-    At $q=1$, these have $v^6=-1$ (since the trivalent vertex is
-    symmetric). This family has only a finite number of points.
-  \end{enumerate}
-\end{enumerate}
 
 
 \section{Introduction}
@@ -242,20 +180,151 @@ Note that unconditionally, these 2-variable knot polynomials must specialize at 
 Finally, we consider what happens when $v$ specializes to a $12$th or $10$th root of unity, where some of our skein relations have vanishing denominators.  It turns out that there is still a natural way to define these specializations, and they recover some interesting examples including the classical exceptional series, the classical $\mathbb{g}_2$ series, the classical $\mathbb{f}_4$ series, Deligne's interpolated symmetric group categories, and a possible new example related to the ABA free product from \cite{???}.
 
 
+\section{Main results}
+
 \section{Calculations}
 \label{sec:calculations}
 \newcommand{\V}{\mathcal{P}}
 
 \subsection{Heuristics for bases}
+\section{Candidate bases}
+We now consider two candidates bases, $\cB^{\text{braided}}$ and $\cB^{\text
+{planar}}$ for each of the spaces $\cP_n$, for $n = 2,3,4,5,6$.
+At this point we can only give heuristics for choosing these sets of diagrams;
+in the next section we will establish that they are linearly independent, but
+it is beyond the scope of this paper to show that they span --- this is
+probably at least as hard as showing that the quantum exceptional relation
+suffices to evaluate all closed diagrams. Nevertheless they have the expected
+sizes, following Cohen--de-Man's claim that the invariant spaces for
+$\mathfrak{f}_4$ do not degenerate up to $\cP_6$:
+\[
+\begin{tabular}{rr}
+  \toprule
+  $n$ & $\dim \Hom_{\mathfrak{f}_4} (1 \to \mathfrak{f}_4^{\otimes n})$ \\
+  \midrule
+  0 & 1 \\ 1 & 0 \\ 2 & 1 \\ 3 & 1 \\ 4 & 5 \\ 5 & 16 \\
+  6 & 80 \\ 7 & 436 \\ 8 & 2891 \\ 9 & 22248 \\ 10 & $\ge 198774$ \\
+  \bottomrule
+\end{tabular}
+\]
+
+\nn{Some discussion of the heuristic for choosing these bases.}
+
+\newcommand{\diagram}[2]{\mathfig{#1}{graphs/urn:sha1:#2.pdf}}
+
+In order to write our proposed bases compactly, we introduce the following
+notations: $D_{*k}$ denotes the diagram $D$ along with all $k$ of its
+inequivalent rotations (when $D$ has $n$ boundary points, $k$ divides $n$),
+and $D_{*k!}$ denotes the diagram $D$ along with the first $k$ of its
+counterclockwise rotations, even though these do not exhaust all of the
+inequivalent rotations.
+
+We define them as follows:
+\begin{align*}
+\cB^{\text{braided}}_0 & = \cB^{\text{planar}}_0 = \left\{ \diagram
+{0.1}{8093b057e0fa058603d83e620c4490c7774731e}\right\}
+\cB^{\text{braided}}_1 & = \cB^{\text{planar}}_1 = \left\{ \right\}
+\cB^{\text{braided}}_2 & = \cB^{\text{planar}}_2 = \left\{ \diagram
+{0.1}{1f3bf4bb66a4388fb2984eb673be4539182b0256}\right\}
+\cB^{\text{braided}}_3 & = \cB^{\text{planar}}_3 = \left\{ \diagram
+{0.1}{a7ce858dc75f8bbfee5e1b9837d3d13991f48637} \right\}
+\end{align*} 
+\begin{align*}
+\cB^{\text{braided}}_4 & = \left\{ 
+  \diagram{0.1}{34a876bb5dae61c3ae047f077a51c37b92ee0789}_{*2},
+  \diagram{0.1}{a3a76e07ebde41b851fc63a935929666fca9dcd6}_{*2},
+  \diagram{0.1}{d4f429174ebdeb2777a6e5c1f7d726caca7350cd}_{*1!}
+  \right\} \\
+\cB^{\text{braided}}_5 & = \left\{ 
+  \diagram{0.1}{e55fafbd03afa4f32c7a584ff8fc14d93149f64e}_{*5},
+  \diagram{0.1}{7852166906e0c69e28a717a274dd63ebb2dd14bf}_{*5},
+  \diagram{0.1}{25d22603781a5a699a84b26b177c0c228abe0e7a}_{*5},
+  \diagram{0.1}{6c16eee9baf0b996fa06ef435e4f0229abade522}_{*1!}
+  \right\} \\
+\cB^{\text{braided}}_6 & = \Big\{ 
+  \diagram{0.1}{a906b4797b1a0522970b8c97cdb5415a37a14d50}_{*2},
+  \diagram{0.1}{1d5fda6573f6e14e019449f842ce86389a666ef3}_{*3},
+  \diagram{0.1}{e9f2d2b49d091b0935f5fbd5087a91496a8aea65}_{*6},
+  \diagram{0.1}{ae1c9ad2880e168051d75739ff9ac571f47d5418}_{*3},
+  \diagram{0.1}{435c40660d57b8d767e9699896b711416756716b}_{*1!},
+  \diagram{0.1}{3b78ddd6226e5dcf91391aad721c40afb6d9dce7}_{*3}, \displaybreak
+  [1] \\
+  & \qquad
+  \diagram{0.1}{c46af9af2acf5cc00e83232f57fbe67cc3a43b22}_{*6},
+  \diagram{0.1}{6b9f6a4077a98d93b7ef68d31d192895cca8de84}_{*6},
+  \diagram{0.1}{562a17e80676bec7f61ae4cf18c3cc7c22b9f761}_{*6},
+  \diagram{0.1}{2e79238a0fa16c77b7e1b0762abafe754d1f7725}_{*1!}
+  \diagram{0.1}{392d6cefb5870ced299b7f7140b7253a42e32c47}_{*6},
+  \diagram{0.1}{6457494dd06c026dc17137d37534cc940ba96844}_{*6}, \displaybreak[1]
+  \\
+  & \qquad
+  \diagram{0.1}{8b6e9125e28b6e81350cac1329d9e353792cf06}_{*3!},
+  \diagram{0.1}{3b74991ad2c977fa674f4891439a048a05ac0525}_{*3},
+  \diagram{0.1}{1baad19a7b800a28edd9aa033244492c73330c5b}_{*3},
+  \diagram{0.1}{11a1b489797895c39addff508158f439338f2bd8}_{*3},
+  \diagram{0.1}{6aaaa92365996498480cfebe7eeb211bb34dca33}_{*6},
+  \diagram{0.1}{82157c05fd8fcf68cf7cd7327cbcee5b7bd885a0}_{*2}, \displaybreak
+  [1] \\
+  & \qquad
+  \diagram{0.1}{8dfbd4e54baa5d5755c7a7cef5ae974c6a737cac}_{*6},
+  \diagram{0.1}{8a27a57e82333b072ffb4d5b78de022da5c0852b}_{*4!},
+  \diagram{0.1}{88b8c27ab39d49cf9e9fdf6be821e0d1c86a5c31}_{*1}
+\Big\}
+\end{align*}
+In most of the cases above where we only take some of the rotations of a given diagram, it is because the other rotations
+are already isotopic (using 3-dimensional isotopies) to the chosen ones. The exception is that we only take 4 out of the 6 possible rotations of \diagram{0.1}{8a27a57e82333b072ffb4d5b78de022da5c0852b}. This will \nn{probably} be discussed below.
+
+\begin{align*}
+\cB^{\text{planar}}_4 & = \left\{ 
+  \diagram{0.1}{34a876bb5dae61c3ae047f077a51c37b92ee0789}_{*2},
+  \diagram{0.1}{a3a76e07ebde41b851fc63a935929666fca9dcd6}_{*2},
+  \diagram{0.1}{ac38f78879901186d72dd46debb629071d8a75cc}_{*1}
+  \right\} \\
+\cB^{\text{planar}}_5 & = \left\{ 
+  \diagram{0.1}{e55fafbd03afa4f32c7a584ff8fc14d93149f64e}_{*5},
+  \diagram{0.1}{25d22603781a5a699a84b26b177c0c228abe0e7a}_{*5},
+\diagram{0.1}{175489e116757578e7d6a10f33f29bd527db673c}_{*1},
+\diagram{0.1}{fcc4cb12bd0293b0149f2355e09590e48a13cec3}_{*5}
+  \right\} \\
+\cB^{\text{planar}}_6 & = \Big\{ 
+  \diagram{0.1}{a906b4797b1a0522970b8c97cdb5415a37a14d50}_{*2},
+  \diagram{0.1}{1d5fda6573f6e14e019449f842ce86389a666ef3}_{*3},
+  \diagram{0.1}{51e3597810ca80c60ccbf5ca773dc5f60cc05c26}_{*6},
+  \diagram{0.1}{760566cf41c94808243c3091c5f724575b58def2}_{*6},
+  \diagram{0.1}{36f1b77eb343f84d3afe9767721856dae4fad1b}_{*3},
+  \diagram{0.1}{7faa515ce21febe73dc79066d0a32573cf6951a8}_{*3},
+  \displaybreak
+  [1] \\
+  & \qquad 
+  \diagram{0.1}{1baad19a7b800a28edd9aa033244492c73330c5b}_{*3},
+  \diagram{0.1}{2ea46d95045afa05d7bd0c8f2dc292ea8d6b000b}_{*3},
+  \diagram{0.1}{f357e0b86229ce63736f2ab08989fc2a2f1db2f6}_{*2},
+  \diagram{0.1}{d0933ddaf142ecb016df91e1cc0762ab4cc30985}_{*6},
+  \diagram{0.1}{a15b7af68d41b9e913156373e080ad2096b76fe}_{*3},
+  \diagram{0.1}{cf51f65ba0c14cf15e713f6b099ed1e838e8b36b}_{*6}, \displaybreak
+  [1] \\
+  & \qquad 
+  \diagram{0.1}{c149b820be2b7d1e7c4b136864ecf03d6d48513c}_{*6},
+  \diagram{0.1}{e2072b35dc85bb5c685bc5a889493ee86bf3da8d}_{*6},
+  \diagram{0.1}{63ea103b950fa114bda8149d575a29b8eaf74920}_{*6},
+  \diagram{0.1}{7de6a0854fa495f044e12f0708481932e9cb121e}_{*1},
+  \diagram{0.1}{49bc9767ee6402dfea4c3919f407e7a9dc9d8b59}_{*3},
+  \diagram{0.1}{6a3eb98050b8a853009b33fa4bddd634b51b0efd}_{*4!}, \displaybreak
+  [1] \\
+  & \qquad 
+  \diagram{0.1}{b849c60b70156f6044cc8c10b49bd07cd358cde7}_{*3!}, 
+  \diagram{0.1}{34fabf27c9ebd1f6ece3151ab5f9cde18b1ca09b}_{*1!},
+  \diagram{0.1}{5004f6fa7f2aa5d72b882308ff24d97dcd8aa047}_{*1!}
+\Big\} 
+\end{align*}
+\nn{Is this right? What happens to the pentapent \diagram{0.1}
+{55f53ebaabfb09b3d4727e4b45c3637b0ed8f84c}?
+What about \diagram{0.1}{c44c9c3e568ce2218151df6d19f09681f6a6e4d8}?}
+
+
 
 \subsection{Linear independence, and closure under operations}
-
-\subsection{Matrices}
-Recall that we have candidate bases for 
-$\V_n = \operatorname{Hom}(1 \to V^{\otimes n})$, for $n$ at most 6.
-In this section, we obtain matrices for the braiding and rotation operators on
- $\V_n$.
-
+We first check that these bases are linearly independent. 
 We have a pairing $\langle - , - \rangle: \V_n \otimes \V_n \to \V_0$ defined
 by 
 \[
@@ -268,21 +337,42 @@ by
     \draw (x.45) to[in=90, out=90] (y.135);
   \end{tikzpicture}
 \]
-and for many (conjecturally all) diagrams in $\V_0$ we can use the relations
+and for many (conjecturally all) closed diagrams diagrams in $\V_0$ we can use
+the relations
 to evaluate to a rational function in \(\QQ(v,w)\). Of course, our basis is
 far from orthonormal with respect to this pairing!
 We find that up to $n=6$, we can evaluate all matrix entries of
-$M_n = \left(\langle e_i, e_j \rangle\right)_{i,j}$,
-but rather unfortunately inverting this matrix is computationally infeasible
-for $n=6$. (Recall that arithmetic over $\QQ(v,w)$ may be quite inefficient!)
+$M_n = \left(\langle e_i, e_j \rangle\right)_{i,j}$. We can then \nn{... what
+do we actually do? calculate the determinant? what are the factors!?}
 
-Now, given an operator $T: \V_n \to \V_m$, the associated matrix with respect 
-to our chosen basis is $AM_m^{-1}$, where
-$A = \left(\langle T e_i, e_j \rangle\right)_{i,j}$. 
-We find that for $T$ any of 
+
+
+\subsection{Matrices}
+In this section, we obtain matrices for the braiding and rotation operators on
+ $\V_n$, `relative to' $\cB^{\text{braided}}$ described above.
+We have to be careful here, as we don't know that $\cB^{\text{braided}}$
+actually spans $\V_n$, or even that the braiding and rotation operators map
+the span of $\cB^{\text{braided}}$ to itself.
+
+The second of these questions is relatively tractable; it would just be a
+matter of applying a braiding or rotation to each element, and showing that it
+is possible to use the relations to rewrite the result as a linear combination
+of elements of $\cV^{\text{braided}}$. We take a slightly different approach,
+computing the matrix which \emph{would} be associated to each of the
+operations \emph{if} $\cB^{\text{braided}}$ really were a basis, and then
+verifying that these matrices satisfy the expected properties.
+
+
+Now, given an operator $T: \V_n \to \V_m$, if the $\cB^{\text{braided}}_n$
+are bases, the associated matrix for $T$ would be $AM_m^{-1}$, where
+$A = \left(\langle T e_i, e_j \rangle\right)_{i,j}$.
+Rather unfortunately inverting the matrix $M_6$ is computationally
+infeasible. (Recall that arithmetic over $\QQ(v,w)$ may be quite inefficient!)
+
+We find, nevertheless, that for $T$ any of 
 \begin{align*}
   (\rho_n : \V_n \to \V_n) & = 
-    \begin{tikzpicture}[baseline]
+    \begin{tikzpicture}[baseline, ultra thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.90) -- ++(0,0.5);
       \draw (x.45) -- ++(0,0.5);
@@ -292,23 +382,23 @@ We find that for $T$ any of
                      -- ++(0,0.5);
     \end{tikzpicture} &
   (\beta_n : \V_n \to \V_n) & = 
-    \begin{tikzpicture}[baseline]
+    \begin{tikzpicture}[baseline, ultra thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.45) -- ++(0,0.5);
       \draw (x.90) to[out=90,in=-90] ($(x.135)+(0,0.5)$);
       % from http://tex.blogoverflow.com/2013/04/how-can-i-draw-a-knot-in-tex-let-me-count-the-ways/
-      \draw[knot=black,thick,double distance=0.15mm] (x.135) to[out=90,in=-90] ($(x.90)+(0,0.5)$);
+      \draw[knot=black,double distance=0.15mm] (x.135) to[out=90,in=-90] ($(x.90)+(0,0.5)$);
     \end{tikzpicture} 
   \\
   (\cap_n : \V_n \to \V_{n-2}) & = 
-    \begin{tikzpicture}[baseline]
+    \begin{tikzpicture}[baseline, ultra thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.45) -- ++(0,0.5);
       \draw (x.90) arc (0:180:0.2);
     \end{tikzpicture}
   &
-  (\cup_n : \V_n \to \V_{n+2}) & = 
-    \begin{tikzpicture}[baseline]
+  (\cup_{n-2} : \V_{n-2} \to \V_{n}) & = 
+    \begin{tikzpicture}[baseline, ultra thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.90) -- ++(0,0.5);
       \draw (x.45) -- ++(0,0.5);
@@ -316,8 +406,8 @@ We find that for $T$ any of
       \draw ($(x.135)+(0,0.5)+(-0.3,0)$) arc (0:-180:0.2);
     \end{tikzpicture}
   \\
-  (\fork_n : \V_n \to \V_{n+1}) & = 
-    \begin{tikzpicture}[baseline]
+  (\fork_{n-1} : \V_{n-1} \to \V_{n}) & = 
+    \begin{tikzpicture}[baseline, ultra thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.90) -- ++(0,0.5);
       \draw (x.45) -- ++(0,0.5);
@@ -326,7 +416,7 @@ We find that for $T$ any of
     \end{tikzpicture}
   &
   (\fuse_n : \V_n \to \V_{n-1}) & = 
-    \begin{tikzpicture}[baseline]
+    \begin{tikzpicture}[baseline, ultra thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.45) -- ++(0,0.5);
       \draw (x.90) -- ($(x.114)+(0,0.25)$);
@@ -334,7 +424,7 @@ We find that for $T$ any of
     \end{tikzpicture}
   \\
   (H_n : \V_n \to \V_n) & = 
-    \begin{tikzpicture}[baseline]
+    \begin{tikzpicture}[baseline, ultra thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.45) -- ++(0,0.5);
       \draw (x.90) -- ++(0,0.5);
@@ -342,24 +432,34 @@ We find that for $T$ any of
       \draw ($(x.90)+(0,0.25)$) -- ($(x.135)+(0,0.25)$);
     \end{tikzpicture}
 \end{align*}
-for values of $n$ so that source and target are amongst $\V_0, \ldots, \V_6$,
+with $n \leq 6$,
 we can evaluate all of the matrix entries of $A$ as rational functions.
-(Even though $H_n = \rho_{n}^{-1} \fuse_n \rho_{n+1} \fork_n$, this does not
-allow us to compute the matrix for $H_6$, so we need to find this directly.)
+(Even though $H_n = \rho_{n}^{-1} \fuse_n \rho_{n+1} \fork_n$, we can not
+use this to compute $H_6$ as we would need to know $\rho_7$ and $\fuse_7$.)
 
 Even though directly inverting $M$ is infeasible, we find that we can
 calculate the product $A M^{-1}$ in each case. (Nevertheless this remains a
 difficult calculation. \nn{some explanation of what we do, with the CRT})
 
 Explicit matrices are available with the {\tt arXiv} sources of this article, 
-as the files {\tt /matrices/OP-n.m}, where {\tt OP} is one of {\tt rotation}, 
-{\tt braiding}, {\tt cup}, {\tt cap}, {\tt fork}, {\tt fuse}, {\tt H}. 
+as the files {\tt /matrices/n-box-OP-matrix.m}, where $n \leq 6$, and {\tt OP}
+is one of {\tt rotation},
+{\tt braiding}, {\tt inverse-braiding}, {\tt cup}, {\tt cap}, {\tt fork}, {\tt
+fuse}, {\tt H}. 
 The matrices are written in terms of the variables $d, v$. 
-\SMtodo{actually create these files}
-
 
 
 \subsection{Representations of braid groups}
+The affine $n$-strand braid group has generators $\rho$ and $\beta$, with
+relations $\rho^n = 1$, $\beta \rho^\pm \beta \rho^\mp \beta = \rho^\pm
+\beta \rho^\mp \beta \rho^\pm
+\beta \rho^\mp$, and $\beta \rho^i \beta \rho^{-i} = \rho^i \beta \rho^
+{-i} \beta$ for all $i = 2, \ldots, n-2$.
+
+At this point, checking that the matrices $\rho = \rho_n$ and $\beta =
+\beta_n$ provide a representation of the affine $n$-strand braid group is just
+a matter of multiplying out the matrices.
+
 
 \subsection{A 2-variable link polynomial}
 
@@ -419,6 +519,9 @@ all Conway width 6 links.
 
 \begin{lemma}
 All knots and links with at most 12 crossings with two exceptions \nn{...}
+%cuboctahedron
+%"6b969ad34943159c1b087025ff1c65ac4b8d994a"
+%PlanarGraph(35,Vector(List(), List((5,6), (4,9), (3,8), (2,7)), List((2,6), (10,7), (9,18), (8,17)), List((8,6), (15,17), (14,27), (13,26)), List((10,18), (3,7), (19,8), (18,35)), List((18,18), (26,35), (25,46), (24,45)), List((24,18), (31,45), (15,27), (9,17)), List((26,46), (19,35), (35,8), (34,54)), List((34,46), (42,54), (41,65), (40,64)), List((40,46), (47,64), (31,27), (25,45)), List((42,65), (35,54), (4,8), (50,9)), List((50,65), (5,9), (13,6), (56,26)), List((56,65), (14,26), (47,27), (41,64))),Vector((2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0)),0)
 have Conway width at most 6.
 \end{lemma}
 \begin{proof}
@@ -500,6 +603,69 @@ Old stuff below here: much should be salvaged.
 \hrule
 \vspace{1cm}
 
+
+Dylan's earlier proposal for an outline.
+\begin{enumerate}
+\item Introduction
+  \begin{enumerate}
+  \item Quantum exceptional results and conjectures
+    \begin{enumerate}
+    \item Skein relations
+      \begin{enumerate}
+      \item Framing change
+      \item New relation (state uniqueness)
+      \item Implies both classical relations in $q \to 1$ limit
+      \item Mention other consequences, including double-crossing switch
+      \end{enumerate}
+    \item Conjectures: Reduction, consistency, $n$-box space
+    \item Classical consistency $\Rightarrow$ quantum consistency.
+
+      Kontsevich integral argument
+    \end{enumerate}
+  \item Dimensions of $n$-box spaces
+  \item Evaluations we can compute easily
+    \begin{enumerate}
+    \item Exceptional computations hard previously
+    \item With double-clasp switch
+    \item Knots with width $\le $ 3
+    \item Knots and links with Conway graph width $\le 6$,
+      including all 11-crossing diagrams and all 12-crossing
+      knots.
+    \end{enumerate}
+  \end{enumerate}
+\item Classical exceptional series
+  \begin{enumerate}
+  \item Jacobi and Vogel relations
+  \item Reduction conjecture
+  \item Consistency conjecture
+  \item Something about the $n$-box space, or perhaps delay. (Could
+    ask for finite-dimensionality, or positive-definite pairing)
+  \end{enumerate}
+\item Quantum exceptional relation: Uniqueness given dimensions of
+  spaces
+\item Computations for $n$-box space, $n \le 6$
+  \begin{enumerate}
+  \item Inner products approach
+  \item Explicit derivation approach
+  \item Denominators
+  \end{enumerate}
+\item Kontsevich integral argument: classical conjecture implies
+  quantum conjecture
+\item Computations for knots with Conway width $\le 6$
+  \begin{enumerate}
+  \item Define Conway graph of a diagram, Conway width
+  \item Show that 11-crossing knots have Conway width $\le 6$
+  \end{enumerate}
+\item Known points on the quantum exceptional family
+  \begin{enumerate}
+  \item $U_q(\fg)$ for $\fg$ in Deligne's list in the adjoint
+    representation
+  \item $U_q(\fg)$ for $\fg$ in the $F_4$ family
+
+    At $q=1$, these have $v^6=-1$ (since the trivalent vertex is
+    symmetric). This family has only a finite number of points.
+  \end{enumerate}
+\end{enumerate}
 
 \appendix
 
@@ -908,115 +1074,6 @@ assuming that a trivalent vertex is not~$0$.
   by~$0$.
 \end{proof}
 
-\section{Candidate bases}
-We now consider two candidates bases, $\cB^{\text{planar}}$ and $\cB^{\text{braided}}$ for each of the spaces $\cP_n$, for $n = 2,3,4,5,6$.
-
-\newcommand{\diagram}[2]{\mathfig{#1}{graphs/urn:sha1:#2.pdf}}
-
-In order to write these compactly, we introduce the following notations: $D_
-{*k}$ denotes the diagram $D$ along with all $k$ of its inequivalent rotations
-(when $D$ has $n$ boundary points, $k$ divides $n$), and $D_{*k!}$ denotes the
-diagram $D$ along with the first $k$ of its counterclockwise rotations, even
-though these do not exhaust all of the inequivalent rotations.
-
-We define them as follows:
-\begin{align*}
-\cB^{\text{braided}}_2 & = \cB^{\text{planar}}_2 = \left\{ \diagram
-{0.1}{1f3bf4bb66a4388fb2984eb673be4539182b0256}\right\} \\
-\cB^{\text{braided}}_3 & = \cB^{\text{planar}}_3 = \left\{ \diagram
-{0.1}{a7ce858dc75f8bbfee5e1b9837d3d13991f48637} \right\}
-\end{align*} 
-\begin{align*}
-\cB^{\text{braided}}_4 & = \left\{ 
-  \diagram{0.1}{34a876bb5dae61c3ae047f077a51c37b92ee0789}_{*2},
-  \diagram{0.1}{a3a76e07ebde41b851fc63a935929666fca9dcd6}_{*2},
-  \diagram{0.1}{d4f429174ebdeb2777a6e5c1f7d726caca7350cd}_{*1!}
-  \right\} \\
-\cB^{\text{braided}}_5 & = \left\{ 
-  \diagram{0.1}{e55fafbd03afa4f32c7a584ff8fc14d93149f64e}_{*5},
-  \diagram{0.1}{7852166906e0c69e28a717a274dd63ebb2dd14bf}_{*5},
-  \diagram{0.1}{25d22603781a5a699a84b26b177c0c228abe0e7a}_{*5},
-  \diagram{0.1}{6c16eee9baf0b996fa06ef435e4f0229abade522}_{*1!}
-  \right\} \\
-\cB^{\text{braided}}_6 & = \Big\{ 
-  \diagram{0.1}{a906b4797b1a0522970b8c97cdb5415a37a14d50}_{*2},
-  \diagram{0.1}{1d5fda6573f6e14e019449f842ce86389a666ef3}_{*3},
-  \diagram{0.1}{e9f2d2b49d091b0935f5fbd5087a91496a8aea65}_{*6},
-  \diagram{0.1}{ae1c9ad2880e168051d75739ff9ac571f47d5418}_{*3},
-  \diagram{0.1}{435c40660d57b8d767e9699896b711416756716b}_{*1!},
-  \diagram{0.1}{3b78ddd6226e5dcf91391aad721c40afb6d9dce7}_{*3}, \displaybreak
-  [1] \\
-  & \qquad
-  \diagram{0.1}{c46af9af2acf5cc00e83232f57fbe67cc3a43b22}_{*6},
-  \diagram{0.1}{6b9f6a4077a98d93b7ef68d31d192895cca8de84}_{*6},
-  \diagram{0.1}{562a17e80676bec7f61ae4cf18c3cc7c22b9f761}_{*6},
-  \diagram{0.1}{2e79238a0fa16c77b7e1b0762abafe754d1f7725}_{*1!}
-  \diagram{0.1}{392d6cefb5870ced299b7f7140b7253a42e32c47}_{*6},
-  \diagram{0.1}{6457494dd06c026dc17137d37534cc940ba96844}_{*6}, \displaybreak[1]
-  \\
-  & \qquad
-  \diagram{0.1}{8b6e9125e28b6e81350cac1329d9e353792cf06}_{*3!},
-  \diagram{0.1}{3b74991ad2c977fa674f4891439a048a05ac0525}_{*3},
-  \diagram{0.1}{1baad19a7b800a28edd9aa033244492c73330c5b}_{*3},
-  \diagram{0.1}{11a1b489797895c39addff508158f439338f2bd8}_{*3},
-  \diagram{0.1}{6aaaa92365996498480cfebe7eeb211bb34dca33}_{*6},
-  \diagram{0.1}{82157c05fd8fcf68cf7cd7327cbcee5b7bd885a0}_{*2}, \displaybreak
-  [1] \\
-  & \qquad
-  \diagram{0.1}{8dfbd4e54baa5d5755c7a7cef5ae974c6a737cac}_{*6},
-  \diagram{0.1}{8a27a57e82333b072ffb4d5b78de022da5c0852b}_{*4!},
-  \diagram{0.1}{88b8c27ab39d49cf9e9fdf6be821e0d1c86a5c31}_{*1}
-\Big\}
-\end{align*}
-In most of the cases above where we only take some of the rotations of a given diagram, it is because the other rotations
-are already isotopic (using 3-dimensional isotopies) to the chosen ones. The exception is that we only take 4 out of the 6 possible rotations of \diagram{0.1}{8a27a57e82333b072ffb4d5b78de022da5c0852b}. This will \nn{probably} be discussed below.
-
-\begin{align*}
-\cB^{\text{planar}}_4 & = \left\{ 
-  \diagram{0.1}{34a876bb5dae61c3ae047f077a51c37b92ee0789}_{*2},
-  \diagram{0.1}{a3a76e07ebde41b851fc63a935929666fca9dcd6}_{*2},
-  \diagram{0.1}{ac38f78879901186d72dd46debb629071d8a75cc}_{*1}
-  \right\} \\
-\cB^{\text{planar}}_5 & = \left\{ 
-  \diagram{0.1}{e55fafbd03afa4f32c7a584ff8fc14d93149f64e}_{*5},
-  \diagram{0.1}{25d22603781a5a699a84b26b177c0c228abe0e7a}_{*5},
-\diagram{0.1}{175489e116757578e7d6a10f33f29bd527db673c}_{*1},
-\diagram{0.1}{fcc4cb12bd0293b0149f2355e09590e48a13cec3}_{*5}
-  \right\} \\
-\cB^{\text{planar}}_6 & = \Big\{ 
-  \diagram{0.1}{a906b4797b1a0522970b8c97cdb5415a37a14d50}_{*2},
-  \diagram{0.1}{1d5fda6573f6e14e019449f842ce86389a666ef3}_{*3},
-  \diagram{0.1}{51e3597810ca80c60ccbf5ca773dc5f60cc05c26}_{*6},
-  \diagram{0.1}{760566cf41c94808243c3091c5f724575b58def2}_{*6},
-  \diagram{0.1}{36f1b77eb343f84d3afe9767721856dae4fad1b}_{*3},
-  \diagram{0.1}{7faa515ce21febe73dc79066d0a32573cf6951a8}_{*3},
-  \displaybreak
-  [1] \\
-  & \qquad 
-  \diagram{0.1}{1baad19a7b800a28edd9aa033244492c73330c5b}_{*3},
-  \diagram{0.1}{2ea46d95045afa05d7bd0c8f2dc292ea8d6b000b}_{*3},
-  \diagram{0.1}{f357e0b86229ce63736f2ab08989fc2a2f1db2f6}_{*2},
-  \diagram{0.1}{d0933ddaf142ecb016df91e1cc0762ab4cc30985}_{*6},
-  \diagram{0.1}{a15b7af68d41b9e913156373e080ad2096b76fe}_{*3},
-  \diagram{0.1}{cf51f65ba0c14cf15e713f6b099ed1e838e8b36b}_{*6}, \displaybreak
-  [1] \\
-  & \qquad 
-  \diagram{0.1}{c149b820be2b7d1e7c4b136864ecf03d6d48513c}_{*6},
-  \diagram{0.1}{e2072b35dc85bb5c685bc5a889493ee86bf3da8d}_{*6},
-  \diagram{0.1}{63ea103b950fa114bda8149d575a29b8eaf74920}_{*6},
-  \diagram{0.1}{7de6a0854fa495f044e12f0708481932e9cb121e}_{*1},
-  \diagram{0.1}{49bc9767ee6402dfea4c3919f407e7a9dc9d8b59}_{*3},
-  \diagram{0.1}{6a3eb98050b8a853009b33fa4bddd634b51b0efd}_{*4!}, \displaybreak
-  [1] \\
-  & \qquad 
-  \diagram{0.1}{b849c60b70156f6044cc8c10b49bd07cd358cde7}_{*3!}, 
-  \diagram{0.1}{34fabf27c9ebd1f6ece3151ab5f9cde18b1ca09b}_{*1!},
-  \diagram{0.1}{5004f6fa7f2aa5d72b882308ff24d97dcd8aa047}_{*1!}
-\Big\} 
-\end{align*}
-\nn{Is this right? What happens to the pentapent \diagram{0.1}
-{55f53ebaabfb09b3d4727e4b45c3637b0ed8f84c}?
-What about \diagram{0.1}{c44c9c3e568ce2218151df6d19f09681f6a6e4d8}?}
 
 \section{Scratch}
 Here are some things remaining for Dylan (or maybe Noah) to write
