@@ -271,7 +271,10 @@ DistributeDefinitions[load,save];
 parallelRowReduce[Length[matrix],1,load,save]
 ]
 onDiskParallelRowReduce[matrix_,tag_String]:=
-With[{nbd=NotebookDirectory[]},onDiskParallelRowReduce[matrix,FileNameJoin[{nbd,"matrices",tag<>"-"<>ToString[#]<>".m"}]&]
+With[{nbd=NotebookDirectory[]},
+CreateDirectory[FileNameJoin[{nbd,"matrices"}]];
+DeleteFile/@FileNames[FileNameJoin[{nbd,"matrices",tag<>"-*.m"}]];
+onDiskParallelRowReduce[matrix,FileNameJoin[{nbd,"matrices",tag<>"-"<>ToString[#]<>".m"}]&]
 ]
 
 
@@ -298,7 +301,7 @@ parallelRowReduce[n_Integer,k_Integer,load_,save_]:=
 Module[{row,pivots},
 If[k>n,
 Table[load[j],{j,1,n}],
-Print[DateString[]," row reducing at row ",k];
+(*Print[DateString[]," row reducing at row ",k];*)
 row=load[k];
 If[row[[k]]===0,
 (* we need to pivot first *)
