@@ -132,7 +132,7 @@ quantum conjecture.
 
 There are two main 2-variable knot polynomials: the HOMFLY-PT polynomial and
 the Kauffman polynomial.  The HOMFLY-PT polynomial interpolates between the
-Reshetikhin--Turaev invariants of the standard representation of
+Reshetikhin--Turaev invariants of the standard representations of
 $U_q(\mathfrak{gl}_n)$, while the Kauffman polynomial does the same for the
 standard representations of quantum $U_q(\mathfrak{o}_n)$ (or, in a slightly
 different form, the standard representations of $U_q(\mathfrak{sp}_n)$).  The
@@ -143,11 +143,11 @@ between the $\mathfrak{gl}_n$ yielding something called $\mathfrak{gl}_t$, and
 second quantize these Lie algebra objects.   This quantization can be done
 systematically using the Kontsevich integral, provided it converges.
 
-Work of Deligne, Cvitanovic, Vogel, and others, can be summarised as a
+Work of Deligne, Cvitanovic, Vogel, Cohen-de Man, and others, can be summarized as a
 conjecture that there is a third 1-parameter family of Lie algebra objects in
 symmetric tensor categories, called the (classical) exceptional series.
 This should interpolate between the
-adjoint representation theories of $\mathfrak{sl}_2$, $\mathfrak{sl}_3$,
+adjoint representations of $\mathfrak{sl}_2$, $\mathfrak{sl}_3$,
 $\mathfrak{so}_8$, $\mathfrak{g}_2$, $\mathfrak{f}_4$, $\mathfrak{e}_6$,
 $\mathfrak{e}_7$, and $\mathfrak{e}_8$.  If this classical exceptional family
 exists, we should again expect a quantization yielding a 2-variable
@@ -169,63 +169,141 @@ exceptional series.  We begin with the spherical tensor category of Jacobi
 diagrams, $\mathrm{Jac}_d$.
 
 \begin{definition}
-The objects of $\mathrm{Jac}_d$ are collections of $n$ points on the line and
-the morphism spaces from $n$ to $m$ consist of linear combinations planar
+Let $R$ be an algebra over $\mathbb{C}$, and let $d$ be an element of $R$ and $b$ an invertible element of $R$.  The objects of $\mathrm{Jac}_{R,d,b}$ are collections of $n$ points on the line and
+the morphism spaces from $n$ to $m$ consist of $R$-linear combinations planar
 graphs in a rectangle with $n$ boundary points on the bottom, $m$ boundary
 points at the top, and consisting of trivalent vertices and $4$-valent
 symmetric crossings modulo planar isotopy, the usual Reidemeister 2 and 3
 relations for a symmetric crossing, and the following circle, lollipop, bigon,
-anti-symmetry, and Jacobi relations.
+anti-symmetry, symmetry of the Killing form, and Jacobi relations.
 
+\begin{align}
+\label{eq:classical-loop-lollipop}  \unknot \; &= d &  \loopvertex \; &=0 \\
+\label{eq:classical-bigon-trigon}  \ngon{2}\; &= b \;\onestrandid  & \ngon{3}\; &= \frac{b}{2} \;\nvertex{3} \\
+\label{eq:classical-symmetry-antisymmetry}   \symtwistvertex\; &= - \nvertex[-90]{3} & \symtwist\; &= \onestrandid
+\end{align}
 \begin{equation}
-\drawI\; - \;\drawH\; + \;\drawcrossX\; = 0.
+\drawI\; - \;\drawH\; + \;\drawsymcrossX\; = 0.
 \label{eq:IHX}
 \end{equation}
-\begin{align}
-\ngon{2}\; &= 6\;\onestrandid &
-  \ngon{3}\; &= 3\;\nvertex{3}
-  \label{eq:classical-bigon-trigon}
-\end{align}
-
-\nn{Missing anti-symmetry of bracket, symmetry of Killing, and circle relations}
 \end{definition}
+
+By rescaling the trivalent vertex, it is easy to see that $\mathrm{Jac}_{R,d,b}$ is equivalent as a spherical tensor category to $\mathrm{Jac}_{R,d,bx^2}$ for any invertible $x$ in $R$.  In particular, if $R = \mathbb{C}$ then $\mathrm{Jac}_{R,d,b}$ does not depend on the choice of $b$.  A standard normalization is $b=6$.
 
 If $\mathfrak{g}$ is a simple Lie algebra object in a symmetric tensor
 category with dimension $d$, by the diagram calculus  the symmetric tensor
 category of finite dimensional representations of $\mathfrak{g}$ takes a
-functor from $\mathrm{Jac}_d$, where we interpret each strand as a copy of
+functor from $\mathrm{Jac}_{R,b,d}$, where we interpret each strand as a copy of
 $\mathfrak{g}$, each cup or cap using the Killing form, each trivalent vertex
-as the Lie bracket, and each crossing as the usual symmetric braiding.  In
-addition, indpendently Cvitanovic and Vogel observed that all the exceptional
-Lie algebras satisfy another relation, the \emph{classical exceptional
-relation}, which can be put in the form
-\nn{Rewrite in terms of $d$ variable}
+as the Lie bracket, and each crossing as the usual symmetric braiding.  This 
+skein theory is somewhat poorly behaved since the space of $0$-boundary point
+diagrams is expect to be infinite dimensional.
+
+In addition, indpendently Cvitanovic and Vogel observed that the adjoint representations
+of the exceptional Lie algebras satisfy another relation, the \emph{classical exceptional
+relation}.
+
+
+\begin{definition}
+If $2+d$ is invertible in $R$, let $\mathrm{Exc}_{R,b,d}$ be symmetric tensor category which is the quotient of 
+$\mathrm{Jac}_{R,b,d}$ modulo Vogel's exceptional relation.
 \begin{equation}
 \ngon[45]{4}\; = \;\drawI\; + \;\drawH\;
- + w \left[ \;\twostrandid\; + \;\cupcap\; + \;\symcross\; \right]
+ + \frac{b^2-b}{2+d} \left[ \;\twostrandid\; + \;\cupcap\; + \;\symcross\; \right]
 \label{eq:classical-except}
 \end{equation}
+\end{definition}
 
-\begin{conjecture}
-The symmetric tensor category $\mathrm{Jac}_d$ modulo Vogel's exceptional
-relation has a finite dimensional space of $n$-boundary point diagrams for
-every $n$, and in particular a
-$1$-dimensional space of $0$-boundary point diagrams.
+
+\begin{conjecture} \label{conj:classical}
+So long as a certain finite set of polynomials in $b$ and $d$ are invertible, $\mathrm{Exc}_{R,b,d}$ has a finite dimensional space of $n$-boundary point diagrams for every $n$, and a $1$-dimensional space of $0$-boundary point diagrams.  
 \end{conjecture}
 
-A positive answer to this conjecture would give a construction of an
-exceptional series passing through each of the exceptional Lie algebras, as
-conjectured by Deligne.  One should think of this conjecture as having two
+One should think of this conjecture as having two
 parts: first a uniqueness conjecture saying that all the spaces are finite
 dimensional and the $0$-boundary point space is at most $1$-dimensional, and
 second a consistency conjecture saying that the category is nonzero.
 Morally, the uniqueness conjecture says that we can evaluate complicated
-diagrams, while the existence conjecture says that this evaluation is well-
-defined (i.e. independent of choices along the way). Although both conjectures
+diagrams, while the existence conjecture says that this evaluation is well-defined
+ (i.e. independent of choices along the way). Although both conjectures
 are completely open, we would expect uniqueness to be easier than existence.
 
-The main result of this paper is a quantum version of this conjecture.  Before
-stating this conjecture we fix some notation that is analogous to ``quantum
+The following corollary follows from Conjecture \ref{conj:classical}.
+
+\begin{corollary}
+
+\end{corollary}
+
+
+A positive answer to this conjecture would give a construction of an
+exceptional series passing through each of the exceptional Lie algebras, as
+conjectured by Deligne and Cohen--De Man.  
+
+It follows from this conjecture that if $d$ is one of \todo{which values?} then the quotient of $\mathrm{Exc}_{R,b,d}$
+
+
+The main result of this paper is a quantum version of this conjecture.  
+
+\begin{definition}
+Let  $\mathrm{QExc}_{R,v,b,\alpha}$ be the ribbon category whose objects are collections of $n$
+points on a line, and whose morphisms spaces from $n$ to $m$ consist of $R$-linear
+combinations planar graphs in a rectangle with $n$ boundary points on the
+bottom, $m$ boundary points at the top, and consisting of trivalent vertices
+and $4$-valent braided crossings modulo planar isotopy, the usual Reidemeister
+2 and 3 relations for a symmetric crossing, and the following circle,
+lollipop, bigon, triangle, quantum anti-symmetry, quantum Killing symmetry, and quantum Jacobi
+relations.
+\end{definition}
+
+ \begin{equation}
+    \label{eq:simple-rels-spec}
+  \begin{aligned}
+    \unknot\; &= d&\quad
+    \loopvertex\;&=0\\[5pt]
+      \ngon{2}\;&= b\;\onestrandid&
+        \ngon[-90]{3}\; &= t\;\nvertex[-90]{3}\\[5pt]
+      \twist\; &= v^{12}\;\onestrandid&
+        \twistvertex\; &= -v^{6}\;\nvertex[-90]{3}
+  \end{aligned}
+  \end{equation}
+where
+\begin{align*}
+  d &= -\frac{\{2\}[\lambda+5][\lambda-6]}{[\lambda][\lambda-1]}\\
+  b &= \frac{\{\lambda+2\}\{\lambda-3\}[3]}{[1]}\\
+  t &= \{1\}\bigl(\{1\}w^2/v + (v^4 - v^2 - 1 - v^{-2} + v^{-4}) +
+      \{1\}v/w^2\bigr).
+\end{align*}
+To these skein relations, we add the \emph{quantum IHX relation}
+\begin{equation}
+v^{-3} \;
+\drawcrossX
+\;+ v \;
+\drawI
+\; -v^{-1} \;
+ \drawH
+\;
+ - \frac{[\lambda][\lambda-1]}{[1]}
+\left[\; \braidcross \;
+ + v^{4}\;
+\twostrandid
+\; + v^{-4} \;
+ \cupcap \;
+ \right] = 0.\label{eq:quant-except-spec}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+Before stating this conjecture we fix some notation that is analogous to ``quantum
 integer'' notation, adapted to a two-variable setting, but note that there is
 no denominator.
 \begin{align*}
@@ -243,12 +321,6 @@ and $4$-valent braided crossings modulo planar isotopy, the usual Reidemeister
 lollipop, bigon, triangle, quantum anti-symmetry, and quantum Jacobi
 relations.
 \end{definition}
-
-
-
-
-
-
 
  \begin{equation}
     \label{eq:simple-rels-spec}
