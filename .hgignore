@@ -7,7 +7,10 @@ syntax: glob
 
 bibliography/.svn
 bibliography/*.tex
+bibliography/*.pdf
+bibliography/*.bst
 
+code/matrices
 code2/matrices
 
 exceptional.pdf
