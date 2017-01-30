@@ -160,12 +160,31 @@ coverlinelefttail/.style={
               ([out angle=150].2,.3) .. ([in angle=70]-135:.8cm);
 \end{tikzpicture}}
 
+\newcommand{\drawsymcrossX}{ \begin{tikzpicture}[baseline=-0.5ex,scale=0.8,rotate=90]
+ 	\draw ([out angle=30].2,.3) .. (45:.8cm);
+	\draw (.2,.3) -- (.2,-.3);
+ 	\draw ([out angle=-30].2,-.3) .. (-45:.8cm);
+        \draw ([out angle=-150].2,-.3) ..([in angle=-70]135:.8cm);
+ 	\draw%[line width=1mm,white,double=black]
+              ([out angle=150].2,.3) .. ([in angle=70]-135:.8cm);
+\end{tikzpicture}}
+
+
 \newcommand{\twist}{
   \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
     \draw[line width=1mm,white,double=black]
        ([out angle=-15]135:.8cm)..([blank=soft]-60:.4cm)..(-120:.4cm)..([in angle=-165]45:.8cm);
     \draw[line width=1mm,white,double=black,use previous Hobby path={invert soft blanks,disjoint}];
   \end{tikzpicture}}
+
+
+\newcommand{\symtwist}{
+  \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
+    \draw
+       ([out angle=-15]135:.8cm)..([blank=soft]-60:.4cm)..(-120:.4cm)..([in angle=-165]45:.8cm);
+   \draw[use previous Hobby path={invert soft blanks,disjoint}];
+  \end{tikzpicture}}
+
 
 \newcommand{\twistvertex}{
 \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
@@ -174,6 +193,15 @@ coverlinelefttail/.style={
   \draw[line width=1mm,white,double=black]
         ([out angle=-10]150:0.8cm)..([in angle=20](0,-0.4);
 \end{tikzpicture}}
+
+\newcommand{\symtwistvertex}{
+\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
+  \draw (0,-0.4)--(0,-0.8);
+  \draw ([out angle=-170]30:0.8cm)..([in angle=160](0,-0.4);
+  \draw%[line width=1mm,white,double=black]
+        ([out angle=-10]150:0.8cm)..([in angle=20](0,-0.4);
+\end{tikzpicture}}
+
 
 \newcommand{\loopvertex}{
 \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
