@@ -583,7 +583,7 @@ We have a pairing $\langle - , - \rangle: \V_n \otimes \V_n \to \V_0$ defined
 by 
 \[
   \langle x, y \rangle =
-  \begin{tikzpicture}[baseline]
+  \begin{tikzpicture}[baseline, ultra thick]
     \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {$x$};
     \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em, right=0.5cm of x] (y) {$y$};
     \draw (x.90) to[in=90, out=90] (y.90);
@@ -596,10 +596,10 @@ the relations
 to evaluate to a rational function in \(\QQ(v,w)\). Of course, our basis is
 far from orthonormal with respect to this pairing!
 
-We find that up to $n=6$, we can evaluate all matrix entries of $M_n =
+We first look at the braided bases described above, and find that, up to $n=6$, we can evaluate all matrix entries of $M_n =
 \left(\langle e_i, e_j \rangle\right)_{i,j}$. We can then calculate the
 determinants of these matrices, obtaining
-%% These are calculating in determinants-of-inner-products.nb
+%% These are calculated in determinants-of-inner-products.nb
 \begin{align*}
 \det M_3 & = - \frac{
 	           \{2\} [\lambda + 5] [\lambda - 6]
@@ -639,6 +639,8 @@ determinants of these matrices, obtaining
 In particular, we see that $\det M_4$ vanishes when $v^k = 1$ for $k=1,2,4,5,8,10$, or $12$, or when $w = \pm v^k$ for $k=-5,-3,4,6$, or when $v^4 \pm v^2 w + w^2 = 0$ (equivalently, $w = \zeta v^{-1}$ for $\zeta$ a primitive 3rd or 6th root of unity) or $1 \pm v w + v^2 w^2 = 0$ (equivalently, $w = \zeta v^2$ for $\zeta$ a primitive 3rd or 6th root of unity). Then, $\det M_5$ vanishes at all the same places, and additionally at $v^6 + w^4 = 0$ and $1 + v^2 w^4 = 0$.
 
 \nn{... verify that these are consistent with things that need to exist, e.g. SO(3) ..}
+
+Although it may appear that new factors are appearing in the denominators as we look at $\det M_3, \det M_4, \det M_5, $ and $\det M_6$, one should recall that the bracket polynomials $[a \lambda + b]$ are not generally irreducible. The irreducible factors appearing in the denominator after cancellation remain the denominators \nn{already} introduced, \nn{...}.
 
 
 \subsection{Matrices for operations}
@@ -680,10 +682,9 @@ We find, nevertheless, that for $T$ any of
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.45) -- ++(0,0.5);
       \draw (x.90) to[out=90,in=-90] ($(x.135)+(0,0.5)$);
-      % from http://tex.blogoverflow.com/2013/04/how-can-i-draw-a-knot-in-tex-let-me-count-the-ways/
-      \draw[knot=black,double distance=0.15mm] (x.135) to[out=90,in=-90] ($(x.90)+(0,0.5)$);
+      \draw[knot] (x.135) to[out=90,in=-90] ($(x.90)+(0,0.5)$);
     \end{tikzpicture} 
-  \\
+  \displaybreak[1] \\
   (\cap_n : \V_n \to \V_{n-2}) & = 
     \begin{tikzpicture}[baseline, ultra thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
@@ -699,7 +700,7 @@ We find, nevertheless, that for $T$ any of
       \draw (x.135) -- ++(0,0.5);
       \draw ($(x.135)+(0,0.5)+(-0.3,0)$) arc (0:-180:0.2);
     \end{tikzpicture}
-  \\
+  \displaybreak[1] \\
   (\fork_{n-1} : \V_{n-1} \to \V_{n}) & = 
     \begin{tikzpicture}[baseline, ultra thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
@@ -733,10 +734,12 @@ use this to compute $H_6$ as we would need to know $\rho_7$ and $\fuse_7$.)
 
 Even though directly inverting $M$ is infeasible, we find that we can
 calculate the product $A M^{-1}$ in each case. (Nevertheless this remains a
-difficult calculation. \nn{some explanation of what we do, with the CRT})
+difficult calculation ---  we use some tricks, calculating the product at
+various specialisations of the variables and then using interpolation, finally
+verifying our answer by multiplying by $M$.)
 
 Explicit matrices are available with the {\tt arXiv} sources of this article, 
-as the files {\tt /matrices/n-box-OP-matrix.m}, where $n \leq 6$, and {\tt OP}
+as the files $$\text{{\small\tt matrices/n-box-OP-matrix.m}},$$ where $n \leq 6$, and {\tt OP}
 is one of {\tt rotation},
 {\tt braiding}, {\tt inverse-braiding}, {\tt cup}, {\tt cap}, {\tt fork}, {\tt
 fuse}, {\tt H}. 
@@ -750,9 +753,12 @@ relations $\rho^n = 1$, $\beta \rho^\pm \beta \rho^\mp \beta = \rho^\pm
 \beta \rho^\mp$, and $\beta \rho^i \beta \rho^{-i} = \rho^i \beta \rho^
 {-i} \beta$ for all $i = 2, \ldots, n-2$.
 
-At this point, checking that the matrices $\rho = \rho_n$ and $\beta =
-\beta_n$ provide a representation of the affine $n$-strand braid group is just
-a matter of multiplying out the matrices.
+At this point, we may verify that the matrices $\rho = \rho_n$ and $\beta =
+\beta_n$ provide a representation of the affine $n$-strand braid group merely by multiplying out the matrices. 
+
+\begin{lemma}
+The matrices described in the previous section give a representation of the affine $n$-strand braid group for $3 \leq n \leq 6$.
+\end{lemma}
 
 
 \subsection{A 2-variable link polynomial}
@@ -765,17 +771,58 @@ $\cap_n : \V_n \to \V_{n-2}$,
 $\cup_{n-2} : \V_{n-2} \to V_n$, and
 $\rho_n: \V_n \to \V_n$ for $n \leq 6$. We can also find
 \begin{align*}
-(m_{4,4,2} : \V_4 \otimes \V_4 \to \V_4) & = ... \\
-(m_{4,6,2} : \V_4 \otimes \V_6 \to \V_6) & = ... \\
+(m_{4,4,2} : \V_4 \otimes \V_4 \to \V_4) & = 
+  \begin{tikzpicture}[baseline, ultra thick]
+    \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) at (0,0) {};
+    \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (y) at (1.5,0) {};
+    \draw (x.130) -- +(0,0.5);
+    \draw (x.105) -- +(0,0.5);
+    \draw (x.75) to[out=90,in=90] (y.105);
+    \draw (x.50) to[out=90,in=90] (y.130);
+    \draw (y.75) -- +(0,0.5);
+    \draw (y.50) -- +(0,0.5);
+  \end{tikzpicture}
+ \displaybreak[1] \\
+(m_{4,6,2} : \V_4 \otimes \V_6 \to \V_6) & = 
+  \begin{tikzpicture}[baseline, ultra thick]
+    \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) at (0,0) {};
+    \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (y) at (1.5,0) {};
+    \draw (x.130) -- +(0,0.5);
+    \draw (x.105) -- +(0,0.5);
+    \draw (x.75) to[out=90,in=90] (y.120);
+    \draw (x.50) to[out=90,in=90] (y.140);
+    \draw (y.100) -- +(0,0.5);
+    \draw (y.75) -- +(0,0.5);
+    \draw (y.55) -- +(0,0.5);
+    \draw (y.40) -- +(0,0.5);
+  \end{tikzpicture}
+ \displaybreak[1] \\
 \intertext{and}
-(m_{4,4,1} : \V_4 \otimes \V_4 \to \V_6) & = ... 
+(m_{4,4,1} : \V_4 \otimes \V_4 \to \V_6) & = 
+  \begin{tikzpicture}[baseline, ultra thick]
+    \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) at (0,0) {};
+    \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (y) at (1.5,0) {};
+    \draw (x.130) -- +(0,0.5);
+    \draw (x.105) -- +(0,0.5);
+    \draw (x.75) -- +(0,0.5);
+    \draw (x.50) to[out=90,in=90] (y.130);
+    \draw (y.100) -- +(0,0.5);
+    \draw (y.75) -- +(0,0.5);
+    \draw (y.50) -- +(0,0.5);
+  \end{tikzpicture}
 \end{align*}
  as follows.
 
 Recall that our chosen basis for $\V_4$ is
 \[
   \left(
-    ...
+    \tikz[baseline=-7, ultra thick]{\draw(0,0) arc (-180:0:0.2); \draw(0.6,0) arc(-180:0:0.2);},
+    \tikz[baseline=-7, ultra thick]{\draw(0,0) arc (-180:0:0.4); \draw(0.2,0) arc(-180:0:0.2);},
+    \tikz[baseline=-7, ultra thick]{\draw(0,0) arc (-180:0:0.2); \draw(0.6,0) arc(-180:0:0.2);
+                       \draw(0.2,-0.2) arc (-180:0:0.3);},
+    \tikz[baseline=-7, ultra thick]{\draw(0,0) arc (-180:0:0.4); \draw(0.2,0) arc(-180:0:0.2);
+                       \draw(0.4,-0.4) -- (0.4,-0.2);},
+    \tikz[baseline=-7, ultra thick]{\draw(0,0) arc (-180:0:0.3); \draw[knot] (0.3,0) arc (-180:0:0.3);}
   \right)
 \]
 Expressed in our chosen bases, we then have 
@@ -787,12 +834,27 @@ Expressed in our chosen bases, we then have
       & \quad + x_4 H_n y \\
       & \quad + x_5 \beta y.
 \end{align*}
-Finally, we can write $m_{4,4,1}$ in terms of the other operations, as \nn{...}
+Finally, we can write $m_{4,4,1}$ in terms of the other operations, e.g.
+as
+$$
+ m_{4,4,1}(x \otimes y) = m_{4,6,2}(x \otimes \rho_6^{-1} (\cup_4 (\rho_4(y)))
+ = \begin{tikzpicture}[baseline, ultra thick]
+     \draw (0,0) arc (-180:0:0.5) -- cycle;
+     \draw (2,0) arc (-180:0:0.5) -- cycle;
+     \draw (2.2,0) arc (0:180:0.2) to[out=-90,in=180] (2.5,-0.65) to[out=0,in=-90] (3.2,0) arc (180:0:0.1) to[out=-90,in=0] (2.5,-0.8) to[out=180,in=-90] (1.2,0) arc (0:180:0.2);
+     \draw (0.6,0) arc (180:0:0.4) arc (-180:0:0.1) -- +(0,0.4);
+     \draw (0.2,0) -- +(0,0.4);
+     \draw (0.4,0) -- +(0,0.4);
+     \draw (2.4,0) -- +(0,0.4);
+     \draw (2.6,0) -- +(0,0.4);
+     \draw (2.8,0) -- +(0,0.4);
+   \end{tikzpicture}
+$$ 
 
 \subsubsection{Conway girth}
 Typically, we may choose to think about a diagrammatically defined tangle 
 invariant as a morphism of planar algebras 
-$\operatorname{Tangle} \to \mathcal{Q}$ for some planar algebra
+$\mathsf{Tangle} \to \mathcal{Q}$ for some planar algebra
 $\mathcal{Q}$, sending the crossing to a suitable element of $\mathcal{Q}_4$.
 In our case we only know a limited set of operations in the target planar
 algebra, and so can only compute the invariants of links which we can generate
@@ -837,10 +899,10 @@ made into alternating links, are the two exceptions described above.
 \end{proof}
 In fact, almost all prime knots up to 11 crossings have bridge number 
 at most 3, and hence width at most 6, with 15 exceptions, all Montesinos
-knots. Montesinos knots are easily seen to have Conway width 4.%
-\footnote{The exceptions are 11a43, 11a44, 11a47, 11a57, 11a231,
+knots. \footnote{The exceptions are 11a43, 11a44, 11a47, 11a57, 11a231,
   11a263, 11n71, 11n72, 11n73, 11n74, 11n75, 11n76, 11n77, 11n78, and
   11n81. \cite{1208.4233}}
+Montesinos knots are easily seen to have Conway width 4.%
 Interestingly all knots with at most 14 crossings have Conway width at most 6.
 If we were able to work with Conway width 8, we could nearly exhaust the 
 available tables of knots and links; every Conway basic polyhedron with at 
