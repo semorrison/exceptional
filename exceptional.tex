@@ -143,7 +143,7 @@ between the $\mathfrak{gl}_n$ yielding something called $\mathfrak{gl}_t$, and
 second quantize these Lie algebra objects.   This quantization can be done
 systematically using the Kontsevich integral, provided it converges.
 
-Work of Deligne, Cvitanovic, Vogel, Cohen-de Man, and others, can be summarized as a
+Work of Deligne, Cvitanović, Vogel, Cohen-de Man, and others, can be summarized as a
 conjecture that there is a third 1-parameter family of Lie algebra objects in
 symmetric tensor categories, called the (classical) exceptional series.
 This should interpolate between the
@@ -170,11 +170,15 @@ diagrams, $\mathrm{Jac}_d$.
 
 \begin{definition}
 Let $R$ be an algebra over $\mathbb{C}$, and let $d$ be an element of $R$ and $b$ an invertible element of $R$.  The objects of $\mathrm{Jac}_{R,d,b}$ are collections of $n$ points on the line and
-the morphism space from $n$ to $m$ consists of $R$-linear combinations planar
+the morphism space from $n$ to $m$ consists of $R$-linear combinations
+of planar
 graphs in a rectangle with $n$ boundary points on the bottom, $m$ boundary
 points at the top, and consisting of trivalent vertices and $4$-valent
-symmetric crossings modulo planar isotopy, the usual Reidemeister 2 and 3
-relations for a symmetric crossing, and the following circle, lollipop, bigon,
+symmetric crossings
+\DPTtodo{Expand on ``symmetric crossing''}
+modulo planar isotopy, the usual Reidemeister 2 and 3
+relations for a symmetric crossing, and the following circle,
+lollipop, bigon, triangle,
 anti-symmetry, symmetry of the Killing form, and Jacobi relations.
 
 \begin{align}
@@ -192,14 +196,16 @@ By rescaling the trivalent vertex, it is easy to see that $\mathrm{Jac}_{R,d,b}$
 
 If $\mathfrak{g}$ is a simple Lie algebra object in a symmetric tensor
 category with dimension $d$, by the diagram calculus  the symmetric tensor
-category of finite dimensional representations of $\mathfrak{g}$ takes a
+category of finite dimensional representations of $\mathfrak{g}$ is
+the target of a
 functor from $\mathrm{Jac}_{R,d,b}$, where we interpret each strand as a copy of
 $\mathfrak{g}$, each cup or cap using the Killing form, each trivalent vertex
 as the Lie bracket, and each crossing as the usual symmetric braiding.  This 
 skein theory is somewhat poorly behaved since the space of $0$-boundary point
 diagrams is expected to be infinite dimensional.
 
-In addition, independently Cvitanovic and Vogel observed that the adjoint representations
+In addition, Cvitanović and Vogel independently observed that the
+adjoint representations
 of the exceptional Lie algebras satisfy another relation, the \emph{classical exceptional
 relation}.
 
@@ -216,6 +222,8 @@ $\mathrm{Jac}_{R,d,b}$ modulo Vogel's exceptional relation.
 
 
 \begin{conjecture} \label{conj:classical}
+\DPTtodo{Do we have a particular finite set in mind? If so, give a
+  pointer. How can the relevant polynomials involve $b$?}
 So long as a certain finite set of polynomials in $b$ and $d$ are invertible, the space of $n$-boundary point diagrams in $\mathrm{Exc}_{R,d,b}$  is free of finite rank over $R$ for every $n$, and the space of $0$-boundary point diagrams is rank $1$.  
 \end{conjecture}
 
@@ -248,6 +256,13 @@ It follows from this conjecture that if $d$ is one of \nn{which values?} then th
 
 
 The main result of this paper is a quantum version of this conjecture.  
+Before stating this conjecture we fix some notation that is analogous to ``quantum
+integer'' notation, adapted to a two-variable setting, but note that there is
+no denominator.
+\begin{align*}
+[k\lambda + n] &= w^kv^n - w^{-k}v^{-n}\\
+\{k\lambda + n\} &= w^k v^n + w^{-k} v^{-n} = \frac{[2k+2n]}{[k+n]}.
+\end{align*}
 
 \begin{definition}
 Let  $\mathrm{QExc}_{R,v,b,\alpha}$ be the ribbon category whose objects are collections of $n$
@@ -256,7 +271,8 @@ combinations planar graphs in a rectangle with $n$ boundary points on the
 bottom, $m$ boundary points at the top, and consisting of trivalent vertices
 and $4$-valent braided crossings modulo planar isotopy, the usual Reidemeister
 2 and 3 relations for a symmetric crossing, and the following circle,
-lollipop, bigon, triangle, quantum anti-symmetry, quantum Killing symmetry, and quantum Jacobi
+lollipop, bigon, triangle, quantum anti-symmetry, and quantum Killing
+symmetry
 relations.
 \end{definition}
 
@@ -267,8 +283,8 @@ relations.
     \loopvertex\;&=0\\[5pt]
       \ngon{2}\;&= b\;\onestrandid&
         \ngon[-90]{3}\; &= t\;\nvertex[-90]{3}\\[5pt]
-      \twist\; &= v^{12}\;\onestrandid&
-        \twistvertex\; &= -v^{6}\;\nvertex[-90]{3}
+    \twistvertex\; &= -v^{6}\;\nvertex[-90]{3}&
+      \twist\; &= v^{12}\;\onestrandid
   \end{aligned}
   \end{equation}
 where
@@ -307,14 +323,6 @@ v^{-3} \;
 
 
 
-
-Before stating this conjecture we fix some notation that is analogous to ``quantum
-integer'' notation, adapted to a two-variable setting, but note that there is
-no denominator.
-\begin{align*}
-[k\lambda + n] &= w^kv^n - w^{-k}v^{-n}\\
-\{k\lambda + n\} &= w^k v^n + w^{-k} v^{-n} = \frac{[2k+2n]}{[k+n]}.
-\end{align*}
 
 \begin{definition}
 Let \nn{name?} be the ribbon category whose objects are collections of $n$
@@ -1264,9 +1272,6 @@ consistent (no polynomials are consequences).
 \DPTtodo{Figure out the Conjecture in \cite[Section
   7.5]{MR2769234}. Does it relate?}
 
-\DPTtodo{Mention Cvitanovic \cite{MR2418111} somewhere. He also
-  noticed the key relation, and did it earlier.}
-
 \section{The quantum exceptional relation}
 \label{sec:relation}
 
@@ -1516,6 +1521,7 @@ Feel free to advise or criticize these plans!
 \renewcommand*{\bibfont}{\small}
 \setlength{\bibitemsep}{0pt}
 \raggedright
-\printbibliography
+% DPT: Disabled so I can work on the paper
+% \printbibliography
 
 \end{document}
