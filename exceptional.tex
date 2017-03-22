@@ -143,7 +143,7 @@ between the $\mathfrak{gl}_n$ yielding something called $\mathfrak{gl}_t$, and
 second quantize these Lie algebra objects.   This quantization can be done
 systematically using the Kontsevich integral, provided it converges.
 
-Work of Deligne, Cvitanovic, Vogel, Cohen-de Man, and others, can be summarized as a
+Work of Deligne, Cvitanović, Vogel, Cohen-de Man, and others, can be summarized as a
 conjecture that there is a third 1-parameter family of Lie algebra objects in
 symmetric tensor categories, called the (classical) exceptional series.
 This should interpolate between the
@@ -170,11 +170,15 @@ diagrams, $\mathrm{Jac}_d$.
 
 \begin{definition}
 Let $R$ be an algebra over $\mathbb{C}$, and let $d$ be an element of $R$ and $b$ an invertible element of $R$.  The objects of $\mathrm{Jac}_{R,d,b}$ are collections of $n$ points on the line and
-the morphism spaces from $n$ to $m$ consist of $R$-linear combinations planar
+the morphism space from $n$ to $m$ consists of $R$-linear combinations
+of planar
 graphs in a rectangle with $n$ boundary points on the bottom, $m$ boundary
 points at the top, and consisting of trivalent vertices and $4$-valent
-symmetric crossings modulo planar isotopy, the usual Reidemeister 2 and 3
-relations for a symmetric crossing, and the following circle, lollipop, bigon,
+symmetric crossings
+\DPTtodo{Expand on ``symmetric crossing''}
+modulo planar isotopy, the usual Reidemeister 2 and 3
+relations for a symmetric crossing, and the following circle,
+lollipop, bigon, triangle,
 anti-symmetry, symmetry of the Killing form, and Jacobi relations.
 
 \begin{align}
@@ -192,31 +196,37 @@ By rescaling the trivalent vertex, it is easy to see that $\mathrm{Jac}_{R,d,b}$
 
 If $\mathfrak{g}$ is a simple Lie algebra object in a symmetric tensor
 category with dimension $d$, by the diagram calculus  the symmetric tensor
-category of finite dimensional representations of $\mathfrak{g}$ takes a
-functor from $\mathrm{Jac}_{R,b,d}$, where we interpret each strand as a copy of
+category of finite dimensional representations of $\mathfrak{g}$ is
+the target of a
+functor from $\mathrm{Jac}_{R,d,b}$, where we interpret each strand as a copy of
 $\mathfrak{g}$, each cup or cap using the Killing form, each trivalent vertex
 as the Lie bracket, and each crossing as the usual symmetric braiding.  This 
 skein theory is somewhat poorly behaved since the space of $0$-boundary point
 diagrams is expected to be infinite dimensional.
 
-In addition, independently Cvitanovic and Vogel observed that the adjoint representations
+In addition, Cvitanović and Vogel independently observed that the
+adjoint representations
 of the exceptional Lie algebras satisfy another relation, the \emph{classical exceptional
 relation}.
 
 
 \begin{definition}
-If $2+d$ is invertible in $R$, let $\mathrm{Exc}_{R,b,d}$ be symmetric tensor category which is the quotient of 
-$\mathrm{Jac}_{R,b,d}$ modulo Vogel's exceptional relation.
+If $2+d$ is invertible in $R$, let $\mathrm{Exc}_{R,d,b}$ be symmetric tensor category which is the quotient of 
+$\mathrm{Jac}_{R,d,b}$ modulo Vogel's exceptional relation.
+\DPTtodo{This equation was wrong and I fixed it. I would also like a
+  version with the classical $\lambda$ to appear}
 \begin{equation}
-\ngon[45]{4}\; = \;\drawI\; + \;\drawH\;
- + \frac{b^2-b}{2+d} \left[ \;\twostrandid\; + \;\cupcap\; + \;\symcross\; \right]
+\ngon[45]{4}\; = \frac{b}{6} \left(\;\drawI\; + \;\drawH\; \right)
+ + \frac{5}{6}\frac{b^2}{2+d} \left( \;\twostrandid\; + \;\cupcap\; + \;\symcross\; \right)
 \label{eq:classical-except}
 \end{equation}
 \end{definition}
 
 
 \begin{conjecture} \label{conj:classical}
-So long as a certain finite set of polynomials in $b$ and $d$ are invertible, the space of $n$-boundary point diagrams in $\mathrm{Exc}_{R,b,d}$  is free of finite rank over $R$ for every $n$, and the space of $0$-boundary point diagrams is rank $1$.  
+\DPTtodo{Do we have a particular finite set in mind? If so, give a
+  pointer. How can the relevant polynomials involve $b$?}
+So long as a certain finite set of polynomials in $b$ and $d$ are invertible, the space of $n$-boundary point diagrams in $\mathrm{Exc}_{R,d,b}$  is free of finite rank over $R$ for every $n$, and the space of $0$-boundary point diagrams is rank $1$.  
 \end{conjecture}
 
 One should think of this conjecture as having two
@@ -231,27 +241,30 @@ are completely open, we would expect uniqueness to be easier than existence.
 The following corollary follows from Conjecture \ref{conj:classical}.
 
 \begin{corollary}
-If $d$ is one of ???, then the quotient of $\mathrm{Jac}_{\mathbb{C},b,d}$ by the negligible elements is ???, respectively.
+If $d$ is one of ???, then the quotient of $\mathrm{Jac}_{\mathbb{C},d,b}$ by the negligible elements is ???, respectively.
 \end{corollary}
 
 \begin{conjecture}
-There is a dense open subset of $\mathcal{C}$ for which the idempotent completion of $\mathrm{Jac}_{\mathbb{C},b,d}$ is semisimple.
+There is a dense open subset $U \subset \mathbb{C}$ for which the idempotent completion of $\mathrm{Jac}_{\mathbb{C},d,b}$, for $d \in U$, is semisimple.
 \end{conjecture}
 
-We expect that in order for the idempotent completion to be semisimple one needs to invert infinitely many polynomials.  For example, for $\mathrm{GL}_t$ in order for the idempotent completion to be semisimple you need to invert $t-n$ for every positive integer $n$.
+We expect that in order for the idempotent completion to be semisimple one needs to invert infinitely many polynomials.  For example, for the idempotent completion of $\mathrm{GL}_t$ to be semisimple you need to invert $t-n$ for every positive integer $n$.
 
 
+These conjectures are a restatement of the conjectures of Deligne and Cohen--De Man, and would give a construction of an
+exceptional series passing through each of the exceptional Lie algebras.
 
-
-
-A positive answer to this conjecture would give a construction of an
-exceptional series passing through each of the exceptional Lie algebras, as
-conjectured by Deligne and Cohen--De Man.  
-
-It follows from this conjecture that if $d$ is one of \todo{which values?} then the quotient of $\mathrm{Exc}_{R,b,d}$
+It follows from this conjecture that if $d$ is one of \nn{which values?} then the quotient of $\mathrm{Exc}_{R,d,b}$ \nn{...}
 
 
 The main result of this paper is a quantum version of this conjecture.  
+Before stating this conjecture we fix some notation that is analogous to ``quantum
+integer'' notation, adapted to a two-variable setting, but note that there is
+no denominator.
+\begin{align*}
+[k\lambda + n] &= w^kv^n - w^{-k}v^{-n}\\
+\{k\lambda + n\} &= w^k v^n + w^{-k} v^{-n} = \frac{[2k+2n]}{[k+n]}.
+\end{align*}
 
 \begin{definition}
 Let  $\mathrm{QExc}_{R,v,b,\alpha}$ be the ribbon category whose objects are collections of $n$
@@ -260,7 +273,8 @@ combinations planar graphs in a rectangle with $n$ boundary points on the
 bottom, $m$ boundary points at the top, and consisting of trivalent vertices
 and $4$-valent braided crossings modulo planar isotopy, the usual Reidemeister
 2 and 3 relations for a symmetric crossing, and the following circle,
-lollipop, bigon, triangle, quantum anti-symmetry, quantum Killing symmetry, and quantum Jacobi
+lollipop, bigon, triangle, quantum anti-symmetry, and quantum Killing
+symmetry
 relations.
 \end{definition}
 
@@ -271,8 +285,8 @@ relations.
     \loopvertex\;&=0\\[5pt]
       \ngon{2}\;&= b\;\onestrandid&
         \ngon[-90]{3}\; &= t\;\nvertex[-90]{3}\\[5pt]
-      \twist\; &= v^{12}\;\onestrandid&
-        \twistvertex\; &= -v^{6}\;\nvertex[-90]{3}
+    \twistvertex\; &= -v^{6}\;\nvertex[-90]{3}&
+      \twist\; &= v^{12}\;\onestrandid
   \end{aligned}
   \end{equation}
 where
@@ -311,14 +325,6 @@ v^{-3} \;
 
 
 
-
-Before stating this conjecture we fix some notation that is analogous to ``quantum
-integer'' notation, adapted to a two-variable setting, but note that there is
-no denominator.
-\begin{align*}
-[k\lambda + n] &= w^kv^n - w^{-k}v^{-n}\\
-\{k\lambda + n\} &= w^k v^n + w^{-k} v^{-n} = \frac{[2k+2n]}{[k+n]}.
-\end{align*}
 
 \begin{definition}
 Let \nn{name?} be the ribbon category whose objects are collections of $n$
@@ -482,6 +488,8 @@ and $D_{*k!}$ denotes the diagram $D$ along with the first $k$ of its
 counterclockwise rotations, even though these do not exhaust all of the
 inequivalent rotations.
 
+\DPTtodo{The graphs look good, but the lines should be thicker at this
+size}
 We define them as follows:
 \begin{align*}
 \cB^{\text{braided}}_0 & = \cB^{\text{planar}}_0 = \left\{ \diagram
@@ -638,7 +646,7 @@ determinants of these matrices, obtaining
              }{
               v^2 [2]^{24} [3]^{32} [\lambda - 2]^{6} [\lambda - 1]^{26} [\lambda]^{26} [\lambda + 1]^6
               [2 \lambda - 6]^{12} [2\lambda - 3] [2\lambda + 1] [2\lambda + 4]^{12}
-             }
+             } \\
 \det M_6 & = \frac{
               -v^{12} [1]^{67} [4]^{80} [5]^{75} [6]^{165} [\lambda - 6]^{80} [\lambda - 5]^{15} [\lambda - 4]^{65} [\lambda - 3]^{112} [\lambda + 3]^{65} [\lambda + 4]^{15} [\lambda + 5]^{80} [2 \lambda - 4]^5 [2\lambda + 2]^5 [3\lambda - 6]^{45} [3\lambda + 3]^{45} [4 \lambda - 6]^{10} [4\lambda + 2]^{10} [5\lambda - 6] [5\lambda + 1]
              }{
@@ -648,16 +656,21 @@ determinants of these matrices, obtaining
 
 
 
-In particular, we see that $\det M_4$ vanishes when $v^k = 1$ for $k=1,2,4,5,8,10$, or $12$, or when $w = \pm v^k$ for $k=-5,-3,4,6$, or when $v^4 \pm v^2 w + w^2 = 0$ (equivalently, $w = \zeta v^{-1}$ for $\zeta$ a primitive 3rd or 6th root of unity) or $1 \pm v w + v^2 w^2 = 0$ (equivalently, $w = \zeta v^2$ for $\zeta$ a primitive 3rd or 6th root of unity). Then, $\det M_5$ vanishes at all the same places, and additionally at $v^6 + w^4 = 0$ and $1 + v^2 w^4 = 0$.
+In particular, we see that $\det M_4$ vanishes when $v^k = 1$ for $k=1,2,4,5,8,10$, or $12$, or when $w = \pm v^k$ for $k=-5,-3,4,6$, or when $v^4 \pm v^2 w + w^2 = 0$ (equivalently, $w = \zeta v^{-1}$ for $\zeta$ a primitive 3rd or 6th root of unity) or $1 \pm v w + v^2 w^2 = 0$ (equivalently, $w = \zeta v^2$ for $\zeta$ a primitive 3rd or 6th root of unity). Then, $\det M_5$ vanishes at all the same places, and additionally at $v^6 + w^4 = 0$ and $1 + v^2 w^4 = 0$. \nn{These are exactly the curves corresponding for quantum $E_6$.}
 Finally $\det M_6$ vanishes everywhere $\det M_5$ does, and also at $w = \pm v^k$ for $k=-4,-2,3,5$, $w = \pm i v^k$ for $k=-1,2$, $v = \pm w^{-5}$ and $w^5 \pm v^6 = 0$.
 
 In fact, the components of $\det M_4 = 0$ are explained by smaller categories which we already know about, or degenerate cases.
 \nn{appropriate reference elsewhere in the paper for the $v^k = 1$ cases}
-At $w = \pm v^-5$ and $w = \pm v^6$, we see that $d=0$, so any quotient would be degenerate. At $w = \pm v^{-3}$ and $w = \pm v^4$, we recover the $SO(3)_q$ categories \nn{details?}. At $w = \zeta v^2$, with $\zeta$ a primitive 3rd or 6th root, we obtain $(G_2)_q$ \nn{details}. \nn{What about $w = \zeta v^{-1}$?}
+At $w = \pm v^{-5}$ and $w = \pm v^6$, we see that $d=0$, so any quotient would be degenerate. At $w = \pm v^{-3}$ and $w = \pm v^4$, we recover the $SO(3)_q$ categories \nn{details?}. At $w = \zeta v^2$, with $\zeta$ a primitive 3rd or 6th root, we obtain $(G_2)_q$ \nn{details}. \nn{What about $w = \zeta v^{-1}$?}
 
-\nn{Does $E_6$ explain one of the components of $\det M_5 = 0$?}
-
-Although it may appear that new factors are appearing in the denominators as we look at $\det M_3, \det M_4, \det M_5, $ and $\det M_6$, one should recall that the bracket polynomials $[a \lambda + b]$ are not generally irreducible. The irreducible factors appearing in the denominator after cancellation remain the denominators \nn{already} introduced: $\det M_4$ has poles at $w=\pm1, v=\pm w, v^6+w^2 = 0$, and $1+v^4w^2 = 0$,
+Although it may appear that new factors are appearing in the
+denominators as we look at $\det M_3, \det M_4, \det M_5, $ and $\det
+M_6$, one should recall that the bracket polynomials $[a \lambda + b]$
+are not generally irreducible. \nn{Does ``irreducible'' make sense?
+  $\QQ[v\pm 1, w \pm 1]$ is not a UFD, right?} The
+irreducible factors appearing in the denominator after cancellation
+remain the denominators \nn{already} introduced: $\det M_4$ has poles
+at $w=\pm1, v=\pm w, v^6+w^2 = 0$, and $1+v^4w^2 = 0$,
 then $\det M_5$ has additional poles at $w=0, 1\pm v + v^2 = 0$, and $\det M_6$
 has a pole at $v = \pm 1$.
 
@@ -915,13 +928,14 @@ All basic polyhedra with less than 12 vertices have width at most 6, and of
 the 12 vertex basic polyhedra all but 12C (the cuboctahedron) and 12G (using 
 the naming scheme from \cite{MR679310}) have width at most 6. These graphs,
 made into alternating links, are the two exceptions described above.
+\nn{Say something about non-alternating versions of these links}
 \end{proof}
 In fact, almost all prime knots up to 11 crossings have bridge number 
 at most 3, and hence width at most 6, with 15 exceptions, all Montesinos
 knots. \footnote{The exceptions are 11a43, 11a44, 11a47, 11a57, 11a231,
   11a263, 11n71, 11n72, 11n73, 11n74, 11n75, 11n76, 11n77, 11n78, and
   11n81. \cite{1208.4233}}
-Montesinos knots are easily seen to have Conway width 4.%
+Montesinos knots are easily seen to have Conway width 4.
 Interestingly all knots with at most 14 crossings have Conway width at most 6.
 If we were able to work with Conway width 8, we could nearly exhaust the 
 available tables of knots and links; every Conway basic polyhedron with at 
@@ -946,7 +960,10 @@ in $v$ and $w$. These polynomials $\mathcal E (L)$ are tabulated
 
 It would be desirable to verify that these computed invariants specialize 
 correctly to the quantum link invariants of the adjoint representations of the
-exceptional Lie algebras. Unfortunately, these invariants have previously been
+exceptional Lie algebras.
+\DPTtodo{Don't we have an unconditional theorem here, that these do in fact
+  specialize correctly?}
+Unfortunately, these invariants have previously been
 rather hard to compute, so there is little available to check against. The Lie
 algebra $\mathfrak{sl}_2$ lies on the exceptional curve, and so the 2nd
 coloured Jones polynomial  (that is, colored by the 3-dimensional adjoint
@@ -972,8 +989,16 @@ computing this.
 \subsubsection{Comparisons}
 \nn{Compare to Westbury and the other paper...}
 
+\section{From classical to quantum conjecture}
+\label{sec:classical-quantum}
+
+We now show that a version of Conjecture~\ref{conj:classical} implies
+a version of Conjecture~\ref{conj:quant-consist}.
 
 
+\appendix
+
+\section{Old outline proposal}
 
 \vspace{1cm}
 \hrule
@@ -1048,8 +1073,6 @@ Dylan's earlier proposal for an outline.
     symmetric). This family has only a finite number of points.
   \end{enumerate}
 \end{enumerate}
-
-\appendix
 
 \section{Introduction}
 \label{sec:introduction}
@@ -1175,10 +1198,9 @@ value~$6$, which implies the value of a trivalent bubble.
 In addition, Vogel observed that all the exceptional Lie algebras
 satisfy another relation, the \emph{classical exceptional relation},
 which can be put in the form
-\DPTtodo{Need to rename $w$, as we reuse it}
 \begin{equation}
 \ngon[45]{4}\; = \;\drawI\; + \;\drawH\;
- + w \left[ \;\twostrandid\; + \;\cupcap\; + \;\symcross\; \right]
+ + \omega \left[ \;\twostrandid\; + \;\cupcap\; + \;\symcross\; \right]
 \label{eq:classical-except}
 \end{equation}
 for varying values of~$w$.
@@ -1191,7 +1213,7 @@ for varying values of~$w$.
   \[
   \begin{tabular}{lcc}
     \toprule
-    Group         & $\mu$ & $w$\\
+    Group         & $\mu$ & $\omega$\\
     \midrule
     Trivial             & $5$ & $15$ \\
     $O(1 \mid 2)$       & $4$ & $10$ \\
@@ -1229,9 +1251,9 @@ outer automorphisms (or symmetries of the Dynkin diagram).
     \cite{MR1952563}.
   \item The dual Coxeter number $h^\vee = 6/\mu$
     \cite{MR1952563}.
-  \item The number $w$ in Equation~\eqref{eq:classical-except}, with
-    $w=\mu(1+\mu)/2$. This appears to be the first time it has been
-    published, but it appeared in earlier preprint
+  \item The number $\omega$ in Equation~\eqref{eq:classical-except}, with
+    $\omega=\mu(1+\mu)/2$. This appears to be the first time it has been
+    published, but it appeared in earlier (unavailable?) preprint
     versions of Vogel's paper \cite{MR2769234}.
   \item\label{item:eigenvalues} The two non-trivial eigenvalues $\alpha$ and $\beta$ of the ladder
     operator $\psi_L$ on $\Sym^2\fg$, defined by
@@ -1258,19 +1280,18 @@ outer automorphisms (or symmetries of the Dynkin diagram).
 \begin{remark}
   Vogel took item \ref{item:eigenvalues} on the list above as his
   starting point. It is easy to deduce
-  Equation~\eqref{eq:classical-except} (with $w = -\alpha\beta/2$)
+  Equation~\eqref{eq:classical-except} (with $\omega = -\alpha\beta/2$)
   from the condition on eigenvalues of $\psi_L$.
 \end{remark}
 
-Introduce skein theory over $\QQ(w)$ (or $\QQ[w]$?). Conjecture that
+\nn{
+Introduce skein theory over $\QQ(\omega)$ (or $\QQ[\omega]$?). Conjecture that
 it is complete (everything is equivalent to a polynomial) and
 consistent (no polynomials are consequences).
+}
 
 \DPTtodo{Figure out the Conjecture in \cite[Section
   7.5]{MR2769234}. Does it relate?}
-
-\DPTtodo{Mention Cvitanovic \cite{MR2418111} somewhere. He also
-  noticed the key relation, and did it earlier.}
 
 \section{The quantum exceptional relation}
 \label{sec:relation}
