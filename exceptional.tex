@@ -226,7 +226,7 @@ $\mathrm{Jac}_{R,d,b}$ modulo Vogel's exceptional relation.
 \begin{conjecture} \label{conj:classical}
 \DPTtodo{Do we have a particular finite set in mind? If so, give a
   pointer. How can the relevant polynomials involve $b$?}
-So long as a certain finite set of polynomials in $b$ and $d$ are invertible, the space of $n$-boundary point diagrams in $\mathrm{Exc}_{R,d,b}$  is free of finite rank over $R$ for every $n$, and the space of $0$-boundary point diagrams is rank $1$.  
+So long as a certain finite set of polynomials in $d$ are invertible, the space of $n$-boundary point diagrams in $\mathrm{Exc}_{R,d,b}$  is free of finite rank over $R$ for every $n$, and the space of $0$-boundary point diagrams is rank $1$.  
 \end{conjecture}
 
 One should think of this conjecture as having two
@@ -238,10 +238,19 @@ diagrams, while the existence conjecture says that this evaluation is well-defin
  (i.e. independent of choices along the way). Although both conjectures
 are completely open, we would expect uniqueness to be easier than existence.
 
+The parameter $d$ is somewhat poorly behaved, and so Deligne instead introduced a parameter $\lambda$ such that $d = -2 \frac{(\lambda+5)(6-\lambda)}{(\lambda(1-\lambda)}$.  Note that $\lambda$ and $1-\lambda$ correspond to the same $d$ and thus to the same category.  If we normalize $b=6$ then the exceptional relation for $\mathrm{Exc}_{R,-2 \frac{(\lambda+5)(6-\lambda)}{(\lambda(1-\lambda)},6}$ has the following form.
+
+\begin{equation}
+\ngon[45]{4}\; = \;\drawI\; + \;\drawH\;
+ - \frac{\lambda(1-\lambda)}{2} \left( \;\twostrandid\; + \;\cupcap\; + \;\symcross\; \right)
+\label{eq:classical-except}
+\end{equation}
+
+
 The following corollary follows from Conjecture \ref{conj:classical}.
 
 \begin{corollary}
-If $d$ is one of ???, then the quotient of $\mathrm{Jac}_{\mathbb{C},d,b}$ by the negligible elements is ???, respectively.
+If $d$ is one of $-5, -4, -3, -2, -3/2,1,2/3,1/2, 1/3, 1/5$, then the quotient of $\mathrm{Jac}_{\mathbb{C},d,b}$ by the negligible elements is equivalent to the category of representations of the trivial group, $O(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3) \rtimes \mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$, $E_6 \rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
 \end{corollary}
 
 \begin{conjecture}
@@ -253,9 +262,6 @@ We expect that in order for the idempotent completion to be semisimple one needs
 
 These conjectures are a restatement of the conjectures of Deligne and Cohen--De Man, and would give a construction of an
 exceptional series passing through each of the exceptional Lie algebras.
-
-It follows from this conjecture that if $d$ is one of \nn{which values?} then the quotient of $\mathrm{Exc}_{R,d,b}$ \nn{...}
-
 
 The main result of this paper is a quantum version of this conjecture.  
 Before stating this conjecture we fix some notation that is analogous to ``quantum
