@@ -1,0 +1,2793 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    126622,       2783]
+NotebookOptionsPosition[    120780,       2626]
+NotebookOutlinePosition[    121136,       2642]
+CellTagsIndexPosition[    121093,       2639]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "QuantumGroupsPath", "=", 
+   "\"\</Users/scott/projects/KnotTheory/trunk/KnotTheory/QuantumGroups\>\""}]\
+, ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"AppendTo", "[", 
+   RowBox[{"$Path", ",", "QuantumGroupsPath"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"<<", "QuantumGroups`"}]}], "Input",
+ CellChangeTimes->{{3.532377167575387*^9, 3.532377232779888*^9}, {
+  3.697852452069644*^9, 3.697852455158806*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Loading QuantumGroups` version 2.0\\n\"\>", 
+   "\[InvisibleSpace]", "\<\"Read more at \
+http://katlas.math.toronto.edu/wiki/QuantumGroups\"\>"}],
+  SequenceForm[
+  "Loading QuantumGroups` version 2.0\n", 
+   "Read more at http://katlas.math.toronto.edu/wiki/QuantumGroups"],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.532377233093134*^9, 3.5323784327522507`*^9, 3.5323785780041533`*^9, 
+   3.532380793184939*^9, 3.5327907305117893`*^9, 3.532809502022471*^9, 
+   3.539269906979204*^9, 3.539293633500269*^9, 3.558141797350659*^9, 
+   3.5582152152686157`*^9, 3.5677972170142393`*^9, {3.578862549362577*^9, 
+   3.5788625611475487`*^9}, {3.697852369605577*^9, 3.697852378081966*^9}, 
+   3.6978524597986*^9}],
+
+Cell[BoxData["\<\"Remember to set QuantumGroupsDataDirectory[] to the \
+appropriate path, if you've downloaded precomputed data.\"\>"], "Print",
+ CellChangeTimes->{
+  3.532377233093134*^9, 3.5323784327522507`*^9, 3.5323785780041533`*^9, 
+   3.532380793184939*^9, 3.5327907305117893`*^9, 3.532809502022471*^9, 
+   3.539269906979204*^9, 3.539293633500269*^9, 3.558141797350659*^9, 
+   3.5582152152686157`*^9, 3.5677972170142393`*^9, {3.578862549362577*^9, 
+   3.5788625611475487`*^9}, {3.697852369605577*^9, 3.697852378081966*^9}, 
+   3.697852459805079*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"FundamentalIrreps", "[", "\[CapitalGamma]_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Irrep", "[", "\[CapitalGamma]", "]"}], "/@", 
+   RowBox[{"IdentityMatrix", "[", 
+    RowBox[{"Rank", "[", "\[CapitalGamma]", "]"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.532377249706018*^9, 3.532377270964304*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"V", "=", 
+   RowBox[{
+    RowBox[{"Irrep", "[", 
+     SubscriptBox["F", "4"], "]"}], "[", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "0", ",", "1"}], "}"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"qDimension", "[", "F4", "]"}], "[", "V", "]"}], "/.", 
+  RowBox[{"q", "\[Rule]", "1"}]}]}], "Input",
+ CellChangeTimes->{{3.697852552555471*^9, 3.6978525682261963`*^9}}],
+
+Cell[BoxData["26"], "Output",
+ CellChangeTimes->{{3.6978525587568903`*^9, 3.697852568478251*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"DebugSet", "[", "True", "]"}]], "Input",
+ CellChangeTimes->{{3.6978526632137136`*^9, 3.697852674574045*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BraidingMap", "[", 
+  RowBox[{"F4", ",", 
+   RowBox[{"V", "\[CircleTimes]", "V"}], ",", "FundamentalBasis"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.6978525427771263`*^9, 3.697852547911509*^9}, {
+  3.697852592509079*^9, 3.697852651868416*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43446344", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "35.495737`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`RMatrix`Private`PartialRMatrix[F\\\
+_4]\\)\\)[2]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43446344, " time: ", 35.495737, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(QuantumGroups`RMatrix`Private`PartialRMatrix[F\_4]\)\)[\
+2]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527009050627`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43520216", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "35.931537999999996`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(QuantumGroups`RMatrix`Private`PartialRMatrix[F\\\
+_4]\\)\\)[2]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43520216, " time: ", 35.931537999999996`, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(QuantumGroups`RMatrix`Private`PartialRMatrix[F\_4]\)\)[\
+2]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527013352537`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43478424", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "35.939183`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(ExpandQuantumRoot[F\\_4]\\)\\)[\\(\\(\\((X\\_\\(\
+F\\_4, 2\\))\\)\\^+\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43478424, " time: ", 35.939183, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(ExpandQuantumRoot[F\_4]\)\)[\(\(\((X\_\(F\_4, \
+2\))\)\^+\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852701347899*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43571016", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "36.20151799999999`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(ExpandQuantumRoot[F\\_4]\\)\\)[\\(\\(\\((X\\_\\(\
+F\\_4, 7\\))\\)\\^+\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43571016, " time: ", 36.20151799999999, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(ExpandQuantumRoot[F\_4]\)\)[\(\(\((X\_\(F\_4, \
+7\))\)\^+\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852701633247*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43573264", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.206208`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1, \
+T\\_2, T\\_1, T\\_3, T\\_2, T\\_1}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), \
+HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43573264, " time: ", 36.206208, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1, T\_2, T\_1, T\_3, \
+T\_2, T\_1}\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527016359386`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43575040", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.206436`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2, \
+T\\_1, T\\_3, T\\_2, T\\_1}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), \
+HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43575040, " time: ", 36.206436, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2, T\_1, T\_3, T\_2, \
+T\_1}\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527016385813`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43576784", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.206658`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1, \
+T\\_3, T\\_2, T\\_1}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\
+\>"}],
+  SequenceForm[
+  "mem: ", 43576784, " time: ", 36.206658, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1, T\_3, T\_2, T\_1}\
+\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.69785270164087*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43578496", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.206874`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3, \
+T\\_2, T\\_1}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43578496, " time: ", 36.206874, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3, T\_2, T\_1}\)\), \
+\(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852701643263*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43580176", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.20711`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2, \
+T\\_1}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43580176, " time: ", 36.20711, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2, T\_1}\)\), \(\((X\
+\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852701648004*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43584504", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "36.227278999999996`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2, \
+T\\_1}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43584504, " time: ", 36.227278999999996`, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2, T\_1}\)\), \(\((X\
+\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852701650549*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43585768", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.227634`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43585768, " time: ", 36.227634, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.69785270165306*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43595488", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.318666`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43595488, " time: ", 36.318666, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852701729278*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43596952", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "36.319109999999995`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43596952, " time: ", 36.319109999999995`, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852701732133*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43598312", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.321406`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43598312, " time: ", 36.321406, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852701734511*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43596296", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.321886`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3, \
+T\\_2, T\\_1}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43596296, " time: ", 36.321886, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3, T\_2, T\_1}\)\), \
+\(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527017367697`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43597296", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.322152`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1}\\)\
+\\), \\(\\(\\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43597296, " time: ", 36.322152, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1}\)\), \
+\(\(\(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852701739057*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43597720", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.323122`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1}\\)\
+\\), \\(\\(\\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43597720, " time: ", 36.323122, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1}\)\), \
+\(\(\(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527017413387`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43598296", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.323521`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1}\\)\
+\\), \\(\\(\\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43598296, " time: ", 36.323521, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1}\)\), \
+\(\(\(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527017437*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43598760", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.324143`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1}\\)\
+\\), \\(\\(\\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43598760, " time: ", 36.324143, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1}\)\), \
+\(\(\(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852701747985*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43597256", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.324822`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1, \
+T\\_3, T\\_2, T\\_1}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\
+\>"}],
+  SequenceForm[
+  "mem: ", 43597256, " time: ", 36.324822, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1, T\_3, T\_2, T\_1}\
+\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852701750424*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43598408", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.32512`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43598408, " time: ", 36.32512, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852701752898*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43603496", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "36.387598999999994`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43603496, " time: ", 36.387598999999994`, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527017979507`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43604112", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.388032`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43604112, " time: ", 36.388032, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_2)\)\^+\) ** \(\((X\_1)\)\^+\) ** \(\((X\_3)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527018006153`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43605120", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.389583`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43605120, " time: ", 36.389583, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_2)\)\^+\) ** \(\((X\_1)\)\^+\) ** \(\((X\_3)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852701803019*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43605352", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.38986`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43605352, " time: ", 36.38986, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_3)\)\^+\) ** \(\((X\_1)\)\^+\) ** \(\((X\_2)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852701805311*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43608808", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.519546`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43608808, " time: ", 36.519546, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_3)\)\^+\) ** \(\((X\_1)\)\^+\) ** \(\((X\_2)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852701925713*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43609608", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.520005`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43609608, " time: ", 36.520005, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852701930892*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43612232", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.573`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43612232, " time: ", 36.573, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702002906*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43613192", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.574085`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2, \
+T\\_1, T\\_3, T\\_2, T\\_1}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), \
+HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43613192, " time: ", 36.574085, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2, T\_1, T\_3, T\_2, \
+T\_1}\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527020057592`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43615552", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.57447`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43615552, " time: ", 36.57447, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702008177*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43616952", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.577729`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43616952, " time: ", 36.577729, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702010543*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43617584", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.578029`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43617584, " time: ", 36.578029, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702014975*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43618112", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.578809`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43618112, " time: ", 36.578809, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702017379*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43618128", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.579097`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1}\\)\
+\\), \\(\\(\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43618128, " time: ", 36.579097, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1}\)\), \
+\(\(\(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702019845*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43619736", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.612791`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1}\\)\
+\\), \\(\\(\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43619736, " time: ", 36.612791, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1}\)\), \
+\(\(\(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527020223303`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43620560", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "36.613254999999995`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1}\\)\
+\\), \\(\\(\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43620560, " time: ", 36.613254999999995`, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1}\)\), \
+\(\(\(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702024879*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43622168", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.654592`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1}\\)\
+\\), \\(\\(\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43622168, " time: ", 36.654592, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1}\)\), \
+\(\(\(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702060134*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43620072", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.655288`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1, \
+T\\_2, T\\_1, T\\_3, T\\_2, T\\_1}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), \
+HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43620072, " time: ", 36.655288, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1, T\_2, T\_1, T\_3, \
+T\_2, T\_1}\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.69785270206504*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43709416", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "36.995247`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(ExpandQuantumRoot[F\\_4]\\)\\)[\\(\\(\\((X\\_\\(\
+F\\_4, 23\\))\\)\\^+\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43709416, " time: ", 36.995247, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(ExpandQuantumRoot[F\_4]\)\)[\(\(\((X\_\(F\_4, \
+23\))\)\^+\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702399377*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43714296", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.008915`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1, \
+T\\_2, T\\_1, T\\_3, T\\_2, T\\_1, T\\_3, T\\_2, T\\_3, T\\_4, T\\_3, T\\_2, \
+T\\_1, T\\_3, T\\_2, T\\_3, T\\_4, T\\_3, T\\_2, T\\_1, T\\_3, T\\_2}\\)\\), \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43714296, " time: ", 37.008915, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1, T\_2, T\_1, T\_3, \
+T\_2, T\_1, T\_3, T\_2, T\_3, T\_4, T\_3, T\_2, T\_1, T\_3, T\_2, T\_3, T\_4, \
+T\_3, T\_2, T\_1, T\_3, T\_2}\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702413121*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43716736", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "37.009316999999996`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2, \
+T\\_1, T\\_3, T\\_2, T\\_1, T\\_3, T\\_2, T\\_3, T\\_4, T\\_3, T\\_2, T\\_1, \
+T\\_3, T\\_2, T\\_3, T\\_4, T\\_3, T\\_2, T\\_1, T\\_3, T\\_2}\\)\\), \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43716736, " time: ", 37.009316999999996`, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2, T\_1, T\_3, T\_2, \
+T\_1, T\_3, T\_2, T\_3, T\_4, T\_3, T\_2, T\_1, T\_3, T\_2, T\_3, T\_4, T\_3, \
+T\_2, T\_1, T\_3, T\_2}\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702417123*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43719160", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.009616`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1, \
+T\\_3, T\\_2, T\\_1, T\\_3, T\\_2, T\\_3, T\\_4, T\\_3, T\\_2, T\\_1, T\\_3, \
+T\\_2, T\\_3, T\\_4, T\\_3, T\\_2, T\\_1, T\\_3, T\\_2}\\)\\), \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43719160, " time: ", 37.009616, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1, T\_3, T\_2, T\_1, \
+T\_3, T\_2, T\_3, T\_4, T\_3, T\_2, T\_1, T\_3, T\_2, T\_3, T\_4, T\_3, T\_2, \
+T\_1, T\_3, T\_2}\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702420689*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43721536", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "37.009893999999996`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3, \
+T\\_2, T\\_1, T\\_3, T\\_2, T\\_3, T\\_4, T\\_3, T\\_2, T\\_1, T\\_3, T\\_2, \
+T\\_3, T\\_4, T\\_3, T\\_2, T\\_1, T\\_3, T\\_2}\\)\\), \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43721536, " time: ", 37.009893999999996`, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3, T\_2, T\_1, T\_3, \
+T\_2, T\_3, T\_4, T\_3, T\_2, T\_1, T\_3, T\_2, T\_3, T\_4, T\_3, T\_2, T\_1, \
+T\_3, T\_2}\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702423658*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43723896", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.010165`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2, \
+T\\_1, T\\_3, T\\_2, T\\_3, T\\_4, T\\_3, T\\_2, T\\_1, T\\_3, T\\_2, T\\_3, \
+T\\_4, T\\_3, T\\_2, T\\_1, T\\_3, T\\_2}\\)\\), \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43723896, " time: ", 37.010165, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2, T\_1, T\_3, T\_2, \
+T\_3, T\_4, T\_3, T\_2, T\_1, T\_3, T\_2, T\_3, T\_4, T\_3, T\_2, T\_1, T\_3, \
+T\_2}\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702426373*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43726208", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.010427`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1, \
+T\\_3, T\\_2, T\\_3, T\\_4, T\\_3, T\\_2, T\\_1, T\\_3, T\\_2, T\\_3, T\\_4, \
+T\\_3, T\\_2, T\\_1, T\\_3, T\\_2}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), \
+HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43726208, " time: ", 37.010427, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1, T\_3, T\_2, T\_3, \
+T\_4, T\_3, T\_2, T\_1, T\_3, T\_2, T\_3, T\_4, T\_3, T\_2, T\_1, T\_3, T\_2}\
+\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702429079*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43728504", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.010685`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3, \
+T\\_2, T\\_3, T\\_4, T\\_3, T\\_2, T\\_1, T\\_3, T\\_2, T\\_3, T\\_4, T\\_3, \
+T\\_2, T\\_1, T\\_3, T\\_2}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), \
+HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43728504, " time: ", 37.010685, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3, T\_2, T\_3, T\_4, \
+T\_3, T\_2, T\_1, T\_3, T\_2, T\_3, T\_4, T\_3, T\_2, T\_1, T\_3, T\_2}\)\), \
+\(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702431713*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43730752", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.010939`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2, \
+T\\_3, T\\_4, T\\_3, T\\_2, T\\_1, T\\_3, T\\_2, T\\_3, T\\_4, T\\_3, T\\_2, \
+T\\_1, T\\_3, T\\_2}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\
+\>"}],
+  SequenceForm[
+  "mem: ", 43730752, " time: ", 37.010939, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2, T\_3, T\_4, T\_3, \
+T\_2, T\_1, T\_3, T\_2, T\_3, T\_4, T\_3, T\_2, T\_1, T\_3, T\_2}\)\), \(\((X\
+\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702434408*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43732984", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.011184`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3, \
+T\\_4, T\\_3, T\\_2, T\\_1, T\\_3, T\\_2, T\\_3, T\\_4, T\\_3, T\\_2, T\\_1, \
+T\\_3, T\\_2}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43732984, " time: ", 37.011184, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3, T\_4, T\_3, T\_2, \
+T\_1, T\_3, T\_2, T\_3, T\_4, T\_3, T\_2, T\_1, T\_3, T\_2}\)\), \(\((X\_3)\)\
+\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702437015*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43735168", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.011424`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_4, \
+T\\_3, T\\_2, T\\_1, T\\_3, T\\_2, T\\_3, T\\_4, T\\_3, T\\_2, T\\_1, T\\_3, \
+T\\_2}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43735168, " time: ", 37.011424, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_4, T\_3, T\_2, T\_1, \
+T\_3, T\_2, T\_3, T\_4, T\_3, T\_2, T\_1, T\_3, T\_2}\)\), \
+\(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527024396343`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43737336", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.01166`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3, \
+T\\_2, T\\_1, T\\_3, T\\_2, T\\_3, T\\_4, T\\_3, T\\_2, T\\_1, T\\_3, \
+T\\_2}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43737336, " time: ", 37.01166, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3, T\_2, T\_1, T\_3, \
+T\_2, T\_3, T\_4, T\_3, T\_2, T\_1, T\_3, T\_2}\)\), \
+\(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527024422092`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43739448", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.01189`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2, \
+T\\_1, T\\_3, T\\_2, T\\_3, T\\_4, T\\_3, T\\_2, T\\_1, T\\_3, T\\_2}\\)\\), \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43739448, " time: ", 37.01189, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2, T\_1, T\_3, T\_2, \
+T\_3, T\_4, T\_3, T\_2, T\_1, T\_3, T\_2}\)\), \(\((X\_3)\)\^+\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702444766*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43741528", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.012115`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1, \
+T\\_3, T\\_2, T\\_3, T\\_4, T\\_3, T\\_2, T\\_1, T\\_3, T\\_2}\\)\\), \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43741528, " time: ", 37.012115, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1, T\_3, T\_2, T\_3, \
+T\_4, T\_3, T\_2, T\_1, T\_3, T\_2}\)\), \(\((X\_3)\)\^+\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702447299*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43743576", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.012336`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3, \
+T\\_2, T\\_3, T\\_4, T\\_3, T\\_2, T\\_1, T\\_3, T\\_2}\\)\\), \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43743576, " time: ", 37.012336, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3, T\_2, T\_3, T\_4, \
+T\_3, T\_2, T\_1, T\_3, T\_2}\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702449814*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43745592", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.012577`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2, \
+T\\_3, T\\_4, T\\_3, T\\_2, T\\_1, T\\_3, T\\_2}\\)\\), \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43745592, " time: ", 37.012577, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2, T\_3, T\_4, T\_3, \
+T\_2, T\_1, T\_3, T\_2}\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702452744*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43747576", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.012797`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3, \
+T\\_4, T\\_3, T\\_2, T\\_1, T\\_3, T\\_2}\\)\\), \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43747576, " time: ", 37.012797, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3, T\_4, T\_3, T\_2, \
+T\_1, T\_3, T\_2}\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527024559517`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43749528", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "37.013025999999996`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_4, \
+T\\_3, T\\_2, T\\_1, T\\_3, T\\_2}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), \
+HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43749528, " time: ", 37.013025999999996`, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_4, T\_3, T\_2, T\_1, \
+T\_3, T\_2}\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702458544*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43751448", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "37.013265999999994`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3, \
+T\\_2, T\\_1, T\\_3, T\\_2}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), \
+HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43751448, " time: ", 37.013265999999994`, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3, T\_2, T\_1, T\_3, \
+T\_2}\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527024609957`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43753336", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.013524`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2, \
+T\\_1, T\\_3, T\\_2}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\
+\>"}],
+  SequenceForm[
+  "mem: ", 43753336, " time: ", 37.013524, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2, T\_1, T\_3, T\_2}\
+\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527024635887`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43755192", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.01376`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1, \
+T\\_3, T\\_2}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43755192, " time: ", 37.01376, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1, T\_3, T\_2}\)\), \
+\(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.69785270246602*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43757016", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "37.013974000000005`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3, \
+T\\_2}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43757016, " time: ", 37.013974000000005`, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3, T\_2}\)\), \(\((X\
+\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.69785270246847*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43757800", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.029952`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3, \
+T\\_2}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43757800, " time: ", 37.029952, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3, T\_2}\)\), \(\((X\
+\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702470847*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43757104", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.031922`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_1, \
+T\\_3, T\\_2}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43757104, " time: ", 37.031922, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_1, T\_3, T\_2}\)\), \
+\(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702473246*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43757816", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "37.069326999999994`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2, \
+T\\_1, T\\_3, T\\_2}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\
+\>"}],
+  SequenceForm[
+  "mem: ", 43757816, " time: ", 37.069326999999994`, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2, T\_1, T\_3, T\_2}\
+\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702475729*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43759344", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.069761`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43759344, " time: ", 37.069761, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702478162*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43763520", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "37.20265499999999`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43763520, " time: ", 37.20265499999999, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527026072206`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43763936", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.203086`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43763936, " time: ", 37.203086, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702610273*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43766128", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.220417`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43766128, " time: ", 37.220417, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702624907*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43766064", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.220818`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43766064, " time: ", 37.220818, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527026279097`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43768872", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.306225`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43768872, " time: ", 37.306225, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527027133083`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43769616", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.306664`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43769616, " time: ", 37.306664, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702716342*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43770816", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.309244`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43770816, " time: ", 37.309244, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702719226*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43770504", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "37.310089999999995`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3, \
+T\\_2, T\\_1, T\\_3, T\\_2}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), \
+HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43770504, " time: ", 37.310089999999995`, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3, T\_2, T\_1, T\_3, \
+T\_2}\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702721962*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43772624", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "37.31039799999999`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_4}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43772624, " time: ", 37.31039799999999, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_4}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.69785270272466*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43776120", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "37.32601699999999`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_4}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43776120, " time: ", 37.32601699999999, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_4}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702731213*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43776704", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "37.326451999999996`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_4}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43776704, " time: ", 37.326451999999996`, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_4}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527027338953`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43777256", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "37.327099999999994`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_4}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43777256, " time: ", 37.327099999999994`, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_4}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527027366943`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43777720", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.327414`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_4}\\)\
+\\), \\(\\(\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43777720, " time: ", 37.327414, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_4}\)\), \
+\(\(\(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702739393*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43778184", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.328063`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_4}\\)\
+\\), \\(\\(\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43778184, " time: ", 37.328063, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_4}\)\), \
+\(\(\(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702742154*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43778072", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.328324`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_4}\\)\
+\\), \\(\\(\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43778072, " time: ", 37.328324, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_4}\)\), \
+\(\(\(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702744927*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43778648", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.328934`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_4}\\)\
+\\), \\(\\(\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43778648, " time: ", 37.328934, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_4}\)\), \
+\(\(\(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), \
+HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702747703*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43777336", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.330019`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_4, \
+T\\_3, T\\_2, T\\_1, T\\_3, T\\_2}\\)\\), \\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), \
+HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43777336, " time: ", 37.330019, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_4, T\_3, T\_2, T\_1, \
+T\_3, T\_2}\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.69785270275041*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43780280", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "37.33031999999999`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\
+\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43780280, " time: ", 37.33031999999999, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_4)\
+\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.69785270275316*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43789416", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "37.587883999999995`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\
+\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43789416, " time: ", 37.587883999999995`, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_4)\
+\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702992325*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43790032", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "37.588347`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_4)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\
+\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43790032, " time: ", 37.588347, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_4)\)\^+\) ** \(\((X\_3)\
+\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852702995407*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43801520", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "38.035398`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_4)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\
+\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43801520, " time: ", 38.035398, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_4)\)\^+\) ** \(\((X\_3)\
+\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852703439912*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43801984", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "38.035835999999996`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_4)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\
+\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43801984, " time: ", 38.035835999999996`, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_4)\)\^+\) ** \(\((X\_2)\
+\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852703443262*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43805832", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "38.070754`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_4)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\
+\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43805832, " time: ", 38.070754, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_4)\)\^+\) ** \(\((X\_2)\
+\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852703475335*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43806240", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "38.071236`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\
+\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43806240, " time: ", 38.071236, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_4)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\
+\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852703478488*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43812128", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "38.221892`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\
+\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43812128, " time: ", 38.221892, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_4)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\
+\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852703672387*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43812640", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "38.222332`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_4)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\
+\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43812640, " time: ", 38.222332, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_4)\)\^+\) ** \(\((X\_1)\
+\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852703675359*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43818560", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "38.399240999999996`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_4)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\
+\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43818560, " time: ", 38.399240999999996`, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_4)\)\^+\) ** \(\((X\_1)\
+\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852703803833*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43818968", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "38.399713`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\
+\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43818968, " time: ", 38.399713, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_2)\)\^+\) ** \(\((X\_4)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_1)\
+\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852703806864*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43826496", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "38.75943`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\
+\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43826496, " time: ", 38.75943, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_2)\)\^+\) ** \(\((X\_4)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_1)\
+\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527041641283`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43826952", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "38.759882999999995`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\
+\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43826952, " time: ", 38.759882999999995`, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_3)\)\^+\) ** \(\((X\_4)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_1)\
+\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852704167068*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43829088", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "38.764936999999996`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\
+\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43829088, " time: ", 38.764936999999996`, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_3)\)\^+\) ** \(\((X\_4)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_1)\
+\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527041708393`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43829464", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "38.765344999999996`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_4)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\
+\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43829464, " time: ", 38.765344999999996`, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_4)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_1)\
+\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527041734543`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43834728", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "38.862019`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_4)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\
+\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43834728, " time: ", 38.862019, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_4)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_1)\
+\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852704266638*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43839624", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "38.870018`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3, \
+T\\_4, T\\_3, T\\_2, T\\_1, T\\_3, T\\_2}\\)\\), \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43839624, " time: ", 38.870018, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3, T\_4, T\_3, T\_2, \
+T\_1, T\_3, T\_2}\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527042745237`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43844944", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "38.870426`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43844944, " time: ", 38.870426, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_3)\
+\)\^+\) ** \(\((X\_4)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852704277102*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43851576", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "38.985502999999994`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43851576, " time: ", 38.985502999999994`, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_3)\
+\)\^+\) ** \(\((X\_4)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.69785270439032*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43852120", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "38.985997999999995`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43852120, " time: ", 38.985997999999995`, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\
+\)\^+\) ** \(\((X\_4)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852704393581*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43859672", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "39.264338`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43859672, " time: ", 39.264338, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\
+\)\^+\) ** \(\((X\_4)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852704798761*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43860080", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "39.264827`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43860080, " time: ", 39.264827, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\
+\)\^+\) ** \(\((X\_4)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852704804694*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43869808", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "39.786507`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43869808, " time: ", 39.786507, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\
+\)\^+\) ** \(\((X\_4)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852705191538*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43870224", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "39.787158999999996`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43870224, " time: ", 39.787158999999996`, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_4)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\
+\)\^+\) ** \(\((X\_3)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.69785270519466*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43876816", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "39.933769`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43876816, " time: ", 39.933769, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_4)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\
+\)\^+\) ** \(\((X\_3)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852705338591*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43877160", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "39.934232`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43877160, " time: ", 39.934232, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_4)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\
+\)\^+\) ** \(\((X\_3)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527053417683`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43886264", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "40.27904`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43886264, " time: ", 40.27904, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_4)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\
+\)\^+\) ** \(\((X\_3)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527056838093`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43886728", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "40.279582`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43886728, " time: ", 40.279582, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_4)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_3)\
+\)\^+\) ** \(\((X\_2)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852705687088*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43897496", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "40.903827`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43897496, " time: ", 40.903827, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_4)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_3)\
+\)\^+\) ** \(\((X\_2)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852706308527*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43897912", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "40.904343`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43897912, " time: ", 40.904343, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_4)\
+\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852706311675*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43899824", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "40.908569`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43899824, " time: ", 40.908569, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_4)\
+\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852706314498*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43900168", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "40.908958`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43900168, " time: ", 40.908958, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_4)\
+\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852706317237*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43905928", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "41.019359`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43905928, " time: ", 41.019359, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_4)\
+\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852706424049*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43906392", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "41.019864`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43906392, " time: ", 41.019864, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_3)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_4)\
+\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852706427252*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43913816", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "41.295955`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_4)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43913816, " time: ", 41.295955, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_3)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_4)\
+\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852706700506*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43914224", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "41.296467`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_4)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43914224, " time: ", 41.296467, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_4)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_3)\
+\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852706703753*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43918376", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "41.332319`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_4)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43918376, " time: ", 41.332319, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_4)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_3)\
+\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852706736887*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43919392", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "41.332828`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_4)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43919392, " time: ", 41.332828, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_4)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\
+\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852706739895*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43926792", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "41.501062`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_4)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43926792, " time: ", 41.501062, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_4)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\
+\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852706905518*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43927280", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "41.501534`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_4)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43927280, " time: ", 41.501534, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_4)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\
+\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852706908678*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43935608", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "41.877678`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2}\\)\
+\\), \\(\\(\\(\\((X\\_4)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \
+\\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_1)\\)\\^+\\)\
+\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43935608, " time: ", 41.877678, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2}\)\), \
+\(\(\(\((X\_4)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_2)\
+\)\^+\) ** \(\((X\_1)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852707348915*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43948544", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", 
+   "41.91552599999999`", "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Finished calculating \
+\\\\\\\"\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_2, \
+T\\_3, T\\_4, T\\_3, T\\_2, T\\_1, T\\_3, T\\_2}\\)\\), \
+\\(\\((X\\_3)\\)\\^+\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43948544, " time: ", 41.91552599999999, " ", 
+   "\!\(\*TagBox[\"\\\"Finished calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_2, T\_3, T\_4, T\_3, \
+T\_2, T\_1, T\_3, T\_2}\)\), \(\((X\_3)\)\^+\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527073519382`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43955568", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "41.915969`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"Distributing BraidAction[\"\>", 
+   "\[InvisibleSpace]", 
+   SubscriptBox["F", "4"], "\[InvisibleSpace]", "\<\"][\"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    SubscriptBox["T", "3"], "}"}], 
+   "\[InvisibleSpace]", "\<\", ...] over \"\>", "\[InvisibleSpace]", "24", 
+   "\[InvisibleSpace]", "\<\" terms.\"\>"}],
+  SequenceForm[
+  "mem: ", 43955568, " time: ", 41.915969, " ", "Distributing BraidAction[", 
+   Subscript[QuantumGroups`F, 4], "][", {
+    Subscript[QuantumGroups`BraidAction`T, 3]}, ", ...] over ", 24, " terms."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527073546*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43958696", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "41.916161`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\" ... computing \"\>", "\[InvisibleSpace]", "20", 
+   "\[InvisibleSpace]", "\<\" terms\"\>"}],
+  SequenceForm[
+  "mem: ", 43958696, " time: ", 41.916161, " ", " ... computing ", 20, 
+   " terms"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6978527073569183`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"mem: \"\>", "\[InvisibleSpace]", "43962664", 
+   "\[InvisibleSpace]", "\<\" time: \"\>", "\[InvisibleSpace]", "41.916332`", 
+   "\[InvisibleSpace]", "\<\" \"\>", 
+   "\[InvisibleSpace]", "\<\"\\!\\(\\*TagBox[\\\"\\\\\\\"Calculating \\\\\\\"\
+\\\", HoldForm]\\)\"\>", 
+   "\[InvisibleSpace]", \
+"\<\"\\!\\(\\*TagBox[\\(\\(\\(BraidAction[F\\_4]\\)\\)[\\(\\(\\(\\({T\\_3}\\)\
+\\), \\(\\(\\(\\((X\\_1)\\)\\^+\\) ** \\(\\((X\\_2)\\)\\^+\\) ** \
+\\(\\((X\\_2)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) ** \\(\\((X\\_3)\\)\\^+\\) \
+** \\(\\((X\\_4)\\)\\^+\\)\\)\\)\\)\\)]\\), HoldForm]\\)\"\>"}],
+  SequenceForm[
+  "mem: ", 43962664, " time: ", 41.916332, " ", 
+   "\!\(\*TagBox[\"\\\"Calculating \\\"\", HoldForm]\)", 
+   "\!\(\*TagBox[\(\(\(BraidAction[F\_4]\)\)[\(\(\(\({T\_3}\)\), \
+\(\(\(\((X\_1)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_2)\)\^+\) ** \(\((X\_3)\
+\)\^+\) ** \(\((X\_3)\)\^+\) ** \(\((X\_4)\)\^+\)\)\)\)\)]\), HoldForm]\)"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.697852707359002*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 911},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September 9, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 465, 12, 63, "Input"],
+Cell[CellGroupData[{
+Cell[1070, 38, 763, 15, 38, "Print"],
+Cell[1836, 55, 555, 8, 38, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[2418, 67, 335, 7, 28, "Input"],
+Cell[CellGroupData[{
+Cell[2778, 78, 446, 13, 46, "Input"],
+Cell[3227, 93, 97, 1, 28, "Output"]
+}, Open  ]],
+Cell[3339, 97, 132, 2, 28, "Input"],
+Cell[CellGroupData[{
+Cell[3496, 103, 270, 6, 28, "Input"],
+Cell[CellGroupData[{
+Cell[3791, 113, 758, 16, 22, "Print"],
+Cell[4552, 131, 795, 16, 38, "Print"],
+Cell[5350, 149, 773, 16, 27, "Print"],
+Cell[6126, 167, 789, 16, 27, "Print"],
+Cell[6918, 185, 854, 17, 22, "Print"],
+Cell[7775, 204, 841, 17, 22, "Print"],
+Cell[8619, 223, 825, 17, 22, "Print"],
+Cell[9447, 242, 811, 16, 22, "Print"],
+Cell[10261, 260, 796, 16, 22, "Print"],
+Cell[11060, 278, 835, 16, 22, "Print"],
+Cell[11898, 296, 854, 17, 22, "Print"],
+Cell[12755, 315, 873, 17, 22, "Print"],
+Cell[13631, 334, 874, 17, 22, "Print"],
+Cell[14508, 353, 873, 17, 22, "Print"],
+Cell[15384, 372, 831, 16, 22, "Print"],
+Cell[16218, 390, 855, 17, 22, "Print"],
+Cell[17076, 409, 875, 17, 22, "Print"],
+Cell[17954, 428, 853, 17, 22, "Print"],
+Cell[18810, 447, 873, 17, 22, "Print"],
+Cell[19686, 466, 844, 17, 22, "Print"],
+Cell[20533, 485, 903, 18, 22, "Print"],
+Cell[21439, 505, 944, 18, 22, "Print"],
+Cell[22386, 525, 907, 18, 22, "Print"],
+Cell[23296, 545, 923, 18, 22, "Print"],
+Cell[24222, 565, 903, 18, 22, "Print"],
+Cell[25128, 585, 923, 18, 22, "Print"],
+Cell[26054, 605, 905, 18, 22, "Print"],
+Cell[26962, 625, 917, 18, 22, "Print"],
+Cell[27882, 645, 859, 17, 22, "Print"],
+Cell[28744, 664, 903, 18, 22, "Print"],
+Cell[29650, 684, 923, 18, 22, "Print"],
+Cell[30576, 704, 905, 18, 22, "Print"],
+Cell[31484, 724, 923, 18, 22, "Print"],
+Cell[32410, 744, 905, 18, 22, "Print"],
+Cell[33318, 764, 925, 18, 22, "Print"],
+Cell[34246, 784, 924, 18, 22, "Print"],
+Cell[35173, 804, 923, 18, 22, "Print"],
+Cell[36099, 824, 869, 17, 22, "Print"],
+Cell[36971, 843, 775, 16, 27, "Print"],
+Cell[37749, 861, 1064, 19, 22, "Print"],
+Cell[38816, 882, 1070, 19, 38, "Print"],
+Cell[39889, 903, 1038, 19, 38, "Print"],
+Cell[40930, 924, 1044, 19, 38, "Print"],
+Cell[41977, 945, 1012, 19, 38, "Print"],
+Cell[42992, 966, 999, 19, 38, "Print"],
+Cell[43994, 987, 986, 19, 38, "Print"],
+Cell[44983, 1008, 973, 19, 38, "Print"],
+Cell[45959, 1029, 958, 18, 38, "Print"],
+Cell[46920, 1049, 947, 18, 38, "Print"],
+Cell[47870, 1069, 932, 18, 38, "Print"],
+Cell[48805, 1089, 917, 18, 38, "Print"],
+Cell[49725, 1109, 906, 18, 38, "Print"],
+Cell[50634, 1129, 891, 17, 22, "Print"],
+Cell[51528, 1148, 878, 17, 22, "Print"],
+Cell[52409, 1167, 867, 17, 22, "Print"],
+Cell[53279, 1186, 871, 17, 22, "Print"],
+Cell[54153, 1205, 860, 17, 22, "Print"],
+Cell[55016, 1224, 828, 17, 22, "Print"],
+Cell[55847, 1243, 808, 16, 22, "Print"],
+Cell[56658, 1261, 816, 16, 22, "Print"],
+Cell[57477, 1279, 816, 16, 22, "Print"],
+Cell[58296, 1297, 829, 16, 22, "Print"],
+Cell[59128, 1315, 863, 17, 22, "Print"],
+Cell[59994, 1334, 905, 18, 22, "Print"],
+Cell[60902, 1354, 941, 18, 22, "Print"],
+Cell[61846, 1374, 905, 18, 22, "Print"],
+Cell[62754, 1394, 923, 18, 22, "Print"],
+Cell[63680, 1414, 907, 18, 22, "Print"],
+Cell[64590, 1434, 925, 18, 22, "Print"],
+Cell[65518, 1454, 905, 18, 22, "Print"],
+Cell[66426, 1474, 923, 18, 22, "Print"],
+Cell[67352, 1494, 876, 17, 22, "Print"],
+Cell[68231, 1513, 920, 18, 22, "Print"],
+Cell[69154, 1533, 939, 18, 22, "Print"],
+Cell[70096, 1553, 926, 18, 22, "Print"],
+Cell[71025, 1573, 944, 18, 22, "Print"],
+Cell[71972, 1593, 905, 18, 22, "Print"],
+Cell[72880, 1613, 923, 18, 22, "Print"],
+Cell[73806, 1633, 905, 18, 22, "Print"],
+Cell[74714, 1653, 923, 18, 22, "Print"],
+Cell[75640, 1673, 869, 17, 22, "Print"],
+Cell[76512, 1692, 970, 19, 22, "Print"],
+Cell[77485, 1713, 992, 19, 38, "Print"],
+Cell[78480, 1734, 955, 19, 22, "Print"],
+Cell[79438, 1755, 973, 19, 38, "Print"],
+Cell[80414, 1776, 974, 19, 22, "Print"],
+Cell[81391, 1797, 973, 19, 38, "Print"],
+Cell[82367, 1818, 955, 19, 22, "Print"],
+Cell[83325, 1839, 973, 19, 38, "Print"],
+Cell[84301, 1860, 955, 19, 22, "Print"],
+Cell[85259, 1881, 992, 19, 38, "Print"],
+Cell[86254, 1902, 955, 19, 22, "Print"],
+Cell[87212, 1923, 973, 19, 38, "Print"],
+Cell[88188, 1944, 974, 19, 22, "Print"],
+Cell[89165, 1965, 994, 19, 38, "Print"],
+Cell[90162, 1986, 976, 19, 22, "Print"],
+Cell[91141, 2007, 973, 19, 38, "Print"],
+Cell[92117, 2028, 885, 17, 22, "Print"],
+Cell[93005, 2047, 1003, 19, 22, "Print"],
+Cell[94011, 2068, 1039, 19, 38, "Print"],
+Cell[95053, 2089, 1022, 19, 22, "Print"],
+Cell[96078, 2110, 1021, 19, 38, "Print"],
+Cell[97102, 2131, 1003, 19, 22, "Print"],
+Cell[98108, 2152, 1021, 19, 38, "Print"],
+Cell[99132, 2173, 1021, 19, 22, "Print"],
+Cell[100156, 2194, 1021, 19, 38, "Print"],
+Cell[101180, 2215, 1005, 19, 22, "Print"],
+Cell[102188, 2236, 1021, 19, 38, "Print"],
+Cell[103212, 2257, 1003, 19, 22, "Print"],
+Cell[104218, 2278, 1021, 19, 38, "Print"],
+Cell[105242, 2299, 1003, 19, 22, "Print"],
+Cell[106248, 2320, 1021, 19, 38, "Print"],
+Cell[107272, 2341, 1003, 19, 22, "Print"],
+Cell[108278, 2362, 1021, 19, 38, "Print"],
+Cell[109302, 2383, 1003, 19, 22, "Print"],
+Cell[110308, 2404, 1021, 19, 38, "Print"],
+Cell[111332, 2425, 1003, 19, 22, "Print"],
+Cell[112338, 2446, 1021, 19, 38, "Print"],
+Cell[113362, 2467, 1003, 19, 22, "Print"],
+Cell[114368, 2488, 1021, 19, 38, "Print"],
+Cell[115392, 2509, 1003, 19, 22, "Print"],
+Cell[116398, 2530, 1021, 19, 38, "Print"],
+Cell[117422, 2551, 914, 17, 38, "Print"],
+Cell[118339, 2570, 846, 18, 22, "Print"],
+Cell[119188, 2590, 510, 11, 22, "Print"],
+Cell[119701, 2603, 1051, 19, 38, "Print"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
