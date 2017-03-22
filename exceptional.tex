@@ -332,52 +332,6 @@ v^{-3} \;
 
 
 
-\begin{definition}
-Let \nn{name?} be the ribbon category whose objects are collections of $n$
-points on a line, and whose morphisms spaces from $n$ to $m$ consist of linear
-combinations planar graphs in a rectangle with $n$ boundary points on the
-bottom, $m$ boundary points at the top, and consisting of trivalent vertices
-and $4$-valent braided crossings modulo planar isotopy, the usual Reidemeister
-2 and 3 relations for a symmetric crossing, and the following circle,
-lollipop, bigon, triangle, quantum anti-symmetry, and quantum Jacobi
-relations.
-\end{definition}
-
- \begin{equation}
-    \label{eq:simple-rels-spec}
-  \begin{aligned}
-    \unknot\; &= d&\quad
-    \loopvertex\;&=0\\[5pt]
-      \ngon{2}\;&= b\;\onestrandid&
-        \ngon[-90]{3}\; &= t\;\nvertex[-90]{3}\\[5pt]
-      \twist\; &= v^{12}\;\onestrandid&
-        \twistvertex\; &= -v^{6}\;\nvertex[-90]{3}
-  \end{aligned}
-  \end{equation}
-where
-\begin{align*}
-  d &= -\frac{\{2\}[\lambda+5][\lambda-6]}{[\lambda][\lambda-1]}\\
-  b &= \frac{\{\lambda+2\}\{\lambda-3\}[3]}{[1]}\\
-  t &= \{1\}\bigl(\{1\}w^2/v + (v^4 - v^2 - 1 - v^{-2} + v^{-4}) +
-      \{1\}v/w^2\bigr).
-\end{align*}
-To these skein relations, we add the \emph{quantum IHX relation}
-\begin{equation}
-v^{-3} \;
-\drawcrossX
-\;+ v \;
-\drawI
-\; -v^{-1} \;
- \drawH
-\;
- - \frac{[\lambda][\lambda-1]}{[1]}
-\left[\; \braidcross \;
- + v^{4}\;
-\twostrandid
-\; + v^{-4} \;
- \cupcap \;
- \right] = 0.\label{eq:quant-except-spec}
-\end{equation}
 
 We conjecture that the skein relations above suffice to evaluate
 uniquely every framed knotted trivalent graph. In fact we split the
