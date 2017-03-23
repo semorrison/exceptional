@@ -213,8 +213,6 @@ relation}.
 \begin{definition}
 If $2+d$ is invertible in $R$, let $\mathrm{Exc}_{R,d,b}$ be symmetric tensor category which is the quotient of 
 $\mathrm{Jac}_{R,d,b}$ modulo Vogel's exceptional relation.
-\DPTtodo{This equation was wrong and I fixed it. I would also like a
-  version with the classical $\lambda$ to appear}
 \begin{equation}
 \ngon[45]{4}\; = \frac{b}{6} \left(\;\drawI\; + \;\drawH\; \right)
  + \frac{5}{6}\frac{b^2}{2+d} \left( \;\twostrandid\; + \;\cupcap\; + \;\symcross\; \right)
@@ -238,12 +236,19 @@ diagrams, while the existence conjecture says that this evaluation is well-defin
  (i.e. independent of choices along the way). Although both conjectures
 are completely open, we would expect uniqueness to be easier than existence.
 
-The parameter $d$ is somewhat poorly behaved, and so Deligne instead introduced a parameter $\lambda$ such that $d = -2 \frac{(\lambda+5)(6-\lambda)}{(\lambda(1-\lambda)}$.  Note that $\lambda$ and $1-\lambda$ correspond to the same $d$ and thus to the same category.  If we normalize $b=6$ then the exceptional relation for $\mathrm{Exc}_{R,-2 \frac{(\lambda+5)(6-\lambda)}{(\lambda(1-\lambda)},6}$ has the following form.
+The parameter $d$ is somewhat poorly behaved, and so Deligne instead
+introduced a parameter $\lambda$ such that $d = -2
+\frac{(\lambda+5)(6-\lambda)}{\lambda(1-\lambda)}$.  Note that
+$\lambda$ and $1-\lambda$ correspond to the same $d$ and thus to the
+same category.  If we normalize $b=6$ then the exceptional relation
+for $\mathrm{Exc}_{R,-2
+  \frac{(\lambda+5)(6-\lambda)}{\lambda(1-\lambda)},6}$ (which we
+will also write $\mathrm{Exc}_{R,\lambda}$) has the following form.
 
 \begin{equation}
 \ngon[45]{4}\; = \;\drawI\; + \;\drawH\;
  - \frac{\lambda(1-\lambda)}{2} \left( \;\twostrandid\; + \;\cupcap\; + \;\symcross\; \right)
-\label{eq:classical-except}
+\label{eq:classical-except-2}
 \end{equation}
 
 
@@ -995,22 +1000,103 @@ computing this.
 \subsubsection{Comparisons}
 \nn{Compare to Westbury and the other paper...}
 
-\section{From classical to quantum conjecture}
+\section{From the classical to the quantum conjecture}
 \label{sec:classical-quantum}
 
-We now show that a version of Conjecture~\ref{conj:classical} implies
-a version of Conjecture~\ref{conj:quant-consist}.
+We now show that Conjecture~\ref{conj:classical} implies
+a version of Conjecture~\ref{conj:quant-consist}, for suitable base
+rings.
+\begin{theorem}\label{thm:classical-quantum}
+  If the consistency part of Conjecture~\ref{conj:classical} is true
+  for $\mathrm{Exc}(R,\lambda)$, then
+  Conjecture~\ref{conj:quant-consist} is true for
+  $\mathrm{QExc}(R[[h]],v=e^{h/4},w=e^{\lambda h/4})$, where the
+  exponentials are considered as formal power series in $R[[h]]$.
+\end{theorem}
+This section will be devoted to a proof of
+Theorem~\ref{thm:classical-quantum}. The first step is constructing
+the conjectured functor $\eval$, for which the main ingredient is the
+\emph{Kontsevich integral}~$Z$. This is an invariant of framed
+trivalent graph tangles. The Kontsevich integral was
+first defined for unframed knots \cite{MR1318886}, and later extended
+to framed trivalent graphs \cite{MR1473309,MR2304469,MR2661529}.
 
+For a framed trivalent tangle~$G$, the invariant $Z(G)$ takes values
+in a space of \emph{chord diagrams} $\cA(G)[[h]]$ that depends on the
+underlying graph of~$G$. The generators of $\cA(G)$ are
+vertex-oriented uni-trivalent graphs with edges of two types,
+traditionally drawn solid and dotted, so that the solid edges are
+identified with~$G$, modulo certain relations analogous to the Jacobi
+relation. (The univalent ends of elements in $\cA(G)$ correspond to
+the tangle endpoints of~$G$.) We also introduce a variable~$h$ to
+track the grading. $Z$ has many useful properties, but the
+ones we will use are the following.
+\begin{enumerate}
+\item $Z(G) = G + O(h)$.
+\item $Z$ is multiplicative under tangle multiplication:
+  \[
+    Z(G_1 \cdot G_2) = Z(G_1) \cdot Z(G_2).
+  \]
+\item On a single crossing, $Z$ takes the value
+  \DPTtodo{Possibly this is backwards relative to standard conventions
+    for Vassiliev invariants?}
+  \begin{equation}
+    \label{eq:Kontsevich-crossing}
+    Z\biggl(\;\braidcross\;\biggr) =
+    \exp\left(\frac{h}{2}\;\drawdottedH\;\right)
+    \cdot\; \symcross\;.
+  \end{equation}
+\end{enumerate}
+
+To finish the definition of $\eval$, compose $Z$ with the forgetful
+functor that erases the distinction between dotted and solid lines to
+the category $\mathrm{Jac}_{R[[h]],d,b}$ from the introduction and then the
+function from $\mathrm{Jac}_{R[[h]],d,b}$ to a target category
+$\mathsf{Except}[[h]]$ given by Conjecture~\ref{conj:classical}.
+
+By hypothesis, $\mathsf{Except}[[h]]$ has a 5-dimensional 4-box space and
+is generated over $R[[h]]$ by a trivalent vertex and a braided
+crossing. \nn{Get precise conditions for theorem right} Furthermore,
+Equation~\eqref{eq:Kontsevich-crossing} shows that
+\begin{align*}
+  \eval\biggl(\;\twist\;\biggr) &= e^{hb/2}\eval\biggl(\;\onestrandid\;\biggr)\\
+  \eval\biggl(\;\twistvertex\;\biggr) &= e^{hb/4}\eval\biggl(\;\nvertex[-90]{3}\;\biggr)
+\end{align*}
+\nn{Issue: For this argument, I really want to distinguish
+  between up and down endpoints, in particular to have the
+  multiplicative property. Paper to this point has not been making
+  this distinction}
+Comparison with Equation~\eqref{eq:simple-rels-spec} shows that we
+should choose $v = e^{hb/24} \in R[[h]]$. Note that $v$ is not a root
+of unity. Then by Theorem~XXX, the
+functor $\eval$ satisfies Equation~\eqref{eq:quant-except-spec} for
+some value of~$w$. To find the value of~$w$, we find the eigenvalues
+of the twist operator on the 4-box space.
+
+\nn{Notation is breaking down, I need a name for the classical
+  evaluation functor as well. Upshot as follows:} For the classical
+evaluation, the eigenvalues of the crossing and the ladder operator
+are $(-1, 3)$, $(-1, 0)$, $(+1, 6)$, $(+1, \lambda)$, and
+$(+1, 1-\lambda)$. Equation~\eqref{eq:Kontsevich-crossing} then shows
+that the corresponding eigenvalues of the twist operator are
+$-e^{3h/2}$, $-1$, $e^{3h}$, $e^{\lambda h/2}$, and
+$e^{(1-\lambda)h/2}$. On the other hand, a short computation with
+\nn{the twist relation} shows that the eigenvalues of the twist
+operator in $\mathsf{QExcept}$ are $-v^6$, $-1$, $v^{12}$, $w^2$, and
+$v^2/w^2$. These two lists of eigenvalues agree if we set
+$w = e^{\lambda h/4}$ in addition to $v = e^{h/4}$.
+
+\nn{Comment about control over convergence}
+
+\nn{Can use this to show that conjectural quantum 2-variable
+  polynomial invariant agrees with the known 1-variable invariant when
+  $w$ is specialized to appropriate power of~$v$}
 
 \appendix
 
 \section{Old outline proposal}
 
-\vspace{1cm}
-\hrule
-\vspace{1cm}
-
-Old stuff below here: much should be salvaged.
+Old stuff below here (in appendices): much should be salvaged.
 
 \vspace{1cm}
 \hrule
@@ -1207,7 +1293,7 @@ which can be put in the form
 \begin{equation}
 \ngon[45]{4}\; = \;\drawI\; + \;\drawH\;
  + \omega \left[ \;\twostrandid\; + \;\cupcap\; + \;\symcross\; \right]
-\label{eq:classical-except}
+\label{eq:classical-except-old}
 \end{equation}
 for varying values of~$w$.
 
@@ -1257,7 +1343,7 @@ outer automorphisms (or symmetries of the Dynkin diagram).
     \cite{MR1952563}.
   \item The dual Coxeter number $h^\vee = 6/\mu$
     \cite{MR1952563}.
-  \item The number $\omega$ in Equation~\eqref{eq:classical-except}, with
+  \item The number $\omega$ in Equation~\eqref{eq:classical-except-old}, with
     $\omega=\mu(1+\mu)/2$. This appears to be the first time it has been
     published, but it appeared in earlier (unavailable?) preprint
     versions of Vogel's paper \cite{MR2769234}.
@@ -1286,7 +1372,7 @@ outer automorphisms (or symmetries of the Dynkin diagram).
 \begin{remark}
   Vogel took item \ref{item:eigenvalues} on the list above as his
   starting point. It is easy to deduce
-  Equation~\eqref{eq:classical-except} (with $\omega = -\alpha\beta/2$)
+  Equation~\eqref{eq:classical-except-old} (with $\omega = -\alpha\beta/2$)
   from the condition on eigenvalues of $\psi_L$.
 \end{remark}
 
