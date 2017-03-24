@@ -277,6 +277,8 @@ no denominator.
 \{k\lambda + n\} &= w^k v^n + w^{-k} v^{-n} = \frac{[2k+2n]}{[k+n]}.
 \end{align*}
 
+We will also use throughout the paper the symmetrized cyclotomic polynomials.  All of our categories will be symmetric under $v \mapsto -v$, so we use a version of cyclotomic polynomials that is adjusted to this.  Let $$\widetilde{\Phi}_n = \prod_{\zeta: (\pm \zeta)^n = 1} (v^{\frac{1}{2}}-\zeta v^{-\frac{1}{2}}).$$  In terms of the usual cyclotomic polynomials we have if $n$ is odd then $\widetilde{\Phi}_n = \widetilde{\Phi}_{2n} = v^{-\varphi(n)} \Phi_n(v) \Phi_{2n}(v)$, but if $n$ is a multiple of $4$ then $\widetilde{\Phi}_n = v^{-\frac{\varphi(n)}{2}} \Phi_n(v)$.
+
 \begin{definition}
 Let  $\mathrm{QExc}_{R,v,b,\alpha}$ be the ribbon category whose objects are collections of $n$
 points on a line, and whose morphisms spaces from $n$ to $m$ consist of $R$-linear
@@ -307,7 +309,7 @@ where
   t &= \{1\}\bigl(\{1\}w^2/v + (v^4 - v^2 - 1 - v^{-2} + v^{-4}) +
       \{1\}v/w^2\bigr).
 \end{align*}
-To these skein relations, we add the \emph{quantum IHX relation}
+To these skein relations, we add the \emph{quantum exceptional Jacobi relation}
 \begin{equation}
 v^{-3} \;
 \drawcrossX
@@ -378,11 +380,78 @@ integers and the morphisms from $n$ to $m$ are elements of $\Skq{n,m}$.
   trivalent graph to a rational function in $v$ and~$w$.
 \end{conjecture}
 
-The relations above are quite general. With some mild assumptions on the base
-ring, any skein theory where the $n$-box space has dimension at most
-$1,0,1,1,5$ for $n=0,1,2,3,4$ satisfies a version of relation~\eqref{eq
-:quant-except-spec}. See Theorem~\ref{thm:quant-except} in
-Section~\ref{sec:relation} for a precise statement.
+Although the quantum exceptional Jacobi relation looks like an analogue of the ordinary Jacobi relation with lower order terms, it is important to emphasize that it is only the right analogue of the Jacobi relation in the exceptional setting.  In particular, it does not hold for quantizations of non-exceptional Lie algebras.
+
+The following theorems justify the above conjecture.  Under some mild assumptions, any trivalent ribbon category where the $n$-box space has dimension at most $1,0,1,1,5$ for $n=0,1,2,3,4$ satisfies a version of relation~\eqref{eq:quant-except-spec}.  Furthermore, the QEJacobi relation implies a certain deformation of the Vogel exceptional relation, and a relation between the overcrossing and undercrossing.  
+%With some mild assumptions on the base ring, any skein theory where the $n$-box space has dimension at most $1,0,1,1,5$ for $n=0,1,2,3,4$ satisfies a version of relation~\eqref{eq:quant-except-spec}. %See Theorem~\ref{thm:quant-except} in Section~\ref{sec:relation} for a precise statement.
+
+\begin{definition}
+A \emph{trivalent ribbon} category $(\cC, X, \tau)$ is a nondegenerate evaluable ribbon category over $R$ with 
+an object $X$ with $\dim \cC_1 = 0$, $\dim{\cC_2} = 1$, and $\dim{\cC_3} = 1$, with a (unique up to rescaling) non-zero element $\tau \in \cC_3$ called `the trivalent vertex', such that the category is generated as a ribbon category by $\tau$.
+\end{definition}
+
+Being generated as a ribbon category by $\tau$ is the same as saying that $\cC$ is generated as a pivotal category by $\tau$ and the crossing.  In particular, a trivalent ribbon category need not be trivalent in the sense of \cite{???}.
+
+\begin{theorem}
+Suppose $(\cC, X, \tau)$ is a trivalent ribbon category and $\dim{\cC_4} \leq 5$, then there exists $v, \alpha, b, d \in R$ such that the following relations hold.  
+
+ \begin{equation}
+    \label{eq:simple-rels-spec}
+  \begin{aligned}
+    \unknot\; &= d&\quad
+    \loopvertex\;&=0\\[5pt]
+      \ngon{2}\;&= b\;\onestrandid&
+        \ngon[-90]{3}\; &= t\;\nvertex[-90]{3}\\[5pt]
+    \twistvertex\; &= -v^{6}\;\nvertex[-90]{3}&
+      \twist\; &= v^{12}\;\onestrandid
+  \end{aligned}
+  \end{equation}
+where
+\begin{align*}
+  [5] b &= - \alpha (d+\{8\}) \\
+  t \{2\} &= b-[5] \alpha.
+\end{align*}
+
+\begin{equation}
+v^{-3} \;
+\drawcrossX
+\;+ v \;
+\drawI
+\; -v^{-1} \;
+ \drawH
+\;
+ + \alpha
+\left[\; \braidcross \;
+ + v^{4}\;
+\twostrandid
+\; + v^{-4} \;
+ \cupcap \;
+ \right] = 0.\label{eq:quant-except-spec}
+\end{equation}
+
+\end{theorem}
+
+
+
+\begin{theorem}
+Suppose $(\cC, X, \tau)$ is a trivalent ribbon category with $\dim{\cC_4} \leq 5$, and further suppose that $d$, $b$,$[6]$, and $[5]$ are invertible.  Then $\widetilde{\Phi}_8 = \{2\}$, $\alpha$, and $b+[3]\alpha$ are also invertible, and we have the following relations:
+
+\begin{align*}
+  d &= -\frac{[5] b}{\alpha} - \{8\} \\
+  t  &= \frac{b-[5] \alpha}{\{2\}}.
+\end{align*}
+
+The quantum exceptional Vogel relation:
+\begin{equation}
+\ngon[45]{4} + \frac{\Phi_8 \alpha (b +[3] \alpha)}{\{2\}[3]} \braidcross + \text{AWFUL MESS}
+\end{equation}
+
+The quantum exceptional crossing relation:
+\begin{equation}
+\braidcross - \invbraidcross + \frac{\widetilde{\Phi}_1 \widetilde{\Phi}_3 \widetilde{\Phi}_4 \widetilde{\Phi}_8}{b+[3]\alpha} \left[\; \drawI \; - \; \drawH \; \right] - \frac{\widetilde{\Phi}_1^2 \widetilde{\Phi}_3 \widetilde{\Phi}_4 \widetilde{\Phi}_8 \alpha}{b+[3]\alpha} \left[\; \cupcap \; - \; \twostrandid \; \right] = 0
+\end{equation}
+
+\end{theorem}
 
 
 
