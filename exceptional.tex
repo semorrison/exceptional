@@ -964,8 +964,8 @@ rings.
   If the consistency part of Conjecture~\ref{conj:classical} is true
   for $\mathrm{Exc}(R,\lambda)$, then
   Conjecture~\ref{conj:quant-consist} is true for
-  $\mathrm{QExc}(R[[h]],v=e^{h/4},w=e^{\lambda h/4})$, where the
-  exponentials are considered as formal power series in $R[[h]]$.
+  $\mathrm{QExc}(R((h)),v=e^{h/4},w=e^{\lambda h/4})$, where the
+  exponentials are considered as formal Laurent series.
 \end{theorem}
 This section will be devoted to a proof of
 Theorem~\ref{thm:classical-quantum}. The first step is constructing
@@ -1005,10 +1005,11 @@ ones we will use are the following.
 To finish the definition of $\eval$, compose $Z$ with the forgetful
 functor that erases the distinction between dotted and solid lines to
 the category $\mathrm{Jac}_{R[[h]],d,b}$ from the introduction and then the
-function from $\mathrm{Jac}_{R[[h]],d,b}$ to a target category
-$\mathsf{Except}[[h]]$ given by Conjecture~\ref{conj:classical}.
+functor from $\mathrm{Jac}_{R[[h]],d,b}$ to a target category
+$\mathsf{Except}[[h]]$ given by Conjecture~\ref{conj:classical}. We
+then localize at $h$ to end in $\mathsf{Except}((h))$.
 
-By hypothesis, $\mathsf{Except}[[h]]$ has a 5-dimensional 4-box space and
+By hypothesis, $\mathsf{Except}((h))$ has a 5-dimensional 4-box space and
 is generated over $R[[h]]$ by a trivalent vertex and a braided
 crossing. \nn{Get precise conditions for theorem right} Furthermore,
 Equation~\eqref{eq:Kontsevich-crossing} shows that
@@ -1019,10 +1020,10 @@ Equation~\eqref{eq:Kontsevich-crossing} shows that
 \nn{Issue: For this argument, I really want to distinguish
   between up and down endpoints, in particular to have the
   multiplicative property. Paper to this point has not been making
-  this distinction}
+  this distinction?}
 Comparison with Equation~\eqref{eq:simple-rels-spec} shows that we
-should choose $v = e^{hb/24} \in R[[h]]$. Note that $v$ is not a root
-of unity. Then by Theorem~XXX, the
+should choose $v = e^{hb/24} \in R((h))$. Note that $v^n - 1$ is
+invertible for all $n \ne 1$. Then by Theorem~XXX, the
 functor $\eval$ satisfies Equation~\eqref{eq:quant-except-spec} for
 some value of~$w$. To find the value of~$w$, we find the eigenvalues
 of the twist operator on the 4-box space.
