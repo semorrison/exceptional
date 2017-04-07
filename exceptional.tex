@@ -216,7 +216,7 @@ If $2+d$ is invertible in $R$, let $\mathrm{Exc}_{R,d,b}$ be symmetric tensor ca
 $\mathrm{Jac}_{R,d,b}$ modulo Vogel's exceptional relation.
 \begin{equation}
 \ngon[45]{4}\; = \frac{b}{6} \left(\;\drawI\; + \;\drawH\; \right)
- + \frac{5}{6}\frac{b^2}{2+d} \left( \;\twostrandid\; + \;\cupcap\; + \;\symcross\; \right)
+ + \frac{5}{6}\frac{b^2}{2+d} \left( \;\cupcap\; + \;\twostrandid\; + \;\symcross\; \right)
 \label{eq:classical-except}
 \end{equation}
 \end{definition}
@@ -231,7 +231,7 @@ will also write $\mathrm{Exc}_{R,\lambda}$) has the following form.
 
 \begin{equation}
 \ngon[45]{4}\; = \;\drawI\; + \;\drawH\;
- - \frac{\lambda(1-\lambda)}{2} \left( \;\twostrandid\; + \;\cupcap\; + \;\symcross\; \right)
+ - \frac{\lambda(1-\lambda)}{2} \left( \;\cupcap\; + \;\twostrandid\; + \;\symcross\; \right)
 \label{eq:classical-except-2}
 \end{equation}
 
@@ -338,9 +338,9 @@ v^{-3} \;
  - \frac{[\lambda][\lambda-1]}{[1]}
 \left[\; \braidcross \;
  + v^{4}\;
-\twostrandid
+\cupcap
 \; + v^{-4} \;
- \cupcap \;
+ \twostrandid \;
  \right] = 0.\label{eq:quant-except-spec}
 \end{equation}
 
@@ -417,9 +417,9 @@ v^{-3} \;
  + \alpha
 \left[\; \braidcross \;
  + v^{4}\;
-\twostrandid
+\cupcap
 \; + v^{-4} \;
- \cupcap \;
+ \twostrandid \;
  \right] = 0.\label{eq:quant-except-spec}
 \end{equation}
 
@@ -442,7 +442,7 @@ The quantum exceptional Vogel relation:
 
 The quantum exceptional crossing relation:
 \begin{equation}
-\braidcross - \invbraidcross + \frac{\widetilde{\Phi}_1 \widetilde{\Phi}_3 \widetilde{\Phi}_4 \widetilde{\Phi}_8}{b+[3]\alpha} \left[\; \drawI \; - \; \drawH \; \right] - \frac{\widetilde{\Phi}_1^2 \widetilde{\Phi}_3 \widetilde{\Phi}_4 \widetilde{\Phi}_8 \alpha}{b+[3]\alpha} \left[\; \cupcap \; - \; \twostrandid \; \right] = 0
+\braidcross - \invbraidcross + \frac{\widetilde{\Phi}_1 \widetilde{\Phi}_3 \widetilde{\Phi}_4 \widetilde{\Phi}_8}{b+[3]\alpha} \left[\; \drawI \; - \; \drawH \; \right] - \frac{\widetilde{\Phi}_1^2 \widetilde{\Phi}_3 \widetilde{\Phi}_4 \widetilde{\Phi}_8 \alpha}{b+[3]\alpha} \left[\; \twostrandid \; - \; \cupcap \; \right] = 0
 \end{equation}
 
 \end{theorem}
@@ -1238,9 +1238,9 @@ v^{-3} \;
  - \frac{[\lambda][\lambda-1]}{[1]}
 \left[\; \braidcross \;
  + v^{4}\;
-\twostrandid
+\cupcap
 \; + v^{-4} \;
- \cupcap \;
+ \twostrandid \;
  \right] = 0.\label{eq:quant-except-spec}
 \end{equation}
 
@@ -1315,7 +1315,7 @@ satisfy another relation, the \emph{classical exceptional relation},
 which can be put in the form
 \begin{equation}
 \ngon[45]{4}\; = \;\drawI\; + \;\drawH\;
- + \omega \left[ \;\twostrandid\; + \;\cupcap\; + \;\symcross\; \right]
+ + \omega \left[ \;\cupcap\; + \;\twostrandid\; + \;\symcross\; \right]
 \label{eq:classical-except-old}
 \end{equation}
 for varying values of~$w$.
@@ -1424,9 +1424,9 @@ v^{-3} \;
  + \alpha
 \left[\; \braidcross \;
  + v^{4}\;
-\twostrandid
+\cupcap
 \; + v^{-4} \;
- \cupcap \;
+ \twostrandid \;
  \right] = 0.\label{eq:quant-except}
 \end{equation}
 In fact, this relation turns out to be quite universal.
@@ -1483,7 +1483,7 @@ are linearly dependent. We do not spell out the details here.
   Let $v$ be a sixth root of $s$ (arbitrary for the moment).
   By assumption, the space spanned by the six diagrams
   \[
-  \twostrandid\;,\qquad\cupcap\;,\qquad\braidcross\;,
+  \cupcap\;,\qquad\twostrandid\;,\qquad\braidcross\;,
     \qquad\drawI\;,\qquad\drawH\;,\qquad\drawcrossX\;
   \]
   is at most $5$-dimensional.  These six diagrams should be thought
@@ -1497,8 +1497,8 @@ are linearly dependent. We do not spell out the details here.
   v^k$:
   \begin{align*}
     \begin{tikzpicture}
-      \node[inner sep=5pt] (A) at (150:1.4cm) {\twostrandid};
-      \node[inner sep=5pt] (B) at (30:1.4cm) {\cupcap};
+      \node[inner sep=5pt] (A) at (150:1.4cm) {\cupcap};
+      \node[inner sep=5pt] (B) at (30:1.4cm) {\twostrandid};
       \node[inner sep=5pt] (C) at (-90:1.4cm) {\braidcross};
       \draw[|->,bend left=15] (A) to node[above,cdlabel] {v^{-12}} (B);
       \draw[|->,bend left=15] (B) to (C);
@@ -1515,7 +1515,7 @@ are linearly dependent. We do not spell out the details here.
   \end{align*}
   The notation means, for instance, that
   \[
-  R\left(\,\,\twostrandid\,\,\right) = v^{-12}\,\,\cupcap\,\,.
+  R\left(\,\,\cupcap\,\,\right) = v^{-12}\,\,\twostrandid\,\,.
   \]
   Notice that $R^3$ acts by multiplication by $v^{-12}$. (Indeed,
   $R^3$ does not permute the strands, and is equivalent by
@@ -1542,9 +1542,9 @@ are linearly dependent. We do not spell out the details here.
  + \alpha
 \left[\; \braidcross \;
  + v^{4}\;
-\twostrandid
+\cupcap
 \; + v^{-4} \;
- \cupcap \;\right]=0.
+ \twostrandid \;\right]=0.
   \end{equation*}
 
   If $\beta \ne 0$, we are done. If $\beta = 0$, the relation reduces
@@ -1552,9 +1552,9 @@ are linearly dependent. We do not spell out the details here.
 \[
 \braidcross \;
  + v^{4}\;
-\twostrandid
+\cupcap
 \; + v^{-4} \;
- \cupcap\;=0.
+ \twostrandid\;=0.
 \]
 Closing this relation off with a trivalent vertex on the bottom yields
 \begin{align*}
