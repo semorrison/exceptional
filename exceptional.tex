@@ -149,7 +149,7 @@ symmetric tensor categories, called the (classical) exceptional series.
 This should interpolate between the
 adjoint representations of $\mathfrak{sl}_2$, $\mathfrak{sl}_3$,
 $\mathfrak{so}_8$, $\mathfrak{g}_2$, $\mathfrak{f}_4$, $\mathfrak{e}_6$,
-$\mathfrak{e}_7$, and $\mathfrak{e}_8$.  If this classical exceptional family
+$\mathfrak{e}_7$, and $\mathfrak{e}_8$ in an appropriate sense.  If this classical exceptional family
 exists, we should again expect a quantization yielding a 2-variable
 exceptional knot polynomial.  In this paper we give a conjectural skein
 theoretic description of this exceptional knot polynomial. In fact, we
@@ -163,9 +163,11 @@ fewer crossings.  For example, we compute the following value for the trefoil.
 
 \nn{value of trefoil goes here}
 
-In order to explain how we calculate these knot polynomials, let us first
-recall Vogel's conjectural skein theoretic description of Deligne's classical
-exceptional series.  We begin with the spherical tensor category of Jacobi
+
+\subsection{The classical exceptional series}
+In order to motivate our results about the quantum exceptional series, let us first
+recall Vogel's \NStodo{We say Vogel some places and Cohen-De Man others} conjectural skein theoretic description of Deligne's classical
+exceptional series.  We begin with the symmetric tensor category of Jacobi
 diagrams, $\mathrm{Jac}_d$.
 
 \begin{definition}
@@ -192,7 +194,7 @@ anti-symmetry, symmetry of the Killing form, and Jacobi relations.
 \end{equation}
 \end{definition}
 
-By rescaling the trivalent vertex, it is easy to see that $\mathrm{Jac}_{R,d,b}$ is equivalent as a spherical tensor category to $\mathrm{Jac}_{R,d,bx^2}$ for any invertible $x$ in $R$.  In particular, if $R = \mathbb{C}$ then $\mathrm{Jac}_{R,d,b}$ does not depend on the choice of $b$.  A standard normalization is $b=6$.
+By rescaling the trivalent vertex, it is easy to see that $\mathrm{Jac}_{R,d,b}$ is equivalent as a spherical tensor category to $\mathrm{Jac}_{R,d,bx^2}$ for any invertible $x$ in $R$.  In particular, if $R = \mathbb{C}$ then $\mathrm{Jac}_{R,d,b}$ does not depend on the choice of $b$.  A standard normalization is $b=6$.  \NStodo{Should we change $6$ to $12$?}
 
 If $\mathfrak{g}$ is a simple Lie algebra object in a symmetric tensor
 category with dimension $d$, by the diagram calculus  the symmetric tensor
@@ -204,11 +206,10 @@ as the Lie bracket, and each crossing as the usual symmetric braiding.  This
 skein theory is somewhat poorly behaved since the space of $0$-boundary point
 diagrams is expected to be infinite dimensional.
 
-In addition, Cvitanović and Vogel independently observed that the
+In addition, Cvitanović and Vogel \NStodo{and Cohen-de Man?} independently observed that the
 adjoint representations
 of the exceptional Lie algebras satisfy another relation, the \emph{classical exceptional
 relation}.
-
 
 \begin{definition}
 If $2+d$ is invertible in $R$, let $\mathrm{Exc}_{R,d,b}$ be symmetric tensor category which is the quotient of 
@@ -220,26 +221,9 @@ $\mathrm{Jac}_{R,d,b}$ modulo Vogel's exceptional relation.
 \end{equation}
 \end{definition}
 
-
-\begin{conjecture} \label{conj:classical}
-\DPTtodo{Do we have a particular finite set in mind? If so, give a
-  pointer. How can the relevant polynomials involve $b$?}
-So long as a certain finite set of polynomials in $d$ are invertible, the space of $n$-boundary point diagrams in $\mathrm{Exc}_{R,d,b}$  is free of finite rank over $R$ for every $n$, and the space of $0$-boundary point diagrams is rank $1$.  
-\end{conjecture}
-
-One should think of this conjecture as having two
-parts: first a uniqueness conjecture saying that all the spaces are finite
-dimensional and the $0$-boundary point space is at most $1$-dimensional, and
-second a consistency conjecture saying that the category is nonzero.
-Morally, the uniqueness conjecture says that we can evaluate complicated
-diagrams, while the existence conjecture says that this evaluation is well-defined
- (i.e. independent of choices along the way). Although both conjectures
-are completely open, we would expect uniqueness to be easier than existence.
-
 The parameter $d$ is somewhat poorly behaved, and so Deligne instead
 introduced a parameter $\lambda$ such that $d = -2
-\frac{(\lambda+5)(6-\lambda)}{\lambda(1-\lambda)}$.  Note that
-$\lambda$ and $1-\lambda$ correspond to the same $d$ and thus to the
+\frac{(\lambda+5)(6-\lambda)}{\lambda(1-\lambda)}$.  This makes sense so long as $\lambda$ and $1-\lambda$ are invertible in $R$.  Note that $\lambda$ and $1-\lambda$ correspond to the same $d$ and thus to the
 same category.  If we normalize $b=6$ then the exceptional relation
 for $\mathrm{Exc}_{R,-2
   \frac{(\lambda+5)(6-\lambda)}{\lambda(1-\lambda)},6}$ (which we
@@ -251,25 +235,58 @@ will also write $\mathrm{Exc}_{R,\lambda}$) has the following form.
 \label{eq:classical-except-2}
 \end{equation}
 
+\begin{conjecture}[Classical consistency]
+  \label{conj:class-consist}
+So long as a certain finite set of polynomials in $\lambda$ are invertible in $R$, the space of $n$-boundary point diagrams in $\mathrm{Exc}_{R,\lambda}$ is non-zero.  In particular, any two ways of applying the above relations to a closed diagram to return a rational function in $\lambda$ will yield the same rational function.
+\end{conjecture}
+
+\begin{conjecture}[Classical sufficiency]
+  \label{conj:class-suffic}
+So long as a certain finite set of polynomials in $\lambda$ are invertible, the space of $n$-boundary point diagrams in $\mathrm{Exc}_{R,\lambda}$  is free of finite rank over $R$ for every $n$.  Furthermore, $\mathsf{Exc}_{R,\lambda}(n,m)$ has dimension bounded above by $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
+for $n+m=0,1,2,3,4,5,6$, respectively.  In particular, any closed diagram can be simplified using the above skein relations to a scalar, any $2$-boundary point diagram can be simplified to a scalar multiple of the strand, and any $3$-boundary point diagram can be simplified to a multiple of the trivalent vertex.
+\end{conjecture}
+
+\NStodo{Do we really care about the $16$ and $80$ here?}
+
+
+
 
 The following corollary follows from Conjecture \ref{conj:classical}.
 
 \begin{corollary}
-If $d$ is one of $-5, -4, -3, -2, -3/2,1,2/3,1/2, 1/3, 1/5$, then the quotient of $\mathrm{Jac}_{\mathbb{C},d,b}$ by the negligible elements is equivalent to the category of representations of the trivial group, $O(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3) \rtimes \mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$, $E_6 \rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
+If $\lambda$ is one of $-5, -4, -3, -2, -3/2,1,2/3,1/2, 1/3, 1/5$, then the quotient of $\mathrm{Exc}_{\mathbb{C},\lambda}$ by the negligible elements is equivalent to the category of representations of the trivial group, $O(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3) \rtimes \mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$, $E_6 \rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
 \end{corollary}
 
 \begin{conjecture}
-There is a dense open subset $U \subset \mathbb{C}$ for which the idempotent completion of $\mathrm{Jac}_{\mathbb{C},d,b}$, for $d \in U$, is semisimple.
+There is a dense open subset $U \subset \mathbb{C}$ for which the idempotent completion of $\mathrm{Exc}_{\mathbb{C},\lambda}$, for $\lambda \in U$, is semisimple.
 \end{conjecture}
 
 We expect that in order for the idempotent completion to be semisimple one needs to invert infinitely many polynomials.  For example, for the idempotent completion of $\mathrm{GL}_t$ to be semisimple you need to invert $t-n$ for every positive integer $n$.
 
+These conjectures are a strengthening of a the conjecture of Deligne (as improved by Cohen--De Man \NStodo{others too?}), and would give a construction of an exceptional series passing through each of the exceptional Lie algebras.
 
-These conjectures are a restatement of the conjectures of Deligne and Cohen--De Man, and would give a construction of an
-exceptional series passing through each of the exceptional Lie algebras.
+\begin{conjecture}[Deligne's conejcture]
+There exists
+  \begin{itemize}
+  \item a ring $R$ which is a localization of $\mathbb{C}[\lambda]$ at finitely many polynomials
+  \item a category $\mathsf{Except}_{R,\lambda}$ where the objects are integers and morphisms are finite-dimensional free $R$-modules
+  \item a braided functor $\eval$ from $\mathsf{Exc}_{R,\lambda}$ to $\mathsf{Except}_{R,\lambda}$, that is the identity on objects and surjective on morphisms and sends the trivalent vertex to the generator of the $3$-boundary point space. 
+  \end{itemize}
+For any map $\varphi: R \rightarrow S$ we can define the base extension $\mathsf{Except}_{S,\varphi(\lambda)}$.  Furthermore $\mathsf{Except}$ has the following properties
+\begin{itemize}
+\item the idempotent completion of $\mathsf{Except}_{\mathbb{C}(\lambda),\lambda}$ 
+\item $\mathsf{Except}_{R,\lambda}(n,m)$ has dimension$1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
+for $n+m=0,1,2,3,4,5,6$, respectively, 
+\item if $\lambda$ is one of $-5, -4, -3, -2, -3/2,1,2/3,1/2, 1/3, 1/5$, then the quotient of $\mathrm{Exc}_{\mathbb{C},\lambda}$ by the negligible elements is equivalent to the category of representations of the trivial group, $O(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3) \rtimes \mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$, $E_6 \rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
+\end{itemize}
+\end{conjecture}
 
-The main result of this paper is a quantum version of this conjecture.  
-Before stating this conjecture we fix some notation that is analogous to ``quantum
+Our conjectures imply Deligne's conjecture for $\mathsf{Except}_{R,\lambda} = \mathsf{Exc}_{R,\lambda}$, so they are slightly stronger and say that the classical exceptional relation is the only skein relation needed to describe $\mathsf{Except}_{R,\lambda}$.
+
+\subsection{Quantum exceptional conjectures}
+
+The main result of this paper is a quantum versions of the sufficiency and consistency conjectures.  
+Before stating these conjecture we fix some notation that is analogous to ``quantum
 integer'' notation, adapted to a two-variable setting, but note that there is
 no denominator.
 \begin{align*}
@@ -280,7 +297,7 @@ no denominator.
 We will also use throughout the paper the symmetrized cyclotomic polynomials.  All of our categories will be symmetric under $v \mapsto -v$, so we use a version of cyclotomic polynomials that is adjusted to this.  Let $$\widetilde{\Phi}_n = \prod_{\zeta: (\pm \zeta)^n = 1} (v^{\frac{1}{2}}-\zeta v^{-\frac{1}{2}}).$$  In terms of the usual cyclotomic polynomials we have if $n$ is odd then $\widetilde{\Phi}_n = \widetilde{\Phi}_{2n} = v^{-\varphi(n)} \Phi_n(v) \Phi_{2n}(v)$, but if $n$ is a multiple of $4$ then $\widetilde{\Phi}_n = v^{-\frac{\varphi(n)}{2}} \Phi_n(v)$.
 
 \begin{definition}
-Let  $\mathrm{QExc}_{R,v,b,\alpha}$ be the ribbon category whose objects are collections of $n$
+Let  $\mathrm{QExc}_{R,v,w}$ be the ribbon category whose objects are collections of $n$
 points on a line, and whose morphisms spaces from $n$ to $m$ consist of $R$-linear
 combinations planar graphs in a rectangle with $n$ boundary points on the
 bottom, $m$ boundary points at the top, and consisting of trivalent vertices
@@ -328,61 +345,38 @@ v^{-3} \;
 \end{equation}
 
 
+Although the quantum exceptional Jacobi relation looks like an analogue of the ordinary Jacobi relation with lower order terms, it is important to emphasize that it is only the right analogue of the Jacobi relation in the exceptional setting.  In particular, it does not hold for quantizations of non-exceptional Lie algebras.
 
 
-
-
-
-
-
-
-
-
-
-
-We conjecture that the skein relations above suffice to evaluate
-uniquely every framed knotted trivalent graph. In fact we split the
-conjecture up into different parts.
-
-\DPTtodo{Introduced some placeholder terminology here so I could state
-  the conjectures more precisely. Feel free to change it.}
-Let $R$ be the ring $\QQ[v,w,v - v^{-1},w - w^{-1}, w/v - v/w]$, that
-is, the minimal ring for which all of the denominators in the skein
-relations are defined. Let $\Skq{n,m}$ be the \emph{skein algebra vector space}
-of framed, embedded trivalent $(n,m)$ tangles modulo the
-local skein relations in \eqref{eq:simple-rels-spec}
-and~\eqref{eq:quant-except-spec}. The different vector spaces
-$\Skq{n,m}$ combine into a category $\Skqcat$ where the objects are
-integers and the morphisms from $n$ to $m$ are elements of $\Skq{n,m}$.
 
 \begin{conjecture}[Quantum consistency]
   \label{conj:quant-consist}
-  There is a category $\mathsf{QExcept}$ where the objects are
-  integers and morphisms are finite-dimensional, free $R$-modules, and
-  a functor $\eval$ from $\Skqcat$ to $M_n$, that is the identity on
-  objects and surjective on morphisms after extending scalars to
-  $\QQ(v,w)$. Furthermore, $\mathsf{QExcept}(n,m)$ has dimension
-  $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
-  for $n+m=0,1,2,3,4,5,6$, respectively, and $\eval$ takes a single
-  strand and a trivalent vertex to generators of the respective
-  morphism spaces.
+So long as a certain finite set of Laurent polynomials in $v$ and $w$ are invertible in $R$, the space of $n$-boundary point diagrams in $\mathrm{QExc}_{R,v,w}$ is non-zero.  In particular, any two ways of applying the above relations to a closed diagram to return a rational function in $v$ and $w$ will yield the same rational function.
 \end{conjecture}
 
-\DPTtodo{Is this too weak? To derive square reduction, we do assume
-  something more about the denominators, so we probably do need to
-  extend scalars at least a little. Would be nice to have a version of
-  sufficiency that doesn't assume consistency}
 \begin{conjecture}[Quantum sufficiency]
-  \label{conj:quant-suffic}
-  After extending scalars to $\QQ(v,w)$, the functor $\eval$
-  conjectured above is injective on each morphism space. In
-  particular, these relations suffice to evaluate any closed framed
-  trivalent graph to a rational function in $v$ and~$w$.
+  \label{conj:class-suffic}
+So long as a certain finite set of polynomials in $v$ and $w$ are invertible, the space of $n$-boundary point diagrams in $\mathrm{QExc}_{R,v,w}$ is free of finite rank over $R$ for every $n$.  Furthermore, $\mathsf{QExc}_{R,v,w}(n,m)$ has dimension bounded above by $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
+for $n+m=0,1,2,3,4,5,6$, respectively.  In particular, any closed diagram can be simplified using the above skein relations to a scalar, any $2$-boundary point diagram can be simplified to a scalar multiple of the strand, and any $3$-boundary point diagram can be simplified to a multiple of the trivalent vertex.
 \end{conjecture}
 
-Although the quantum exceptional Jacobi relation looks like an analogue of the ordinary Jacobi relation with lower order terms, it is important to emphasize that it is only the right analogue of the Jacobi relation in the exceptional setting.  In particular, it does not hold for quantizations of non-exceptional Lie algebras.
+\NStodo{Do we really care about the $16$ and $80$ here?}
 
-The following theorems justify the above conjecture.  Under some mild assumptions, any trivalent ribbon category where the $n$-box space has dimension at most $1,0,1,1,5$ for $n=0,1,2,3,4$ satisfies a version of relation~\eqref{eq:quant-except-spec}.  Furthermore, the QEJacobi relation implies a certain deformation of the Vogel exceptional relation, and a relation between the overcrossing and undercrossing.  
+
+\begin{conjecture}
+If $\lambda$ is one of $-5, -4, -3, -2, -3/2,1,2/3,1/2, 1/3, 1/5$, and $v$ is not a root of unity, then the quotient of $\mathrm{Exc}_{\mathbb{C},v,w}$ by the negligible elements is equivalent to the category of representations of the quantum versions of trivial group, $O(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3) \rtimes \mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$, $E_6 \rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
+\end{conjecture}
+
+\NStodo{Make ``quantum versions" more precise}
+
+\begin{conjecture}
+There is a dense open subset $U \subset \mathbb{C}$ for which the idempotent completion of $\mathrm{QExc}_{\mathbb{C},v,w}$, for $v,w \in U$, is semisimple.
+\end{conjecture}
+
+\NStodo{Could make more precise: $v$ not a root of unity and $w$ in $U$}
+
+
+The following theorems justify the above conjectures.  Under some mild assumptions, any trivalent ribbon category where the $n$-box space has dimension at most $1,0,1,1,5$ for $n=0,1,2,3,4$ satisfies a version of relation~\eqref{eq:quant-except-spec}.  Furthermore, the QEJacobi relation implies a certain deformation of the Vogel exceptional relation, and a relation between the overcrossing and undercrossing.  
 %With some mild assumptions on the base ring, any skein theory where the $n$-box space has dimension at most $1,0,1,1,5$ for $n=0,1,2,3,4$ satisfies a version of relation~\eqref{eq:quant-except-spec}. %See Theorem~\ref{thm:quant-except} in Section~\ref{sec:relation} for a precise statement.
 
 \begin{definition}
@@ -434,7 +428,7 @@ v^{-3} \;
 
 
 \begin{theorem}
-Suppose $(\cC, X, \tau)$ is a trivalent ribbon category with $\dim{\cC_4} \leq 5$, and further suppose that $d$, $b$,$[6]$, and $[5]$ are invertible.  Then $\widetilde{\Phi}_8 = \{2\}$, $\alpha$, and $b+[3]\alpha$ are also invertible, and we have the following relations:
+Suppose $(\cC, X, \tau)$ is a trivalent ribbon category with $\dim{\cC_4} \leq 5$, and further suppose that $d$, $b$,$[6]$, and $[5]$ are nonzero.  Then $\widetilde{\Phi}_8 = \{2\}$, $\alpha$, and $b+[3]\alpha$ are also non-zero, and we have the following relations:
 
 \begin{align*}
   d &= -\frac{[5] b}{\alpha} - \{8\} \\
@@ -452,6 +446,11 @@ The quantum exceptional crossing relation:
 \end{equation}
 
 \end{theorem}
+
+
+
+
+
 
 
 
@@ -1651,9 +1650,36 @@ $1,0,1,1,5,\leq16$ implies a planar pentasquare reduction formula
 \end{itemize}
 Feel free to advise or criticize these plans!
 
+
+\begin{conjecture}[Quantum consistency]
+  \label{conj:quant-consist}
+  There is a category $\mathsf{QExcept}$ where the objects are
+  integers and morphisms are finite-dimensional, free $R$-modules, and
+  a functor $\eval$ from $\Skqcat$ to $M_n$, that is the identity on
+  objects and surjective on morphisms after extending scalars to
+  $\QQ(v,w)$. Furthermore, $\mathsf{QExcept}(n,m)$ has dimension
+  $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
+  for $n+m=0,1,2,3,4,5,6$, respectively, and $\eval$ takes a single
+  strand and a trivalent vertex to generators of the respective
+  morphism spaces.
+\end{conjecture}
+
+\DPTtodo{Is this too weak? To derive square reduction, we do assume
+  something more about the denominators, so we probably do need to
+  extend scalars at least a little. Would be nice to have a version of
+  sufficiency that doesn't assume consistency}
+\begin{conjecture}[Quantum sufficiency]
+  \label{conj:quant-suffic}
+  After extending scalars to $\QQ(v,w)$, the functor $\eval$
+  conjectured above is injective on each morphism space. In
+  particular, these relations suffice to evaluate any closed framed
+  trivalent graph to a rational function in $v$ and~$w$.
+\end{conjecture}
+
+
 %Did you and your collaborators provide preprints that have evolved during, or from, the work done during your stays at HIM?
 %If so, then please inform Christian Wegner (wegner@him.uni-bonn.de), who will add your article to the preprint list on the HIM website.
-
+  
 
 \renewcommand*{\bibfont}{\small}
 \setlength{\bibitemsep}{0pt}
