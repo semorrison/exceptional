@@ -269,13 +269,13 @@ These conjectures are a strengthening of a the conjecture of Deligne (as improve
 There exists
   \begin{itemize}
   \item a ring $R$ which is a localization of $\mathbb{C}[\lambda]$ at finitely many polynomials
-  \item a category $\mathsf{Except}_{R,\lambda}$ where the objects are integers and morphisms are finite-dimensional free $R$-modules
+  \item a category $\mathsf{Except}_{R,\lambda}$ where the objects are integers and morphism spaces are finite-dimensional free $R$-modules
   \item a braided functor $\eval$ from $\mathsf{Exc}_{R,\lambda}$ to $\mathsf{Except}_{R,\lambda}$, that is the identity on objects and surjective on morphisms and sends the trivalent vertex to the generator of the $3$-boundary point space. 
   \end{itemize}
 For any map $\varphi: R \rightarrow S$ we can define the base extension $\mathsf{Except}_{S,\varphi(\lambda)}$.  Furthermore $\mathsf{Except}$ has the following properties
 \begin{itemize}
-\item the idempotent completion of $\mathsf{Except}_{\mathbb{C}(\lambda),\lambda}$ 
-\item $\mathsf{Except}_{R,\lambda}(n,m)$ has dimension$1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
+\item the idempotent completion of $\mathsf{Except}_{\mathbb{C}(\lambda),\lambda}$ is semisimple.
+\item $\mathsf{Except}_{R,\lambda}(n,m)$ has dimension $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
 for $n+m=0,1,2,3,4,5,6$, respectively, 
 \item if $\lambda$ is one of $-5, -4, -3, -2, -3/2,1,2/3,1/2, 1/3, 1/5$, then the quotient of $\mathrm{Exc}_{\mathbb{C},\lambda}$ by the negligible elements is equivalent to the category of representations of the trivial group, $O(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3) \rtimes \mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$, $E_6 \rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
 \end{itemize}
@@ -323,8 +323,7 @@ where
 \begin{align*}
   d &= -\frac{\{2\}[\lambda+5][\lambda-6]}{[\lambda][\lambda-1]}\\
   b &= \frac{\{\lambda+2\}\{\lambda-3\}[3]}{[1]}\\
-  t &= \{1\}\bigl(\{1\}w^2/v + (v^4 - v^2 - 1 - v^{-2} + v^{-4}) +
-      \{1\}v/w^2\bigr).
+  t &= \{1\}\bigl(\{1\}\{2\lambda -1\} + (v^4 - v^2 - 1 - v^{-2} + v^{-4})\bigr).
 \end{align*}
 To these skein relations, we add the \emph{quantum exceptional Jacobi relation}
 \begin{equation}
@@ -424,6 +423,13 @@ v^{-3} \;
 \end{equation}
 
 \end{theorem}
+
+We can now make the change of variables
+
+$$w^2 = \frac{v}{2(b+[3]\alpha)}\left(b \{1\} -\alpha [3] \{5\} + \sqrt{-4 (b+[3]\alpha)^2 + (b \{1\} -[3]\{5\}\alpha)^2 \right)$$
+
+
+
 
 
 
