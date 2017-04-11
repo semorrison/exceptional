@@ -297,6 +297,7 @@ no denominator.
 We will also use throughout the paper the symmetrized cyclotomic polynomials.  All of our categories will be symmetric under $v \mapsto -v$, so we use a version of cyclotomic polynomials that is adjusted to this.  Let $$\widetilde{\Phi}_n = \prod_{\zeta: (\pm \zeta)^n = 1} (v^{\frac{1}{2}}-\zeta v^{-\frac{1}{2}}).$$  In terms of the usual cyclotomic polynomials we have if $n$ is odd then $\widetilde{\Phi}_n = \widetilde{\Phi}_{2n} = v^{-\varphi(n)} \Phi_n(v) \Phi_{2n}(v)$, but if $n$ is a multiple of $4$ then $\widetilde{\Phi}_n = v^{-\frac{\varphi(n)}{2}} \Phi_n(v)$.
 
 \begin{definition}
+Let $R$ be a ring and $v$ and $w$ invertible elements of $R$ such that $[\lambda]$, $[\lambda+1]$, and $[1]$ are invertible. 
 Let  $\mathrm{QExc}_{R,v,w}$ be the ribbon category whose objects are collections of $n$
 points on a line, and whose morphisms spaces from $n$ to $m$ consist of $R$-linear
 combinations planar graphs in a rectangle with $n$ boundary points on the
@@ -343,8 +344,17 @@ v^{-3} \;
  \right] = 0.\label{eq:quant-except-spec}
 \end{equation}
 
-
 Although the quantum exceptional Jacobi relation looks like an analogue of the ordinary Jacobi relation with lower order terms, it is important to emphasize that it is only the right analogue of the Jacobi relation in the exceptional setting.  In particular, it does not hold for quantizations of non-exceptional Lie algebras.
+
+In order to have a skein theory that deforms the classical exceptional family, we should also have a relation deforming the classical exceptional relation and a relation between the over-crossing and under-crossing deforming the fact that they are equal classically.   Surprisingly, such relations follow from the quantum Jacobi relation, so long as certain polynomials are invertible.  The following theorem thus justifies the above definition.
+
+\begin{theorem}
+Suppose \nn{specific collection of polynomials} are invertible in $R$, then the following relations hold in 
+\end{theorem}
+
+
+
+
 
 
 
@@ -424,9 +434,9 @@ v^{-3} \;
 
 \end{theorem}
 
-We can now make the change of variables
+We can make the change of variables
 
-$$w^2 = \frac{v}{2(b+[3]\alpha)}\left(b \{1\} -\alpha [3] \{5\} + \sqrt{-4 (b+[3]\alpha)^2 + (b \{1\} -[3]\{5\}\alpha)^2 \right)$$
+$$w^2 = \frac{v}{2(b+[3]\alpha)}\left(b \{1\} -\alpha [3] \{5\} + \sqrt{-4 (b+[3]\alpha)^2 + (b \{1\} -[3]\{5\}\alpha)^2} \right)$$
 
 
 
