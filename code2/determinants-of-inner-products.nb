@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    134825,       3809]
-NotebookOptionsPosition[    126797,       3581]
-NotebookOutlinePosition[    127188,       3598]
-CellTagsIndexPosition[    127145,       3595]
+NotebookDataLength[    170911,       4764]
+NotebookOptionsPosition[    158952,       4435]
+NotebookOutlinePosition[    159342,       4452]
+CellTagsIndexPosition[    159299,       4449]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -39,7 +39,7 @@ Cell[BoxData[
 Cell[BoxData["d"], "Output",
  CellChangeTimes->{{3.694779666539007*^9, 3.694779676428246*^9}, 
    3.694779960801635*^9, 3.694781908110483*^9, 3.696895393788309*^9, 
-   3.698049405514192*^9}]
+   3.698049405514192*^9, 3.698090585087997*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -125,7 +125,7 @@ Cell[BoxData[
      SuperscriptBox["v", "40"]}], ")"}]}]}]], "Output",
  CellChangeTimes->{{3.6947796816158648`*^9, 3.69477968807121*^9}, 
    3.6947799672273273`*^9, 3.694781908153036*^9, 3.696895395189621*^9, 
-   3.6980494072361317`*^9}]
+   3.6980494072361317`*^9, 3.698090585209134*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -249,11 +249,11 @@ Cell[BoxData[
   3.6980511810406847`*^9, 3.6980511818460197`*^9}}],
 
 Cell[BoxData[{
- RowBox[{"Clear", "[", "\[Zeta]", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Clear", "[", "\[Zeta]\[Zeta]", "]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"\[Zeta]", "[", "n_", "]"}], ":=", 
+  RowBox[{"\[Zeta]\[Zeta]", "[", "n_", "]"}], ":=", 
   RowBox[{
-   RowBox[{"\[Zeta]", "[", "n", "]"}], "=", 
+   RowBox[{"\[Zeta]\[Zeta]", "[", "n", "]"}], "=", 
    RowBox[{"With", "[", 
     RowBox[{
      RowBox[{"{", 
@@ -287,7 +287,54 @@ Cell[BoxData[{
     "]"}]}]}]}], "Input",
  CellChangeTimes->{{3.559513223258071*^9, 3.5595132326436863`*^9}, {
   3.559515807400446*^9, 3.559515812406694*^9}, {3.559516359567793*^9, 
-  3.559516375742578*^9}, {3.559516452342175*^9, 3.559516572539567*^9}}],
+  3.559516375742578*^9}, {3.559516452342175*^9, 3.559516572539567*^9}, {
+  3.698090471831696*^9, 3.698090474634676*^9}}],
+
+Cell[BoxData[
+ RowBox[{"\[Zeta]", "/:", 
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"\[Zeta]", "[", "n_", "]"}], "k_"], "/;", 
+   RowBox[{"k", "\[GreaterEqual]", 
+    RowBox[{"EulerPhi", "[", "n", "]"}]}]}], ":=", 
+  RowBox[{"(", 
+   RowBox[{"\[Zeta]", "/:", 
+    SuperscriptBox[
+     RowBox[{"\[Zeta]", "[", "n", "]"}], "k"], "=", 
+    RowBox[{"Collect", "[", 
+     RowBox[{
+      RowBox[{"Module", "[", 
+       RowBox[{
+        RowBox[{"{", "z", "}"}], ",", 
+        RowBox[{
+         RowBox[{"Expand", "[", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"-", 
+              RowBox[{"Cyclotomic", "[", 
+               RowBox[{"n", ",", "z"}], "]"}]}], "+", 
+             SuperscriptBox["z", 
+              RowBox[{"EulerPhi", "[", "n", "]"}]]}], ")"}], 
+           SuperscriptBox["z", 
+            RowBox[{"k", "-", 
+             RowBox[{"EulerPhi", "[", "n", "]"}]}]]}], "]"}], "/.", 
+         RowBox[{"z", "\[Rule]", 
+          RowBox[{"\[Zeta]", "[", "n", "]"}]}]}]}], "]"}], ",", 
+      RowBox[{"\[Zeta]", "[", "n", "]"}]}], "]"}]}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.6980904770910473`*^9, 3.6980905790216*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox[
+  RowBox[{"\[Zeta]", "[", "20", "]"}], "10"]], "Input",
+ CellChangeTimes->{{3.698090586737051*^9, 3.6980905887021027`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", "1"}]], "Output",
+ CellChangeTimes->{3.698090589189399*^9}]
+}, Open  ]],
 
 Cell[BoxData[
  RowBox[{"Clear", "[", "places", "]"}]], "Input",
@@ -375,56 +422,57 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"places", "[", "6", "]"}], "=", 
   RowBox[{
-   RowBox[{"Flatten", "[", 
-    RowBox[{"Table", "[", 
+   RowBox[{"places", "[", "6", "]"}], "=", 
+   RowBox[{
+    RowBox[{"Flatten", "[", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"w", "\[Rule]", 
+        RowBox[{"\[Sigma]", " ", 
+         SuperscriptBox["v", "k"]}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"\[Sigma]", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"-", "4"}], ",", 
+           RowBox[{"-", "2"}], ",", "3", ",", "5"}], "}"}]}], "}"}]}], "]"}], 
+     "]"}], "~", "Join", "~", 
+    RowBox[{"{", 
      RowBox[{
       RowBox[{"w", "\[Rule]", 
-       RowBox[{"\[Sigma]", " ", 
-        SuperscriptBox["v", "k"]}]}], ",", 
-      RowBox[{"{", 
-       RowBox[{"\[Sigma]", ",", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "}"}], ",", 
-      RowBox[{"{", 
-       RowBox[{"k", ",", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"-", "4"}], ",", 
-          RowBox[{"-", "2"}], ",", "3", ",", "5"}], "}"}]}], "}"}]}], "]"}], 
-    "]"}], "~", "Join", "~", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"w", "\[Rule]", 
-      RowBox[{
-       RowBox[{"\[Zeta]", "[", "4", "]"}], 
-       SuperscriptBox["v", 
-        RowBox[{"-", "1"}]]}]}], ",", 
-     RowBox[{"w", "\[Rule]", 
-      RowBox[{
-       RowBox[{"\[Zeta]", "[", "4", "]"}], 
-       SuperscriptBox["v", "2"]}]}], ",", 
-     RowBox[{"v", "\[Rule]", 
-      SuperscriptBox["w", 
-       RowBox[{"-", "5"}]]}], ",", 
-     RowBox[{"v", "\[Rule]", 
-      RowBox[{"-", 
+       RowBox[{
+        RowBox[{"\[Zeta]", "[", "4", "]"}], 
+        SuperscriptBox["v", 
+         RowBox[{"-", "1"}]]}]}], ",", 
+      RowBox[{"w", "\[Rule]", 
+       RowBox[{
+        RowBox[{"\[Zeta]", "[", "4", "]"}], 
+        SuperscriptBox["v", "2"]}]}], ",", 
+      RowBox[{"v", "\[Rule]", 
        SuperscriptBox["w", 
-        RowBox[{"-", "5"}]]}]}], ",", 
-     RowBox[{"w", "\[Rule]", 
-      RowBox[{
-       RowBox[{"\[Zeta]", "[", "5", "]"}], 
-       SuperscriptBox["v", 
-        RowBox[{"6", "/", "5"}]]}]}], ",", 
-     RowBox[{"w", "\[Rule]", 
-      RowBox[{
-       RowBox[{"\[Zeta]", "[", "10", "]"}], 
-       SuperscriptBox["v", 
-        RowBox[{"6", "/", "5"}]]}]}]}], "}"}]}]}]], "Input",
+        RowBox[{"-", "5"}]]}], ",", 
+      RowBox[{"v", "\[Rule]", 
+       RowBox[{"-", 
+        SuperscriptBox["w", 
+         RowBox[{"-", "5"}]]}]}], ",", 
+      RowBox[{"w", "\[Rule]", 
+       RowBox[{
+        RowBox[{"\[Zeta]", "[", "5", "]"}], 
+        SuperscriptBox["v", 
+         RowBox[{"6", "/", "5"}]]}]}], ",", 
+      RowBox[{"w", "\[Rule]", 
+       RowBox[{
+        RowBox[{"\[Zeta]", "[", "10", "]"}], 
+        SuperscriptBox["v", 
+         RowBox[{"6", "/", "5"}]]}]}]}], "}"}]}]}], ";"}]], "Input",
  CellChangeTimes->{{3.698051533411788*^9, 3.698051569928322*^9}, {
-  3.6980516427158937`*^9, 3.698051728720235*^9}}],
+   3.6980516427158937`*^9, 3.698051728720235*^9}, 3.6980906021229687`*^9}],
 
 Cell[BoxData[
  RowBox[{"Clear", "[", "dimensionDrop", "]"}]], "Input",
@@ -439,96 +487,902 @@ Cell[BoxData[
     RowBox[{"n", ",", "rule"}], "]"}], "=", 
    RowBox[{"Count", "[", 
     RowBox[{
-     RowBox[{"Diagonal", "[", 
-      RowBox[{"rowReduce", "[", 
-       RowBox[{"n", ",", "rule"}], "]"}], "]"}], ",", "0"}], 
-    "]"}]}]}]], "Input",
+     RowBox[{"Together", "[", 
+      RowBox[{"RootReduce", "[", 
+       RowBox[{
+        RowBox[{"Diagonal", "[", 
+         RowBox[{"rowReduce", "[", 
+          RowBox[{"n", ",", "rule"}], "]"}], "]"}], "/.", 
+        RowBox[{"\[Zeta]", "\[Rule]", "\[Zeta]\[Zeta]"}]}], "]"}], "]"}], ",",
+      "0"}], "]"}]}]}]], "Input",
  CellChangeTimes->{{3.698050665374625*^9, 3.698050680456748*^9}, {
-  3.698050738246928*^9, 3.6980507415993843`*^9}}],
+  3.698050738246928*^9, 3.6980507415993843`*^9}, {3.6980906116491127`*^9, 
+  3.698090627090918*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ParallelEvaluate", "[", "$KernelID", "]"}]], "Input",
+ CellChangeTimes->{{3.6980906411992073`*^9, 3.698090652294236*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", "8", 
+   ",", "9", ",", "10", ",", "11", ",", "12"}], "}"}]], "Output",
+ CellChangeTimes->{3.6980906540974092`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DistributeDefinitions", "[", "\[Zeta]", "]"}]], "Input",
+ CellChangeTimes->{{3.698090634758356*^9, 3.698090639004801*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  TagBox["\[Zeta]",
+   HoldForm], "}"}]], "Output",
+ CellChangeTimes->{3.6980906546155767`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"echo", "[", "x_", "]"}], ":=", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"Print", "[", "x", "]"}], ";", "x"}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.698090676467081*^9, 3.698090680936743*^9}}],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{
   RowBox[{
-   RowBox[{"Print", "[", 
+   RowBox[{"echo", "[", 
     RowBox[{"dimensionDrop", "[", 
      RowBox[{"4", ",", "#"}], "]"}], "]"}], "&"}], "/@", 
   RowBox[{"places", "[", "4", "]"}]}]], "Input",
  CellChangeTimes->{{3.698051873421533*^9, 3.698051874939262*^9}, {
-  3.6980521034222517`*^9, 3.6980521077792873`*^9}}],
+   3.6980521034222517`*^9, 3.6980521077792873`*^9}, 3.698090684963209*^9}],
 
 Cell[CellGroupData[{
 
-Cell[BoxData["2"], "Print",
- CellChangeTimes->{3.6980521082174253`*^9}],
-
-Cell[BoxData["3"], "Print",
- CellChangeTimes->{3.698052108227364*^9}],
-
-Cell[BoxData["4"], "Print",
- CellChangeTimes->{3.6980521082403708`*^9}],
-
-Cell[BoxData["3"], "Print",
- CellChangeTimes->{3.698052108253091*^9}],
-
-Cell[BoxData["2"], "Print",
- CellChangeTimes->{3.698052108264975*^9}],
-
-Cell[BoxData["5"], "Print",
- CellChangeTimes->{3.698052108276524*^9}],
-
-Cell[BoxData["2"], "Print",
- CellChangeTimes->{3.698052108288138*^9}],
-
-Cell[BoxData["2"], "Print",
- CellChangeTimes->{3.698052108300042*^9}],
-
-Cell[BoxData["5"], "Print",
- CellChangeTimes->{3.6980521083114223`*^9}],
-
-Cell[BoxData["5"], "Print",
- CellChangeTimes->{3.6980521083227882`*^9}],
-
-Cell[BoxData["2"], "Print",
- CellChangeTimes->{3.698052108333949*^9}],
-
-Cell[BoxData["2"], "Print",
- CellChangeTimes->{3.6980521083503933`*^9}],
-
-Cell[BoxData["5"], "Print",
- CellChangeTimes->{3.698052108367086*^9}],
-
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"Thu 9 Mar 2017 23:41:48\"\>", 
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:18\"\>", 
    "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
    "1"}],
-  SequenceForm["Thu 9 Mar 2017 23:41:48", " row reducing at row ", 1],
+  SequenceForm["Fri 10 Mar 2017 10:24:18", " row reducing at row ", 1],
   Editable->False]], "Print",
- CellChangeTimes->{3.6980521085428743`*^9}],
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090658777627*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"Thu 9 Mar 2017 23:41:49\"\>", 
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:18\"\>", 
    "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
    "2"}],
-  SequenceForm["Thu 9 Mar 2017 23:41:49", " row reducing at row ", 2],
+  SequenceForm["Fri 10 Mar 2017 10:24:18", " row reducing at row ", 2],
   Editable->False]], "Print",
- CellChangeTimes->{3.698052109329505*^9}],
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090658792446*^9}],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"Thu 9 Mar 2017 23:41:50\"\>", 
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:18\"\>", 
    "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
    "3"}],
-  SequenceForm["Thu 9 Mar 2017 23:41:50", " row reducing at row ", 3],
+  SequenceForm["Fri 10 Mar 2017 10:24:18", " row reducing at row ", 3],
   Editable->False]], "Print",
- CellChangeTimes->{3.698052110028913*^9}]
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090658799111*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:18\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "4"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:18", " row reducing at row ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090658805969*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:18\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "5"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:18", " row reducing at row ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090658812808*^9}],
+
+Cell[BoxData["2"], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090658819482*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:18\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "1"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:18", " row reducing at row ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090658865869*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:18\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "2"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:18", " row reducing at row ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906588918877`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:18\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "3"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:18", " row reducing at row ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906589002523`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:18\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "4"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:18", " row reducing at row ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090658907112*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:18\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "5"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:18", " row reducing at row ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090658914587*^9}],
+
+Cell[BoxData["3"], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090658946908*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:18\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "1"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:18", " row reducing at row ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906589535017`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:18\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "2"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:18", " row reducing at row ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090658960196*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:18\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "3"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:18", " row reducing at row ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.69809065896697*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:18\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "4"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:18", " row reducing at row ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906589737167`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:18\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "5"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:18", " row reducing at row ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090658980522*^9}],
+
+Cell[BoxData["5"], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090658987372*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "1"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.69809065902953*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "2"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659036106*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "3"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906590430727`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "4"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906590487003`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "5"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906590542917`*^9}],
+
+Cell[BoxData["3"], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659059874*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "1"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659099134*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "2"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659128757*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "2"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659134418*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "3"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659140113*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "4"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659145815*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "5"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659151278*^9}],
+
+Cell[BoxData["0"], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906591567*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "1"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906591952677`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "2"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659200811*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "3"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659206277*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "4"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659211767*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "5"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.69809065921721*^9}],
+
+Cell[BoxData["5"], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659222598*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "1"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906592281437`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "2"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659233695*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "3"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659239208*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "4"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906592447157`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "5"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659250236*^9}],
+
+Cell[BoxData["2"], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659255718*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "1"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659261278*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "2"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659266881*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "3"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659272484*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "4"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659278017*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "5"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659283659*^9}],
+
+Cell[BoxData["2"], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659289153*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "1"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659294631*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "2"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659300211*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "3"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659305821*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "4"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659311433*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "5"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659317048*^9}],
+
+Cell[BoxData["5"], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659322565*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "1"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906593281507`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "2"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659333681*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "3"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659339201*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "4"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906593448677`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "5"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659350514*^9}],
+
+Cell[BoxData["5"], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906593560457`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "1"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659361745*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "2"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906593673553`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "3"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906593729343`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "4"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659378735*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "5"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906593842793`*^9}],
+
+Cell[BoxData["2"], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.69809065938975*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "1"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659395233*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "2"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659400703*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "3"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906594062147`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "4"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659411736*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "5"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906594171963`*^9}],
+
+Cell[BoxData["2"], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659422711*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "1"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659428176*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "2"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906594336653`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "3"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659439208*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "4"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659444851*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "5"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659450365*^9}],
+
+Cell[BoxData["5"], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906594559813`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "1"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659528713*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "2"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659585333*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "3"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906596346292`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "4"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090659675211*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:19\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "5"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:19", " row reducing at row ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906597128696`*^9}],
+
+Cell[BoxData["1"], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090661282887*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:21\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "1"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:21", " row reducing at row ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090661466239*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:21\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "2"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:21", " row reducing at row ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.69809066153344*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:21\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "3"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:21", " row reducing at row ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090661540333*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:21\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "4"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:21", " row reducing at row ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090661616192*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:21\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "5"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:21", " row reducing at row ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090661622711*^9}],
+
+Cell[BoxData["1"], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090663238553*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:23\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "1"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:23", " row reducing at row ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090663409181*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:23\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "2"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:23", " row reducing at row ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090663519985*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:23\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "3"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:23", " row reducing at row ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.69809066360212*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:23\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "4"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:23", " row reducing at row ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090663697248*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:23\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "5"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:23", " row reducing at row ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906637362556`*^9}],
+
+Cell[BoxData["1"], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906673097486`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:27\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "1"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:27", " row reducing at row ", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906674625673`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:27\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "2"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:27", " row reducing at row ", 2],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.6980906675705748`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:27\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "3"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:27", " row reducing at row ", 3],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090667652117*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:27\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "4"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:27", " row reducing at row ", 4],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090667748568*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Fri 10 Mar 2017 10:24:27\"\>", 
+   "\[InvisibleSpace]", "\<\" row reducing at row \"\>", "\[InvisibleSpace]", 
+   "5"}],
+  SequenceForm["Fri 10 Mar 2017 10:24:27", " row reducing at row ", 5],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090667792329*^9}],
+
+Cell[BoxData["1"], "Print",
+ CellChangeTimes->{3.6980521082174253`*^9, 3.698090671416114*^9}]
 }, Open  ]],
 
-Cell[BoxData["$Aborted"], "Output",
- CellChangeTimes->{3.6980518765535383`*^9, 3.698081169051053*^9}]
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "Null", ",", "Null", ",", "Null", ",", "Null", ",", "Null", ",", "Null", 
+   ",", "Null", ",", "Null", ",", "Null", ",", "Null", ",", "Null", ",", 
+   "Null", ",", "Null", ",", "Null", ",", "Null", ",", "Null", ",", "Null"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.6980518765535383`*^9, 3.698081169051053*^9, 
+  3.698090671422757*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -3582,8 +4436,8 @@ Cell[BoxData[
 AutoGeneratedPackage->Automatic,
 WindowSize->{906, 861},
 WindowMargins->{{Automatic, 68}, {Automatic, 5}},
-FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
-21, 2016)",
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September 9, \
+2014)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -3597,220 +4451,321 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 353, 8, 75, "Input"],
+Cell[558, 20, 353, 8, 63, "Input"],
 Cell[CellGroupData[{
-Cell[936, 32, 200, 4, 32, "Input"],
-Cell[1139, 38, 190, 3, 32, "Output"]
+Cell[936, 32, 200, 4, 28, "Input"],
+Cell[1139, 38, 212, 3, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1366, 46, 236, 5, 32, "Input"],
-Cell[1605, 53, 2457, 74, 101, "Output"]
+Cell[1388, 46, 236, 5, 28, "Input"],
+Cell[1627, 53, 2479, 74, 104, "Output"]
 }, Open  ]],
-Cell[4077, 130, 249, 7, 32, "Input"],
-Cell[4329, 139, 132, 2, 32, "Input"],
-Cell[4464, 143, 843, 29, 75, "Input"],
-Cell[5310, 174, 620, 19, 53, "Input"],
-Cell[5933, 195, 328, 9, 32, "Input"],
-Cell[6264, 206, 126, 2, 32, "Input"],
-Cell[6393, 210, 555, 13, 54, "Input"],
-Cell[6951, 225, 136, 2, 32, "Input"],
-Cell[7090, 229, 863, 19, 54, "Input"],
-Cell[7956, 250, 1435, 39, 75, "Input"],
-Cell[9394, 291, 131, 2, 32, "Input"],
-Cell[9528, 295, 2127, 59, 79, "Input"],
-Cell[11658, 356, 574, 17, 35, "Input"],
-Cell[12235, 375, 1626, 51, 59, "Input"],
-Cell[13864, 428, 136, 2, 32, "Input"],
-Cell[14003, 432, 500, 14, 32, "Input"],
+Cell[4121, 130, 249, 7, 28, "Input"],
+Cell[4373, 139, 132, 2, 28, "Input"],
+Cell[4508, 143, 843, 29, 67, "Input"],
+Cell[5354, 174, 620, 19, 51, "Input"],
+Cell[5977, 195, 328, 9, 28, "Input"],
+Cell[6308, 206, 126, 2, 28, "Input"],
+Cell[6437, 210, 555, 13, 46, "Input"],
+Cell[6995, 225, 136, 2, 28, "Input"],
+Cell[7134, 229, 863, 19, 46, "Input"],
+Cell[8000, 250, 1505, 40, 63, "Input"],
+Cell[9508, 292, 1163, 32, 56, "Input"],
 Cell[CellGroupData[{
-Cell[14528, 450, 321, 8, 32, "Input"],
-Cell[CellGroupData[{
-Cell[14874, 462, 71, 1, 24, "Print"],
-Cell[14948, 465, 69, 1, 24, "Print"],
-Cell[15020, 468, 71, 1, 24, "Print"],
-Cell[15094, 471, 69, 1, 24, "Print"],
-Cell[15166, 474, 69, 1, 24, "Print"],
-Cell[15238, 477, 69, 1, 24, "Print"],
-Cell[15310, 480, 69, 1, 24, "Print"],
-Cell[15382, 483, 69, 1, 24, "Print"],
-Cell[15454, 486, 71, 1, 24, "Print"],
-Cell[15528, 489, 71, 1, 24, "Print"],
-Cell[15602, 492, 69, 1, 24, "Print"],
-Cell[15674, 495, 71, 1, 24, "Print"],
-Cell[15748, 498, 69, 1, 24, "Print"],
-Cell[15820, 501, 313, 7, 24, "Print"],
-Cell[16136, 510, 311, 7, 24, "Print"],
-Cell[16450, 519, 311, 7, 24, "Print"]
+Cell[10696, 328, 154, 3, 32, "Input"],
+Cell[10853, 333, 87, 2, 28, "Output"]
 }, Open  ]],
-Cell[16776, 529, 101, 1, 32, "Output"]
+Cell[10955, 338, 131, 2, 28, "Input"],
+Cell[11089, 342, 2127, 59, 74, "Input"],
+Cell[13219, 403, 574, 17, 35, "Input"],
+Cell[13796, 422, 1717, 52, 57, "Input"],
+Cell[15516, 476, 136, 2, 28, "Input"],
+Cell[15655, 480, 723, 19, 46, "Input"],
+Cell[CellGroupData[{
+Cell[16403, 503, 145, 2, 28, "Input"],
+Cell[16551, 507, 227, 5, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[16914, 535, 617, 12, 32, "Input"],
-Cell[CellGroupData[{
-Cell[17556, 551, 289, 5, 24, "Print"],
-Cell[17848, 558, 291, 5, 24, "Print"],
-Cell[18142, 565, 289, 5, 24, "Print"],
-Cell[18434, 572, 289, 5, 24, "Print"],
-Cell[18726, 579, 532, 11, 24, "Print"],
-Cell[19261, 592, 530, 11, 24, "Print"],
-Cell[19794, 605, 532, 11, 24, "Print"],
-Cell[20329, 618, 532, 11, 24, "Print"],
-Cell[20864, 631, 530, 11, 24, "Print"],
-Cell[21397, 644, 530, 11, 24, "Print"]
+Cell[16815, 517, 146, 2, 28, "Input"],
+Cell[16964, 521, 124, 4, 28, "Output"]
 }, Open  ]],
-Cell[21942, 658, 450, 6, 32, "Output"]
+Cell[17103, 528, 229, 6, 28, "Input"],
+Cell[CellGroupData[{
+Cell[17357, 538, 343, 8, 28, "Input"],
+Cell[CellGroupData[{
+Cell[17725, 550, 337, 7, 22, "Print"],
+Cell[18065, 559, 337, 7, 22, "Print"],
+Cell[18405, 568, 337, 7, 22, "Print"],
+Cell[18745, 577, 337, 7, 22, "Print"],
+Cell[19085, 586, 337, 7, 22, "Print"],
+Cell[19425, 595, 93, 1, 21, "Print"],
+Cell[19521, 598, 337, 7, 22, "Print"],
+Cell[19861, 607, 339, 7, 22, "Print"],
+Cell[20203, 616, 339, 7, 22, "Print"],
+Cell[20545, 625, 337, 7, 22, "Print"],
+Cell[20885, 634, 337, 7, 22, "Print"],
+Cell[21225, 643, 93, 1, 21, "Print"],
+Cell[21321, 646, 339, 7, 22, "Print"],
+Cell[21663, 655, 337, 7, 22, "Print"],
+Cell[22003, 664, 336, 7, 22, "Print"],
+Cell[22342, 673, 339, 7, 22, "Print"],
+Cell[22684, 682, 337, 7, 22, "Print"],
+Cell[23024, 691, 93, 1, 21, "Print"],
+Cell[23120, 694, 336, 7, 22, "Print"],
+Cell[23459, 703, 337, 7, 22, "Print"],
+Cell[23799, 712, 339, 7, 22, "Print"],
+Cell[24141, 721, 339, 7, 22, "Print"],
+Cell[24483, 730, 339, 7, 22, "Print"],
+Cell[24825, 739, 93, 1, 21, "Print"],
+Cell[24921, 742, 337, 7, 22, "Print"],
+Cell[25261, 751, 337, 7, 22, "Print"],
+Cell[25601, 760, 337, 7, 22, "Print"],
+Cell[25941, 769, 337, 7, 22, "Print"],
+Cell[26281, 778, 337, 7, 22, "Print"],
+Cell[26621, 787, 337, 7, 22, "Print"],
+Cell[26961, 796, 91, 1, 21, "Print"],
+Cell[27055, 799, 339, 7, 22, "Print"],
+Cell[27397, 808, 337, 7, 22, "Print"],
+Cell[27737, 817, 337, 7, 22, "Print"],
+Cell[28077, 826, 337, 7, 22, "Print"],
+Cell[28417, 835, 336, 7, 22, "Print"],
+Cell[28756, 844, 93, 1, 21, "Print"],
+Cell[28852, 847, 339, 7, 22, "Print"],
+Cell[29194, 856, 337, 7, 22, "Print"],
+Cell[29534, 865, 337, 7, 22, "Print"],
+Cell[29874, 874, 339, 7, 22, "Print"],
+Cell[30216, 883, 337, 7, 22, "Print"],
+Cell[30556, 892, 93, 1, 21, "Print"],
+Cell[30652, 895, 337, 7, 22, "Print"],
+Cell[30992, 904, 337, 7, 22, "Print"],
+Cell[31332, 913, 337, 7, 22, "Print"],
+Cell[31672, 922, 337, 7, 22, "Print"],
+Cell[32012, 931, 337, 7, 22, "Print"],
+Cell[32352, 940, 93, 1, 21, "Print"],
+Cell[32448, 943, 337, 7, 22, "Print"],
+Cell[32788, 952, 337, 7, 22, "Print"],
+Cell[33128, 961, 337, 7, 22, "Print"],
+Cell[33468, 970, 337, 7, 22, "Print"],
+Cell[33808, 979, 337, 7, 22, "Print"],
+Cell[34148, 988, 93, 1, 21, "Print"],
+Cell[34244, 991, 339, 7, 22, "Print"],
+Cell[34586, 1000, 337, 7, 22, "Print"],
+Cell[34926, 1009, 337, 7, 22, "Print"],
+Cell[35266, 1018, 339, 7, 22, "Print"],
+Cell[35608, 1027, 337, 7, 22, "Print"],
+Cell[35948, 1036, 95, 1, 21, "Print"],
+Cell[36046, 1039, 337, 7, 22, "Print"],
+Cell[36386, 1048, 339, 7, 22, "Print"],
+Cell[36728, 1057, 339, 7, 22, "Print"],
+Cell[37070, 1066, 337, 7, 22, "Print"],
+Cell[37410, 1075, 339, 7, 22, "Print"],
+Cell[37752, 1084, 92, 1, 21, "Print"],
+Cell[37847, 1087, 337, 7, 22, "Print"],
+Cell[38187, 1096, 337, 7, 22, "Print"],
+Cell[38527, 1105, 339, 7, 22, "Print"],
+Cell[38869, 1114, 337, 7, 22, "Print"],
+Cell[39209, 1123, 339, 7, 22, "Print"],
+Cell[39551, 1132, 93, 1, 21, "Print"],
+Cell[39647, 1135, 337, 7, 22, "Print"],
+Cell[39987, 1144, 339, 7, 22, "Print"],
+Cell[40329, 1153, 337, 7, 22, "Print"],
+Cell[40669, 1162, 337, 7, 22, "Print"],
+Cell[41009, 1171, 337, 7, 22, "Print"],
+Cell[41349, 1180, 95, 1, 21, "Print"],
+Cell[41447, 1183, 337, 7, 22, "Print"],
+Cell[41787, 1192, 337, 7, 22, "Print"],
+Cell[42127, 1201, 339, 7, 22, "Print"],
+Cell[42469, 1210, 337, 7, 22, "Print"],
+Cell[42809, 1219, 339, 7, 22, "Print"],
+Cell[43151, 1228, 93, 1, 21, "Print"],
+Cell[43247, 1231, 337, 7, 22, "Print"],
+Cell[43587, 1240, 336, 7, 22, "Print"],
+Cell[43926, 1249, 337, 7, 22, "Print"],
+Cell[44266, 1258, 337, 7, 22, "Print"],
+Cell[44606, 1267, 337, 7, 22, "Print"],
+Cell[44946, 1276, 93, 1, 21, "Print"],
+Cell[45042, 1279, 337, 7, 22, "Print"],
+Cell[45382, 1288, 337, 7, 22, "Print"],
+Cell[45722, 1297, 336, 7, 22, "Print"],
+Cell[46061, 1306, 337, 7, 22, "Print"],
+Cell[46401, 1315, 339, 7, 22, "Print"],
+Cell[46743, 1324, 95, 1, 21, "Print"],
+Cell[46841, 1327, 339, 7, 22, "Print"],
+Cell[47183, 1336, 339, 7, 22, "Print"],
+Cell[47525, 1345, 337, 7, 22, "Print"],
+Cell[47865, 1354, 337, 7, 22, "Print"],
+Cell[48205, 1363, 337, 7, 22, "Print"],
+Cell[48545, 1372, 93, 1, 21, "Print"]
 }, Open  ]],
-Cell[22407, 667, 323, 8, 32, "Input"],
-Cell[22733, 677, 319, 8, 32, "Input"],
-Cell[23055, 687, 277, 7, 32, "Input"],
-Cell[CellGroupData[{
-Cell[23357, 698, 269, 4, 32, "Input"],
-Cell[CellGroupData[{
-Cell[23651, 706, 311, 7, 24, "Print"],
-Cell[23965, 715, 313, 7, 24, "Print"],
-Cell[24281, 724, 313, 7, 24, "Print"],
-Cell[24597, 733, 311, 7, 24, "Print"],
-Cell[24911, 742, 311, 7, 24, "Print"]
-}, Open  ]],
-Cell[25237, 752, 3842, 125, 107, "Output"]
+Cell[48653, 1376, 379, 8, 28, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[29116, 882, 267, 4, 32, "Input"],
+Cell[49069, 1389, 617, 12, 28, "Input"],
 Cell[CellGroupData[{
-Cell[29408, 890, 335, 7, 24, "Print"],
-Cell[29746, 899, 335, 7, 24, "Print"],
-Cell[30084, 908, 335, 7, 24, "Print"],
-Cell[30422, 917, 337, 7, 24, "Print"],
-Cell[30762, 926, 337, 7, 24, "Print"],
-Cell[31102, 935, 335, 7, 24, "Print"],
-Cell[31440, 944, 335, 7, 24, "Print"],
-Cell[31778, 953, 335, 7, 24, "Print"],
-Cell[32116, 962, 335, 7, 24, "Print"],
-Cell[32454, 971, 337, 7, 24, "Print"],
-Cell[32794, 980, 337, 7, 24, "Print"],
-Cell[33134, 989, 339, 7, 24, "Print"],
-Cell[33476, 998, 339, 7, 24, "Print"],
-Cell[33818, 1007, 339, 7, 24, "Print"],
-Cell[34160, 1016, 339, 7, 24, "Print"],
-Cell[34502, 1025, 339, 7, 24, "Print"],
-Cell[34844, 1034, 337, 7, 24, "Print"]
+Cell[49711, 1405, 289, 5, 21, "Print"],
+Cell[50003, 1412, 291, 5, 21, "Print"],
+Cell[50297, 1419, 289, 5, 21, "Print"],
+Cell[50589, 1426, 289, 5, 21, "Print"],
+Cell[50881, 1433, 532, 11, 22, "Print"],
+Cell[51416, 1446, 530, 11, 22, "Print"],
+Cell[51949, 1459, 532, 11, 22, "Print"],
+Cell[52484, 1472, 532, 11, 22, "Print"],
+Cell[53019, 1485, 530, 11, 22, "Print"],
+Cell[53552, 1498, 530, 11, 22, "Print"]
 }, Open  ]],
-Cell[35196, 1044, 4677, 145, 108, "Output"]
+Cell[54097, 1512, 450, 6, 28, "Output"]
 }, Open  ]],
-Cell[39888, 1192, 124, 2, 32, "Input"],
-Cell[40015, 1196, 502, 13, 75, "Input"],
-Cell[40520, 1211, 1442, 37, 117, "Input"],
-Cell[41965, 1250, 1425, 42, 131, "Input"],
-Cell[43393, 1294, 782, 22, 72, "Input"],
-Cell[44178, 1318, 1264, 33, 36, "Input"],
-Cell[45445, 1353, 750, 23, 36, "Input"],
-Cell[46198, 1378, 412, 11, 32, "Input"],
+Cell[54562, 1521, 323, 8, 28, "Input"],
+Cell[54888, 1531, 319, 8, 28, "Input"],
+Cell[55210, 1541, 277, 7, 28, "Input"],
 Cell[CellGroupData[{
-Cell[46635, 1393, 153, 3, 32, "Input"],
-Cell[46791, 1398, 2191, 67, 58, "Output"]
+Cell[55512, 1552, 269, 4, 28, "Input"],
+Cell[CellGroupData[{
+Cell[55806, 1560, 311, 7, 22, "Print"],
+Cell[56120, 1569, 313, 7, 22, "Print"],
+Cell[56436, 1578, 313, 7, 22, "Print"],
+Cell[56752, 1587, 311, 7, 22, "Print"],
+Cell[57066, 1596, 311, 7, 22, "Print"]
+}, Open  ]],
+Cell[57392, 1606, 3842, 125, 107, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[49019, 1470, 150, 3, 32, "Input"],
-Cell[49172, 1475, 2826, 86, 81, "Output"]
+Cell[61271, 1736, 267, 4, 32, "Input"],
+Cell[CellGroupData[{
+Cell[61563, 1744, 335, 7, 24, "Print"],
+Cell[61901, 1753, 335, 7, 24, "Print"],
+Cell[62239, 1762, 335, 7, 24, "Print"],
+Cell[62577, 1771, 337, 7, 24, "Print"],
+Cell[62917, 1780, 337, 7, 24, "Print"],
+Cell[63257, 1789, 335, 7, 24, "Print"],
+Cell[63595, 1798, 335, 7, 24, "Print"],
+Cell[63933, 1807, 335, 7, 24, "Print"],
+Cell[64271, 1816, 335, 7, 24, "Print"],
+Cell[64609, 1825, 337, 7, 24, "Print"],
+Cell[64949, 1834, 337, 7, 24, "Print"],
+Cell[65289, 1843, 339, 7, 24, "Print"],
+Cell[65631, 1852, 339, 7, 24, "Print"],
+Cell[65973, 1861, 339, 7, 24, "Print"],
+Cell[66315, 1870, 339, 7, 24, "Print"],
+Cell[66657, 1879, 339, 7, 24, "Print"],
+Cell[66999, 1888, 337, 7, 24, "Print"]
 }, Open  ]],
-Cell[52013, 1564, 177, 4, 32, "Input"],
+Cell[67351, 1898, 4677, 145, 108, "Output"]
+}, Open  ]],
+Cell[72043, 2046, 124, 2, 32, "Input"],
+Cell[72170, 2050, 502, 13, 75, "Input"],
+Cell[72675, 2065, 1442, 37, 117, "Input"],
+Cell[74120, 2104, 1425, 42, 131, "Input"],
+Cell[75548, 2148, 782, 22, 72, "Input"],
+Cell[76333, 2172, 1264, 33, 36, "Input"],
+Cell[77600, 2207, 750, 23, 36, "Input"],
+Cell[78353, 2232, 412, 11, 32, "Input"],
 Cell[CellGroupData[{
-Cell[52215, 1572, 219, 4, 32, "Input"],
+Cell[78790, 2247, 153, 3, 32, "Input"],
+Cell[78946, 2252, 2191, 67, 58, "Output"]
+}, Open  ]],
 Cell[CellGroupData[{
-Cell[52459, 1580, 247, 3, 24, "Print"],
-Cell[52709, 1585, 402, 8, 22, "Print"],
-Cell[53114, 1595, 402, 8, 22, "Print"],
-Cell[53519, 1605, 402, 8, 22, "Print"],
-Cell[53924, 1615, 404, 8, 22, "Print"],
-Cell[54331, 1625, 401, 8, 22, "Print"],
-Cell[54735, 1635, 404, 8, 22, "Print"],
-Cell[55142, 1645, 402, 8, 22, "Print"],
-Cell[55547, 1655, 402, 8, 22, "Print"],
-Cell[55952, 1665, 402, 8, 22, "Print"],
-Cell[56357, 1675, 404, 8, 22, "Print"],
-Cell[56764, 1685, 404, 8, 22, "Print"],
-Cell[57171, 1695, 404, 8, 22, "Print"],
-Cell[57578, 1705, 404, 8, 22, "Print"],
-Cell[57985, 1715, 406, 8, 22, "Print"],
-Cell[58394, 1725, 404, 8, 22, "Print"],
-Cell[58801, 1735, 406, 8, 22, "Print"],
-Cell[59210, 1745, 403, 8, 22, "Print"],
-Cell[59616, 1755, 404, 8, 22, "Print"],
-Cell[60023, 1765, 406, 8, 22, "Print"],
-Cell[60432, 1775, 404, 8, 22, "Print"],
-Cell[60839, 1785, 404, 8, 22, "Print"],
-Cell[61246, 1795, 404, 8, 22, "Print"],
-Cell[61653, 1805, 406, 8, 22, "Print"],
-Cell[62062, 1815, 404, 8, 22, "Print"],
-Cell[62469, 1825, 404, 8, 22, "Print"],
-Cell[62876, 1835, 406, 8, 22, "Print"],
-Cell[63285, 1845, 404, 8, 22, "Print"],
-Cell[63692, 1855, 404, 8, 22, "Print"],
-Cell[64099, 1865, 404, 8, 22, "Print"],
-Cell[64506, 1875, 404, 8, 22, "Print"],
-Cell[64913, 1885, 404, 8, 22, "Print"],
-Cell[65320, 1895, 404, 8, 22, "Print"],
-Cell[65727, 1905, 404, 8, 22, "Print"],
-Cell[66134, 1915, 404, 8, 22, "Print"],
-Cell[66541, 1925, 404, 8, 22, "Print"],
-Cell[66948, 1935, 406, 8, 22, "Print"],
-Cell[67357, 1945, 406, 8, 22, "Print"],
-Cell[67766, 1955, 406, 8, 22, "Print"],
-Cell[68175, 1965, 404, 8, 22, "Print"],
-Cell[68582, 1975, 403, 8, 22, "Print"],
-Cell[68988, 1985, 406, 8, 22, "Print"],
-Cell[69397, 1995, 404, 8, 22, "Print"],
-Cell[69804, 2005, 404, 8, 22, "Print"],
-Cell[70211, 2015, 404, 8, 22, "Print"],
-Cell[70618, 2025, 406, 8, 22, "Print"],
-Cell[71027, 2035, 404, 8, 22, "Print"],
-Cell[71434, 2045, 406, 8, 22, "Print"],
-Cell[71843, 2055, 404, 8, 22, "Print"],
-Cell[72250, 2065, 404, 8, 22, "Print"],
-Cell[72657, 2075, 404, 8, 22, "Print"],
-Cell[73064, 2085, 406, 8, 22, "Print"],
-Cell[73473, 2095, 404, 8, 22, "Print"],
-Cell[73880, 2105, 403, 8, 22, "Print"],
-Cell[74286, 2115, 404, 8, 22, "Print"],
-Cell[74693, 2125, 404, 8, 22, "Print"],
-Cell[75100, 2135, 404, 8, 22, "Print"],
-Cell[75507, 2145, 406, 8, 22, "Print"],
-Cell[75916, 2155, 406, 8, 22, "Print"],
-Cell[76325, 2165, 406, 8, 22, "Print"],
-Cell[76734, 2175, 404, 8, 22, "Print"],
-Cell[77141, 2185, 404, 8, 22, "Print"],
-Cell[77548, 2195, 404, 8, 22, "Print"],
-Cell[77955, 2205, 404, 8, 22, "Print"],
-Cell[78362, 2215, 404, 8, 22, "Print"],
-Cell[78769, 2225, 404, 8, 22, "Print"],
-Cell[79176, 2235, 404, 8, 22, "Print"],
-Cell[79583, 2245, 404, 8, 22, "Print"],
-Cell[79990, 2255, 404, 8, 22, "Print"],
-Cell[80397, 2265, 404, 8, 22, "Print"],
-Cell[80804, 2275, 406, 8, 22, "Print"],
-Cell[81213, 2285, 406, 8, 22, "Print"],
-Cell[81622, 2295, 404, 8, 22, "Print"],
-Cell[82029, 2305, 406, 8, 22, "Print"],
-Cell[82438, 2315, 406, 8, 22, "Print"],
-Cell[82847, 2325, 404, 8, 22, "Print"],
-Cell[83254, 2335, 406, 8, 22, "Print"],
-Cell[83663, 2345, 404, 8, 22, "Print"],
-Cell[84070, 2355, 406, 8, 22, "Print"],
-Cell[84479, 2365, 404, 8, 22, "Print"],
-Cell[84886, 2375, 406, 8, 22, "Print"]
+Cell[81174, 2324, 150, 3, 32, "Input"],
+Cell[81327, 2329, 2826, 86, 81, "Output"]
+}, Open  ]],
+Cell[84168, 2418, 177, 4, 32, "Input"],
+Cell[CellGroupData[{
+Cell[84370, 2426, 219, 4, 32, "Input"],
+Cell[CellGroupData[{
+Cell[84614, 2434, 247, 3, 24, "Print"],
+Cell[84864, 2439, 402, 8, 22, "Print"],
+Cell[85269, 2449, 402, 8, 22, "Print"],
+Cell[85674, 2459, 402, 8, 22, "Print"],
+Cell[86079, 2469, 404, 8, 22, "Print"],
+Cell[86486, 2479, 401, 8, 22, "Print"],
+Cell[86890, 2489, 404, 8, 22, "Print"],
+Cell[87297, 2499, 402, 8, 22, "Print"],
+Cell[87702, 2509, 402, 8, 22, "Print"],
+Cell[88107, 2519, 402, 8, 22, "Print"],
+Cell[88512, 2529, 404, 8, 22, "Print"],
+Cell[88919, 2539, 404, 8, 22, "Print"],
+Cell[89326, 2549, 404, 8, 22, "Print"],
+Cell[89733, 2559, 404, 8, 22, "Print"],
+Cell[90140, 2569, 406, 8, 22, "Print"],
+Cell[90549, 2579, 404, 8, 22, "Print"],
+Cell[90956, 2589, 406, 8, 22, "Print"],
+Cell[91365, 2599, 403, 8, 22, "Print"],
+Cell[91771, 2609, 404, 8, 22, "Print"],
+Cell[92178, 2619, 406, 8, 22, "Print"],
+Cell[92587, 2629, 404, 8, 22, "Print"],
+Cell[92994, 2639, 404, 8, 22, "Print"],
+Cell[93401, 2649, 404, 8, 22, "Print"],
+Cell[93808, 2659, 406, 8, 22, "Print"],
+Cell[94217, 2669, 404, 8, 22, "Print"],
+Cell[94624, 2679, 404, 8, 22, "Print"],
+Cell[95031, 2689, 406, 8, 22, "Print"],
+Cell[95440, 2699, 404, 8, 22, "Print"],
+Cell[95847, 2709, 404, 8, 22, "Print"],
+Cell[96254, 2719, 404, 8, 22, "Print"],
+Cell[96661, 2729, 404, 8, 22, "Print"],
+Cell[97068, 2739, 404, 8, 22, "Print"],
+Cell[97475, 2749, 404, 8, 22, "Print"],
+Cell[97882, 2759, 404, 8, 22, "Print"],
+Cell[98289, 2769, 404, 8, 22, "Print"],
+Cell[98696, 2779, 404, 8, 22, "Print"],
+Cell[99103, 2789, 406, 8, 22, "Print"],
+Cell[99512, 2799, 406, 8, 22, "Print"],
+Cell[99921, 2809, 406, 8, 22, "Print"],
+Cell[100330, 2819, 404, 8, 22, "Print"],
+Cell[100737, 2829, 403, 8, 22, "Print"],
+Cell[101143, 2839, 406, 8, 22, "Print"],
+Cell[101552, 2849, 404, 8, 22, "Print"],
+Cell[101959, 2859, 404, 8, 22, "Print"],
+Cell[102366, 2869, 404, 8, 22, "Print"],
+Cell[102773, 2879, 406, 8, 22, "Print"],
+Cell[103182, 2889, 404, 8, 22, "Print"],
+Cell[103589, 2899, 406, 8, 22, "Print"],
+Cell[103998, 2909, 404, 8, 22, "Print"],
+Cell[104405, 2919, 404, 8, 22, "Print"],
+Cell[104812, 2929, 404, 8, 22, "Print"],
+Cell[105219, 2939, 406, 8, 22, "Print"],
+Cell[105628, 2949, 404, 8, 22, "Print"],
+Cell[106035, 2959, 403, 8, 22, "Print"],
+Cell[106441, 2969, 404, 8, 22, "Print"],
+Cell[106848, 2979, 404, 8, 22, "Print"],
+Cell[107255, 2989, 404, 8, 22, "Print"],
+Cell[107662, 2999, 406, 8, 22, "Print"],
+Cell[108071, 3009, 406, 8, 22, "Print"],
+Cell[108480, 3019, 406, 8, 22, "Print"],
+Cell[108889, 3029, 404, 8, 22, "Print"],
+Cell[109296, 3039, 404, 8, 22, "Print"],
+Cell[109703, 3049, 404, 8, 22, "Print"],
+Cell[110110, 3059, 404, 8, 22, "Print"],
+Cell[110517, 3069, 404, 8, 22, "Print"],
+Cell[110924, 3079, 404, 8, 22, "Print"],
+Cell[111331, 3089, 404, 8, 22, "Print"],
+Cell[111738, 3099, 404, 8, 22, "Print"],
+Cell[112145, 3109, 404, 8, 22, "Print"],
+Cell[112552, 3119, 404, 8, 22, "Print"],
+Cell[112959, 3129, 406, 8, 22, "Print"],
+Cell[113368, 3139, 406, 8, 22, "Print"],
+Cell[113777, 3149, 404, 8, 22, "Print"],
+Cell[114184, 3159, 406, 8, 22, "Print"],
+Cell[114593, 3169, 406, 8, 22, "Print"],
+Cell[115002, 3179, 404, 8, 22, "Print"],
+Cell[115409, 3189, 406, 8, 22, "Print"],
+Cell[115818, 3199, 404, 8, 22, "Print"],
+Cell[116225, 3209, 406, 8, 22, "Print"],
+Cell[116634, 3219, 404, 8, 22, "Print"],
+Cell[117041, 3229, 406, 8, 22, "Print"]
 }, Closed]],
-Cell[85307, 2386, 24307, 649, 498, "Output"]
+Cell[117462, 3240, 24307, 649, 498, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[109651, 3040, 123, 2, 28, "Input"],
-Cell[109777, 3044, 6913, 218, 132, "Output"]
+Cell[141806, 3894, 123, 2, 28, "Input"],
+Cell[141932, 3898, 6913, 218, 132, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[116727, 3267, 152, 3, 28, "Input"],
-Cell[116882, 3272, 3597, 110, 101, "Output"]
+Cell[148882, 4121, 152, 3, 28, "Input"],
+Cell[149037, 4126, 3597, 110, 101, "Output"]
 }, Open  ]],
-Cell[120494, 3385, 4936, 146, 126, "Input"],
-Cell[125433, 3533, 1360, 46, 57, "Input"]
+Cell[152649, 4239, 4936, 146, 126, "Input"],
+Cell[157588, 4387, 1360, 46, 57, "Input"]
 }
 ]
 *)
