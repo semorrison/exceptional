@@ -246,9 +246,12 @@ for $n+m=0,1,2,3,4,5,6$, respectively.  In particular, any closed diagram can be
 
 \begin{conjecture}[Classical consistency]
   \label{conj:class-consist}
-So long as a certain finite set of polynomials in $\lambda$ are invertible in $R$, then any non-zero $R$-multiple of the empty diagram, the strand, or the trivalent vertex is nonzero in $\mathrm{Exc}_{R,\lambda}$.
+So long as a certain finite set of polynomials in $\lambda$ are invertible in $R$, then $R$ injects into $\mathrm{Exc}_{R,\lambda}(0,0)$ as multiples of the empty diagram.  In particular, any two ways of simplifying the same closed diagram to give an element of $R$ will give the same element of $R$.
 \end{conjecture}
 
+Note that if $d$ is invertible in $R$, it follows from classical consistency that $R$ injects into $\mathrm{Exc}_{R,\lambda}(1,1)$ as multiples of the strand.  Similarly if $b$ is invertible in $R$, it follows from classical consistency that $R$ injects into $\mathrm{Exc}_{R,\lambda}(2,1)$ as multiples of the trivalent vertex.
+
+\nn{Do we have any speculations about what elements of $R$ need to be inverted.}
 
 The following corollary follows from Conjectures \ref{conj:class-suffic} and \ref{conj:class-consist}.
 
@@ -260,7 +263,7 @@ If $\lambda$ is one of $-5, -4, -3, -2, -3/2,1,2/3,1/2, 1/3, 1/5$, then the quot
 There is a dense open subset $U \subset \mathbb{C}$ for which the idempotent completion of $\mathrm{Exc}_{\mathbb{C},\lambda}$, for $\lambda \in U$, is semisimple.
 \end{conjecture}
 
-We expect that in order for the idempotent completion to be semisimple one needs to invert infinitely many polynomials.  For example, for the idempotent completion of $\mathrm{GL}_t$ to be semisimple you need to invert $t-n$ for every positive integer $n$.
+We expect that in order for the idempotent completion to be semisimple one needs to invert infinitely many polynomials.  For example, for the idempotent completion of $\mathrm{GL}_t$ to be semisimple you need to invert $t-n$ for every positive integer $n$.  From the dimension formulas of Cohen-De Man and others, we might speculate that for classical semisimplicity it is again enough to invert $\lambda-n$ for $n \in \mathbb{Z}$.
 
 These conjectures are a strengthening of a the conjecture of Deligne (as improved by Cohen--De Man \NStodo{others too?}), and would give a construction of an exceptional series passing through each of the exceptional Lie algebras.
 
@@ -389,7 +392,7 @@ So long as a certain finite set of Laurent polynomials in $v$ and $w$ are invert
 
 
 \begin{conjecture}[Quantum specialization]
-If $\lambda$ is one of $-5, -4, -3, -2, -3/2,1,2/3,1/2, 1/3, 1/5$, and $v$ is not a root of unity, then the quotient of $\mathrm{Exc}_{\mathbb{C},v,v^\lambda}$ by the negligible elements is equivalent to the category of representations of the quantum versions of trivial group, $O(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3) \rtimes \mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$, $E_6 \rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
+If $\lambda$ is one of $-5, -4, -3, -2, -3/2,1,2/3,1/2, 1/3, 1/5$, and $v$ is not a root of unity, then the quotient of $\mathrm{QExc}_{\mathbb{C},v,v^\lambda}$ by the negligible elements is equivalent to the category of representations of the quantum versions of trivial group, $O(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3) \rtimes \mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$, $E_6 \rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
 \end{conjecture}
 
 \NStodo{Make ``quantum versions" more precise}
@@ -401,7 +404,7 @@ There is a dense open subset $U \subset \mathbb{C}$ for which the idempotent com
 \NStodo{Could make more precise: $v$ not a root of unity and $w$ in $U$}
 
 
-The following theorems justify the above conjectures.  Under some mild assumptions, any trivalent ribbon category where the $n$-box space has dimension at most $1,0,1,1,5$ for $n=0,1,2,3,4$ satisfies a version of relation~\eqref{eq:quant-except-spec}.  Furthermore, the QEJacobi relation implies a certain deformation of the Vogel exceptional relation, and a relation between the overcrossing and undercrossing.  
+The following theorems justify the definition of the $\mathrm{QExc}$.  Under some mild assumptions, any trivalent ribbon category where the $n$-box space has dimension at most $1,0,1,1,5$ for $n=0,1,2,3,4$ satisfies a version of relation QEJacobi.  Furthermore, again under some mild assumptions, the QEJacobi relation implies QEVogel and QECrossing.
 %With some mild assumptions on the base ring, any skein theory where the $n$-box space has dimension at most $1,0,1,1,5$ for $n=0,1,2,3,4$ satisfies a version of relation~\eqref{eq:quant-except-spec}. %See Theorem~\ref{thm:quant-except} in Section~\ref{sec:relation} for a precise statement.
 
 \begin{definition}
