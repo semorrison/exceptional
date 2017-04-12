@@ -235,10 +235,6 @@ will also write $\mathrm{Exc}_{R,\lambda}$) has the following form.
 \label{eq:classical-except-2}
 \end{equation}
 
-\begin{conjecture}[Classical consistency]
-  \label{conj:class-consist}
-So long as a certain finite set of polynomials in $\lambda$ are invertible in $R$, the space of $n$-boundary point diagrams in $\mathrm{Exc}_{R,\lambda}$ is non-zero.  In particular, any two ways of applying the above relations to a closed diagram to return a rational function in $\lambda$ will yield the same rational function.
-\end{conjecture}
 
 \begin{conjecture}[Classical sufficiency]
   \label{conj:class-suffic}
@@ -248,16 +244,19 @@ for $n+m=0,1,2,3,4,5,6$, respectively.  In particular, any closed diagram can be
 
 \NStodo{Do we really care about the $16$ and $80$ here?}
 
+\begin{conjecture}[Classical consistency]
+  \label{conj:class-consist}
+So long as a certain finite set of polynomials in $\lambda$ are invertible in $R$, then any non-zero $R$-multiple of the empty diagram, the strand, or the trivalent vertex is nonzero in $\mathrm{Exc}_{R,\lambda}$.
+\end{conjecture}
 
 
+The following corollary follows from Conjectures \ref{conj:class-suffic} and \ref{conj:class-consist}.
 
-The following corollary follows from Conjecture \ref{conj:classical}.
-
-\begin{corollary}
+\begin{corollary}[Classical specialization]
 If $\lambda$ is one of $-5, -4, -3, -2, -3/2,1,2/3,1/2, 1/3, 1/5$, then the quotient of $\mathrm{Exc}_{\mathbb{C},\lambda}$ by the negligible elements is equivalent to the category of representations of the trivial group, $O(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3) \rtimes \mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$, $E_6 \rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
 \end{corollary}
 
-\begin{conjecture}
+\begin{conjecture}[Classical semisimplicity]
 There is a dense open subset $U \subset \mathbb{C}$ for which the idempotent completion of $\mathrm{Exc}_{\mathbb{C},\lambda}$, for $\lambda \in U$, is semisimple.
 \end{conjecture}
 
@@ -300,7 +299,7 @@ We will also use throughout the paper the symmetrized cyclotomic polynomials.  A
 Our first goal is to give a definition of a tensor category $\mathrm{QExc}$ which looks like a quantum deformation of $\mathrm{Exc}$, in particular we need skein relations which deform the Jacobi relation, the classical exceptional relation, and the symmetric relation between the overcrossing and undercrossing.  Our specific choices of relations will be motivated below by our main theorems. 
 
 \begin{definition}
-Let $R$ be a ring and $v$ and $w$ invertible elements of $R$ such that $[\lambda]$, $[\lambda+1]$, and $[1]$ are invertible. 
+Let $R$ be a ring and $v$ and $w$ invertible elements of $R$ such that $[\lambda]$, $[\lambda-1]$, $\widetilde{\Phi}_1$, and $\widetilde{\Phi}_{12}$ are invertible. 
 Let  $\mathrm{QExc}_{R,v,w}$ be the ribbon category whose objects are collections of $n$
 points on a line, and whose morphisms spaces from $n$ to $m$ consist of $R$-linear
 combinations planar graphs in a rectangle with $n$ boundary points on the
@@ -324,9 +323,9 @@ relations.
   \end{equation}
 where
 \begin{align*}
-  d &= -\frac{\{2\}[\lambda+5][\lambda-6]}{[\lambda][\lambda-1]}\\
-  b &= \frac{\{\lambda+2\}\{\lambda-3\}[3]}{[1]}\\
-  t &= \{1\}\bigl(\{1\}\{2\lambda -1\} + (v^4 - v^2 - 1 - v^{-2} + v^{-4})\bigr).
+  d &= -\frac{\widetilde{\Phi}_8 [\lambda+5][\lambda-6]}{[\lambda][\lambda-1]}\\
+  b &= \{\lambda+2\}\{\lambda-3\}\widetilde{\Phi}_3\\
+  t &= \widetilde{\Phi}_1 \bigl(\widetilde{\Phi}_1 \{2\lambda -1\} + (v^4 - v^2 - 1 - v^{-2} + v^{-4})\bigr).
 \end{align*}
 
 
@@ -341,7 +340,7 @@ v^{-3} \;
 \; -v^{-1} \;
  \drawH
 \;
- - \frac{[\lambda][\lambda-1]}{[1]}
+ - \frac{[\lambda][\lambda-1]}{\widetilde{\Phi}_1}
 \left[\; \braidcross \;
  + v^{4}\;
 \cupcap
@@ -352,30 +351,28 @@ v^{-3} \;
 
 \item the \emph{quantum exceptional Vogel relation} (QEVogel)
 
+\begin{equation} \ngon[45]{4} + \frac{x_1}{\widetilde{\Phi}_1^2} \braidcross + \frac{x_2}{\widetilde{\Phi}_1} \drawI + \frac{x_3}{\widetilde{\Phi}_1} \drawH + \frac{x_4}{\widetilde{\Phi}_1^2} \cupcap + \frac{x_5}{\widetilde{\Phi}_1^2} \twostrandid =0
+\end{equation}
+
+where the $x_i$ are Laurent polynomials in $v$ and $w$ from Appendix \ref{app:coefficients}.
+
 \item the \emph{quantum exceptional crossing relation} (QECrossing)
 
+\begin{equation}
+\braidcross - \invbraidcross + \frac{\widetilde{\Phi}_1}{\widetilde{\Phi}_{12}} \left[\; \drawI \; - \; \drawH \; \right] + \frac{\widetilde{\Phi}_1 [\lambda][\lambda+1]}{\widetilde{\Phi}_{12}} \left[\; \twostrandid \; - \; \cupcap \; \right] = 0
+\end{equation}
 
+
+\end{itemize}
 \end{definition}
 
+Note that if you set $w = v^\lambda$ and take the limit $v \rightarrow 1$ these relations recover the classical Jacobi relation, classical exceptional relation, and the symmetric crossing relation.  In order to make this specialization process purely algebraic, we would need to introduce a larger ring with formal symbols for expressions like $\frac{w-w^{-1}}{v-v^-{1}}$.
 
-Although the quantum exceptional Jacobi relation looks like an analogue of the ordinary Jacobi relation with lower order terms, it is important to emphasize that it is only the right analogue of the Jacobi relation in the exceptional setting.  In particular, it does not hold for quantizations of non-exceptional Lie algebras.
+\begin{warning}
+Although the quantum exceptional Jacobi relation looks like an analogue of the ordinary Jacobi relation with lower order terms, it is important to emphasize that it is only the correct analogue of the Jacobi relation in the exceptional setting.  In particular, it does not hold for quantizations of non-exceptional Lie algebras.
+\end{warning}
 
-In order to have a skein theory that deforms the classical exceptional family, we should also have a relation deforming the classical exceptional relation and a relation between the over-crossing and under-crossing deforming the fact that they are equal classically.   Surprisingly, such relations follow from the quantum Jacobi relation, so long as certain polynomials are invertible.  The following theorem thus justifies the above definition.
-
-\begin{theorem}
-Suppose \nn{specific collection of polynomials} are invertible in $R$, then the following relations hold in 
-\end{theorem}
-
-
-
-
-
-
-
-\begin{conjecture}[Quantum consistency]
-  \label{conj:quant-consist}
-So long as a certain finite set of Laurent polynomials in $v$ and $w$ are invertible in $R$, the space of $n$-boundary point diagrams in $\mathrm{QExc}_{R,v,w}$ is non-zero.  In particular, any two ways of applying the above relations to a closed diagram to return a rational function in $v$ and $w$ will yield the same rational function.
-\end{conjecture}
+We now state our main conjectures.
 
 \begin{conjecture}[Quantum sufficiency]
   \label{conj:class-suffic}
@@ -385,14 +382,19 @@ for $n+m=0,1,2,3,4,5,6$, respectively.  In particular, any closed diagram can be
 
 \NStodo{Do we really care about the $16$ and $80$ here?}
 
+\begin{conjecture}[Quantum consistency]
+  \label{conj:quant-consist}
+So long as a certain finite set of Laurent polynomials in $v$ and $w$ are invertible in $R$, then any non-zero $R$-multiple of the empty diagram, the single strand, or the trivalent vertex is non-zero in $\mathrm{QExc}_{R,v,w}$.  In particular, any two ways of applying the above relations to a closed diagram to return a rational function in $v$ and $w$ will yield the same rational function.
+\end{conjecture}
 
-\begin{conjecture}
-If $\lambda$ is one of $-5, -4, -3, -2, -3/2,1,2/3,1/2, 1/3, 1/5$, and $v$ is not a root of unity, then the quotient of $\mathrm{Exc}_{\mathbb{C},v,w}$ by the negligible elements is equivalent to the category of representations of the quantum versions of trivial group, $O(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3) \rtimes \mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$, $E_6 \rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
+
+\begin{conjecture}[Quantum specialization]
+If $\lambda$ is one of $-5, -4, -3, -2, -3/2,1,2/3,1/2, 1/3, 1/5$, and $v$ is not a root of unity, then the quotient of $\mathrm{Exc}_{\mathbb{C},v,v^\lambda}$ by the negligible elements is equivalent to the category of representations of the quantum versions of trivial group, $O(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3) \rtimes \mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$, $E_6 \rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
 \end{conjecture}
 
 \NStodo{Make ``quantum versions" more precise}
 
-\begin{conjecture}
+\begin{conjecture}[Quantum semisimplicity]
 There is a dense open subset $U \subset \mathbb{C}$ for which the idempotent completion of $\mathrm{QExc}_{\mathbb{C},v,w}$, for $v,w \in U$, is semisimple.
 \end{conjecture}
 
