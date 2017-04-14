@@ -253,11 +253,13 @@ Note that if $d$ is invertible in $R$, it follows from classical consistency tha
 
 \nn{Do we have any speculations about what elements of $R$ need to be inverted.}
 
-The following corollary follows from Conjectures \ref{conj:class-suffic} and \ref{conj:class-consist}.
+The following corollary follows from Conjecture \ref{conj:class-suffic}.
 
 \begin{corollary}[Classical specialization]
-If $\lambda$ is one of $-5, -4, -3, -2, -3/2,1,2/3,1/2, 1/3, 1/5$, then the quotient of $\mathrm{Exc}_{\mathbb{C},\lambda}$ by the negligible elements is equivalent to the category of representations of the trivial group, $O(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3) \rtimes \mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$, $E_6 \rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
+If $\lambda$ is one of $-5, -4, -3, -2, -3/2,1,2/3,1/2, 1/3, 1/5$, then the quotient of $\mathrm{Exc}_{\mathbb{C},\lambda}$ by the negligible elements is equivalent to the category of representations of the following compact supergroups: the trivial group, $\mathrm{OSp}(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3) \rtimes \mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$, $E_6 \rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
 \end{corollary}
+
+Here's a rough sketch of the proof given in Section ??? (some modification is needed for $\mathrm{OSp}(1|2)$.  All the skein relations in $\mathrm{Exc}_{\mathbb{C},\lambda}$ do hold in the corresponding representation categories, so we get a functor.  By Tannaka-Krein duality and unitarity, the image of this functor is the category of representations of a compact subgroup of $\mathrm{U}(\ad)$ containing 
 
 \begin{conjecture}[Classical semisimplicity]
 There is a dense open subset $U \subset \mathbb{C}$ for which the idempotent completion of $\mathrm{Exc}_{\mathbb{C},\lambda}$, for $\lambda \in U$, is semisimple.
@@ -369,7 +371,7 @@ where the $x_i$ are Laurent polynomials in $v$ and $w$ from Appendix \ref{app:co
 \end{itemize}
 \end{definition}
 
-Note that if you set $w = v^\lambda$ and take the limit $v \rightarrow 1$ these relations recover the classical Jacobi relation, classical exceptional relation, and the symmetric crossing relation.  In order to make this specialization process purely algebraic, we would need to introduce a larger ring with formal symbols for expressions like $\frac{w-w^{-1}}{v-v^-{1}}$.
+Note that if you set $w = v^\lambda$ and take the limit $v \rightarrow 1$ these relations recover the classical Jacobi relation, classical exceptional relation, and the symmetric crossing relation.  In order to make this specialization process purely algebraic, we would need to introduce a larger ring with formal symbols for expressions like $\frac{w-w^{-1}}{v-v^{-1}}$.
 
 \begin{warning}
 Although the quantum exceptional Jacobi relation looks like an analogue of the ordinary Jacobi relation with lower order terms, it is important to emphasize that it is only the correct analogue of the Jacobi relation in the exceptional setting.  In particular, it does not hold for quantizations of non-exceptional Lie algebras.
@@ -387,13 +389,17 @@ for $n+m=0,1,2,3,4,5,6$, respectively.  In particular, any closed diagram can be
 
 \begin{conjecture}[Quantum consistency]
   \label{conj:quant-consist}
-So long as a certain finite set of Laurent polynomials in $v$ and $w$ are invertible in $R$, then any non-zero $R$-multiple of the empty diagram, the single strand, or the trivalent vertex is non-zero in $\mathrm{QExc}_{R,v,w}$.  In particular, any two ways of applying the above relations to a closed diagram to return a rational function in $v$ and $w$ will yield the same rational function.
+So long as a certain finite set of Laurent polynomials in $v$ and $w$ are invertible in $R$, then $R$ injects into $\mathrm{QExc}_{R,v,w}$ as multiples of the empty diagram.  In particular, any two ways of applying the above relations to a closed diagram to return a rational function in $v$ and $w$ will yield the same rational function.
 \end{conjecture}
 
+As in the classical case, we again get that if $d$ (resp. $b$) is invertible, then $R$ also injects into $\mathrm{QExc}_{R,v,w}(1,1)$ (resp. $\mathrm{QExc}_{R,v,w}(1,2)$) as multiples of the strand (resp. trivalent vertex).
 
 \begin{conjecture}[Quantum specialization]
 If $\lambda$ is one of $-5, -4, -3, -2, -3/2,1,2/3,1/2, 1/3, 1/5$, and $v$ is not a root of unity, then the quotient of $\mathrm{QExc}_{\mathbb{C},v,v^\lambda}$ by the negligible elements is equivalent to the category of representations of the quantum versions of trivial group, $O(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3) \rtimes \mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$, $E_6 \rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
 \end{conjecture}
+
+
+
 
 \NStodo{Make ``quantum versions" more precise}
 
