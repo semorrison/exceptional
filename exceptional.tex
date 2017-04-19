@@ -509,7 +509,7 @@ Suppose $(\cC, X, \tau)$ is a trivalent ribbon category with $\dim{\cC_4} \leq 5
 \end{align*}
 
 The quantum exceptional square relation:
-\begin{equation} \ngon[45]{4} + \frac{\alpha \widetilde{\Phi}_{12} (b+[3]\alpha)}{\widetilde{\Phi}_1 \widetilde{\Phi}_8 \widetilde{\Phi}_3} \braidcross + \frac{y_1}{\widetilde{\Phi}_8 \widetilde{\Phi}_3} \drawI + \frac{y_2}{\widetilde{\Phi}_8 \widetilde{\Phi}_3} \drawH + \frac{y_3}{\widetilde{\Phi}_1 \widetilde{\Phi}_8 \widetilde{\Phi}_3} \cupcap + \frac{y_4}{\widetilde{\Phi}_1 \widetilde{\Phi}_8 \widetilde{\Phi}_3} \twostrandid =0
+\begin{equation} \ngon[45]{4} + \frac{\alpha \widetilde{\Phi}_{12} (b+[3]\alpha)}{\widetilde{\Phi}_1 \widetilde{\Phi}_3} \widetilde{\Phi}_8 \braidcross + \frac{y_1}{\widetilde{\Phi}_3} \widetilde{\Phi}_8 \drawI + \frac{y_2}{\widetilde{\Phi}_3} \widetilde{\Phi}_8 \drawH + \frac{y_3}{\widetilde{\Phi}_1 \widetilde{\Phi}_3} \widetilde{\Phi}_8 \cupcap + \frac{y_4}{\widetilde{\Phi}_1 \widetilde{\Phi}_3} \widetilde{\Phi}_8 \twostrandid =0
 \end{equation}
 
 The quantum exceptional crossing relation:
@@ -521,31 +521,20 @@ The quantum exceptional crossing relation:
 
 
 
-If we now make the following change of variables then the $\alpha$ versions of these relations turn into the $w$ versions given earlier
+If we now make the following change of variables and normalize $b$, then the $\alpha$ versions of these relations turn into the $w$ versions given earlier
 
 $$w^2 = \frac{v}{2(b+[3]\alpha)}\left(b \{1\} -\alpha [3] \{5\} + \sqrt{-4 (b+[3]\alpha)^2 + (b \{1\} -[3]\{5\}\alpha)^2} \right).$$
 
 \begin{corollary}
-Suppose $(\cC, X, \tau)$ is a trivalent ribbon category with $\dim{\cC_4} \leq 5$, let $v$ be as above, and further suppose that $d$, $b$,$[6]$, and $[5]$ are nonzero.  Then there's a $w \in \mathbb{C}$ and an evaluation functor $$\mathrm{QExc}_{\mathbb{C},v,w} \rightarrow \cC$.
+Suppose $(\cC, X, \tau)$ is a trivalent ribbon category with $\dim{\cC_4} \leq 5$, let $v$ be as above, and further suppose that $d$, $b$,$[6]$, and $[5]$ are nonzero.  Then there's a $w \in \mathbb{C}$ and an evaluation functor $\mathrm{QExc}_{\mathbb{C},v,w} \rightarrow \cC$.
 \end{corollary}
 
 
+\subsection{Calculations}
+
+Assuming our main conjectures, we calculate some properties of $\mathrm{QExc}_{\mathbb{C},v,w}$ and the corresponding $2$-variable knot polynomial.  First we give conjectural bases for the small box spaces, and check that these diagrams must be linearly indpendent.  Using these conjectural bases, we give a well-defined action of the affine braid group on the span of these $4$-boundary and $6$ boundary point diagrams.  Using this, we give a divide-and-conquer algorithm for computing 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
 
 Note that unconditionally, these 2-variable knot polynomials must specialize
 at particular values of $w$ to give the quantum invariants of the adjoint
@@ -559,6 +548,8 @@ quantum versions of Cohen--De Man's formulas for the dimensions of the objects
 appearing in the third tensor power of adjoint representation in the
 exceptional series.
 
+\subsection{Small roots of unity}
+
 Finally, we consider what happens when $v$ specializes to a $12$th or $10$th
 root of unity, where some of our skein relations have vanishing denominators.
 It turns out that there is still a natural way to define these
@@ -567,6 +558,8 @@ classical exceptional series, the classical $\mathfrak{g}_2$ series, the
 classical $\mathfrak{f}_4$ series, Deligne's interpolated symmetric group
 categories, and a possible new example related to the ABA free product from
 \cite{???}.
+
+\subsection{Kontsavich Integral}
 
 
 \section{Main results}
