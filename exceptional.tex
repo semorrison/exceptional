@@ -600,9 +600,25 @@ Throughout this section $(\cC, X, \tau)$ is a trivalent ribbon category over $\m
 
 Since the trivalent vertex is invariant under rotation we will drop the marked point at each vertex from here on out.
 
-\begin{theorem}\label{thm:quant-except}
-Suppose that $\dim \cC_5 \leq 5$, then \eqref{eq:quant-except} holds for some choice of~$v$ with $v^6 = s$.
-\end{theorem}
+\begin{proposition}\label{thm:quant-except}
+Suppose that $\dim \cC_5 \leq 5$, then for some $\alpha$ and some choice of~$v$ with $v^6 = s$, we have
+
+\begin{equation}
+v^{-3} \;
+\drawcrossX
+\;+ v \;
+\drawI
+\; -v^{-1} \;
+ \drawH
+\;
+ + \alpha
+\left[\; \braidcross \;
+ + v^{4}\;
+\cupcap
+\; + v^{-4} \;
+ \twostrandid \;
+ \right] = 0.\label{eq:quant-except-spec}
+\end{propostion}
 
 In fact, the conditions we need for the conclusion of
 Theorem~\ref{thm:quant-except} are somewhat weaker than stated. In
@@ -683,7 +699,12 @@ Thus we have a relation of
 Placing an $H$ on the top of this relation, gives a second relation between the six diagrams.  Thus the space of relations is at least $2$-dimensional and we can find a second relation that is an eigenvector for $R$.  If both of these relations have $\beta = 0$, then we get a nontrivial relation between the two Temperley-Lieb diagrams.  Placing a trivalent vertex on this relation shows that the trivalent vertex is zero, which is a contradiction.
 \end{proof}
 
+\begin{remark}
 In fact, there is exactly one trivalent category where there's a relation of the above form with $\beta=0$, namely the Golden category with $\dim \cC_4 = 2$.  This category has three relations between the six diagrams, so in addition to the $\beta=0$ relation it satisfies the exceptional relation with $v=?, \alpha=?$ and $v=?, \alpha=?$.
+\end{remark}
+
+Combining Propositions ?? and ??, we have proved Theorem ?? holds.
+
 
 \begin{proposition}
   If a skein theory satisfies the quantum exceptional
