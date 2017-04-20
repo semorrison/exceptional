@@ -461,7 +461,7 @@ an object $X$ with $\dim \cC_1 = 0$, $\dim{\cC_2} = 1$, and $\dim{\cC_3} = 1$, w
 Being generated as a ribbon category by $\tau$ is the same as saying that $\cC$ is generated as a pivotal category by $\tau$ and the crossing.  In particular, a trivalent ribbon category need not be trivalent in the sense of \cite{???}.
 
 \begin{theorem}
-Suppose $(\cC, X, \tau)$ is a trivalent ribbon category that is not the golden category and $\dim{\cC_4} \leq 5$, then there exists $v, \alpha, b, d \in R$ such that the following relations hold.  
+Suppose $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ and $\dim{\cC_4} \leq 5$, then there exists $v, \alpha, b, d \in R$ such that the following relations hold.  
 
  \begin{equation}
     \label{eq:simple-rels-spec}
@@ -498,10 +498,10 @@ v^{-3} \;
 \end{equation}
 \end{theorem}
 
-\nn{This $v$ and $\alpha$ are unique up to...}
+If $\dim{\cC_4} = 5$ then this relation is unique (up to sending $v \mapsto -v$ and $\alpha \mapsto -\alpha$), but if $\dim{\cC_4} < 5$ there may be several such relations.
 
 \begin{theorem}
-Suppose $(\cC, X, \tau)$ is a trivalent ribbon category that is not the golden category  with $\dim{\cC_4} \leq 5$, let $v$ and $\alpha$ be as in the previous theorem, and further suppose that $d$, $b$,$[6]$, and $[5]$ are nonzero.  Then $\widetilde{\Phi}_8 = \{2\}$, $\alpha$, and $b+[3]\alpha$ are also non-zero, and we have the following relations:
+Suppose $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ with $\dim{\cC_4} \leq 5$, suppose there exist $v$ and $\alpha$ satisfying the previous theorem and with $d$, $b$,$[6]$, and $[5]$ nonzero.  Then $\widetilde{\Phi}_8 = \{2\}$, $\alpha$, and $b+[3]\alpha$ are also non-zero, and we have the following relations:
 
 \begin{align*}
   d &= -\frac{[5] b}{\alpha} - \{8\} \\
@@ -526,8 +526,10 @@ If we now make the following change of variables and normalize $b$, then the $\a
 $$w^2 = \frac{v}{2(b+[3]\alpha)}\left(b \{1\} -\alpha [3] \{5\} + \sqrt{-4 (b+[3]\alpha)^2 + (b \{1\} -[3]\{5\}\alpha)^2} \right).$$
 
 \begin{corollary}
-Suppose $(\cC, X, \tau)$ is a trivalent ribbon category that is not the golden category with $\dim{\cC_4} \leq 5$, let $v$ be as above, and further suppose that $d$, $b$,$[6]$, and $[5]$ are nonzero.  Then there's a $w \in \mathbb{C}$ and an evaluation functor $\mathrm{QExc}_{\mathbb{C},v,w} \rightarrow \cC$.
+Suppose $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ with $\dim{\cC_4} \leq 5$, suppose there exist $v$ and $\alpha$ satisfying the previous theorem and with $d$, $b$,$[6]$, and $[5]$ nonzero.  Then there's a $w \in \mathbb{C}$ and an evaluation functor $\mathrm{QExc}_{\mathbb{C},v,w} \rightarrow \cC$.
 \end{corollary}
+
+This corollary justifies our definition of $\mathrm{QExc}$, since if the quantum exceptional family exists in any form it would have to satisfy our quantum exceptional relations.
 
 
 \subsection{Calculations}
@@ -568,6 +570,147 @@ categories, and a possible new example related to the ABA free product from
 \nn{Write. Move earlier?}
 
 \section{Main results}
+
+Throughout this section $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ with $\dim{\cC_4} \leq 5$.  Using the usual diagram calculus as in \cite{???}, we can interpret $X$ as an unoriented strand, $\tau$ as a trivalent vertex with a marked direction, and then any $3$-valent ribbon tangle can be interpreted as a morphism in this category.
+
+\begin{proposition}
+  For some numbers $d, b, t, s \in \mathbb{C}$ we have the following relations.
+  \begin{equation}
+    \label{eq:simple-rels}
+  \begin{aligned}
+    \unknot\; &= d&\qquad
+      \twist\; &= s^2\;\onestrandid&\qquad
+        \twistvertex\; &= -s\;\nvertex[-90]{3}\\[5pt]
+    \loopvertex\;&=0&
+      \ngon{2}\;&= b\;\onestrandid&
+        \ngon[-90]{3}\; &= t\;\nvertex[-90]{3}
+  \end{aligned}
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+\NStodo{Add claim: trivalent vertex is rotationally symmetric}
+  Most of these are immediate from the assumption. The one fact that
+  is not immediate is the relation between the coefficients of
+  twisting a vertex ($-s$ above) and changing framing ($s^2$
+  above). Twisting a vertex twice can be turned into three framing
+  changes, one on each of the adjacent strands.
+\DPTtodo{This is standard, but needs pictures or a reference}
+\end{proof}
+
+Since the trivalent vertex is invariant under rotation we will drop the marked point at each vertex from here on out.
+
+\begin{theorem}\label{thm:quant-except}
+Suppose that $\dim \cC_5 \leq 5$, then \eqref{eq:quant-except} holds for some choice of~$v$ with $v^6 = s$.
+\end{theorem}
+
+In fact, the conditions we need for the conclusion of
+Theorem~\ref{thm:quant-except} are somewhat weaker than stated. In
+particular, we don't need to know the exact dimensions of the $n$-box spaces, just
+that certain diagrams are linearly dependent. We do not spell out the details here.
+
+\begin{proof}
+  By assumption, the space spanned by the six diagrams
+  \[
+  \cupcap\;,\qquad\twostrandid\;,\qquad\braidcross\;,
+    \qquad\drawI\;,\qquad\drawH\;,\qquad\drawcrossX\;
+  \]
+  is at most $5$-dimensional.  These six diagrams should be thought
+  of as having the symmetries of a tetrahedron (up to framing
+  change). More precisely, consider the operation~$R$ that cyclically
+  rotates three of the input strands.
+  \[
+  R\left(\,\,\idtangle\,\,\right) = \Rcycle.
+  \]
+  The operation~$R$ permutes the six diagrams above up to powers of $\pm
+  v^k$:
+  \begin{align*}
+    \begin{tikzpicture}
+      \node[inner sep=5pt] (A) at (150:1.4cm) {\cupcap};
+      \node[inner sep=5pt] (B) at (30:1.4cm) {\twostrandid};
+      \node[inner sep=5pt] (C) at (-90:1.4cm) {\braidcross};
+      \draw[|->,bend left=15] (A) to node[above,cdlabel] {s^{-2}} (B);
+      \draw[|->,bend left=15] (B) to (C);
+      \draw[|->,bend left=15] (C) to (A);
+    \end{tikzpicture}&&
+    \begin{tikzpicture}
+      \node[inner sep=5pt] (D) at (150:1.4cm) {\drawI};
+      \node[inner sep=5pt] (E) at (30:1.4cm) {\drawH};
+      \node[inner sep=5pt] (F) at (-90:1.4cm) {\drawcrossX};
+      \draw[|->,bend left=15] (D) to node[above,cdlabel] {s^{-1}} (E);
+      \draw[|->,bend left=15] (E) to node[below right,cdlabel] {\!\!s^{-1}} (F);
+      \draw[|->,bend left=15] (F) to (D);
+    \end{tikzpicture}
+  \end{align*}
+  The notation means, for instance, that
+  \[
+  R\left(\,\,\cupcap\,\,\right) = s^{-2}\,\,\twostrandid\,\,.
+  \]
+  Notice that $R^3$ acts by multiplication by $s^{-2}$. (Indeed,
+  $R^3$ does not permute the strands, and is equivalent by
+  Reidemeister moves to changing the
+  framing on the upper-right strand by~$-1$.)
+ Since $R^{3}$ acts by a scalar, we have that $R$ acts diagonalizably on the space spanned by these six diagrams, and in particular on the nonzero space of relations among these six diagrams in $\cC$.  Thus we must have a relation which is an eigenvector for the action of $R$ with eigenvalue $\lambda$ with $\lambda^{3} = s^{-2}$.   We can then pick a square root $\mu$ of $\lambda^{-1}$ such that $\mu^3 = s$, and then pick $v$ to be either square root of $\mu$.  These are the only two $v$ satisfying $\lambda = v^{-4}$ and $v^6 = s$.
+  
+Thus we have a relation of
+  the form
+  \begin{equation*}
+\beta \left[v^{-3} \;
+\drawcrossX
+\;+ v \;
+\drawI
+\; -v^{-1} \;
+ \drawH
+\;\right]
+ + \alpha
+\left[\; \braidcross \;
+ + v^{4}\;
+\cupcap
+\; + v^{-4} \;
+ \twostrandid \;\right]=0.
+  \end{equation*}
+
+  If $\beta \ne 0$, we are done. If $\beta = 0$, the relation reduces
+  to the Kauffman bracket relation for the Jones polynomial:
+\[
+\braidcross \;
+ + v^{4}\;
+\cupcap
+\; + v^{-4} \;
+ \twostrandid\;=0.
+\]
+
+Placing an $H$ on the top of this relation, gives a second relation between the six diagrams.  Thus the space of relations is at least $2$-dimensional and we can find a second relation that is an eigenvector for $R$.  If both of these relations have $\beta = 0$, then we get a nontrivial relation between the two Temperley-Lieb diagrams.  Placing a trivalent vertex on this relation shows that the trivalent vertex is zero, which is a contradiction.
+\end{proof}
+
+In fact, there is exactly one trivalent category where there's a relation of the above form with $\beta=0$, namely the Golden category with $\dim \cC_4 = 2$.  This category has three relations between the six diagrams, so in addition to the $\beta=0$ relation it satisfies the exceptional relation with $v=?, \alpha=?$ and $v=?, \alpha=?$.
+
+\begin{proposition}
+  If a skein theory satisfies the quantum exceptional
+  relation~\eqref{eq:quant-except} and the reduction
+  relations~\eqref{eq:simple-rels} with $v^{40} \ne 1$, then the
+  parameters satisfy
+  \begin{align}
+    s &= v^6\label{eq:s-v-rel}\\
+    b &= -\frac{\alpha(d + v^8 + v^{-8})}{v^5 - v^{-5}}\label{eq:b-rel}\\
+%    b(v^5 - v^{-5}) + \alpha d + \alpha (v^8 + v^{-8}) &= 0\label{eq:b-rel}\\
+    t &= \frac{b - \alpha(v^5 - v^{-5})}{v^2 + v^{-2}}\label{eq:b-t-rel}.
+%    b - t(v^2 + v^{-2}) - \alpha (v^5 - v^{-5}) &= 0.\label{eq:b-t-rel}
+  \end{align}
+\end{proposition}
+
+\begin{proof}
+  Equation~\eqref{eq:s-v-rel} is part of
+  Theorem~\ref{thm:quant-except}. Equation~\eqref{eq:b-rel} follows
+  from closing off Equation~\eqref{eq:quant-except} with a cap, and
+  then solving for~$b$. Equation~\eqref{eq:b-t-rel} follows from
+  closing off Equation~\eqref{eq:quant-except} by attaching two ends
+  to a trivalent vertex, and then solving for~$t$.
+
+  The condition that $v^{40} \ne 1$ guarantees that we do not divide
+  by~$0$.
+\end{proof}
+
 
 
 
