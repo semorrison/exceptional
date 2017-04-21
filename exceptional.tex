@@ -706,33 +706,61 @@ In fact, there is exactly one trivalent category where there's a relation of the
 
 Combining Propositions ?? and ??, we have proved Theorem ?? holds.
 
+\begin{lemma}
+Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$, then 
+\begin{align*}
+  [5] b &= - \alpha (d+\{8\}) \\
+  t \{2\} &= b-[5] \alpha.
+\end{align*}
 
-\begin{proposition}
-  If a skein theory satisfies the quantum exceptional
-  relation~\eqref{eq:quant-except} and the reduction
-  relations~\eqref{eq:simple-rels} with $v^{40} \ne 1$, then the
-  parameters satisfy
-  \begin{align}
-    s &= v^6\label{eq:s-v-rel}\\
-    b &= -\frac{\alpha(d + v^8 + v^{-8})}{v^5 - v^{-5}}\label{eq:b-rel}\\
-%    b(v^5 - v^{-5}) + \alpha d + \alpha (v^8 + v^{-8}) &= 0\label{eq:b-rel}\\
-    t &= \frac{b - \alpha(v^5 - v^{-5})}{v^2 + v^{-2}}\label{eq:b-t-rel}.
-%    b - t(v^2 + v^{-2}) - \alpha (v^5 - v^{-5}) &= 0.\label{eq:b-t-rel}
-  \end{align}
-\end{proposition}
+Since $b$ and $d$ are nonzero, it follows that $v$ is not a primitive $8$th root of unity.  If $v$ is also not a 10th root of unity, then $\alpha$ is non-zero and we have the following formulas.
 
+\begin{align*}
+  d &= -\frac{[5] b}{\alpha} - \{8\}   \\
+  t  &= \frac{b-[5] \alpha}{\{2\}}.
+\end{align*}
+\end{lemma}
 \begin{proof}
-  Equation~\eqref{eq:s-v-rel} is part of
-  Theorem~\ref{thm:quant-except}. Equation~\eqref{eq:b-rel} follows
-  from closing off Equation~\eqref{eq:quant-except} with a cap, and
+ Equation~\eqref{eq:b-rel} follows
+  from closing off QEJacobi with a cap, and
   then solving for~$b$. Equation~\eqref{eq:b-t-rel} follows from
-  closing off Equation~\eqref{eq:quant-except} by attaching two ends
+  closing off QEJacobi by attaching two ends
   to a trivalent vertex, and then solving for~$t$.
-
-  The condition that $v^{40} \ne 1$ guarantees that we do not divide
-  by~$0$.
+  
+  If $v$ is a primitive $8$th root of unity, then $0 = t \{2\} = b-[5] \alpha$, so $b = [5] \alpha$.  Since $b$ is assumed nonzero and $[5]$ is nonzero when $v$ is a primitive $8$th root of unity, we see that $\alpha = \frac{b}{[5]}$.  Now the first equation becomes $-2 = [5]^2 = -(d+\{8\})=-(d+2)$, which contradicts $d \neq 0$.
 \end{proof}
 
+
+
+\begin{proposition}
+Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$ with $v$ not a 12th root of unity, then the following equations hold.
+
+The quantum exceptional square relation:
+\begin{equation} \ngon[45]{4} + \frac{\alpha \widetilde{\Phi}_{12} (b+[3]\alpha)}{\widetilde{\Phi}_1 \widetilde{\Phi}_3} \widetilde{\Phi}_8 \braidcross + \frac{y_1}{\widetilde{\Phi}_3} \widetilde{\Phi}_8 \drawI + \frac{y_2}{\widetilde{\Phi}_3} \widetilde{\Phi}_8 \drawH + \frac{y_3}{\widetilde{\Phi}_1 \widetilde{\Phi}_3} \widetilde{\Phi}_8 \cupcap + \frac{y_4}{\widetilde{\Phi}_1 \widetilde{\Phi}_3} \widetilde{\Phi}_8 \twostrandid =0
+\end{equation}
+
+The quantum exceptional crossing relation:
+\begin{equation}
+\braidcross - \invbraidcross + \frac{\widetilde{\Phi}_1 \widetilde{\Phi}_3 \widetilde{\Phi}_4 \widetilde{\Phi}_8}{b+[3]\alpha} \left[\; \drawI \; - \; \drawH \; \right] - \frac{\widetilde{\Phi}_1^2 \widetilde{\Phi}_3 \widetilde{\Phi}_4 \widetilde{\Phi}_8 \alpha}{b+[3]\alpha} \left[\; \twostrandid \; - \; \cupcap \; \right] = 0
+\end{equation}
+ \end{proposition}
+\begin{proof}
+First attach an H-diagram to the QEJacobi relation in the three natural ways respecting the symmetries of the tetrahedron, and then we take a cleverly chosen linear combination of them so that the twisted squares cancel.
+
+\nn{big equation}
+
+We now use the QEJacobi relation again to remove the X-term, yielding:
+
+\nn{medium equation}
+
+Dividing by $[6]$ (which is nonzero because $v$ is not a $12$th root of unity) yields the QESquare relation.
+
+Now take QESquare relation and subtract its 90-degree rotation, yielding:
+
+\nn{medium equation}
+
+
+\end{proof}
 
 
 
