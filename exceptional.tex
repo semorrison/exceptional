@@ -404,7 +404,7 @@ where the $x_i$ are Laurent polynomials in $v$ and $w$ from Appendix \ref{app:co
 \item the \emph{quantum exceptional crossing relation} (QECrossing)
 
 \begin{equation}
-\braidcross - \invbraidcross + \frac{\widetilde{\Phi}_1}{\widetilde{\Phi}_{12}} \left[\; \drawI \; - \; \drawH \; \right] + \frac{\widetilde{\Phi}_1 [\lambda][\lambda+1]}{\widetilde{\Phi}_{12}} \left[\; \twostrandid \; - \; \cupcap \; \right] = 0
+\braidcross - \invbraidcross + \frac{\widetilde{\Phi}_1}{\widetilde{\Phi}_{12}} \left[\; \drawI \; - \; \drawH \; \right] + \frac{\widetilde{\Phi}_1 [\lambda][\lambda-1]}{\widetilde{\Phi}_{12}} \left[\; \twostrandid \; - \; \cupcap \; \right] = 0
 \end{equation}
 
 
@@ -640,7 +640,7 @@ that certain diagrams are linearly dependent. We do not spell out the details he
   R\left(\,\,\idtangle\,\,\right) = \Rcycle.
   \]
   The operation~$R$ permutes the six diagrams above up to powers of $\pm
-  v^k$:
+  s^k$:
   \begin{align*}
     \begin{tikzpicture}
       \node[inner sep=5pt] (A) at (150:1.4cm) {\cupcap};
@@ -654,8 +654,8 @@ that certain diagrams are linearly dependent. We do not spell out the details he
       \node[inner sep=5pt] (D) at (150:1.4cm) {\drawI};
       \node[inner sep=5pt] (E) at (30:1.4cm) {\drawH};
       \node[inner sep=5pt] (F) at (-90:1.4cm) {\drawcrossX};
-      \draw[|->,bend left=15] (D) to node[above,cdlabel] {s^{-1}} (E);
-      \draw[|->,bend left=15] (E) to node[below right,cdlabel] {\!\!s^{-1}} (F);
+      \draw[|->,bend left=15] (D) to node[above,cdlabel] {-s^{-1}} (E);
+      \draw[|->,bend left=15] (E) to node[below right,cdlabel] {\!\!-s^{-1}} (F);
       \draw[|->,bend left=15] (F) to (D);
     \end{tikzpicture}
   \end{align*}
