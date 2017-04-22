@@ -727,13 +727,14 @@ Since $b$ and $d$ are nonzero, it follows that $v$ is not a primitive $8$th root
   closing off QEJacobi by attaching two ends
   to a trivalent vertex, and then solving for~$t$.
   
-  If $v$ is a primitive $8$th root of unity, then $0 = t \{2\} = b-[5] \alpha$, so $b = [5] \alpha$.  Since $b$ is assumed nonzero and $[5]$ is nonzero when $v$ is a primitive $8$th root of unity, we see that $\alpha = \frac{b}{[5]}$.  Now the first equation becomes $-2 = [5]^2 = -(d+\{8\})=-(d+2)$, which contradicts $d \neq 0$.
+  If $v$ is a primitive $8$th root of unity, then $0 = t \{2\} = b-[5] \alpha$, so $b = [5] \alpha$.  Since $b$ is assumed nonzero and $[5]$ is nonzero when $v$ is a primitive $8$th root of unity, we see that $\alpha = \frac{b}{[5]}$.  Now the first equation becomes $-2 = [5]^2 = -(d+\{8\})=-(d+2)$, which contradicts $d \neq 0$.  
+  Now $0 \neq [5] b = - \alpha (d+\{8\})$, so $\alpha$ is non-zero and we can solve for $d$.
 \end{proof}
 
 
 
 \begin{proposition}
-Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$ with $v$ not a 12th root of unity, then the following equations hold.
+Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$ with $v$ not a $10$th or $12$th root of unity, then the following equations hold.
 
 The quantum exceptional square relation:
 \begin{equation} \ngon[45]{4} + \frac{\alpha \widetilde{\Phi}_{12} (b+[3]\alpha)}{\widetilde{\Phi}_1 \widetilde{\Phi}_3} \widetilde{\Phi}_8 \braidcross + \frac{y_1}{\widetilde{\Phi}_3} \widetilde{\Phi}_8 \drawI + \frac{y_2}{\widetilde{\Phi}_3} \widetilde{\Phi}_8 \drawH + \frac{y_3}{\widetilde{\Phi}_1 \widetilde{\Phi}_3} \widetilde{\Phi}_8 \cupcap + \frac{y_4}{\widetilde{\Phi}_1 \widetilde{\Phi}_3} \widetilde{\Phi}_8 \twostrandid =0
@@ -755,9 +756,23 @@ We now use the QEJacobi relation again to remove the X-term, yielding:
 
 Dividing by $[6]$ (which is nonzero because $v$ is not a $12$th root of unity) yields the QESquare relation.
 
-Now take QESquare relation and subtract its 90-degree rotation, yielding:
+Now take Equation ??? and subtract its 90-degree rotation, yielding:
 
-\nn{medium equation}
+\begin{equation}
+\frac{\widetilde{\Phi}_{12} \alpha(b+[3]\alpha)}{\{2\}} \left(\braidcross - \invbraidcross\right) + [6]\alpha \left[\; \drawI \; - \; \drawH \; \right] - [1][6] \alpha^2 \left[\; \twostrandid \; - \; \cupcap \; \right] = 0
+\end{equation}
+
+Since $v$ is not a $12$th root of unity, $\widetilde{\Phi}_{12} \neq 0$, since $v$ is not a $10$th root of unity $\alpha$ is non-zero.  
+
+
+Assume $b+ [3] \alpha = 0$ for the sake of contradiction.  Then the above equation divided by the non-zero number $[6] \alpha$ becomes
+
+\begin{equation}
+\left[\; \drawI \; - \; \drawH \; \right] - [1]\alpha \left[\; \twostrandid \; - \; \cupcap \; \right] = 0
+\end{equation}
+
+Capping this off, we see that $b -[1] \alpha (d-1) = 0$.  So, $\frac{\alpha}{b} = \frac{[1]}{[1](d-1)}$ but also $\frac{\alpha}{b} = -\frac{[5]}{d+\{8\}}$ and $\frac{\alpha}{b} = - \frac{1}{[3]}$.   So $\frac{\alpha}{b} = \epsilon_1 \frac{1}{4}$, $d=-3$, and $v = \frac{-\epsilon_1 + \epsilon_2 \sqrt{5}}{2}$ for signs $\epsilon_i$.
+
 
 
 \end{proof}
