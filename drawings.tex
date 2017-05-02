@@ -273,3 +273,39 @@ coverlinelefttail/.style={
 \end{tikzpicture}
 }
 
+\newcommand{\overviolin}{
+\begin{tikzpicture}[baseline=0]
+	\coordinate (E1) at (45:.8cm);
+	\coordinate (E2) at (225:.8cm);
+	\coordinate (E3) at (270:.8cm);
+	\coordinate (P1) at (0,0);
+	\coordinate (P2) at (120:.6cm);
+	\coordinate (P3) at (.4cm,.2cm);
+	\coordinate (C1) at (100:.9cm);
+	\coordinate (C2) at (135:.5cm);
+	\coordinate (C3) at (.8,.1);
+	\draw (E1) -- (P1) -- (E3);
+	\draw (P1) .. controls  (C1) .. (P2);
+	\draw[white, line width=4pt] (P2) .. controls  (C2) .. (P3);	
+	\draw[white, line width=4pt] (P3) .. controls (C3) .. (E2);
+	\draw (P2) .. controls  (C2) .. (P3);	
+	\draw (P3) .. controls (C3) .. (E2);
+%	\path (P1) ++(330:.15cm) node {$\bullet$};
+\end{tikzpicture}
+}
+
+\newcommand{\rotatedtrivalent}{
+\begin{tikzpicture}[baseline=0]
+	\coordinate (E1) at (45:.8cm);
+	\coordinate (E2) at (225:.8cm);
+	\coordinate (E3) at (270:.8cm);
+	\coordinate (P0) at (0,0);
+	\coordinate (C1) at (-.1,.7);
+	\coordinate (C2) at (-.3,-.2);
+	\coordinate (C3) at (.2,-.2);
+	\draw (P0) .. controls (C1) .. (E2);
+	\draw (P0) .. controls (C2) .. (E3);
+	\draw (P0) .. controls (C3) .. (E1);
+%	\path (P0) ++(270:.2cm) node {$\bullet$};
+\end{tikzpicture}
+}

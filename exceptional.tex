@@ -327,7 +327,7 @@ necessary.)  Let
   The notation is pretty heavy for something used everywhere in the
   paper.}
 \[
-  \widetilde{\Phi}_n = \prod_{\zeta: (\pm \zeta)^n = 1 \text{ and } (\pm \zeta)^ \neq 1 \text{ for $m < n$}}
+  \widetilde{\Phi}_n = \prod_{\zeta: (\pm \zeta)^n = 1 \text{ and } (\pm \zeta)^m \neq 1 \text{ for $m < n$}}
   (v^{\frac{1}{2}}-\zeta v^{-\frac{1}{2}}).
 \]
 In terms of the usual cyclotomic polynomials we have if $n$ is odd
@@ -520,10 +520,13 @@ The quantum exceptional crossing relation:
 \end{theorem}
 
 
-
-If we now make the following change of variables and normalize $b$, then the $\alpha$ versions of these relations turn into the $w$ versions given earlier
+When $b+[3]\alpha$ is non-zero and $v$ is not a $12$th root of unity we make the following change of variables and normalize $b$ to turn the $\alpha$ versions of these relations turn into the $w$ versions given earlier
 
 $$w^2 = \frac{v}{2(b+[3]\alpha)}\left(b \{1\} -\alpha [3] \{5\} + \sqrt{-4 (b+[3]\alpha)^2 + (b \{1\} -[3]\{5\}\alpha)^2} \right).$$
+
+Then $$\frac{\alpha}{b} =  -\frac{[\lambda][\lambda-1]}{\{\lambda+2\}\{\lambda-3\}\widetilde{\Phi}_3}.$$
+
+The restriction that $v$ not be a $12$th root of unity comes from looking at when the denominator $\{\lambda+2\}\{\lambda-3\}\widetilde{\Phi}_3$ vanishes after you plug in the formula for $w$.
 
 \begin{corollary}
 Suppose $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ and suppose there exist $v$ and $\alpha$ such that QEJacobi holds in $\mathbb{C}$ and that $d$, $b$,$[6]$, and $[5]$ are nonzero.  Then there's a $w \in \mathbb{C}$ and an evaluation functor $\mathrm{QExc}_{\mathbb{C},v,w} \rightarrow \cC$.
@@ -571,7 +574,7 @@ categories, and a possible new example related to the ABA free product from
 
 \section{Main results}
 
-Throughout this section $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ with $\dim{\cC_4} \leq 5$.  Using the usual diagram calculus as in \cite{???}, we can interpret $X$ as an unoriented strand, $\tau$ as a trivalent vertex with a marked direction, and then any $3$-valent ribbon tangle can be interpreted as a morphism in this category.
+Throughout this section $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ with $\dim{\cC_4} \leq 5$.  As shown in \cite{1501.06869}[Lemma 2.2], we have that $X$ is symmetrically self-dual.  As shown in \cite{1501.06869}[Lemma 8.2], the trivalent vertex is rotationally invariant.  Thus, using the usual diagram calculus for ribbon categories, we can interpret $X$ as an unoriented strand, $\tau$ as a trivalent vertex, and then any trivalent ribbon tangle can be interpreted as a morphism $\cC$.
 
 \begin{proposition}
   For some numbers $d, b, t, s \in \mathbb{C}$ we have the following relations.
@@ -589,28 +592,21 @@ Throughout this section $(\cC, X, \tau)$ is a trivalent ribbon category over $\m
 \end{proposition}
 
 \begin{proof}
-\NStodo{Add claim: trivalent vertex is rotationally symmetric}
-  Most of these are immediate from the assumption. The one fact that
-  is not immediate is the relation between the coefficients of
-  twisting a vertex ($-s$ above) and changing framing ($s^2$
-  above). Twisting a vertex twice can be turned into three framing
-  changes, one on each of the adjacent strands.
-\DPTtodo{This is standard, but needs pictures or a reference}
+All of these follow directly from $\dim \cC_n$ starting $1,0,1,1$ except that we need to see that the constant for the twisted strand is the square of the constant for the twisted vertex.  This follows, as in \cite{1501.06869}[Lemma 8.2] from the following identity:
+$$\overviolin = \rotatedtrivalent.$$
 \end{proof}
 
-Since the trivalent vertex is invariant under rotation we will drop the marked point at each vertex from here on out.
-
 \begin{proposition}\label{thm:quant-except}
-Suppose that $\dim \cC_4 \leq 5$, then for some $\alpha$ and some choice of~$v$ with $v^6 = s$, we have
+Suppose that $\dim \cC_4 \leq 5$, then for some $\beta, \alpha$ and some choice of~$v$ with $v^6 = s$, we have
 
 \begin{equation}
-v^{-3} \;
+\beta \left[\; v^{-3} \;
 \drawcrossX
 \;+ v \;
 \drawI
 \; -v^{-1} \;
  \drawH
-\;
+\;\right]
  + \alpha
 \left[\; \braidcross \;
  + v^{4}\;
@@ -687,24 +683,30 @@ Thus we have a relation of
  \twostrandid \;\right]=0.
   \end{equation*}
 
-  If $\beta \ne 0$, we are done. If $\beta = 0$, the relation reduces
-  to the Kauffman bracket relation for the Jones polynomial:
-\[
-\braidcross \;
+\end{proof}
+
+If $\beta \ne 0$, then we've proved Theorem \ref{???}.  
+
+
+\begin{lemma}
+Suppose $$\braidcross \;
  + v^{4}\;
 \cupcap
 \; + v^{-4} \;
- \twostrandid\;=0.
-\]
-
-Placing an $H$ on the top of this relation, gives a second relation between the six diagrams.  Thus the space of relations is at least $2$-dimensional and we can find a second relation that is an eigenvector for $R$.  If both of these relations have $\beta = 0$, then we get a nontrivial relation between the two Temperley-Lieb diagrams.  Placing a trivalent vertex on this relation shows that the trivalent vertex is zero, which is a contradiction.
+ \twostrandid.$$  Then $\cC$ is the golden categories with $\dim X = \frac{1+\sqrt{5}}{2}$ or its Galois conjugate.  The golden category has $\dim \cC_4 = 2$ and satisfies the four versions of the above relation, namely (normalizing $b=1$):
+ \begin{itemize}
+ \item $[\alpha:\beta] = [1:0]$ and $v = e^{\frac{2 \pi i}{5}}$
+  \item $[\alpha:\beta] = [1-\frac{v^{-3}}{v^{12}-v^{-12}}:1]$ and $v = e^{\frac{2 \pi i}{5}}$
+ \item $[\alpha:\beta] = [1-\frac{v^{-3}}{v^{12}-v^{-12}}:1]$ and $v = e^{7 \frac{2 \pi i}{10}}$
+ \item $[\alpha:\beta] = [1-\frac{v^{-3}}{v^{12}-v^{-12}}:1]$ and $v = e^{\frac{2 \pi i}{30}}$ 
+ \end{itemize}
+\end{lemma}
+\begin{proof}
+Placing an $H$ on the top of this relation, gives a second relation $\psi$ between the six diagrams.  This relation only has one term in the second orbit of $R$, so $\sum_{i=0}^2 v^i R^i(\psi)$ gives three linearly independent relations of the above form for three different choices of $v$ as a sixth root of $e^{\frac{2 \pi i}{5}}$.  A short calculation gives the values of $\alpha$ and $v$.
 \end{proof}
 
-\begin{remark}
-In fact, there is exactly one trivalent category where there's a relation of the above form with $\beta=0$, namely the Golden category with $\dim \cC_4 = 2$.  This category has three relations between the six diagrams, so in addition to the $\beta=0$ relation it satisfies the exceptional relation with $v=?, \alpha=?$ and $v=?, \alpha=?$.
-\end{remark}
 
-Combining Propositions ?? and ??, we have proved Theorem ?? holds.
+Combining Propositions ?? and ?? and Lemma ???, we have proved Theorem ?? holds.
 
 \begin{lemma}
 Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$, then 
@@ -731,6 +733,31 @@ Since $b$ and $d$ are nonzero, it follows that $v$ is not a primitive $8$th root
   Now $0 \neq [5] b = - \alpha (d+\{8\})$, so $\alpha$ is non-zero and we can solve for $d$.
 \end{proof}
 
+
+\begin{lemma}
+Suppose that the diagrams   
+  \[
+  \cupcap\;,\qquad\twostrandid\;,
+    \qquad\drawI\;,\qquad\drawH\;\;
+   \]
+are linearly dependent.  Then $\cC$ is either the Golden category, $SO(3)_q$ (including $OSp(1|2)$ when $q= \pm i$) for some $q$, or $S_3$.  
+
+For $SO(3)_q$ there  three distinct relations of the above form, namely (if we normalize $b=1$) $\alpha = -\frac{v-v^{-1}}{v^4-1+v^{-4}}$ for $v$ a sixth root of $q^{-2}$.
+
+For $S_3$ there are three distinct relations of the above form (if we normalize $b=1$):
+\begin{itemize}
+\item $v = e^{\frac{2 \pi i}{12}}$ and $\alpha = i$
+\item $v = e^{\frac{-2 \pi i}{12}}$ and $\alpha = -i$
+\item $v = i$ and $\alpha = -i/2$
+\end{itemize}
+\end{lemma}
+\begin{proof}
+
+\end{proof}
+
+\begin{lemma}
+
+\end{lemma}
 
 
 \begin{proposition}
