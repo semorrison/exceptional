@@ -164,7 +164,7 @@ fewer crossings.  Unconditionally these give the first calculations of the Reshe
 
 \nn{value of trefoil goes here}
 
-We are also able to do several other calculations, like giving quantum dimension formulas for the summands of $\mathfrak{g}^{\otimes 3}$ quantizing the dimension formulas of Cohen--De Man \cite{???} in the classical case (for the summands of $\mathfrak{g}^{\otimes 2}$ such quantum dimension formulas were already given by Tuba-Wenzl \cite{???}).
+We are also able to do several other calculations, like giving quantum dimension formulas for the summands of $\mathfrak{g}^{\otimes 3}$ quantizing the dimension formulas of Cohen--De Man \cite{MR1381778} in the classical case (for the summands of $\mathfrak{g}^{\otimes 2}$ such quantum dimension formulas were already given by Tuba-Wenzl \cite{MR2132671}).
 
 In order to state these conjectures and theorems precisely and place them in their proper context, we have written a  long introduction split into several subsections.
 
@@ -462,7 +462,7 @@ A \emph{trivalent ribbon} category $(\cC, X, \tau)$ is a nondegenerate evaluable
 an object $X$ with $\dim \cC_1 = 0$, $\dim{\cC_2} = 1$, and $\dim{\cC_3} = 1$, with a (unique up to rescaling) non-zero element $\tau \in \cC_3$ called `the trivalent vertex', such that the category is generated as a ribbon category by $\tau$.\NStodo{Do we really want nondegenerate?, instead we could just ask $b\neq0$, $d\neq0$}
 \end{definition}
 
-Being generated as a ribbon category by $\tau$ is the same as saying that $\cC$ is generated as a pivotal category by $\tau$ and the crossing.  In particular, a trivalent ribbon category need not be trivalent in the sense of \cite{???}.
+Being generated as a ribbon category by $\tau$ is the same as saying that $\cC$ is generated as a pivotal category by $\tau$ and the crossing.  In particular, a trivalent ribbon category need not be trivalent in the sense of \cite{MR3624901}.
 
 \begin{theorem}
 Suppose $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ and $\dim{\cC_4} \leq 5$, then there exists $v, \alpha, b, d, t \in R$ such that the following relations hold.  
@@ -505,36 +505,42 @@ v^{-3} \;
 If $\dim{\cC_4} = 5$ then this relation is unique (up to sending $v \mapsto -v$ and $\alpha \mapsto -\alpha$), but if $\dim{\cC_4} < 5$ there may be several such relations.
 
 \begin{theorem}
-Suppose $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ with $\dim{\cC_4} \leq 5$, suppose there exist $v$ and $\alpha$ satisfying the previous theorem, with $d$, $b$ nonzero and $v^{10} \neq 1$, $v^{12} \neq 1$.  Then $\widetilde{\Phi}_8 = \{2\}$, $\alpha$, and $b+[3]\alpha$ are also non-zero, and we have the following relations:
-
-\begin{align*}
-  d &= -\frac{[5] b}{\alpha} - \{8\} \\
-  t  &= \frac{b-[5] \alpha}{\{2\}}.
-\end{align*}
-
+Suppose $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ with $\dim{\cC_4} \leq 5$, suppose there exist $v$ and $\alpha$ satisfying the previous theorem, with $d \neq 0 $, $b \neq 0$, $v^{10} \neq 1$, and $v^{12} \neq 1$.  Then $\widetilde{\Phi}_8 = \{2\}$, $\alpha$, and $b+[3]\alpha$ are also non-zero, and we have the following relations:
+\begin{itemize}
+\item
+$
+  d = -\frac{[5] b}{\alpha} - \{8\} 
+$
+and
+$
+  t = \frac{b-[5] \alpha}{\{2\}}.
+$
+\item
 The quantum exceptional square relation:
-\begin{equation} \ngon[45]{4} + \frac{\alpha \widetilde{\Phi}_{12} (b+[3]\alpha)}{\widetilde{\Phi}_1 \widetilde{\Phi}_3} \widetilde{\Phi}_8 \braidcross + \frac{y_1}{\widetilde{\Phi}_3} \widetilde{\Phi}_8 \drawI + \frac{y_2}{\widetilde{\Phi}_3} \widetilde{\Phi}_8 \drawH + \frac{y_3}{\widetilde{\Phi}_1 \widetilde{\Phi}_3} \widetilde{\Phi}_8 \cupcap + \frac{y_4}{\widetilde{\Phi}_1 \widetilde{\Phi}_3} \widetilde{\Phi}_8 \twostrandid =0
-\end{equation}
-where the $y_i$ are Laurent polynomials in $v$ and $w$ from Appendix \ref{app:coefficients}.
-
+\begin{equation*} \ngon[45]{4} + \frac{\alpha \widetilde{\Phi}_{12} (b+[3]\alpha)}{\widetilde{\Phi}_1 \widetilde{\Phi}_3} \widetilde{\Phi}_8 \braidcross + \frac{y_1}{\widetilde{\Phi}_3} \widetilde{\Phi}_8 \drawI + \frac{y_2}{\widetilde{\Phi}_3} \widetilde{\Phi}_8 \drawH + \frac{y_3}{\widetilde{\Phi}_1 \widetilde{\Phi}_3} \widetilde{\Phi}_8 \cupcap + \frac{y_4}{\widetilde{\Phi}_1 \widetilde{\Phi}_3} \widetilde{\Phi}_8 \twostrandid =0
+\end{equation*}
+\SMtodo{surely the coefficient of the crossing is wrong; two $\alpha$s??}
+where the $y_i$ are Laurent polynomials in $v$ and $w$ given in Appendix \ref{app:coefficients}.
+\item
 The quantum exceptional crossing relation:
-\begin{equation}
+\begin{equation*}
 \braidcross - \invbraidcross + \frac{\widetilde{\Phi}_1 \widetilde{\Phi}_3 \widetilde{\Phi}_4 \widetilde{\Phi}_8}{b+[3]\alpha} \left[\; \drawI \; - \; \drawH \; \right] - \frac{\widetilde{\Phi}_1^2 \widetilde{\Phi}_3 \widetilde{\Phi}_4 \widetilde{\Phi}_8 \alpha}{b+[3]\alpha} \left[\; \twostrandid \; - \; \cupcap \; \right] = 0
-\end{equation}
+\end{equation*}
+\end{itemize}
 
 \end{theorem}
 
 
-When $b+[3]\alpha$ is non-zero and $v$ is not a $12$th root of unity we make the following change of variables and normalize $b$ to turn the $\alpha$ versions of these relations turn into the $w$ versions given earlier
+When $b+[3]\alpha$ is non-zero and $v$ is not a $12$th root of unity we can make the change of variables
+$$w^2 = \frac{v}{2(b+[3]\alpha)}\left(b \{1\} -\alpha [3] \{5\} + \sqrt{-4 (b+[3]\alpha)^2 + (b \{1\} -[3]\{5\}\alpha)^2} \right)$$
+and set $b = 1$ to see relations are the same as the versions in terms of $w$ given earlier.
 
-$$w^2 = \frac{v}{2(b+[3]\alpha)}\left(b \{1\} -\alpha [3] \{5\} + \sqrt{-4 (b+[3]\alpha)^2 + (b \{1\} -[3]\{5\}\alpha)^2} \right).$$
+We then have $$\frac{\alpha}{b} =  -\frac{[\lambda][\lambda-1]}{\{\lambda+2\}\{\lambda-3\}\widetilde{\Phi}_3}.$$
 
-Then $$\frac{\alpha}{b} =  -\frac{[\lambda][\lambda-1]}{\{\lambda+2\}\{\lambda-3\}\widetilde{\Phi}_3}.$$
-
-The restriction that $v$ not be a $12$th root of unity comes from looking at when the denominator $\{\lambda+2\}\{\lambda-3\}\widetilde{\Phi}_3$ vanishes after you plug in the formula for $w$.
+The restriction that $v$ not be a $12$th root of unity comes from looking at when the denominator $\{\lambda+2\}\{\lambda-3\}\widetilde{\Phi}_3$ vanishes after you plug in the formula for $w$. \SMtodo{I don't understand this remark.}
 
 \begin{corollary}
-Suppose $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ and suppose there exist $v$ and $\alpha$ such that QEJacobi holds in $\mathbb{C}$ and that $d$, $b$,$[6]$, and $[5]$ are nonzero.  Then there's a $w \in \mathbb{C}$ and an evaluation functor $\mathrm{QExc}_{\mathbb{C},v,w} \rightarrow \cC$.
+Suppose $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ and suppose there exist $v$ and $\alpha$ such that QEJacobi holds in $\mathbb{C}$ and $d \neq 0 $, $b \neq 0$, $v^{10} \neq 1$, and $v^{12} \neq 1$.  Then there is a $w \in \mathbb{C}$ and an evaluation functor $\mathrm{QExc}_{\mathbb{C},v,w} \rightarrow \cC$.
 \end{corollary}
 
 This corollary justifies our definition of $\mathrm{QExc}$, since if the quantum exceptional family exists in any form it would have to satisfy our quantum exceptional relations.
@@ -571,7 +577,7 @@ specializations, and they recover some interesting examples including the
 classical exceptional series, the classical $\mathfrak{g}_2$ series, the
 classical $\mathfrak{f}_4$ series, Deligne's interpolated symmetric group
 categories, and a possible new example related to the ABA free product from
-\cite{???}.
+\cite{MR3624901}.
 
 \subsection{From classical to quantum}
 
@@ -579,7 +585,7 @@ categories, and a possible new example related to the ABA free product from
 
 \section{Main results}
 
-Throughout this section $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ with $\dim{\cC_4} \leq 5$.  As shown in \cite{1501.06869}[Lemma 2.2], we have that $X$ is symmetrically self-dual.  As shown in \cite{1501.06869}[Lemma 8.2], the trivalent vertex is rotationally invariant.  Thus, using the usual diagram calculus for ribbon categories, we can interpret $X$ as an unoriented strand, $\tau$ as a trivalent vertex, and then any trivalent ribbon tangle can be interpreted as a morphism $\cC$.
+Throughout this section $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ with $\dim{\cC_4} \leq 5$.  As shown in \cite[Lemma 2.2]{MR3624901}, we have that $X$ is symmetrically self-dual.  As shown in \cite[Lemma 8.2]{MR3624901}, the trivalent vertex is rotationally invariant.  Thus, using the usual diagram calculus for ribbon categories, we can interpret $X$ as an unoriented strand, $\tau$ as a trivalent vertex, and then any trivalent ribbon tangle may be interpreted as a morphism in $\cC$.
 
 \begin{proposition}
   For some numbers $d, b, t, s \in \mathbb{C}$ we have the following relations.
@@ -597,12 +603,14 @@ Throughout this section $(\cC, X, \tau)$ is a trivalent ribbon category over $\m
 \end{proposition}
 
 \begin{proof}
-All of these follow directly from $\dim \cC_n$ starting $1,0,1,1$ except that we need to see that the constant for the twisted strand is the square of the constant for the twisted vertex.  This follows, as in \cite{1501.06869}[Lemma 8.2] from the following identity:
-$$\overviolin = \rotatedtrivalent.$$
+All of these follow directly from $\dim \cC_n$ starting $1,0,1,1$ except that we need to see that the constant for the twisted strand is the square of the constant for the twisted vertex.  This follows, as in \cite[Lemma 8.2]{MR3624901}, from the following isotopy:
+\begin{equation*}
+\overviolin = \rotatedtrivalent. \qedhere
+\end{equation*}
 \end{proof}
 
 \begin{proposition}\label{thm:quant-except}
-Suppose that $\dim \cC_4 \leq 5$, then for some $\beta, \alpha$ and some choice of~$v$ with $v^6 = s$, we have
+If $\dim \cC_4 \leq 5$, then for some $\beta, \alpha \in \bbC$ and some choice of~$v \in \bbC$ with $v^6 = s$, we have
 
 \begin{equation}
 \beta \left[\; v^{-3} \;
@@ -623,7 +631,7 @@ Suppose that $\dim \cC_4 \leq 5$, then for some $\beta, \alpha$ and some choice 
 \end{proposition}
 
 In fact, the conditions we need for the conclusion of
-Theorem~\ref{thm:quant-except} are somewhat weaker than stated. In
+Proposition~\ref{thm:quant-except} are somewhat weaker than stated. In
 particular, we don't need to know the exact dimensions of the $n$-box spaces, just
 that certain diagrams are linearly dependent. We do not spell out the details here.
 
@@ -635,8 +643,8 @@ that certain diagrams are linearly dependent. We do not spell out the details he
   \]
   is at most $5$-dimensional.  These six diagrams should be thought
   of as having the symmetries of a tetrahedron (up to framing
-  change). More precisely, consider the operation~$R$ that cyclically
-  rotates three of the input strands.
+  change). To be more precise, we consider the operation~$R$ that cyclically
+  rotates three of the input strands:
   \[
   R\left(\,\,\idtangle\,\,\right) = \Rcycle.
   \]
@@ -660,10 +668,10 @@ that certain diagrams are linearly dependent. We do not spell out the details he
       \draw[|->,bend left=15] (F) to (D);
     \end{tikzpicture}
   \end{align*}
-  The notation means, for instance, that
-  \[
-  R\left(\,\,\cupcap\,\,\right) = s^{-2}\,\,\twostrandid\,\,.
-  \]
+  (The notation means, for instance, that
+  \(
+  R\left(\,\raisebox{0.8mm}{\scalebox{0.5}{\cupcap}}\,\right) = s^{-2}\,\,\raisebox{0.8mm}{\scalebox{0.5}{\twostrandid}}\,\,
+  \).)
   Notice that $R^3$ acts by multiplication by $s^{-2}$. (Indeed,
   $R^3$ does not permute the strands, and is equivalent by
   Reidemeister moves to changing the
@@ -686,19 +694,19 @@ Thus we have a relation of
 \cupcap
 \; + v^{-4} \;
  \twostrandid \;\right]=0.
+ \qedhere
   \end{equation*}
 
 \end{proof}
 
-If $\beta \ne 0$, then we've proved Theorem \ref{???}.  
-
+Combining Propositions \ref{??} and \ref{??}, we have proved all of Theorem \ref{??} except for the situation where $\beta = 0$, which we address now.
 
 \begin{lemma}
 Suppose $$\braidcross \;
  + v^{4}\;
 \cupcap
 \; + v^{-4} \;
- \twostrandid.$$  Then $\cC$ is the golden categories with $\dim X = \frac{1+\sqrt{5}}{2}$ or its Galois conjugate.  The golden category has $\dim \cC_4 = 2$ and satisfies the four versions of the above relation, namely (normalizing $b=1$):
+ \twostrandid = 0.$$  Then $\cC$ is the golden category with $\dim X = \frac{1 + \sqrt{5}}{2}$ or its Galois conjugate.  The golden category has $\dim \cC_4 = 2$ and satisfies four versions of the above relation, namely (normalizing $b=1$):
  \begin{itemize}
  \item $[\alpha:\beta] = [1:0]$ and $v = e^{\frac{2 \pi i}{5}}$
   \item $[\alpha:\beta] = [1-\frac{v^{-3}}{v^{12}-v^{-12}}:1]$ and $v = e^{\frac{2 \pi i}{5}}$
@@ -710,8 +718,6 @@ Suppose $$\braidcross \;
 Placing an $H$ on the top of this relation, gives a second relation $\psi$ between the six diagrams.  This relation only has one term in the second orbit of $R$, so $\sum_{i=0}^2 v^i R^i(\psi)$ gives three linearly independent relations of the above form for three different choices of $v$ as a sixth root of $e^{\frac{2 \pi i}{5}}$.  A short calculation gives the values of $\alpha$ and $v$.
 \end{proof}
 
-
-Combining Propositions ?? and ?? and Lemma ???, we have proved Theorem ?? holds.
 
 \begin{lemma}
 Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$, then 
@@ -745,37 +751,45 @@ Suppose that the diagrams
   \cupcap\;,\qquad\twostrandid\;,
     \qquad\drawI\;,\qquad\drawH\;\;
    \]
-are linearly dependent.  Then $\cC$ is either the Golden category, $SO(3)_q$ (including $OSp(1|2)$ when $q= \pm i$) for some $q$, or $S_3$.  
+are linearly dependent.  Then $\cC$ is one of
+\begin{itemize}
 
-For $SO(3)_q$ there  three distinct relations of the above form, namely (if we normalize $b=1$) $\alpha = -\frac{v-v^{-1}}{v^4-1+v^{-4}}$ for $v$ a sixth root of $q^{-2}$.
+ \item the golden category, $SO(3)_q$ (including $OSp(1|2)$ when $q= \pm i$) for some $q$, or $S_3$.  
 
-For $S_3$ there are three distinct relations of the above form (if we normalize $b=1$):
+ \item $SO(3)_q$ for some $q$ (which includes the possibility $OSp(1|2)$ when $q= \pm i$), and there are three distinct relations of the above form, namely (if we normalize $b=1$) $\alpha = -\frac{v-v^{-1}}{v^4-1+v^{-4}}$ for $v$ a sixth root of $q^{-2}$,
+
+ \item or $\Rep S_3$, and there are three distinct relations of the above form (if we normalize $b=1$):
 \begin{itemize}
 \item $v = e^{\frac{2 \pi i}{12}}$ and $\alpha = i$
 \item $v = e^{\frac{-2 \pi i}{12}}$ and $\alpha = -i$
-\item $v = i$ and $\alpha = -i/2$
+\item $v = i$ and $\alpha = -i/2$.
+\end{itemize}
+
 \end{itemize}
 \end{lemma}
 \begin{proof}
-
+\nn{}
 \end{proof}
 
 \begin{lemma}
-
+\nn{}
 \end{lemma}
 
 
 \begin{proposition}
 Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$ with $v$ not a $10$th or $12$th root of unity, then the following equations hold.
-
+\begin{itemize}
+  \item
 The quantum exceptional square relation:
-\begin{equation} \ngon[45]{4} + \frac{\alpha \widetilde{\Phi}_{12} (b+[3]\alpha)}{\widetilde{\Phi}_1 \widetilde{\Phi}_3} \widetilde{\Phi}_8 \braidcross + \frac{y_1}{\widetilde{\Phi}_3} \widetilde{\Phi}_8 \drawI + \frac{y_2}{\widetilde{\Phi}_3} \widetilde{\Phi}_8 \drawH + \frac{y_3}{\widetilde{\Phi}_1 \widetilde{\Phi}_3} \widetilde{\Phi}_8 \cupcap + \frac{y_4}{\widetilde{\Phi}_1 \widetilde{\Phi}_3} \widetilde{\Phi}_8 \twostrandid =0
-\end{equation}
-
+\begin{equation*} \ngon[45]{4} + \frac{\alpha \widetilde{\Phi}_{12} (b+[3]\alpha)}{\widetilde{\Phi}_1 \widetilde{\Phi}_3} \widetilde{\Phi}_8 \braidcross + \frac{y_1}{\widetilde{\Phi}_3} \widetilde{\Phi}_8 \drawI + \frac{y_2}{\widetilde{\Phi}_3} \widetilde{\Phi}_8 \drawH + \frac{y_3}{\widetilde{\Phi}_1 \widetilde{\Phi}_3} \widetilde{\Phi}_8 \cupcap + \frac{y_4}{\widetilde{\Phi}_1 \widetilde{\Phi}_3} \widetilde{\Phi}_8 \twostrandid =0
+\end{equation*}
+where the $y_i$ are Laurent polynomials in $v$ and $w$ given in Appendix \ref{app:coefficients}.
+  \item
 The quantum exceptional crossing relation:
-\begin{equation}
+\begin{equation*}
 \braidcross - \invbraidcross + \frac{\widetilde{\Phi}_1 \widetilde{\Phi}_3 \widetilde{\Phi}_4 \widetilde{\Phi}_8}{b+[3]\alpha} \left[\; \drawI \; - \; \drawH \; \right] - \frac{\widetilde{\Phi}_1^2 \widetilde{\Phi}_3 \widetilde{\Phi}_4 \widetilde{\Phi}_8 \alpha}{b+[3]\alpha} \left[\; \twostrandid \; - \; \cupcap \; \right] = 0
-\end{equation}
+\end{equation*}
+\end{itemize}
  \end{proposition}
 \begin{proof}
 First attach an H-diagram to the QEJacobi relation in the three natural ways respecting the symmetries of the tetrahedron, and then we take a cleverly chosen linear combination of them so that the twisted squares cancel.
@@ -1454,6 +1468,12 @@ $w = e^{\lambda h/4}$ in addition to $v = e^{h/4}$.
   $w$ is specialized to appropriate power of~$v$}
 
 \appendix
+\section{Coefficients in QESquare}
+\label{app:coefficients}
+
+\nn{}
+
+\end{document}
 
 \section{Old outline proposal}
 
