@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\pagestyle{empty}
+\begin{document}
+\begin{tikzpicture}
+[scale=1.6,every node/.style={draw, circle, fill=white, inner sep=0pt, outer sep=0pt, minimum size=2.5pt},
+->-/.style={decoration={markings, mark=at position .5 with{\arrow{>}}}, postaction={decorate}},
+-<-/.style={decoration={markings, mark=at position .5 with{\arrow{<}}}, postaction={decorate}}]
+\draw[gray, dashed] (0,0) circle (1.0);
+ \node[draw=none, minimum size=0pt] (13) at (0.0,1.0) {};
+\node[draw=none, minimum size=0pt] (14) at (-1.0,0.0) {};
+\node[draw=none, minimum size=0pt] (15) at (-0.0,-1.0) {};
+\node[draw=none, minimum size=0pt] (16) at (1.0,-0.0) {};
+\node[minimum size=0pt] (1) at (-0.0028,0.2315) {};
+\node[minimum size=0pt] (2) at (-0.0285,-0.0285) {};
+\node[minimum size=0pt] (3) at (-0.3041,-0.0101) {};
+\node[minimum size=0pt] (4) at (-0.3051,0.3905) {};
+\node[minimum size=0pt] (5) at (0.0386,0.6013) {};
+\node[minimum size=0pt] (6) at (-0.6488,0.1867) {};
+\node[minimum size=0pt] (7) at (0.2315,-0.0028) {};
+\node[minimum size=0pt] (8) at (0.32,0.32) {};
+\node[minimum size=0pt] (9) at (0.6013,0.0386) {};
+\node[minimum size=0pt] (10) at (0.3905,-0.3051) {};
+\node[minimum size=0pt] (11) at (-0.0101,-0.3041) {};
+\node[minimum size=0pt] (12) at (0.1867,-0.6488) {};
+\draw[out=232.0, in=90.0, shorten <=2.5pt] (1) to (2);
+\draw[out=322.0, in=488.0, shorten >=2.5pt] (1) to (7);
+\draw[out=412.0, in=180.0, shorten <=2.5pt] (1) to (8);
+\draw[out=142.0, in=346.0, shorten >=2.5pt] (1) to (4);
+\draw[out=180.0, in=2.0, shorten <=2.5pt] (2) to (3);
+\draw[out=270.0, in=448.0, shorten >=2.5pt] (2) to (11);
+\draw[out=360.0, in=218.0, shorten <=2.5pt] (2) to (7);
+\draw[out=92.0, in=256.0, shorten <=2.5pt] (3) to (4);
+\draw[out=182.0, in=330.0, shorten >=2.5pt] (3) to (6);
+\draw[out=272.0, in=178.0, shorten <=2.5pt] (3) to (11);
+\draw[out=436.0, in=230.0, shorten >=2.5pt] (4) to (5);
+\draw[out=526.0, in=42.0, shorten <=2.5pt] (4) to (6);
+\draw[out=302.0, in=450.0, shorten >=2.5pt] (5) to (8);
+\draw[out=374.0, in=76.0, shorten <=2.5pt] (5) to (9);
+\draw[out=158.0, in=114.0, shorten >=2.5pt] (5) to (6);
+\draw[out=258.0, in=552.0, shorten >=2.5pt] (6) to (12);
+\draw[out=308.0, in=464.0, shorten <=2.5pt] (7) to (10);
+\draw[out=398.0, in=270.0, shorten >=2.5pt] (7) to (8);
+\draw[out=360.0, in=148.0, shorten >=2.5pt] (8) to (9);
+\draw[out=220.0, in=374.0, shorten >=2.5pt] (9) to (10);
+\draw[out=292.0, in=336.0, shorten <=2.5pt] (9) to (12);
+\draw[out=554.0, in=358.0, shorten <=2.5pt] (10) to (11);
+\draw[out=284.0, in=408.0, shorten >=2.5pt] (10) to (12);
+\draw[out=268.0, in=480.0, shorten <=2.5pt] (11) to (12);
+\end{tikzpicture}
+\end{document}
