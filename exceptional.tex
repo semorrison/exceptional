@@ -160,9 +160,17 @@ exists.
 We can use these skein relations to do many computations.  In
 particular, we are able to calculate the value of this knot polynomial (if it
 exists!) on all knots of Conway girth 6, which includes all knots of 12 or
-fewer crossings.  Unconditionally these give the first calculations of the Reshetikhin-Turaev knot invariants for the exceptional Lie algebras for most of these knots.  For example, we compute the following value for the trefoil for the exceptional series, and the Reshetikhin-Turaev invariant for $\mathfrak{e}_8$ is given by setting $v=$ and $w=$.\NStodo{What values for w and v?}
+fewer crossings.  Unconditionally these give the first calculations of the Reshetikhin-Turaev knot invariants for the exceptional Lie algebras for most of these knots.  For example, we compute the following value for the trefoil for the exceptional series, and the Reshetikhin-Turaev invariant for $\mathfrak{e}_8$ is given by setting $v=q^5$ and $w=q^6$.
 
-\nn{value of trefoil goes here}
+\begin{multline*}
+QES(\nn{trefoil}) = 
+\frac{v^{12} \left(v^4+1\right) \left(v^{12}-w^2\right)  \left(v^{10} w^2-1\right)}{(w^2-1) (v^2-w^2)} \times \\
+\Big(
+    \left(w^4 + v^4 w^{-4}\right)\left(-v^{22}+v^{12}+v^{10}-1\right)+\\
+    \left(w^2 + v^2 w^{-2}\right)\left(-v^{34}+v^{30}-v^{26}+v^{24}+v^{22}-v^{20}-v^{18}+v^{16}+v^{14}-v^{12}+v^8-v^4\right)+\\
+    \left(v^{36}+v^{34}-v^{32}+v^{28}-3 v^{24}-v^{22}+2 v^{20}-v^{16}+v^{14}+2 v^{12}-v^8-v^2-1\right)
+    \Big)
+\end{multline*}
 
 We are also able to do several other calculations, like giving quantum dimension formulas for the summands of $\mathfrak{g}^{\otimes 3}$ quantizing the dimension formulas of Cohen--De Man \cite{MR1381778} in the classical case (for the summands of $\mathfrak{g}^{\otimes 2}$ such quantum dimension formulas were already given by Tuba-Wenzl \cite{MR2132671}).
 
@@ -864,7 +872,7 @@ $\mathfrak{f}_4$ do not degenerate up to $\cP_6$:
 
 \nn{Some discussion of the heuristic for choosing these bases.}
 
-\newcommand{\diagram}[2]{\mathfig{#1}{graphs/urn:sha1:#2.pdf}}
+\newcommand{\diagram}[2]{\mathfig{#1}{graphs/urn_sha1_#2.pdf}}
 
 In order to write our proposed bases compactly, we introduce the following
 notations: $D_{*k}$ denotes the diagram $D$ along with all $k$ of its
@@ -1293,14 +1301,15 @@ all Conway width 6 links.
 \begin{lemma}
 All knots and links with at most 12 crossings with the two exceptions
 $$
-\diagram{0.2}{6b969ad34943159c1b087025ff1c65ac4b8d994a} \qquad
-\diagram{0.2}{feb24773385198782432feba31063d5d0e7023e1}
+\diagram{0.2}{a6b1b1be704dda48723477a9c4e57cf27a610f7c} \qquad
+\diagram{0.2}{d152a4e30d0711d71caa5a012365e5adbdcd5b2c}
 $$
+%% How did I generate these graphs?! I guess with DrawPlanarGraphApp.scala, setting `withOutputPath' appropriately?
 % 12C = cuboctahedron
-% 6b969ad34943159c1b087025ff1c65ac4b8d994a
+% a6b1b1be704dda48723477a9c4e57cf27a610f7c
 % PlanarGraph(35,Vector(List(), List((5,6), (4,9), (3,8), (2,7)), List((2,6), (10,7), (9,18), (8,17)), List((8,6), (15,17), (14,27), (13,26)), List((10,18), (3,7), (19,8), (18,35)), List((18,18), (26,35), (25,46), (24,45)), List((24,18), (31,45), (15,27), (9,17)), List((26,46), (19,35), (35,8), (34,54)), List((34,46), (42,54), (41,65), (40,64)), List((40,46), (47,64), (31,27), (25,45)), List((42,65), (35,54), (4,8), (50,9)), List((50,65), (5,9), (13,6), (56,26)), List((56,65), (14,26), (47,27), (41,64))),Vector((2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0)),0)
 % 12G
-% feb24773385198782432feba31063d5d0e7023e1
+% d152a4e30d0711d71caa5a012365e5adbdcd5b2c
 % PlanarGraph(46,Vector(List(), List((5,6), (4,9), (3,8), (2,7)), List((2,6), (10,7), (9,18), (8,17)), List((8,6), (15,17), (14,27), (13,26)), List((13,6), (20,26), (19,36), (5,9)), List((26,36), (25,46), (24,45), (19,9)), List((20,36), (14,26), (30,27), (26,46)), List((10,18), (3,7), (34,8), (33,54)), List((4,8), (24,9), (40,45), (34,54)), List((25,45), (47,46), (46,75), (40,54)), List((54,75), (53,86), (33,18), (46,54)), List((15,27), (9,17), (53,18), (57,86)), List((47,75), (30,46), (57,27), (54,86))),Vector((2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0)),0)
 have Conway width at most 6.
 \end{lemma}
