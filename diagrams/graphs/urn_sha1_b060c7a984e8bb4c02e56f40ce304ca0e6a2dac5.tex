@@ -1,0 +1,25 @@
+% PlanarGraph(2,Vector(List(), List((5,4), (2,3), (4,2), (1,1)), List((1,4), (4,1), (6,2), (3,5)), List((3,4), (6,5), (2,2), (5,3))),List((2,0), (2,0), (2,0)),0)
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\pagestyle{empty}
+\begin{document}
+\begin{tikzpicture}
+[scale=1.6,every node/.style={draw, circle, fill=white, inner sep=0pt, outer sep=0pt, minimum size=2.5pt}, every path/.append style = {thick},
+->-/.style={decoration={markings, mark=at position .5 with{\arrow{>}}}, postaction={decorate}},
+-<-/.style={decoration={markings, mark=at position .5 with{\arrow{<}}}, postaction={decorate}}]
+\draw[gray, dashed] (0,0) circle (1.0);
+ \node[draw=none, minimum size=0pt] (4) at (0.0,1.0) {};
+\node[draw=none, minimum size=0pt] (5) at (-0.866025,-0.5) {};
+\node[draw=none, minimum size=0pt] (6) at (0.866025,-0.5) {};
+\node[minimum size=0pt] (1) at (-0.334,-0.1928) {};
+\node[minimum size=0pt] (2) at (-0.0,0.3856) {};
+\node[minimum size=0pt] (3) at (0.334,-0.1928) {};
+\draw[out=435.0, in=225.0, shorten <=2.5pt] (1) to (2);
+\draw[out=615.0, in=285.0, shorten <=2.5pt] (1) to (3);
+\draw[out=315.0, in=105.0, shorten <=2.5pt] (2) to (3);
+\draw[out=525.0, in=495.0, shorten >=2.5pt] (1) to (2);
+\draw[out=345.0, in=195.0, shorten >=2.5pt] (1) to (3);
+\draw[out=405.0, in=375.0, shorten >=2.5pt] (2) to (3);
+\end{tikzpicture}
+\end{document}
