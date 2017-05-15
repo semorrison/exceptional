@@ -161,10 +161,9 @@ We can use these skein relations to do many computations.  In
 particular, we are able to calculate the value of this knot polynomial (if it
 exists!) on all knots of Conway girth 6, which includes all knots of 12 or
 fewer crossings.  Unconditionally these give the first calculations of the Reshetikhin-Turaev knot invariants for the exceptional Lie algebras for most of these knots.  For example, we compute the following value for the trefoil for the exceptional series, and the Reshetikhin-Turaev invariant for $\mathfrak{e}_8$ is given by setting $v=q^5$ and $w=q^6$.
-
 \begin{multline*}
-QES(\nn{trefoil}) = 
-\frac{v^{12} \left(v^4+1\right) \left(v^{12}-w^2\right)  \left(v^{10} w^2-1\right)}{(w^2-1) (v^2-w^2)} \times \\
+QES_{\text{reduced}}(\nn{trefoil}) = \\
+-v^{24}
 \Big(
     \left(w^4 + v^4 w^{-4}\right)\left(-v^{22}+v^{12}+v^{10}-1\right)+\\
     \left(w^2 + v^2 w^{-2}\right)\left(-v^{34}+v^{30}-v^{26}+v^{24}+v^{22}-v^{20}-v^{18}+v^{16}+v^{14}-v^{12}+v^8-v^4\right)+\\
@@ -541,13 +540,13 @@ The quantum exceptional crossing relation:
 \end{theorem}
 
 
-When $b+[3]\alpha$ is non-zero and $v$ is not a $12$th root of unity we can make the change of variables
-$$w^2 = \frac{v}{2(b+[3]\alpha)}\left(b \{1\} -\alpha [3] \{5\} + \sqrt{-4 (b+[3]\alpha)^2 + (b \{1\} -[3]\{5\}\alpha)^2} \right)$$
-and set $b = 1$ to see relations are the same as the versions in terms of $w$ given earlier as Equations \eqref{eq:QESquare-w} and \eqref{eq:QECrossing-w}.
+When $b+[3]\alpha$ is non-zero we can make the change of variables
+$$w^2 = \frac{v}{2(b+[3]\alpha)}\left(b \{1\} -\alpha [3] \{5\} + \sqrt{-4 (b+[3]\alpha)^2 + (b \{1\} -[3]\{5\}\alpha)^2} \right).$$
+We see that $\partial_\alpha w^2 = 0$ exactly if $v$ is a $12$th root of unity, so away from these points the change of variables is invertible, given by
+$$\alpha =  -\frac{b[\lambda][\lambda-1]}{\{\lambda+2\}\{\lambda-3\}\widetilde{\Phi}_1\widetilde{\Phi}_3}.$$
+%% see code2/ChangeOfVariables.nb and code2/ChangeOfVariables2.nb for these calculations
 
-We then have $$\frac{\alpha}{b} =  -\frac{[\lambda][\lambda-1]}{\{\lambda+2\}\{\lambda-3\}\widetilde{\Phi}_3\widetilde{\Phi}_1}.$$
-
-The restriction that $v$ not be a $12$th root of unity comes from looking at when the denominator $\{\lambda+2\}\{\lambda-3\}\widetilde{\Phi}_3$ vanishes after you plug in the formula for $w$. \SMtodo{I don't understand this remark.}
+Finally, we observe that upon setting $b = \{\lambda+2\}\{\lambda-3\}\widetilde{\Phi}_3$ these relations are identical to the formulas in terms of $v,w$ given earlier as Equations \eqref{eq:QESquare-w} and \eqref{eq:QECrossing-w}.
 
 \begin{corollary}
 Suppose $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ and suppose there exist $v$ and $\alpha$ such that QEJacobi holds in $\mathbb{C}$ and $d \neq 0 $, $b \neq 0$, $v^{10} \neq 1$, and $v^{12} \neq 1$.  Then there is a $w \in \mathbb{C}$ and an evaluation functor $\mathrm{QExc}_{\mathbb{C},v,w} \rightarrow \cC$.
@@ -560,21 +559,30 @@ This corollary justifies our definition of $\mathrm{QExc}$, since if the quantum
 
 \nn{Finish writing this section to reflect what appears in the body of the paper}
 
-Assuming our main conjectures, we calculate some properties of $\mathrm{QExc}_{\mathbb{C},v,w}$ and the corresponding $2$-variable knot polynomial.  First we give conjectural bases for the small box spaces, and check that these diagrams must be linearly indpendent.  Using these conjectural bases, we give a well-defined action of the affine braid group on the span of these $4$-boundary and $6$ boundary point diagrams.  Using this, we give a divide-and-conquer algorithm for computing for all links of Conway girth 3.
+Assuming our main conjectures, we calculate some properties of $\mathrm{QExc}_{\mathbb{C},v,w}$ and the corresponding $2$-variable knot polynomial.
 
+First we give conjectural bases for the box spaces up to $n=6$, and check that these
+diagrams must be linearly independent.  We unconditionally give a
+$16$-dimensional representation of the $5$-strand affine braid group, and an
+$80$-dimensional representation of the $6$-strand affine braid group, obtained
+from the braid group actions on these $5$- and $6$-boundary point diagrams.
 
+Using this, we give a divide-and-conquer algorithm for computing for the
+conjectural quantum exception invariant of all links of Conway girth 6. \nn{Perhaps mention, if they make the cut, knotted trivalent graphs}
 
 Note that unconditionally, these 2-variable knot polynomials must specialize
 at particular values of $w$ to give the quantum invariants of the adjoint
 representations of the actual Lie algebras.  To our knowledge these are the
-first calculations of the quantum knot polynomials of large knots for say
-$\mathfrak{e}_8$, and they are much more efficient than doing the calculations
-directly in $U_q(\mathfrak{e}_8)$.  Also unconditionally we show that our
-skein relations give a well-defined $80$-dimensional representation of the
-affine $6$-strand braid group.  Using our skein relations, we also compute the
-quantum versions of Cohen--De Man's formulas for the dimensions of the objects
-appearing in the third tensor power of adjoint representation in the
-exceptional series.
+first calculations of the quantum knot polynomials of large knots for the
+adjoint representations of any of the exceptional Lie algebras, and they are
+much more efficient than doing the calculations directly in
+$U_q(\mathfrak{g})$.  Also unconditionally we show that our skein relations
+give a well-defined $80$-dimensional representation of the affine $6$-strand
+braid group.
+
+Using our skein relations, we also compute the quantum versions of Cohen--De
+Man's formulas for the dimensions of the objects appearing in the third tensor
+power of adjoint representation in the exceptional series.
 
 \subsection{Small roots of unity}
 
