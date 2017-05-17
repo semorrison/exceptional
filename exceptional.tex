@@ -763,35 +763,70 @@ Since $b$ and $d$ are nonzero, it follows that $v$ is not a primitive $8$th root
 \end{proof}
 
 
+The following lemma is a mild generalization of \cite{???} where we have relaxed the non-degeneracy assumption.
+
 \begin{lemma}
 Suppose that the diagrams   
   \[
   \cupcap\;,\qquad\twostrandid\;,
     \qquad\drawI\;,\qquad\drawH\;\;
    \]
-are linearly dependent.  Then $\cC$ is one of
+are linearly dependent, then
+ 
+$$\drawI\; - \; \drawH - \frac{1}{d-1} \left(\twostrandid - \cupcap \right) = 0.$$
+\end{lemma}
+\begin{proof}
+If the two Temperley-Lieb diagrams are linearly dependent, then attaching a trivialent vertex shows that the trivalent vertex is zero which is a contradiction.  So we must have a relation of the form:
+$$\drawI\;,\pm \; \drawH = z \left(\twostrandid \pm \cupcap \right).$$
+
+Capping off we see that $b= z (d \pm 1)$, so $z = \frac{b}{d \pm 1}$.  So all we need to do is exclude the $+$-sign case.
+
+Attaching a trivalent vertex we see that $t + b = \frac{b}{d + 1}$, so $t =  \frac{-b d}{d + 1}$.  Adding $\drawH$ to the top gives:
+
+$$t \drawI + \ngon[45]{4} = \frac{b}{d+1} \left( \drawH + b \cupcap\right).$$
+
+If we take this relation minus its $90$-degree rotation the square term will vanish yielding:
+$$ b \frac{d-1}{d+1} \left( \drawI -\drawH \right) = \frac{b^2}{d+1} \left(\twostrandid - \cupcap\right).$$
+Dividing by $b \frac{d-1}{d+1}$ yields the desired equation.
+\end{proof}
+
+
+
+\begin{lemma}
+Suppose that 
+$$\drawI\;- \; \drawH - \frac{1}{d-1} \left(\twostrandid - \cupcap \right) = 0$$
+
+then one of the following occurs
+
 \begin{itemize}
+\item $v$ is a primitive $4$th or $12$th root of unity.
 
- \item the golden category
+\item $\cC$ is the golden category and there are four distinct QEJacobi relations satisfied as explained above.
 
- \item $SO(3)_q$ for some $q$ (which includes the possibility $OSp(1|2)$ when $q= \pm i$), and there are three distinct relations of the above form, namely (if we normalize $b=1$) $\alpha = -\frac{v-v^{-1}}{v^4-1+v^{-4}}$ for $v$ a sixth root of $q^{-2}$,
+ \item $\cC$ is a quotient $SO(3)_q$ for some $q$ (which includes the possibility $OSp(1|2)$ when $q= \pm i$), and there are three distinct QEJacobi relations, namely $\alpha = -b \frac{v-v^{-1}}{v^4-1+v^{-4}}$ for $v$ a sixth root of $q^{-2}$,
 
- \item or $\Rep S_3$, and there are three distinct relations of the above form (if we normalize $b=1$):
+ \item $\cC$ is $\Rep S_3$, and there are three distinct QEJacobi relations:
 \begin{itemize}
-\item $v = e^{\frac{2 \pi i}{12}}$ and $\alpha = i$
-\item $v = e^{\frac{-2 \pi i}{12}}$ and $\alpha = -i$
-\item $v = i$ and $\alpha = -i/2$.
+\item $v = e^{\frac{2 \pi i}{12}}$ and $\alpha = i b$
+\item $v = e^{\frac{-2 \pi i}{12}}$ and $\alpha = -i b$
+\item $v = i$ and $\alpha = -\frac{i}{2} b$.
 \end{itemize}
 
 \end{itemize}
 \end{lemma}
 \begin{proof}
-\nn{}
-\end{proof}
+We apply the tetrahedral symmetry to the relation to get:
 
-\begin{lemma}
-\nn{}
-\end{lemma}
+$$-v^{-6} \drawH + v^{-6} \drawcrossX -\frac{b}{d-1} \left(\braidcross -v^{-12} \twostrandid \right) = 0$$
+$$v^{-12} \drawcrossX + v^{-6} \drawI -\frac{b}{d-1} \left(\cupcap -v^{-12} \braidcross \right) = 0.$$
+
+Multiply the first equation by $-v^{-6}$ and then add to the second relation to make the $\drawcrossX$ terms vanish.
+
+$$v^{-6} \drawI + v^{-12} \drawH - \frac{b}{d-1} \left(\cupcap -v^{-12} \braidcross -v^{-6}\braidcross + v^{-18}\braidcross  \right).$$
+
+
+If $v$ is not a primitive $4$th or $12$th root of unity then this says that $\braidcross$ simplifies.  We now need only solve for all braidings for $SO(3)_q$, which yields only the usual braiding or when $d=2$ there's the additional braiding giving $\Rep(S_3)$ (see \cite{???}).
+\end{proof}
 
 
 \begin{proposition}
