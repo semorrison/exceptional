@@ -468,11 +468,11 @@ The following theorems justify the definition of the $\mathrm{QExc}$.  Under som
 %With some mild assumptions on the base ring, any skein theory where the $n$-box space has dimension at most $1,0,1,1,5$ for $n=0,1,2,3,4$ satisfies a version of relation~\eqref{eq:quant-except-spec}. %See Theorem~\ref{thm:quant-except} in Section~\ref{sec:relation} for a precise statement.
 
 \begin{definition}
-A \emph{trivalent ribbon} category $(\cC, X, \tau)$ is a nondegenerate evaluable ribbon category over $R$ with 
-an object $X$ with $\dim \cC_1 = 0$, $\dim{\cC_2} = 1$, and $\dim{\cC_3} = 1$, with a (unique up to rescaling) non-zero element $\tau \in \cC_3$ called `the trivalent vertex', such that the category is generated as a ribbon category by $\tau$.\NStodo{Do we really want nondegenerate?, instead we could just ask $b\neq0$, $d\neq0$}
+A \emph{trivalent ribbon} category $(\cC, X, \tau)$ is a ribbon category over $R$ with 
+an object $X$ with $\dim \cC_0 = 1$, $\dim \cC_1 = 0$, $\dim{\cC_2} = 1$, and $\dim{\cC_3} = 1$, with a (unique up to rescaling) non-zero element $\tau \in \cC_3$ called `the trivalent vertex', such that the category is generated as a ribbon category by $\tau$ and such that the value of the circle is a non-zero multiple of the empty diagram and the value of the bigon is a non-zero multiple of the strand.
 \end{definition}
 
-Being generated as a ribbon category by $\tau$ is the same as saying that $\cC$ is generated as a pivotal category by $\tau$ and the crossing.  In particular, a trivalent ribbon category need not be trivalent in the sense of \cite{MR3624901}.
+Being generated as a ribbon category by $\tau$ is the same as saying that $\cC$ is generated as a pivotal category by $\tau$ and the crossing.  In particular, a trivalent ribbon category need not be trivalent in the sense of \cite{MR3624901}.  Also we have weakened the non-degeneracy condition from \cite{MR3624901}, replacing it with the assumption that the circle and bigon are non-zero.
 
 \begin{theorem} \label{thm:Jacobi}
 Suppose $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ and $\dim{\cC_4} \leq 5$, then there exists $v, \alpha, b, d, t \in R$ such that the following relations hold.  
