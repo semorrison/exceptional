@@ -87,6 +87,25 @@ coverlinelefttail/.style={
 \DeclareMathOperator{\rightquadarrows} {{\; \begin{tikzpicture} \foreach \y in {-0.05, 0.05, 0.15, 0.25} { \draw [-stealth] (0, \y) -- +(0.5, 0);} \; \end{tikzpicture}}}
 \DeclareMathOperator{\leftquadarrows} {{\; \begin{tikzpicture} \foreach \y in {-0.05, 0.05, 0.15, 0.25} { \draw [stealth-] (0, \y) -- +(0.5, 0);} \; \end{tikzpicture}}}
 
+\newcommand{\twistedsquarehor}{
+\begin{tikzpicture}[baseline=-.5ex,scale=.8]
+\draw (45:.8cm) -- (-135:.8cm);
+\draw[line width=1mm,white,double=black] (-45:.8cm) -- (135:.8cm);
+\draw (45:.5cm) .. controls +(-75:.3cm) and +(75:.3cm) .. (-45:.5cm);
+\draw (135:.5cm) .. controls +(-105:.3cm) and +(105:.3cm) .. (-135:.5cm);
+\end{tikzpicture}}
+
+
+\newcommand{\twistedsquarever}{
+\begin{tikzpicture}[baseline=-.5ex,scale=.8]
+\draw (45:.8cm) -- (-135:.8cm);
+\draw[line width=1mm,white,double=black] (-45:.8cm) -- (135:.8cm);
+\draw (45:.5cm) .. controls +(165:.3cm) and +(15:.3cm) .. (135:.5cm);
+\draw (-45:.5cm) .. controls +(-165:.3cm) and +(-15:.3cm) .. (-135:.5cm);
+\end{tikzpicture}}
+
+
+
 \newcommand{\ngon}[2][0]{
 \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
 \foreach \x in {1, ..., #2}

@@ -605,7 +605,7 @@ categories, and a possible new example related to the ABA free product from
 
 Throughout this section $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ with $\dim{\cC_4} \leq 5$.  As shown in \cite[Lemma 2.2]{MR3624901}, we have that $X$ is symmetrically self-dual.  As shown in \cite[Lemma 8.2]{MR3624901}, the trivalent vertex is rotationally invariant.  Thus, using the usual diagram calculus for ribbon categories, we can interpret $X$ as an unoriented strand, $\tau$ as a trivalent vertex, and then any trivalent ribbon tangle may be interpreted as a morphism in $\cC$.
 
-\begin{proposition}
+\begin{lemma} \label{lem:constants}
   For some numbers $d, b, t, s \in \mathbb{C}$ we have the following relations.
   \begin{equation}
     \label{eq:simple-rels}
@@ -618,7 +618,7 @@ Throughout this section $(\cC, X, \tau)$ is a trivalent ribbon category over $\m
         \ngon[-90]{3}\; &= t\;\nvertex[-90]{3}
   \end{aligned}
   \end{equation}
-\end{proposition}
+\end{lemma}
 
 \begin{proof}
 All of these follow directly from $\dim \cC_n$ starting $1,0,1,1$ except that we need to see that the constant for the twisted strand is the square of the constant for the twisted vertex.  This follows, as in \cite[Lemma 8.2]{MR3624901}, from the following isotopy:
@@ -627,7 +627,7 @@ All of these follow directly from $\dim \cC_n$ starting $1,0,1,1$ except that we
 \end{equation*}
 \end{proof}
 
-\begin{proposition}\label{thm:quant-except}
+\begin{proposition}\label{prop:Jacobi}
 If $\dim \cC_4 \leq 5$, then for some $\beta, \alpha \in \bbC$ and some choice of~$v \in \bbC$ with $v^6 = s$, we have
 
 \begin{equation}
@@ -717,9 +717,9 @@ Thus we have a relation of
 
 \end{proof}
 
-Combining Propositions \ref{??} and \ref{??}, we have proved all of Theorem \ref{??} except for the situation where $\beta = 0$, which we address now.
+We now address the case $\beta = 0$.
 
-\begin{lemma}
+\begin{lemma} \label{lem:betazero}
 Suppose $$\braidcross \;
  + v^{4}\;
 \cupcap
@@ -735,6 +735,7 @@ Suppose $$\braidcross \;
 \begin{proof}
 Placing an $H$ on the top of this relation, gives a second relation $\psi$ between the six diagrams.  This relation only has one term in the second orbit of $R$, so $\sum_{i=0}^2 v^i R^i(\psi)$ gives three linearly independent relations of the above form for three different choices of $v$ as a sixth root of $e^{\frac{2 \pi i}{5}}$.  A short calculation gives the values of $\alpha$ and $v$.
 \end{proof}
+
 
 
 \begin{lemma} \label{lem:dandtvalues}
@@ -762,6 +763,9 @@ Since $b$ and $d$ are nonzero, it follows that $v$ is not a primitive $8$th root
   Now $0 \neq [5] b = - \alpha (d+\{8\})$, so $\alpha$ is non-zero and we can solve for $d$.
 \end{proof}
 
+\begin{proof}[Proof of Theorem \ref{thm:Jacobi}]
+By Proposition \ref{prop:Jacobi} and Lemma \ref{lem:betazero} we have that QEJacobi is satisfied for some $v$ and $\alpha$.  By Lemma \ref{lem:constants} and Lemma \ref{lem:dandtvalues} we have the other relations.
+\end{proof}
 
 
 
@@ -769,8 +773,7 @@ Since $b$ and $d$ are nonzero, it follows that $v$ is not a primitive $8$th root
 \begin{proposition} \label{prop:square-crossing}
 Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$, then the following equations hold.
 \begin{itemize}
-  \item
-The quantum exceptional square relation:
+  \item The quantum exceptional square relation:
 \begin{equation*} [3] \ngon[45]{4} + \frac{\alpha \widetilde{\Phi}_{12} (b+[3]\alpha)}{\widetilde{\Phi}_8} \braidcross + \frac{y_1 \widetilde{\Phi}_1}{\widetilde{\Phi}_8} \drawI + \frac{y_2 \widetilde{\Phi}_1}{\widetilde{\Phi}_8} \drawH + \frac{y_3}{\widetilde{\Phi}_8} \cupcap + \frac{y_4}{\widetilde{\Phi}_8} \twostrandid =0
 \end{equation*}
 where the $y_i$ are Laurent polynomials in $v$ and $w$ given in Appendix \ref{app:coefficients}.
@@ -783,51 +786,41 @@ The quantum exceptional crossing relation:
  \end{proposition}
 
 \begin{proof}
-First attach an H-diagram to the QEJacobi relation in the three natural ways respecting the symmetries of the tetrahedron, and then we take a cleverly chosen linear combination of them so that the twisted squares cancel.
+We attach an $H$-diagram to the QEJacobi relation and then look at the orbit of this relation under the action of the operator $R$.  Here is the action of $R$ on the square.
 
-\begin{align}
-\label{eq:deriving-square-relation}
-\mathfig{0.8}{deriving-square-relation-1} \\
-= \mathfig{0.8}{deriving-square-relation-2}
-\end{align}
+$$
+\begin{tikzpicture}
+      \node[inner sep=5pt] (A) at (150:1.4cm) {\ngon[45]{4}};
+      \node[inner sep=5pt] (B) at (30:1.4cm) {\twistedsquarehor};
+      \node[inner sep=5pt] (C) at (-90:1.4cm) {\twistedsquarever};
+      \draw[|->,bend left=15] (A) to (B);
+      \draw[|->,bend left=15] (B) to node[right,cdlabel] {v^{-12}} (C);
+      \draw[|->,bend left=15] (C) to (A);
+\end{tikzpicture}
+$$
 
-We now use the QEJacobi relation again to remove the X-term, yielding the QESquare relation.
+We attach an $H$ to the bottom of QEJacobi (using that the crossing and $H$ commute) and the apply $R$ and $R^2$.
 
-Take the QESquare relation and subtract its 90-degree rotation, yielding the QECrossing equation.
+$$v^{-3} \twistedsquarever + v t \drawI  -v^{-1} \ngon[45]{4} + \alpha \drawcrossX + \alpha v^4 b \cupcap + \alpha v^{-4} \drawH = 0.$$
+
+$$v^{-3} \ngon[45]{4} -v^{-5} t \drawH  -v^{-1} \twistedsquarehor + \alpha \drawI + \alpha v^{-8} b \twostrandid - \alpha v^{-10} \drawcrossX = 0.$$
+
+$$v^{-3} \twistedsquarehor +v^{-11} t \drawcrossX  -v^{-13} \twistedsquarever -v^{-6} \alpha \drawH + \alpha v^{-8} b \braidcross - \alpha v^{-10} \drawI = 0.$$
+
+Multiply the first equation by $v^{-2}$, the second by $v^6$, and the third by $v^8$ and add the three terms, so that all the twisted squares cancel, yielding:
+
+\begin{multline*}[3] \ngon[45]{4} +  (t+[1]\alpha)v^{-3} \drawcrossX -(vt +v^{-2}[4]\alpha) \drawH +(v^{-1} t+v^2 [4]\alpha)\drawI \\+ \alpha b \braidcross + \alpha b v^{-2} \twostrandid + \alpha b v^2 \cupcap = 0\end{multline*}
+
+%\begin{align}
+%\label{eq:deriving-square-relation}
+%\mathfig{0.8}{deriving-square-relation-1} \\
+%= \mathfig{0.8}{deriving-square-relation-2}
+%\end{align}
+
+We now use the QEJacobi relation to remove the $\drawcrossX$ term, yielding the QESquare relation.  The QESquare relation minus its 90-degree rotation gives the QECrossing equation.
 \end{proof}
 
 When $v$ is not a $12$th root of unity we can divide by $[3]$.  All that remains in order to prove Theorem \ref{thm:square-crossing} is to show that when $v$ is not a $10$th or $12$th root of unity that $b+[3]\alpha$ is non-zero.  Note that if $v$ is not a $12$th root of unity and $(b+[3]\alpha)$ is zero, then the QECrossing equation becomes an $SO(3)_q$ relation between the four planar diagrams.  We take a brief detour to analyze this situation.
-
-The following lemma is a mild generalization of \cite{???} where we have relaxed the non-degeneracy assumption.
-
-\begin{lemma}
-Suppose that the diagrams   
-  \[
-  \cupcap\;,\qquad\twostrandid\;,
-    \qquad\drawI\;,\qquad\drawH\;\;
-   \]
-are linearly dependent, then
- 
-$$\drawI\; - \; \drawH - \frac{1}{d-1} \left(\twostrandid - \cupcap \right) = 0.$$
-\end{lemma}
-\begin{proof}
-If the two Temperley-Lieb diagrams are linearly dependent, then attaching a trivialent vertex shows that the trivalent vertex is zero which is a contradiction.  So we must have a relation of the form:
-$$\drawI\;\pm \; \drawH = z \left(\twostrandid \pm \cupcap \right).$$
-
-Capping off we see that $b= z (d \pm 1)$, so $z = \frac{b}{d \pm 1}$.  So all we need to do is exclude the $+$-sign case.
-
-Attaching a trivalent vertex we see that $t + b = \frac{b}{d + 1}$, so $t =  \frac{-b d}{d + 1}$.  Adding $\drawH$ to the top gives:
-
-$$t \drawI + \ngon[45]{4} = \frac{b}{d+1} \left( \drawH + b \cupcap\right).$$
-
-If we take this relation minus its $90$-degree rotation the square term will vanish yielding:
-$$ b \frac{d-1}{d+1} \left( \drawI -\drawH \right) = \frac{b^2}{d+1} \left(\twostrandid - \cupcap\right).$$
-Dividing by $b \frac{d-1}{d+1}$ yields the desired equation.
-\end{proof}
-
-\begin{remark}
-Recall that $$\drawI\; - \; \drawH - \frac{1}{d-1} \left(\twostrandid - \cupcap \right) = 0$$ is the defining relation of $SO(3)_q$, so this means we completely understand the planar part of $\cC$ in that case.  However, the crossing need not lie in the planar part.
-\end{remark}
 
 
 \begin{lemma} \label{lem:IequalsH}
@@ -867,7 +860,7 @@ If $\braidcross$ simplifies, then we need only solve for all braidings for $SO(3
 If $s = -1$, then we want to figure out which sixth roots $v$ of $s$ give a relation.  That is, we need to figure out which of the rotational eigenvalues $v^{-4} = \lambda = 1, \omega, \omega^2$ give non-trivial relations.  When $\lambda = 1$, the sum of the above three relations is trivial.  When $\lambda = \omega, \omega^2$ then $v$ is a primitive $12$th roof of unity.  (See Section ??? for further discussion of this case which includes Deligne's $S_t$.)
 \end{proof}
 
-\begin{lemma} \ref{lem:bplus3alpha}
+\begin{lemma} \label{lem:bplus3alpha}
 Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$ with $v$ not a $10$th or $12$th root of unity, then $b+[3]\alpha$ is non-zero.
 \end{lemma}
 \begin{proof}
@@ -876,7 +869,7 @@ Suppose for the sake of contradiction that $b+[3]\alpha = 0$.  Then by Propositi
 
 
 \begin{proof}[Proof of Theorem \ref{thm:square-crossing}]
-Since $v$ is not a $10$th root of unity, by Lemma \ref{lem:dandtvalues} the equations for $d$ and $t$ hold.  Since $v$ is not a $12$th root of unity $[3]$ is non-zero.  By Lemma \ref{lem:bplus3alpha} we have that $b+[3]\alpha$ is nonzero.  Thus we can divide by $[3]$ in the QESquare relation from Proposition \ref{square-crossing} and divide by $[3](b+[3]\alpha)$ in the QECrossing relation from Proposition yielding the corresponding relations in the Theorem.
+Since $v$ is not a $10$th root of unity, by Lemma \ref{lem:dandtvalues} the equations for $d$ and $t$ hold.  Since $v$ is not a $12$th root of unity $[3]$ is non-zero.  By Lemma \ref{lem:bplus3alpha} we have that $b+[3]\alpha$ is nonzero.  Thus we can divide by $[3]$ in the QESquare relation from Proposition \ref{prop:square-crossing} and divide by $[3](b+[3]\alpha)$ in the QECrossing relation from Proposition yielding the corresponding relations in the Theorem \ref{thm:square-crossing}.
 \end{proof}
 
 
@@ -1448,6 +1441,41 @@ computing this.
 
 \subsubsection{Comparisons}
 \nn{Compare to Westbury and the other paper...}
+
+\section{When $v$ is a small root of unity}
+
+The following lemma is a mild generalization of \cite{???} where we have relaxed the non-degeneracy assumption.
+
+\begin{lemma}
+Suppose that the diagrams   
+  \[
+  \cupcap\;,\qquad\twostrandid\;,
+    \qquad\drawI\;,\qquad\drawH\;\;
+   \]
+are linearly dependent, then
+ 
+$$\drawI\; - \; \drawH - \frac{1}{d-1} \left(\twostrandid - \cupcap \right) = 0.$$
+\end{lemma}
+\begin{proof}
+If the two Temperley-Lieb diagrams are linearly dependent, then attaching a trivialent vertex shows that the trivalent vertex is zero which is a contradiction.  So we must have a relation of the form:
+$$\drawI\;\pm \; \drawH = z \left(\twostrandid \pm \cupcap \right).$$
+
+Capping off we see that $b= z (d \pm 1)$, so $z = \frac{b}{d \pm 1}$.  So all we need to do is exclude the $+$-sign case.
+
+Attaching a trivalent vertex we see that $t + b = \frac{b}{d + 1}$, so $t =  \frac{-b d}{d + 1}$.  Adding $\drawH$ to the top gives:
+
+$$t \drawI + \ngon[45]{4} = \frac{b}{d+1} \left( \drawH + b \cupcap\right).$$
+
+If we take this relation minus its $90$-degree rotation the square term will vanish yielding:
+$$ b \frac{d-1}{d+1} \left( \drawI -\drawH \right) = \frac{b^2}{d+1} \left(\twostrandid - \cupcap\right).$$
+Dividing by $b \frac{d-1}{d+1}$ yields the desired equation.
+\end{proof}
+
+\begin{remark}
+Recall that $$\drawI\; - \; \drawH - \frac{1}{d-1} \left(\twostrandid - \cupcap \right) = 0$$ is the defining relation of $SO(3)_q$, so this means we completely understand the planar part of $\cC$ in that case.  However, the crossing need not lie in the planar part.
+\end{remark}
+
+
 
 \section{From the classical to the quantum conjecture}
 \label{sec:classical-quantum}
