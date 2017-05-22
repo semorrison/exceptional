@@ -813,24 +813,6 @@ We now use the QEJacobi relation to remove the $\drawcrossX$ term, yielding the 
 When $v$ is not a $12$th root of unity we can divide by $[3]$.  All that remains in order to prove Theorem \ref{thm:square-crossing} is to show that when $v$ is not a $10$th or $12$th root of unity that $b+[3]\alpha$ is non-zero.  Note that if $v$ is not a $12$th root of unity and $(b+[3]\alpha)$ is zero, then the QECrossing equation becomes an $SO(3)_q$ relation between the four planar diagrams.  We take a brief detour to analyze this situation.
 
 
-\begin{lemma}
-The matrix of inner products of
-$$\left\{
-\twostrandid, \cupcap, \drawI, \braidcross, \invbraidcross
-\right\}
-$$ has determinant
-\begin{align*}
-\frac
-{
-d^5 v^8 [2][3]^2[6] (d-(v^{-6}+1+v^{6}))^2 (d - (-v^{-8} -v^{8})) (d-p_{G_2}(\zeta_3 v)) (d-p_{G_2}(\zeta_3^2 v))
-}
-{
-[1]^{2}(d -  (-v^{-2}-v^2))^{2}
-}
-\end{align*}
-where $p_{G_2}(q) = q^{10}+q^{8}+q^{2}+1+q^{-2}+q^{-8}+q^{-10}$.
-\end{lemma}
-
 \begin{lemma} \label{lem:IequalsH}
 Suppose that 
 $$\drawI\;- \; \drawH - \frac{1}{d-1} \left(\twostrandid - \cupcap \right) = 0$$
@@ -891,7 +873,16 @@ $$\twostrandid, \cupcap, \drawI, \braidcross, \invbraidcross.$$
 \end{lemma}
 \begin{proof}
 If you pair any two of these diagrams together, the resulting ribbon graph can be evaluated using the QEJacobi, QESquare, and QECrossing relations.  The determinant of this matrix (written in terms of $d$ instead of $\alpha$ to make the formulas simpler) is
-$$DETERMINANT.$$  
+\begin{align*}
+\frac
+{
+d^5 v^8 [2][3]^2[6] (d-(v^{-6}+1+v^{6}))^2 (d - (-v^{-8} -v^{8})) (d-p_{G_2}(\zeta_3 v)) (d-p_{G_2}(\zeta_3^2 v))
+}
+{
+[1]^{2}(d -  (-v^{-2}-v^2))^{2}
+}
+\end{align*}
+where $p_{G_2}(q) = q^{10}+q^{8}+q^{2}+1+q^{-2}+q^{-8}+q^{-10}$. 
 By our assumptions none of those factors can vanish except possible $(d+\{8\})$.  If $d+\{8\} = 0$, then $\frac{[5]b}{\alpha} = 0$ which implies that $v$ is a $10$th root of unity.
 \end{proof}
 
