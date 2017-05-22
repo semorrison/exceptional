@@ -865,10 +865,10 @@ Since $v$ is not a $10$th root of unity, by Lemma \ref{lem:dandtvalues} the equa
 
 Finally let us motivate the change of variables to $w$ given in the introduction, namely we will see that one of the eigenvalues for the action of the crossing on the $4$-box space is given by exactly $w^2$.
 
-Let $f(q) = $
+Let $P_{G_2}(q) = q^{10}+q^{8}+q^{2}+1+q^{-2}+q^{-8}+q^{-10}$.
 
 \begin{lemma} \label{lem:lin-ind-w}
-Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$ such that $v$ is not a $10$th or $12$th root of unity and in addition $d \neq v^6+1+v^{-6}$, $d \neq P_{G2}(\zeta_3 q)$, and $d \neq P_{G2}(\zeta_3^2 q)$, then the following diagrams are linearly independent:
+Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$ such that $v$ is not a $10$th or $12$th root of unity and in addition $d \neq v^6+1+v^{-6}$, $d \neq P_{G_2}(\zeta_3 v)$, and $d \neq P_{G_2}(\zeta_3^2 v)$, then the following diagrams are linearly independent:
 $$\twostrandid, \cupcap, \drawI, \braidcross, \invbraidcross.$$
 \end{lemma}
 \begin{proof}
@@ -876,18 +876,18 @@ If you pair any two of these diagrams together, the resulting ribbon graph can b
 \begin{align*}
 \frac
 {
-d^5 v^8 [2][3]^2[6] (d-(v^{-6}+1+v^{6}))^2 (d - (-v^{-8} -v^{8})) (d-p_{G_2}(\zeta_3 v)) (d-p_{G_2}(\zeta_3^2 v))
+d^5 v^8 [2][3]^2[6] (d-(v^{6}+1+v^{-6}))^2 (d + \{8\})) (d-p_{G_2}(\zeta_3 v)) (d-p_{G_2}(\zeta_3^2 v))
 }
 {
-[1]^{2}(d -  (-v^{-2}-v^2))^{2}
-}
+[1]^{2}(d + \{4\})^{2}
+}.
 \end{align*}
-where $p_{G_2}(q) = q^{10}+q^{8}+q^{2}+1+q^{-2}+q^{-8}+q^{-10}$. 
+
 By our assumptions none of those factors can vanish except possible $(d+\{8\})$.  If $d+\{8\} = 0$, then $\frac{[5]b}{\alpha} = 0$ which implies that $v$ is a $10$th root of unity.
 \end{proof}
 
 \begin{remark}
-Note that $d = v^6+1+v^{-6}$ corresponds to $SO(3)_{v^3}$, $d=P_{G2}(\zeta_3 q)$ corresponds to $G2_{q}$, and $d=P_{G2}(\zeta_3^2 q)$ corresponds to $G2_{q^{-1}}$.  In these examples the above five diagrams are indeed dependent.  \NStodo{Check $\zeta$ vs. $\zeta^2$}
+Note that $d = v^6+1+v^{-6}$ corresponds to $SO(3)_{v^3}$, $d=P_{G_2}(\zeta_3 q)$ corresponds to $(G_2)_{q}$, and $d=P_{G_2}(\zeta_3^2 q)$ corresponds to $(G_2)_{q^{-1}}$.  In these examples the above five diagrams are indeed dependent.  \NStodo{Check $\zeta$ vs. $\zeta^2$}
 \end{remark}
 
 
