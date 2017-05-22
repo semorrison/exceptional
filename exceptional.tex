@@ -723,7 +723,37 @@ Suppose $$\braidcross \;
  \end{itemize}
 \end{lemma}
 \begin{proof}
-Placing an $H$ on the top of this relation, gives a second relation $\psi$ between the six diagrams.  This relation only has one term in the second orbit of $R$, so $\sum_{i=0}^2 v^i R^i(\psi)$ gives three linearly independent relations of the above form for three different choices of $v$ as a sixth root of $e^{\frac{2 \pi i}{5}}$.  A short calculation gives the values of $\alpha$ and $v$.
+Multiplying by a trivalent vertex we see that $-v^6+v^-4=0$, so $v$ is a $10$th root of unity.  This yields two distinct cases: $v= \pm 1$ or $v = \pm \zeta_5$ for $\zeta_5$ a fifth root of unity, wlog we take the $+$ sign.
+
+Placing an $H$ on the top of this relation, gives a second relation $\psi$ between the six diagrams.  This relation only has one term in the second orbit of $R$, so $\sum_{i=0}^2 \lambda^i R^i(\psi)$ gives three linearly independent relations of the above form for the three cube roots of unity $\lambda$.  
+
+When $v=1$ the relations we get are:
+
+\begin{align*}
+0 &= \braidcross + \twostrandid + \cupcap \\
+0 &= \drawcrossX +\drawH + b\cupcap \\
+0 &= \drawI - \drawcrossX + b\twostrandid \\
+0 &= -\drawH -\drawI + b \braidcross
+\end{align*}
+
+Combining the first equation and the last one we see that:
+$$\drawI+\drawH = b \twostrandid + b\cupcap.$$
+Multiplying by a trivalent vertex we see that $b+t=b$, so $t = 0$.  Pairing with the square we see that $0 = 2t^2 bd = 2b^3 d$ which is a contradiction since $b$ and $d$ are non-zero.
+
+When $v$ is a fifth root of unity we get the relations:
+\begin{align*}
+0 &= \braidcross + v\twostrandid + v^{-1}\cupcap \\
+0 &= \drawcrossX +v \drawH + b v^{-1}\cupcap \\
+0 &= \drawI - \drawcrossX + b v^{-3} \twostrandid \\
+0 &= -v^{-1} \drawH -\drawI + b v^{-3} \braidcross
+\end{align*}
+
+Capping off the first equation we see that $v^2 + v +v^{-1}d = 0$, so $d = -v^2-v^3$ is the Golden ratio or its Galois conjugate.  These four equations are linearly independent, and by taking the proper linear combinations we see that:
+\begin{align*}
+\drawI &=  b\twostrandid + -\frac{b}{d} \cupcap \\
+\braidcross &= -v\twostrandid -v^{-1} \cupcap \\
+\end{align*}
+which are the defining relations of the Golden category.  The values for $v$ and $\alpha$ given in the theorem come from calculating $\sum_{i=0}^2 \lambda^i R^i(\psi)$ for $\lambda$ a cube root of unity.
 \end{proof}
 
 
@@ -768,7 +798,7 @@ Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$, then the following e
 \end{equation*}
 where the $y_i$ are Laurent polynomials in $v$ and $w$ given in Appendix \ref{app:coefficients}.
   \item
-The quantum exceptional crossing relation:
+The quantum exceptional crossing relation: \NStodo{this is wrong!}
 \begin{equation*}
 [3](b+[3]\alpha) \left(\braidcross - \invbraidcross \right) + \widetilde{\Phi}_1^2 \widetilde{\Phi}_3^3 \widetilde{\Phi}_4 \widetilde{\Phi}_8 \left[\; \drawI \; - \; \drawH \; \right] - \widetilde{\Phi}_1^3 \widetilde{\Phi}_3^2 \widetilde{\Phi}_4 \widetilde{\Phi}_8 \alpha \left[\; \twostrandid \; - \; \cupcap \; \right] = 0
 \end{equation*}
@@ -1481,9 +1511,26 @@ computing this.
 \subsubsection{Comparisons}
 \nn{Compare to Westbury and the other paper...}
 
+
 \section{When $v$ is a small root of unity}
 
+The goal of this section is to analyze what happens when $v$ is a $10$th or $12$th root of unity, so that the derivation of the QESquare and QECrossing relations break down.  We begin by analyzing what happens when $\dim \cC_4 < 5.$
+
+
+\subsection{Corner cases with small $4$-box space}
+
+\begin{lemma}
+The diagrams
+$$\cupcap \text{ and } \twostrandid$$
+are non-zero and are linearly independent.
+\end{lemma}
+\begin{proof}
+If either diagram is zero then by multiplying by a crossing on the proper side you get that the trivalent vertex is zero, which is a contradiction.  If the two diagrams are linearly dependent, then again multiplying by a trivalent vertex would show that the trivalent vertex is zero.
+\end{proof}
+
+
 The following lemma is a mild generalization of \cite{???} where we have relaxed the non-degeneracy assumption.
+
 
 \begin{lemma}
 Suppose that the diagrams   
@@ -1510,9 +1557,55 @@ $$ b \frac{d-1}{d+1} \left( \drawI -\drawH \right) = \frac{b^2}{d+1} \left(\twos
 Dividing by $b \frac{d-1}{d+1}$ yields the desired equation.
 \end{proof}
 
-\begin{remark}
-Recall that $$\drawI\; - \; \drawH - \frac{1}{d-1} \left(\twostrandid - \cupcap \right) = 0$$ is the defining relation of $SO(3)_q$, so this means we completely understand the planar part of $\cC$ in that case.  However, the crossing need not lie in the planar part.
-\end{remark}
+By Lemma \ref{lem:IequalsH} we have the following Corollary.
+
+\begin{corollary}
+If the diagrams   
+  \[
+  \cupcap\;,\qquad\twostrandid\;,
+    \qquad\drawI\;,\qquad\drawH\;\;
+   \]
+are linearly dependent, then
+\begin{itemize}
+\item $v$ is a primitive $12$th root of unity
+\item $\cC$ is a quotient of $SO(3)_q$ with the usual braiding
+\item $\cC$ is $\mathrm{Rep}(S_3)$ with its symmetric braiding.
+\end{itemize}
+\end{corollary}
+
+
+\begin{proposition} \label{prop:dim4}
+If the diagrams  
+  \[
+  \cupcap\;,\qquad\twostrandid\;,
+    \qquad\drawI\;,\qquad\drawH\;,\qquad\braidcross\;
+   \]
+are linearly dependent then
+\begin{itemize}
+\item $v$ is a primitive $12$th root of unity
+\item $\cC$ is a quotient of $SO(3)_q$ with the usual braiding.
+\item $\cC$ is $\mathrm{Rep}(S_3)$ with its symmetric braiding.
+\item $\cC$ is a quotient of $(G_2)_q$ with the usual braiding.  \NStodo{Which QEJacobi hold?}
+\end{itemize}
+\end{proposition}
+\begin{proof}
+If the first four diagrams are linearly dependent then we're in one of the first three cases.  Otherwise, we have a relation simplifying the crossing in terms of the planar diagrams.  This means that $\cC$ is generated by the trivalent vertex.  
+Thus by \cite{???} we see that $\cC$ is a quotient of $(G_2)_q$. \NStodo{This is annoying...  Strictly speaking the trivalent paper only deals with the non-degenerate case.  The claim is still true, but it's a huge pain to piece together an argument.}
+\end{proof}
+
+
+\subsection{The case $v = 1$}
+
+
+We have that $0= [5]b = -\alpha (d+\{8\})$, so we split into two cases based on whether $\alpha = 0$.
+
+
+\begin{lemma}
+If $\alpha \neq 0$, then the QESquare relation gives a non-trivial relation between the diagrams in Proposition \ref{prop:dim4}.  
+\end{lemma}
+
+
+
 
 
 
