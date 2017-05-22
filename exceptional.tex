@@ -728,8 +728,8 @@ Suppose $$\braidcross \;
  \begin{itemize}
  \item $[\alpha:\beta] = [1:0]$ and $v = e^{\frac{2 \pi i}{5}}$
   \item $[\alpha:\beta] = [b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right):1]$ and $v = e^{\frac{2 \pi i}{5}}$
- \item $[\alpha:\beta] = [b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right):1]$ and $v = e^{7 \frac{2 \pi i}{10}}$
- \item $[\alpha:\beta] = [b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right):1]$ and $v = e^{\frac{2 \pi i}{30}}$ 
+ \item $[\alpha:\beta] = [b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right):1]$ and $v = e^{3 \frac{2 \pi i}{10}}$
+ \item $[\alpha:\beta] = [b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right):1]$ and $v = e^{7 \frac{2 \pi i}{10}}$ 
  \end{itemize}
 \end{lemma}
 \begin{proof}
@@ -873,8 +873,46 @@ Since $v$ is not a $10$th root of unity, by Lemma \ref{lem:dandtvalues} the equa
 \end{proof}
 
 
+Finally let us motivate the change of variables to $w$ given in the introduction, namely we will see that one of the eigenvalues for the action of the crossing on the $4$-box space is given by exactly $w^2$.
+
+Let $f(q) = $
+
+\begin{lemma} \label{lem:lin-ind-w}
+Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$ such that $v$ is not a $10$th or $12$th root of unity and in addition $d \neq $ and $d \neq$, then the following diagrams are linearly independent:
+$$\twostrandid, \cupcap, \drawI, \braidcross, \invbraidcross.$$
+\end{lemma}
+\begin{proof}
+If you pair any two of these diagrams together, the resulting ribbon graph can be evaluated using the QEJacobi, QESquare, and QECrossing relations.  The determinant of this matrix (written in terms of $d$ instead of $\alpha$ to make the formulas simpler) is
+$$DETERMINANT.$$  
+By our assumptions none of those factors can vanish
+Note that if $d+\{8\} = 0$, then $\frac{[5]b}{\alpha} = 0$ which implies that $v$ is a $10$th root of unity.
+
+%The first three diagrams are linearly independent unless $\cC$ is the Golden category, which means that $v$ is a $30$th root of unity.  If there's a linear dependence with non-zero coefficient on one of the crossings, then by taking a suitable linear combination of this dependence with its rotation, we see that $\braidcross$ simplifies as a sum of $\twostrandid$, $\cupcap$, $\drawI$, and $\drawH$.  Thus $\cC$ is generated as a pivotal category by the trivalent vertex.  By considering QESquare we see that the square simplifies.  Thus by \cite{trivalent} we see that $\cC$ must be a quotient of $SO(3)_q$ or $G2_q$.
+\end{proof}
+
+\begin{remark}
+The CASES correspond to CASES.
+\end{remark}
 
 
+\begin{lemma}
+If $v$ is not a $10$th or $12$th root of unity, then the crossing acts diagonalizably on the $4$-box space with eigenvalues $v^{12}$, $-v^{-6}$, $-1$, $w^2$, and $\frac{v^2}{w^2}$ where $w$ is given by the formula from the introduction.
+\end{lemma}
+\begin{proof}
+First note that $\frac{1}{d} \cupcap$ and $\frac{1}{b} \drawI$ are projections and eigenvalues for $\braidcross$ and $\drawH$ with eigenvalues $v^{12}$ and $-v^{-6}$.  So now we can project onto the image of $\twostrandid -\frac{1}{d} \cupcap -\frac{1}{b} \drawI$ and consider the action there.
+
+Start with QECrossing and multiply by a crossing, then use QEJacobi to remove the $\drawcrossX$ term, and QECrossing to remove the $\drawH$ term.  Multiply again by the crossing and then by the projection $\twostrandid -\frac{1}{d} \cupcap -\frac{1}{b} \drawI$ to get a cubic equation in the crossing.  By Lemma \ref{lem:lin-ind-w}, the crossing does not satisfy a quadratic equation, so this cubic polynomial is the minimal polynomial and its roots are all eigenvalues.  A tedious calculation shows that the roots of this cubic equation are exactly $-1$, $w^2$, and $\frac{v^2}{w^2}$.  
+\end{proof}
+
+\begin{remark}
+Since $\braidcross$ and $\drawH$ commute, the eigenvectors for the former must also be eigenvectors for the latter.  The eigenvalues are $(v^{12}, b)$, $(-v^{-6},t)$, $(-1, [\lambda][\lambda-1])$, $(w^2, \frac{[\lambda][\lambda+2]}{[1]})$, and $(\frac{v^2}{w^2}, -\frac{[\lambda-1][\lambda-3]}{[1]})$.
+
+There is a nice argument that the above eigenvalues are the only possible ones.  Namely, suppose $v$ is an eigenvector in the image of $\twostrandid -\frac{1}{d} \cupcap -\frac{1}{b} \drawI$ with eigenvalue $(\beta, \gamma)$.  QEJacobi says that:
+$$v^{-3} \beta \gamma -v^{-1} \gamma + \alpha \beta + \alpha v^{-4} = 0.$$
+QECrossing says that:
+$$\beta-\beta^{-1} - \frac{\widetilde{\Phi}_1 \widetilde{\Phi}_3^2 \widetilde{\Phi}_4 \widetilde{\Phi}_8}{b+[3]\alpha} \gamma - \frac{\widetilde{\Phi}_1^2 \widetilde{\Phi}_3 \widetilde{\Phi}_4 \widetilde{\Phi}_8 \alpha}{b+[3]\alpha} = 0.$$
+Solving these equations for $\beta$ and $\gamma$ give the list of possible eigenvalues.  We still need some version of Lemma \ref{lem:lin-ind-w} in order to see that all the eigenvalues are realized.
+\end{remark}
 
 
 
