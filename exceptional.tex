@@ -886,13 +886,16 @@ Note that $d = v^6+1+v^{-6}$ corresponds to $SO(3)_{v^3}$, $d=P_{G2}(\zeta_3 q)$
 If $v$ is not a $10$th or $12$th root of unity, then the crossing acts diagonalizably on the $4$-box space with eigenvalues $v^{12}$, $-v^{-6}$, $-1$, $w^2$, and $\frac{v^2}{w^2}$ where $w$ is given by the formula from the introduction.
 \end{lemma}
 \begin{proof}
-First note that $\frac{1}{d} \cupcap$ and $\frac{1}{b} \drawI$ are projections and eigenvalues for $\braidcross$ and $\drawH$ with eigenvalues $v^{12}$ and $-v^{-6}$.  So now we can project onto the image of $\twostrandid -\frac{1}{d} \cupcap -\frac{1}{b} \drawI$ and consider the action there.
+First note that $\frac{1}{d} \cupcap$ and $\frac{1}{b} \drawI$ are projections and are eigenvectors for the crossing with eigenvalues $v^{12}$ and $-v^{-6}$.  To find the remaining three eigenvalues we look at the action of the crossing on the image of the projection
+$$\pi = \twostrandid -\frac{1}{d} \cupcap -\frac{1}{b} \drawI.$$
 
-Start with QECrossing and multiply by a crossing, then use QEJacobi to remove the $\drawcrossX$ term, and QECrossing to remove the $\drawH$ term.  Multiply again by the crossing and then by the projection $\twostrandid -\frac{1}{d} \cupcap -\frac{1}{b} \drawI$ to get a cubic equation in the crossing.  By Lemma \ref{lem:lin-ind-w}, the crossing does not satisfy a quadratic equation, so this cubic polynomial is the minimal polynomial and its roots are all eigenvalues.  A tedious calculation shows that the roots of this cubic equation are exactly $-1$, $w^2$, and $\frac{v^2}{w^2}$.  
+Start with QECrossing and multiply by a crossing, then use QEJacobi to remove the $\drawcrossX$ term, and QECrossing to remove the $\drawH$ term.  Multiply again by the crossing and then by $\pi$ to get a cubic equation in the crossing acting on the image of $\pi$.  By Lemma \ref{lem:lin-ind-w}, the crossing does not satisfy a quadratic equation, so this cubic polynomial is the minimal polynomial and its roots are all eigenvalues.  A tedious calculation shows that the roots of this cubic equation are exactly $-1$, $w^2$, and $\frac{v^2}{w^2}$.  
 \end{proof}
 
 \begin{remark}
-Since $\braidcross$ and $\drawH$ commute, the eigenvectors for the former must also be eigenvectors for the latter.  The eigenvalues are $(v^{12}, b)$, $(-v^{-6},t)$, $(-1, [\lambda][\lambda-1])$, $(w^2, \frac{[\lambda][\lambda+2]}{[1]})$, and $(\frac{v^2}{w^2}, -\frac{[\lambda-1][\lambda-3]}{[1]})$.
+Recall that the following operators commute:
+$$\braidcross, \drawH.$$
+Thus the eigenvectors for the former (which all have multiplicity $1$ generically) must also be eigenvectors for the latter.  The eigenvalues are $(v^{12}, b)$, $(-v^{-6},t)$, $(-1, [\lambda][\lambda-1])$, $(w^2, \frac{[\lambda][\lambda+2]}{[1]})$, and $(\frac{v^2}{w^2}, -\frac{[\lambda-1][\lambda-3]}{[1]})$.
 
 There is a nice argument that the above eigenvalues are the only possible ones.  Namely, suppose $v$ is an eigenvector in the image of $\twostrandid -\frac{1}{d} \cupcap -\frac{1}{b} \drawI$ with eigenvalue $(\beta, \gamma)$.  QEJacobi says that:
 $$v^{-3} \beta \gamma -v^{-1} \gamma + \alpha \beta + \alpha v^{-4} = 0.$$
