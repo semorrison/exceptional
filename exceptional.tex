@@ -868,20 +868,17 @@ Finally let us motivate the change of variables to $w$ given in the introduction
 Let $f(q) = $
 
 \begin{lemma} \label{lem:lin-ind-w}
-Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$ such that $v$ is not a $10$th or $12$th root of unity and in addition $d \neq $ and $d \neq$, then the following diagrams are linearly independent:
+Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$ such that $v$ is not a $10$th or $12$th root of unity and in addition $d \neq v^6+1+v^{-6}$, $d \neq P_{G2}(\zeta_3 q)$, and $d \neq P_{G2}(\zeta_3^2 q)$, then the following diagrams are linearly independent:
 $$\twostrandid, \cupcap, \drawI, \braidcross, \invbraidcross.$$
 \end{lemma}
 \begin{proof}
 If you pair any two of these diagrams together, the resulting ribbon graph can be evaluated using the QEJacobi, QESquare, and QECrossing relations.  The determinant of this matrix (written in terms of $d$ instead of $\alpha$ to make the formulas simpler) is
 $$DETERMINANT.$$  
-By our assumptions none of those factors can vanish
-Note that if $d+\{8\} = 0$, then $\frac{[5]b}{\alpha} = 0$ which implies that $v$ is a $10$th root of unity.
-
-%The first three diagrams are linearly independent unless $\cC$ is the Golden category, which means that $v$ is a $30$th root of unity.  If there's a linear dependence with non-zero coefficient on one of the crossings, then by taking a suitable linear combination of this dependence with its rotation, we see that $\braidcross$ simplifies as a sum of $\twostrandid$, $\cupcap$, $\drawI$, and $\drawH$.  Thus $\cC$ is generated as a pivotal category by the trivalent vertex.  By considering QESquare we see that the square simplifies.  Thus by \cite{trivalent} we see that $\cC$ must be a quotient of $SO(3)_q$ or $G2_q$.
+By our assumptions none of those factors can vanish except possible $(d+\{8\})$.  If $d+\{8\} = 0$, then $\frac{[5]b}{\alpha} = 0$ which implies that $v$ is a $10$th root of unity.
 \end{proof}
 
 \begin{remark}
-The CASES correspond to CASES.
+Note that $d = v^6+1+v^{-6}$ corresponds to $SO(3)_{v^3}$, $d=P_{G2}(\zeta_3 q)$ corresponds to $G2_{q}$, and $d=P_{G2}(\zeta_3^2 q)$ corresponds to $G2_{q^{-1}}$.  In these examples the above five diagrams are indeed dependent.  \NStodo{Check \zeta vs. \zeta^2$}
 \end{remark}
 
 
