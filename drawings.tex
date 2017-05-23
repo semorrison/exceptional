@@ -155,6 +155,10 @@ coverlinelefttail/.style={
 	\draw (-.8cm,0)--(.8cm,0);
 \end{tikzpicture}}
 
+\newcommand{\drawcup}{\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
+	\draw (45:.8cm) to [curve through=(90:0cm)] (135:.8cm);
+\end{tikzpicture}}
+
 \newcommand{\cupcap}{\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
 	\draw (45:.8cm) to [curve through=(90:.3cm)] (135:.8cm);
 	\draw (-45:.8cm) to [curve through=(-90:.3cm)] (-135:.8cm);
