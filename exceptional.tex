@@ -197,7 +197,7 @@ anti-symmetry, symmetry of the Killing form, and Jacobi relations.
 \begin{align}
 \label{eq:classical-loop-lollipop}  \unknot \; &= d &  \loopvertex \; &=0 \\
 \label{eq:classical-bigon-trigon}  \ngon{2}\; &= b \;\onestrandid  & \ngon{3}\; &= \frac{b}{2} \;\nvertex{3} \\
-\label{eq:classical-symmetry-antisymmetry}   \symtwistvertex\; &= - \nvertex[-90]{3} & \symtwist\; &= \onestrandid
+\label{eq:classical-symmetry-antisymmetry}   \symtwistvertex\; &= - \nvertex[-90]{3} & \symtwist\; &= \drawcup
 \end{align}
 \begin{equation}
 \drawI\; - \;\drawH\; + \;\drawsymcrossX\; = 0.
@@ -368,7 +368,7 @@ relations.
       \ngon{2}\;&= b\;\onestrandid&
         \ngon[-90]{3}\; &= t\;\nvertex[-90]{3}\\[5pt]
     \twistvertex\; &= -v^{6}\;\nvertex[-90]{3}&
-      \twist\; &= v^{12}\;\onestrandid
+      \twist\; &= v^{12}\;\drawcup
   \end{aligned}
   \end{equation}
 where
@@ -530,8 +530,11 @@ The quantum exceptional crossing relation:
 \end{theorem}
 
 
-When $b+[3]\alpha$ is non-zero we can make the change of variables
-$$w^2 = \frac{v}{2(b+[3]\alpha)}\left(b \{1\} -\alpha [3] \{5\} + \sqrt{-4 (b+[3]\alpha)^2 + (b \{1\} -[3]\{5\}\alpha)^2} \right).$$
+When $b+[3]\alpha$ is non-zero \nn{and the square roots exist in~$R$}
+we can make the change of variables
+\begin{equation}\label{eq:change-variables}
+  w^2 = \frac{v}{2(b+[3]\alpha)}\left(b \{1\} -\alpha [3] \{5\} + \sqrt{-4 (b+[3]\alpha)^2 + (b \{1\} -[3]\{5\}\alpha)^2} \right).
+\end{equation}
 We see that $\partial_\alpha w^2 = 0$ exactly if $v$ is a $12$th root of unity, so away from these points the change of variables is invertible, given by
 $$\alpha =  -\frac{b[\lambda][\lambda-1]}{\{\lambda+2\}\{\lambda-3\}\widetilde{\Phi}_1\widetilde{\Phi}_3}.$$
 %% see code2/ChangeOfVariables.nb and code2/ChangeOfVariables2.nb for these calculations
@@ -601,7 +604,7 @@ Throughout this section $(\cC, X, \tau)$ is a trivalent ribbon category over $\m
     \label{eq:simple-rels}
   \begin{aligned}
     \unknot\; &= d&\qquad
-      \twist\; &= s^2\;\onestrandid&\qquad
+      \twist\; &= s^2\;\drawcup&\qquad
         \twistvertex\; &= -s\;\nvertex[-90]{3}\\[5pt]
     \loopvertex\;&=0&
       \ngon{2}\;&= b\;\onestrandid&
@@ -710,11 +713,11 @@ Thus we have a relation of
 We now address the case $\beta = 0$.
 
 \begin{lemma} \label{lem:betazero}
-Suppose $$\braidcross \;
- + v^{4}\;
-\cupcap
-\; + v^{-4} \;
- \twostrandid = 0.$$  Then $\cC$ is the golden category with $\dim X = \frac{1 + \sqrt{5}}{2}$ or its Galois conjugate.  The golden category has $\dim \cC_4 = 2$ and satisfies four versions of the above relation, namely:
+  Suppose
+  \begin{equation}\label{eq:golden-rel}
+    \braidcross \; + v^{4}\;\cupcap\; + v^{-4} \; \twostrandid = 0.
+  \end{equation}
+  Then $\cC$ is the golden category with $\dim X = \frac{1 + \sqrt{5}}{2}$ or its Galois conjugate.  The golden category has $\dim \cC_4 = 2$ and satisfies four versions of the above relation, namely:
  \begin{itemize}
  \item $[\alpha:\beta] = [1:0]$ and $v = e^{\frac{2 \pi i}{5}}$
   \item $[\alpha:\beta] = [b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right):1]$ and $v = e^{\frac{2 \pi i}{5}}$
@@ -723,10 +726,8 @@ Suppose $$\braidcross \;
  \end{itemize}
 \end{lemma}
 \begin{proof}
-Placing an $H$ on the top of this relation, gives a second relation $\psi$ between the six diagrams.  This relation only has one term in the second orbit of $R$, so $\sum_{i=0}^2 v^i R^i(\psi)$ gives three linearly independent relations of the above form for three different choices of $v$ as a sixth root of $e^{\frac{2 \pi i}{5}}$.  A short calculation gives the values of $\alpha$ and $v$.
+Placing an $H$ on the top of~\eqref{eq:golden-rel} gives a second relation $\psi$ between the six diagrams.  This relation only has one term in the second orbit of $R$, so $\sum_{i=0}^2 v^i R^i(\psi)$ gives three linearly independent relations of the above form for three different choices of $v$ as a sixth root of $e^{\frac{2 \pi i}{5}}$.  A short calculation gives the values of $\alpha$ and $v$.
 \end{proof}
-
-
 
 \begin{lemma} \label{lem:dandtvalues}
 Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$, then 
@@ -750,7 +751,8 @@ Since $b$ and $d$ are nonzero, it follows that $v$ is not a primitive $8$th root
   to a trivalent vertex, and then solving for~$t$.
   
   If $v$ is a primitive $8$th root of unity, then $0 = t \{2\} = b-[5] \alpha$, so $b = [5] \alpha$.  Since $b$ is assumed nonzero and $[5]$ is nonzero when $v$ is a primitive $8$th root of unity, we see that $\alpha = \frac{b}{[5]}$.  Now the first equation becomes $-2 = [5]^2 = -(d+\{8\})=-(d+2)$, which contradicts $d \neq 0$.  
-  Now $0 \neq [5] b = - \alpha (d+\{8\})$, so $\alpha$ is non-zero and we can solve for $d$.
+  Now $0 \neq [5] b = - \alpha (d+\{8\})$, so $\alpha$ is non-zero and
+  we can solve for~$d$.
 \end{proof}
 
 \begin{proof}[Proof of Theorem \ref{thm:Jacobi}]
@@ -1331,6 +1333,7 @@ Typically, we may choose to think about a diagrammatically defined tangle
 invariant as a morphism of planar algebras 
 $\mathsf{Tangle} \to \mathcal{Q}$ for some planar algebra
 $\mathcal{Q}$, sending the crossing to a suitable element of $\mathcal{Q}_4$.
+\nn{$\mathsf{Tangle}$ has not been defined.}
 In our case we only know a limited set of operations in the target planar
 algebra, and so can only compute the invariants of links which we can generate
 from the crossing using those available planar operations.
@@ -1471,91 +1474,116 @@ Recall that $$\drawI\; - \; \drawH - \frac{1}{d-1} \left(\twostrandid - \cupcap 
 \section{From the classical to the quantum conjecture}
 \label{sec:classical-quantum}
 
-We now show that Conjecture~\ref{conj:class-consist} implies
-a version of Conjecture~\ref{conj:quant-consist}, for suitable base
+We now show that the classical consistency conjecture implies
+the quantum consistency conjecture, for suitable base
 rings.
 \begin{theorem}\label{thm:classical-quantum}
   If Conjecture~\ref{conj:class-consist} is true
-  for $\mathrm{Exc}(R,\lambda)$, then
+  for $\mathrm{Exc}_{R,\lambda}$, then
   Conjecture~\ref{conj:quant-consist} is true for
-  $\mathrm{QExc}(R((h)),v=e^{h/4},w=e^{\lambda h/4})$, where the
-  exponentials are considered as formal Laurent series.
+  $\mathrm{QExc}_{R((h)),v,w}$ for $v=e^{h/4}$ and $w=e^{\lambda
+    h/4})$ as formal Laurent series.
 \end{theorem}
 This section will be devoted to a proof of
-Theorem~\ref{thm:classical-quantum}. The first step is constructing
-the conjectured functor $\eval$, for which the main ingredient is the
-\emph{Kontsevich integral}~$Z$. This is an invariant of framed
-trivalent graph tangles. The Kontsevich integral was
-first defined for unframed knots \cite{MR1318886}, and later extended
-to framed trivalent graphs \cite{MR1473309,MR2304469,MR2661529}.
+Theorem~\ref{thm:classical-quantum}. Let $\eval$ be the functor from
+$\mathsf{Jac}_{R,d,b}$ to $\mathsf{Exc}_{R,\lambda}$ given by hypothesis.
 
-For a framed trivalent tangle~$G$, the invariant $Z(G)$ takes values
-in a space of \emph{chord diagrams} $\cA(G)[[h]]$ that depends on the
-underlying graph of~$G$. The generators of $\cA(G)$ are
-vertex-oriented uni-trivalent graphs with edges of two types,
-traditionally drawn solid and dotted, so that the solid edges are
-identified with~$G$, modulo certain relations analogous to the Jacobi
-relation. (The univalent ends of elements in $\cA(G)$ correspond to
-the tangle endpoints of~$G$.) We also introduce a variable~$h$ to
-track the grading. $Z$ has many useful properties, but the
-ones we will use are the following.
+The first step is constructing
+the conjectured functor from tangles $\Qeval$, for which the main
+ingredient is the
+\emph{Kontsevich integral}~$Z$. The Kontsevich integral was first
+defined for unframed knots \cite{MR1318886}, and later extended to
+framed trivalent graphs \cite{MR1473309,MR2304469,MR2661529}. We
+briefly recall its properties. We specialize to the case corresponding
+to the adjoint representation of the Lie algebra, removing the usual
+distinction between the two different kinds of edges.
+
+Let $\mathsf{TriTrangle}$ be the category of framed, unoriented,
+trivalent graph tangles. \nn{Maybe this definition should be earlier.}
+Then, for ring $R$ containing~$\QQ$ and $d,b \in R$, $Z$ is a functor
+from $\mathsf{TriTangle}$ to
+$\mathsf{Jac}_{R[[h]],d,b}$.
+\nn{are we using \texttt{mathrm} or \texttt{mathsf}?}
+The variable $h$ is used to keep track
+of the grading. $Z$ is usually defined as a functor from the category
+of parenthesized (non-associative) tangles; to define it as a functor
+from our category, where the objects are just integers, for each~$n
+\ge 3$, pick arbitrarily a parenthesization of $n$ objects and apply
+the usual functor.
+
+We will use the following properties of~$Z$.
 \begin{enumerate}
-\item $Z(G) = G + O(h)$.
-\item $Z$ is multiplicative under tangle multiplication:
-  \[
-    Z(G_1 \cdot G_2) = Z(G_1) \cdot Z(G_2).
-  \]
-\item On a single crossing, $Z$ takes the value
-  \DPTtodo{Possibly this is backwards relative to standard conventions
-    for Vassiliev invariants?}
+\item\label{item:Kontsevich-perturb} $Z(G) = G + O(h)$, where on the
+  right hand side we think of the
+  underlying trivalent graph of~$G$ as a Jacboi diagram.
+\item\label{item:Kontsevich-crossing} On a single crossing, $Z$ takes
+  the value
   \begin{equation}
     \label{eq:Kontsevich-crossing}
     Z\biggl(\;\braidcross\;\biggr) =
-    \exp\left(\frac{h}{2}\;\drawdottedH\;\right)
+    \exp\left(\frac{h}{2}\;\drawH\;\right)
     \cdot\; \symcross\;.
   \end{equation}
 \end{enumerate}
 
-To finish the definition of $\eval$, compose $Z$ with the forgetful
-functor that erases the distinction between dotted and solid lines to
-the category $\mathrm{Jac}_{R[[h]],d,b}$ from the introduction and then the
-functor from $\mathrm{Jac}_{R[[h]],d,b}$ to a target category
-$\mathsf{Except}[[h]]$ given by Conjecture~\ref{conj:class-consist}. We
-then localize at $h$ to end in $\mathsf{Except}((h))$.
+Then the desired functor $\Qeval$ is the composition of $Z$ with the
+classical evaluation $\eval$, with scalars extended to $R[[h]]$. We
+then localize at $h$ to take values in the field
+$\mathsf{Except}((h))$.
 
-By hypothesis, $\mathsf{Except}((h))$ has a 5-dimensional 4-box space and
-is generated over $R[[h]]$ by a trivalent vertex and a braided
-crossing. \nn{Get precise conditions for theorem right} Furthermore,
-Equation~\eqref{eq:Kontsevich-crossing} shows that
+By hypothesis, the k-box space of $\mathsf{Except}((h))$ for $k \le 4$
+have the required dimensions for a ribbon trivalent category. By
+property~\eqref{item:Kontsevich-perturb} of~$Z$,
+$\mathsf{Except}((h))$
+is generated as a ribbon category over $R((h))$ by a
+trivalent vertex.
+Furthermore, Equation~\eqref{eq:Kontsevich-crossing} shows that
+ that
 \begin{align*}
-  \eval\biggl(\;\twist\;\biggr) &= e^{hb/2}\eval\biggl(\;\onestrandid\;\biggr)\\
-  \eval\biggl(\;\twistvertex\;\biggr) &= e^{hb/4}\eval\biggl(\;\nvertex[-90]{3}\;\biggr)
+  \Qeval\biggl(\;\twist\;\biggr) &= e^{hb/2}\eval\biggl(\;\drawcup\;\biggr)\\
+  \Qeval\biggl(\;\twistvertex\;\biggr) &= e^{hb/4}\eval\biggl(\;\nvertex[-90]{3}\;\biggr)
 \end{align*}
-\nn{Issue: For this argument, I really want to distinguish
-  between up and down endpoints, in particular to have the
-  multiplicative property. Paper to this point has not been making
-  this distinction?}
 Comparison with Equation~\eqref{eq:simple-rels-spec} shows that we
-should choose $v = e^{hb/24} \in R((h))$. Note that $v^n - 1$ is
-invertible for all $n \ne 1$. Then by Theorem~XXX, the
-functor $\eval$ satisfies Equation~\eqref{eq:quant-except-spec} for
-some value of~$w$. To find the value of~$w$, we find the eigenvalues
+should choose $v = e^{hb/24} \in R((h))$. Then by Theorem~\ref{thm:Jacobi}, the
+functor $\eval$ satisfies Equation~\eqref{eq:quant-except-gen} for
+some value of~$\alpha$. Note that $v^n - 1$ is
+invertible for all $n \ne 1$. Thus by Lemma~\ref{lem:bplus3alpha} and
+Theorem~\ref{thm:square-crossing} we renormalize~$b$ and make the
+change of variables
+from Equation~\eqref{eq:change-variables} to get the category
+$\mathsf{QExc}_{R((h^t)),v,w}$ for some rational~$t$ and some choice
+of~$w$. To identify~$w$ (and see that we can take $t=1$), 
+we find the eigenvalues
 of the twist operator on the 4-box space.
 
-\nn{Notation is breaking down, I need a name for the classical
-  evaluation functor as well. Upshot as follows:} For the classical
-evaluation, the eigenvalues of the crossing and the ladder operator
+For the classical evaluation $\eval$, the eigenvalues of the crossing
+operator and the ladder operator
 are $(-1, 3)$, $(-1, 0)$, $(+1, 6)$, $(+1, \lambda)$, and
-$(+1, 1-\lambda)$. Equation~\eqref{eq:Kontsevich-crossing} then shows
+$(+1, 1-\lambda)$, corresponding to five orthogonal idempotents in the
+$(2,2)$-box space. Equation~\eqref{eq:Kontsevich-crossing} then shows
 that the corresponding eigenvalues of the twist operator are
 $-e^{3h/2}$, $-1$, $e^{3h}$, $e^{\lambda h/2}$, and
-$e^{(1-\lambda)h/2}$. On the other hand, a short computation with
-\nn{the twist relation} shows that the eigenvalues of the twist
+$e^{(1-\lambda)h/2}$, respectively.
+\nn{Reference to computation of eigenvalues, which is done elsewhere}
+On the other hand, a short computation with
+the twist relation shows that the eigenvalues of the twist
 operator in $\mathsf{QExcept}$ are $-v^6$, $-1$, $v^{12}$, $w^2$, and
-$v^2/w^2$. These two lists of eigenvalues agree if we set
+$v^2/w^2$. These two lists of eigenvalues agree exactly when we set
 $w = e^{\lambda h/4}$ in addition to $v = e^{h/4}$.
 
-\nn{Comment about control over convergence}
+This completes the proof of Theorem~\ref{thm:classical-quantum}.
+
+\begin{remark}
+  Given Conjecture~\ref{conj:class-consist}, to deduce a version of
+  Conjecture~\ref{conj:quant-consist} with a non-infinitesimal
+  deformation (i.e., valued in, say, complex numbers rather than a
+  power series ring), we would have to get control over the
+  coefficients in the power series that arise in the functor $\Qeval$
+  constructed above. This has been done for the Kontsevich
+  integral~$Z$ (XXX: cite). The evaluation algorithm implicit in
+  $\eval$ would also have to have computable bounds. \nn{How good} Most
+  reasonable evaluation algorithm do give such bounds.
+\end{remark}
 
 \nn{Can use this to show that conjectural quantum 2-variable
   polynomial invariant agrees with the known 1-variable invariant when
