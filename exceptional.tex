@@ -721,12 +721,42 @@ We now address the case $\beta = 0$.
  \begin{itemize}
  \item $[\alpha:\beta] = [1:0]$ and $v = e^{\frac{2 \pi i}{5}}$
   \item $[\alpha:\beta] = [b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right):1]$ and $v = e^{\frac{2 \pi i}{5}}$
- \item $[\alpha:\beta] = [b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right):1]$ and $v = e^{7 \frac{2 \pi i}{10}}$
- \item $[\alpha:\beta] = [b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right):1]$ and $v = e^{\frac{2 \pi i}{30}}$ 
+ \item $[\alpha:\beta] = [b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right):1]$ and $v = e^{3 \frac{2 \pi i}{10}}$
+ \item $[\alpha:\beta] = [b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right):1]$ and $v = e^{7 \frac{2 \pi i}{10}}$ 
  \end{itemize}
 \end{lemma}
 \begin{proof}
-Placing an $H$ on the top of~\eqref{eq:golden-rel} gives a second relation $\psi$ between the six diagrams.  This relation only has one term in the second orbit of $R$, so $\sum_{i=0}^2 v^i R^i(\psi)$ gives three linearly independent relations of the above form for three different choices of $v$ as a sixth root of $e^{\frac{2 \pi i}{5}}$.  A short calculation gives the values of $\alpha$ and $v$.
+Multiplying by a trivalent vertex we see that $-v^6+v^-4=0$, so $v$ is a $10$th root of unity.  This yields two distinct cases: $v= \pm 1$ or $v = \pm \zeta_5$ for $\zeta_5$ a fifth root of unity, wlog we take the $+$ sign.
+
+Placing an $H$ on the top of this relation gives a second relation $\psi$ between the six diagrams.  This relation only has one term in the second orbit of $R$, so $\sum_{i=0}^2 \lambda^i R^i(\psi)$ gives three linearly independent relations of the above form for the three cube roots of unity $\lambda$.  
+
+When $v=1$ the relations we get are:
+
+\begin{align*}
+0 &= \braidcross + \twostrandid + \cupcap \\
+0 &= \drawcrossX +\drawH + b\cupcap \\
+0 &= \drawI - \drawcrossX + b\twostrandid \\
+0 &= -\drawH -\drawI + b \braidcross
+\end{align*}
+
+Combining the first equation and the last one we see that:
+$$\drawI+\drawH = b \twostrandid + b\cupcap.$$
+Multiplying by a trivalent vertex we see that $b+t=b$, so $t = 0$.  Pairing with the square we see that $0 = 2t^2 bd = 2b^3 d$ which is a contradiction since $b$ and $d$ are non-zero.
+
+When $v$ is a fifth root of unity we get the relations:
+\begin{align*}
+0 &= \braidcross + v\twostrandid + v^{-1}\cupcap \\
+0 &= \drawcrossX +v \drawH + b v^{-1}\cupcap \\
+0 &= \drawI - \drawcrossX + b v^{-3} \twostrandid \\
+0 &= -v^{-1} \drawH -\drawI + b v^{-3} \braidcross
+\end{align*}
+
+Capping off the first equation we see that $v^2 + v +v^{-1}d = 0$, so $d = -v^2-v^3$ is the Golden ratio or its Galois conjugate.  These four equations are linearly independent, and by taking the proper linear combinations we see that:
+\begin{align*}
+\drawI &=  b\twostrandid + -\frac{b}{d} \cupcap \\
+\braidcross &= -v\twostrandid -v^{-1} \cupcap \\
+\end{align*}
+which are the defining relations of the Golden category.  The values for $v$ and $\alpha$ given in the theorem come from calculating $\sum_{i=0}^2 \lambda^i R^i(\psi)$ for $\lambda$ a cube root of unity.
 \end{proof}
 
 \begin{lemma} \label{lem:dandtvalues}
@@ -772,7 +802,7 @@ where the $y_i$ are Laurent polynomials in $v$ and $w$ given in Appendix \ref{ap
   \item
 The quantum exceptional crossing relation:
 \begin{equation*}
-[3](b+[3]\alpha) \left(\braidcross - \invbraidcross \right) + \widetilde{\Phi}_1^2 \widetilde{\Phi}_3^3 \widetilde{\Phi}_4 \widetilde{\Phi}_8 \left[\; \drawI \; - \; \drawH \; \right] - \widetilde{\Phi}_1^3 \widetilde{\Phi}_3^2 \widetilde{\Phi}_4 \widetilde{\Phi}_8 \alpha \left[\; \twostrandid \; - \; \cupcap \; \right] = 0
+\frac{\widetilde{\Phi}_{12} \alpha (b+[3]\alpha)}{\widetilde{\Phi}_8} \left(\braidcross - \invbraidcross \right) + \widetilde{\Phi}_1 \widetilde{\Phi}_3 \widetilde{\Phi}_4 \widetilde{\Phi}_{12} \alpha \left[\; \drawI \; - \; \drawH \; \right] - \widetilde{\Phi}_1^2 \widetilde{\Phi}_3 \widetilde{\Phi}_4 \widetilde{\Phi}_{12} \alpha^2 \left[\; \twostrandid \; - \; \cupcap \; \right] = 0
 \end{equation*}
 \end{itemize}
  \end{proposition}
@@ -812,7 +842,7 @@ Multiply the first equation by $v^{-2}$, the second by $v^6$, and the third by $
 We now use the QEJacobi relation to remove the $\drawcrossX$ term, yielding the QESquare relation.  The QESquare relation minus its 90-degree rotation gives the QECrossing equation.
 \end{proof}
 
-When $v$ is not a $12$th root of unity we can divide by $[3]$.  All that remains in order to prove Theorem \ref{thm:square-crossing} is to show that when $v$ is not a $10$th or $12$th root of unity that $b+[3]\alpha$ is non-zero.  Note that if $v$ is not a $12$th root of unity and $(b+[3]\alpha)$ is zero, then the QECrossing equation becomes an $SO(3)_q$ relation between the four planar diagrams.  We take a brief detour to analyze this situation.
+When $v$ is not a $10$th or $12$th root of unity we can divide by $[3]$, $\alpha$, and $b+[3]\alpha$.  All that remains in order to prove Theorem \ref{thm:square-crossing} is to show that when $v$ is not a $10$th or $12$th root of unity that $b+[3]\alpha$ is non-zero.  Note that if $v$ is not a $12$th root of unity and $(b+[3]\alpha)$ is zero, then the QECrossing equation becomes an $SO(3)_q$ relation between the four planar diagrams.  We take a brief detour to analyze this situation.
 
 
 \begin{lemma} \label{lem:IequalsH}
@@ -853,10 +883,10 @@ If $s = -1$, then we want to figure out which sixth roots $v$ of $s$ give a rela
 \end{proof}
 
 \begin{lemma} \label{lem:bplus3alpha}
-Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$ with $v$ not a $10$th or $12$th root of unity, then $b+[3]\alpha$ is non-zero.
+Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$ with $v$ not a primitive $4$th, $5$th, $10$th, or$12$th root of unity, then $b+[3]\alpha$ is non-zero.
 \end{lemma}
 \begin{proof}
-Suppose for the sake of contradiction that $b+[3]\alpha = 0$.  Then by Proposition \ref{prop:square-crossing} we have that $\cC$ satisfies the assumptions of Lemma \ref{lem:IequalsH}.  Since $v$ is not a $12$th root of unity, the only remaining case from Lemma \ref{lem:IequalsH} is that $\cC$ is $SO(3)_q$ with the standard braiding.  Now a direct calculation shows that $b+[3] \alpha = b \frac{\widetilde{\Phi}_{12}}{v^4-1+v^{-4}}$ which is non-zero since is not a $12$th root of unity, giving a contradiction.
+If $v$ is a sixth root of unity then $b+[3]\alpha = b \neq 0$.  So our assumptions imply that $v$ is not a $10$th or $12$th root of unity.  Suppose for the sake of contradiction that $b+[3]\alpha = 0$.  Then by Proposition \ref{prop:square-crossing} we have that $\cC$ satisfies the assumptions of Lemma \ref{lem:IequalsH}.  Since $v$ is not a $12$th root of unity, the only remaining case from Lemma \ref{lem:IequalsH} is that $\cC$ is $SO(3)_q$ with the standard braiding.  Now a direct calculation shows that $b+[3] \alpha = b \frac{\widetilde{\Phi}_{12}}{v^4-1+v^{-4}}$ which is non-zero since is not a $12$th root of unity, giving a contradiction.
 \end{proof}
 
 
@@ -865,8 +895,56 @@ Since $v$ is not a $10$th root of unity, by Lemma \ref{lem:dandtvalues} the equa
 \end{proof}
 
 
+Finally let us motivate the change of variables to $w$ given in the introduction, namely we will see that one of the eigenvalues for the action of the crossing on the $4$-box space is given by exactly $w^2$.
+
+Let $P_{G_2}(q) = q^{10}+q^{8}+q^{2}+1+q^{-2}+q^{-8}+q^{-10}$ be the quantum dimension of the $7$-dimensional representation of $G_2$.
+
+\begin{lemma} \label{lem:lin-ind-w}
+Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$ such that $v$ is not a $10$th or $12$th root of unity and in addition $d \neq v^6+1+v^{-6}$, $d \neq P_{G_2}(\zeta_3 v)$, and $d \neq P_{G_2}(\zeta_3^2 v)$, then the following diagrams are linearly independent:
+$$\twostrandid, \cupcap, \drawI, \braidcross, \invbraidcross.$$
+\end{lemma}
+\begin{proof}
+If you pair any two of these diagrams together, the resulting ribbon graph can be evaluated using the QEJacobi, QESquare, and QECrossing relations.  The determinant of this matrix (written in terms of $d$ instead of $\alpha$ to make the formulas simpler) is
+\begin{align*}
+\frac
+{
+d^5 v^8 [2][3]^2[6] (d-(v^{6}+1+v^{-6}))^2 (d + \{8\})) (d-p_{G_2}(\zeta_3 v)) (d-p_{G_2}(\zeta_3^2 v))
+}
+{
+[1]^{2}(d + \{4\})^{2}
+}.
+\end{align*}
+%% This is calculated in code/20170522-a-special-case.nb
+
+By our assumptions none of those factors can vanish except possibly $(d+\{8\})$.  If $d+\{8\} = 0$, then $\frac{[5]b}{\alpha} = 0$ which implies that $v$ is a $10$th root of unity.
+\end{proof}
+
+\begin{remark}
+Note that $d = v^6+1+v^{-6}$ corresponds to $SO(3)_{v^3}$, $d=P_{G_2}(\zeta_3 q)$ corresponds to $(G_2)_{q}$, and $d=P_{G_2}(\zeta_3^2 q)$ corresponds to $(G_2)_{q^{-1}}$.  In these examples the above five diagrams are indeed dependent.  \NStodo{Check $\zeta$ vs. $\zeta^2$}
+\end{remark}
 
 
+\begin{lemma}
+If $v$ is not a $10$th or $12$th root of unity, then the crossing acts diagonalizably on the $4$-box space with eigenvalues $v^{12}$, $-v^{-6}$, $-1$, $w^2$, and $\frac{v^2}{w^2}$ where $w$ is given by the formula from the introduction.
+\end{lemma}
+\begin{proof}
+First note that $\frac{1}{d} \cupcap$ and $\frac{1}{b} \drawI$ are projections and are eigenvectors for the crossing with eigenvalues $v^{12}$ and $-v^{-6}$.  To find the remaining three eigenvalues we look at the action of the crossing on the image of the projection
+$$\pi = \twostrandid -\frac{1}{d} \cupcap -\frac{1}{b} \drawI.$$
+
+Start with QECrossing and multiply by a crossing, then use QEJacobi to remove the $\drawcrossX$ term, and QECrossing to remove the $\drawH$ term.  Multiply again by the crossing and then by $\pi$ to get a cubic equation in the crossing acting on the image of $\pi$.  By Lemma \ref{lem:lin-ind-w}, the crossing does not satisfy a quadratic equation, so this cubic polynomial is the minimal polynomial and its roots are all eigenvalues.  A tedious calculation shows that the roots of this cubic equation are exactly $-1$, $w^2$, and $\frac{v^2}{w^2}$.  
+\end{proof}
+
+\begin{remark}
+Recall that the following operators commute:
+$$\braidcross, \drawH.$$
+Thus the eigenvectors for the former (which all have multiplicity $1$ generically) must also be eigenvectors for the latter.  The eigenvalues are $(v^{12}, b)$, $(-v^{-6},t)$, $(-1, [\lambda][\lambda-1])$, $(w^2, \frac{[\lambda][\lambda+2]}{[1]})$, and $(\frac{v^2}{w^2}, -\frac{[\lambda-1][\lambda-3]}{[1]})$.
+
+There is a nice argument that the above eigenvalues are the only possible ones.  Namely, suppose $v$ is an eigenvector in the image of $\twostrandid -\frac{1}{d} \cupcap -\frac{1}{b} \drawI$ with eigenvalue $(\beta, \gamma)$.  QEJacobi says that:
+$$v^{-3} \beta \gamma -v^{-1} \gamma + \alpha \beta + \alpha v^{-4} = 0.$$
+QECrossing says that:
+$$\beta-\beta^{-1} - \frac{\widetilde{\Phi}_1 \widetilde{\Phi}_3^2 \widetilde{\Phi}_4 \widetilde{\Phi}_8}{b+[3]\alpha} \gamma - \frac{\widetilde{\Phi}_1^2 \widetilde{\Phi}_3 \widetilde{\Phi}_4 \widetilde{\Phi}_8 \alpha}{b+[3]\alpha} = 0.$$
+Solving these equations for $\beta$ and $\gamma$ give the list of possible eigenvalues.  We still need some version of Lemma \ref{lem:lin-ind-w} in order to see that all the eigenvalues are realized.
+\end{remark}
 
 
 
@@ -1436,9 +1514,26 @@ computing this.
 \subsubsection{Comparisons}
 \nn{Compare to Westbury and the other paper...}
 
+
 \section{When $v$ is a small root of unity}
 
+The goal of this section is to analyze what happens when $v$ is a $10$th or $12$th root of unity, so that the derivation of the QESquare and QECrossing relations break down.  We begin by analyzing what happens when $\dim \cC_4 < 5.$
+
+
+\subsection{Corner cases with small $4$-box space}
+
+\begin{lemma}
+The diagrams
+$$\cupcap \text{ and } \twostrandid$$
+are non-zero and are linearly independent.
+\end{lemma}
+\begin{proof}
+If either diagram is zero then by multiplying by a crossing on the proper side you get that the trivalent vertex is zero, which is a contradiction.  If the two diagrams are linearly dependent, then again multiplying by a trivalent vertex would show that the trivalent vertex is zero.
+\end{proof}
+
+
 The following lemma is a mild generalization of \cite{???} where we have relaxed the non-degeneracy assumption.
+
 
 \begin{lemma}
 Suppose that the diagrams   
@@ -1465,10 +1560,193 @@ $$ b \frac{d-1}{d+1} \left( \drawI -\drawH \right) = \frac{b^2}{d+1} \left(\twos
 Dividing by $b \frac{d-1}{d+1}$ yields the desired equation.
 \end{proof}
 
+By Lemma \ref{lem:IequalsH} we have the following Corollary.
+
+\begin{corollary}
+If the diagrams   
+  \[
+  \cupcap\;,\qquad\twostrandid\;,
+    \qquad\drawI\;,\qquad\drawH\;\;
+   \]
+are linearly dependent, then
+\begin{itemize}
+\item $v$ is a primitive $12$th root of unity
+\item $\cC$ is a quotient of $SO(3)_q$ with the usual braiding
+\item $\cC$ is $\mathrm{Rep}(S_3)$ with its symmetric braiding.
+\end{itemize}
+\end{corollary}
+
+
+\begin{proposition} \label{prop:dim4}
+If the diagrams  
+  \[
+  \cupcap\;,\qquad\twostrandid\;,
+    \qquad\drawI\;,\qquad\drawH\;,\qquad\braidcross\;,\qquad\ngon[45]{4}\;
+   \]
+span a space of dimension $4$ or smaller, then
+\begin{itemize}
+\item $v$ is a primitive $12$th root of unity
+\item $\cC$ is a quotient of $SO(3)_q$ with the usual braiding.
+\item $\cC$ is $\mathrm{Rep}(S_3)$ with its symmetric braiding.
+\item $\cC$ is a quotient of $(G_2)_q$ with the usual braiding.  \NStodo{Which QEJacobi hold?}
+\end{itemize}
+\end{proposition}
+\begin{proof}
+If the first four diagrams are linearly dependent then we're in one of the first three cases.  Otherwise, we have a relation simplifying both the crossing and the square in terms of the first four diagrams.  This means that $\cC$ is generated by the trivalent vertex and $\dim \cC_4 \leq 4$, thus by a modification of \cite{???} we see that $\cC$ is a quotient of $(G_2)_q$.
+\end{proof}
+
 \begin{remark}
-Recall that $$\drawI\; - \; \drawH - \frac{1}{d-1} \left(\twostrandid - \cupcap \right) = 0$$ is the defining relation of $SO(3)_q$, so this means we completely understand the planar part of $\cC$ in that case.  However, the crossing need not lie in the planar part.
+Strictly speaking in \cite{???} we only considered non-degenerate trivalent categories, but this can be avoided as follows.  The argument that the pentagon reduces still applies, so all small faces reduce, and non-elliptic diagrams span all $\cC_k$.  If the $10$ non-elliptic diagrams in $\cC_5$ are independent then Kuperberg\cite{???} says that $\cC$ is a quotient of $(G_2)_q$.  If there's a relation between these ten diagrams, the relation must be negligble.  By \cite{???} either there's a single relation and the category is a quotient of $(G_2)_{\zeta_{10}}$, or the non-degenerate quotient of $\cC$ is an $ABA$ category which contradicts $\cC$ being braided.
 \end{remark}
 
+
+
+\subsection{The case $v = \pm 1$}
+
+Throughout this section we assume $v=1$.
+
+Recall $t = \frac{b-[5]\alpha}{\{2\}} = \frac{b}{2}$.  We also have that $0= [5]b = -\alpha (d+\{8\})$, so we split into two cases based on whether $\alpha = 0$.
+
+\begin{lemma}
+There are no $\cC$ with $\alpha \neq 0$.
+\end{lemma}
+\begin{proof}
+Since $d+\{8\}=0$, we have that $d=-2$.  The QECrossing relation says that:
+$$\braidcross + \cupcap + \twostrandid = 0.$$
+This is exactly the case excluded in Lemma \ref{lem:betazero}.
+\end{proof}
+
+\begin{lemma}
+If $\alpha = 0$, then $\cC$ satisfies the defining relations of the classical exceptional series.
+\end{lemma}
+\begin{proof}
+QECrossing says that the crossing is symmetric, and then QEJacobi becomes the usual Jacobi relation. 
+
+Since $\dim \cC_4 \leq 5$, there must be some relation of the following form:
+$$0 = \ngon[45]{4} + x \symcross + y \left(\drawI + \drawH \right) + z\left(\twostrandid + \cupcap \right).$$
+Multiplying this by a crossing and using the Jacobi relation:
+\begin{align*}
+0 &= \ngon[45]{4} - \frac{b}{2} \drawI + x \twostrandid + y \left(-\drawI + \drawH -\drawI \right) + z\left(\symcross + \cupcap \right) 
+\\ &= \ngon[45]{4} + z \symcross + \left(-2y -\frac{b}{2} \right) \drawI +y \drawH +x \twostrandid + z\cupcap. 
+\end{align*}
+
+If these two relations are distinct, then Proposition \ref{prop:dim4} applies, and the only case with $v=1$ is classical $SO(3)$ (note that there is not trivalent category $(G_2)_{\zeta_3}$), which satisfies the classical exceptional relation.  Otherwise, we have $x=z$ and $y = -\frac{b}{6}$.  
+
+Capping off this relation gives $0 = b^2 + x -\frac{b^2}{6}+x(1+d) =  (2+d)x +\frac{5 b^2}{6}$, so we have $x = -\frac{5 b^2}{6(2+d)}$.  This gives the classical exceptional square relation.
+\end{proof}
+
+
+\subsection{The case $v$ is a primitive third or sixth root of unity}
+
+\begin{proposition}
+If $v$ is a primitive third root of unity, then $\cC$ is classical $SO(3)$ or classical $G_2$.
+\end{proposition}
+\begin{proof}
+Since $v$ is not a $10$th root of unity $\alpha$ is non-zero.  Also $b+[3]\alpha = b \neq 0$.  QECrossing says that the braiding is symmetric.  
+%QEJacobi becomes $$\drawsymcrossX + v \drawI - v^2 \drawH + \alpha \left(\symcross + v^2 \twostrandid +v \cupcap \right) = 0.$$
+
+QESquare becomes:
+$$\symcross+\frac{\sqrt{-3}}{2\alpha} \left(\drawI + \drawH \right) -\frac{1}{2} \left(\twostrandid + \cupcap \right) = 0.$$
+
+After rescaling the trivalent vertex, this becomes precisely the Hurwitz relation (or classical $G_2$ relation) of \cite{???}.  The main result of that paper is that either $d = 7$ and $\cC$ is classical $G_2$ or $d=3$ and $\cC$ is $SO(3)$.
+\end{proof}
+
+\subsection{The case $v$ is a primitive fourth root of unity}
+
+Since $v$ is not a $10$th root of unity $\alpha$ is nonzero.  We have that $d+2 = \frac{-2ib}{\alpha}$.
+We need to split into two cases based on whether $b+[3]\alpha = 0$.  
+
+\begin{proposition}
+If $b+[3]\alpha \neq 0$ then $\cC$ satisfies the relations of the classical F4 relation.  In particular the non-degenerate quotient of $\cC$ must be one of LIST.
+\end{proposition}
+\begin{proof}
+If $b+[3]\alpha \neq 0$, then QECrossing says the crossing is symmetric.   QEJacobi becomes
+$$\drawsymcrossX + \drawI + \drawH = \alpha i \left(\symcross + \twostrandid + \cupcap \right).$$  If we rescale the trivalent vertex so that $\alpha i = 2$ then $b = d+2$ we have exactly the classical F4 relation.  The main result of \cite{???} is that this forces one of the following possibilities:
+
+TABLE
+
+We exclude the $\Rep(S_3)$ case because it satisfied $b+[3]\alpha = 0$.
+\end{proof}
+
+Since we do not know whether the classical F4 relation is sufficient for evaluating all closed diagrams, we do not know whether there are any additional degenerate $\cC$ whose non-degenerate quotient is one of the above categories.
+
+If $b+[3]\alpha = 0$, then $\alpha = -\frac{bi}{2}$ and $d = 2$.  QEJacobi becomes
+$$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \right).$$
+QESquare becomes
+$$\ngon[45]{4} = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right).$$
+
+\begin{lemma}
+The following diagrams are negligible in $\cC$:
+\begin{itemize}
+\item $$\braidcross + \invbraidcross - 2 \left(\drawI + \drawH \right)$$
+\item $$\braidcross - \invbraidcross$$
+\item $$\left(\drawI - \drawH - \twostrandid + \cupcap\right).$$
+\end{itemize}
+\end{lemma}
+\begin{proof}
+If the diagrams
+  \[
+  \cupcap\;,\qquad\twostrandid\;,
+    \qquad\drawI\;,\qquad\drawH\;,\qquad\braidcross\;\qquad\ngon[45]{4}\;
+   \]
+ span a $4$-dimensional space then the first $4$ diagrams span by Proposition \ref{prop:dim4}\NStodo{Add this statement to Prop \ref{prop:dim4}}.  If these $5$ diagrams are linearly independent then since $\dim \cC_4 \leq 5$, then they span.  Thus in either case we can check whether an element is negligible by pairing it with the above $5$ diagrams.
+\end{proof}
+
+\begin{corollary}
+If $\cC$ is non-degenerate then it must be $\mathrm{Rep}(S_3)$.
+\end{corollary}
+
+\begin{corollary}
+Either
+\begin{itemize}
+\item $$\braidcross + \invbraidcross = 2 \left(\drawI + \drawH \right).$$
+\item $$\braidcross - \invbraidcross = x \left(\drawI - \drawH - \twostrandid + \cupcap\right).$$
+\end{itemize}
+\end{corollary}
+
+If both relations hold, then the crossing simplifies.  By \ref{prop:dim4}, we see that $\cC$ is $\mathrm{Rep}(S_3)$ (which satisfies the latter relation for all $x$) or $(G_2)_{\zeta_{12}}$ for some primitive $12$th root of unity (which satisfies the latter relation for $x = \pm \frac{2}{\sqrt{-3}}$). Note that for each value of $v$ there are two distinct such $(G_2)_{\zeta_{12}}$ as ribbon categories, but they're equivalent as pivotal categories.
+\NStodo{Check sign, and find relationship between $\zeta$ and $v$}
+
+\begin{conjecture}
+Trivalent ribbon graphs modulo $d=2$ and the following relations:
+$$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \right)$$
+$$\ngon[45]{4} = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right)$$
+$$\braidcross + \invbraidcross = 2 \left(\drawI + \drawH \right)$$
+
+gives a category $\cG$ with finite dimensional Hom-spaces and $\dim \cG_k = 1,0,1,1,5$ for $k = 0,1,2,3,4$.  
+\end{conjecture}
+
+Note that these generators and relations can't define a trivial category because it has a quotient to  $(G_2)_{\zeta_12}$, and they also can't define can't define $(G_2)_{\zeta_12}$ because it has braided quotient maps to both $(G_2)_{\zeta_12}$ and $(G_2)_{-\zeta_12}$.  So the content of this conjecture is that these relations suffice to simplify diagrams down to the appropriate spanning sets.
+
+\begin{conjecture}
+Trivalent ribbon graphs modulo $d=2$ and the following relations:
+$$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \right)$$
+$$\ngon[45]{4} = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right)$$
+$$\braidcross - \invbraidcross = \frac{2}{\sqrt{-3}} \left(\drawI - \drawH - \twostrandid + \cupcap\right).$$
+
+gives a non-trivial category $\cH$ with $\dim \cH_k = 1,0,1,1,5$ for $k = 0,1,2,3,4$.  
+\end{conjecture}
+
+Again $\cH$ has braided quotient maps to both $(G_2)_{\zeta_12}$ and $(G_2)_{-\zeta_12}$ (which are the same as categories but not braided categories), so the content of this conjecture is that these relations suffice to simplify diagrams down to the appropriate spanning sets.
+
+\begin{conjecture}
+Trivalent ribbon graphs modulo $d=2$ and the following relations:
+$$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \right)$$
+$$\ngon[45]{4} = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right)$$
+$$\braidcross - \invbraidcross = 0.$$
+
+gives a non-trivial category $\cF$ with $\dim \cF_k = 1,0,1,1,5$ for $k = 0,1,2,3,4$.
+\end{conjecture}
+
+$\cF$ is the classical F4 family at $d=2$ without taking the non-degenerate quotient.  There is some evidence given in \cite{???} that these relations are enough to simplify closed diagrams.  In this case it's possible that these relations collapse all the way down to $\mathrm{Rep}(S_3)$ with $\dim \cF_4 = 4$ or that $\dim \cF_4 = 4$.
+
+\begin{remark}
+We expect that $\cF$ has an infinitesimal deformation defined over $\mathbf{C}[\varepsilon]/\varepsilon^2$ where $d = 2+\varepsilon$ as suggested by the double root in \cite{???}.  This infinitesimal deformation should have a (non-braided) quotient to an infinitesimal deformation of $(G_2)_{\zeta_12}$.
+\end{remark}
+
+We have no idea what to expect if you impose the relation 
+$$0 = \braidcross - \invbraidcross = x \left(\drawI - \drawH - \twostrandid + \cupcap\right)$$
+for some $x$ that is neither $0$ nor $\pm \frac{2}{\sqrt{-3}}$.
 
 
 \section{From the classical to the quantum conjecture}
