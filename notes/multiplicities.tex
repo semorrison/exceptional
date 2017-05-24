@@ -272,15 +272,63 @@ Then we have
                   {[1][\lambda+2][\lambda][\lambda-1][\lambda-3][2\lambda][2\lambda-2]}\\
   \dim(Y_2) &= -\frac{[4][5][6][\lambda+5][\lambda-4][3\lambda-6]}
                  {[2][\lambda][\lambda-1][\lambda-2][2\lambda][2\lambda-1]}\\
+  \dim(Y_2^*) &= \nn{...} \\
   \dim(X_3) &= - \frac{[4][5][\lambda+5][\lambda+4][\lambda-5][\lambda-6][2\lambda+4][2\lambda-6][3\lambda+3][3\lambda-6]}
                  {[1][2][\lambda+1][\lambda][\lambda-1][\lambda-2][2\lambda][2\lambda-2][3\lambda][3\lambda-3]}\\
   \dim(Y_3) &= - \frac{[4][5][6][\lambda+5][\lambda-4][\lambda-5][\lambda-6][2\lambda-4][5\lambda-6]}
                      {[2][\lambda][\lambda-1][\lambda-2][2\lambda][2\lambda-1][2\lambda-2][3\lambda][3\lambda-1]}\\
+  \dim(Y_3^*) &= \nn{...} \\
   \dim(A)   &= - \frac{[6][\lambda+5][\lambda+4][\lambda+3][\lambda-4][\lambda-5][\lambda-6][3\lambda-6][3\lambda+3]}
                      {[2][\lambda+1][\lambda]^2[\lambda-1]^2[\lambda-2][3\lambda-1][3\lambda-2]}\\
   \dim(C)   &= \frac{[4][5][6][\lambda+5][\lambda+3][\lambda-5][2\lambda+4][2\lambda-4][2\lambda-6][4\lambda-6]}
-                     {[1][\lambda+2][\lambda]^2[\lambda-1][\lambda-2][2\lambda-1][2\lambda-3][3\lambda][3\lambda-2]}
+                     {[1][\lambda+2][\lambda]^2[\lambda-1][\lambda-2][2\lambda-1][2\lambda-3][3\lambda][3\lambda-2]} \\
+  \dim(C^*) &= \nn{...}
 \end{align*}
+\nn{The dimensions for A and C were calculated (and the earlier cases checked) in \tt{code2/BraidedTrivalent-QES-6-box-dimensions.nb}, based on null space calculations from \tt{toolkit/.../BraidedTrivalent-QES-6-box-verify-braiding.nb}.}
+
+To calculate these, we find the eigenvectors of the full twist in the 2-strand and 3-strand braid groups, acting respectively on the span of our chosen 4-box and 6-box diagrams. (These are quite tricky calculations, as we're working in 2-variable rational functions and arithmetic tends to explode if not done carefully.)
+
+The calculations in the 2-strand braid group are easily.
+We first verify that the characteristic polynomial of the 2-strand full twist is 
+$$
+\nn{...} = w^{-4} \left(v^{24}-\lambda \right) \left(v^{12}-\lambda \right) (1- \lambda )   \left(w^4-\lambda \right) \left(v^4-\lambda  w^4\right)
+$$
+(we've written the factors here in the same order as they appear in the \nn{tables above})
+and compute the corresponding eigenspaces. These are all multiplicity free, so the eigenvectors are, up to a multiplicative constant, idempotents in the 2-strand algebra. We can easily calculate the quantum dimensions of the corresponding objects as the traces of the idempotents. (This can be done just using the already computed pairing matrix for the 4-box space, without any further skein theoretic calculations.) These give the dimensions for $X_2, Y_2,$ and $Y_2^*$.
+
+The characteristic polynomial of the 3-strand full twist is
+\begin{align*}
+\nn{...}
+w^{-72}
+\left(v^{36}-\lambda \right)
+\left(v^{24}-\lambda \right)^{25}
+\left(v^{12}-\lambda \right)^{16}  
+& \left(v^{12} w^4-\lambda \right)^9
+\left(v^{16}-\lambda  w^4\right)^9 \\
+\left(1 - \lambda\right)
+\left(w^{12}-\lambda \right) 
+&\left(v^{12}-\lambda  w^{12}\right)
+\left(v^4-\lambda \right)^9 
+\left(w^6-\lambda \right)^4  
+\left(v^6-\lambda  w^6\right)^4, 
+\end{align*}
+agreeing with \nn{Table 1 above}.
+We then comute the multiplicity free eigenvectors, namely those for $\lambda = v^{36}$ (corresponding to the 1 summand of $\mathfrak{g}^{\otimes 3}$), for $\lambda = 1$ (corresponding to $X_3$), for $w^{12}$ (corresponding to $Y_3$), and for $v^{12}w^{-12}$ (corresponding to $Y_3^*$). Again, these give the corresponding idempotents in the 3-strand algebra, and their traces give the quantum dimensions of $X_3, Y_3,$ and $Y_3^*$.
+
+Now we use the known fusion rules, calculating in Grothendieck ring
+\begin{align*}
+[A] + [C]
+& =
+[Y_2] [X_1] - [X_1] - [X_2] - [Y_2] - [Y_3] \\
+[A] + [C^*]
+& =
+[Y_2^*] [X_1] - [X_1] - [X_2] - [Y_2^*] - [Y_3^*] \\
+[A] + [C] + [C^*]
+& =
+[X_2] [X_1] - [X_1] - [X_2] - [Y_2] - [Y_2^*] - [X_3]
+\end{align*}
+which we can solve for the quantum dimensions of $A, C,$ and $C^*$.
+
 
 Graphically, we can plot these formulas as follows. A $\bullet$ at
 $(x,y)$ means that there is a factor of $[x+y\lambda]$ in the
@@ -349,6 +397,7 @@ $\dim(Y_2)$:
   \mnode{0}{2}; \mnode{-1}{2};
 \end{tikzpicture}
 \]
+$\dim(Y_2^*)$: \nn{...}
 
 $\dim(X_3)$:
 \[
@@ -378,6 +427,7 @@ $\dim(Y_3)$:
   \mnode{0}{3}; \mnode{-1}{3};
 \end{tikzpicture}
 \]
+$\dim(Y_3^*)$: \nn{...}
 
 $\dim(A)$:
 \[
@@ -405,7 +455,10 @@ $\dim(C)$:
   \mnode{0}{3}; \mnode{-2}{3};
 \end{tikzpicture}
 \]
+$\dim(C^*)$: \nn{...}
 \endgroup
+
+\nn{Scott todo: make a table for how these all specialise to the exceptional Lie algebras.}
 
 \bibliographystyle{amsalpha}
 \bibliography{bibliography/bibliography}
