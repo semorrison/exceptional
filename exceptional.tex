@@ -275,10 +275,10 @@ If both consistency and sufficiency hold, it is also natural to conjecture that 
 
 \begin{corollary}[Classical specialization]
 If Conjecture \ref{conj:class-suffic} and
-$\lambda$ is one of $-5, -4, -3, -2, -3/2,-1,-2/3,-1/2,-1/3,-1/5$, then the quotient of $\mathrm{Exc}_{\mathbb{C},\lambda}$ by the negligible elements is equivalent to the category of representations of the following compact supergroups: the trivial group, $\mathrm{OSp}(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3) \rtimes \mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$, $E_6 \rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
+$\lambda$ is one of $$-5, -4, -3, -2, -3/2,-1,-2/3,-1/2,-1/3,-1/5,$$ then the quotient of $\mathrm{Exc}_{\mathbb{C},\lambda}$ by the negligible elements is equivalent to the category of representations of the following compact supergroups: the trivial group, $\mathrm{OSp}(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3) \rtimes \mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$, $E_6 \rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
 \end{corollary}
 
-Here's a rough sketch of the proof given in Section ??? (some modification is needed for $\mathrm{OSp}(1|2)$).  All the skein relations in $\mathrm{Exc}_{\mathbb{C},\lambda}$ do hold in the corresponding representation categories, so we get a functor which is injective on morphisms and essentially surjective on objects.  By Tannaka-Krein duality and unitarity, the image of this functor is the category of representations of a compact subgroup of $\mathrm{U}(\ad)$ preserving the bracket and containing the group.  But each of these groups is the maximal such unitary group preserving the bracket, so the functor is surjective on morphisms.  \NStodo{Is this nonsense?}
+Here's a rough sketch of the proof given in Section ??? (some modification is needed for $\mathrm{OSp}(1|2)$).  All the skein relations in $\mathrm{Exc}_{\mathbb{C},\lambda}$ do hold in the corresponding representation categories, so we get a functor which is injective on morphisms and essentially surjective on objects.  By Tannaka--Krein duality and unitarity, the image of this functor is the category of representations of a compact subgroup of $\mathrm{U}(\ad)$ preserving the bracket and containing the group.  But each of these groups is the maximal such unitary group preserving the bracket, so the functor is surjective on morphisms.  \NStodo{Is this nonsense?}
 \DPTtodo{What is $\mathrm{U}(\ad)$, and does this kind of detail
   belong here??}
 
@@ -286,9 +286,9 @@ Here's a rough sketch of the proof given in Section ??? (some modification is ne
 There is a dense open subset $U \subset \mathbb{C}$ for which the idempotent completion of $\mathrm{Exc}_{\mathbb{C},\lambda}$, for $\lambda \in U$, is semisimple.
 \end{conjecture}
 
-We expect that in order for the idempotent completion to be semisimple one needs to invert infinitely many polynomials.  For example, for the idempotent completion of $\mathrm{GL}_t$ to be semisimple you need to invert $t-n$ for every positive integer $n$.  From the dimension formulas of Cohen-De Man and others, we might speculate that for classical semisimplicity it is again enough to invert $\lambda-n$ for $n \in \mathbb{Z}$.
+We expect that in order for the idempotent completion to be semisimple one needs to invert infinitely many polynomials.  For example, for the idempotent completion of $\mathrm{GL}_t$ to be semisimple you need to invert $t-n$ for every positive integer $n$.  From the dimension formulas of Cohen--De Man and others, we might speculate that for classical semisimplicity it is again enough to invert $\lambda-n$ for $n \in \mathbb{Z}$.
 
-These conjectures are a strengthening of a the conjecture of Deligne (as improved by Cohen--De Man who incorporated the Cvitanović-Vogel exceptional relation), and would give a construction of an exceptional series passing through each of the exceptional Lie algebras.
+These conjectures are a strengthening of a the conjecture of Deligne (as improved by Cohen--De Man who incorporated the Cvitanović--Vogel exceptional relation), and would give a construction of an exceptional series passing through each of the exceptional Lie algebras.
 
 \begin{conjecture}[Deligne's conjecture]
 There exists
@@ -578,7 +578,7 @@ power of adjoint representation in the exceptional series.
 
 \nn{Finish writing}
 
-We consider what happens when $v$ specializes to a $12$th or $10$th
+We consider what happens when $v$ specializes to a $10$th or $13$th
 root of unity, where some of our skein relations have vanishing denominators.
 It turns out that there is still a natural way to define these
 specializations, and they recover some interesting examples including the
@@ -590,6 +590,17 @@ categories, and a possible new example related to the ABA free product from
 \subsection{From classical to quantum}
 
 \nn{Write. Move earlier?}
+
+\section{Background}
+\nn{
+Recall:
+\begin{itemize}
+\item what are $SO(3)$, $G_2$, $S_t$,
+\item quantum group conventions,
+\item results from the trivalent paper we need?
+\item ??
+\end{itemize}
+}
 
 \section{Main results}
 
@@ -963,8 +974,7 @@ Solving these equations for $\beta$ and $\gamma$ give the list of possible eigen
 \label{sec:calculations}
 \newcommand{\V}{\mathcal{P}}
 
-\subsection{Heuristics for bases}
-\section{Candidate bases}
+\subsection{Candidate bases}
 \label{sec:bases}
 We now consider two candidates bases, $\cB^{\text{braided}}$ and $\cB^{\text
 {planar}}$ for each of the spaces $\cP_n$, for $n = 2,3,4,5,6$.
@@ -1525,7 +1535,7 @@ $$\cupcap \text{ and } \twostrandid$$
 are non-zero and are linearly independent.
 \end{lemma}
 \begin{proof}
-If either diagram is zero then by multiplying by a crossing on the proper side you get that the trivalent vertex is zero, which is a contradiction.  If the two diagrams are linearly dependent, then again multiplying by a trivalent vertex would show that the trivalent vertex is zero.
+If either diagram is zero then by multiplying by a crossing on the appropriate side you get that the trivalent vertex is zero, which is a contradiction.  If the two diagrams are linearly dependent, then again multiplying by a trivalent vertex would show that the trivalent vertex is zero.
 \end{proof}
 
 
@@ -1548,7 +1558,7 @@ $$\drawI\;\pm \; \drawH = z \left(\twostrandid \pm \cupcap \right).$$
 
 Capping off we see that $b= z (d \pm 1)$, so $z = \frac{b}{d \pm 1}$.  So all we need to do is exclude the $+$-sign case.
 
-Attaching a trivalent vertex we see that $t + b = \frac{b}{d + 1}$, so $t =  \frac{-b d}{d + 1}$.  Adding $\drawH$ to the top gives:
+Attaching a trivalent vertex we see that $t + b = \frac{b}{d + 1}$, so $t =  -\frac{b d}{d + 1}$.  Adding $\drawH$ to the top gives:
 
 $$t \drawI + \ngon[45]{4} = \frac{b}{d+1} \left( \drawH + b \cupcap\right).$$
 
