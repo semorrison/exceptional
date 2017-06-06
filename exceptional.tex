@@ -53,80 +53,6 @@
 
 \tableofcontents
 
-A proposed new outline:
-\begin{enumerate}
-\item Introduction
-\begin{enumerate}
-\item Two-variable knot polynomials. For a two-variable knot polynomial to
-exist, we first need a family of Lie algebras, and second need a coherent
-quantisation of the family. We propose that this can be achieved in the 
-exceptional series, and give many calculations of the conjectured knot
-invariant.
-\item Deligne's classical exceptional series, generators, relations, and 
-conjectures.
-\item The main result of this paper is a conjecture.
-The quantum exceptional series, generators and relations and conjectures.
-\item The rest of the paper consists of two kinds of evidence for this 
-conjecture.
-\begin{enumerate}
-\item First, we show that the proposed description of the quantum exceptional 
-series is the right one --- it is picked out as the unique braided tangle
-category
-with ...
-\item Second, we give some weak evidence that the conjecture is viable.
-\begin{enumerate}
-\item We propose bases for the $n$-box spaces, $n \leq 6$ (or is it 7?), 
-showing that these are linear independent, and their spans are closed under
-various operations.
-\item We show that these give representations of the affine $n$-strand braid 
-groups, for $n \leq 6$.
-\item We calculate ridiculously many two-variable knot polynomials; although 
-these are conjectural, they unconditionally specialise to the correct quantum
-knot polynomials for the exceptional Lie algebras.
-\end{enumerate}
-\item Mention the Kontsevich integral argument?
-\end{enumerate}
-\end{enumerate}
-\item Main results
-\begin{enumerate}
-\item The classification statement.
-\item We defer some corner cases to the end.
-\item Proof of the main case.
-\item Statement of the evaluation and consistency conjectures.
-\item Some consequences: other relations.
-\item Specializations.
-  \begin{enumerate}
-  \item $U_q(\fg)$ for $\fg$ in Deligne's list in the adjoint
-    representation
-  \item The 7-dimensional representation of $U_q(\fg_2)$
-  \item $U_q(\fg)$ for $\fg$ in the $F_4$ family
-    At $q=1$, these have $v^6=-1$ (since the trivalent vertex is
-    symmetric). This family has only a finite number of points.
-  \end{enumerate}
-\end{enumerate}
-\item Calculations
-\begin{enumerate}
-\item Heuristics for choosing bases for $n$-box spaces
-\item Verifying linear independence, and invariance under operations
-\item A representation of the affine 6-strand braid group
-\item 2-variable polynomials for knots with Conway width at most 6.
-\begin{enumerate}
-\item Define Conway graph and Conway width.
-\item Explain that we can calculate anything with Conway width at most 6.
-\item This includes all 12-crossing knots, and all but one 12-crossing link.
-\item Mention Westbury's paper, and the other paper that has done some knot
-polynomial calculations.
-\end{enumerate}
-\item Denominators.
-\item Dimensions of irreducible objects.
-\end{enumerate}
-\item A Kontsevich integral argument: the classical conjecture implies the
-quantum conjecture.
-\item Corner cases from the classification.
-\end{enumerate}
-
-
-
 \section{Introduction}
 \label{sec:introduction}
 
@@ -566,9 +492,9 @@ rational function in $v$ and $w$ will yield the same rational function.
 terms of $v$, what do the semidirect products mean. We should probably
 include a later section and just refer forward for this.}
 
-As in the classical case, we again get that if $d$ (resp. $b$) is invertible,
-then $R$ also injects into $\mathrm{QExc}_{R,v,w}(1,1)$ (resp.
-$\mathrm{QExc}_{R,v,w}(1,2)$) as multiples of the strand (resp. trivalent
+As in the classical case, we again get that if $d$ (resp.\ $b$) is invertible,
+then $R$ also injects into $\mathrm{QExc}_{R,v,w}(1,1)$ (resp.\
+$\mathrm{QExc}_{R,v,w}(1,2)$) as multiples of the strand (resp.\ trivalent
 vertex).
 
 \begin{conjecture}[Quantum specialization]
@@ -748,7 +674,7 @@ power of adjoint representation in the exceptional series.
 
 \nn{Finish writing}
 
-We consider what happens when $v$ specializes to a $10$th or $13$th root of
+We consider what happens when $v$ specializes to a $10$th or $12$th root of
 unity, where some of our skein relations have vanishing denominators. It turns
 out that there is still a natural way to define these specializations, and
 they recover some interesting examples including the classical exceptional
@@ -1252,6 +1178,11 @@ Solving these equations for $\beta$ and $\gamma$ give the list of possible eigen
 
 
 
+
+\subsection{Dimensions}
+\nn{Import heuristic arguments for dimensions and eigenvalues from
+  \texttt{multiplicities.tex} here, since we need them in the
+  Calculations. Say that they are proved later.}
 
 \section{Calculations}
 \label{sec:calculations}
@@ -1804,11 +1735,29 @@ computing this.
 
 \subsubsection{Comparisons}
 \nn{Compare to Westbury and the other paper...}
+\nn{By Westbury, we mean \texttt{arXiv:1510.08307}, right?}
 
+\section{Special cases}
 
-\section{When \texorpdfstring{$v$} is a small root of unity}
-
-The goal of this section is to analyze what happens when $v$ is a $10$th or $12$th root of unity, so that the derivation of the QESquare and QECrossing relations break down.  We begin by analyzing what happens when $\dim \cC_4 < 5.$
+\DPTtodo{Made this section more general, since it seems other special cases
+  naturally go here}
+The goal of this section is to analyze several special cases,
+including
+\begin{itemize}
+\item When $v$ is a $10$th or $12$th root of unity, the
+  derivation of the QESquare and QECrossing relations break down.
+\item When $\fg$ is in Deligne's list, in the adjoint
+  representation, the conjectural 2-variable polynomial specializes
+  correctly.
+\item The $7$-dimensional representation of $U_q(\fg_2)$ also
+  satisfies the given assumptions on the dimension of the 4-box space.
+\item For $U_q(\fg)$ for $\fg$ in the $F_4$ family, we again have a
+  trivalent vertex. At $q=1$ we have $v^6 = -1$, since the trivalent
+  vertex is symmetry, not anti-symmetric. This family has only a
+  finite number of points.
+  \DPTtodo{Also classical $S_t$?}
+\end{itemize}
+We begin by analyzing what happens when $\dim \cC_4 < 5.$
 
 
 \subsection{Corner cases with small $4$-box space}
@@ -2065,6 +2014,8 @@ We have no idea what to expect if you impose the relation
 $$0 = \braidcross - \invbraidcross = x \left(\drawI - \drawH - \twostrandid + \cupcap\right)$$ 
 for some $x$ that is neither $0$ nor $\pm \frac{2}{\sqrt{-3}}$.
 
+
+\nn{Several cases missing, as mentioned at the beginning of this section}
 
 \section{From the classical to the quantum conjecture}
 \label{sec:classical-quantum}
