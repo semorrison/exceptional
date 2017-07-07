@@ -234,16 +234,35 @@ rank.  When $n+m$ is small this follows from our calculations and the above
 conjectures.
 
 \begin{corollary}[Classical specialization]
-If Conjecture \ref{conj:class-suffic} holds and $\lambda$ is one of $$-5, -4, -3,
--2, -3/2,-1,-2/3,-1/2,-1/3,-1/5,$$ then the quotient of
+If Conjecture \ref{conj:class-suffic} holds and $\lambda$ is one of
+the values on the left of Table~\ref{tab:lambda-group}, then the quotient of
 $\mathsf{Exc}_{\mathbb{C},\lambda}$ by the negligible elements is equivalent
-to the category of representations of the following compact supergroups: the
-trivial group, $\mathrm{OSp}(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3)
-\rtimes \mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$,
-$E_6 \rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
+to the category of representations of the corresponding group on the
+right of Table~\ref{tab:lambda-group}.
 \end{corollary}
 
-\DPTtodo{make a table!}
+\begin{table}
+  \begin{tabular}{rl}
+    \toprule
+    $\lambda$ & Supergroup \\ \midrule
+    $-5$ & Trivial group \\
+    $-4$ & $\mathrm{OSP}(1|2)$ \\
+    $-3$ & $\mathrm{PSL}(2)$ \\
+    $-2$ & $\mathrm{PSL}(3) \rtimes \ZZ/2$ \\
+    $-3/2$ & $G_2$ \\
+    $-1$ & $\mathrm{PO}(8) \rtimes \ZZ/3$ \\
+    $-2/3$ & $F_4$ \\
+    $-1/2$ & $E_6 \rtimes \ZZ_2$ \\
+    $-1/3$ & $E_7$ \\
+    $-1/5$ & $E_8$ \\
+    \bottomrule
+  \end{tabular}
+  \caption{Values of $\lambda$ and the supergroup with related category
+    representations. In each case, take the Lie group
+    with trivial center, semidirect product with its group of outer
+    automorphisms.}
+  \label{tab:lambda-group}
+\end{table}
 
 Here's a rough sketch of the proof given in Section ???. (Some modification is
 needed for $\mathrm{OSp}(1|2)$.)  All the skein relations in
@@ -289,7 +308,11 @@ For any map $\varphi: R \rightarrow S$ we can define the base extension $\mathsf
 \item The idempotent completion of $\mathsf{Except}_{\mathbb{C}(\lambda),\lambda}$ is semisimple.
 \item $\mathsf{Except}_{\mathbb{C}(\lambda),\lambda}(n,m)$ has dimension $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
 for $n+m=0,1,2,3,4,5,6$, respectively.
-\item If $\lambda$ is one of $-5, -4, -3, -2, -3/2,-1,-2/3,-1/2,-1/3,-1/5$, then the quotient of $\mathsf{Exc}_{\mathbb{C},\lambda}$ by the negligible elements is equivalent to the category of representations of the trivial group, $O(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3) \rtimes \mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$, $E_6 \rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
+\item If $\lambda$ is one of the special values in
+  Table~\ref{tab:lambda-group}, then the quotient of
+  $\mathsf{Exc}_{\mathbb{C},\lambda}$ by the negligible elements is
+  equivalent to the category of representations of the corresponding
+  supergroup.
 \end{itemize}
 \end{conjecture}
 
@@ -495,13 +518,11 @@ $\mathsf{QExc}_{R,v,w}(1,2)$) as multiples of the strand (resp. trivalent
 vertex).
 
 \begin{corollary}[Quantum specialization]
-If $\lambda$ is one of $-5, -4, -3, -2, -3/2,1,2/3,1/2,
-1/3, 1/5$, and $v$ is not a root of unity, then the quotient of
+  If $\lambda$ is one of the values in Table~\ref{tab:lambda-group}
+  and $v$ is not a root of unity, then the quotient of
 $\mathsf{QExc}_{\mathbb{C},v,v^\lambda}$ by the negligible elements is
-equivalent to the category of representations of the quantum versions of
-trivial group, $O(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3) \rtimes
-\mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$, $E_6
-\rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
+equivalent to the category of representations of the quantum version
+the corresponding group.
 \end{corollary}
 
 We expect that this will also be true at roots of unity, perhaps excluding some small roots of unity and some parities.
