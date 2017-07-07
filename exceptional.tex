@@ -133,11 +133,10 @@ modulo planar isotopy, the usual Reidemeister relations
 for a symmetric crossing and a trivalent vertex, and the following
 circle, lollipop, bigon,
 triangle, anti-symmetry, symmetry of the Killing form, and Jacobi relations.
-
 \begin{align}
 \label{eq:classical-loop-lollipop}  \unknot \; &= d &  \loopvertex \; &=0 \\
-\label{eq:classical-bigon-trigon}  \ngon{2}\; &= b \;\onestrandid  & \ngon{3}\; &= \frac{b}{2} \;\nvertex{3} \\
-\label{eq:classical-symmetry-antisymmetry}   \symtwistvertex\; &= - \nvertex[-90]{3} & \symtwist\; &= \drawcup
+\label{eq:classical-bigon-trigon}  \twogon\; &= b \;\onestrandid  & \threegon\; &= \frac{b}{2} \;\threevertex \\
+\label{eq:classical-symmetry-antisymmetry}   \symtwistvertex\; &= - \threevertex & \symtwist\; &= \drawcup
 \end{align}
 \begin{equation}
 \drawI\; - \;\drawH\; + \;\drawsymcrossX\; = 0.
@@ -171,7 +170,7 @@ representations of the exceptional Lie algebras satisfy another relation, the
 If $2+d$ is invertible in $R$, let $\mathsf{Exc}_{R,d,b}$ be symmetric tensor category which is the quotient of 
 $\mathsf{Jac}_{R,d,b}$ modulo the exceptional relation.
 \begin{equation}
-\ngon[45]{4}\; = \frac{b}{6} \left(\;\drawI\; + \;\drawH\; \right)
+\fourgon\; = \frac{b}{6} \left(\;\drawI\; + \;\drawH\; \right)
  + \frac{5}{6}\frac{b^2}{2+d} \left( \;\cupcap\; + \;\twostrandid\; + \;\symcross\; \right)
 \label{eq:classical-except}
 \end{equation}
@@ -188,7 +187,7 @@ $\mathsf{Exc}_{R,-2   \frac{(\lambda+5)(6-\lambda)}{\lambda(1-\lambda)},6}$
 (which we will also write $\mathsf{Exc}_{R,\lambda}$) has the following form.
 
 \begin{equation}
-\ngon[45]{4}\; = \;\drawI\; + \;\drawH\;
+\fourgon\; = \;\drawI\; + \;\drawH\;
  - \frac{\lambda(1-\lambda)}{2} \left( \;\cupcap\; + \;\twostrandid\; + \;\symcross\; \right)
 \label{eq:classical-except-2}
 \end{equation}
@@ -414,9 +413,9 @@ quantum Killing symmetry relations.
   \begin{aligned}
     \unknot\; &= d&\quad
     \loopvertex\;&=0\\[5pt]
-      \ngon{2}\;&= b\;\onestrandid&
-        \ngon[-90]{3}\; &= t\;\nvertex[-90]{3}\\[5pt]
-    \twistvertex\; &= -v^{6}\;\nvertex[-90]{3}&
+      \twogon\;&= b\;\onestrandid&
+        \threegon\; &= t\;\threevertex\\[5pt]
+    \twistvertex\; &= -v^{6}\;\threevertex&
       \twist\; &= v^{12}\;\drawcup
   \end{aligned}
   \end{equation}
@@ -452,7 +451,7 @@ v^{-3} \;
 
 \begin{equation}
 \label{eq:QESquare-w}
-\ngon[45]{4} + \frac{-\Psi_2\Psi_6^2[\lambda][\lambda-1]}{\Psi_1^2} \braidcross + \frac{x_1}{\Psi_1} \drawI + \frac{x_2}{\Psi_1} \drawH + \frac{x_3}{\Psi_1^2} \cupcap + \frac{x_4}{\Psi_1^2} \twostrandid =0
+\fourgon + \frac{-\Psi_2\Psi_6^2[\lambda][\lambda-1]}{\Psi_1^2} \braidcross + \frac{x_1}{\Psi_1} \drawI + \frac{x_2}{\Psi_1} \drawH + \frac{x_3}{\Psi_1^2} \cupcap + \frac{x_4}{\Psi_1^2} \twostrandid =0
 \end{equation}
 
 where the $x_i$ are Laurent polynomials in $v$ and $w$ from Appendix \ref{app:coefficients}.
@@ -612,7 +611,7 @@ $
 \item
 
 The quantum exceptional square relation:
-\begin{equation*} \ngon[45]{4} + \frac{\alpha \Psi_6 (b+[3]\alpha)}{\Psi_1 \Psi_3 \Psi_4}  \braidcross + \frac{y_1}{\Psi_3 \Psi_4}  \drawI + \frac{y_2}{\Psi_3 \Psi_4}  \drawH + \frac{y_3}{\Psi_1 \Psi_3 \Psi_4} \cupcap + \frac{y_4}{\Psi_1 \Psi_3 \Psi_4} \twostrandid =0
+\begin{equation*} \fourgon + \frac{\alpha \Psi_6 (b+[3]\alpha)}{\Psi_1 \Psi_3 \Psi_4}  \braidcross + \frac{y_1}{\Psi_3 \Psi_4}  \drawI + \frac{y_2}{\Psi_3 \Psi_4}  \drawH + \frac{y_3}{\Psi_1 \Psi_3 \Psi_4} \cupcap + \frac{y_4}{\Psi_1 \Psi_3 \Psi_4} \twostrandid =0
 \end{equation*}
 where the $y_i$ are Laurent polynomials in $v$ and $w$ given in Appendix \ref{app:coefficients}.
 \item
@@ -735,10 +734,10 @@ trivalent ribbon tangle may be interpreted as a morphism in $\cC$.
   \begin{aligned}
     \unknot\; &= d&\qquad
       \twist\; &= s^2\;\drawcup&\qquad
-        \twistvertex\; &= -s\;\nvertex[-90]{3}\\[5pt]
+        \twistvertex\; &= -s\;\threevertex\\[5pt]
     \loopvertex\;&=0&
-      \ngon{2}\;&= b\;\onestrandid&
-        \ngon[-90]{3}\; &= t\;\nvertex[-90]{3}
+      \twogon\;&= b\;\onestrandid&
+        \threegon\; &= t\;\threevertex
   \end{aligned}
   \end{equation}
 \end{lemma}
@@ -829,24 +828,7 @@ then pick $v$ to be either square root of $\mu$.  These are the only two $v$
 satisfying $\lambda = v^{-4}$ and $v^6 = s$.
   
 Thus we have a relation of
-  the form
-  \begin{equation*}
-\beta \left[v^{-3} \;
-\drawcrossX
-\;+ v \;
-\drawI
-\; -v^{-1} \;
- \drawH
-\;\right]
- + \alpha
-\left[\; \braidcross \;
- + v^{4}\;
-\cupcap
-\; + v^{-4} \;
- \twostrandid \;\right]=0.
- \qedhere
-  \end{equation*}
-
+the form of~\eqref{eq:quant-except-init}.
 \end{proof}
 
 We now address the case $\beta = 0$.
@@ -875,14 +857,12 @@ of $R$, so $\sum_{i=0}^2 \lambda^i R^i(\psi)$ gives three linearly independent
 relations of the above form for the three cube roots of unity $\lambda$.
 
 When $v=1$ the relations we get are:
-
 \begin{align*}
 0 &= \braidcross + \twostrandid + \cupcap \\
 0 &= \drawcrossX +\drawH + b\cupcap \\
 0 &= \drawI - \drawcrossX + b\twostrandid \\
 0 &= -\drawH -\drawI + b \braidcross
 \end{align*}
-
 Combining the first equation and the last one we see that:
 $$\drawI+\drawH = b \twostrandid + b\cupcap.$$
 Multiplying by a trivalent vertex we see that $b+t=b$, so $t = 0$.  Pairing
@@ -896,7 +876,6 @@ When $v$ is a fifth root of unity we get the relations:
 0 &= \drawI - \drawcrossX + b v^{-3} \twostrandid \\
 0 &= -v^{-1} \drawH -\drawI + b v^{-3} \braidcross
 \end{align*}
-
 Capping off the first equation we see that $v^2 + v +v^{-1}d = 0$, so $d =
 -v^2-v^3$ is the Golden ratio or its Galois conjugate.  These four equations
 are linearly independent, and by taking the proper linear combinations we see
@@ -914,11 +893,9 @@ Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$, then
   [5] b &= - \alpha (d+\{8\})\label{eq:b-rel} \\
   t \{2\} &= b-[5] \alpha.\label{eq:b-t-rel}
 \end{align}
-
 Since $b$ and $d$ are nonzero, it follows that $v$ is not a primitive $8$th
 root of unity.  If $v$ is also not a 10th root of unity, then $\alpha$ is non-
 zero and we have the following formulas.
-
 \begin{align*}
   d &= -\frac{[5] b}{\alpha} - \{8\}   \\
   t  &= \frac{b-[5] \alpha}{\{2\}}.
@@ -951,7 +928,7 @@ and Lemma \ref{lem:dandtvalues} we have the other relations.
 Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$, then the following equations hold.
 \begin{itemize}
   \item The quantum exceptional square relation:
-\begin{equation*} [3] \ngon[45]{4} + \frac{\alpha \Psi_6 (b+[3]\alpha)}{\Psi_4} \braidcross + \frac{y_1 \Psi_1}{\Psi_4} \drawI + \frac{y_2 \Psi_1}{\Psi_4} \drawH + \frac{y_3}{\Psi_4} \cupcap + \frac{y_4}{\Psi_4} \twostrandid =0
+\begin{equation*} [3] \fourgon + \frac{\alpha \Psi_6 (b+[3]\alpha)}{\Psi_4} \braidcross + \frac{y_1 \Psi_1}{\Psi_4} \drawI + \frac{y_2 \Psi_1}{\Psi_4} \drawH + \frac{y_3}{\Psi_4} \cupcap + \frac{y_4}{\Psi_4} \twostrandid =0
 \end{equation*}
 where the $y_i$ are Laurent polynomials in $v$ and $w$ given in Appendix \ref{app:coefficients}.
   \item
@@ -968,7 +945,7 @@ of this relation under the action of the operator $R$.  Here is the action of
 $R$ on the square.
 $$
 \begin{tikzpicture}
-      \node[inner sep=5pt] (A) at (150:1.4cm) {\ngon[45]{4}};
+      \node[inner sep=5pt] (A) at (150:1.4cm) {\fourgon};
       \node[inner sep=5pt] (B) at (30:1.4cm) {\twistedsquarehor};
       \node[inner sep=5pt] (C) at (-90:1.4cm) {\twistedsquarever};
       \draw[|->,bend left=15] (A) to (B);
@@ -976,13 +953,12 @@ $$
       \draw[|->,bend left=15] (C) to (A);
 \end{tikzpicture}
 $$
-
 We attach an $H$ to the bottom of QEJacobi (using that the crossing and $H$
 commute) and the apply $R$ and $R^2$.
 
-$$v^{-3} \twistedsquarever + v t \drawI  -v^{-1} \ngon[45]{4} + \alpha \drawcrossX + \alpha v^4 b \cupcap + \alpha v^{-4} \drawH = 0.$$
+$$v^{-3} \twistedsquarever + v t \drawI  -v^{-1} \fourgon + \alpha \drawcrossX + \alpha v^4 b \cupcap + \alpha v^{-4} \drawH = 0.$$
 
-$$v^{-3} \ngon[45]{4} -v^{-5} t \drawH  -v^{-1} \twistedsquarehor + \alpha \drawI + \alpha v^{-8} b \twostrandid - \alpha v^{-10} \drawcrossX = 0.$$
+$$v^{-3} \fourgon -v^{-5} t \drawH  -v^{-1} \twistedsquarehor + \alpha \drawI + \alpha v^{-8} b \twostrandid - \alpha v^{-10} \drawcrossX = 0.$$
 
 $$v^{-3} \twistedsquarehor +v^{-11} t \drawcrossX  -v^{-13} \twistedsquarever -v^{-6} \alpha \drawH + \alpha v^{-8} b \braidcross - \alpha v^{-10} \drawI = 0.$$
 
@@ -990,7 +966,7 @@ Multiply the first equation by $v^{-2}$, the second by $v^6$, and the third by
 $v^8$ and add the three terms, so that all the twisted squares cancel,
 yielding:
 
-\begin{multline*}[3] \ngon[45]{4} +  (t+[1]\alpha)v^{-3} \drawcrossX -(vt +v^{-2}[4]\alpha) \drawH +(v^{-1} t+v^2 [4]\alpha)\drawI \\+ \alpha b \braidcross + \alpha b v^{-2} \twostrandid + \alpha b v^2 \cupcap = 0\end{multline*}
+\begin{multline*}[3] \fourgon +  (t+[1]\alpha)v^{-3} \drawcrossX -(vt +v^{-2}[4]\alpha) \drawH +(v^{-1} t+v^2 [4]\alpha)\drawI \\+ \alpha b \braidcross + \alpha b v^{-2} \twostrandid + \alpha b v^2 \cupcap = 0\end{multline*}
 
 %\begin{align}
 %\label{eq:deriving-square-relation}
@@ -1248,7 +1224,7 @@ Furthermore, Equation~\eqref{eq:Kontsevich-crossing} shows that
  that
 \begin{align*}
   \Qeval\biggl(\;\twist\;\biggr) &= e^{hb/2}\eval\biggl(\;\drawcup\;\biggr)\\
-  \Qeval\biggl(\;\twistvertex\;\biggr) &= e^{hb/4}\eval\biggl(\;\nvertex[-90]{3}\;\biggr)
+  \Qeval\biggl(\;\twistvertex\;\biggr) &= e^{hb/4}\eval\biggl(\;\threevertex\;\biggr)
 \end{align*}
 Comparison with Equation~\eqref{eq:simple-rels-spec} shows that we
 should choose $v = e^{hb/24} \in R((h))$. Then by Theorem~\ref{thm:Jacobi}, the
@@ -1914,7 +1890,7 @@ Capping off we see that $b= z (d \pm 1)$, so $z = \frac{b}{d \pm 1}$.  So all we
 
 Attaching a trivalent vertex we see that $t + b = \frac{b}{d + 1}$, so $t =  -\frac{b d}{d + 1}$.  Adding $\drawH$ to the top gives:
 
-$$t \drawI + \ngon[45]{4} = \frac{b}{d+1} \left( \drawH + b \cupcap\right).$$
+$$t \drawI + \fourgon = \frac{b}{d+1} \left( \drawH + b \cupcap\right).$$
 
 If we take this relation minus its $90$-degree rotation the square term will vanish yielding:
 $$ b \frac{d-1}{d+1} \left( \drawI -\drawH \right) = \frac{b^2}{d+1} \left(\twostrandid - \cupcap\right).$$
@@ -1942,7 +1918,7 @@ are linearly dependent, then
 If the diagrams  
   \[
   \cupcap\;,\qquad\twostrandid\;,
-    \qquad\drawI\;,\qquad\drawH\;,\qquad\braidcross\;,\qquad\ngon[45]{4}\;
+    \qquad\drawI\;,\qquad\drawH\;,\qquad\braidcross\;,\qquad\fourgon\;
    \]
 span a space of dimension $4$ or smaller, then
 \begin{itemize}
@@ -1989,11 +1965,11 @@ If $\alpha = 0$, then $\cC$ satisfies the defining relations of the classical ex
 QECrossing says that the crossing is symmetric, and then QEJacobi becomes the usual Jacobi relation. 
 
 Since $\dim \cC_4 \leq 5$, there must be some relation of the following form:
-$$0 = \ngon[45]{4} + x \symcross + y \left(\drawI + \drawH \right) + z\left(\twostrandid + \cupcap \right).$$
+$$0 = \fourgon + x \symcross + y \left(\drawI + \drawH \right) + z\left(\twostrandid + \cupcap \right).$$
 Multiplying this by a crossing and using the Jacobi relation:
 \begin{align*}
-0 &= \ngon[45]{4} - \frac{b}{2} \drawI + x \twostrandid + y \left(-\drawI + \drawH -\drawI \right) + z\left(\symcross + \cupcap \right) 
-\\ &= \ngon[45]{4} + z \symcross + \left(-2y -\frac{b}{2} \right) \drawI +y \drawH +x \twostrandid + z\cupcap. 
+0 &= \fourgon - \frac{b}{2} \drawI + x \twostrandid + y \left(-\drawI + \drawH -\drawI \right) + z\left(\symcross + \cupcap \right) 
+\\ &= \fourgon + z \symcross + \left(-2y -\frac{b}{2} \right) \drawI +y \drawH +x \twostrandid + z\cupcap. 
 \end{align*}
 
 If these two relations are distinct, then Proposition \ref{prop:dim4} applies, and the only case with $v=1$ is classical $SO(3)$ (note that there is not trivalent category $(G_2)_{\zeta_3}$), which satisfies the classical exceptional relation.  Otherwise, we have $x=z$ and $y = -\frac{b}{6}$.  
@@ -2039,7 +2015,7 @@ Since we do not know whether the classical F4 relation is sufficient for evaluat
 If $b+[3]\alpha = 0$, then $\alpha = -\frac{bi}{2}$ and $d = 2$.  QEJacobi becomes
 $$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \right).$$
 QESquare becomes
-$$\ngon[45]{4} = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right).$$
+$$\fourgon = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right).$$
 
 \begin{lemma}
 The following diagrams are negligible in $\cC$:
@@ -2053,7 +2029,7 @@ The following diagrams are negligible in $\cC$:
 If the diagrams
   \[
   \cupcap\;,\qquad\twostrandid\;,
-    \qquad\drawI\;,\qquad\drawH\;,\qquad\braidcross\;,\qquad\ngon[45]{4}\;
+    \qquad\drawI\;,\qquad\drawH\;,\qquad\braidcross\;,\qquad\fourgon\;
    \]
  span a $4$-dimensional space then the first $4$ diagrams span by Proposition \ref{prop:dim4}\NStodo{Add this statement to Prop \ref{prop:dim4}}.  If these $5$ diagrams are linearly independent then since $\dim \cC_4 \leq 5$, then they span.  Thus in either case we can check whether an element is negligible by pairing it with the above $5$ diagrams.
 \end{proof}
@@ -2081,7 +2057,7 @@ ribbon categories, but they're equivalent as pivotal categories.
 \begin{conjecture}
 Trivalent ribbon graphs modulo $d=2$ and the following relations:
 $$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \right)$$
-$$\ngon[45]{4} = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right)$$
+$$\fourgon = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right)$$
 $$\braidcross + \invbraidcross = 2 \left(\drawI + \drawH \right)$$
 gives a category $\cG$ with finite dimensional Hom-spaces and $\dim \cG_k = 1,0,1,1,5$ for $k = 0,1,2,3,4$.  
 \end{conjecture}
@@ -2096,7 +2072,7 @@ spanning sets.
 \begin{conjecture}
 Trivalent ribbon graphs modulo $d=2$ and the following relations:
 $$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \right)$$
-$$\ngon[45]{4} = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right)$$
+$$\fourgon = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right)$$
 $$\braidcross - \invbraidcross = \frac{2}{\sqrt{-3}} \left(\drawI - \drawH - \twostrandid + \cupcap\right).$$
 
 gives a non-trivial category $\cH$ with $\dim \cH_k = 1,0,1,1,5$ for $k = 0,1,2,3,4$.  
@@ -2110,7 +2086,7 @@ to simplify diagrams down to the appropriate spanning sets.
 \begin{conjecture}
 Trivalent ribbon graphs modulo $d=2$ and the following relations:
 $$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \right)$$
-$$\ngon[45]{4} = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right)$$
+$$\fourgon = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right)$$
 $$\braidcross - \invbraidcross = 0.$$
 
 gives a non-trivial category $\cF$ with $\dim \cF_k = 1,0,1,1,5$ for $k = 0,1,2,3,4$.

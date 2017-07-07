@@ -87,7 +87,13 @@ coverlinelefttail/.style={
 \DeclareMathOperator{\rightquadarrows} {{\; \begin{tikzpicture} \foreach \y in {-0.05, 0.05, 0.15, 0.25} { \draw [-stealth] (0, \y) -- +(0.5, 0);} \; \end{tikzpicture}}}
 \DeclareMathOperator{\leftquadarrows} {{\; \begin{tikzpicture} \foreach \y in {-0.05, 0.05, 0.15, 0.25} { \draw [stealth-] (0, \y) -- +(0.5, 0);} \; \end{tikzpicture}}}
 
-\newcommand{\twistedsquarehor}{
+\newcommand{\newfig}[3]{
+  \newsavebox{#2}
+  \savebox{#2}{#3}
+  \newcommand{#1}{\usebox{#2}}
+}
+
+\newfig{\twistedsquarehor}{\twistedsquarehorbox}{
 \begin{tikzpicture}[baseline=-.5ex,scale=.8]
 \draw (45:.8cm) -- (-135:.8cm);
 \draw[line width=1mm,white,double=black] (-45:.8cm) -- (135:.8cm);
@@ -95,8 +101,7 @@ coverlinelefttail/.style={
 \draw (135:.5cm) .. controls +(-105:.3cm) and +(105:.3cm) .. (-135:.5cm);
 \end{tikzpicture}}
 
-
-\newcommand{\twistedsquarever}{
+\newfig{\twistedsquarever}{\twistedsquareverbox}{
 \begin{tikzpicture}[baseline=-.5ex,scale=.8]
 \draw (45:.8cm) -- (-135:.8cm);
 \draw[line width=1mm,white,double=black] (-45:.8cm) -- (135:.8cm);
@@ -122,13 +127,18 @@ coverlinelefttail/.style={
 \end{tikzpicture}
 }
 
-\newcommand{\unknot}{
+\newfig{\twogon}{\twogonbox}{\ngon{2}}
+\newfig{\threegon}{\threegonbox}{\ngon[-90]{3}}
+\newfig{\threevertex}{\threevertexbox}{\nvertex[-90]{3}}
+\newfig{\fourgon}{\fourgonbox}{\ngon[45]{4}}
+
+\newfig{\unknot}{\unknotbox}{
 \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
   \draw (0,0) circle (.6cm);
 \end{tikzpicture}
 }
 
-\newcommand{\drawI}{ \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
+\newfig{\drawI}{\drawIbox}{ \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
  	\draw (0,.2) -- (45:.8cm);
  	\draw (0,.2) -- (135:.8cm);
 	\draw (0,.2) -- (0,-.2);
@@ -137,7 +147,7 @@ coverlinelefttail/.style={
 \end{tikzpicture}
 }
 
-\newcommand{\drawH}{ \begin{tikzpicture}[baseline=-0.5ex,rotate=90,scale=0.8]
+\newfig{\drawH}{\drawHbox}{ \begin{tikzpicture}[baseline=-0.5ex,rotate=90,scale=0.8]
  	\draw (0,.2) -- (45:.8cm);
  	\draw (0,.2) -- (135:.8cm);
 	\draw (0,.2) -- (0,-.2);
@@ -145,47 +155,47 @@ coverlinelefttail/.style={
  	\draw (0,-.2) -- (-135:.8cm);
 \end{tikzpicture}}
 
-\newcommand{\drawdottedH}{ \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
+\newfig{\drawdottedH}{\drawdottedHbox}{ \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
         \draw (45:.8cm) -- (-45:.8cm);
         \draw (135:.8cm) -- (-135:.8cm);
         \draw[dotted] (-0.57cm,0) -- (0.57cm, 0);
 \end{tikzpicture}}
 
-\newcommand{\onestrandid}{\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
+\newfig{\onestrandid}{\onestrandidbox}{\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
 	\draw (-.8cm,0)--(.8cm,0);
 \end{tikzpicture}}
 
-\newcommand{\drawcup}{\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
+\newfig{\drawcup}{\drawcupbox}{\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
 	\draw (45:.8cm) to [curve through=(90:0cm)] (135:.8cm);
 \end{tikzpicture}}
 
-\newcommand{\cupcap}{\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
+\newfig{\cupcap}{\cupcapbox}{\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
 	\draw (45:.8cm) to [curve through=(90:.3cm)] (135:.8cm);
 	\draw (-45:.8cm) to [curve through=(-90:.3cm)] (-135:.8cm);
 \end{tikzpicture}}
 
-\newcommand{\twostrandid}{\begin{tikzpicture}[baseline=-0.5ex,rotate=90,scale=0.8]
+\newfig{\twostrandid}{\twostrandidbox}{\begin{tikzpicture}[baseline=-0.5ex,rotate=90,scale=0.8]
 	\draw (45:.8cm) to [curve through=(90:.3cm)] (135:.8cm);
 	\draw (-45:.8cm) to [curve through=(-90:.3cm)] (-135:.8cm);
 \end{tikzpicture}}
 
-\newcommand{\symcross}{\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
+\newfig{\symcross}{\symcrossbox}{\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
 	\draw (45:.8cm) -- (-135:.8cm);
 	\draw (-45:.8cm) -- (135:.8cm);
 \end{tikzpicture}}
 
-\newcommand{\braidcross}{\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
+\newfig{\braidcross}{\braidcrossbox}{\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
 	\draw (45:.8cm) -- (-135:.8cm);
 	\draw[line width=1mm,white,double=black] (-45:.8cm) -- (135:.8cm);
 \end{tikzpicture}}
 
-\newcommand{\invbraidcross}{\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
+\newfig{\invbraidcross}{\invbraidcrossbox}{\begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
 	\draw (-45:.8cm) -- (135:.8cm);
 	\draw[line width=1mm,white,double=black] (45:.8cm) -- (-135:.8cm);
 \end{tikzpicture}}
 
 
-\newcommand{\drawcrossX}{ \begin{tikzpicture}[baseline=-0.5ex,scale=0.8,rotate=90]
+\newfig{\drawcrossX}{\drawcrossXbox}{ \begin{tikzpicture}[baseline=-0.5ex,scale=0.8,rotate=90]
  	\draw ([out angle=30].2,.3) .. (45:.8cm);
 	\draw (.2,.3) -- (.2,-.3);
  	\draw ([out angle=-30].2,-.3) .. (-45:.8cm);
@@ -194,7 +204,7 @@ coverlinelefttail/.style={
               ([out angle=150].2,.3) .. ([in angle=70]-135:.8cm);
 \end{tikzpicture}}
 
-\newcommand{\drawsymcrossX}{ \begin{tikzpicture}[baseline=-0.5ex,scale=0.8,rotate=90]
+\newfig{\drawsymcrossX}{\drawsymcrossXbox}{ \begin{tikzpicture}[baseline=-0.5ex,scale=0.8,rotate=90]
  	\draw ([out angle=30].2,.3) .. (45:.8cm);
 	\draw (.2,.3) -- (.2,-.3);
  	\draw ([out angle=-30].2,-.3) .. (-45:.8cm);
@@ -204,7 +214,7 @@ coverlinelefttail/.style={
 \end{tikzpicture}}
 
 
-\newcommand{\twist}{
+\newfig{\twist}{\twistbox}{
   \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
     \draw[line width=1mm,white,double=black]
        ([out angle=-15]135:.8cm)..([blank=soft]-60:.4cm)..(-120:.4cm)..([in angle=-165]45:.8cm);
@@ -212,7 +222,7 @@ coverlinelefttail/.style={
   \end{tikzpicture}}
 
 
-\newcommand{\symtwist}{
+\newfig{\symtwist}{\symtwistbox}{
   \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
     \draw
        ([out angle=-15]135:.8cm)..([blank=soft]-60:.4cm)..(-120:.4cm)..([in angle=-165]45:.8cm);
@@ -220,7 +230,7 @@ coverlinelefttail/.style={
   \end{tikzpicture}}
 
 
-\newcommand{\twistvertex}{
+\newfig{\twistvertex}{\twistvertexbox}{
 \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
   \draw (0,-0.4)--(0,-0.8);
   \draw ([out angle=-170]30:0.8cm)..([in angle=160](0,-0.4);
@@ -228,7 +238,7 @@ coverlinelefttail/.style={
         ([out angle=-10]150:0.8cm)..([in angle=20](0,-0.4);
 \end{tikzpicture}}
 
-\newcommand{\symtwistvertex}{
+\newfig{\symtwistvertex}{\symtwistvertexbox}{
 \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
   \draw (0,-0.4)--(0,-0.8);
   \draw ([out angle=-170]30:0.8cm)..([in angle=160](0,-0.4);
@@ -237,14 +247,14 @@ coverlinelefttail/.style={
 \end{tikzpicture}}
 
 
-\newcommand{\loopvertex}{
+\newfig{\loopvertex}{\loopvertexbox}{
 \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
   \draw (0,-0.5)--(0,-0.8);
   \draw ([out angle=150]0,-0.5)..(-0.02,0.6)..(0.02,0.6)..([in angle=30]0,-0.5);
 \end{tikzpicture}
 }
 
-\newcommand{\idtangle}{
+\newfig{\idtangle}{\idtanglebox}{
 \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
 \draw (0,0) node {$D$};
 \draw[densely dashed] (0,0) circle (.5cm);
@@ -254,7 +264,7 @@ coverlinelefttail/.style={
 \draw (-135:.5cm) -- (-135:0.8cm);
 \end{tikzpicture}}
     
-\newcommand{\Rcycle}{
+\newfig{\Rcycle}{\Rcyclebox}{
 \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
 \draw (0,0) node {$D$};
 \draw[densely dashed] (0,0) circle (.4cm);
@@ -265,7 +275,7 @@ coverlinelefttail/.style={
       ([out angle=90]135:.4cm) .. (45:.7cm) .. ([in angle=90]-45:1.1cm);
 \end{tikzpicture}}
 
-\newcommand{\ladder}{
+\newfig{\ladder}{\ladderbox}{
 \begin{tikzpicture}[baseline=-0.5ex,scale=0.8]
 \draw (0,0) node {$D$};
 \draw[densely dashed] (0,0) circle (.5cm);
@@ -278,25 +288,25 @@ coverlinelefttail/.style={
 \draw ([out angle=-30]0.8,-0.45) .. ([in angle=135]1.2,-0.636);
 \end{tikzpicture}}
 
-\newcommand{\pentagon}{
+\newfig{\pentagon}{\pentagonbox}{
 \begin{tikzpicture}[scale=.12,baseline=-2]
 \draw (36:1) -- (108:1) -- (180:1) -- (252:1) -- (-36:1) -- (36:1);
 \end{tikzpicture}
 }
 
-\newcommand{\psq}{
+\newfig{\psq}{\psqbox}{
 \begin{tikzpicture}[scale=.15,baseline=-2]
 \draw (36:1) -- (108:1) -- (180:1) -- (252:1) -- (-36:1) -- (36:1) -- +(1.2,0) -- ($(-36:1)+(1.2,0)$) -- (-36:1);
 \end{tikzpicture}
 }
 
-\newcommand{\sqsq}{
+\newfig{\sqsq}{\sqsqbox}{
 \begin{tikzpicture}[scale=.15]
 \draw (0,0) -- (2,0) -- (2,1) -- (0,1) -- cycle (1,0) -- (1,1);
 \end{tikzpicture}
 }
 
-\newcommand{\overviolin}{
+\newfig{\overviolin}{\overviolinbox}{
 \begin{tikzpicture}[baseline=0]
 	\coordinate (E1) at (45:.8cm);
 	\coordinate (E2) at (225:.8cm);
@@ -317,7 +327,7 @@ coverlinelefttail/.style={
 \end{tikzpicture}
 }
 
-\newcommand{\rotatedtrivalent}{
+\newfig{\rotatedtrivalent}{\rotatedtrivalentbox}{
 \begin{tikzpicture}[baseline=0]
 	\coordinate (E1) at (45:.8cm);
 	\coordinate (E2) at (225:.8cm);
