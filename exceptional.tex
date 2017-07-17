@@ -717,6 +717,7 @@ Recall:
 symmetric braiding relation is actually $\mathsf{Rep}(S_3)$ without needing to
 semisimplify.  The proof is that R2.5 move implies that the 5-trees simplify
 into planar forests.
+\item Kontsevich integral
 \end{itemize}
 }
 
@@ -1119,18 +1120,20 @@ dependent.  \NStodo{Check $\zeta$ vs. $\zeta^2$}
 \end{remark}
 
 
-\begin{lemma}
-If $v$ is not a $10$th or $12$th root of unity, then the crossing acts
+\begin{lemma}\label{lem:eigenvalues-twist}
+If $v$ is not a $10$th or $12$th root of unity \nn{and the square root
+exists}, then the crossing acts
 diagonalizably on the $4$-box space with eigenvalues $v^{12}$, $-v^{-6}$,
-$-1$, $w^2$, and $\frac{v^2}{w^2}$ where $w$ is given by the formula from the
-introduction.
+$-1$, $w^2$, and $\frac{v^2}{w^2}$, where $w$ is given by
+Equation~\eqref{eq:change-variables}.
 \end{lemma}
 \begin{proof}
-First note that $\frac{1}{d} \cupcap$ and $\frac{1}{b} \drawI$ are projections
-and are eigenvectors for the crossing with eigenvalues $v^{12}$ and $-v^{-6}$.
-To find the remaining three eigenvalues we look at the action of the crossing
+First note that $\displaystyle\frac{1}{d} \cupcap$ and $\displaystyle\frac{1}{b} \drawI$ are projections
+and are eigenvectors for the crossing with eigenvalues $v^{12}$ and
+$-v^{-6}$, respectively. We expect three more eigenvalues.
+To find them, we look at the action of the crossing
 on the image of the projection
-$$\pi = \twostrandid -\frac{1}{d} \cupcap -\frac{1}{b} \drawI.$$
+$$\pi = \;\twostrandid\; -\frac{1}{d}\;\cupcap\; -\frac{1}{b}\;\drawI\;.$$
 Start with QECrossing and multiply by a crossing, then use QEJacobi to remove
 the $\drawcrossX$ term, and QECrossing to remove the $\drawH$ term.  Multiply
 again by the crossing and then by $\pi$ to get a cubic equation in the
@@ -1151,11 +1154,11 @@ $(v^{12}, b)$, $(-v^{-6},t)$, $(-1, [\lambda][\lambda-1])$, $(w^2,
 -\frac{[\lambda-1][\lambda-3]}{[1]})$.
 
 There is a nice argument that the above eigenvalues are the only possible
-ones.  Namely, suppose $v$ is an eigenvector in the image of $\twostrandid
--\frac{1}{d} \cupcap -\frac{1}{b} \drawI$ with eigenvalue $(\beta, \gamma)$.
-QEJacobi says that:
+ones.  Namely, suppose $v$ is an eigenvector in the image of $\pi$
+with eigenvalues $(\beta, \gamma)$. Multiply $v$ by QEJacobi and reduce
+using the know eigenvalues. We find:
 $$v^{-3} \beta \gamma -v^{-1} \gamma + \alpha \beta + \alpha v^{-4} = 0.$$
-QECrossing says that:
+Similarly, multiplying by QECrossing we find:
 $$\beta-\beta^{-1} - \frac{\Psi_1 \Psi_3^2 \Psi_2 \Psi_4}{b+[3]\alpha} \gamma - \frac{\Psi_1^2 \Psi_3 \Psi_2 \Psi_4 \alpha}{b+[3]\alpha} = 0.$$
 Solving these equations for $\beta$ and $\gamma$ give the list of possible eigenvalues.  We still need some version of Lemma \ref{lem:lin-ind-w} in order to see that all the eigenvalues are realized.
 \end{remark}
@@ -1249,7 +1252,8 @@ of~$w$. To identify~$w$ (and see that we can take $t=1$),
 we find the eigenvalues
 of the twist operator on the 4-box space.
 
-\DPTtodo{This needs more explanation. Check these eigenvalues vs $b=12$}
+\DPTtodo{This needs more explanation. Does it go in Background or here?}
+\DPTtodo{Double-check these eigenvalues vs $b=12$}
 For the classical evaluation $\eval$, the eigenvalues of the crossing
 operator and the ladder operator
 are $(-1, 6)$, $(-1, 0)$, $(+1, 12)$, $(+1, 2\lambda)$, and
@@ -1259,11 +1263,11 @@ that the corresponding eigenvalues of the twist operator are
 $-e^{3h}$, $-1$, $e^{6h}$, $e^{\lambda h}$, and
 $e^{(1-\lambda)h}$, respectively.
 \nn{Reference to computation of eigenvalues, which is done elsewhere}
-On the other hand, a short computation with
-the twist relation shows that the eigenvalues of the twist
+On the other hand, by Lemma~\ref{lem:eigenvalues-twist}, the
+eigenvalues of the twist
 operator in $\mathsf{QExcept}$ are $-v^6$, $-1$, $v^{12}$, $w^2$, and
-$v^2/w^2$. These two lists of eigenvalues agree exactly when we set
-$w = e^{\lambda h/2}$ in addition to $v = e^{h/2}$.
+$v^2/w^2$. To have these two lists of eigenvalues agree, we must
+set $v = e^{h/2}$ and $w = e^{\lambda h/2}$.
 
 This completes the proof of Theorem~\ref{thm:classical-quantum}.
 
