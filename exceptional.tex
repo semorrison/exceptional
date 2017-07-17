@@ -148,8 +148,7 @@ By rescaling the trivalent vertex, it is easy to see that
 $\mathsf{Jac}_{R,d,b}$ is equivalent as a spherical tensor category to
 $\mathsf{Jac}_{R,d,bx^2}$ for any invertible $x$ in $R$.  In particular, if $R
 = \mathbb{C}$ then $\mathsf{Jac}_{R,d,b}$ does not depend on the choice of
-$b$.  A standard normalization is $b=6$.
-\NStodo{We should change $6$ to $12$}
+$b$.  A standard normalization is $b=12$.
 
 If $\mathfrak{g}$ is a simple Lie algebra object in a symmetric tensor
 category with dimension $d$, by the diagram calculus  the symmetric tensor
@@ -182,13 +181,13 @@ introduced a parameter $\lambda$ such that $d = -2
 as $\lambda$ and $1-\lambda$ are invertible in $R$, and such a $\lambda$ can
 be found when $2+d$ is invertible and $(2+d)(242+d)$ has a square root in $R$.
 Note that $\lambda$ and $1-\lambda$ correspond to the same $d$ and thus to the
-same category.  If we normalize $b=6$ then the exceptional relation for
+same category.  If we normalize $b=12$ then the exceptional relation for
 $\mathsf{Exc}_{R,-2   \frac{(\lambda+5)(6-\lambda)}{\lambda(1-\lambda)},6}$
 (which we will also write $\mathsf{Exc}_{R,\lambda}$) has the following form.
 
 \begin{equation}
-\fourgon\; = \;\drawI\; + \;\drawH\;
- - \frac{\lambda(1-\lambda)}{2} \left( \;\cupcap\; + \;\twostrandid\; + \;\symcross\; \right)
+\fourgon\; = 2\left(\;\drawI\; + \;\drawH\;\right)
+ - 2\lambda(1-\lambda) \left( \;\cupcap\; + \;\twostrandid\; + \;\symcross\; \right)
 \label{eq:classical-except-2}
 \end{equation}
 
@@ -221,7 +220,7 @@ Note that if $d$ is invertible in $R$, it follows from classical consistency
 that $R$ injects into $\mathsf{Exc}_{R,\lambda}(1,1)$ as multiples of the
 strand.  Similarly if $b$ and $d$ are invertible in $R$, it follows from
 classical consistency that $R$ injects into $\mathsf{Exc}_{R,\lambda}(2,1)$ as
-multiples of the trivalent vertex  Similarly, if \NStodo{what polynomials?}
+multiples of the trivalent vertex  Similarly, if \nn{what polynomials?}
 are invertible, then $R^5$ injects into $\mathsf{Exc}_{R,\lambda}(2,2)$ as
 linear combinations of the above five diagrams.
 
@@ -356,16 +355,17 @@ corresponding $(v+1)$ factor.
 \end{align*}
 
 \begin{warning}
-Note that, unlike with the usual quantum numbers, there is no denominator.
+Unlike with the usual quantum numbers, there is no denominator.
 \end{warning}
 
 Note that $\{k\lambda + n\}$ is always irreducible, while $[k\lambda +
-n]$ is a product of two irreducibles so long as $k$ and $n$ are
-relatively prime.  When
+n]$ is irreducible iff $k$ and~$n$ are relatively prime. (In
+particular, $[n]$ and $[k\lambda]$ are not irreducible for $n,k>1$.)
+When
 $k=0$ we will generally avoid $[n]$ and instead factor into the following
 symmetrized cyclotomic polynomials.  (Strictly speaking we should use
-a similar convention for factoring $[k \lambda]$, but this will not be
-necessary.)  Let
+a similar convention for factoring $[k \lambda]$, but this is not needed
+in practice.)  Let
 \begin{align*}
   \Psi_n &= \prod_{\zeta: \zeta^{2n} = 1 \text{ and } (\pm \zeta)^m \neq 1 \text{ for $m < 2n$}}
   (v^{\frac{1}{2}}-\zeta v^{-\frac{1}{2}}),\\
@@ -1249,20 +1249,21 @@ of~$w$. To identify~$w$ (and see that we can take $t=1$),
 we find the eigenvalues
 of the twist operator on the 4-box space.
 
+\DPTtodo{This needs more explanation. Check these eigenvalues vs $b=12$}
 For the classical evaluation $\eval$, the eigenvalues of the crossing
 operator and the ladder operator
-are $(-1, 3)$, $(-1, 0)$, $(+1, 6)$, $(+1, \lambda)$, and
-$(+1, 1-\lambda)$, corresponding to five orthogonal idempotents in the
+are $(-1, 6)$, $(-1, 0)$, $(+1, 12)$, $(+1, 2\lambda)$, and
+$(+1, 2-2\lambda)$, corresponding to five orthogonal idempotents in the
 $(2,2)$-box space. Equation~\eqref{eq:Kontsevich-crossing} then shows
 that the corresponding eigenvalues of the twist operator are
-$-e^{3h/2}$, $-1$, $e^{3h}$, $e^{\lambda h/2}$, and
-$e^{(1-\lambda)h/2}$, respectively.
+$-e^{3h}$, $-1$, $e^{6h}$, $e^{\lambda h}$, and
+$e^{(1-\lambda)h}$, respectively.
 \nn{Reference to computation of eigenvalues, which is done elsewhere}
 On the other hand, a short computation with
 the twist relation shows that the eigenvalues of the twist
 operator in $\mathsf{QExcept}$ are $-v^6$, $-1$, $v^{12}$, $w^2$, and
 $v^2/w^2$. These two lists of eigenvalues agree exactly when we set
-$w = e^{\lambda h/4}$ in addition to $v = e^{h/4}$.
+$w = e^{\lambda h/2}$ in addition to $v = e^{h/2}$.
 
 This completes the proof of Theorem~\ref{thm:classical-quantum}.
 
