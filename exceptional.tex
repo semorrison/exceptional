@@ -294,39 +294,42 @@ improved by Cohen--De Man who incorporated the Cvitanović--Vogel exceptional
 relation. They would give a construction of an exceptional series passing
 through each of the exceptional Lie algebras.
 
-\begin{conjecture}[Deligne's conjecture]
+\begin{conjecture}[Deligne's conjecture]\label{conj:Deligne}
 There exists
   \begin{itemize}
   \item a ring $R$ which is a localization of $\mathbb{C}[\lambda]$ at finitely many polynomials;
-  \item a category $\mathsf{Except}_{R,\lambda}$ where the objects are
+  \item a category $\mathsf{Exc}^D_{R,\lambda}$ where the objects are
     integers and morphism spaces are finitely-generated $R$-modules; and
-  \item a braided functor $\eval$ from $\mathsf{Exc}_{R,\lambda}$ to $\mathsf{Except}_{R,\lambda}$, that is the identity on objects and surjective on morphisms and sends the trivalent vertex to the generator of the $3$-boundary point space..
+  \item a braided functor $\eval$ from $\mathsf{Exc}_{R,\lambda}$ to $\mathsf{Exc}^D_{R,\lambda}$, that is the identity on objects and surjective on morphisms and sends the trivalent vertex to the generator of the $3$-boundary point space.
   \end{itemize}
-For any map $\varphi: R \rightarrow S$ we can define the base extension $\mathsf{Except}_{S,\varphi(\lambda)}$.  Furthermore $\mathsf{Except}$ has the following properties.
+For any map $\varphi: R \rightarrow S$ we can define the base extension $\mathsf{Exc}^D_{S,\varphi(\lambda)}$.  Furthermore $\mathsf{Exc}^D$ has the following properties.
 \begin{itemize}
-\item The idempotent completion of $\mathsf{Except}_{\mathbb{C}(\lambda),\lambda}$ is semisimple.
-\item $\mathsf{Except}_{\mathbb{C}(\lambda),\lambda}(n,m)$ has dimension $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
+\item The idempotent completion of $\mathsf{Exc}^D_{\mathbb{C}(\lambda),\lambda}$ is semisimple.
+\item $\mathsf{Exc}^D_{\mathbb{C}(\lambda),\lambda}(n,m)$ has dimension $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
 for $n+m=0,1,2,3,4,5,6$, respectively.
 \item If $\lambda$ is one of the special values in
   Table~\ref{tab:lambda-group}, then the quotient of
-  $\mathsf{Exc}_{\mathbb{C},\lambda}$ by the negligible elements is
+  $\mathsf{Exc}^D_{\mathbb{C},\lambda}$ by the negligible elements is
   equivalent to the category of representations of the corresponding
   supergroup.
 \end{itemize}
 \end{conjecture}
 
 Conjectures~\ref{conj:class-suffic} and~\ref{conj:class-consist} imply
-Deligne's conjecture for $\mathsf{Except}_{R,\lambda} =
-\mathsf{Exc}_{R,\lambda}$, so they are slightly stronger and say that the
+Deligne's conjecture for $\mathsf{Exc}^D_{R,\lambda} =
+\mathsf{Exc}_{R,\lambda}$, so they are stronger and say that the
 classical exceptional relation is the only skein relation needed to define
-$\mathsf{Except}_{R,\lambda}$.
+$\mathsf{Exc}^D_{R,\lambda}$.
+\DPTtodo{Can we elucidate difference between
+  Conjecture~\ref{conj:Deligne} and
+  Conjecture~\ref{conj:class-consist}?}
 
 \begin{remark}
   We have recently learned that Vogel has computational evidence that
   Deligne's conjecture is false (private communication). Note that it
   is possible for the quantum
   Conjectures~\ref{conj:quant-suffic} and~\ref{conj:quant-consist} to
-  hold while the classical conjectures are fas.e.
+  hold while the classical conjectures are false.
 \end{remark}
 
 \subsection{Laurent polynomial conventions}
@@ -888,7 +891,7 @@ which are the defining relations of the Golden category.  The values for $v$ and
 \end{proof}
 
 \begin{lemma} \label{lem:dandtvalues}
-Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$, then 
+Suppose $\cC$ satisfies QEJacobi for some $v$ and~$\alpha$. Then 
 \begin{align}
   [5] b &= - \alpha (d+\{8\})\label{eq:b-rel} \\
   t \{2\} &= b-[5] \alpha.\label{eq:b-t-rel}
@@ -925,7 +928,8 @@ and Lemma \ref{lem:dandtvalues} we have the other relations.
 
 
 \begin{proposition} \label{prop:square-crossing}
-Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$, then the following equations hold.
+  Suppose $\cC$ satisfies QEJacobi for some $v$ and~$\alpha$.
+  Then the following equations hold.
 \begin{itemize}
   \item The quantum exceptional square relation:
 \begin{equation*} [3] \fourgon + \frac{\alpha \Psi_6 (b+[3]\alpha)}{\Psi_4} \braidcross + \frac{y_1 \Psi_1}{\Psi_4} \drawI + \frac{y_2 \Psi_1}{\Psi_4} \drawH + \frac{y_3}{\Psi_4} \cupcap + \frac{y_4}{\Psi_4} \twostrandid =0
@@ -933,9 +937,11 @@ Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$, then the following e
 where the $y_i$ are Laurent polynomials in $v$ and $w$ given in Appendix \ref{app:coefficients}.
   \item
 The quantum exceptional crossing relation:
-\begin{equation*}
-\frac{\Psi_6 \alpha (b+[3]\alpha)}{\Psi_4} \left(\braidcross - \invbraidcross \right) + \Psi_1 \Psi_3 \Psi_2 \Psi_6 \alpha \left[\; \drawI \; - \; \drawH \; \right] - \Psi_1^2 \Psi_3 \Psi_2 \Psi_6 \alpha^2 \left[\; \twostrandid \; - \; \cupcap \; \right] = 0
-\end{equation*}
+\begin{multline*}
+\frac{\Psi_6 \alpha (b+[3]\alpha)}{\Psi_4} \left(\braidcross -
+  \invbraidcross \right) + \Psi_1 \Psi_3 \Psi_2 \Psi_6 \alpha \left[\;\drawI \; - \; \drawH \; \right] \\
+- \Psi_1^2 \Psi_3 \Psi_2 \Psi_6 \alpha^2 \left[\; \twostrandid \; - \; \cupcap \; \right] = 0.
+\end{multline*}
 \end{itemize}
  \end{proposition}
 
@@ -1163,7 +1169,7 @@ We now show that the classical consistency conjecture implies
 the quantum consistency conjecture, for suitable base
 rings.
 \begin{theorem}\label{thm:classical-quantum}
-  If Conjecture~\ref{conj:class-consist} is true
+  If Conjecture~\ref{conj:Deligne} is true
   for $\mathsf{Exc}_{R,\lambda}$, then
   Conjecture~\ref{conj:quant-consist} is true for
   $\mathsf{QExc}_{R((h)),v,w}$ for $v=e^{h/4}$ and $w=e^{\lambda
@@ -1171,9 +1177,9 @@ rings.
 \end{theorem}
 This section will be devoted to a proof of
 Theorem~\ref{thm:classical-quantum}. Let $\eval$ be the functor from
-$\mathsf{Jac}_{R,d,b}$ to $\mathsf{Exc}_{R,\lambda}$ given by hypothesis.
+$\mathsf{Jac}_{R,d,b}$ to $\mathsf{Exc}^D_{R,\lambda}$ given by hypothesis.
 
-The first step is constructing the conjectured functor from tangles $\Qeval$,
+The first step is constructing the conjectured functor $\Qeval$ from tangles,
 for which the main ingredient is the \emph{Kontsevich integral}~$Z$. The
 Kontsevich integral was first defined for unframed knots \cite{MR1318886}, and
 later extended to framed trivalent graphs
@@ -1210,9 +1216,13 @@ We will use the following properties of~$Z$.
 Then the desired functor $\Qeval$ is the composition of $Z$ with the
 classical evaluation $\eval$, with scalars extended to $R[[h]]$. We
 then localize at $h$ to take values in the field
-$\mathsf{Except}((h))$.
-\DPTtodo{Check situation with $\mathsf{Exc}$ vs $\mathsf{Except}$.
-  Compare Conjecture 1.7}
+$\CC(\lambda)((h))$.
+\[
+  \mathsf{TriTangle} \overset{Z}{\longrightarrow}
+  \mathsf{Jac}_{R[[h]],d,b} {\longrightarrow}
+  \mathsf{Exc}_{R[[h]],d,b} \overset{\eval}{\longrightarrow}
+  \mathsf{Exc}^D_{R[[h]],d,b}
+\]
 
 By hypothesis, the $k$-box space of $\mathsf{Except}((h))$ for $k \le 4$
 have the required dimensions for a ribbon trivalent category. By
@@ -1538,10 +1548,9 @@ Rather unfortunately inverting the matrix $M_6$ is computationally
 infeasible. (Recall that arithmetic over $\QQ(v,w)$ may be quite inefficient!)
 
 We find, nevertheless, that for $T$ any of
-\DPTtodo{These lines seem too thick}
 \begin{align*}
   (\rho_n : \V_n \to \V_n) & = 
-    \begin{tikzpicture}[baseline, ultra thick]
+    \begin{tikzpicture}[baseline, thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.90) -- ++(0,0.5);
       \draw (x.45) -- ++(0,0.5);
@@ -1551,7 +1560,7 @@ We find, nevertheless, that for $T$ any of
                      -- ++(0,0.5);
     \end{tikzpicture} &
   (\beta_n : \V_n \to \V_n) & = 
-    \begin{tikzpicture}[baseline, ultra thick]
+    \begin{tikzpicture}[baseline, thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.45) -- ++(0,0.5);
       \draw (x.90) to[out=90,in=-90] ($(x.135)+(0,0.5)$);
@@ -1559,14 +1568,14 @@ We find, nevertheless, that for $T$ any of
     \end{tikzpicture} 
   \displaybreak[1] \\
   (\cap_n : \V_n \to \V_{n-2}) & = 
-    \begin{tikzpicture}[baseline, ultra thick]
+    \begin{tikzpicture}[baseline, thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.45) -- ++(0,0.5);
       \draw (x.90) arc (0:180:0.2);
     \end{tikzpicture}
   &
   (\cup_{n-2} : \V_{n-2} \to \V_{n}) & = 
-    \begin{tikzpicture}[baseline, ultra thick]
+    \begin{tikzpicture}[baseline, thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.90) -- ++(0,0.5);
       \draw (x.45) -- ++(0,0.5);
@@ -1575,7 +1584,7 @@ We find, nevertheless, that for $T$ any of
     \end{tikzpicture}
   \displaybreak[1] \\
   (\fork_{n-1} : \V_{n-1} \to \V_{n}) & = 
-    \begin{tikzpicture}[baseline, ultra thick]
+    \begin{tikzpicture}[baseline, thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.90) -- ++(0,0.5);
       \draw (x.45) -- ++(0,0.5);
@@ -1584,7 +1593,7 @@ We find, nevertheless, that for $T$ any of
     \end{tikzpicture}
   &
   (\fuse_n : \V_n \to \V_{n-1}) & = 
-    \begin{tikzpicture}[baseline, ultra thick]
+    \begin{tikzpicture}[baseline, thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.45) -- ++(0,0.5);
       \draw (x.90) -- ($(x.114)+(0,0.25)$);
@@ -1592,7 +1601,7 @@ We find, nevertheless, that for $T$ any of
     \end{tikzpicture}
   \\
   (H_n : \V_n \to \V_n) & = 
-    \begin{tikzpicture}[baseline, ultra thick]
+    \begin{tikzpicture}[baseline, thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.45) -- ++(0,0.5);
       \draw (x.90) -- ++(0,0.5);
