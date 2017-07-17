@@ -1438,7 +1438,7 @@ We have a pairing $\langle - , - \rangle: \V_n \otimes \V_n \to \V_0$ defined
 by 
 \[
   \langle x, y \rangle =
-  \begin{tikzpicture}[baseline, ultra thick]
+  \begin{tikzpicture}[baseline, thick]
     \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {$x$};
     \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em, right=0.5cm of x] (y) {$y$};
     \draw (x.90) to[in=90, out=90] (y.90);
@@ -1654,7 +1654,7 @@ $\cup_{n-2} : \V_{n-2} \to V_n$, and
 $\rho_n: \V_n \to \V_n$ for $n \leq 6$. We can also find
 \begin{align*}
 (m_{4,4,2} : \V_4 \otimes \V_4 \to \V_4) & = 
-  \begin{tikzpicture}[baseline, ultra thick]
+  \begin{tikzpicture}[baseline, thick]
     \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) at (0,0) {};
     \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (y) at (1.5,0) {};
     \draw (x.130) -- +(0,0.5);
@@ -1666,7 +1666,7 @@ $\rho_n: \V_n \to \V_n$ for $n \leq 6$. We can also find
   \end{tikzpicture}
  \displaybreak[1] \\
 (m_{4,6,2} : \V_4 \otimes \V_6 \to \V_6) & = 
-  \begin{tikzpicture}[baseline, ultra thick]
+  \begin{tikzpicture}[baseline, thick]
     \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) at (0,0) {};
     \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (y) at (1.5,0) {};
     \draw (x.130) -- +(0,0.5);
@@ -1681,7 +1681,7 @@ $\rho_n: \V_n \to \V_n$ for $n \leq 6$. We can also find
  \displaybreak[1] \\
 \intertext{and}
 (m_{4,4,1} : \V_4 \otimes \V_4 \to \V_6) & = 
-  \begin{tikzpicture}[baseline, ultra thick]
+  \begin{tikzpicture}[baseline, thick]
     \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) at (0,0) {};
     \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (y) at (1.5,0) {};
     \draw (x.130) -- +(0,0.5);
@@ -1698,13 +1698,13 @@ $\rho_n: \V_n \to \V_n$ for $n \leq 6$. We can also find
 Recall that our chosen basis for $\V_4$ is
 \[
   \left(
-    \tikz[baseline=-7, ultra thick]{\draw(0,0) arc (-180:0:0.2); \draw(0.6,0) arc(-180:0:0.2);},
-    \tikz[baseline=-7, ultra thick]{\draw(0,0) arc (-180:0:0.4); \draw(0.2,0) arc(-180:0:0.2);},
-    \tikz[baseline=-7, ultra thick]{\draw(0,0) arc (-180:0:0.2); \draw(0.6,0) arc(-180:0:0.2);
+    \tikz[baseline=-7, thick]{\draw(0,0) arc (-180:0:0.2); \draw(0.6,0) arc(-180:0:0.2);},
+    \tikz[baseline=-7, thick]{\draw(0,0) arc (-180:0:0.4); \draw(0.2,0) arc(-180:0:0.2);},
+    \tikz[baseline=-7, thick]{\draw(0,0) arc (-180:0:0.2); \draw(0.6,0) arc(-180:0:0.2);
                        \draw(0.2,-0.2) arc (-180:0:0.3);},
-    \tikz[baseline=-7, ultra thick]{\draw(0,0) arc (-180:0:0.4); \draw(0.2,0) arc(-180:0:0.2);
+    \tikz[baseline=-7, thick]{\draw(0,0) arc (-180:0:0.4); \draw(0.2,0) arc(-180:0:0.2);
                        \draw(0.4,-0.4) -- (0.4,-0.2);},
-    \tikz[baseline=-7, ultra thick]{\draw(0,0) arc (-180:0:0.3); \draw[knot] (0.3,0) arc (-180:0:0.3);}
+    \tikz[baseline=-7, thick]{\draw(0,0) arc (-180:0:0.3); \draw[knot] (0.3,0) arc (-180:0:0.3);}
   \right)
 \]
 Expressed in our chosen bases, we then have 
@@ -1720,7 +1720,7 @@ Finally, we can write $m_{4,4,1}$ in terms of the other operations, e.g.
 as
 $$
  m_{4,4,1}(x \otimes y) = m_{4,6,2}(x \otimes \rho_6^{-1} (\cup_4 (\rho_4(y)))
- = \begin{tikzpicture}[baseline, ultra thick]
+ = \begin{tikzpicture}[baseline, thick]
      \draw (0,0) arc (-180:0:0.5) -- cycle;
      \draw (2,0) arc (-180:0:0.5) -- cycle;
      \draw (2.2,0) arc (0:180:0.2) to[out=-90,in=180] (2.5,-0.65) to[out=0,in=-90] (3.2,0) arc (180:0:0.1) to[out=-90,in=0] (2.5,-0.8) to[out=180,in=-90] (1.2,0) arc (0:180:0.2);
