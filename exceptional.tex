@@ -560,7 +560,8 @@ non-zero multiple of the strand.
 Being generated as a ribbon category by $\tau$ is the same as saying that
 $\cC$ is generated as a pivotal category by $\tau$ and the crossing.  In
 particular, a trivalent ribbon category need not be trivalent in the sense of
-\cite{MR3624901}.  Also we have weakened the non-degeneracy condition from
+\cite{MR3624901} where the trivalent vertex is assumed to generate $\cC$ 
+as a pivotal category.  Also we have weakened the non-degeneracy condition from
 \cite{MR3624901}, replacing it with the assumption that the circle and bigon
 are non-zero.
 
@@ -997,7 +998,7 @@ brief detour to analyze this situation.
 
 \begin{lemma} \label{lem:IequalsH}
 Suppose that 
-$$\drawI\;- \; \drawH - \frac{1}{d-1} \left(\twostrandid - \cupcap \right) = 0$$
+$$\drawI\;- \; \drawH - \frac{1}{d-1} \left(\; \twostrandid - \cupcap \;\right) = 0$$
 
 then one of the following occurs
 
@@ -1026,8 +1027,8 @@ relations:
 \begin{proof}
 We apply the tetrahedral symmetry to the relation to get:
 
-$$-s^{-1} \drawH + s^{-1} \drawcrossX -\frac{b}{d-1} \left(\braidcross - s^{-2} \twostrandid \right) = 0$$
-$$s^{-2} \drawcrossX + s^{-1} \drawI -\frac{b}{d-1} \left(\cupcap -s^{-2} \braidcross \right) = 0.$$
+$$-s^{-1} \drawH + s^{-1} \drawcrossX -\frac{b}{d-1} \left(\; \braidcross - s^{-2} \twostrandid \; \right) = 0$$
+$$s^{-2} \drawcrossX + s^{-1} \drawI -\frac{b}{d-1} \left(\; \cupcap -s^{-2} \braidcross \; \right) = 0.$$
 
 Multiply the first equation by $-s^{-1}$ and then add to the second relation to make the $\drawcrossX$ terms vanish.
 
@@ -1894,20 +1895,20 @@ Suppose that the diagrams
    \]
 are linearly dependent, then
  
-$$\drawI\; - \; \drawH - \frac{1}{d-1} \left(\twostrandid - \cupcap \right) = 0.$$
+$$\drawI\; - \; \drawH - \frac{1}{d-1} \left(\; \twostrandid - \cupcap \; \right) = 0.$$
 \end{lemma}
 \begin{proof}
-If the two Temperley-Lieb diagrams are linearly dependent, then attaching a trivalent vertex shows that the trivalent vertex is zero which is a contradiction.  So we must have a relation of the form:
+By the previous lemma, we must have a relation of the form:
 $$\drawI\;\pm \; \drawH = z \left(\twostrandid \pm \cupcap \right).$$
 
 Capping off we see that $b= z (d \pm 1)$, so $z = \frac{b}{d \pm 1}$.  So all we need to do is exclude the $+$-sign case.
 
 Attaching a trivalent vertex we see that $t + b = \frac{b}{d + 1}$, so $t =  -\frac{b d}{d + 1}$.  Adding $\drawH$ to the top gives:
 
-$$t \drawI + \fourgon = \frac{b}{d+1} \left( \drawH + b \cupcap\right).$$
+$$t \drawI + \fourgon = \frac{b}{d+1} \left(\; \drawH + b \cupcap \; \right).$$
 
 If we take this relation minus its $90$-degree rotation the square term will vanish yielding:
-$$ b \frac{d-1}{d+1} \left( \drawI -\drawH \right) = \frac{b^2}{d+1} \left(\twostrandid - \cupcap\right).$$
+$$ b \frac{d-1}{d+1} \left(\; \drawI -\drawH \; \right) = \frac{b^2}{d+1} \left(\; \twostrandid - \cupcap \; \right).$$
 Dividing by $b \frac{d-1}{d+1}$ yields the desired equation.
 \end{proof}
 
@@ -2077,9 +2078,9 @@ gives a category $\cG$ with finite dimensional Hom-spaces and $\dim \cG_k = 1,0,
 \end{conjecture}
 
 Note that these generators and relations can't define a trivial category
-because it has a quotient to  $(G_2)_{\zeta_12}$, and they also can't define
-can't define $(G_2)_{\zeta_12}$ because it has braided quotient maps to both
-$(G_2)_{\zeta_12}$ and $(G_2)_{-\zeta_12}$.  So the content of this conjecture
+because it has a quotient to  $(G_2)_{\zeta_{12}}$, and they also can't define
+can't define $(G_2)_{\zeta_{12}}$ because it has braided quotient maps to both
+$(G_2)_{\zeta_{12}}$ and $(G_2)_{-\zeta_{12}}$.  So the content of this conjecture
 is that these relations suffice to simplify diagrams down to the appropriate
 spanning sets.
 
@@ -2092,8 +2093,8 @@ $$\braidcross - \invbraidcross = \frac{2}{\sqrt{-3}} \left(\drawI - \drawH - \tw
 gives a non-trivial category $\cH$ with $\dim \cH_k = 1,0,1,1,5$ for $k = 0,1,2,3,4$.  
 \end{conjecture}
 
-Again $\cH$ has braided quotient maps to both $(G_2)_{\zeta_12}$ and
-$(G_2)_{-\zeta_12}$ (which are the same as categories but not braided
+Again $\cH$ has braided quotient maps to both $(G_2)_{\zeta_{12}}$ and
+$(G_2)_{-\zeta_{12}}$ (which are the same as categories but not braided
 categories), so the content of this conjecture is that these relations suffice
 to simplify diagrams down to the appropriate spanning sets.
 
@@ -2117,11 +2118,11 @@ We expect that $\cF$ has an infinitesimal deformation defined over
 $\mathbf{C}[\varepsilon]/\varepsilon^2$ where $d = 2+\varepsilon$ as suggested
 by the double root in \cite{???}.  This infinitesimal deformation should have
 a (non-braided) quotient to an infinitesimal deformation of
-$(G_2)_{\zeta_12}$.
+$(G_2)_{\zeta_{12}}$.
 \end{remark}
 
 We have no idea what to expect if you impose the relation
-$$0 = \braidcross - \invbraidcross = x \left(\drawI - \drawH - \twostrandid + \cupcap\right)$$ 
+$$\braidcross - \invbraidcross = x \left(\;\drawI - \drawH - \twostrandid + \cupcap \; \right)$$ 
 for some $x$ that is neither $0$ nor $\pm \frac{2}{\sqrt{-3}}$.
 
 
