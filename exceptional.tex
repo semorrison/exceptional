@@ -237,6 +237,9 @@ the values on the left of Table~\ref{tab:lambda-group}, then the quotient of
 $\mathsf{Exc}_{\mathbb{C},\lambda}$ by the negligible elements is equivalent
 to the category of representations of the corresponding group on the
 right of Table~\ref{tab:lambda-group}.
+\DPTtodo{Need to either take Karoubi envelope on the
+  $\mathsf{Exc}$ side or restrict to tensor products on rep theory
+  side. Also in Corollary~\ref{cor:quant-specialization}}
 \end{corollary}
 
 \begin{table}
@@ -262,6 +265,8 @@ right of Table~\ref{tab:lambda-group}.
   \label{tab:lambda-group}
 \end{table}
 
+\DPTtodo{In Table~\ref{tab:lambda-group}, shouldn't it be
+  $\mathrm{PO}(8)\rtimes S_3$ instead?}
 Here's a rough sketch of the proof given in Section ???. (Some modification is
 needed for $\mathrm{OSp}(1|2)$.)  All the skein relations in
 $\mathsf{Exc}_{\mathbb{C},\lambda}$ do hold in the corresponding
@@ -519,7 +524,8 @@ then $R$ also injects into $\mathsf{QExc}_{R,v,w}(1,1)$ (resp.
 $\mathsf{QExc}_{R,v,w}(1,2)$) as multiples of the strand (resp. trivalent
 vertex).
 
-\begin{corollary}[Quantum specialization]
+\DPTtodo{Is this conditional on one of the conjectures above?}
+\begin{corollary}[Quantum specialization]\label{cor:quant-specialization}
   If $\lambda$ is one of the values in Table~\ref{tab:lambda-group}
   and $v$ is not a root of unity, then the quotient of
 $\mathsf{QExc}_{\mathbb{C},v,v^\lambda}$ by the negligible elements is
@@ -532,9 +538,10 @@ We expect that this will also be true at roots of unity, perhaps excluding some 
 \NStodo{Make ``quantum versions" more precise in special values section, add a forward pointer}
 
 \begin{conjecture}[Quantum semisimplicity]
-There is a dense open subset $U \subset \mathbb{C}$ for which the idempotent
-completion of $\mathsf{QExc}_{\mathbb{C},v,w}$, for $v,w \in U$, is
+There is a dense open subset $U \subset \mathbb{C}^2$ for which the idempotent
+completion of $\mathsf{QExc}_{\mathbb{C},v,w}$, for $(v,w) \in U$, is
 semisimple.
+\DPTtodo{Modified the conjecture to be a subset of $\mathbb{C}^2$ not $\mathbb{C}$}
 \end{conjecture}
 
 We expect that it's enough to assume that $[k \lambda + \ell]$ is nonzero for all integers $k$ and $\ell$ (in particular, $v$ is not a root of unity).
