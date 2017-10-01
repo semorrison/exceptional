@@ -90,7 +90,7 @@ Unconditionally these give the first calculations of the Reshetikhin-Turaev
 knot invariants for the exceptional Lie algebras for most of these knots.  For
 example, we compute the following value for the trefoil for the exceptional
 series, and the Reshetikhin-Turaev invariant for $\mathfrak{e}_8$ is given by
-setting $v=q^5$ and $w=q^6$.
+setting $v=q^5$ and $w=q^{-1}$.
 \begin{multline*}
 QES_{\text{reduced}}(\nn{trefoil}) = \\
 -v^{24}
@@ -231,16 +231,14 @@ that $\mathsf{Exc}_{R,\lambda}(n,m)$ is always a free $R$-module of finite
 rank.  When $n+m$ is small this follows from our calculations and the above
 conjectures.
 
-\begin{corollary}[Classical specialization]
+\begin{proposition}[Classical specialization]
 If Conjecture \ref{conj:class-suffic} holds and $\lambda$ is one of
-the values on the left of Table~\ref{tab:lambda-group}, then the quotient of
-$\mathsf{Exc}_{\mathbb{C},\lambda}$ by the negligible elements is equivalent
+the values on the left of Table~\ref{tab:lambda-group}, then the
+idempotent completion of the quotient of
+$\mathsf{Exc}_{\mathbb{C},\lambda}$ by negligible elements is equivalent
 to the category of representations of the corresponding group on the
 right of Table~\ref{tab:lambda-group}.
-\DPTtodo{Need to either take Karoubi envelope on the
-  $\mathsf{Exc}$ side or restrict to tensor products on rep theory
-  side. Also in Corollary~\ref{cor:quant-specialization}}
-\end{corollary}
+\end{proposition}
 
 \begin{table}
   \begin{tabular}{rl}
@@ -251,7 +249,7 @@ right of Table~\ref{tab:lambda-group}.
     $-3$ & $\mathrm{PSL}(2)$ \\
     $-2$ & $\mathrm{PSL}(3) \rtimes \ZZ/2$ \\
     $-3/2$ & $G_2$ \\
-    $-1$ & $\mathrm{PO}(8) \rtimes \ZZ/3$ \\
+    $-1$ & $\mathrm{PSO}(8) \rtimes S_3$ \\
     $-2/3$ & $F_4$ \\
     $-1/2$ & $E_6 \rtimes \ZZ_2$ \\
     $-1/3$ & $E_7$ \\
@@ -265,8 +263,6 @@ right of Table~\ref{tab:lambda-group}.
   \label{tab:lambda-group}
 \end{table}
 
-\DPTtodo{In Table~\ref{tab:lambda-group}, shouldn't it be
-  $\mathrm{PO}(8)\rtimes S_3$ instead?}
 Here's a rough sketch of the proof given in Section ???. (Some modification is
 needed for $\mathrm{OSp}(1|2)$.)  All the skein relations in
 $\mathsf{Exc}_{\mathbb{C},\lambda}$ do hold in the corresponding
@@ -312,8 +308,9 @@ For any map $\varphi: R \rightarrow S$ we can define the base extension $\mathsf
 \item $\mathsf{Exc}^D_{\mathbb{C}(\lambda),\lambda}(n,m)$ has dimension $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
 for $n+m=0,1,2,3,4,5,6$, respectively.
 \item If $\lambda$ is one of the special values in
-  Table~\ref{tab:lambda-group}, then the quotient of
-  $\mathsf{Exc}^D_{\mathbb{C},\lambda}$ by the negligible elements is
+  Table~\ref{tab:lambda-group}, then the idempotent completion of the
+  quotient of
+  $\mathsf{Exc}^D_{\mathbb{C},\lambda}$ by negligible elements is
   equivalent to the category of representations of the corresponding
   supergroup.
 \end{itemize}
@@ -324,16 +321,13 @@ Deligne's conjecture for $\mathsf{Exc}^D_{R,\lambda} =
 \mathsf{Exc}_{R,\lambda}$, so they are stronger and say that the
 classical exceptional relation is the only skein relation needed to define
 $\mathsf{Exc}^D_{R,\lambda}$.
-\DPTtodo{Can we elucidate difference between
-  Conjecture~\ref{conj:Deligne} and
-  Conjecture~\ref{conj:class-consist}?}
 
 \begin{remark}
-  We have recently learned that Vogel has computational evidence that
-  Deligne's conjecture is false (private communication). Note that it
+  We have recently learned that Vogel has computational evidence against
+  Deligne's conjecture (private communication). Note that it
   is possible for the quantum
   Conjectures~\ref{conj:quant-suffic} and~\ref{conj:quant-consist} to
-  hold while the classical conjectures are false.
+  hold while the classical conjectures do not.
 \end{remark}
 
 \subsection{Laurent polynomial conventions}
@@ -524,14 +518,15 @@ then $R$ also injects into $\mathsf{QExc}_{R,v,w}(1,1)$ (resp.
 $\mathsf{QExc}_{R,v,w}(1,2)$) as multiples of the strand (resp. trivalent
 vertex).
 
-\DPTtodo{Is this conditional on one of the conjectures above?}
-\begin{corollary}[Quantum specialization]\label{cor:quant-specialization}
-  If $\lambda$ is one of the values in Table~\ref{tab:lambda-group}
-  and $v$ is not a root of unity, then the quotient of
-$\mathsf{QExc}_{\mathbb{C},v,v^\lambda}$ by the negligible elements is
+\begin{proposition}[Quantum specialization]\label{prop:quant-spec}
+  If Conjecture \ref{conj:quant-suffic} holds, $\lambda$ is one of
+  the values in Table~\ref{tab:lambda-group},
+  and $v$ is not a root of unity, then the idempotent completion of
+  the quotient of
+$\mathsf{QExc}_{\mathbb{C},v,v^\lambda}$ by negligible elements is
 equivalent to the category of representations of the quantum version
 the corresponding group.
-\end{corollary}
+\end{proposition}
 
 We expect that this will also be true at roots of unity, perhaps excluding some small roots of unity and some parities.
 
@@ -541,7 +536,6 @@ We expect that this will also be true at roots of unity, perhaps excluding some 
 There is a dense open subset $U \subset \mathbb{C}^2$ for which the idempotent
 completion of $\mathsf{QExc}_{\mathbb{C},v,w}$, for $(v,w) \in U$, is
 semisimple.
-\DPTtodo{Modified the conjecture to be a subset of $\mathbb{C}^2$ not $\mathbb{C}$}
 \end{conjecture}
 
 We expect that it's enough to assume that $[k \lambda + \ell]$ is nonzero for all integers $k$ and $\ell$ (in particular, $v$ is not a root of unity).
@@ -640,6 +634,7 @@ we can make the change of variables
 \begin{equation}\label{eq:change-variables}
   w^2 = \frac{v}{2(b+[3]\alpha)}\left(b \{1\} -\alpha [3] \{5\} + \sqrt{-4 (b+[3]\alpha)^2 + (b \{1\} -[3]\{5\}\alpha)^2} \right).
 \end{equation}
+\NStodo{Explain how this is happening, why derivatives are relevant}
 We see that $\partial_\alpha w^2 = 0$ exactly if $v$ is a $12$th root of
 unity, so away from these points the change of variables is invertible, given
 by
@@ -1960,7 +1955,7 @@ quotient of $(G_2)_q$.
 \end{proof}
 
 \begin{remark}
-Strictly speaking in \cite{MR3624901} we only considered non-degenerate trivalent categories, but this can be avoided as follows.  The argument that the pentagon reduces still applies, so all small faces reduce, and non-elliptic diagrams span all $\cC_k$.  If the $10$ non-elliptic diagrams in $\cC_5$ are independent then Kuperberg \cite{MR1265145} says that $\cC$ is a quotient of $(G_2)_q$.  If there's a relation between these ten diagrams, the relation must be negligble.  By \cite{MR3624901} either there's a single relation and the category is a quotient of $(G_2)_{\zeta_{10}}$, or the non-degenerate quotient of $\cC$ is an $ABA$ category which contradicts $\cC$ being braided.
+Strictly speaking in \cite{MR3624901} we only considered non-degenerate trivalent categories, but this can be avoided as follows.  The argument that the pentagon reduces still applies, so all small faces reduce, and non-elliptic diagrams span all $\cC_k$.  If the $10$ non-elliptic diagrams in $\cC_5$ are independent then Kuperberg \cite{MR1265145} says that $\cC$ is a quotient of $(G_2)_q$.  If there's a relation between these ten diagrams, the relation must be negligible.  By \cite{MR3624901} either there's a single relation and the category is a quotient of $(G_2)_{\zeta_{10}}$, or the non-degenerate quotient of $\cC$ is an $ABA$ category which contradicts $\cC$ being braided.
 \end{remark}
 
 
