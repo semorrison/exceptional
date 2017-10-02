@@ -53,80 +53,6 @@
 
 \tableofcontents
 
-A proposed new outline:
-\begin{enumerate}
-\item Introduction
-\begin{enumerate}
-\item Two-variable knot polynomials. For a two-variable knot polynomial to
-exist, we first need a family of Lie algebras, and second need a coherent
-quantisation of the family. We propose that this can be achieved in the 
-exceptional series, and give many calculations of the conjectured knot
-invariant.
-\item Deligne's classical exceptional series, generators, relations, and 
-conjectures.
-\item The main result of this paper is a conjecture.
-The quantum exceptional series, generators and relations and conjectures.
-\item The rest of the paper consists of two kinds of evidence for this 
-conjecture.
-\begin{enumerate}
-\item First, we show that the proposed description of the quantum exceptional 
-series is the right one --- it is picked out as the unique braided tangle
-category
-with ...
-\item Second, we give some weak evidence that the conjecture is viable.
-\begin{enumerate}
-\item We propose bases for the $n$-box spaces, $n \leq 6$ (or is it 7?), 
-showing that these are linear independent, and their spans are closed under
-various operations.
-\item We show that these give representations of the affine $n$-strand braid 
-groups, for $n \leq 6$.
-\item We calculate ridiculously many two-variable knot polynomials; although 
-these are conjectural, they unconditionally specialise to the correct quantum
-knot polynomials for the exceptional Lie algebras.
-\end{enumerate}
-\item Mention the Kontsevich integral argument?
-\end{enumerate}
-\end{enumerate}
-\item Main results
-\begin{enumerate}
-\item The classification statement.
-\item We defer some corner cases to the end.
-\item Proof of the main case.
-\item Statement of the evaluation and consistency conjectures.
-\item Some consequences: other relations.
-\item Specializations.
-  \begin{enumerate}
-  \item $U_q(\fg)$ for $\fg$ in Deligne's list in the adjoint
-    representation
-  \item The 7-dimensional representation of $U_q(\fg_2)$
-  \item $U_q(\fg)$ for $\fg$ in the $F_4$ family
-    At $q=1$, these have $v^6=-1$ (since the trivalent vertex is
-    symmetric). This family has only a finite number of points.
-  \end{enumerate}
-\end{enumerate}
-\item Calculations
-\begin{enumerate}
-\item Heuristics for choosing bases for $n$-box spaces
-\item Verifying linear independence, and invariance under operations
-\item A representation of the affine 6-strand braid group
-\item 2-variable polynomials for knots with Conway width at most 6.
-\begin{enumerate}
-\item Define Conway graph and Conway width.
-\item Explain that we can calculate anything with Conway width at most 6.
-\item This includes all 12-crossing knots, and all but one 12-crossing link.
-\item Mention Westbury's paper, and the other paper that has done some knot
-polynomial calculations.
-\end{enumerate}
-\item Denominators.
-\item Dimensions of irreducible objects.
-\end{enumerate}
-\item A Kontsevich integral argument: the classical conjecture implies the
-quantum conjecture.
-\item Corner cases from the classification.
-\end{enumerate}
-
-
-
 \section{Introduction}
 \label{sec:introduction}
 
@@ -137,30 +63,34 @@ $U_q(\mathfrak{gl}_n)$, while the Kauffman polynomial does the same for the
 standard representations of quantum $U_q(\mathfrak{o}_n)$ (or, in a slightly
 different form, the standard representations of $U_q(\mathfrak{sp}_n)$).  The
 two variable nature of these knot polynomials come from the two parameters $n$
-and $q$, but we need to replace the discrete parameter $n$ with a continuous one.  
-One can think of this process in two steps: first construct a family
-of Lie algebra objects in symmetric tensor categories which interpolate
-between the $\mathfrak{gl}_n$ yielding something called $\mathfrak{gl}_t$, and
-second quantize these Lie algebra objects.   This quantization can be done
+and $q$, but we need to replace the discrete parameter $n$ with a continuous
+one.   One can think of this process in two steps: first construct a family of
+Lie algebra objects in symmetric tensor categories which interpolate between
+the $\mathfrak{gl}_n$ yielding something called $\mathfrak{gl}_t$, and second
+quantize these Lie algebra objects.   This quantization can be done
 systematically using the Kontsevich integral, provided it converges.
 
-Work of Deligne, Cvitanović, Vogel, Cohen-de Man, and others, can be summarized as a
-conjecture that there is a third 1-parameter family of Lie algebra objects in
-symmetric tensor categories, called the (classical) exceptional series.
-This should interpolate between the
-adjoint representations of $\mathfrak{sl}_2$, $\mathfrak{sl}_3$,
-$\mathfrak{so}_8$, $\mathfrak{g}_2$, $\mathfrak{f}_4$, $\mathfrak{e}_6$,
-$\mathfrak{e}_7$, and $\mathfrak{e}_8$ in an appropriate sense.  If this classical exceptional family
-exists, we should again expect a quantization yielding a 2-variable
+Work of Deligne, Cvitanović, Vogel, Cohen-de Man, and others, can be
+summarized as a conjecture that there is a third 1-parameter family of Lie
+algebra objects in symmetric tensor categories, called the (classical)
+exceptional series. This should interpolate between the adjoint
+representations of $\mathfrak{sl}_2$, $\mathfrak{sl}_3$, $\mathfrak{so}_8$,
+$\mathfrak{g}_2$, $\mathfrak{f}_4$, $\mathfrak{e}_6$, $\mathfrak{e}_7$, and
+$\mathfrak{e}_8$ in an appropriate sense.  If this classical exceptional
+family exists, we should again expect a quantization yielding a 2-variable
 exceptional knot polynomial.  In this paper we give a conjectural skein
-theoretic description of this exceptional knot polynomial. In fact, we
-prove that these particular skein relations must hold if the exceptional knot polynomial
-exists.
+theoretic description of this exceptional knot polynomial. In fact, we prove
+that these particular skein relations must hold if the exceptional knot
+polynomial exists.
 
-We can use these skein relations to do many computations.  In
-particular, we are able to calculate the value of this knot polynomial (if it
-exists!) on all knots of Conway girth 6, which includes all knots of 12 or
-fewer crossings.  Unconditionally these give the first calculations of the Reshetikhin-Turaev knot invariants for the exceptional Lie algebras for most of these knots.  For example, we compute the following value for the trefoil for the exceptional series, and the Reshetikhin-Turaev invariant for $\mathfrak{e}_8$ is given by setting $v=q^5$ and $w=q^6$.
+We can use these skein relations to do many computations.  In particular, we
+are able to calculate the value of this knot polynomial (if it exists!) on all
+knots of Conway width 6, which includes all knots of 12 or fewer crossings.
+Unconditionally these give the first calculations of the Reshetikhin-Turaev
+knot invariants for the exceptional Lie algebras for most of these knots.  For
+example, we compute the following value for the trefoil for the exceptional
+series, and the Reshetikhin-Turaev invariant for $\mathfrak{e}_8$ is given by
+setting $v=q^5$ and $w=q^{-1}$.
 \begin{multline*}
 QES_{\text{reduced}}(\nn{trefoil}) = \\
 -v^{24}
@@ -171,33 +101,43 @@ QES_{\text{reduced}}(\nn{trefoil}) = \\
     \Big)
 \end{multline*}
 
-We are also able to do several other calculations, like giving quantum dimension formulas for the summands of $\mathfrak{g}^{\otimes 3}$ quantizing the dimension formulas of Cohen--De Man \cite{MR1381778} in the classical case (for the summands of $\mathfrak{g}^{\otimes 2}$ such quantum dimension formulas were already given by Tuba-Wenzl \cite{MR2132671}).
+We are also able to do several other calculations, like giving quantum
+dimension formulas for the summands of $\mathfrak{g}^{\otimes 3}$ quantizing
+the dimension formulas of Cohen--De Man \cite{MR1381778} in the classical case.
+(For the summands of $\mathfrak{g}^{\otimes 2}$ such quantum dimension
+formulas were already given by Tuba-Wenzl \cite{MR2132671}.)
 
-In order to state these conjectures and theorems precisely and place them in their proper context, we have written a  long introduction split into several subsections.
+In order to state these conjectures and theorems precisely and place them in
+their proper context, we have written a  long introduction split into several
+subsections.
 
 \subsection{The classical exceptional series}
-In order to motivate our results about the quantum exceptional series, we will give precise statementsof some conjectures giving a skein theoretic description of the classical exceptional series following Cvitanovic, Deligne, and Vogel.
+\label{sec:intro-classical}
+In order to motivate our results about the quantum exceptional series, we will
+give precise statementsof some conjectures giving a skein theoretic
+description of the classical exceptional series following Cvitanović, Deligne,
+and Vogel.
 
 We begin with the symmetric tensor category of Jacobi
-diagrams, $\mathrm{Jac}_d$.
+diagrams, $\mathsf{Jac}_d$.
 
 \begin{definition}
-Let $R$ be an algebra over $\mathbb{C}$, and let $d$ be an element of $R$ and $b$ an invertible element of $R$.  The objects of $\mathrm{Jac}_{R,d,b}$ are collections of $n$ points on the line and
-the morphism space from $n$ to $m$ consists of $R$-linear combinations
-of planar
-graphs in a rectangle with $n$ boundary points on the bottom, $m$ boundary
-points at the top, and consisting of trivalent vertices and $4$-valent
-symmetric crossings
-\DPTtodo{Expand on ``symmetric crossing''}
-modulo planar isotopy, the usual Reidemeister 2 and 3
-relations for a symmetric crossing, and the following circle,
-lollipop, bigon, triangle,
-anti-symmetry, symmetry of the Killing form, and Jacobi relations.
-
+Let $R$ be an algebra over $\mathbb{C}$, and let $d$ be an element of $R$ and
+$b$ an invertible element of $R$.  The objects of $\mathsf{Jac}_{R,d,b}$ are
+collections of $n$ points on the line and the morphism space from $n$ to $m$
+consists of $R$-linear combinations of planar graphs in a rectangle with $n$
+boundary points on the bottom, $m$ boundary points at the top, and consisting
+of trivalent vertices and $4$-valent symmetric crossings%
+\footnote{A symmetric crossing means a crossing as in the symmetric
+  group, i.e., not braided.}
+modulo planar isotopy, the usual Reidemeister relations
+for a symmetric crossing and a trivalent vertex, and the following
+circle, lollipop, bigon,
+triangle, anti-symmetry, symmetry of the Killing form, and Jacobi relations.
 \begin{align}
 \label{eq:classical-loop-lollipop}  \unknot \; &= d &  \loopvertex \; &=0 \\
-\label{eq:classical-bigon-trigon}  \ngon{2}\; &= b \;\onestrandid  & \ngon{3}\; &= \frac{b}{2} \;\nvertex{3} \\
-\label{eq:classical-symmetry-antisymmetry}   \symtwistvertex\; &= - \nvertex[-90]{3} & \symtwist\; &= \drawcup
+\label{eq:classical-bigon-trigon}  \twogon\; &= b \;\onestrandid  & \threegon\; &= \frac{b}{2} \;\threevertex \\
+\label{eq:classical-symmetry-antisymmetry}   \symtwistvertex\; &= - \threevertex & \symtwist\; &= \drawcup
 \end{align}
 \begin{equation}
 \drawI\; - \;\drawH\; + \;\drawsymcrossX\; = 0.
@@ -205,28 +145,32 @@ anti-symmetry, symmetry of the Killing form, and Jacobi relations.
 \end{equation}
 \end{definition}
 
-By rescaling the trivalent vertex, it is easy to see that $\mathrm{Jac}_{R,d,b}$ is equivalent as a spherical tensor category to $\mathrm{Jac}_{R,d,bx^2}$ for any invertible $x$ in $R$.  In particular, if $R = \mathbb{C}$ then $\mathrm{Jac}_{R,d,b}$ does not depend on the choice of $b$.  A standard normalization is $b=6$.  \NStodo{Should we change $6$ to $12$?}
+By rescaling the trivalent vertex, it is easy to see that
+$\mathsf{Jac}_{R,d,b}$ is equivalent as a spherical tensor category to
+$\mathsf{Jac}_{R,d,bx^2}$ for any invertible $x$ in $R$.  In particular, if $R
+= \mathbb{C}$ then $\mathsf{Jac}_{R,d,b}$ does not depend on the choice of
+$b$.  A standard normalization is $b=12$.
 
 If $\mathfrak{g}$ is a simple Lie algebra object in a symmetric tensor
 category with dimension $d$, by the diagram calculus  the symmetric tensor
-category of finite dimensional representations of $\mathfrak{g}$ is
-the target of a
-functor from $\mathrm{Jac}_{R,d,b}$, where we interpret each strand as a copy of
-$\mathfrak{g}$, each cup or cap using the Killing form, each trivalent vertex
-as the Lie bracket, and each crossing as the usual symmetric braiding.  This 
-skein theory is somewhat poorly behaved since the space of $0$-boundary point
-diagrams is expected to be infinite dimensional.
+category of finite dimensional representations of $\mathfrak{g}$ is the target
+of a functor from $\mathsf{Jac}_{R,d,b}$, where we interpret each strand as a
+copy of $\mathfrak{g}$, each cup or cap using the Killing form, each trivalent
+vertex as the Lie bracket, and each crossing as the usual symmetric braiding.
+The skein theory for $\mathsf{Jac}_{R,d,b}$ is somewhat poorly behaved
+since the space of $0$-boundary
+point diagrams is infinite dimensional.
 
-In addition, Cvitanović and Vogel independently observed that the
-adjoint representations
-of the exceptional Lie algebras satisfy another relation, the \emph{classical exceptional
-relation}.
+In addition, Cvitanović \cite{MR2418111} and Vogel \cite{MR2769234}
+independently observed that the adjoint
+representations of the exceptional Lie algebras satisfy another relation, the
+\emph{classical exceptional relation}.
 
 \begin{definition}
-If $2+d$ is invertible in $R$, let $\mathrm{Exc}_{R,d,b}$ be symmetric tensor category which is the quotient of 
-$\mathrm{Jac}_{R,d,b}$ modulo the exceptional relation.
+If $2+d$ is invertible in $R$, let $\mathsf{Exc}_{R,d,b}$ be symmetric tensor category which is the quotient of 
+$\mathsf{Jac}_{R,d,b}$ modulo the exceptional relation.
 \begin{equation}
-\ngon[45]{4}\; = \frac{b}{6} \left(\;\drawI\; + \;\drawH\; \right)
+\fourgon\; = \frac{b}{6} \left(\;\drawI\; + \;\drawH\; \right)
  + \frac{5}{6}\frac{b^2}{2+d} \left( \;\cupcap\; + \;\twostrandid\; + \;\symcross\; \right)
 \label{eq:classical-except}
 \end{equation}
@@ -234,148 +178,259 @@ $\mathrm{Jac}_{R,d,b}$ modulo the exceptional relation.
 
 The parameter $d$ is somewhat poorly behaved, and so Deligne instead
 introduced a parameter $\lambda$ such that $d = -2
-\frac{(\lambda+5)(6-\lambda)}{\lambda(1-\lambda)}$.  This makes sense so long as $\lambda$ and $1-\lambda$ are invertible in $R$, and such a $\lambda$ can be found when $2+d$ is invertible and $(2+d)(242+d)$ has a square root in $R$.  Note that $\lambda$ and $1-\lambda$ correspond to the same $d$ and thus to the
-same category.  If we normalize $b=6$ then the exceptional relation
-for $\mathrm{Exc}_{R,-2
-  \frac{(\lambda+5)(6-\lambda)}{\lambda(1-\lambda)},6}$ (which we
-will also write $\mathrm{Exc}_{R,\lambda}$) has the following form.
+\frac{(\lambda+5)(6-\lambda)}{\lambda(1-\lambda)}$.  This makes sense so long
+as $\lambda$ and $1-\lambda$ are invertible in $R$, and such a $\lambda$ can
+be found when $2+d$ is invertible and $(2+d)(242+d)$ has a square root in $R$.
+Note that $\lambda$ and $1-\lambda$ correspond to the same $d$ and thus to the
+same category.  If we normalize $b=12$ then the exceptional relation for
+$\mathsf{Exc}_{R,-2   \frac{(\lambda+5)(6-\lambda)}{\lambda(1-\lambda)},6}$
+(which we will also write $\mathsf{Exc}_{R,\lambda}$) has the following form.
 
 \begin{equation}
-\ngon[45]{4}\; = \;\drawI\; + \;\drawH\;
- - \frac{\lambda(1-\lambda)}{2} \left( \;\cupcap\; + \;\twostrandid\; + \;\symcross\; \right)
+\fourgon\; = 2\left(\;\drawI\; + \;\drawH\;\right)
+ - 2\lambda(1-\lambda) \left( \;\cupcap\; + \;\twostrandid\; + \;\symcross\; \right)
 \label{eq:classical-except-2}
 \end{equation}
 
 
 \begin{conjecture}[Classical sufficiency]
   \label{conj:class-suffic}
-So long as a certain finite set of polynomials in $\lambda$ are
-invertible, the space of $n$-boundary point diagrams in
-$\mathrm{Exc}_{R,\lambda}$ is finitely generated as an $R$-module for
-every $n$.  Furthermore, $\mathsf{Exc}_{R,\lambda}(0,0)$ is generated
-by the empty diagram, $\mathsf{Exc}_{R,\lambda}(1,0)$ is the
-$0$-module, $\mathsf{Exc}_{R,\lambda}(1,1)$ is spanned by the strand,
-$\mathsf{Exc}_{R,\lambda}(2,1)$ is spanned by the trivalent vertex,
-and $\mathrm{Exc}_{R,\lambda}(2,2)$ is generated by
-$$\symcross\;, \; \drawI \;, \; \drawH \;, \; \twostrandid \;, \text{ and } \; \cupcap \; .$$
+So long as a certain finite set of polynomials in $\lambda$ are invertible,
+the space of $n$-boundary point diagrams in $\mathsf{Exc}_{R,\lambda}$ is
+finitely generated as an $R$-module for every $n$.  Furthermore,
+$\mathsf{Exc}_{R,\lambda}(0,0)$ is generated by the empty diagram,
+$\mathsf{Exc}_{R,\lambda}(1,0)$ is the $0$-module,
+$\mathsf{Exc}_{R,\lambda}(1,1)$ is spanned by the strand,
+$\mathsf{Exc}_{R,\lambda}(2,1)$ is spanned by the trivalent vertex, and
+$\mathsf{Exc}_{R,\lambda}(2,2)$ is generated by $$\symcross\;, \; \drawI \;,
+\; \drawH \;, \; \twostrandid \;, \text{ and } \; \cupcap \; .$$
 \end{conjecture}
 
-We also conjecture specific spanning sets for $\mathsf{Exc}_{R,\lambda}(n,m)$ for $n+m \leq 6$, see Section~\ref{sec:bases}.
+We also conjecture specific spanning sets for $\mathsf{Exc}_{R,\lambda}(n,m)$
+for $n+m \leq 6$, see Section~\ref{sec:bases}.
 
+\DPTtodo{I think this is too strong: it could be, eg, that there is
+  some torsion in the quotient $\mathsf{Exc}_{R,\lambda}$. What we
+  really want is that $\mathsf{Exc}_{R,\lambda}$ has a free quotient
+  or some such}
 \begin{conjecture}[Classical consistency]
   \label{conj:class-consist}
-So long as a certain finite set of polynomials in $\lambda$ are invertible in $R$, then $R$ injects into $\mathrm{Exc}_{R,\lambda}(0,0)$ as multiples of the empty diagram.  In particular, any two ways of simplifying the same closed diagram to give an element of $R$ will give the same element of $R$.
+So long as a certain finite set of polynomials in $\lambda$ are invertible in
+$R$, then $R$ injects into $\mathsf{Exc}_{R,\lambda}(0,0)$ as multiples of the
+empty diagram.  In particular, any two ways of simplifying the same closed
+diagram to give an element of $R$ will give the same element of $R$.
 \end{conjecture}
 
-Note that if $d$ is invertible in $R$, it follows from classical consistency that $R$ injects into $\mathrm{Exc}_{R,\lambda}(1,1)$ as multiples of the strand.  Similarly if $b$ and $d$ are invertible in $R$, it follows from classical consistency that $R$ injects into $\mathrm{Exc}_{R,\lambda}(2,1)$ as multiples of the trivalent vertex  Similarly, if \NStodo{what polynomials?} are invertible, then $R^4$ injects into $\mathrm{Exc}_{R,\lambda}(2,2)$ as linear combinations of the above four diagrams.
+Note that if $d$ is invertible in $R$, it follows from classical consistency
+that $R$ injects into $\mathsf{Exc}_{R,\lambda}(1,1)$ as multiples of the
+strand.  Similarly if $b$ and $d$ are invertible in $R$, it follows from
+classical consistency that $R$ injects into $\mathsf{Exc}_{R,\lambda}(2,1)$ as
+multiples of the trivalent vertex  Similarly, if \nn{what polynomials?}
+are invertible, then $R^5$ injects into $\mathsf{Exc}_{R,\lambda}(2,2)$ as
+linear combinations of the above five diagrams.
 
 \nn{Do we have any speculations about what elements of $R$ need to be inverted.}
 
-If both consistency and sufficiency hold, it is also natural to conjecture that $\mathrm{Exc}_{R,\lambda}(n,m)$ is always a free $R$-module of finite rank.  When $n+m$ is small this follows from our calculations and the above conjectures.
+If both consistency and sufficiency hold, it is also natural to conjecture
+that $\mathsf{Exc}_{R,\lambda}(n,m)$ is always a free $R$-module of finite
+rank.  When $n+m$ is small this follows from our calculations and the above
+conjectures.
 
-\begin{corollary}[Classical specialization]
-If Conjecture \ref{conj:class-suffic} and
-$\lambda$ is one of $-5, -4, -3, -2, -3/2,-1,-2/3,-1/2,-1/3,-1/5$, then the quotient of $\mathrm{Exc}_{\mathbb{C},\lambda}$ by the negligible elements is equivalent to the category of representations of the following compact supergroups: the trivial group, $\mathrm{OSp}(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3) \rtimes \mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$, $E_6 \rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
-\end{corollary}
+\begin{proposition}[Classical specialization]
+If Conjecture \ref{conj:class-suffic} holds and $\lambda$ is one of
+the values on the left of Table~\ref{tab:lambda-group}, then the
+idempotent completion of the quotient of
+$\mathsf{Exc}_{\mathbb{C},\lambda}$ by negligible elements is equivalent
+to the category of representations of the corresponding group on the
+right of Table~\ref{tab:lambda-group}.
+\end{proposition}
 
-Here's a rough sketch of the proof given in Section ??? (some modification is needed for $\mathrm{OSp}(1|2)$).  All the skein relations in $\mathrm{Exc}_{\mathbb{C},\lambda}$ do hold in the corresponding representation categories, so we get a functor which is injective on morphisms and essentially surjective on objects.  By Tannaka-Krein duality and unitarity, the image of this functor is the category of representations of a compact subgroup of $\mathrm{U}(\ad)$ preserving the bracket and containing the group.  But each of these groups is the maximal such unitary group preserving the bracket, so the functor is surjective on morphisms.  \NStodo{Is this nonsense?}
-\DPTtodo{What is $\mathrm{U}(\ad)$, and does this kind of detail
-  belong here??}
+\begin{table}
+  \begin{tabular}{rl}
+    \toprule
+    $\lambda$ & Supergroup \\ \midrule
+    $-5$ & Trivial group \\
+    $-4$ & $\mathrm{OSP}(1|2)$ \\
+    $-3$ & $\mathrm{PSL}(2)$ \\
+    $-2$ & $\mathrm{PSL}(3) \rtimes \ZZ/2$ \\
+    $-3/2$ & $G_2$ \\
+    $-1$ & $\mathrm{PSO}(8) \rtimes S_3$ \\
+    $-2/3$ & $F_4$ \\
+    $-1/2$ & $E_6 \rtimes \ZZ_2$ \\
+    $-1/3$ & $E_7$ \\
+    $-1/5$ & $E_8$ \\
+    \bottomrule
+  \end{tabular}
+  \caption{Values of $\lambda$ and the supergroup with related category
+    representations. In each case, take the Lie group
+    with trivial center, semidirect product with its group of outer
+    automorphisms.}
+  \label{tab:lambda-group}
+\end{table}
+
+Here's a rough sketch of the proof given in Section ???. (Some modification is
+needed for $\mathrm{OSp}(1|2)$.)  All the skein relations in
+$\mathsf{Exc}_{\mathbb{C},\lambda}$ do hold in the corresponding
+representation categories, so we get a functor which is injective on morphisms
+and essentially surjective on objects.  By Tannaka--Krein duality and
+unitarity, the image of this functor is the category of representations of a
+subgroup of the orthogonal group $\mathrm{O}(\mathfrak{g})$ preserving the bracket and containing
+the group.  But each of these groups is the maximal such unitary group
+preserving the bracket, so the functor is surjective on morphisms.
+
+\NStodo{Move to special values, add quantum version.  Discuss reference with Pavel.}
 
 \begin{conjecture}[Classical semisimplicity]
-There is a dense open subset $U \subset \mathbb{C}$ for which the idempotent completion of $\mathrm{Exc}_{\mathbb{C},\lambda}$, for $\lambda \in U$, is semisimple.
+There is a dense open subset $U \subset \mathbb{C}$ so that, for
+$\lambda \in U$, the idempotent
+completion of $\mathsf{Exc}_{\mathbb{C},\lambda}$ is
+semisimple.
 \end{conjecture}
 
-We expect that in order for the idempotent completion to be semisimple one needs to invert infinitely many polynomials.  For example, for the idempotent completion of $\mathrm{GL}_t$ to be semisimple you need to invert $t-n$ for every positive integer $n$.  From the dimension formulas of Cohen-De Man and others, we might speculate that for classical semisimplicity it is again enough to invert $\lambda-n$ for $n \in \mathbb{Z}$.
+We expect that in order for the idempotent completion to be semisimple one
+needs to invert infinitely many polynomials.  For example, for the idempotent
+completion of $\mathrm{GL}_t$ to be semisimple you need to invert $t-n$ for
+every positive integer $n$.  From the dimension formulas of Cohen--De Man and
+others, we might speculate that for classical semisimplicity it is
+enough to invert $k\lambda-\ell$ for $k, \ell \in \mathbb{Z}$.
 
-These conjectures are a strengthening of a the conjecture of Deligne (as improved by Cohen--De Man who incorporated the Cvitanović-Vogel exceptional relation), and would give a construction of an exceptional series passing through each of the exceptional Lie algebras.
+These conjectures are a strengthening of the conjecture of Deligne, as
+improved by Cohen--De Man who incorporated the Cvitanović--Vogel exceptional
+relation. They would give a construction of an exceptional series passing
+through each of the exceptional Lie algebras.
 
-\begin{conjecture}[Deligne's conjecture]
+\begin{conjecture}[Deligne's conjecture]\label{conj:Deligne}
 There exists
   \begin{itemize}
-  \item a ring $R$ which is a localization of $\mathbb{C}[\lambda]$ at finitely many polynomials
-  \item a category $\mathsf{Except}_{R,\lambda}$ where the objects are integers and morphism spaces are finitely-generated $R$-modules.
-  \item a braided functor $\eval$ from $\mathsf{Exc}_{R,\lambda}$ to $\mathsf{Except}_{R,\lambda}$, that is the identity on objects and surjective on morphisms and sends the trivalent vertex to the generator of the $3$-boundary point space. 
+  \item a ring $R$ which is a localization of $\mathbb{C}[\lambda]$ at finitely many polynomials;
+  \item a category $\mathsf{Exc}^D_{R,\lambda}$ where the objects are
+    integers and morphism spaces are finitely-generated $R$-modules; and
+  \item a braided functor $\eval$ from $\mathsf{Exc}_{R,\lambda}$ to $\mathsf{Exc}^D_{R,\lambda}$, that is the identity on objects and surjective on morphisms and sends the trivalent vertex to the generator of the $3$-boundary point space.
   \end{itemize}
-For any map $\varphi: R \rightarrow S$ we can define the base extension $\mathsf{Except}_{S,\varphi(\lambda)}$.  Furthermore $\mathsf{Except}$ has the following properties
+For any map $\varphi: R \rightarrow S$ we can define the base extension $\mathsf{Exc}^D_{S,\varphi(\lambda)}$.  Furthermore $\mathsf{Exc}^D$ has the following properties.
 \begin{itemize}
-\item the idempotent completion of $\mathsf{Except}_{\mathbb{C}(\lambda),\lambda}$ is semisimple.
-\item $\mathsf{Except}_{\mathbb{C}(\lambda),\lambda}(n,m)$ has dimension $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
-for $n+m=0,1,2,3,4,5,6$, respectively, 
-\item if $\lambda$ is one of $-5, -4, -3, -2, -3/2,-1,-2/3,-1/2,-1/3,-1/5$, then the quotient of $\mathrm{Exc}_{\mathbb{C},\lambda}$ by the negligible elements is equivalent to the category of representations of the trivial group, $O(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3) \rtimes \mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$, $E_6 \rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
+\item The idempotent completion of $\mathsf{Exc}^D_{\mathbb{C}(\lambda),\lambda}$ is semisimple.
+\item $\mathsf{Exc}^D_{\mathbb{C}(\lambda),\lambda}(n,m)$ has dimension $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
+for $n+m=0,1,2,3,4,5,6$, respectively.
+\item If $\lambda$ is one of the special values in
+  Table~\ref{tab:lambda-group}, then the idempotent completion of the
+  quotient of
+  $\mathsf{Exc}^D_{\mathbb{C},\lambda}$ by negligible elements is
+  equivalent to the category of representations of the corresponding
+  supergroup.
 \end{itemize}
 \end{conjecture}
 
-\DPTtodo{Add note: Vogel believes Deligne's conjecture is false}
-Our conjectures imply Deligne's conjecture for $\mathsf{Except}_{R,\lambda} = \mathsf{Exc}_{R,\lambda}$, so they are slightly stronger and say that the classical exceptional relation is the only skein relation needed to define $\mathsf{Except}_{R,\lambda}$.
+Conjectures~\ref{conj:class-suffic} and~\ref{conj:class-consist} imply
+Deligne's conjecture for $\mathsf{Exc}^D_{R,\lambda} =
+\mathsf{Exc}_{R,\lambda}$, so they are stronger and say that the
+classical exceptional relation is the only skein relation needed to define
+$\mathsf{Exc}^D_{R,\lambda}$.
 
-\subsection{Some Laurent polynomial conventions}
+\begin{remark}
+  We have recently learned that Vogel has computational evidence against
+  Deligne's conjecture (private communication). Note that it
+  is possible for the quantum
+  Conjectures~\ref{conj:quant-suffic} and~\ref{conj:quant-consist} to
+  hold while the classical conjectures do not.
+\end{remark}
 
-The main result of this paper is a quantum versions of the sufficiency and consistency conjectures.  
-Before stating these conjecture we fix some notation for certain Laurent polynomials appearing in our formulas.  On the one hand, we would like to use formulas that are irreducible as Laurent polynomials in $v$ and $w$, so that we can easily read off from formulas which primes need to be inverted.  On the other hand the Laurent polynomials that occur in our formulas are often even or odd under $v \rightarrow v^{-1}, w \rightarrow w^{-1}$, so we would also like our formulas to have this symmetry.  So we often combine two irreducible factors into a single expression.  For example, $v-v^{-1} = v^{-1}(v-1)(v+1) = (v^{\frac{1}{2}}-v^{-\frac{1}{2}})(v^{\frac{1}{2}}+v^{-\frac{1}{2}})$ but there is no way to factor it into odd or even Laurent polynomials so we will leave $v-v^{-1}$ alone in our formulas.  This will never cause any confusion since any time the irreducible factor $(v-1)$ appears it will have a corresponding $(v+1)$ factor.
+\subsection{Laurent polynomial conventions}
+
+The main result of this paper is a quantum versions of the sufficiency and
+consistency conjectures.   Before stating these conjecture we fix some
+notation for certain Laurent polynomials appearing in our formulas.  On the
+one hand, we would like to use formulas that are irreducible as Laurent
+polynomials in $v$ and $w$, so that we can easily read off from formulas which
+primes need to be inverted.  On the other hand the Laurent polynomials that
+occur in our formulas are often even or odd under $v \rightarrow v^{-1}, w
+\rightarrow w^{-1}$, so we would also like our formulas to have this symmetry.
+So we often combine two irreducible factors into a single expression.  For
+example, $v-v^{-1} = v^{-1}(v-1)(v+1) =
+(v^{\frac{1}{2}}-v^{-\frac{1}{2}})(v^{\frac{1}{2}}+v^{-\frac{1}{2}})$ but
+there is no way to factor it into odd or even Laurent polynomials so we will
+leave $v-v^{-1}$ alone in our formulas.  This will never cause any confusion
+since any time the irreducible factor $(v-1)$ appears it will have a
+corresponding $(v+1)$ factor.
 
 \begin{align*}
 [k\lambda + n] &= w^kv^n - w^{-k}v^{-n}\\
-\{k\lambda + n\} &= w^k v^n + w^{-k} v^{-n}
+\{k\lambda + n\} = \frac{[2k\lambda + 2n]}{[k\lambda + n]} &= w^k v^n + w^{-k} v^{-n}
 \end{align*}
 
 \begin{warning}
-Note that, unlike with the usual quantum numbers, there is no denominator.
+Unlike with the usual quantum numbers, there is no denominator.
 \end{warning}
 
 Note that $\{k\lambda + n\}$ is always irreducible, while $[k\lambda +
-n]$ is a product of two irreducibles so long as $k$ and $n$ are
-relatively prime.  When
-$k=0$ we will avoid $[n]$ and instead factor into the following
+n]$ is irreducible iff $k$ and~$n$ are relatively prime. (In
+particular, $[n]$ and $[k\lambda]$ are not irreducible for $n,k>1$.)
+When
+$k=0$ we will generally avoid $[n]$ and instead factor into the following
 symmetrized cyclotomic polynomials.  (Strictly speaking we should use
-a similar convention for factoring $[k \lambda]$, but this will not be
-necessary.)  Let
-\DPTtodo{I still object to this notation}
-\[
-  \widetilde{\Phi}_n = \prod_{\zeta: (\pm \zeta)^n = 1 \text{ and } (\pm \zeta)^m \neq 1 \text{ for $m < n$}}
-  (v^{\frac{1}{2}}-\zeta v^{-\frac{1}{2}}).
-\]
-In terms of the usual cyclotomic polynomials we have if $n$ is odd
-then $\widetilde{\Phi}_n = \widetilde{\Phi}_{2n} = v^{-\varphi(n)}
-\Phi_n(v) \Phi_{2n}(v)$, but if $n$ is a multiple of $4$ then
-$\widetilde{\Phi}_n = v^{-\frac{\varphi(n)}{2}} \Phi_n(v)$. In particular, when $n$ is odd $\widetilde{\Phi}_n$ vanishes exactly at primitive $n$-th and primitive $2n$-th roots of unity, while when $n$ is a multiple of 4, $\widetilde{\Phi}_n$ vanishes exactly at primitive $n$-th roots of unity.
+a similar convention for factoring $[k \lambda]$, but this is not needed
+in practice.)  Let
+\begin{align*}
+  \Psi_n &= \prod_{\zeta: \zeta^{2n} = 1 \text{ and } (\pm \zeta)^m \neq 1 \text{ for $m < 2n$}}
+  (v^{\frac{1}{2}}-\zeta v^{-\frac{1}{2}}),\\
+  \intertext{or, in terms of the usual cyclotomic polynomials,}
+  \Psi_n(v) &= v^{-\varphi(2n)/2} \Phi_{2n}(v^2).
+\end{align*}
+In particular, when $n$ is odd $\Psi_n$ vanishes exactly at primitive
+$n$-th and primitive $2n$-th roots of unity, while when $n$ even,
+$\Psi_n$ vanishes exactly at primitive $2n$-th roots of unity.
 The notation $\{k\lambda + n\}$ can be viewed as another case of this:
-for $n$ odd,
-$\{n\} = \widetilde{\Phi}_{4n}(v)$.
+for $n$ an odd prime,
+$\{n\} = \Psi_{2n}(v)$. For convenience, here are the values of $\Psi_n$ that
+appear in this paper.
+\begin{align*}
+  \Psi_1 = [1] &= v - v^{-1} &
+  \Psi_2 = \{1\} &= v + v^{-1}\\
+  \Psi_3 = \frac{[3]}{[1]} &= v^2 + 1 + v^{-2}&
+  \Psi_4 = \{2\} &= v^2 + v^{-2}\\
+  \Psi_5 = \frac{[5]}{[1]} &= v^4 + v^2 + 1 + v^{-2} + v^{-4}&
+  \Psi_6 = \frac{[6][1]}{[3][2]} &= v^2 - 1 + v^{-2}
+\end{align*}
 
 
 \subsection{Quantum exceptional conjectures}
-
-We now turn to our main conjectures.  Our first goal is to give a definition of a tensor category $\mathrm{QExc}$ which looks like a quantum deformation of $\mathrm{Exc}$, in particular we need skein relations which deform the Jacobi relation, the classical exceptional relation, and the symmetric relation between the overcrossing and undercrossing.  Our specific choices of relations will be motivated below by our main theorems. 
+\label{sec:intro-quantum}
+We now turn to our main conjectures.  Our first goal is to give a definition
+of a tensor category $\mathsf{QExc}$ which looks like a quantum deformation of
+$\mathsf{Exc}$, in particular we need skein relations which deform the Jacobi
+relation, the classical exceptional relation, and the symmetric relation
+between the overcrossing and undercrossing.  Our specific choices of relations
+will be motivated below by our main theorems.
 
 \begin{definition}
-Let $R$ be a ring and $v$ and $w$ invertible elements of $R$ such that $[\lambda]$, $[\lambda-1]$, $\widetilde{\Phi}_1$, and $\widetilde{\Phi}_{12}$ are invertible. \SMtodo{write these out, just here}
-Let  $\mathrm{QExc}_{R,v,w}$ be the ribbon category whose objects are collections of $n$
-points on a line, and whose morphisms spaces from $n$ to $m$ consist of $R$-linear
-combinations of planar graphs in a rectangle with $n$ boundary points on the
-bottom, $m$ boundary points at the top, and consisting of trivalent vertices
-and $4$-valent braided crossings modulo planar isotopy, the usual Reidemeister
-2 and 3 relations for a symmetric crossing, and the following circle,
-lollipop, bigon, triangle, quantum anti-symmetry, and quantum Killing
-symmetry
-relations.
+Let $R$ be a ring and $v$ and $w$ invertible elements of $R$ such that
+$[\lambda]$, $[\lambda-1]$, $\Psi_1$, and $\Psi_6$
+are invertible.  Let
+$\mathsf{QExc}_{R,v,w}$ be the ribbon category whose objects are collections
+of $n$ points on a line, and whose morphisms spaces from $n$ to $m$ consist of
+$R$-linear combinations of planar graphs in a rectangle with $n$ boundary
+points on the bottom, $m$ boundary points at the top, and consisting of
+trivalent vertices and $4$-valent braided crossings modulo planar isotopy, the
+usual Reidemeister 2 and 3 relations for a symmetric crossing, and the
+following circle, lollipop, bigon, triangle, quantum anti-symmetry, and
+quantum Killing symmetry relations.
 
  \begin{equation}
     \label{eq:simple-rels-spec}
   \begin{aligned}
     \unknot\; &= d&\quad
     \loopvertex\;&=0\\[5pt]
-      \ngon{2}\;&= b\;\onestrandid&
-        \ngon[-90]{3}\; &= t\;\nvertex[-90]{3}\\[5pt]
-    \twistvertex\; &= -v^{6}\;\nvertex[-90]{3}&
+      \twogon\;&= b\;\onestrandid&
+        \threegon\; &= t\;\threevertex\\[5pt]
+    \twistvertex\; &= -v^{6}\;\threevertex&
       \twist\; &= v^{12}\;\drawcup
   \end{aligned}
   \end{equation}
 where
 \begin{align*}
-  d &= -\frac{\widetilde{\Phi}_8 [\lambda+5][\lambda-6]}{[\lambda][\lambda-1]}\\
-  b &= \{\lambda+2\}\{\lambda-3\}\widetilde{\Phi}_3\\
-  t &= \widetilde{\Phi}_1 \bigl(\widetilde{\Phi}_1 \{2\lambda -1\} + (v^4 - v^2 - 1 - v^{-2} + v^{-4})\bigr).
+  d &= -\frac{\Psi_4 [\lambda+5][\lambda-6]}{[\lambda][\lambda-1]}\\
+  b &= \{\lambda+2\}\{\lambda-3\}\Psi_3\\
+  t &= \Psi_1 \bigl(\Psi_1 \{2\lambda -1\} + (v^4 - v^2 - 1 - v^{-2} + v^{-4})\bigr).
 \end{align*}
 
 
@@ -390,7 +445,7 @@ v^{-3} \;
 \; -v^{-1} \;
  \drawH
 \;
- - \frac{[\lambda][\lambda-1]}{\widetilde{\Phi}_1}
+ - \frac{[\lambda][\lambda-1]}{\Psi_1}
 \left[\; \braidcross \;
  + v^{4}\;
 \cupcap
@@ -403,7 +458,7 @@ v^{-3} \;
 
 \begin{equation}
 \label{eq:QESquare-w}
-\ngon[45]{4} + \frac{-\widetilde{\Phi}_4\widetilde{\Phi}_{12}^2[\lambda][\lambda-1]}{\widetilde{\Phi}_1^2} \braidcross + \frac{x_1}{\widetilde{\Phi}_1} \drawI + \frac{x_2}{\widetilde{\Phi}_1} \drawH + \frac{x_3}{\widetilde{\Phi}_1^2} \cupcap + \frac{x_4}{\widetilde{\Phi}_1^2} \twostrandid =0
+\fourgon + \frac{-\Psi_2\Psi_6^2[\lambda][\lambda-1]}{\Psi_1^2} \braidcross + \frac{x_1}{\Psi_1} \drawI + \frac{x_2}{\Psi_1} \drawH + \frac{x_3}{\Psi_1^2} \cupcap + \frac{x_4}{\Psi_1^2} \twostrandid =0
 \end{equation}
 
 where the $x_i$ are Laurent polynomials in $v$ and $w$ from Appendix \ref{app:coefficients}.
@@ -412,65 +467,109 @@ where the $x_i$ are Laurent polynomials in $v$ and $w$ from Appendix \ref{app:co
 
 \begin{equation}
 \label{eq:QECrossing-w}
-\braidcross - \invbraidcross + \frac{\widetilde{\Phi}_1}{\widetilde{\Phi}_{12}} \left[\; \drawI \; - \; \drawH \; \right] + \frac{\widetilde{\Phi}_1 [\lambda][\lambda-1]}{\widetilde{\Phi}_{12}} \left[\; \twostrandid \; - \; \cupcap \; \right] = 0
+\braidcross - \invbraidcross + \frac{\Psi_1}{\Psi_6} \left[\; \drawI \; - \; \drawH \; \right] + \frac{\Psi_1 [\lambda][\lambda-1]}{\Psi_6} \left[\; \twostrandid \; - \; \cupcap \; \right] = 0
 \end{equation}
 
 
 \end{itemize}
 \end{definition}
 
-Note that if you set $w = v^\lambda$ and take the limit $v \rightarrow 1$ these relations recover the classical Jacobi relation, classical exceptional relation, and the symmetric crossing relation.  In order to make this specialization process purely algebraic, we would need to introduce a larger ring with formal symbols for expressions like $\frac{w-w^{-1}}{v-v^{-1}}$.
+Note that if you set $w = v^\lambda$ and take the limit $v \rightarrow 1$
+these relations recover the classical Jacobi relation, classical exceptional
+relation, and the symmetric crossing relation.  In order to make this
+specialization process purely algebraic, we would need to introduce a larger
+ring with formal symbols for expressions like $\frac{w-w^{-1}}{v-v^{-1}}$.
 
 \begin{warning}
-Although the quantum exceptional Jacobi relation looks like an analogue of the ordinary Jacobi relation with lower order terms, it is important to emphasize that it is only the correct analogue of the Jacobi relation in the exceptional setting.  In particular, it does not hold for quantizations of non-exceptional Lie algebras.
+Although the quantum exceptional Jacobi relation looks like an
+analogue of the ordinary Jacobi relation with lower order terms, it is
+important to emphasize that it is only the correct analogue of the Jacobi
+relation in the exceptional setting.  In particular, it does not hold for
+quantizations of non-exceptional Lie algebras.
 \end{warning}
 
 We now state our main conjectures.
 
 \begin{conjecture}[Quantum sufficiency]
   \label{conj:quant-suffic}
-There is a finite set of polynomials in $v$ and $w$, so that if these polynomials are invertible in $R$ then the space of $n$-boundary point diagrams in $\mathrm{QExc}_{R,v,w}$ is finitely generated as an $R$-module for every $n$.  Furthermore, $\mathrm{QExc}_{R,v,w}(0,0)$ is generated by the empty diagram, $\mathrm{QExc}_{R,v,w}(0,1)$ is the zero module, $\mathrm{QExc}_{R,v,w}(1,1)$ is generated by the strand,  $\mathrm{QExc}_{R,v,w}(2,1)$ is generated by the trivalent vertex, and $\mathrm{QExc}_{R,v,w}(2,2)$ is generated by
+There is a finite set of polynomials in $v$ and $w$, so that if these
+polynomials are invertible in $R$ then the space of $n$-boundary point
+diagrams in $\mathsf{QExc}_{R,v,w}$ is finitely generated as an $R$-module for
+every $n$.  Furthermore, $\mathsf{QExc}_{R,v,w}(0,0)$ is generated by the
+empty diagram, $\mathsf{QExc}_{R,v,w}(0,1)$ is the zero module,
+$\mathsf{QExc}_{R,v,w}(1,1)$ is generated by the strand,
+$\mathsf{QExc}_{R,v,w}(2,1)$ is generated by the trivalent vertex, and
+$\mathsf{QExc}_{R,v,w}(2,2)$ is generated by
 $$\braidcross\;, \; \drawI \;, \; \drawH \;, \; \twostrandid \;, \text{and} \; \cupcap \; .$$
 \end{conjecture}
 
-\SMtodo{perhaps we should include a guess for these sets of polynomials}
+We expect that the only additional polynomials you need to invert are $\Psi_2$, $\Psi_3$, and $\Psi_5$.
+\NStodo{Check that we believe this list of polynomials.}
 
-As before we have conjectured spanning sets for $\mathsf{QExc}_{R,v,w}(n,m)$ for $n+m=0,1,2,3,4,5,6$.
+As before we have conjectured spanning sets for $\mathsf{QExc}_{R,v,w}(n,m)$
+for $n+m=0,1,2,3,4,5,6$.
 
 \begin{conjecture}[Quantum consistency]
   \label{conj:quant-consist}
-There is a finite set of polynomials in $v$ and $w$, so that if these polynomials are invertible in $R$ then $R$ injects into $\mathrm{QExc}_{R,v,w}$ as multiples of the empty diagram.  In particular, any two ways of applying the above relations to a closed diagram to return a rational function in $v$ and $w$ will yield the same rational function.
+There is a finite set of polynomials in $v$ and $w$, so that if these
+polynomials are invertible in $R$ then $R$ injects into
+$\mathsf{QExc}_{R,v,w}$ as multiples of the empty diagram.  In particular, any
+two ways of applying the above relations to a closed diagram to return a
+rational function in $v$ and $w$ will yield the same rational function.
 \end{conjecture}
 
-\SMtodo{this is going to require quite a bit of unpacking: what is $q$ in terms of $v$, what do the semidirect products mean. We should probably include a later section and just refer forward for this.}
+As in the classical case, we again get that if $d$ (resp. $b$) is invertible,
+then $R$ also injects into $\mathsf{QExc}_{R,v,w}(1,1)$ (resp.
+$\mathsf{QExc}_{R,v,w}(1,2)$) as multiples of the strand (resp. trivalent
+vertex).
 
-As in the classical case, we again get that if $d$ (resp. $b$) is invertible, then $R$ also injects into $\mathrm{QExc}_{R,v,w}(1,1)$ (resp. $\mathrm{QExc}_{R,v,w}(1,2)$) as multiples of the strand (resp. trivalent vertex).
+\begin{proposition}[Quantum specialization]\label{prop:quant-spec}
+  If Conjecture \ref{conj:quant-suffic} holds, $\lambda$ is one of
+  the values in Table~\ref{tab:lambda-group},
+  and $v$ is not a root of unity, then the idempotent completion of
+  the quotient of
+$\mathsf{QExc}_{\mathbb{C},v,v^\lambda}$ by negligible elements is
+equivalent to the category of representations of the quantum version
+the corresponding group.
+\end{proposition}
 
-\begin{conjecture}[Quantum specialization]
-If $\lambda$ is one \SMtodo{make a table!} of $-5, -4, -3, -2, -3/2,1,2/3,1/2, 1/3, 1/5$, and $v$ is not a root of unity, then the quotient of $\mathrm{QExc}_{\mathbb{C},v,v^\lambda}$ by the negligible elements is equivalent to the category of representations of the quantum versions of trivial group, $O(1 | 2)$, $\mathrm{PSL}(2)$, $\mathrm{PSL}(3) \rtimes \mathbb{Z}/2$, $G_2$, $\mathrm{PO}(8) \rtimes \mathbb{Z}/3$, $F_4$, $E_6 \rtimes \mathbb{Z}/2$, $E_7$, and $E_8$, respectively.
-\end{conjecture}
+We expect that this will also be true at roots of unity, perhaps excluding some small roots of unity and some parities.
 
-
-
-
-\NStodo{Make ``quantum versions" more precise}\SMtodo{say what little we can about $v$ a root of unity}
+\NStodo{Make ``quantum versions" more precise in special values section, add a forward pointer}
 
 \begin{conjecture}[Quantum semisimplicity]
-There is a dense open subset $U \subset \mathbb{C}$ for which the idempotent completion of $\mathrm{QExc}_{\mathbb{C},v,w}$, for $v,w \in U$, is semisimple.
+There is a dense open subset $U \subset \mathbb{C}^2$ for which the idempotent
+completion of $\mathsf{QExc}_{\mathbb{C},v,w}$, for $(v,w) \in U$, is
+semisimple.
 \end{conjecture}
 
-\NStodo{Could make more precise: $v$ not a root of unity and $w$ in $U$}
+We expect that it's enough to assume that $[k \lambda + \ell]$ is nonzero for all integers $k$ and $\ell$ (in particular, $v$ is not a root of unity).
 
+The following theorems justify the definition of the $\mathsf{QExc}$.  Under
+some mild assumptions, any trivalent ribbon category where the $n$-box space
+has dimension at most $1,0,1,1,5$ for $n=0,1,2,3,4$ satisfies a version of
+relation QEJacobi.  Furthermore, again under some mild assumptions, the
+QEJacobi relation implies QESquare and QECrossing.
 
-The following theorems justify the definition of the $\mathrm{QExc}$.  Under some mild assumptions, any trivalent ribbon category where the $n$-box space has dimension at most $1,0,1,1,5$ for $n=0,1,2,3,4$ satisfies a version of relation QEJacobi.  Furthermore, again under some mild assumptions, the QEJacobi relation implies QESquare and QECrossing.
 %With some mild assumptions on the base ring, any skein theory where the $n$-box space has dimension at most $1,0,1,1,5$ for $n=0,1,2,3,4$ satisfies a version of relation~\eqref{eq:quant-except-spec}. %See Theorem~\ref{thm:quant-except} in Section~\ref{sec:relation} for a precise statement.
 
 \begin{definition}
-A \emph{trivalent ribbon} category $(\cC, X, \tau)$ is a ribbon category over $R$ with 
-an object $X$ with $\dim \cC_0 = 1$, $\dim \cC_1 = 0$, $\dim{\cC_2} = 1$, and $\dim{\cC_3} = 1$, with a (unique up to rescaling) non-zero element $\tau \in \cC_3$ called `the trivalent vertex', such that the category is generated as a ribbon category by $\tau$ and such that the value of the circle is a non-zero multiple of the empty diagram and the value of the bigon is a non-zero multiple of the strand.
+A \emph{trivalent ribbon} category $(\cC, X, \tau)$ is a ribbon category over
+$R$ with  an object $X$ with $\dim \cC_0 = 1$, $\dim \cC_1 = 0$, $\dim{\cC_2}
+= 1$, and $\dim{\cC_3} = 1$, with a (unique up to rescaling) non-zero element
+$\tau \in \cC_3$ called `the trivalent vertex', such that the category is
+generated as a ribbon category by $\tau$ and such that the value of the circle
+is a non-zero multiple of the empty diagram and the value of the bigon is a
+non-zero multiple of the strand.
 \end{definition}
 
-Being generated as a ribbon category by $\tau$ is the same as saying that $\cC$ is generated as a pivotal category by $\tau$ and the crossing.  In particular, a trivalent ribbon category need not be trivalent in the sense of \cite{MR3624901}.  Also we have weakened the non-degeneracy condition from \cite{MR3624901}, replacing it with the assumption that the circle and bigon are non-zero.
+Being generated as a ribbon category by $\tau$ is the same as saying that
+$\cC$ is generated as a pivotal category by $\tau$ and the crossing.  In
+particular, a trivalent ribbon category need not be trivalent in the sense of
+\cite{MR3624901} where the trivalent vertex is assumed to generate $\cC$ 
+as a pivotal category.  Also we have weakened the non-degeneracy condition from
+\cite{MR3624901}, replacing it with the assumption that the circle and bigon
+are non-zero.
 
 \begin{theorem} \label{thm:Jacobi}
 Suppose $(\cC, X, \tau)$ is a trivalent ribbon category over
@@ -504,8 +603,12 @@ If $\dim{\cC_4} = 5$ then relation~\eqref{eq:quant-except-gen} is
 unique (up to sending $v \mapsto -v$ and $\alpha \mapsto -\alpha$),
 but if $\dim{\cC_4} < 5$ there may be several such relations.
 
-\begin{theorem} \label{thm:square-crossing}
-Suppose $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ with $\dim{\cC_4} \leq 5$, suppose there exist $v$ and $\alpha$ satisfying the previous theorem, with $d \neq 0 $, $b \neq 0$, $v^{10} \neq 1$, and $v^{12} \neq 1$.  Then $\widetilde{\Phi}_8 = \{2\}$, $\alpha$, and $b+[3]\alpha$ are also non-zero, and we have the following relations:
+\begin{theorem}\label{thm:square-crossing}
+Suppose $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ with
+$\dim{\cC_4} \leq 5$, suppose there exist $v$ and $\alpha$ satisfying the
+previous theorem, with $d \neq 0 $, $b \neq 0$, $v^{10} \neq 1$, and $v^{12}
+\neq 1$.  Then $\Psi_4 = \{2\}$, $\alpha$, and $b+[3]\alpha$ are
+also non-zero, and we have the following relations:
 \begin{itemize}
 \item
 $
@@ -516,14 +619,15 @@ $
   t = \frac{b-[5] \alpha}{\{2\}}.
 $
 \item
+
 The quantum exceptional square relation:
-\begin{equation*} \ngon[45]{4} + \frac{\alpha \widetilde{\Phi}_{12} (b+[3]\alpha)}{\widetilde{\Phi}_1 \widetilde{\Phi}_3 \widetilde{\Phi}_8}  \braidcross + \frac{y_1}{\widetilde{\Phi}_3 \widetilde{\Phi}_8}  \drawI + \frac{y_2}{\widetilde{\Phi}_3 \widetilde{\Phi}_8}  \drawH + \frac{y_3}{\widetilde{\Phi}_1 \widetilde{\Phi}_3 \widetilde{\Phi}_8} \cupcap + \frac{y_4}{\widetilde{\Phi}_1 \widetilde{\Phi}_3 \widetilde{\Phi}_8} \twostrandid =0
+\begin{equation*} \fourgon + \frac{\alpha \Psi_6 (b+[3]\alpha)}{\Psi_1 \Psi_3 \Psi_4}  \braidcross + \frac{y_1}{\Psi_3 \Psi_4}  \drawI + \frac{y_2}{\Psi_3 \Psi_4}  \drawH + \frac{y_3}{\Psi_1 \Psi_3 \Psi_4} \cupcap + \frac{y_4}{\Psi_1 \Psi_3 \Psi_4} \twostrandid =0
 \end{equation*}
 where the $y_i$ are Laurent polynomials in $v$ and $w$ given in Appendix \ref{app:coefficients}.
 \item
 The quantum exceptional crossing relation:
 \begin{equation*}
-\braidcross - \invbraidcross + \frac{\widetilde{\Phi}_1 \widetilde{\Phi}_3 \widetilde{\Phi}_4 \widetilde{\Phi}_8}{b+[3]\alpha} \left[\; \drawI \; - \; \drawH \; \right] - \frac{\widetilde{\Phi}_1^2 \widetilde{\Phi}_3 \widetilde{\Phi}_4 \widetilde{\Phi}_8 \alpha}{b+[3]\alpha} \left[\; \twostrandid \; - \; \cupcap \; \right] = 0
+\braidcross - \invbraidcross + \frac{\Psi_1 \Psi_3 \Psi_2 \Psi_4}{b+[3]\alpha} \left[\; \drawI \; - \; \drawH \; \right] - \frac{\Psi_1^2 \Psi_3 \Psi_2 \Psi_4 \alpha}{b+[3]\alpha} \left[\; \twostrandid \; - \; \cupcap \; \right] = 0
 \end{equation*}
 \end{itemize}
 
@@ -535,33 +639,64 @@ we can make the change of variables
 \begin{equation}\label{eq:change-variables}
   w^2 = \frac{v}{2(b+[3]\alpha)}\left(b \{1\} -\alpha [3] \{5\} + \sqrt{-4 (b+[3]\alpha)^2 + (b \{1\} -[3]\{5\}\alpha)^2} \right).
 \end{equation}
-We see that $\partial_\alpha w^2 = 0$ exactly if $v$ is a $12$th root of unity, so away from these points the change of variables is invertible, given by
-$$\alpha =  -\frac{b[\lambda][\lambda-1]}{\{\lambda+2\}\{\lambda-3\}\widetilde{\Phi}_1\widetilde{\Phi}_3}.$$
+\NStodo{Explain how this is happening, why derivatives are relevant}
+We see that $\partial_\alpha w^2 = 0$ exactly if $v$ is a $12$th root of
+unity, so away from these points the change of variables is invertible, given
+by
+$$\alpha =  -\frac{b[\lambda][\lambda-1]}{\{\lambda+2\}\{\lambda-3\}\Psi_1\Psi_3}.$$
 %% see code2/ChangeOfVariables.nb and code2/ChangeOfVariables2.nb for these calculations
 
-Finally, we observe that upon setting $b = \{\lambda+2\}\{\lambda-3\}\widetilde{\Phi}_3$ these relations are identical to the formulas in terms of $v,w$ given earlier as Equations \eqref{eq:QESquare-w} and \eqref{eq:QECrossing-w}.
+Finally, we observe that upon setting $b =
+\{\lambda+2\}\{\lambda-3\}\Psi_3$ these relations are identical to
+the formulas in terms of $v,w$ given earlier as Equations
+\eqref{eq:QESquare-w} and \eqref{eq:QECrossing-w}.
 
 \begin{corollary}
-Suppose $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ and suppose there exist $v$ and $\alpha$ such that QEJacobi holds in $\mathbb{C}$ and $d \neq 0 $, $b \neq 0$, $v^{10} \neq 1$, and $v^{12} \neq 1$.  Then there is a $w \in \mathbb{C}$ and an evaluation functor $\mathrm{QExc}_{\mathbb{C},v,w} \rightarrow \cC$.
+Suppose $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ and
+suppose there exist $v$ and $\alpha$ such that QEJacobi holds in $\mathbb{C}$
+and $d \neq 0 $, $b \neq 0$, $v^{10} \neq 1$, and $v^{12} \neq 1$.  Then there
+is a $w \in \mathbb{C}$ and an evaluation functor
+$\mathsf{QExc}_{\mathbb{C},v,w} \rightarrow \cC$.
 \end{corollary}
 
-This corollary justifies our definition of $\mathrm{QExc}$, since if the quantum exceptional family exists in any form it would have to satisfy our quantum exceptional relations.
+This corollary justifies our definition of $\mathsf{QExc}$, since if the
+quantum exceptional family exists in any form it would have to satisfy our
+quantum exceptional relations.
+
+\subsection{From classical to quantum}
+The classical conjectures from Section~\ref{sec:intro-classical} and
+the quantum conjectures from Section~\ref{sec:intro-quantum} are
+related, but there are not formal implications. From the point of view
+of the quantum conjectures, the classical case $v=1$ is in any case
+one of the excluded polynomials for any of our concrete results. There
+is an implication the other direction: classical consistency implies
+quantum consistency over a suitable power series ring.
+\begin{theorem}\label{thm:classical-quantum}
+  If Conjecture~\ref{conj:class-consist} is true
+  for $\mathsf{Exc}_{R,\lambda}$, then
+  Conjecture~\ref{conj:quant-consist} is true for
+  $\mathsf{QExc}_{R((h)),v,w}$ for $v=e^{h/4}$ and $w=e^{\lambda
+    h/4}$ as formal Laurent series.
+\end{theorem}
 
 
 \subsection{Calculations}
 
 \nn{Finish writing this section to reflect what appears in the body of the paper}
 
-Assuming our main conjectures, we calculate some properties of $\mathrm{QExc}_{\mathbb{C},v,w}$ and the corresponding $2$-variable knot polynomial.
+Assuming our main conjectures, we calculate some properties of
+$\mathsf{QExc}_{\mathbb{C},v,w}$ and the corresponding $2$-variable knot
+polynomial.
 
-First we give conjectural bases for the box spaces up to $n=6$, and check that these
-diagrams must be linearly independent.  We unconditionally give a
+First we give conjectural bases for the box spaces up to $n=6$, and check that
+these diagrams must be linearly independent.  We unconditionally give a
 $16$-dimensional representation of the $5$-strand affine braid group, and an
 $80$-dimensional representation of the $6$-strand affine braid group, obtained
 from the braid group actions on these $5$- and $6$-boundary point diagrams.
 
 Using this, we give a divide-and-conquer algorithm for computing for the
-conjectural quantum exception invariant of all links of Conway girth 6. \nn{Perhaps mention, if they make the cut, knotted trivalent graphs}
+conjectural quantum exception invariant of all links of Conway width 6.
+\nn{Perhaps mention, if they make the cut, knotted trivalent graphs}
 
 Note that unconditionally, these 2-variable knot polynomials must specialize
 at particular values of $w$ to give the quantum invariants of the adjoint
@@ -577,26 +712,44 @@ Using our skein relations, we also compute the quantum versions of Cohen--De
 Man's formulas for the dimensions of the objects appearing in the third tensor
 power of adjoint representation in the exceptional series.
 
-\subsection{Small roots of unity}
+\subsection{Special values}
 
 \nn{Finish writing}
 
-We consider what happens when $v$ specializes to a $12$th or $10$th
-root of unity, where some of our skein relations have vanishing denominators.
-It turns out that there is still a natural way to define these
-specializations, and they recover some interesting examples including the
-classical exceptional series, the classical $\mathfrak{g}_2$ series, the
-classical $\mathfrak{f}_4$ series, Deligne's interpolated symmetric group
-categories, and a possible new example related to the ABA free product from
-\cite{MR3624901}.
+We consider what happens when $v$ specializes to a $10$th or $12$th root of
+unity, where some of our skein relations have vanishing denominators. It turns
+out that there is still a natural way to define these specializations, and
+they recover some interesting examples including the classical exceptional
+series, the classical $\mathfrak{g}_2$ series, the classical $\mathfrak{f}_4$
+series, Deligne's interpolated symmetric group categories, and a possible new
+example related to the ABA free product from \cite{MR3624901}.
 
-\subsection{From classical to quantum}
 
-\nn{Write. Move earlier?}
+\section{Background}
+\nn{
+Recall:
+\begin{itemize}
+\item Category of trivalent tangles, perhaps more
+\item what are $SO(3)$, $G_2$, $S_t$,
+\item quantum group conventions,
+\item results from the trivalent paper we need?
+\item $SO(3)_{\zeta_{12}}$ plus the
+symmetric braiding relation is actually $\mathsf{Rep}(S_3)$ without needing to
+semisimplify.  The proof is that R2.5 move implies that the 5-trees simplify
+into planar forests.
+\item Kontsevich integral
+\end{itemize}
+}
 
 \section{Main results}
 
-Throughout this section $(\cC, X, \tau)$ is a trivalent ribbon category over $\mathbb{C}$ with $\dim{\cC_4} \leq 5$.  As shown in \cite[Lemma 2.2]{MR3624901}, we have that $X$ is symmetrically self-dual.  As shown in \cite[Lemma 8.2]{MR3624901}, the trivalent vertex is rotationally invariant.  Thus, using the usual diagram calculus for ribbon categories, we can interpret $X$ as an unoriented strand, $\tau$ as a trivalent vertex, and then any trivalent ribbon tangle may be interpreted as a morphism in $\cC$.
+Throughout this section $(\cC, X, \tau)$ is a trivalent ribbon category over
+$\mathbb{C}$ with $\dim{\cC_4} \leq 5$.  As shown in \cite[Lemma
+2.2]{MR3624901}, we have that $X$ is symmetrically self-dual.  As shown in
+\cite[Lemma 8.2]{MR3624901}, the trivalent vertex is rotationally invariant.
+Thus, using the usual diagram calculus for ribbon categories, we can interpret
+$X$ as an unoriented strand, $\tau$ as a trivalent vertex, and then any
+trivalent ribbon tangle may be interpreted as a morphism in $\cC$.
 
 \begin{lemma} \label{lem:constants}
   For some numbers $d, b, t, s \in \mathbb{C}$ we have the following relations.
@@ -605,23 +758,27 @@ Throughout this section $(\cC, X, \tau)$ is a trivalent ribbon category over $\m
   \begin{aligned}
     \unknot\; &= d&\qquad
       \twist\; &= s^2\;\drawcup&\qquad
-        \twistvertex\; &= -s\;\nvertex[-90]{3}\\[5pt]
+        \twistvertex\; &= -s\;\threevertex\\[5pt]
     \loopvertex\;&=0&
-      \ngon{2}\;&= b\;\onestrandid&
-        \ngon[-90]{3}\; &= t\;\nvertex[-90]{3}
+      \twogon\;&= b\;\onestrandid&
+        \threegon\; &= t\;\threevertex
   \end{aligned}
   \end{equation}
 \end{lemma}
 
 \begin{proof}
-All of these follow directly from $\dim \cC_n$ starting $1,0,1,1$ except that we need to see that the constant for the twisted strand is the square of the constant for the twisted vertex.  This follows, as in \cite[Lemma 8.2]{MR3624901}, from the following isotopy:
+All of these follow directly from $\dim \cC_n$ starting $1,0,1,1$ except that
+we need to see that the constant for the twisted strand is the square of the
+constant for the twisted vertex.  This follows, as in
+\cite[Lemma~8.2]{MR3624901}, from the following isotopy:
 \begin{equation*}
 \overviolin = \rotatedtrivalent. \qedhere
 \end{equation*}
 \end{proof}
 
 \begin{proposition}\label{prop:Jacobi}
-If $\dim \cC_4 \leq 5$, then for some $\beta, \alpha \in \bbC$ and some choice of~$v \in \bbC$ with $v^6 = s$, we have
+If $\dim \cC_4 \leq 5$, then for some $\beta, \alpha \in \bbC$ and some choice
+of~$v \in \bbC$ with $v^6 = s$, we have
 
 \begin{equation}
 \beta \left[\; v^{-3} \;
@@ -642,9 +799,9 @@ If $\dim \cC_4 \leq 5$, then for some $\beta, \alpha \in \bbC$ and some choice o
 \end{proposition}
 
 In fact, the conditions we need for the conclusion of
-Proposition~\ref{prop:Jacobi} are somewhat weaker than stated. In
-particular, we don't need to know the exact dimensions of the $n$-box spaces, just
-that certain diagrams are linearly dependent. We do not spell out the details here.
+Proposition~\ref{prop:Jacobi} are somewhat weaker than stated. In particular,
+we don't need to know the exact dimensions of the $n$-box spaces, just that
+certain diagrams are linearly dependent. We do not spell out the details here.
 
 \begin{proof}
   By assumption, the space spanned by the six diagrams
@@ -683,31 +840,19 @@ that certain diagrams are linearly dependent. We do not spell out the details he
   \(
   R\left(\,\raisebox{0.8mm}{\scalebox{0.5}{\cupcap}}\,\right) = s^{-2}\,\,\raisebox{0.8mm}{\scalebox{0.5}{\twostrandid}}\,\,
   \).)
-  Notice that $R^3$ acts by multiplication by $s^{-2}$. (Indeed,
-  $R^3$ does not permute the strands, and is equivalent by
-  Reidemeister moves to changing the
-  framing on the upper-right strand by~$-1$.)
- Since $R^{3}$ acts by a scalar, we have that $R$ acts diagonalizably on the space spanned by these six diagrams, and in particular on the nonzero space of relations among these six diagrams in $\cC$.  Thus we must have a relation which is an eigenvector for the action of $R$ with eigenvalue $\lambda$ with $\lambda^{3} = s^{-2}$.   We can then pick a square root $\mu$ of $\lambda^{-1}$ such that $\mu^3 = s$, and then pick $v$ to be either square root of $\mu$.  These are the only two $v$ satisfying $\lambda = v^{-4}$ and $v^6 = s$.
+Notice that $R^3$ acts by multiplication by $s^{-2}$. (Indeed,   $R^3$ does
+not permute the strands, and is equivalent by   Reidemeister moves to changing
+the   framing on the upper-right strand by~$-1$.)  Since $R^{3}$ acts by a
+scalar, we have that $R$ acts diagonalizably on the space spanned by these six
+diagrams, and in particular on the nonzero space of relations among these six
+diagrams in $\cC$.  Thus we must have a relation which is an eigenvector for
+the action of $R$ with eigenvalue $\lambda$ with $\lambda^{3} = s^{-2}$.   We
+can then pick a square root $\mu$ of $\lambda^{-1}$ such that $\mu^3 = s$, and
+then pick $v$ to be either square root of $\mu$.  These are the only two $v$
+satisfying $\lambda = v^{-4}$ and $v^6 = s$.
   
 Thus we have a relation of
-  the form
-  \begin{equation*}
-\beta \left[v^{-3} \;
-\drawcrossX
-\;+ v \;
-\drawI
-\; -v^{-1} \;
- \drawH
-\;\right]
- + \alpha
-\left[\; \braidcross \;
- + v^{4}\;
-\cupcap
-\; + v^{-4} \;
- \twostrandid \;\right]=0.
- \qedhere
-  \end{equation*}
-
+the form of~\eqref{eq:quant-except-init}.
 \end{proof}
 
 We now address the case $\beta = 0$.
@@ -726,22 +871,27 @@ We now address the case $\beta = 0$.
  \end{itemize}
 \end{lemma}
 \begin{proof}
-Multiplying by a trivalent vertex we see that $-v^6+v^-4=0$, so $v$ is a $10$th root of unity.  This yields two distinct cases: $v= \pm 1$ or $v = \pm \zeta_5$ for $\zeta_5$ a fifth root of unity, wlog we take the $+$ sign.
+Multiplying by a trivalent vertex we see that $-v^6+v^-4=0$, so $v$ is a
+$10$th root of unity.  This yields two distinct cases: $v= \pm 1$ or $v = \pm
+\zeta_5$ for $\zeta_5$ a fifth root of unity, wlog we take the $+$ sign.
 
-Placing an $H$ on the top of this relation gives a second relation $\psi$ between the six diagrams.  This relation only has one term in the second orbit of $R$, so $\sum_{i=0}^2 \lambda^i R^i(\psi)$ gives three linearly independent relations of the above form for the three cube roots of unity $\lambda$.  
+Placing an $H$ on the top of this relation gives a second relation $\psi$
+between the six diagrams.  This relation only has one term in the second orbit
+of $R$, so $\sum_{i=0}^2 \lambda^i R^i(\psi)$ gives three linearly independent
+relations of the above form for the three cube roots of unity $\lambda$.
 
 When $v=1$ the relations we get are:
-
 \begin{align*}
 0 &= \braidcross + \twostrandid + \cupcap \\
 0 &= \drawcrossX +\drawH + b\cupcap \\
 0 &= \drawI - \drawcrossX + b\twostrandid \\
 0 &= -\drawH -\drawI + b \braidcross
 \end{align*}
-
 Combining the first equation and the last one we see that:
 $$\drawI+\drawH = b \twostrandid + b\cupcap.$$
-Multiplying by a trivalent vertex we see that $b+t=b$, so $t = 0$.  Pairing with the square we see that $0 = 2t^2 bd = 2b^3 d$ which is a contradiction since $b$ and $d$ are non-zero.
+Multiplying by a trivalent vertex we see that $b+t=b$, so $t = 0$.  Pairing
+with the square we see that $0 = 2t^2 bd = 2b^3 d$ which is a contradiction
+since $b$ and $d$ are non-zero.
 
 When $v$ is a fifth root of unity we get the relations:
 \begin{align*}
@@ -750,8 +900,10 @@ When $v$ is a fifth root of unity we get the relations:
 0 &= \drawI - \drawcrossX + b v^{-3} \twostrandid \\
 0 &= -v^{-1} \drawH -\drawI + b v^{-3} \braidcross
 \end{align*}
-
-Capping off the first equation we see that $v^2 + v +v^{-1}d = 0$, so $d = -v^2-v^3$ is the Golden ratio or its Galois conjugate.  These four equations are linearly independent, and by taking the proper linear combinations we see that:
+Capping off the first equation we see that $v^2 + v +v^{-1}d = 0$, so $d =
+-v^2-v^3$ is the Golden ratio or its Galois conjugate.  These four equations
+are linearly independent, and by taking the proper linear combinations we see
+that:
 \begin{align*}
 \drawI &=  b\twostrandid + -\frac{b}{d} \cupcap \\
 \braidcross &= -v\twostrandid -v^{-1} \cupcap \\
@@ -760,59 +912,67 @@ which are the defining relations of the Golden category.  The values for $v$ and
 \end{proof}
 
 \begin{lemma} \label{lem:dandtvalues}
-Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$, then 
+Suppose $\cC$ satisfies QEJacobi for some $v$ and~$\alpha$. Then 
 \begin{align}
   [5] b &= - \alpha (d+\{8\})\label{eq:b-rel} \\
   t \{2\} &= b-[5] \alpha.\label{eq:b-t-rel}
 \end{align}
-
-Since $b$ and $d$ are nonzero, it follows that $v$ is not a primitive $8$th root of unity.  If $v$ is also not a 10th root of unity, then $\alpha$ is non-zero and we have the following formulas.
-
+Since $b$ and $d$ are nonzero, it follows that $v$ is not a primitive $8$th
+root of unity.  If $v$ is also not a 10th root of unity, then $\alpha$ is non-
+zero and we have the following formulas.
 \begin{align*}
   d &= -\frac{[5] b}{\alpha} - \{8\}   \\
   t  &= \frac{b-[5] \alpha}{\{2\}}.
 \end{align*}
 \end{lemma}
 \begin{proof}
- Equation~\eqref{eq:b-rel} follows
-  from closing off QEJacobi with a cap, and
-  then solving for~$b$. Equation~\eqref{eq:b-t-rel} follows from
-  closing off QEJacobi by attaching two ends
-  to a trivalent vertex, and then solving for~$t$.
+Equation~\eqref{eq:b-rel} follows from closing off QEJacobi with a cap, and
+then solving for~$b$. Equation~\eqref{eq:b-t-rel} follows from   closing off
+QEJacobi by attaching two ends   to a trivalent vertex, and then solving
+for~$t$.
   
-  If $v$ is a primitive $8$th root of unity, then $0 = t \{2\} = b-[5] \alpha$, so $b = [5] \alpha$.  Since $b$ is assumed nonzero and $[5]$ is nonzero when $v$ is a primitive $8$th root of unity, we see that $\alpha = \frac{b}{[5]}$.  Now the first equation becomes $-2 = [5]^2 = -(d+\{8\})=-(d+2)$, which contradicts $d \neq 0$.  
-  Now $0 \neq [5] b = - \alpha (d+\{8\})$, so $\alpha$ is non-zero and
-  we can solve for~$d$.
+If $v$ is a primitive $8$th root of unity, then $0 = t \{2\} = b-[5] \alpha$,
+so $b = [5] \alpha$.  Since $b$ is assumed nonzero and $[5]$ is nonzero when
+$v$ is a primitive $8$th root of unity, we see that $\alpha = \frac{b}{[5]}$.
+Now the first equation becomes $-2 = [5]^2 = -(d+\{8\})=-(d+2)$, which
+contradicts $d \neq 0$.   Now $0 \neq [5] b = - \alpha (d+\{8\})$, so $\alpha$
+is non-zero and   we can solve for~$d$.
 \end{proof}
 
 \begin{proof}[Proof of Theorem \ref{thm:Jacobi}]
-By Proposition \ref{prop:Jacobi} and Lemma \ref{lem:betazero} we have that QEJacobi is satisfied for some $v$ and $\alpha$.  By Lemma \ref{lem:constants} and Lemma \ref{lem:dandtvalues} we have the other relations.
+By Proposition \ref{prop:Jacobi} and Lemma \ref{lem:betazero} we have that
+QEJacobi is satisfied for some $v$ and $\alpha$.  By Lemma \ref{lem:constants}
+and Lemma \ref{lem:dandtvalues} we have the other relations.
 \end{proof}
 
 
 
 
 \begin{proposition} \label{prop:square-crossing}
-Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$, then the following equations hold.
+  Suppose $\cC$ satisfies QEJacobi for some $v$ and~$\alpha$.
+  Then the following equations hold.
 \begin{itemize}
   \item The quantum exceptional square relation:
-\begin{equation*} [3] \ngon[45]{4} + \frac{\alpha \widetilde{\Phi}_{12} (b+[3]\alpha)}{\widetilde{\Phi}_8} \braidcross + \frac{y_1 \widetilde{\Phi}_1}{\widetilde{\Phi}_8} \drawI + \frac{y_2 \widetilde{\Phi}_1}{\widetilde{\Phi}_8} \drawH + \frac{y_3}{\widetilde{\Phi}_8} \cupcap + \frac{y_4}{\widetilde{\Phi}_8} \twostrandid =0
+\begin{equation*} [3] \fourgon + \frac{\alpha \Psi_6 (b+[3]\alpha)}{\Psi_4} \braidcross + \frac{y_1 \Psi_1}{\Psi_4} \drawI + \frac{y_2 \Psi_1}{\Psi_4} \drawH + \frac{y_3}{\Psi_4} \cupcap + \frac{y_4}{\Psi_4} \twostrandid =0
 \end{equation*}
 where the $y_i$ are Laurent polynomials in $v$ and $w$ given in Appendix \ref{app:coefficients}.
   \item
 The quantum exceptional crossing relation:
-\begin{equation*}
-\frac{\widetilde{\Phi}_{12} \alpha (b+[3]\alpha)}{\widetilde{\Phi}_8} \left(\braidcross - \invbraidcross \right) + \widetilde{\Phi}_1 \widetilde{\Phi}_3 \widetilde{\Phi}_4 \widetilde{\Phi}_{12} \alpha \left[\; \drawI \; - \; \drawH \; \right] - \widetilde{\Phi}_1^2 \widetilde{\Phi}_3 \widetilde{\Phi}_4 \widetilde{\Phi}_{12} \alpha^2 \left[\; \twostrandid \; - \; \cupcap \; \right] = 0
-\end{equation*}
+\begin{multline*}
+\frac{\Psi_6 \alpha (b+[3]\alpha)}{\Psi_4} \left(\braidcross -
+  \invbraidcross \right) + \Psi_1 \Psi_3 \Psi_2 \Psi_6 \alpha \left[\;\drawI \; - \; \drawH \; \right] \\
+- \Psi_1^2 \Psi_3 \Psi_2 \Psi_6 \alpha^2 \left[\; \twostrandid \; - \; \cupcap \; \right] = 0.
+\end{multline*}
 \end{itemize}
  \end{proposition}
 
 \begin{proof}
-We attach an $H$-diagram to the QEJacobi relation and then look at the orbit of this relation under the action of the operator $R$.  Here is the action of $R$ on the square.
-
+We attach an $H$-diagram to the QEJacobi relation and then look at the orbit
+of this relation under the action of the operator $R$.  Here is the action of
+$R$ on the square.
 $$
 \begin{tikzpicture}
-      \node[inner sep=5pt] (A) at (150:1.4cm) {\ngon[45]{4}};
+      \node[inner sep=5pt] (A) at (150:1.4cm) {\fourgon};
       \node[inner sep=5pt] (B) at (30:1.4cm) {\twistedsquarehor};
       \node[inner sep=5pt] (C) at (-90:1.4cm) {\twistedsquarever};
       \draw[|->,bend left=15] (A) to (B);
@@ -820,18 +980,20 @@ $$
       \draw[|->,bend left=15] (C) to (A);
 \end{tikzpicture}
 $$
+We attach an $H$ to the bottom of QEJacobi (using that the crossing and $H$
+commute) and the apply $R$ and $R^2$.
 
-We attach an $H$ to the bottom of QEJacobi (using that the crossing and $H$ commute) and the apply $R$ and $R^2$.
+$$v^{-3} \twistedsquarever + v t \drawI  -v^{-1} \fourgon + \alpha \drawcrossX + \alpha v^4 b \cupcap + \alpha v^{-4} \drawH = 0.$$
 
-$$v^{-3} \twistedsquarever + v t \drawI  -v^{-1} \ngon[45]{4} + \alpha \drawcrossX + \alpha v^4 b \cupcap + \alpha v^{-4} \drawH = 0.$$
-
-$$v^{-3} \ngon[45]{4} -v^{-5} t \drawH  -v^{-1} \twistedsquarehor + \alpha \drawI + \alpha v^{-8} b \twostrandid - \alpha v^{-10} \drawcrossX = 0.$$
+$$v^{-3} \fourgon -v^{-5} t \drawH  -v^{-1} \twistedsquarehor + \alpha \drawI + \alpha v^{-8} b \twostrandid - \alpha v^{-10} \drawcrossX = 0.$$
 
 $$v^{-3} \twistedsquarehor +v^{-11} t \drawcrossX  -v^{-13} \twistedsquarever -v^{-6} \alpha \drawH + \alpha v^{-8} b \braidcross - \alpha v^{-10} \drawI = 0.$$
 
-Multiply the first equation by $v^{-2}$, the second by $v^6$, and the third by $v^8$ and add the three terms, so that all the twisted squares cancel, yielding:
+Multiply the first equation by $v^{-2}$, the second by $v^6$, and the third by
+$v^8$ and add the three terms, so that all the twisted squares cancel,
+yielding:
 
-\begin{multline*}[3] \ngon[45]{4} +  (t+[1]\alpha)v^{-3} \drawcrossX -(vt +v^{-2}[4]\alpha) \drawH +(v^{-1} t+v^2 [4]\alpha)\drawI \\+ \alpha b \braidcross + \alpha b v^{-2} \twostrandid + \alpha b v^2 \cupcap = 0\end{multline*}
+\begin{multline*}[3] \fourgon +  (t+[1]\alpha)v^{-3} \drawcrossX -(vt +v^{-2}[4]\alpha) \drawH +(v^{-1} t+v^2 [4]\alpha)\drawI \\+ \alpha b \braidcross + \alpha b v^{-2} \twostrandid + \alpha b v^2 \cupcap = 0\end{multline*}
 
 %\begin{align}
 %\label{eq:deriving-square-relation}
@@ -839,24 +1001,40 @@ Multiply the first equation by $v^{-2}$, the second by $v^6$, and the third by $
 %= \mathfig{0.8}{deriving-square-relation-2}
 %\end{align}
 
-We now use the QEJacobi relation to remove the $\drawcrossX$ term, yielding the QESquare relation.  The QESquare relation minus its 90-degree rotation gives the QECrossing equation.
+We now use the QEJacobi relation to remove the $\drawcrossX$ term, yielding
+the QESquare relation.  The QESquare relation minus its 90-degree rotation
+gives the QECrossing equation.
 \end{proof}
 
-When $v$ is not a $10$th or $12$th root of unity we can divide by $[3]$, $\alpha$, and $b+[3]\alpha$.  All that remains in order to prove Theorem \ref{thm:square-crossing} is to show that when $v$ is not a $10$th or $12$th root of unity that $b+[3]\alpha$ is non-zero.  Note that if $v$ is not a $12$th root of unity and $(b+[3]\alpha)$ is zero, then the QECrossing equation becomes an $SO(3)_q$ relation between the four planar diagrams.  We take a brief detour to analyze this situation.
+When $v$ is not a $12$th root of unity we can divide by $[3]$,
+and if $v$ is not a $10$th root of unity we can divide by $\alpha$.  All that remains in order to prove Theorem
+\ref{thm:square-crossing} is to show that when $v$ is not a $10$th or $12$th
+root of unity that $b+[3]\alpha$ is non-zero.  Note that if $v$ is not a
+$12$th root of unity and $(b+[3]\alpha)$ is zero, then the QECrossing equation
+becomes an $SO(3)_q$ relation between the four planar diagrams.  We take a
+brief detour to analyze this situation.
 
 
 \begin{lemma} \label{lem:IequalsH}
 Suppose that 
-$$\drawI\;- \; \drawH - \frac{1}{d-1} \left(\twostrandid - \cupcap \right) = 0$$
+$$\drawI\;- \; \drawH - \frac{1}{d-1} \left(\; \twostrandid - \cupcap \;\right) = 0$$
 
 then one of the following occurs
 
 \begin{itemize}
 \item $v$ is a primitive $12$th root of unity.
 
- \item $\cC$ is a quotient $SO(3)_q$ for some $q$ with the usual braiding (which includes the possibility $OSp(1|2)$ when $q= \pm i$), and either this quotient is the Golden category or there are exactly three distinct QEJacobi relations, namely $\alpha = -b \frac{v-v^{-1}}{v^4-1+v^{-4}}$ for $v$ a sixth root of $q^{-2}$,
+\item
+$\cC$ is a quotient $SO(3)_q$ for some $q$ with the usual braiding (which
+includes the possibility $OSp(1|2)$ when $q= \pm i$), and either this quotient
+is the Golden category or there are exactly three distinct QEJacobi relations,
+namely $\alpha = -b \frac{v-v^{-1}}{v^4-1+v^{-4}}$ for $v$ a sixth root of
+$q^{-2}$,
 
- \item $\cC$ is  $\mathrm{Rep}(S_3)$, and there are three distinct QEJacobi relations: \NStodo{Need to prove somewhere that $SO(3)_{\zeta_{12}}$ plus the symmetric braiding relation is actually $\mathrm{Rep}(S_3)$ without needing to semisimplify.  The proof is that R2.5 move implies that the 5-trees simplify into planar forests.}
+\item
+$\cC$ is  $\mathsf{Rep}(S_3)$, and there are three distinct QEJacobi
+relations:
+
 \begin{itemize}
 \item $v = e^{\frac{2 \pi i}{12}}$ and $\alpha = i b$
 \item $v = e^{\frac{-2 \pi i}{12}}$ and $\alpha = -i b$
@@ -868,8 +1046,8 @@ then one of the following occurs
 \begin{proof}
 We apply the tetrahedral symmetry to the relation to get:
 
-$$-s^{-1} \drawH + s^{-1} \drawcrossX -\frac{b}{d-1} \left(\braidcross - s^{-2} \twostrandid \right) = 0$$
-$$s^{-2} \drawcrossX + s^{-1} \drawI -\frac{b}{d-1} \left(\cupcap -s^{-2} \braidcross \right) = 0.$$
+$$-s^{-1} \drawH + s^{-1} \drawcrossX -\frac{b}{d-1} \left(\; \braidcross - s^{-2} \twostrandid \; \right) = 0$$
+$$s^{-2} \drawcrossX + s^{-1} \drawI -\frac{b}{d-1} \left(\; \cupcap -s^{-2} \braidcross \; \right) = 0.$$
 
 Multiply the first equation by $-s^{-1}$ and then add to the second relation to make the $\drawcrossX$ terms vanish.
 
@@ -877,34 +1055,68 @@ $$s^{-1} \drawI + s^{-2} \drawH - \frac{b}{d-1} \left(\cupcap -s^{-2} \braidcros
 
 Unless $s$ is $-1$, this says that $\braidcross$ simplifies.  So we split into two cases.
 
-If $\braidcross$ simplifies, then we need only solve for all braidings for $SO(3)_q$, which yields only the usual braiding or when $d=2$ there's the additional braiding giving $\Rep(S_3)$ (see \cite{???}).
+If $\braidcross$ simplifies, then we need only solve for all braidings for
+$SO(3)_q$, which yields only the usual braiding or when $d=2$ there's the
+additional braiding giving $\Rep(S_3)$ (see \cite{???}).
 
-If $s = -1$, then we want to figure out which sixth roots $v$ of $s$ give a relation.  That is, we need to figure out which of the rotational eigenvalues $v^{-4} = \lambda = 1, \omega, \omega^2$ give non-trivial relations.  When $\lambda = 1$, the sum of the above three relations is trivial.  When $\lambda = \omega, \omega^2$ then $v$ is a primitive $12$th roof of unity.  (See Section ??? for further discussion of this case which includes Deligne's $S_t$.)
+If $s = -1$, then we want to figure out which sixth roots $v$ of $s$ give a
+relation.  That is, we need to figure out which of the rotational eigenvalues
+$v^{-4} = \lambda = 1, \omega, \omega^2$ give non-trivial relations.  When
+$\lambda = 1$, the sum of the above three relations is trivial.  When $\lambda
+= \omega, \omega^2$ then $v$ is a primitive $12$th roof of unity.  (See
+Section ??? for further discussion of this case which includes Deligne's
+$S_t$.)
 \end{proof}
 
 \begin{lemma} \label{lem:bplus3alpha}
-Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$ with $v$ not a primitive $4$th, $5$th, $10$th, or$12$th root of unity, then $b+[3]\alpha$ is non-zero.
+Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$ with $v$ not a
+primitive $4$th or $12$th root of unity, then $b+[3]\alpha$ is
+non-zero.
 \end{lemma}
 \begin{proof}
-If $v$ is a sixth root of unity then $b+[3]\alpha = b \neq 0$.  So our assumptions imply that $v$ is not a $10$th or $12$th root of unity.  Suppose for the sake of contradiction that $b+[3]\alpha = 0$.  Then by Proposition \ref{prop:square-crossing} we have that $\cC$ satisfies the assumptions of Lemma \ref{lem:IequalsH}.  Since $v$ is not a $12$th root of unity, the only remaining case from Lemma \ref{lem:IequalsH} is that $\cC$ is $SO(3)_q$ with the standard braiding.  Now a direct calculation shows that $b+[3] \alpha = b \frac{\widetilde{\Phi}_{12}}{v^4-1+v^{-4}}$ which is non-zero since is not a $12$th root of unity, giving a contradiction.
+If $v$ is a sixth root of unity or if $\alpha$ is zero, then $b+[3]\alpha = b \neq 0$.  So our
+assumptions imply that $v$ is not a $12$th root of unity and $\alpha$ is non-zero.
+Suppose for the sake of contradiction that $b+[3]\alpha = 0$.  Then by Proposition
+\ref{prop:square-crossing} we have that $\cC$ satisfies the assumptions of
+Lemma \ref{lem:IequalsH}.  Since $v$ is not a primitive $12$th root of unity, the only
+remaining case from Lemma \ref{lem:IequalsH} is that $\cC$ is $SO(3)_q$ with
+the standard braiding.  Now a direct calculation shows that $b+[3] \alpha = b
+\frac{\Psi_6}{v^4-1+v^{-4}}$ which is non-zero since $v$ is not a
+$12$th root of unity, giving a contradiction.
 \end{proof}
 
 
 \begin{proof}[Proof of Theorem \ref{thm:square-crossing}]
-Since $v$ is not a $10$th root of unity, by Lemma \ref{lem:dandtvalues} the equations for $d$ and $t$ hold.  Since $v$ is not a $12$th root of unity $[3]$ is non-zero.  By Lemma \ref{lem:bplus3alpha} we have that $b+[3]\alpha$ is nonzero.  Thus we can divide by $[3]$ in the QESquare relation from Proposition \ref{prop:square-crossing} and divide by $[3](b+[3]\alpha)$ in the QECrossing relation from Proposition yielding the corresponding relations in the Theorem \ref{thm:square-crossing}.
+Since $v$ is not a $10$th root of unity, by Lemma \ref{lem:dandtvalues} the
+equations for $d$ and $t$ hold.  Since $v$ is not a $12$th root of unity $[3]$
+is non-zero.  Since $v$ is not a $10$th root of unity $\alpha$ is non-zero.
+By Lemma \ref{lem:bplus3alpha} we have that $b+[3]\alpha$ is
+nonzero.  Thus we can divide by $[3]$ in the QESquare relation from
+Proposition \ref{prop:square-crossing} and divide by $[3](b+[3]\alpha)$ in the
+QECrossing relation from Proposition yielding the corresponding relations in
+the Theorem \ref{thm:square-crossing}.
 \end{proof}
 
 
-Finally let us motivate the change of variables to $w$ given in the introduction, namely we will see that one of the eigenvalues for the action of the crossing on the $4$-box space is given by exactly $w^2$.
-
-Let $P_{G_2}(q) = q^{10}+q^{8}+q^{2}+1+q^{-2}+q^{-8}+q^{-10}$ be the quantum dimension of the $7$-dimensional representation of $G_2$.
+Finally let us motivate the change of variables to $w$ given in the
+introduction --- we will see that one of the eigenvalues for the action of
+the crossing on the $4$-box space is given by exactly $w^2$.
+For this, we need to exclude certain special values of~$v$.
+Let $P_{G_2}(q) = q^{10}+q^{8}+q^{2}+1+q^{-2}+q^{-8}+q^{-10}$ be the quantum
+dimension of the $7$-dimensional representation of $G_2$.
 
 \begin{lemma} \label{lem:lin-ind-w}
-Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$ such that $v$ is not a $10$th or $12$th root of unity and in addition $d \neq v^6+1+v^{-6}$, $d \neq P_{G_2}(\zeta_3 v)$, and $d \neq P_{G_2}(\zeta_3^2 v)$, then the following diagrams are linearly independent:
-$$\twostrandid, \cupcap, \drawI, \braidcross, \invbraidcross.$$
+Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$ such that $v$ is
+not a $10$th or $12$th root of unity and in addition $d \neq v^6+1+v^{-6}$, $d
+\neq P_{G_2}(\zeta_3 v)$, and $d \neq P_{G_2}(\zeta_3^2 v)$, then the
+following diagrams are linearly independent:
+$$\twostrandid,\quad \cupcap,\quad \drawI,\quad\braidcross,\quad\invbraidcross.$$
 \end{lemma}
 \begin{proof}
-If you pair any two of these diagrams together, the resulting ribbon graph can be evaluated using the QEJacobi, QESquare, and QECrossing relations.  The determinant of this matrix (written in terms of $d$ instead of $\alpha$ to make the formulas simpler) is
+If you pair any two of these diagrams together, the resulting ribbon graph can
+be evaluated using the QEJacobi, QESquare, and QECrossing relations.  The
+determinant of this matrix (written in terms of $d$ instead of $\alpha$ to
+make the formulas simpler) is
 \begin{align*}
 \frac
 {
@@ -915,58 +1127,186 @@ d^5 v^8 [2][3]^2[6] (d-(v^{6}+1+v^{-6}))^2 (d + \{8\})) (d-p_{G_2}(\zeta_3 v)) (
 }.
 \end{align*}
 %% This is calculated in code/20170522-a-special-case.nb
-
-By our assumptions none of those factors can vanish except possibly $(d+\{8\})$.  If $d+\{8\} = 0$, then $\frac{[5]b}{\alpha} = 0$ which implies that $v$ is a $10$th root of unity.
+By our assumptions none of those factors can vanish except possibly
+$(d+\{8\})$.  If $d+\{8\} = 0$, then $\frac{[5]b}{\alpha} = 0$ which implies
+that $v$ is a $10$th root of unity.
 \end{proof}
 
 \begin{remark}
-Note that $d = v^6+1+v^{-6}$ corresponds to $SO(3)_{v^3}$, $d=P_{G_2}(\zeta_3 q)$ corresponds to $(G_2)_{q}$, and $d=P_{G_2}(\zeta_3^2 q)$ corresponds to $(G_2)_{q^{-1}}$.  In these examples the above five diagrams are indeed dependent.  \NStodo{Check $\zeta$ vs. $\zeta^2$}
+Note that $d = v^6+1+v^{-6}$ corresponds to $SO(3)_{v^3}$, $d=P_{G_2}(\zeta_3 q)$ 
+corresponds to $(G_2)_{q}$, and $d=P_{G_2}(\zeta_3^2 q)$ corresponds to
+$(G_2)_{q^{-1}}$.  In these examples, the above five diagrams are linearly
+dependent.  \NStodo{Check $\zeta$ vs. $\zeta^2$}
 \end{remark}
 
 
-\begin{lemma}
-If $v$ is not a $10$th or $12$th root of unity, then the crossing acts diagonalizably on the $4$-box space with eigenvalues $v^{12}$, $-v^{-6}$, $-1$, $w^2$, and $\frac{v^2}{w^2}$ where $w$ is given by the formula from the introduction.
+\begin{lemma}\label{lem:eigenvalues-twist}
+If $v$ is not a $10$th or $12$th root of unity \nn{and the square root
+exists}, then the crossing acts
+diagonalizably on the $4$-box space with eigenvalues $v^{12}$, $-v^{-6}$,
+$-1$, $w^2$, and $\frac{v^2}{w^2}$, where $w$ is given by
+Equation~\eqref{eq:change-variables}.
 \end{lemma}
 \begin{proof}
-First note that $\frac{1}{d} \cupcap$ and $\frac{1}{b} \drawI$ are projections and are eigenvectors for the crossing with eigenvalues $v^{12}$ and $-v^{-6}$.  To find the remaining three eigenvalues we look at the action of the crossing on the image of the projection
-$$\pi = \twostrandid -\frac{1}{d} \cupcap -\frac{1}{b} \drawI.$$
-
-Start with QECrossing and multiply by a crossing, then use QEJacobi to remove the $\drawcrossX$ term, and QECrossing to remove the $\drawH$ term.  Multiply again by the crossing and then by $\pi$ to get a cubic equation in the crossing acting on the image of $\pi$.  By Lemma \ref{lem:lin-ind-w}, the crossing does not satisfy a quadratic equation, so this cubic polynomial is the minimal polynomial and its roots are all eigenvalues.  A tedious calculation shows that the roots of this cubic equation are exactly $-1$, $w^2$, and $\frac{v^2}{w^2}$.  
+First note that $\displaystyle\frac{1}{d} \cupcap$ and $\displaystyle\frac{1}{b} \drawI$ are projections
+and are eigenvectors for the crossing with eigenvalues $v^{12}$ and
+$-v^{-6}$, respectively. We expect three more eigenvalues.
+To find them, we look at the action of the crossing
+on the image of the projection
+$$\pi = \;\twostrandid\; -\frac{1}{d}\;\cupcap\; -\frac{1}{b}\;\drawI\;.$$
+Start with QECrossing and multiply by a crossing, then use QEJacobi to remove
+the $\drawcrossX$ term, and QECrossing to remove the $\drawH$ term.  Multiply
+again by the crossing and then by $\pi$ to get a cubic equation in the
+crossing acting on the image of $\pi$.  By Lemma \ref{lem:lin-ind-w}, the
+crossing does not satisfy a quadratic equation, so this cubic polynomial is
+the minimal polynomial and its roots are all eigenvalues.  A tedious
+calculation shows that the roots of this cubic equation are exactly $-1$,
+$w^2$, and $\frac{v^2}{w^2}$.
 \end{proof}
 
 \begin{remark}
 Recall that the following operators commute:
-$$\braidcross, \drawH.$$
-Thus the eigenvectors for the former (which all have multiplicity $1$ generically) must also be eigenvectors for the latter.  The eigenvalues are $(v^{12}, b)$, $(-v^{-6},t)$, $(-1, [\lambda][\lambda-1])$, $(w^2, \frac{[\lambda][\lambda+2]}{[1]})$, and $(\frac{v^2}{w^2}, -\frac{[\lambda-1][\lambda-3]}{[1]})$.
+$$\braidcross,\quad\drawH.$$
+Thus the eigenvectors for the former (which all have multiplicity $1$
+generically) must also be eigenvectors for the latter.  The eigenvalues are
+$(v^{12}, b)$, $(-v^{-6},t)$, $(-1, [\lambda][\lambda-1])$, $(w^2,
+\frac{[\lambda][\lambda+2]}{[1]})$, and $(\frac{v^2}{w^2},
+-\frac{[\lambda-1][\lambda-3]}{[1]})$.
 
-There is a nice argument that the above eigenvalues are the only possible ones.  Namely, suppose $v$ is an eigenvector in the image of $\twostrandid -\frac{1}{d} \cupcap -\frac{1}{b} \drawI$ with eigenvalue $(\beta, \gamma)$.  QEJacobi says that:
+There is a nice argument that the above eigenvalues are the only possible
+ones.  Namely, suppose $v$ is an eigenvector in the image of $\pi$
+with eigenvalues $(\beta, \gamma)$. Multiply $v$ by QEJacobi and reduce
+using the know eigenvalues. We find:
 $$v^{-3} \beta \gamma -v^{-1} \gamma + \alpha \beta + \alpha v^{-4} = 0.$$
-QECrossing says that:
-$$\beta-\beta^{-1} - \frac{\widetilde{\Phi}_1 \widetilde{\Phi}_3^2 \widetilde{\Phi}_4 \widetilde{\Phi}_8}{b+[3]\alpha} \gamma - \frac{\widetilde{\Phi}_1^2 \widetilde{\Phi}_3 \widetilde{\Phi}_4 \widetilde{\Phi}_8 \alpha}{b+[3]\alpha} = 0.$$
+Similarly, multiplying by QECrossing we find:
+$$\beta-\beta^{-1} - \frac{\Psi_1 \Psi_3^2 \Psi_2 \Psi_4}{b+[3]\alpha} \gamma - \frac{\Psi_1^2 \Psi_3 \Psi_2 \Psi_4 \alpha}{b+[3]\alpha} = 0.$$
 Solving these equations for $\beta$ and $\gamma$ give the list of possible eigenvalues.  We still need some version of Lemma \ref{lem:lin-ind-w} in order to see that all the eigenvalues are realized.
 \end{remark}
 
 
 
+\section{From the classical to the quantum conjecture}
+\label{sec:classical-quantum}
+\DPTtodo{This is all written in terms of evaluation functors, which
+  are not at all the way the conjectures are written}
+This section is devoted to a proof of
+Theorem~\ref{thm:classical-quantum}. Let $\eval$ be the functor from
+$\mathsf{Jac}_{R,d,b}$ to $\mathsf{Exc}^D_{R,\lambda}$ given by hypothesis.
+
+The first step is constructing the conjectured functor $\Qeval$ from tangles,
+for which the main ingredient is the \emph{Kontsevich integral}~$Z$. The
+Kontsevich integral was first defined for unframed knots \cite{MR1318886}, and
+later extended to framed trivalent graphs
+\cite{MR1473309,MR2304469,MR2661529}. We briefly recall its properties. We
+specialize to the case corresponding to the adjoint representation of the Lie
+algebra, removing the usual distinction between the two different kinds of
+edges.
+
+Let $\mathsf{TriTrangle}$ be the category of framed, unoriented, trivalent
+graph tangles. \nn{Maybe this definition should be earlier.} Then, for ring
+$R$ containing~$\QQ$ and $d,b \in R$, $Z$ is a functor from
+$\mathsf{TriTangle}$ to $\mathsf{Jac}_{R[[h]],d,b}$. The variable $h$
+is used to keep track of
+the grading. $Z$ is usually defined as a functor from the category of
+parenthesized (non-associative) tangles; to define it as a functor from our
+category, where the objects are just integers, for each~$n \ge 3$, pick
+arbitrarily a parenthesization of $n$ objects and apply the usual functor.
+
+We will use the following properties of~$Z$.
+\begin{enumerate}
+\item\label{item:Kontsevich-perturb} $Z(G) = G + O(h)$, where on the
+  right hand side we think of the
+  underlying trivalent graph of~$G$ as a Jacboi diagram.
+\item\label{item:Kontsevich-crossing} On a single crossing, $Z$ takes
+  the value
+  \begin{equation}
+    \label{eq:Kontsevich-crossing}
+    Z\biggl(\;\braidcross\;\biggr) =
+    \exp\left(\frac{h}{2}\;\drawH\;\right)
+    \cdot\; \symcross\;.
+  \end{equation}
+\end{enumerate}
+
+Then the desired functor $\Qeval$ is the composition of $Z$ with the
+classical evaluation $\eval$, with scalars extended to $R[[h]]$. We
+then localize at $h$ to take values in the field
+$\CC(\lambda)((h))$.
+\[
+  \mathsf{TriTangle} \overset{Z}{\longrightarrow}
+  \mathsf{Jac}_{R[[h]],d,b} {\longrightarrow}
+  \mathsf{Exc}_{R[[h]],d,b} \overset{\eval}{\longrightarrow}
+  \mathsf{Exc}^D_{R[[h]],d,b}
+\]
+
+By hypothesis, the $k$-box space of $\mathsf{Except}((h))$ for $k \le 4$
+have the required dimensions for a ribbon trivalent category. By
+property~\eqref{item:Kontsevich-perturb} of~$Z$,
+$\mathsf{Except}((h))$
+is generated as a ribbon category over $R((h))$ by a
+trivalent vertex.
+Furthermore, Equation~\eqref{eq:Kontsevich-crossing} shows that
+ that
+\begin{align*}
+  \Qeval\biggl(\;\twist\;\biggr) &= e^{hb/2}\eval\biggl(\;\drawcup\;\biggr)\\
+  \Qeval\biggl(\;\twistvertex\;\biggr) &= e^{hb/4}\eval\biggl(\;\threevertex\;\biggr)
+\end{align*}
+Comparison with Equation~\eqref{eq:simple-rels-spec} shows that we
+should choose $v = e^{hb/24} \in R((h))$. Then by Theorem~\ref{thm:Jacobi}, the
+functor $\eval$ satisfies Equation~\eqref{eq:quant-except-gen} for
+some value of~$\alpha$. Note that $v^n - 1$ is
+invertible for all $n \ne 1$. Thus by Lemma~\ref{lem:bplus3alpha} and
+Theorem~\ref{thm:square-crossing} we renormalize~$b$ and make the
+change of variables
+from Equation~\eqref{eq:change-variables} to get the category
+$\mathsf{QExc}_{R((h^t)),v,w}$ for some rational~$t$ and some choice
+of~$w$. To identify~$w$ (and see that we can take $t=1$), 
+we find the eigenvalues
+of the twist operator on the 4-box space.
+
+\DPTtodo{This needs more explanation. Does it go in Background or here?}
+\DPTtodo{Double-check these eigenvalues vs $b=12$}
+For the classical evaluation $\eval$, the eigenvalues of the crossing
+operator and the ladder operator
+are $(-1, 6)$, $(-1, 0)$, $(+1, 12)$, $(+1, 2\lambda)$, and
+$(+1, 2-2\lambda)$, corresponding to five orthogonal idempotents in the
+$(2,2)$-box space. Equation~\eqref{eq:Kontsevich-crossing} then shows
+that the corresponding eigenvalues of the twist operator are
+$-e^{3h}$, $-1$, $e^{6h}$, $e^{\lambda h}$, and
+$e^{(1-\lambda)h}$, respectively.
+\nn{Reference to computation of eigenvalues, which is done elsewhere}
+On the other hand, by Lemma~\ref{lem:eigenvalues-twist}, the
+eigenvalues of the twist
+operator in $\mathsf{QExcept}$ are $-v^6$, $-1$, $v^{12}$, $w^2$, and
+$v^2/w^2$. To have these two lists of eigenvalues agree, we must
+set $v = e^{h/2}$ and $w = e^{\lambda h/2}$.
+
+This completes the proof of Theorem~\ref{thm:classical-quantum}.
+
+\begin{remark}
+  Given Conjecture~\ref{conj:class-consist}, to deduce a version of
+  Conjecture~\ref{conj:quant-consist} with a non-infinitesimal
+  deformation (i.e., valued in, say, complex numbers rather than a
+  power series ring), we would have to get control over the
+  coefficients in the power series that arise in the functor $\Qeval$
+  constructed above. This has been done for the Kontsevich
+  integral~$Z$ (XXX: cite). The evaluation algorithm implicit in
+  $\eval$ would also have to have computable bounds. \nn{How good} Most
+  reasonable evaluation algorithms do give such bounds.
+\end{remark}
 
 
 
-
-
-
-
-
-
-
-
-
+\subsection{Dimensions}
+\nn{Import heuristic arguments for dimensions and eigenvalues from
+  \texttt{multiplicities.tex} here, since we need them in the
+  Calculations. Say that they are proved later. Talk to Scott before
+  doing the import.}
 
 \section{Calculations}
 \label{sec:calculations}
 \newcommand{\V}{\mathcal{P}}
 
-\subsection{Heuristics for bases}
-\section{Candidate bases}
+\subsection{Candidate bases}
 \label{sec:bases}
 We now consider two candidates bases, $\cB^{\text{braided}}$ and $\cB^{\text
 {planar}}$ for each of the spaces $\cP_n$, for $n = 2,3,4,5,6$.
@@ -1053,8 +1393,13 @@ We define them as follows:
   \diagram{0.1}{88b8c27ab39d49cf9e9fdf6be821e0d1c86a5c31}_{*1}
 \Bigg\}
 \end{align*}
-In most of the cases above where we only take some of the rotations of a given diagram, it is because the other rotations
-are already isotopic (using 3-dimensional isotopies) to the chosen ones. The exception is that we only take 4 out of the 6 possible rotations of \diagram{0.1}{8a27a57e82333b072ffb4d5b78de022da5c0852b}. This will \nn{probably} be discussed below.
+
+In most of the cases above where we only take some of the rotations of a given
+diagram, it is because the other rotations are already isotopic (using
+3-dimensional isotopies) to the chosen ones. The exception is that we only
+take 4 out of the 6 possible rotations of
+\diagram{0.1}{8a27a57e82333b072ffb4d5b78de022da5c0852b}. This will
+\nn{probably} be discussed below.
 
 \begin{align*}
 \cB^{\text{planar}}_4 & = \left\{ 
@@ -1108,7 +1453,7 @@ We have a pairing $\langle - , - \rangle: \V_n \otimes \V_n \to \V_0$ defined
 by 
 \[
   \langle x, y \rangle =
-  \begin{tikzpicture}[baseline, ultra thick]
+  \begin{tikzpicture}[baseline, thick]
     \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {$x$};
     \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em, right=0.5cm of x] (y) {$y$};
     \draw (x.90) to[in=90, out=90] (y.90);
@@ -1117,9 +1462,8 @@ by
   \end{tikzpicture}
 \]
 and for many (conjecturally all) closed diagrams diagrams in $\V_0$ we can use
-the relations
-to evaluate to a rational function in \(\QQ(v,w)\). Of course, our basis is
-far from orthonormal with respect to this pairing!
+the relations to evaluate to a rational function in \(\QQ(v,w)\). Of course,
+our basis is far from orthonormal with respect to this pairing!
 
 We first look at the braided bases described above, and find that, up to $n=6$, we can evaluate all matrix entries of $M_n =
 \left(\langle e_i, e_j \rangle\right)_{i,j}$. We can then calculate the
@@ -1189,8 +1533,7 @@ $(G_2)_q$ \nn{details}. \nn{What about $w = \zeta v^{-1}$?}
 Although it may appear that new factors are appearing in the
 denominators as we look at $\det M_3, \det M_4, \det M_5, $ and $\det
 M_6$, one should recall that the bracket polynomials $[a \lambda + b]$
-are not generally irreducible. \nn{Does ``irreducible'' make sense?
-  $\QQ[v^{\pm 1}, w^{\pm 1}]$ is not a UFD, right?} The
+are not generally irreducible. The
 irreducible factors appearing in the denominator after cancellation
 remain the denominators \nn{already} introduced: $\det M_4$ has poles
 at $w=\pm1, v=\pm w, v^6+w^2 = 0$, and $1+v^4w^2 = 0$,
@@ -1220,10 +1563,10 @@ $A = \left(\langle T e_i, e_j \rangle\right)_{i,j}$.
 Rather unfortunately inverting the matrix $M_6$ is computationally
 infeasible. (Recall that arithmetic over $\QQ(v,w)$ may be quite inefficient!)
 
-We find, nevertheless, that for $T$ any of 
+We find, nevertheless, that for $T$ any of
 \begin{align*}
   (\rho_n : \V_n \to \V_n) & = 
-    \begin{tikzpicture}[baseline, ultra thick]
+    \begin{tikzpicture}[baseline, thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.90) -- ++(0,0.5);
       \draw (x.45) -- ++(0,0.5);
@@ -1233,7 +1576,7 @@ We find, nevertheless, that for $T$ any of
                      -- ++(0,0.5);
     \end{tikzpicture} &
   (\beta_n : \V_n \to \V_n) & = 
-    \begin{tikzpicture}[baseline, ultra thick]
+    \begin{tikzpicture}[baseline, thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.45) -- ++(0,0.5);
       \draw (x.90) to[out=90,in=-90] ($(x.135)+(0,0.5)$);
@@ -1241,14 +1584,14 @@ We find, nevertheless, that for $T$ any of
     \end{tikzpicture} 
   \displaybreak[1] \\
   (\cap_n : \V_n \to \V_{n-2}) & = 
-    \begin{tikzpicture}[baseline, ultra thick]
+    \begin{tikzpicture}[baseline, thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.45) -- ++(0,0.5);
       \draw (x.90) arc (0:180:0.2);
     \end{tikzpicture}
   &
   (\cup_{n-2} : \V_{n-2} \to \V_{n}) & = 
-    \begin{tikzpicture}[baseline, ultra thick]
+    \begin{tikzpicture}[baseline, thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.90) -- ++(0,0.5);
       \draw (x.45) -- ++(0,0.5);
@@ -1257,7 +1600,7 @@ We find, nevertheless, that for $T$ any of
     \end{tikzpicture}
   \displaybreak[1] \\
   (\fork_{n-1} : \V_{n-1} \to \V_{n}) & = 
-    \begin{tikzpicture}[baseline, ultra thick]
+    \begin{tikzpicture}[baseline, thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.90) -- ++(0,0.5);
       \draw (x.45) -- ++(0,0.5);
@@ -1266,7 +1609,7 @@ We find, nevertheless, that for $T$ any of
     \end{tikzpicture}
   &
   (\fuse_n : \V_n \to \V_{n-1}) & = 
-    \begin{tikzpicture}[baseline, ultra thick]
+    \begin{tikzpicture}[baseline, thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.45) -- ++(0,0.5);
       \draw (x.90) -- ($(x.114)+(0,0.25)$);
@@ -1274,7 +1617,7 @@ We find, nevertheless, that for $T$ any of
     \end{tikzpicture}
   \\
   (H_n : \V_n \to \V_n) & = 
-    \begin{tikzpicture}[baseline, ultra thick]
+    \begin{tikzpicture}[baseline, thick]
       \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) {};
       \draw (x.45) -- ++(0,0.5);
       \draw (x.90) -- ++(0,0.5);
@@ -1293,23 +1636,22 @@ difficult calculation ---  we use some tricks, calculating the product at
 various specialisations of the variables and then using interpolation, finally
 verifying our answer by multiplying by $M$.)
 
-Explicit matrices are available with the {\tt arXiv} sources of this article, 
-as the files $$\text{{\small\tt matrices/n-box-OP-matrix.m}},$$ where $n \leq 6$, and {\tt OP}
-is one of {\tt rotation},
-{\tt braiding}, {\tt inverse-braiding}, {\tt cup}, {\tt cap}, {\tt fork}, {\tt
-fuse}, {\tt H}. 
-The matrices are written in terms of the variables $d, v$. 
+Explicit matrices are available with the {\tt arXiv} sources of this article,
+as the files $$\text{{\small\tt matrices/n-box-OP-matrix.m}},$$ where $n \leq
+6$, and {\tt OP} is one of {\tt rotation}, {\tt braiding}, {\tt inverse-
+braiding}, {\tt cup}, {\tt cap}, {\tt fork}, {\tt fuse}, {\tt H}.  The
+matrices are written in terms of the variables $d, v$.
 
 
 \subsection{Representations of braid groups}
 The affine $n$-strand braid group has generators $\rho$ and $\beta$, with
-relations $\rho^n = 1$, $\beta \rho^\pm \beta \rho^\mp \beta = \rho^\pm
-\beta \rho^\mp \beta \rho^\pm
-\beta \rho^\mp$, and $\beta \rho^i \beta \rho^{-i} = \rho^i \beta \rho^
-{-i} \beta$ for all $i = 2, \ldots, n-2$.
+relations $\rho^n = 1$, $\beta \rho^\pm \beta \rho^\mp \beta = \rho^\pm \beta
+\rho^\mp \beta \rho^\pm \beta \rho^\mp$, and $\beta \rho^i \beta \rho^{-i} =
+\rho^i \beta \rho^ {-i} \beta$ for all $i = 2, \ldots, n-2$.
 
 At this point, we may verify that the matrices $\rho = \rho_n$ and $\beta =
-\beta_n$ provide a representation of the affine $n$-strand braid group merely by multiplying out the matrices. 
+\beta_n$ provide a representation of the affine $n$-strand braid group merely
+by multiplying out the matrices.
 
 \begin{lemma}
 The matrices described in the previous section give a representation of the affine $n$-strand braid group for $3 \leq n \leq 6$.
@@ -1327,7 +1669,7 @@ $\cup_{n-2} : \V_{n-2} \to V_n$, and
 $\rho_n: \V_n \to \V_n$ for $n \leq 6$. We can also find
 \begin{align*}
 (m_{4,4,2} : \V_4 \otimes \V_4 \to \V_4) & = 
-  \begin{tikzpicture}[baseline, ultra thick]
+  \begin{tikzpicture}[baseline, thick]
     \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) at (0,0) {};
     \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (y) at (1.5,0) {};
     \draw (x.130) -- +(0,0.5);
@@ -1339,7 +1681,7 @@ $\rho_n: \V_n \to \V_n$ for $n \leq 6$. We can also find
   \end{tikzpicture}
  \displaybreak[1] \\
 (m_{4,6,2} : \V_4 \otimes \V_6 \to \V_6) & = 
-  \begin{tikzpicture}[baseline, ultra thick]
+  \begin{tikzpicture}[baseline, thick]
     \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) at (0,0) {};
     \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (y) at (1.5,0) {};
     \draw (x.130) -- +(0,0.5);
@@ -1354,7 +1696,7 @@ $\rho_n: \V_n \to \V_n$ for $n \leq 6$. We can also find
  \displaybreak[1] \\
 \intertext{and}
 (m_{4,4,1} : \V_4 \otimes \V_4 \to \V_6) & = 
-  \begin{tikzpicture}[baseline, ultra thick]
+  \begin{tikzpicture}[baseline, thick]
     \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (x) at (0,0) {};
     \node[draw, shape=semicircle, shape border rotate=180, minimum size=1.5em] (y) at (1.5,0) {};
     \draw (x.130) -- +(0,0.5);
@@ -1371,13 +1713,13 @@ $\rho_n: \V_n \to \V_n$ for $n \leq 6$. We can also find
 Recall that our chosen basis for $\V_4$ is
 \[
   \left(
-    \tikz[baseline=-7, ultra thick]{\draw(0,0) arc (-180:0:0.2); \draw(0.6,0) arc(-180:0:0.2);},
-    \tikz[baseline=-7, ultra thick]{\draw(0,0) arc (-180:0:0.4); \draw(0.2,0) arc(-180:0:0.2);},
-    \tikz[baseline=-7, ultra thick]{\draw(0,0) arc (-180:0:0.2); \draw(0.6,0) arc(-180:0:0.2);
+    \tikz[baseline=-7, thick]{\draw(0,0) arc (-180:0:0.2); \draw(0.6,0) arc(-180:0:0.2);},
+    \tikz[baseline=-7, thick]{\draw(0,0) arc (-180:0:0.4); \draw(0.2,0) arc(-180:0:0.2);},
+    \tikz[baseline=-7, thick]{\draw(0,0) arc (-180:0:0.2); \draw(0.6,0) arc(-180:0:0.2);
                        \draw(0.2,-0.2) arc (-180:0:0.3);},
-    \tikz[baseline=-7, ultra thick]{\draw(0,0) arc (-180:0:0.4); \draw(0.2,0) arc(-180:0:0.2);
+    \tikz[baseline=-7, thick]{\draw(0,0) arc (-180:0:0.4); \draw(0.2,0) arc(-180:0:0.2);
                        \draw(0.4,-0.4) -- (0.4,-0.2);},
-    \tikz[baseline=-7, ultra thick]{\draw(0,0) arc (-180:0:0.3); \draw[knot] (0.3,0) arc (-180:0:0.3);}
+    \tikz[baseline=-7, thick]{\draw(0,0) arc (-180:0:0.3); \draw[knot] (0.3,0) arc (-180:0:0.3);}
   \right)
 \]
 Expressed in our chosen bases, we then have 
@@ -1393,7 +1735,7 @@ Finally, we can write $m_{4,4,1}$ in terms of the other operations, e.g.
 as
 $$
  m_{4,4,1}(x \otimes y) = m_{4,6,2}(x \otimes \rho_6^{-1} (\cup_4 (\rho_4(y)))
- = \begin{tikzpicture}[baseline, ultra thick]
+ = \begin{tikzpicture}[baseline, thick]
      \draw (0,0) arc (-180:0:0.5) -- cycle;
      \draw (2,0) arc (-180:0:0.5) -- cycle;
      \draw (2.2,0) arc (0:180:0.2) to[out=-90,in=180] (2.5,-0.65) to[out=0,in=-90] (3.2,0) arc (180:0:0.1) to[out=-90,in=0] (2.5,-0.8) to[out=180,in=-90] (1.2,0) arc (0:180:0.2);
@@ -1406,13 +1748,12 @@ $$
    \end{tikzpicture}
 $$ 
 
-\subsubsection{Conway girth}
-Typically, we may choose to think about a diagrammatically defined tangle 
-invariant as a morphism of planar algebras 
-$\mathsf{Tangle} \to \mathcal{Q}$ for some planar algebra
-$\mathcal{Q}$, sending the crossing to a suitable element of $\mathcal{Q}_4$.
-\nn{$\mathsf{Tangle}$ has not been defined.}
-In our case we only know a limited set of operations in the target planar
+\subsubsection{Conway width}
+Typically, we may choose to think about a diagrammatically defined tangle
+invariant as a morphism of planar algebras  $\mathsf{Tangle} \to \mathcal{Q}$
+for some planar algebra $\mathcal{Q}$, sending the crossing to a suitable
+element of $\mathcal{Q}_4$. \nn{$\mathsf{Tangle}$ has not been defined.} In
+our case we only know a limited set of operations in the target planar
 algebra, and so can only compute the invariants of links which we can generate
 from the crossing using those available planar operations.
 
@@ -1466,11 +1807,11 @@ If we were able to work with Conway width 8, we could nearly exhaust the
 available tables of knots and links; every Conway basic polyhedron with at 
 most 19 vertices has width at most 8.
 
-The obvious greedy algorithm (repeatedly collapse digons, when that is not 
+The obvious greedy algorithm (repeatedly collapse digons, when that is not
 possible apply $m_{4,4,1}$ to merge two 4-boxes into a 6-box, and afterwards
 hope that $m_{6,4,2}$  suffices to combine all remaining 4-boxes into that
-6-box) works on all but one prime knot up to 12 crossings, except \nn{... is
-it worth explaining this? perhaps it illustrates the greedy algorithm}
+6-box) works on all but one prime knot up to 12 crossings; our tabulations
+described below are based on this algorithm.
 
 \subsubsection{Examples}
 Using the above observations, we have computed the (conjectural!) 
@@ -1483,11 +1824,10 @@ and $\mathcal E(L)$ is some Laurent polynomial (not just a rational function)
 in $v$ and $w$. These polynomials $\mathcal E (L)$ are tabulated
 \nn{ at ...}, and in machine readable format as \nn{...} in the {\tt arXiv} sources.
 
-It would be desirable to verify that these computed invariants specialize 
+It would be desirable to verify directly that these computed invariants specialize 
 correctly to the quantum link invariants of the adjoint representations of the
-exceptional Lie algebras.
-\DPTtodo{Don't we have an unconditional theorem here, that these do in fact
-  specialize correctly?}
+exceptional Lie algebras. (Of course, we have proved unconditionally \nn{where?} that these do in fact
+specialize correctly --- but it would be nice to be able to check computations.)
 Unfortunately, these invariants have previously been
 rather hard to compute, so there is little available to check against. The Lie
 algebra $\mathfrak{sl}_2$ lies on the exceptional curve, and so the 2nd
@@ -1500,11 +1840,11 @@ author for computing quantum knot invariants gets only as far as the trefoil.
 Sure enough, we have
 $$\xi(3_1) = ...$$
 which at \nn{$w = ...,  v= ...$} gives \nn{...}
+One can also use the adjoint representation skein theory for $G_2$.
+\nn{Ref to background section}
 
-\nn{check using the adjoint representation skein theory provided by Greg; many errors in his formulas!}
-
-The fact that $\xi(12^n_{...}) = ...$ suggests that the $E_8$ adjoint quantum 
-knot invariant should be $$...$$, but previous methods haven't come close to
+The fact that $\xi(12^n_{...}) = ...$ says that the $E_8$ adjoint quantum 
+knot invariant is $$...$$, but previous methods haven't come close to
 computing this.
 
 \subsubsection{Knotted trivalent graphs}\mbox{}%
@@ -1512,13 +1852,34 @@ computing this.
 \nn{including the unknotted dodecahedron}
 
 \subsubsection{Comparisons}
-\nn{Compare to Westbury and the other paper...}
+\nn{Compare to Mironov--Mkrtchyan--Morozov \texttt{1510.05884},
+  Westbury \texttt{arXiv:1510.08307} and Mironov--Morozov
+  \texttt{arXiv:1511.09077}\dots}
 
+\section{Special values}
 
-\section{When $v$ is a small root of unity}
+\DPTtodo{Made this section more general, since it seems other special cases
+  naturally go here}
+The goal of this section is to analyze several special cases,
+including
+\begin{itemize}
+\item When $v$ is a $10$th or $12$th root of unity, the
+  derivation of the QESquare and QECrossing relations break down.
+\item When $\fg$ is in Deligne's list, in the adjoint
+  representation, the conjectural 2-variable polynomial specializes
+  correctly.
+\item The $7$-dimensional representation of $U_q(\fg_2)$ also
+  satisfies the given assumptions on the dimension of the 4-box space.
+\item For $U_q(\fg)$ for $\fg$ in the $F_4$ family, we again have a
+  trivalent vertex. At $q=1$ we have $v^6 = -1$, since the trivalent
+  vertex is symmetry, not anti-symmetric. This family has only a
+  finite number of points.
+  \DPTtodo{Also classical $S_t$?}
+\end{itemize}
+We begin by analyzing what happens when $\dim \cC_4 < 5.$
+
 
 The goal of this section is to analyze what happens when $v$ is a $10$th or $12$th root of unity, so that the derivation of the QESquare and QECrossing relations break down.  We begin by analyzing what happens when $\dim \cC_4 < 5.$
-
 
 \subsection{Corner cases with small $4$-box space}
 
@@ -1528,11 +1889,12 @@ $$\cupcap \text{ and } \twostrandid$$
 are non-zero and are linearly independent.
 \end{lemma}
 \begin{proof}
-If either diagram is zero then by multiplying by a crossing on the proper side you get that the trivalent vertex is zero, which is a contradiction.  If the two diagrams are linearly dependent, then again multiplying by a trivalent vertex would show that the trivalent vertex is zero.
+If either diagram is zero then by multiplying by a crossing on the appropriate side you get that the trivalent vertex is zero, which is a contradiction.  If the two diagrams are linearly dependent, then again multiplying by a trivalent vertex would show that the trivalent vertex is zero.
 \end{proof}
 
 
-The following lemma is a mild generalization of \cite{???} where we have relaxed the non-degeneracy assumption.
+\nn{Move the following to the background section}
+The following lemma is a mild generalization of \nn{Noah: what did you intend to cite here? \cite[Theorem 3.4]{1202.4396}?}where we have relaxed the non-degeneracy assumption.
 
 
 \begin{lemma}
@@ -1543,20 +1905,20 @@ Suppose that the diagrams
    \]
 are linearly dependent, then
  
-$$\drawI\; - \; \drawH - \frac{b}{d-1} \left(\twostrandid - \cupcap \right) = 0.$$
+$$\drawI\; - \; \drawH - \frac{1}{d-1} \left(\; \twostrandid - \cupcap \; \right) = 0.$$
 \end{lemma}
 \begin{proof}
-If the two Temperley-Lieb diagrams are linearly dependent, then attaching a trivialent vertex shows that the trivalent vertex is zero which is a contradiction.  So we must have a relation of the form:
+By the previous lemma, we must have a relation of the form:
 $$\drawI\;\pm \; \drawH = z \left(\twostrandid \pm \cupcap \right).$$
 
 Capping off we see that $b= z (d \pm 1)$, so $z = \frac{b}{d \pm 1}$.  So all we need to do is exclude the $+$-sign case.
 
-Attaching a trivalent vertex we see that $t + b = \frac{b}{d + 1}$, so $t =  \frac{-b d}{d + 1}$.  Adding $\drawH$ to the top gives:
+Attaching a trivalent vertex we see that $t + b = \frac{b}{d + 1}$, so $t =  -\frac{b d}{d + 1}$.  Adding $\drawH$ to the top gives:
 
-$$t \drawI + \ngon[45]{4} = \frac{b}{d+1} \left( \drawH + b \cupcap\right).$$
+$$t \drawI + \fourgon = \frac{b}{d+1} \left(\; \drawH + b \cupcap \; \right).$$
 
 If we take this relation minus its $90$-degree rotation the square term will vanish yielding:
-$$ b \frac{d-1}{d+1} \left( \drawI -\drawH \right) = \frac{b^2}{d+1} \left(\twostrandid - \cupcap\right).$$
+$$ b \frac{d-1}{d+1} \left(\; \drawI -\drawH \; \right) = \frac{b^2}{d+1} \left(\; \twostrandid - \cupcap \; \right).$$
 Dividing by $b \frac{d-1}{d+1}$ yields the desired equation.
 \end{proof}
 
@@ -1572,7 +1934,7 @@ are linearly dependent, then
 \begin{itemize}
 \item $v$ is a primitive $12$th root of unity
 \item $\cC$ is a quotient of $SO(3)_q$ with the usual braiding
-\item $\cC$ is $\mathrm{Rep}(S_3)$ with its symmetric braiding.
+\item $\cC$ is $\mathsf{Rep}(S_3)$ with its symmetric braiding.
 \end{itemize}
 \end{corollary}
 
@@ -1581,27 +1943,32 @@ are linearly dependent, then
 If the diagrams  
   \[
   \cupcap\;,\qquad\twostrandid\;,
-    \qquad\drawI\;,\qquad\drawH\;,\qquad\braidcross\;,\qquad\ngon[45]{4}\;
+    \qquad\drawI\;,\qquad\drawH\;,\qquad\braidcross\;,\qquad\fourgon\;
    \]
 span a space of dimension $4$ or smaller, then
 \begin{itemize}
 \item $v$ is a primitive $12$th root of unity
 \item $\cC$ is a quotient of $SO(3)_q$ with the usual braiding.
-\item $\cC$ is $\mathrm{Rep}(S_3)$ with its symmetric braiding.
+\item $\cC$ is $\mathsf{Rep}(S_3)$ with its symmetric braiding.
 \item $\cC$ is a quotient of $(G_2)_q$ with the usual braiding.  \NStodo{Which QEJacobi hold?}
 \end{itemize}
 \end{proposition}
 \begin{proof}
-If the first four diagrams are linearly dependent then we're in one of the first three cases.  Otherwise, we have a relation simplifying both the crossing and the square in terms of the first four diagrams.  This means that $\cC$ is generated by the trivalent vertex and $\dim \cC_4 \leq 4$, thus by a modification of \cite{???} we see that $\cC$ is a quotient of $(G_2)_q$.
+If the first four diagrams are linearly dependent then we're in one of the
+first three cases.  Otherwise, we have a relation simplifying both the
+crossing and the square in terms of the first four diagrams.  This means that
+$\cC$ is generated by the trivalent vertex and $\dim \cC_4 \leq 4$, and thus
+by a modification of \cite[\S 5]{MR3624901} we see that $\cC$ is a
+quotient of $(G_2)_q$.
 \end{proof}
 
 \begin{remark}
-Strictly speaking in \cite{???} we only considered non-degenerate trivalent categories, but this can be avoided as follows.  The argument that the pentagon reduces still applies, so all small faces reduce, and non-elliptic diagrams span all $\cC_k$.  If the $10$ non-elliptic diagrams in $\cC_5$ are independent then Kuperberg\cite{???} says that $\cC$ is a quotient of $(G_2)_q$.  If there's a relation between these ten diagrams, the relation must be negligble.  By \cite{???} either there's a single relation and the category is a quotient of $(G_2)_{\zeta_{10}}$, or the non-degenerate quotient of $\cC$ is an $ABA$ category which contradicts $\cC$ being braided.
+Strictly speaking in \cite{MR3624901} we only considered non-degenerate trivalent categories, but this can be avoided as follows.  The argument that the pentagon reduces still applies, so all small faces reduce, and non-elliptic diagrams span all $\cC_k$.  If the $10$ non-elliptic diagrams in $\cC_5$ are independent then Kuperberg \cite{MR1265145} says that $\cC$ is a quotient of $(G_2)_q$.  If there's a relation between these ten diagrams, the relation must be negligible.  By \cite{MR3624901} either there's a single relation and the category is a quotient of $(G_2)_{\zeta_{10}}$, or the non-degenerate quotient of $\cC$ is an $ABA$ category which contradicts $\cC$ being braided.
 \end{remark}
 
 
 
-\subsection{The case $v = \pm 1$}
+\subsection{The case \texorpdfstring{$v = \pm 1$}{v = pm 1}}
 
 Throughout this section we assume $v=1$.
 
@@ -1623,11 +1990,11 @@ If $\alpha = 0$, then $\cC$ satisfies the defining relations of the classical ex
 QECrossing says that the crossing is symmetric, and then QEJacobi becomes the usual Jacobi relation. 
 
 Since $\dim \cC_4 \leq 5$, there must be some relation of the following form:
-$$0 = \ngon[45]{4} + x \symcross + y \left(\drawI + \drawH \right) + z\left(\twostrandid + \cupcap \right).$$
+$$0 = \fourgon + x \symcross + y \left(\drawI + \drawH \right) + z\left(\twostrandid + \cupcap \right).$$
 Multiplying this by a crossing and using the Jacobi relation:
 \begin{align*}
-0 &= \ngon[45]{4} - \frac{b}{2} \drawI + x \twostrandid + y \left(-\drawI + \drawH -\drawI \right) + z\left(\symcross + \cupcap \right) 
-\\ &= \ngon[45]{4} + z \symcross + \left(-2y -\frac{b}{2} \right) \drawI +y \drawH +x \twostrandid + z\cupcap. 
+0 &= \fourgon - \frac{b}{2} \drawI + x \twostrandid + y \left(-\drawI + \drawH -\drawI \right) + z\left(\symcross + \cupcap \right) 
+\\ &= \fourgon + z \symcross + \left(-2y -\frac{b}{2} \right) \drawI +y \drawH +x \twostrandid + z\cupcap. 
 \end{align*}
 
 If these two relations are distinct, then Proposition \ref{prop:dim4} applies, and the only case with $v=1$ is classical $SO(3)$ (note that there is not trivalent category $(G_2)_{\zeta_3}$), which satisfies the classical exceptional relation.  Otherwise, we have $x=z$ and $y = -\frac{b}{6}$.  
@@ -1663,9 +2030,9 @@ If $b+[3]\alpha \neq 0$ then $\cC$ satisfies the relations of the classical F4 r
 If $b+[3]\alpha \neq 0$, then QECrossing says the crossing is symmetric.   QEJacobi becomes
 $$\drawsymcrossX + \drawI + \drawH = \alpha i \left(\symcross + \twostrandid + \cupcap \right).$$  If we rescale the trivalent vertex so that $\alpha i = 2$ then $b = d+2$ we have exactly the classical F4 relation.  The main result of \cite{???} is that this forces one of the following possibilities:
 
-TABLE
+\nn{TABLE}
 
-We exclude the $\Rep(S_3)$ case because it satisfied $b+[3]\alpha = 0$.
+We exclude the $\Rep(S_3)$ case because it satisfies $b+[3]\alpha = 0$.
 \end{proof}
 
 Since we do not know whether the classical F4 relation is sufficient for evaluating all closed diagrams, we do not know whether there are any additional degenerate $\cC$ whose non-degenerate quotient is one of the above categories.
@@ -1673,7 +2040,7 @@ Since we do not know whether the classical F4 relation is sufficient for evaluat
 If $b+[3]\alpha = 0$, then $\alpha = -\frac{bi}{2}$ and $d = 2$.  QEJacobi becomes
 $$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \right).$$
 QESquare becomes
-$$\ngon[45]{4} = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right).$$
+$$\fourgon = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right).$$
 
 \begin{lemma}
 The following diagrams are negligible in $\cC$:
@@ -1687,13 +2054,13 @@ The following diagrams are negligible in $\cC$:
 If the diagrams
   \[
   \cupcap\;,\qquad\twostrandid\;,
-    \qquad\drawI\;,\qquad\drawH\;,\qquad\braidcross\;\qquad\ngon[45]{4}\;
+    \qquad\drawI\;,\qquad\drawH\;,\qquad\braidcross\;,\qquad\fourgon\;
    \]
  span a $4$-dimensional space then the first $4$ diagrams span by Proposition \ref{prop:dim4}\NStodo{Add this statement to Prop \ref{prop:dim4}}.  If these $5$ diagrams are linearly independent then since $\dim \cC_4 \leq 5$, then they span.  Thus in either case we can check whether an element is negligible by pairing it with the above $5$ diagrams.
 \end{proof}
 
 \begin{corollary}
-If $\cC$ is non-degenerate then it must be $\mathrm{Rep}(S_3)$.
+If $\cC$ is non-degenerate then it must be $\mathsf{Rep}(S_3)$.
 \end{corollary}
 
 \begin{corollary}
@@ -1704,168 +2071,73 @@ Either
 \end{itemize}
 \end{corollary}
 
-If both relations hold, then the crossing simplifies.  By \ref{prop:dim4}, we see that $\cC$ is $\mathrm{Rep}(S_3)$ (which satisfies the latter relation for all $x$) or $(G_2)_{\zeta_{12}}$ for some primitive $12$th root of unity (which satisfies the latter relation for $x = \pm \frac{2}{\sqrt{-3}}$). Note that for each value of $v$ there are two distinct such $(G_2)_{\zeta_{12}}$ as ribbon categories, but they're equivalent as pivotal categories.
+If both relations hold, then the crossing simplifies.  By \ref{prop:dim4}, we
+see that $\cC$ is $\mathsf{Rep}(S_3)$ (which satisfies the latter relation for
+all $x$) or $(G_2)_{\zeta_{12}}$ for some primitive $12$th root of unity
+(which satisfies the latter relation for $x = \pm \frac{2}{\sqrt{-3}}$). Note
+that for each value of $v$ there are two distinct such $(G_2)_{\zeta_{12}}$ as
+ribbon categories, but they're equivalent as pivotal categories.
 \NStodo{Check sign, and find relationship between $\zeta$ and $v$}
 
 \begin{conjecture}
 Trivalent ribbon graphs modulo $d=2$ and the following relations:
 $$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \right)$$
-$$\ngon[45]{4} = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right)$$
+$$\fourgon = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right)$$
 $$\braidcross + \invbraidcross = 2 \left(\drawI + \drawH \right)$$
-
 gives a category $\cG$ with finite dimensional Hom-spaces and $\dim \cG_k = 1,0,1,1,5$ for $k = 0,1,2,3,4$.  
 \end{conjecture}
 
-Note that these generators and relations can't define a trivial category because it has a quotient to  $(G_2)_{\zeta_12}$, and they also can't define can't define $(G_2)_{\zeta_12}$ because it has braided quotient maps to both $(G_2)_{\zeta_12}$ and $(G_2)_{-\zeta_12}$.  So the content of this conjecture is that these relations suffice to simplify diagrams down to the appropriate spanning sets.
+Note that these generators and relations can't define a trivial category
+because it has a quotient to  $(G_2)_{\zeta_{12}}$, and they also can't define
+can't define $(G_2)_{\zeta_{12}}$ because it has braided quotient maps to both
+$(G_2)_{\zeta_{12}}$ and $(G_2)_{-\zeta_{12}}$.  So the content of this conjecture
+is that these relations suffice to simplify diagrams down to the appropriate
+spanning sets.
 
 \begin{conjecture}
 Trivalent ribbon graphs modulo $d=2$ and the following relations:
 $$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \right)$$
-$$\ngon[45]{4} = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right)$$
+$$\fourgon = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right)$$
 $$\braidcross - \invbraidcross = \frac{2}{\sqrt{-3}} \left(\drawI - \drawH - \twostrandid + \cupcap\right).$$
 
 gives a non-trivial category $\cH$ with $\dim \cH_k = 1,0,1,1,5$ for $k = 0,1,2,3,4$.  
 \end{conjecture}
 
-Again $\cH$ has braided quotient maps to both $(G_2)_{\zeta_12}$ and $(G_2)_{-\zeta_12}$ (which are the same as categories but not braided categories), so the content of this conjecture is that these relations suffice to simplify diagrams down to the appropriate spanning sets.
+Again $\cH$ has braided quotient maps to both $(G_2)_{\zeta_{12}}$ and
+$(G_2)_{-\zeta_{12}}$ (which are the same as categories but not braided
+categories), so the content of this conjecture is that these relations suffice
+to simplify diagrams down to the appropriate spanning sets.
 
 \begin{conjecture}
 Trivalent ribbon graphs modulo $d=2$ and the following relations:
 $$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \right)$$
-$$\ngon[45]{4} = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right)$$
+$$\fourgon = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right)$$
 $$\braidcross - \invbraidcross = 0.$$
 
 gives a non-trivial category $\cF$ with $\dim \cF_k = 1,0,1,1,5$ for $k = 0,1,2,3,4$.
 \end{conjecture}
 
-$\cF$ is the classical F4 family at $d=2$ without taking the non-degenerate quotient.  There is some evidence given in \cite{???} that these relations are enough to simplify closed diagrams.  In this case it's possible that these relations collapse all the way down to $\mathrm{Rep}(S_3)$ with $\dim \cF_4 = 4$ or that $\dim \cF_4 = 4$.
+Here $\cF$ is the classical F4 family at $d=2$ without taking the non-
+degenerate quotient.  There is some evidence given in \cite{???} that these
+relations are enough to simplify closed diagrams.  In this case it's possible
+that these relations collapse all the way down to $\mathsf{Rep}(S_3)$ with
+$\dim \cF_4 = 4$ or that $\dim \cF_4 = 4$.
 
 \begin{remark}
-We expect that $\cF$ has an infinitesimal deformation defined over $\mathbf{C}[\varepsilon]/\varepsilon^2$ where $d = 2+\varepsilon$ as suggested by the double root in \cite{???}.  This infinitesimal deformation should have a (non-braided) quotient to an infinitesimal deformation of $(G_2)_{\zeta_12}$.
+We expect that $\cF$ has an infinitesimal deformation defined over
+$\mathbf{C}[\varepsilon]/\varepsilon^2$ where $d = 2+\varepsilon$ as suggested
+by the double root in \cite{???}.  This infinitesimal deformation should have
+a (non-braided) quotient to an infinitesimal deformation of
+$(G_2)_{\zeta_{12}}$.
 \end{remark}
 
-We have no idea what to expect if you impose the relation 
-$$0 = \braidcross - \invbraidcross = x \left(\drawI - \drawH - \twostrandid + \cupcap\right)$$
+We have no idea what to expect if you impose the relation
+$$\braidcross - \invbraidcross = x \left(\;\drawI - \drawH - \twostrandid + \cupcap \; \right)$$ 
 for some $x$ that is neither $0$ nor $\pm \frac{2}{\sqrt{-3}}$.
 
 
-\section{From the classical to the quantum conjecture}
-\label{sec:classical-quantum}
+\nn{Several cases missing, as mentioned at the beginning of this section}
 
-We now show that the classical consistency conjecture implies
-the quantum consistency conjecture, for suitable base
-rings.
-\begin{theorem}\label{thm:classical-quantum}
-  If Conjecture~\ref{conj:class-consist} is true
-  for $\mathrm{Exc}_{R,\lambda}$, then
-  Conjecture~\ref{conj:quant-consist} is true for
-  $\mathrm{QExc}_{R((h)),v,w}$ for $v=e^{h/4}$ and $w=e^{\lambda
-    h/4})$ as formal Laurent series.
-\end{theorem}
-This section will be devoted to a proof of
-Theorem~\ref{thm:classical-quantum}. Let $\eval$ be the functor from
-$\mathsf{Jac}_{R,d,b}$ to $\mathsf{Exc}_{R,\lambda}$ given by hypothesis.
-
-The first step is constructing
-the conjectured functor from tangles $\Qeval$, for which the main
-ingredient is the
-\emph{Kontsevich integral}~$Z$. The Kontsevich integral was first
-defined for unframed knots \cite{MR1318886}, and later extended to
-framed trivalent graphs \cite{MR1473309,MR2304469,MR2661529}. We
-briefly recall its properties. We specialize to the case corresponding
-to the adjoint representation of the Lie algebra, removing the usual
-distinction between the two different kinds of edges.
-
-Let $\mathsf{TriTrangle}$ be the category of framed, unoriented,
-trivalent graph tangles. \nn{Maybe this definition should be earlier.}
-Then, for ring $R$ containing~$\QQ$ and $d,b \in R$, $Z$ is a functor
-from $\mathsf{TriTangle}$ to
-$\mathsf{Jac}_{R[[h]],d,b}$.
-\nn{are we using \texttt{mathrm} or \texttt{mathsf}?}
-The variable $h$ is used to keep track
-of the grading. $Z$ is usually defined as a functor from the category
-of parenthesized (non-associative) tangles; to define it as a functor
-from our category, where the objects are just integers, for each~$n
-\ge 3$, pick arbitrarily a parenthesization of $n$ objects and apply
-the usual functor.
-
-We will use the following properties of~$Z$.
-\begin{enumerate}
-\item\label{item:Kontsevich-perturb} $Z(G) = G + O(h)$, where on the
-  right hand side we think of the
-  underlying trivalent graph of~$G$ as a Jacboi diagram.
-\item\label{item:Kontsevich-crossing} On a single crossing, $Z$ takes
-  the value
-  \begin{equation}
-    \label{eq:Kontsevich-crossing}
-    Z\biggl(\;\braidcross\;\biggr) =
-    \exp\left(\frac{h}{2}\;\drawH\;\right)
-    \cdot\; \symcross\;.
-  \end{equation}
-\end{enumerate}
-
-Then the desired functor $\Qeval$ is the composition of $Z$ with the
-classical evaluation $\eval$, with scalars extended to $R[[h]]$. We
-then localize at $h$ to take values in the field
-$\mathsf{Except}((h))$.
-
-By hypothesis, the k-box space of $\mathsf{Except}((h))$ for $k \le 4$
-have the required dimensions for a ribbon trivalent category. By
-property~\eqref{item:Kontsevich-perturb} of~$Z$,
-$\mathsf{Except}((h))$
-is generated as a ribbon category over $R((h))$ by a
-trivalent vertex.
-Furthermore, Equation~\eqref{eq:Kontsevich-crossing} shows that
- that
-\begin{align*}
-  \Qeval\biggl(\;\twist\;\biggr) &= e^{hb/2}\eval\biggl(\;\drawcup\;\biggr)\\
-  \Qeval\biggl(\;\twistvertex\;\biggr) &= e^{hb/4}\eval\biggl(\;\nvertex[-90]{3}\;\biggr)
-\end{align*}
-Comparison with Equation~\eqref{eq:simple-rels-spec} shows that we
-should choose $v = e^{hb/24} \in R((h))$. Then by Theorem~\ref{thm:Jacobi}, the
-functor $\eval$ satisfies Equation~\eqref{eq:quant-except-gen} for
-some value of~$\alpha$. Note that $v^n - 1$ is
-invertible for all $n \ne 1$. Thus by Lemma~\ref{lem:bplus3alpha} and
-Theorem~\ref{thm:square-crossing} we renormalize~$b$ and make the
-change of variables
-from Equation~\eqref{eq:change-variables} to get the category
-$\mathsf{QExc}_{R((h^t)),v,w}$ for some rational~$t$ and some choice
-of~$w$. To identify~$w$ (and see that we can take $t=1$), 
-we find the eigenvalues
-of the twist operator on the 4-box space.
-
-For the classical evaluation $\eval$, the eigenvalues of the crossing
-operator and the ladder operator
-are $(-1, 3)$, $(-1, 0)$, $(+1, 6)$, $(+1, \lambda)$, and
-$(+1, 1-\lambda)$, corresponding to five orthogonal idempotents in the
-$(2,2)$-box space. Equation~\eqref{eq:Kontsevich-crossing} then shows
-that the corresponding eigenvalues of the twist operator are
-$-e^{3h/2}$, $-1$, $e^{3h}$, $e^{\lambda h/2}$, and
-$e^{(1-\lambda)h/2}$, respectively.
-\nn{Reference to computation of eigenvalues, which is done elsewhere}
-On the other hand, a short computation with
-the twist relation shows that the eigenvalues of the twist
-operator in $\mathsf{QExcept}$ are $-v^6$, $-1$, $v^{12}$, $w^2$, and
-$v^2/w^2$. These two lists of eigenvalues agree exactly when we set
-$w = e^{\lambda h/4}$ in addition to $v = e^{h/4}$.
-
-This completes the proof of Theorem~\ref{thm:classical-quantum}.
-
-\begin{remark}
-  Given Conjecture~\ref{conj:class-consist}, to deduce a version of
-  Conjecture~\ref{conj:quant-consist} with a non-infinitesimal
-  deformation (i.e., valued in, say, complex numbers rather than a
-  power series ring), we would have to get control over the
-  coefficients in the power series that arise in the functor $\Qeval$
-  constructed above. This has been done for the Kontsevich
-  integral~$Z$ (XXX: cite). The evaluation algorithm implicit in
-  $\eval$ would also have to have computable bounds. \nn{How good} Most
-  reasonable evaluation algorithm do give such bounds.
-\end{remark}
-
-\nn{Can use this to show that conjectural quantum 2-variable
-  polynomial invariant agrees with the known 1-variable invariant when
-  $w$ is specialized to appropriate power of~$v$}
 
 \appendix
 \section{Coefficients in QESquare}
