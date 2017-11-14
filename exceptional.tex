@@ -87,7 +87,8 @@ We can use these skein relations to do many computations.  In particular, we
 are able to calculate the value of this knot polynomial (if it exists!) on all
 knots of Conway width 6, which includes all knots of 12 or fewer crossings.
 Unconditionally these give the first calculations of the Reshetikhin-Turaev
-knot invariants for the exceptional Lie algebras for most of these knots.  For
+knot invariants for the exceptional Lie algebras for most of these knots.
+\NStodo{Already known for torus knots, should add references somewhere}  For
 example, we compute the following value for the trefoil for the exceptional
 series, and the Reshetikhin-Turaev invariant for $\mathfrak{e}_8$ is given by
 setting $v=q^5$ and $w=q^{-1}$.
@@ -556,7 +557,7 @@ QEJacobi relation implies QESquare and QECrossing.
 \begin{definition}
 A \emph{trivalent ribbon} category $(\cC, X, \tau)$ is a ribbon category over
 $R$ with  an object $X$ with $\dim \cC_0 = 1$, $\dim \cC_1 = 0$, $\dim{\cC_2}
-= 1$, and $\dim{\cC_3} = 1$, with a (unique up to rescaling) non-zero element
+= 1$, and $\dim{\cC_3} = 1$, \NStodo{Dimension doesn't make sense over general R} with a (unique up to rescaling) non-zero element
 $\tau \in \cC_3$ called `the trivalent vertex', such that the category is
 generated as a ribbon category by $\tau$ and such that the value of the circle
 is a non-zero multiple of the empty diagram and the value of the bigon is a
@@ -566,7 +567,7 @@ non-zero multiple of the strand.
 Being generated as a ribbon category by $\tau$ is the same as saying that
 $\cC$ is generated as a pivotal category by $\tau$ and the crossing.  In
 particular, a trivalent ribbon category need not be trivalent in the sense of
-\cite{MR3624901} where the trivalent vertex is assumed to generate $\cC$ 
+\cite{MR3624901} where the trivalent vertex alone is assumed to generate $\cC$ 
 as a pivotal category.  Also we have weakened the non-degeneracy condition from
 \cite{MR3624901}, replacing it with the assumption that the circle and bigon
 are non-zero.
@@ -634,8 +635,7 @@ The quantum exceptional crossing relation:
 \end{theorem}
 
 
-When $b+[3]\alpha$ is non-zero \nn{and the square roots exist in~$R$}
-we can make the change of variables
+When $b+[3]\alpha$ is non-zero and the relevant square root exists in $R$ we can make the change of variables
 \begin{equation}\label{eq:change-variables}
   w^2 = \frac{v}{2(b+[3]\alpha)}\left(b \{1\} -\alpha [3] \{5\} + \sqrt{-4 (b+[3]\alpha)^2 + (b \{1\} -[3]\{5\}\alpha)^2} \right).
 \end{equation}
