@@ -741,13 +741,64 @@ into planar forests.
 \end{itemize}
 }
 
-The golden category has $\dim \cC_4 = 2$ and satisfies four versions of the above relation, namely:
+
+\subsection{Quantum exceptional relation for special cases}
+
+For each of the examples discussed above we give the values of $v$ and $\alpha$ such that they satisfy the following QEJacobi relation.
+
+\begin{equation*}
+\left[\; v^{-3} \;
+\drawcrossX
+\;+ v \;
+\drawI
+\; -v^{-1} \;
+ \drawH
+\;\right]
+ + \alpha
+\left[\; \braidcross \;
+ + v^{4}\;
+\cupcap
+\; + v^{-4} \;
+ \twostrandid \;
+ \right] = 0.
+ \end{equation*}
+ 
+Recall that there's a symmetry $(v,\alpha) \mapsto (-v,-\alpha)$ where they give the same relation.
+
+We will also say that the QEJacobi relation holds with $\alpha=\infty$ if
+
+\begin{equation*}
+\braidcross \;
+ + v^{4}\;
+\cupcap
+\; + v^{-4} \;
+ \twostrandid \;= 0.
+ \end{equation*}
+
+
+\begin{lemma}
+$SO(3)_q$ satisfies three instances of the QEJacobi relation with $\alpha = -b \frac{\Psi_1}{\Psi_{12}} $ for $v$ a cube root of $q^{-1}$.  Under the change of variables we see that this corresponds to $w = \pm v^4$ or $w = \pm v^{-3}$.
+\end{lemma}
+
+\begin{lemma}
+The golden category satisfies four instances of the QEJacobi relation:
  \begin{itemize}
- \item $[\alpha:\beta] = [1:0]$ and $v = e^{\frac{2 \pi i}{5}}$
-  \item $[\alpha:\beta] = [b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right):1]$ and $v = e^{\frac{2 \pi i}{5}}$
- \item $[\alpha:\beta] = [b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right):1]$ and $v = e^{3 \frac{2 \pi i}{10}}$
- \item $[\alpha:\beta] = [b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right):1]$ and $v = e^{7 \frac{2 \pi i}{10}}$ 
+ \item $\alpha=\infty$ and $v = e^{\frac{2 \pi i}{5}}$
+  \item $\alpha = b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right)$ and $v = e^{\frac{2 \pi i}{5}}$
+ \item $\alpha = b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right)$ and $v = e^{3 \frac{2 \pi i}{10}}$
+ \item $\alpha = b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right)$ and $v = e^{7 \frac{2 \pi i}{10}}$ 
  \end{itemize}
+ \end{lemma}
+
+\begin{lemma}
+$G2_q$ satisfies two instances of the QEJacobi relation, 
+\begin{itemize}
+\item $\alpha = -e^{-2 \pi i/3} v^{-1}+e^{2 \pi i/3} v$ and $v = e^{2 \pi i/3} q$.
+\item $\alpha = -e^{2 \pi i/3} v^{-1}+e^{-2 \pi i/3} v$ and $v = e^{-2 \pi i/3} q$.
+\end{itemize}
+\end{lemma}
+
+
 
 \section{Main results}
 
