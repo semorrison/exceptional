@@ -741,6 +741,79 @@ into planar forests.
 \end{itemize}
 }
 
+\subsection{Some braided trivalent categories}
+
+In this section we recall the definitions and fix conventions for some braided tensor categories.
+
+\begin{definition}
+When $q$ is not a primitive $8$th root of unity, $SO(3)_q$ be the trivalent braided category given by the following relations.
+
+$$  \drawH \; - \; \drawI \; + \frac{b}{q^2+q^{-2}}\; \twostrandid \; -  \frac{b}{q^2+q^{-2}}\; \cupcap = 0$$
+$$\braidcross  =  q^{-2} \twostrandid + (q^2 - 1) \cupcap - \frac{(q^2+q^{-2})}{b} \drawI$$
+\begin{align*}
+    \unknot\; &= q^2+1+q^{-2}&\qquad
+      \twist\; &= q^4 \;\drawcup&\qquad
+        \twistvertex\; &= -q^2\;\threevertex\\[5pt]
+    \loopvertex\;&=0&
+      \twogon\;&= b\;\onestrandid&
+        \threegon\; &= \frac{q^2-1+q^{-2}}{q^2+q^{-2}} b\;\threevertex
+\end{align*}
+\end{definition}
+
+As usual we can choose any non-zero value of $b$ without changing the category.  Also sending $q \mapsto -q$ doesn't change the category.  Sending $q \mapsto q^{-1}$ doesn't change the underlying pivotal category but does change the braiding.  The standard normalization of $b$ coming from thinking of $SO(3)_q$ as coming from the second Jones-Wenzl projection is $b = \frac{q^2+q^{-2}}{q+q^{-1}}$, in \cite{trivalent} we normalize so that $b=1$.
+
+When $q=\pm i$ this category comes from $OSp(1|2)$ instead of $SO(3)$, see \cite{trivalent} for more details.
+
+Note that here we have not semisimplified, so when $q$ is a root of unity this category will be degenerate.  For all but a few small roots of unity it will agree with the category of tilting modules for quantum $SO(3)$ defined algebraically.
+
+\begin{definition}
+When $q$ is a primitive $5$th or $10$th root of unity then $SO(3)_q$ has an additional quotient called the golden category with the extra relation:
+$$\drawI = \twostrandid -\frac{1}{q^2+1+q^{-2}} \cupcap.$$
+
+Here $\unknot = q^2+1+q^{-2}$ is $\frac{1\pm \sqrt{5}}{2}$.
+\end{definition}
+
+
+\begin{definition}
+Let $(G_2)_q$ be the trivalent category defined by the following relations.
+
+\begin{align*}
+\bigcirc &=  \Phi_7(q) \Phi_{14}(q) \Phi_{24}(q)  = q^{10} + q^8 + q^2 + 1 + q^{-2} + q^{-8} + q^{-10} \displaybreak[1] \\
+\begin{tikzpicture}[scale=.5, baseline=0]
+	\draw (0,.5) circle (.5cm);
+	\draw (0,0)--(0,-1);
+\end{tikzpicture}
+ &= 0 \displaybreak[1] \\
+\ngon[90]{2} &= b\; \begin{tikzpicture}[scale=.5, baseline=0]
+	\draw (0,1)--(0,-1);
+\end{tikzpicture}
+\displaybreak[1] \\
+\ngon[90]{3} &= - \frac{\Phi_{12}}{\Phi_{16}} b \begin{tikzpicture}[scale=.5,baseline=0]
+	\draw (90:1cm)--(0,0)--(-30:1cm);
+	\draw (0,0) -- (-150:1cm);
+\end{tikzpicture}
+ = - \frac{q^2-1+q^{-2}}{q^4+q^{-4}} b \begin{tikzpicture}[scale=.5,baseline=0]
+	\draw (90:1cm)--(0,0)--(-30:1cm);
+	\draw (0,0) -- (-150:1cm);
+\end{tikzpicture}
+ \displaybreak[1] \\
+\ngon[45]{4} &=  b \frac{\Phi_8(q)}{\Phi_3(q) \Phi_6(q) \Phi_{16}(q)} \left(\;\drawI \; +\; \drawH \; \right) +  b^2 \frac{1}{\Phi_3(q) \Phi_6(q) \Phi_{16}(q)^2} \left(\; \cupcap \; + \; \twostrandid \; \right) \displaybreak[1] \\
+\ngon[90]{5} &= - b \frac{1}{\Phi_3(q) \Phi_6(q) \Phi_{16}(q)} \left(\mathfig{0.1}{tree1} + \mathfig{0.1}{tree2} + \mathfig{0.1}{tree3} + \mathfig{0.1}{tree4} + \mathfig{0.1}{tree5} \right) \\
+& \qquad - b^2 \frac{1}{\Phi_3(q)^2 \Phi_6(q)^2 \Phi_{16}(q)^2}  \left(\mathfig{0.1}{forest1} + \mathfig{0.1}{forest2} + \mathfig{0.1}{forest3} + \mathfig{0.1}{forest4} + \mathfig{0.1}{forest5}\right),
+\end{align*}
+
+$$\braidcross  = \frac{1}{q+q^{-1}} \left(q^{-3} \twostrandid + q^{3} \cupcap\right) 
+	- \frac{q^6+q^4+q^2+q^{-2}+q^{-4}+q^{-6}}{q+q^{-1}} 
+	\left( q^{-1} \drawH + q \drawI \right).$$
+
+
+\end{definition}
+
+
+
+
+
+
 
 \subsection{Quantum exceptional relation for special cases}
 
@@ -791,11 +864,7 @@ The golden category satisfies four instances of the QEJacobi relation:
  \end{lemma}
 
 \begin{lemma}
-$G2_q$ satisfies two instances of the QEJacobi relation, 
-\begin{itemize}
-\item $\alpha = -e^{-2 \pi i/3} v^{-1}+e^{2 \pi i/3} v$ and $v = e^{2 \pi i/3} q$.
-\item $\alpha = -e^{2 \pi i/3} v^{-1}+e^{-2 \pi i/3} v$ and $v = e^{-2 \pi i/3} q$.
-\end{itemize}
+$G2_q$ satisfies two instances of the QEJacobi relation, $\alpha = b \frac{1-\zeta q^2}{-\zeta^2 q}$ and $v = \zeta q$ for $\zeta$ a primitive cube root of unity.
 \end{lemma}
 
 
