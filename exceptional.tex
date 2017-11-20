@@ -746,7 +746,7 @@ into planar forests.
 In this section we recall the definitions and fix conventions for some braided tensor categories.
 
 \begin{definition}
-When $q$ is not a primitive $8$th root of unity, $SO(3)_q$ be the trivalent braided category given by the following relations.
+When $q$ is not a primitive $8$th root of unity, $SO(3)_q$ be the trivalent ribbon category given by the following relations.
 
 $$  \drawH \; - \; \drawI \; + \frac{b}{q^2+q^{-2}}\; \twostrandid \; -  \frac{b}{q^2+q^{-2}}\; \cupcap = 0$$
 $$\braidcross  =  q^{-2} \twostrandid + (q^2 - 1) \cupcap - \frac{(q^2+q^{-2})}{b} \drawI$$
@@ -775,41 +775,62 @@ Here $\unknot = q^2+1+q^{-2}$ is $\frac{1\pm \sqrt{5}}{2}$.
 
 
 \begin{definition}
-Let $(G_2)_q$ be the trivalent category defined by the following relations.
+For $q$ not a primitive $3$rd, $6$th, $7$th, $14$th, $16$th, or $24$th root of unity, let $(G_2)_q$ be the trivalent ribbon category defined by the following relations.
 
 \begin{align*}
-\bigcirc &=  \Phi_7(q) \Phi_{14}(q) \Phi_{24}(q)  = q^{10} + q^8 + q^2 + 1 + q^{-2} + q^{-8} + q^{-10} \displaybreak[1] \\
-\begin{tikzpicture}[scale=.5, baseline=0]
-	\draw (0,.5) circle (.5cm);
-	\draw (0,0)--(0,-1);
-\end{tikzpicture}
- &= 0 \displaybreak[1] \\
-\ngon[90]{2} &= b\; \begin{tikzpicture}[scale=.5, baseline=0]
-	\draw (0,1)--(0,-1);
-\end{tikzpicture}
-\displaybreak[1] \\
-\ngon[90]{3} &= - \frac{\Phi_{12}}{\Phi_{16}} b \begin{tikzpicture}[scale=.5,baseline=0]
-	\draw (90:1cm)--(0,0)--(-30:1cm);
-	\draw (0,0) -- (-150:1cm);
-\end{tikzpicture}
- = - \frac{q^2-1+q^{-2}}{q^4+q^{-4}} b \begin{tikzpicture}[scale=.5,baseline=0]
-	\draw (90:1cm)--(0,0)--(-30:1cm);
-	\draw (0,0) -- (-150:1cm);
-\end{tikzpicture}
- \displaybreak[1] \\
-\ngon[45]{4} &=  b \frac{\Phi_8(q)}{\Phi_3(q) \Phi_6(q) \Phi_{16}(q)} \left(\;\drawI \; +\; \drawH \; \right) +  b^2 \frac{1}{\Phi_3(q) \Phi_6(q) \Phi_{16}(q)^2} \left(\; \cupcap \; + \; \twostrandid \; \right) \displaybreak[1] \\
-\ngon[90]{5} &= - b \frac{1}{\Phi_3(q) \Phi_6(q) \Phi_{16}(q)} \left(\mathfig{0.1}{tree1} + \mathfig{0.1}{tree2} + \mathfig{0.1}{tree3} + \mathfig{0.1}{tree4} + \mathfig{0.1}{tree5} \right) \\
-& \qquad - b^2 \frac{1}{\Phi_3(q)^2 \Phi_6(q)^2 \Phi_{16}(q)^2}  \left(\mathfig{0.1}{forest1} + \mathfig{0.1}{forest2} + \mathfig{0.1}{forest3} + \mathfig{0.1}{forest4} + \mathfig{0.1}{forest5}\right),
+\unknot\; &= \Psi_7(q) \Psi_{12}(q) &\qquad
+      \twist\; &= q^{12}  \;\drawcup&\qquad
+        \twistvertex\; &= -q^6 \;\threevertex\\[5pt]
+    \loopvertex\;&=0&
+      \twogon\;&= b\;\onestrandid&
+        \threegon\; &= - \frac{\Psi_{6}(q)}{\Psi_{8}(q)} b \;\threevertex
 \end{align*}
 
-$$\braidcross  = \frac{1}{q+q^{-1}} \left(q^{-3} \twostrandid + q^{3} \cupcap\right) 
-	- b \frac{q^6+q^4+q^2+q^{-2}+q^{-4}+q^{-6}}{q+q^{-1}} 
-	\left( q^{-1} \drawH + q \drawI \right).$$
+\begin{align*}
+\ngon[45]{4} &=  b \frac{\Psi_4(q)}{\Psi_3(q)  \Psi_{8}(q)} \left(\;\drawI \; +\; \drawH \; \right) +  b^2 \frac{1}{\Psi_3(q)  \Psi_{8}(q)^2} \left(\; \cupcap \; + \; \twostrandid \; \right) \displaybreak[1] \\
+\ngon[90]{5} &= - b \frac{1}{\Psi_3(q) \Psi_{8}(q)} \left(\mathfig{0.1}{tree1} + \mathfig{0.1}{tree2} + \mathfig{0.1}{tree3} + \mathfig{0.1}{tree4} + \mathfig{0.1}{tree5} \right) \\
+& \qquad - b^2 \frac{1}{\Psi_3(q)^2  \Psi_{8}(q)^2}  \left(\mathfig{0.1}{forest1} + \mathfig{0.1}{forest2} + \mathfig{0.1}{forest3} + \mathfig{0.1}{forest4} + \mathfig{0.1}{forest5}\right),\\
+\braidcross  &= \frac{1}{\Psi_2(q)} \left(q^{-3} \twostrandid + q^{3} \cupcap\right) 
+	- \frac{1}{b} \frac{\Psi_3(q) \Psi_8(q)}{\Psi_2(q)} 
+	\left( q^{-1} \drawH + q \drawI \right).
+\end{align*}
+
+
 \end{definition}
 
 Note that the complicated relation for simplifying pentagons actually follows from the others as in \cite{trivalent}.
 
-The usual normalization is $b = \Phi_3(q) \Phi_6(q) \Phi_{16}(q)$ which makes the coefficients of the pentagon relation both $1$ as in \cite{kuperberg}.  In \cite{trivalent} as usual we normalized so that $q=1$.
+The usual normalization is $b = \Psi_3(q) \Psi_{8}(q)$ which makes the coefficients of the pentagon relation both $1$ as in \cite{kuperberg} and simplifies the crossing relation.  In \cite{trivalent} as usual we normalized so that $q=1$.
+
+When $q = \pm i$, we have that $(G_2)_{\pm i}$ has a quotient to $SO(3)_{\pm i}$, which is the value corresponding to $OSp(1|2)$.  Recall that in \cite{trivalent} we always take the non-degenerate quotient, but we do not do so here, so $(G_2)_{\pm i}$ and $SO(3)_{\pm i}$ denote different trivalent ribbon categories. 
+
+\begin{definition}
+For $d \neq 1$, let  $S_{d+1}$ be the trivalent ribbon category given by the following relations.
+
+$$  \drawH \; - \; \drawI \; + \frac{b}{d-1}\; \twostrandid \; -  \frac{b}{d-1}\; \cupcap = 0$$
+$$\braidcross  =  \invbraidcross$$
+\begin{align*}
+    \unknot\; &= d &\qquad
+      \twist\; &=  \;\drawcup&\qquad
+        \twistvertex\; &=  \;\threevertex\\[5pt]
+    \loopvertex\;&=0&
+      \twogon\;&= b\;\onestrandid&
+        \threegon\; &= b \frac{d-2}{d-1}\;\threevertex
+\end{align*}
+\end{definition}
+
+$S_{d+1}$ is Deligne's interpolated symmetric group category, but instead of the permutation representation as the generator we use the irreducible representation corresponding to the partition $(d,1)$ which is the permutation representation minus the trivial representation.  Since this example is not the main thrust of this paper we will delay the details of its trivalent ribbon presentation to a future paper.
+
+\begin{warning}
+When $d=-1$ our $S_0$ does not agree with Deligne's $S_0$, because in our category the permutation breaks up as a direct sum of the standard and the trivial, whereas for Deligne's the permutation will be a nontrivial extension of the trivial and the standard.  This is closely analogous to what happens for $SO(3)_q$ at $q=\pm i$.  Again we will address this further in a later paper.
+\end{warning}
+
+\begin{definition}
+$S_{3}$ has a further quotient $\mathrm{Rep}(S_3)$ with the extra relation:
+$$\symcross = \frac{1}{b}\drawI + \frac{1}{b}\drawH.$$
+\end{definition}
+
+Note that as a pivotal category $\mathrm{Rep}(S_3)$ agrees with the semisimplification of $SO(3)_q$ for $q$ a primitive $12$th root of unity, but the ribbon structures are different (the former is symmetric while the latter is not).  See Lemma \nn{add reference once it exists}.
 
 
 
