@@ -14,6 +14,7 @@ code/matrices
 code2/matrices
 
 exceptional.pdf
+sandbox.*
 notes/*.pdf
 *.toc
 *.fls
@@ -24,6 +25,7 @@ notes/*.pdf
 *.synctex.gz
 *.synctex.gz(busy)
 *.bbl
+*-blx.bib
 *.blg
 *.bcf
 *.run.xml
