@@ -760,9 +760,9 @@ $$\braidcross  =  q^{-2} \twostrandid + (q^2 - 1) \cupcap - \frac{(q^2+q^{-2})}{
 \end{align*}
 \end{definition}
 
-As usual we can choose any non-zero value of $b$ without changing the category.  Also sending $q \mapsto -q$ doesn't change the category.  Sending $q \mapsto q^{-1}$ doesn't change the underlying pivotal category but does change the braiding.  The standard normalization of $b$ coming from thinking of $SO(3)_q$ as coming from the second Jones-Wenzl projection is $b = \frac{q^2+q^{-2}}{q+q^{-1}}$, in \cite{trivalent} we normalize so that $b=1$.
+As usual we can choose any non-zero value of $b$ without changing the category.  Also sending $q \mapsto -q$ doesn't change the category.  Sending $q \mapsto q^{-1}$ doesn't change the underlying pivotal category but does change the braiding.  The standard normalization of $b$ coming from thinking of $SO(3)_q$ as coming from the second Jones-Wenzl projection is $b = \frac{q^2+q^{-2}}{q+q^{-1}}$, in \cite{MR3624901} we normalize so that $b=1$.
 
-When $q=\pm i$ this category comes from $OSp(1|2)$ instead of $SO(3)$, see \cite{trivalent} for more details.
+When $q=\pm i$ this category comes from $OSp(1|2)$ instead of $SO(3)$, see \cite{MR3624901} for more details.
 
 Note that here we have not semisimplified, so when $q$ is a root of unity this category will be degenerate.  For all but a few small roots of unity it will agree with the category of tilting modules for quantum $SO(3)$ defined algebraically.
 
@@ -798,11 +798,11 @@ For $q$ not a primitive $3$rd, $6$th, $7$th, $14$th, $16$th, or $24$th root of u
 
 \end{definition}
 
-Note that the complicated relation for simplifying pentagons actually follows from the others as in \cite{trivalent}.
+Note that the complicated relation for simplifying pentagons actually follows from the others as in \cite{MR3624901}.
 
-The usual normalization is $b = \Psi_3(q) \Psi_{8}(q)$ which makes the coefficients of the pentagon relation both $1$ as in \cite{kuperberg} and simplifies the crossing relation.  In \cite{trivalent} as usual we normalized so that $q=1$.
+The usual normalization is $b = \Psi_3(q) \Psi_{8}(q)$ which makes the coefficients of the pentagon relation both $1$ as in \cite{MR1403861} and simplifies the crossing relation.  In \cite{MR3624901} as usual we normalized so that $q=1$.
 
-When $q = \pm i$, we have that $(G_2)_{\pm i}$ has a quotient to $SO(3)_{\pm i}$, which is the value corresponding to $OSp(1|2)$.  Recall that in \cite{trivalent} we always take the non-degenerate quotient, but we do not do so here, so $(G_2)_{\pm i}$ and $SO(3)_{\pm i}$ denote different trivalent ribbon categories. 
+When $q = \pm i$, we have that $(G_2)_{\pm i}$ has a quotient to $SO(3)_{\pm i}$, which is the value corresponding to $OSp(1|2)$.  Recall that in \cite{MR3624901} we always take the non-degenerate quotient, but we do not do so here, so $(G_2)_{\pm i}$ and $SO(3)_{\pm i}$ denote different trivalent ribbon categories. 
 
 \begin{definition}
 For $d \neq 1$, let  $S_{d+1}$ be the trivalent ribbon category given by the following relations.
@@ -1136,8 +1136,8 @@ $$s^{-1} \drawI + s^{-2} \drawH - \frac{b}{d-1} \left(\cupcap -s^{-2} \braidcros
 Unless $s$ is $-1$, this says that $\braidcross$ simplifies.  So we split into two cases.
 
 If $\braidcross$ simplifies, then we need only solve for all braidings for
-$SO(3)_q$, which yields only the usual braiding or when $d=2$ there's the
-additional braiding giving $\Rep(S_3)$ (see \cite{???}).
+$SO(3)_q$, which yields only the usual braiding or when $d=2$ the
+additional braiding giving $\Rep(S_3)$ (see \cite[Example 8.6]{MR3624901} \nn{Is this is correct reference?}).
 
 If $s = -1$, then we want to figure out which sixth roots $v$ of $s$ give a
 relation.  That is, we need to figure out which of the rotational eigenvalues
@@ -1631,13 +1631,13 @@ the span of $\cB^{\text{braided}}$ to itself.
 The second of these questions is relatively tractable; it would just be a
 matter of applying a braiding or rotation to each element, and showing that it
 is possible to use the relations to rewrite the result as a linear combination
-of elements of $\cV^{\text{braided}}$. We take a slightly different approach,
-computing the matrix which \emph{would} be associated to each of the
+of elements of $\cB^{\text{braided}}$. We take a slightly different approach,
+computing via pairings the matrix which \emph{would} be associated to each of the
 operations \emph{if} $\cB^{\text{braided}}$ really were a basis, and then
 verifying that these matrices satisfy the expected properties.
 
 
-Now, given an operator $T: \V_n \to \V_m$, if the $\cB^{\text{braided}}_n$
+Given an operator $T: \V_n \to \V_m$, if the $\cB^{\text{braided}}_n$
 are bases, the associated matrix for $T$ would be $AM_m^{-1}$, where
 $A = \left(\langle T e_i, e_j \rangle\right)_{i,j}$.
 Rather unfortunately inverting the matrix $M_6$ is computationally
@@ -1718,7 +1718,7 @@ verifying our answer by multiplying by $M$.)
 
 Explicit matrices are available with the {\tt arXiv} sources of this article,
 as the files $$\text{{\small\tt matrices/n-box-OP-matrix.m}},$$ where $n \leq
-6$, and {\tt OP} is one of {\tt rotation}, {\tt braiding}, {\tt inverse-
+6$, and {\tt OP} is one of {\tt rotation}, {\tt braiding}, {\tt inverse-%
 braiding}, {\tt cup}, {\tt cap}, {\tt fork}, {\tt fuse}, {\tt H}.  The
 matrices are written in terms of the variables $d, v$.
 
@@ -1736,6 +1736,47 @@ by multiplying out the matrices.
 \begin{lemma}
 The matrices described in the previous section give a representation of the affine $n$-strand braid group for $3 \leq n \leq 6$.
 \end{lemma}
+
+
+\subsection{Idempotents in the 6-box space}
+\nn{By computing simultaneous eigenspaces for ..., we can verify the table in Dylan's section, and give explicit formulas for the idempotents. From these,
+we can calculate the quantum dimensions of all the summands of $\mathfrak{g}^{\otimes 3}$.}
+
+In order to analyze the 6-box space, we compute in the span of $\cB^{\text{braided}}_6$ the simultaneous eigenvectors for the commuting operators
+\begin{align*}
+Tw_3 = (\beta_6 \rho_6 \beta_6 \rho_6^{-1})^3 & = \begin{tikzpicture}[baseline, thick]
+      \braid[number of strands=6, xscale=0.35, yscale=-0.35] (braid) a_1 a_2 a_1 a_2 a_1 a_2;
+      \node[draw, shape=semicircle, shape border rotate=180, minimum size=2.5em] at ($(braid-1-s)+(0.88,-0.45)$) (x) {};
+    \end{tikzpicture}
+&
+\beta_6 & = \begin{tikzpicture}[baseline, thick]
+      \braid[number of strands=6, xscale=0.35, yscale=-0.35] (braid) a_1;
+      \node[draw, shape=semicircle, shape border rotate=180, minimum size=2.5em] at ($(braid-1-s)+(0.88,-0.45)$) (x) {};
+    \end{tikzpicture}
+&
+\rho_6^4 \beta_6 \rho_6^{-4} & = \begin{tikzpicture}[baseline, thick]
+      \braid[number of strands=6, xscale=0.35, yscale=-0.35] (braid) a_5;
+      \node[draw, shape=semicircle, shape border rotate=180, minimum size=2.5em] at ($(braid-1-s)+(0.88,-0.45)$) (x) {};
+    \end{tikzpicture}
+\end{align*}
+
+The characteristic polynomial of $Tw_3$ is \nn{double check}
+\begin{align*}
+w^{-72}
+\left(v^{36}-\lambda \right)
+\left(v^{24}-\lambda \right)^{25}
+\left(v^{12}-\lambda \right)^{16}  
+& \left(v^{12} w^4-\lambda \right)^9
+\left(v^{16}-\lambda  w^4\right)^9 \\
+\left(1 - \lambda\right)
+\left(w^{12}-\lambda \right) 
+&\left(v^{12}-\lambda  w^{12}\right)
+\left(v^4-\lambda \right)^9 
+\left(w^6-\lambda \right)^4  
+\left(v^6-\lambda  w^6\right)^4, 
+\end{align*}
+
+By direct calculation we find this triple of operators has distinct eigenvalues, so we obtain 80 eigenvectors, which are uniqely determined up to scale. In fact, we expect these to be matrix units (up to some scalars) with respect to the multiplication, but can't check this directly. \nn{..}
 
 
 \subsection{A 2-variable link polynomial}
@@ -2041,7 +2082,7 @@ $\Rep(S_3)$ satisfies three instances of the QEJacobi relation
 
 
 
-\subsection{Corner cases with small $4$-box space}
+\subsection{Corner cases with small 4-box space}
 
 \begin{lemma}
 The diagrams
@@ -2054,7 +2095,7 @@ If either diagram is zero then by multiplying by a crossing on the appropriate s
 
 
 \nn{Move the following to the background section}
-The following lemma is a mild generalization of \nn{Noah: what did you intend to cite here? \cite[Theorem 3.4]{1202.4396}?}where we have relaxed the non-degeneracy assumption.
+The following lemma is a mild generalization of \nn{Noah: what did you intend to cite here? \cite[Theorem 3.4]{MR3449240}?} where we have relaxed the non-degeneracy assumption.
 
 
 \begin{lemma}
@@ -2069,7 +2110,7 @@ $$\drawI\; - \; \drawH - \frac{1}{d-1} \left(\; \twostrandid - \cupcap \; \right
 \end{lemma}
 \begin{proof}
 By the previous lemma, we must have a relation of the form:
-$$\drawI\;\pm \; \drawH = z \left(\twostrandid \pm \cupcap \right).$$
+$$\drawI\;\pm \; \drawH = z \left(\; \twostrandid \pm \cupcap \;\right).$$
 
 Capping off we see that $b= z (d \pm 1)$, so $z = \frac{b}{d \pm 1}$.  So all we need to do is exclude the $+$-sign case.
 
@@ -2118,7 +2159,7 @@ If the first four diagrams are linearly dependent then we're in one of the
 first three cases.  Otherwise, we have a relation simplifying both the
 crossing and the square in terms of the first four diagrams.  This means that
 $\cC$ is generated by the trivalent vertex and $\dim \cC_4 \leq 4$, and thus
-by a modification of \cite[\S 5]{MR3624901} we see that $\cC$ is a
+by a modification, explained in the next remark, of \cite[\S 5]{MR3624901} we see that $\cC$ is a
 quotient of $(G_2)_q$.
 \end{proof}
 
@@ -2163,7 +2204,7 @@ Capping off this relation gives $0 = b^2 + x -\frac{b^2}{6}+x(1+d) =  (2+d)x +\f
 \end{proof}
 
 
-\subsection{The case $v$ is a primitive third or sixth root of unity}
+\subsection{The case \texorpdfstring{$v$}{v} is a primitive third or sixth root of unity}
 
 \begin{proposition}
 If $v$ is a primitive third root of unity, then $\cC$ is classical $SO(3)$ or classical $G_2$.
@@ -2178,7 +2219,7 @@ $$\symcross+\frac{\sqrt{-3}}{2\alpha} \left(\drawI + \drawH \right) -\frac{1}{2}
 After rescaling the trivalent vertex, this becomes precisely the Hurwitz relation (or classical $G_2$ relation) of \cite{???}.  The main result of that paper is that either $d = 7$ and $\cC$ is classical $G_2$ or $d=3$ and $\cC$ is $SO(3)$.
 \end{proof}
 
-\subsection{The case $v$ is a primitive fourth root of unity}
+\subsection{The case \texorpdfstring{$v$}{v} is a primitive fourth root of unity}
 
 Since $v$ is not a $10$th root of unity $\alpha$ is nonzero.  We have that $d+2 = \frac{-2ib}{\alpha}$.
 We need to split into two cases based on whether $b+[3]\alpha = 0$.  
