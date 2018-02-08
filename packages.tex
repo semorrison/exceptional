@@ -37,6 +37,14 @@
 \fi
 \usepackage{url}
 \usepackage{todonotes}
+
+\usepackage{silence}
+% Filter warnings issued by package biblatex starting with "Patching footnotes failed"
+\WarningFilter{biblatex}{Patching footnotes failed}
+\WarningFilter*{latex}{Marginpar on page \thepage\space moved}
+\WarningFilter{braids}{This package was designed using PGF2.10;}
+
+
 \usepackage{tikz}
 \usetikzlibrary{shapes}
 \usetikzlibrary{calc}
@@ -57,9 +65,5 @@
   \setunit{\addcomma\space}%
   \printfield{eid}}
 \DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
-\usepackage{silence}
-% Filter warnings issued by package biblatex starting with "Patching footnotes failed"
-\WarningFilter{biblatex}{Patching footnotes failed}
-\WarningFilter*{latex}{Marginpar on page \thepage\space moved}
 
 \addbibresource{bibliography/bibliography.bib}
