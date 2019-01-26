@@ -1756,8 +1756,6 @@ The matrices described in the previous section give a representation of the affi
 
 
 \subsection{Idempotents in the 6-box space}
-\nn{By computing simultaneous eigenspaces for ..., we can verify the table in Dylan's section, and give explicit formulas for the idempotents. From these,
-we can calculate the quantum dimensions of all the summands of $\mathfrak{g}^{\otimes 3}$.}
 
 In order to analyze the 6-box space, we compute in the span of $\cB^{\text{braided}}_6$ the simultaneous eigenvectors for the commuting operators
 \begin{align*}
@@ -1777,7 +1775,7 @@ Tw_3 = (\beta_6 \rho_6 \beta_6 \rho_6^{-1})^3 & = \begin{tikzpicture}[baseline, 
     \end{tikzpicture}
 \end{align*}
 
-The characteristic polynomial of $Tw_3$ is \nn{double check}
+The characteristic polynomial of $Tw_3$ is 
 \begin{align*}
 w^{-72}
 \left(v^{36}-\lambda \right)
@@ -1793,8 +1791,243 @@ w^{-72}
 \left(v^6-\lambda  w^6\right)^4, 
 \end{align*}
 
-By direct calculation we find this triple of operators has distinct eigenvalues, so we obtain 80 eigenvectors, which are uniqely determined up to scale. In fact, we expect these to be matrix units (up to some scalars) with respect to the multiplication, but can't check this directly. \nn{..}
+By a direct calculation of nullspaces we find this triple of operators has distinct eigenvalues, as shown in Table \ref{tab:braid-gen}, so we obtain 80 eigenvectors, each of which is uniqely determined up to scale. 
+\begin{table}
+  \centering
+  \begin{tabular}{ccccccccc}
+    \toprule
+    &&&\multicolumn{5}{c}{$\beta_6$ and $\rho_6^4 \beta_6 \rho_6^{-4}$ eigenvalues} \\ \cmidrule(l){4-8}
+   $\Tw_3$ & Mult & $v^{12}$ & $-v^{-6}$ & $-1$ & $w^2$ & $v^2w^{-2}$ \\
+    \midrule
+   $v^{36}$        & $1^2$ & - & 1 & - & - & - \\[2pt]
+   $v^{24}$        & $5^2$ & 1 & 1 & 1 & 1 & 1 \\[2pt]
+   $v^{12}$        & $4^2$ & - & 1 & 1 & 1 & 1 \\[2pt]
+   $v^{12}w^4$     & $3^2$ & - & 1 & 1 & 1 & - \\[2pt]
+   $v^{16}w^{-4}$  & $3^2$ & - & 1 & 1 & - & 1 \\[2pt]
+   $1$             & $1^2$ & - & - & 1 & - & - \\[2pt]
+   $w^{12}$        & $1^2$ & - & - & - & 1 & - \\[2pt]
+   $v^{12}w^{-12}$ & $1^2$ & - & - & - & - & 1 \\[2pt]
+   $v^4$           & $3^2$ & - & - & 1 & 1 & 1 \\[2pt]
+   $w^6$           & $2^2$ & - & - & 1 & 1 & - \\[2pt]
+   $v^6w^{-6}$     & $2^2$ & - & - & 1 & - & 1 \\
+    \bottomrule
+  \end{tabular}
+  \medskip
+  \caption{Decomposition of the 6-box space into eigenspaces of the full twist and braid generators}\label{tab:braid-gen}
+\end{table}
 
+In fact, writing a joint eigenvector with eigenvalues $x,y,z$ as $v_{x,y,z}$, we see that
+they must provide matrix units (up to some scalars) with respect to the multiplication,
+even though we can't verify this directly.
+Certainly $v_{x,y,z} \bullet v_{x',y',z'} = 0$ unless $x = x'$, since the full twist $Tw_3$ is central.
+Moreover as
+\begin{align*}
+\rho_6^4 \beta_6 \rho_6^{-4}(v_{x,y,z}) \bullet v_{x,y',z'} 
+  & = v_{x,y,z} \bullet \beta_6 (v_{x,y',z'})
+\end{align*}
+and all the joint eigenspaces are one dimensional, we must have $v_{x,y,z} \bullet v_{x,y',z'}$ a
+multiple of $\delta_{z,y'} v_{x,y,z'}$.
+
+In particular, the $v_{x,y,y}$ (when non-zero) are minimal idempotents (up to scale), and picking one
+such eigenvalue $y_x$ for each eigenvalue $x$ of $Tw_3$ so $v_{x,y_x,y_x} \neq 0$, these give a complete
+set of representatives of the irreducible representation of the 6-box space under multiplication.
+
+We can compute the quantum dimensions of these idempotents, as
+$$\frac{\langle v_{x,y,y}, id \rangle^2}{\langle v_{x,y,y}, v_{x,y,y} \rangle}$$
+(this quantity is homogeneous, so we may assume that we have picked $v_{x,y,y}$ to actually be an idempotent, and then $\langle v_{x,y,y}, v_{x,y,y} \rangle = \langle v_{x,y,y}, id \rangle$ so after
+cancelling we have the quantum dimension).
+
+We obtain the dimensions displayed in Table \ref{tab:quantum-dimensions},
+and one can check that upon setting $v=1$ (achieved by replacing $[k\lambda+l]$ with $k\lambda+l$) these agree
+with the tables in \cite[p.431]{MR1381778}.
+
+\begin{table}
+  \centering
+  \begin{tabular}{ccc}
+    \toprule
+   eigenvalue of $\Tw_3$ & representation & quantum dimension \\
+    \midrule
+   $v^{36}$        & $1$     & $1$ \\[2pt]
+   $v^{24}$        & $X_1$   & $-\frac{[4][\lambda+5][\lambda-6]}{[2][\lambda][\lambda-1]}$ \\[2pt]
+   $v^{12}$        & $X_2$   & $\frac{[5][\lambda+5][\lambda+3][\lambda-4][\lambda-6][2\lambda+4][2\lambda-6]}{[1][\lambda+2][\lambda][\lambda-1][\lambda-3][2\lambda][2\lambda-2]}$ \\[2pt]
+   $v^{12}w^4$     & $Y_2$   & $-\frac{[4][5][6][\lambda+5][\lambda-4][3\lambda-6]}{[2][\lambda][\lambda-1][\lambda-2][2\lambda][2\lambda-1]}$ \\[2pt]
+   $v^{16}w^{-4}$  & $Y_2^*$ & $-\frac{[4][5][6][\lambda-6][\lambda+3][3\lambda+3]}{[2][\lambda-1][\lambda][\lambda+1][2\lambda-2][2\lambda-1]}$ \\[2pt]
+   $1$             & $X_3$   & $- \frac{[4][5][\lambda+5][\lambda+4][\lambda-5][\lambda-6][2\lambda+4][2\lambda-6][3\lambda+3][3\lambda-6]}{[1][2][\lambda+1][\lambda][\lambda-1][\lambda-2][2\lambda][2\lambda-2][3\lambda][3\lambda-3]}$ \\[2pt]
+   $w^{12}$        & $Y_3$   & $- \frac{[4][5][6][\lambda+5][\lambda-4][\lambda-5][\lambda-6][2\lambda-4][5\lambda-6]}{[2][\lambda][\lambda-1][\lambda-2][2\lambda][2\lambda-1][2\lambda-2][3\lambda][3\lambda-1]}$ \\[2pt]
+   $v^{12}w^{-12}$ & $Y_3^*$ & $- \frac{[4][5][6][\lambda-6][\lambda+3][\lambda+4][\lambda+5][2\lambda+2][5\lambda+1]}{[2][\lambda-1][\lambda][\lambda+1][2\lambda-2][2\lambda-1][2\lambda][3\lambda-3][3\lambda-2]}$ \\[2pt]
+   $v^4$           & $A$     & $- \frac{[6][\lambda+5][\lambda+4][\lambda+3][\lambda-4][\lambda-5][\lambda-6][3\lambda-6][3\lambda+3]}{[2][\lambda+1][\lambda]^2[\lambda-1]^2[\lambda-2][3\lambda-1][3\lambda-2]}$ \\[2pt]
+   $w^6$           & $C$     & $\frac{[4][5][6][\lambda+5][\lambda+3][\lambda-5][2\lambda+4][2\lambda-4][2\lambda-6][4\lambda-6]}{[1][\lambda+2][\lambda]^2[\lambda-1][\lambda-2][2\lambda-1][2\lambda-3][3\lambda][3\lambda-2]}$ \\[2pt]
+   $v^6w^{-6}$     & $C^*$   & $\frac{[4][5][6][\lambda-6][\lambda-4][\lambda+4][2\lambda-6][2\lambda+2][2\lambda+4][4\lambda+2]}{[1][\lambda-3][\lambda-1]^2[\lambda][\lambda+1][2\lambda-1][2\lambda+1][3\lambda-3][3\lambda-1]}$ \\ 
+    \bottomrule
+  \end{tabular}
+  \medskip
+  \caption{Quantum dimensions of minimal idempotents in the 6-box space}\label{tab:quantum-dimensions}
+\end{table}
+
+Graphically, we can plot these formulas as follows. A $\bullet$ at
+$(x,y)$ means that there is a factor of $[x+y\lambda]$ in the
+numerator, a $\times$ at $(x,y)$ means that there is a factor of
+$[x+y\lambda]$ in the denominator, and a $\otimes$ at $(x,y)$ means that there is a factor of
+$[x+y\lambda]^2$ in the denominator. In particular, if there is a mark
+at $(x,y)$, there will be the same mark at $(-x,-y)$. The $y$ axis is
+drawn slanted to properly reflect the symmetries of the theory
+($w \mapsto v/w$).
+
+Note the similarities with the kinds of factors that come out of the
+Weyl character formula.
+\begingroup
+\newcommand{\pnode}[2]{
+  \node at (#1,#2) {$\bullet$};
+  \node at (-#1,-#2) {$\bullet$};
+}
+\newcommand{\mnode}[2]{
+  \node at (#1,#2) {$\times$};
+  \node at (-#1,-#2) {$\times$};
+}
+\newcommand{\mnodes}[3]{
+  \node[circle,draw,inner sep=0pt] at (#1,#2) {$\times$};
+  \node[circle,draw,inner sep=0pt] at (-#1,-#2) {$\times$};
+}
+\newcommand{\axes}[2]{
+  \draw (-#1-0.5,0) to (#1+0.5,0);
+  \draw (0,-#2-0.5) to (0,#2+0.5);
+  \foreach \x in {-#1,...,#1}
+    \foreach \y in {-#2,...,#2}
+      \fill (\x,\y) circle [radius=0.5pt];
+}
+
+$\dim(X_1)$:
+\[
+\begin{tikzpicture}[x=0.4cm,y={(0.2cm,0.4cm)}]
+  \axes{7}{2};
+  \pnode{4}{0}; \pnode{5}{1}; \pnode{-6}{1};
+  \mnode{2}{0};
+  \mnode{0}{1};
+  \mnode{-1}{1};
+\end{tikzpicture}
+\]
+
+$\dim(X_2)$:
+\[
+\begin{tikzpicture}[x=0.4cm,y={(0.2cm,0.4cm)}]
+  \axes{7}{3};
+  \pnode{5}{0};
+  \pnode{5}{1}; \pnode{3}{1}; \pnode{-4}{1}; \pnode{-6}{1};
+  \pnode{4}{2}; \pnode{-6}{2};
+  \mnode{1}{0};
+  \mnode{2}{1}; \mnode{0}{1}; \mnode{-1}{1}; \mnode{-3}{1};
+  \mnode{0}{2}; \mnode{-2}{2};
+\end{tikzpicture}
+\]
+
+$\dim(Y_2)$:
+\[
+\begin{tikzpicture}[x=0.4cm,y={(0.2cm,0.4cm)}]
+  \axes{7}{3};
+  \pnode{4}{0}; \pnode{5}{0}; \pnode{6}{0};
+  \pnode{5}{1}; \pnode{-4}{1};
+  \pnode{-6}{3};
+  \mnode{2}{0};
+  \mnode{0}{1}; \mnode{-1}{1}; \mnode{-2}{1};
+  \mnode{0}{2}; \mnode{-1}{2};
+\end{tikzpicture}
+\]
+$\dim(Y_2^*)$: 
+\[
+\begin{tikzpicture}[x=0.4cm,y={(0.2cm,0.4cm)}]
+  \axes{7}{3};
+  \pnode{4}{0}; \pnode{5}{0}; \pnode{6}{0};
+  \pnode{-6}{1}; \pnode{3}{1};
+  \pnode{3}{3};
+  \mnode{2}{0};
+  \mnode{-1}{1}; \mnode{0}{1}; \mnode{1}{1};
+  \mnode{-2}{2}; \mnode{-1}{2};
+\end{tikzpicture}
+\]
+
+$\dim(X_3)$:
+\[
+\begin{tikzpicture}[x=0.4cm,y={(0.2cm,0.4cm)}]
+  \axes{7}{4};
+  \pnode{4}{0}; \pnode{5}{0};
+  \pnode{5}{1}; \pnode{4}{1}; \pnode{-5}{1}; \pnode{-6}{1};
+  \pnode{4}{2}; \pnode{-6}{2};
+  \pnode{3}{3}; \pnode{-6}{3};
+  \mnode{1}{0}; \mnode{2}{0};
+  \mnode{1}{1}; \mnode{0}{1}; \mnode{-1}{1}; \mnode{-2}{1};
+  \mnode{0}{2}; \mnode{-2}{2};
+  \mnode{0}{3}; \mnode{-3}{3};
+\end{tikzpicture}
+\]
+
+$\dim(Y_3)$:
+\[
+\begin{tikzpicture}[x=0.4cm,y={(0.2cm,0.4cm)}]
+  \axes{7}{5};
+  \pnode{4}{0}; \pnode{5}{0}; \pnode{6}{0};
+  \pnode{5}{1}; \pnode{-4}{1}; \pnode{-5}{1}; \pnode{-6}{1};
+  \pnode{-4}{2}; \pnode{-6}{5};
+  \mnode{2}{0};
+  \mnode{0}{1}; \mnode{-1}{1}; \mnode{-2}{1};
+  \mnode{0}{2}; \mnode{-1}{2}; \mnode{-2}{2};
+  \mnode{0}{3}; \mnode{-1}{3};
+\end{tikzpicture}
+\]
+$\dim(Y_3^*)$: 
+\[
+\begin{tikzpicture}[x=0.4cm,y={(0.2cm,0.4cm)}]
+  \axes{7}{5};
+  \pnode{4}{0}; \pnode{5}{0}; \pnode{6}{0};
+  \pnode{-6}{1}; \pnode{3}{1}; \pnode{4}{1}; \pnode{5}{1};
+  \pnode{2}{2}; \pnode{1}{5};
+  \mnode{2}{0};
+  \mnode{-1}{1}; \mnode{0}{1}; \mnode{1}{1};
+  \mnode{-2}{2}; \mnode{-1}{2}; \mnode{0}{2};
+  \mnode{-3}{3}; \mnode{-2}{3};
+\end{tikzpicture}
+\]
+
+$\dim(A)$:
+\[
+\begin{tikzpicture}[x=0.4cm,y={(0.2cm,0.4cm)}]
+  \axes{7}{3};
+  \pnode{6}{0}; 
+  \pnode{5}{1}; \pnode{4}{1}; \pnode{3}{1}; \pnode{-4}{1}; \pnode{-5}{1}; \pnode{-6}{1}; 
+  \pnode{-6}{3}; \pnode{3}{3};
+  \mnode{2}{0};
+  \mnode{1}{1}; \mnodes{0}{1}{2}; \mnodes{-1}{1}{2}; \mnode{-2}{1};
+  \mnode{-1}{3}; \mnode{-2}{3};
+\end{tikzpicture}
+\]
+$\dim(C)$:
+\[
+\begin{tikzpicture}[x=0.4cm,y={(0.2cm,0.4cm)}]
+  \axes{7}{4};
+  \pnode{4}{0}; \pnode{5}{0}; \pnode{6}{0}; 
+  \pnode{5}{1}; \pnode{3}{1}; \pnode{-5}{1};
+  \pnode{4}{2}; \pnode{-4}{2}; \pnode{-6}{2};
+  \pnode{-6}{4};
+  \mnode{1}{0};
+  \mnode{2}{1}; \mnodes{0}{1}{2}; \mnode{-1}{1}; \mnode{-2}{1};
+  \mnode{-1}{2}; \mnode{-3}{2};
+  \mnode{0}{3}; \mnode{-2}{3};
+\end{tikzpicture}
+\]
+$\dim(C^*)$: 
+\[
+\begin{tikzpicture}[x=0.4cm,y={(0.2cm,0.4cm)}]
+  \axes{7}{4};
+  \pnode{4}{0}; \pnode{5}{0}; \pnode{6}{0}; 
+  \pnode{-6}{1}; \pnode{-4}{1}; \pnode{4}{1};
+  \pnode{-6}{2}; \pnode{2}{2}; \pnode{4}{2};
+  \pnode{2}{4};
+  \mnode{1}{0};
+  \mnode{-3}{1}; \mnodes{-1}{1}{2}; \mnode{0}{1}; \mnode{1}{1};
+  \mnode{-1}{2}; \mnode{1}{2};
+  \mnode{-3}{3}; \mnode{-1}{3};
+\end{tikzpicture}
+\]
+\endgroup
 
 \subsection{A 2-variable link polynomial}
 
