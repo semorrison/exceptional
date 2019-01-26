@@ -1501,7 +1501,7 @@ The following heuristic produces these proposed bases. First pick a partition of
 into parts with at least two elements. For each such partition, and for each part with $k$ elements, pick an abstract (unembedded) tree with those
 $k$ points as the leaves, and form the $(k-2)!$ trees (still unembedded) obtained by the symmetric group action on the leaves. \nn{Explain why?} For each such unembedded tree, pick an embedding in the plane, with over- and under-crossings chosen arbitrarily.
 
-The first line of the proposed basis $\cB^{\text{braided}}_6$ above comes from the partitions $6=2+2+2$,
+The first line of the proposed basis $\cB^{\text{braided}}_6$ above comes from the partition $6=2+2+2$,
 the second line from $6=3+3$, the third line from $6=4+2$, and the fourth line from $6=6$.
 (Note that in the first three rows, the `omitted' diagrams marked with $\clubsuit$ are omitted because the additional rotations differ from the included ones just by changing under- and over-crossings, while in the fourth row two diagrams are omitted because we've already reached the expected $(6-2)!$ diagrams.)
 
@@ -1559,7 +1559,7 @@ but rather by the apparent planar complexity of the diagrams.
 
 
 
-\nn{We should discuss the pentapent \diagram{0.1}{55f53ebaabfb09b3d4727e4b45c3637b0ed8f84c} and \diagram{0.1}{c44c9c3e568ce2218151df6d19f09681f6a6e4d8} below.}
+\nn{We should discuss the pentapent \diagram{0.1}{55f53ebaabfb09b3d4727e4b45c3637b0ed8f84c} and \diagram{0.1}{c44c9c3e568ce2218151df6d19f09681f6a6e4d8} below?}
 
 
 \subsection{Linear independence}
@@ -1814,22 +1814,22 @@ w^{-72}
 By a direct calculation of nullspaces we find this triple of operators has distinct eigenvalues, as shown in Table \ref{tab:braid-gen}, so we obtain 80 eigenvectors, each of which is uniqely determined up to scale. 
 \begin{table}
   \centering
-  \begin{tabular}{ccccccccc}
+  \begin{tabular}{ccccccc}
     \toprule
-    &&&\multicolumn{5}{c}{$\beta_6$ and $\rho_6^4 \beta_6 \rho_6^{-4}$ eigenvalues} \\ \cmidrule(l){4-8}
+    &&\multicolumn{5}{c}{$\beta_6$ and $\rho_6^4 \beta_6 \rho_6^{-4}$ eigenvalues} \\ \cmidrule(l){3-7}
    $\Tw_3$ & Mult & $v^{12}$ & $-v^{-6}$ & $-1$ & $w^2$ & $v^2w^{-2}$ \\
     \midrule
-   $v^{36}$        & $1^2$ & - & 1 & - & - & - \\[2pt]
-   $v^{24}$        & $5^2$ & 1 & 1 & 1 & 1 & 1 \\[2pt]
-   $v^{12}$        & $4^2$ & - & 1 & 1 & 1 & 1 \\[2pt]
-   $v^{12}w^4$     & $3^2$ & - & 1 & 1 & 1 & - \\[2pt]
-   $v^{16}w^{-4}$  & $3^2$ & - & 1 & 1 & - & 1 \\[2pt]
-   $1$             & $1^2$ & - & - & 1 & - & - \\[2pt]
-   $w^{12}$        & $1^2$ & - & - & - & 1 & - \\[2pt]
-   $v^{12}w^{-12}$ & $1^2$ & - & - & - & - & 1 \\[2pt]
-   $v^4$           & $3^2$ & - & - & 1 & 1 & 1 \\[2pt]
-   $w^6$           & $2^2$ & - & - & 1 & 1 & - \\[2pt]
-   $v^6w^{-6}$     & $2^2$ & - & - & 1 & - & 1 \\
+   $v^{36}$        & $1$  & - & 1 & - & - & - \\[2pt]
+   $v^{24}$        & $25$ & 1 & 1 & 1 & 1 & 1 \\[2pt]
+   $v^{12}$        & $16$ & - & 1 & 1 & 1 & 1 \\[2pt]
+   $v^{12}w^4$     & $9$  & - & 1 & 1 & 1 & - \\[2pt]
+   $v^{16}w^{-4}$  & $9$  & - & 1 & 1 & - & 1 \\[2pt]
+   $1$             & $1$  & - & - & 1 & - & - \\[2pt]
+   $w^{12}$        & $1$  & - & - & - & 1 & - \\[2pt]
+   $v^{12}w^{-12}$ & $1$  & - & - & - & - & 1 \\[2pt]
+   $v^4$           & $9$  & - & - & 1 & 1 & 1 \\[2pt]
+   $w^6$           & $4$  & - & - & 1 & 1 & - \\[2pt]
+   $v^6w^{-6}$     & $4$  & - & - & 1 & - & 1 \\
     \bottomrule
   \end{tabular}
   \medskip
@@ -1848,17 +1848,19 @@ Moreover as
 and all the joint eigenspaces are one dimensional, we must have $v_{x,y,z} \bullet v_{x,y',z'}$ a
 multiple of $\delta_{z,y'} v_{x,y,z'}$.
 
+
+
 In particular, the $v_{x,y,y}$ (when non-zero) are minimal idempotents (up to scale), and picking one
 such eigenvalue $y_x$ for each eigenvalue $x$ of $Tw_3$ so $v_{x,y_x,y_x} \neq 0$, these give a complete
-set of representatives of the irreducible representation of the 6-box space under multiplication.
+set of representatives of the minimal idempotents
 
-We can compute the quantum dimensions of these idempotents, as
+We can compute the quantum traces of these idempotents, as
 $$\frac{\langle v_{x,y,y}, id \rangle^2}{\langle v_{x,y,y}, v_{x,y,y} \rangle}$$
 (this quantity is homogeneous, so we may assume that we have picked $v_{x,y,y}$ to actually be an idempotent, and then $\langle v_{x,y,y}, v_{x,y,y} \rangle = \langle v_{x,y,y}, id \rangle$ so after
 cancelling we have the quantum dimension).
 
 We obtain the dimensions displayed in Table \ref{tab:quantum-dimensions},
-and one can check that upon setting $v=1$ (achieved by replacing $[k\lambda+l]$ with $k\lambda+l$) these agree
+and one can check that after setting $v=1$ (achieved by replacing $[k\lambda+l]$ with $k\lambda+l$) these agree
 with the tables in \cite[p.431]{MR1381778}.
 
 \begin{table}
@@ -1915,7 +1917,6 @@ Weyl character formula.
     \foreach \y in {-#2,...,#2}
       \fill (\x,\y) circle [radius=0.5pt];
 }
-
 $\dim(X_1)$:
 \[
 \begin{tikzpicture}[x=0.4cm,y={(0.2cm,0.4cm)}]
@@ -1926,7 +1927,6 @@ $\dim(X_1)$:
   \mnode{-1}{1};
 \end{tikzpicture}
 \]
-
 $\dim(X_2)$:
 \[
 \begin{tikzpicture}[x=0.4cm,y={(0.2cm,0.4cm)}]
@@ -1939,7 +1939,6 @@ $\dim(X_2)$:
   \mnode{0}{2}; \mnode{-2}{2};
 \end{tikzpicture}
 \]
-
 $\dim(Y_2)$:
 \[
 \begin{tikzpicture}[x=0.4cm,y={(0.2cm,0.4cm)}]
@@ -1964,7 +1963,6 @@ $\dim(Y_2^*)$:
   \mnode{-2}{2}; \mnode{-1}{2};
 \end{tikzpicture}
 \]
-
 $\dim(X_3)$:
 \[
 \begin{tikzpicture}[x=0.4cm,y={(0.2cm,0.4cm)}]
@@ -1979,7 +1977,6 @@ $\dim(X_3)$:
   \mnode{0}{3}; \mnode{-3}{3};
 \end{tikzpicture}
 \]
-
 $\dim(Y_3)$:
 \[
 \begin{tikzpicture}[x=0.4cm,y={(0.2cm,0.4cm)}]
@@ -2006,7 +2003,6 @@ $\dim(Y_3^*)$:
   \mnode{-3}{3}; \mnode{-2}{3};
 \end{tikzpicture}
 \]
-
 $\dim(A)$:
 \[
 \begin{tikzpicture}[x=0.4cm,y={(0.2cm,0.4cm)}]
@@ -2162,11 +2158,12 @@ It is easy to see that with the available planar operations, we can evaluate
 all Conway width 6 links.
 
 \begin{lemma}
-All knots and links with at most 12 crossings with the two exceptions
+All knots and links with at most 12 crossings have Conway width at most 6, with exceptions of the two alternating links
 $$
 \diagram{0.2}{a6b1b1be704dda48723477a9c4e57cf27a610f7c} \qquad
 \diagram{0.2}{d152a4e30d0711d71caa5a012365e5adbdcd5b2c}
 $$
+and their non-alternating cousins.
 %% How did I generate these graphs?! I guess with DrawPlanarGraphApp.scala, setting `withOutputPath' appropriately?
 % 12C = cuboctahedron
 % a6b1b1be704dda48723477a9c4e57cf27a610f7c
@@ -2174,7 +2171,6 @@ $$
 % 12G
 % d152a4e30d0711d71caa5a012365e5adbdcd5b2c
 % PlanarGraph(46,Vector(List(), List((5,6), (4,9), (3,8), (2,7)), List((2,6), (10,7), (9,18), (8,17)), List((8,6), (15,17), (14,27), (13,26)), List((13,6), (20,26), (19,36), (5,9)), List((26,36), (25,46), (24,45), (19,9)), List((20,36), (14,26), (30,27), (26,46)), List((10,18), (3,7), (34,8), (33,54)), List((4,8), (24,9), (40,45), (34,54)), List((25,45), (47,46), (46,75), (40,54)), List((54,75), (53,86), (33,18), (46,54)), List((15,27), (9,17), (53,18), (57,86)), List((47,75), (30,46), (57,27), (54,86))),Vector((2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0), (2,0)),0)
-have Conway width at most 6.
 \end{lemma}
 \begin{proof}
 The Conway width of a link is the width of the Conway basic polyhedron 
@@ -2184,8 +2180,7 @@ with $n$ vertices using Brinkmann and McKay's {\tt plantri} program
 All basic polyhedra with less than 12 vertices have width at most 6, and of 
 the 12 vertex basic polyhedra all but 12C (the cuboctahedron) and 12G (using 
 the naming scheme from \cite{MR679310}) have width at most 6. These graphs,
-made into alternating links, are the two exceptions described above.
-\nn{Say something about non-alternating versions of these links}
+made into links, are the exceptions described above.
 \end{proof}
 In fact, almost all prime knots up to 11 crossings have bridge number 
 at most 3, and hence width at most 6, with 15 exceptions, all Montesinos
@@ -2201,51 +2196,91 @@ most 19 vertices has width at most 8.
 The obvious greedy algorithm (repeatedly collapse digons, when that is not
 possible apply $m_{4,4,1}$ to merge two 4-boxes into a 6-box, and afterwards
 hope that $m_{6,4,2}$  suffices to combine all remaining 4-boxes into that
-6-box) works on all but one prime knot up to 12 crossings; our tabulations
-described below are based on this algorithm.
+6-box) works on all prime knots up to 12 crossings (for a handful of knots,
+if you apply $m_{4,4,1}$ `in the wrong place' it is possible to get stuck ---
+relabelling the strands are trying again quickly succeeds);
+our tabulations described below are based on this algorithm.
 
 \subsubsection{Examples}
 Using the above observations, we have computed the (conjectural!) 
 invariant $\xi$ of all prime links up to 11 crossings, and all prime knots up
-to 12 crossings. We observe that the values of $\xi$ are always of the form
+to 12 crossings. We observe that these values of $\xi$ are always of the form
 $$\xi(L) - d^{k} = 
-\frac{[3][4][\lambda-6][\lambda+5]}{[1][2][\lambda-1]^{k+1} [\lambda]^{k+1}} \mathcal E(L),$$
-where $d = \xi(\textrm{unknot}) = ...$, $k$ is the number of components of $L$, 
-and $\mathcal E(L)$ is some Laurent polynomial (not just a rational function)
+\frac{[4][6][\lambda-6][\lambda+5]}{[2][\lambda]^k [\lambda-1]^k} \mathcal E(L),$$
+where 
+$$d = \xi(\textrm{unknot}) = 
+-\frac{\left(v^2+v^{-2}\right) \left(\frac{w}{v^6}-\frac{v^6}{w}\right) \left(v^5 w-v^{-5} w^{-1}\right)}{\left(w-w^{-1}\right)
+   \left(\frac{w}{v}-\frac{v}{w}\right)},$$ $k$ is the number of components of $L$, 
+and $\mathcal E(L)$ is some Laurent polynomial
 in $v$ and $w$. These polynomials $\mathcal E (L)$ are tabulated
 \nn{ at ...}, and in machine readable format as \nn{...} in the {\tt arXiv} sources.
+(We offer no explanation at this point for this factorisation behaviour.)
+
 
 It would be desirable to verify directly that these computed invariants specialize 
 correctly to the quantum link invariants of the adjoint representations of the
-exceptional Lie algebras. (Of course, we have proved unconditionally \nn{where?} that these do in fact
+exceptional Lie algebras. (Of course, we have proved unconditionally \nn{where?}
+that these do in fact
 specialize correctly --- but it would be nice to be able to check computations.)
 Unfortunately, these invariants have previously been
 rather hard to compute, so there is little available to check against. The Lie
 algebra $\mathfrak{sl}_2$ lies on the exceptional curve, and so the 2nd
 coloured Jones polynomial  (that is, colored by the 3-dimensional adjoint
-representation) should be the \nn{$w = ...,  v= ...$} specialisation. This is
-indeed the case for all the links tabulated above.
+representation) should be the $v=q^{1/3}$, $w=\pm q^{4/3}$ or $w=\pm q^{-1}$ specialisation. This is
+indeed the case for all the prime links up to 9 crossings, and all the prime knots up to 10 crossings. \nn{check further?}
 
 Even for the adjoint representation of $G_2$, an earlier program by the first
 author for computing quantum knot invariants gets only as far as the trefoil. 
 Sure enough, we have
-$$\xi(3_1) = ...$$
-which at \nn{$w = ...,  v= ...$} gives \nn{...}
-One can also use the adjoint representation skein theory for $G_2$.
-\nn{Ref to background section}
+\begin{align*}
+\xi(3_1) & = 
+-\frac{v^{12} \left(v^4+1\right) \left(v^{12}-w^2\right) \left(v^{10} w^2-1\right)}{w^4 \left(w^2-1\right) \left(w^2-v^2\right)} \times \\
+& \quad \times
+\big(v^{36} w^4-v^{36} w^2-v^{34} w^6+v^{34} w^4-v^{32} w^4+v^{32} w^2+v^{30} w^6+v^{28} w^4-v^{28} w^2-v^{26} w^6 \\
+& \qquad +v^{26} w^2-v^{26}+v^{24} w^6-3 v^{24} w^4+v^{24} w^2-v^{22} w^8+v^{22} w^6-v^{22} w^4-v^{22} w^2-v^{20} w^6 \\
+& \qquad +2 v^{20} w^4-v^{20} w^2-v^{18} w^6+v^{18} w^2+v^{16} w^6-v^{16} w^4+v^{16} w^2+v^{16}+v^{14} w^6+v^{14} w^4 \\
+& \qquad -v^{14} w^2+v^{14}+v^{12} w^8-v^{12} w^6+2 v^{12} w^4+v^{10} w^8+v^{10} w^2+v^8 w^6-v^8 w^4-v^6 w^2 \\
+& \qquad -v^4 w^6-v^4  -v^2 w^4-w^8-w^4\big)
+\intertext{which at $v= q^2, w= q^5$ gives}
+& = q^{144}-q^{126}+q^{122}-q^{116}+2 q^{112}+q^{110}-q^{108}+2 q^{104}+q^{102}-q^{98}-q^{96}+q^{94}-2 q^{90}-2 q^{88} \\ 
+& \qquad -q^{86}-q^{84}-2 q^{82}-3 q^{80}-2 q^{78}-2 q^{76}-
+  2 q^{74}-2 q^{72}-2 q^{70}-q^{68}-q^{64}-q^{62}+q^{60}+q^{58} \\
+& \qquad +q^{56}+2 q^{54}+q^{52}+2 q^{50}+3 q^{48}+2 q^{46}+
+   2 q^{44}+3 q^{42}+2 q^{40}+2 q^{38}+3 q^{36}+2q^{34}+q^{32} \\
+& \qquad +2 q^{30}+q^{28}+q^{26}+q^{24}+q^{18},
+\end{align*}
+agreeing with the direct calculation using $R$-matrices.
+One could also attempt to use the adjoint representation skein theory for $G_2$ from
+\cite{MR1403861}, although we haven't pursued this.
 
+\nn{all the big knots have answers that are too big.. maybe delete this para}
 The fact that $\xi(12^n_{...}) = ...$ says that the $E_8$ adjoint quantum 
-knot invariant is $$...$$, but previous methods haven't come close to
+knot invariant is $$...$$ but previous methods haven't come close to
 computing this.
 
-\subsubsection{Knotted trivalent graphs}\mbox{}%
-\nn{just some examples}
-\nn{including the unknotted dodecahedron}
+We can evaluate a variety of knotted trivalent graphs, although the actual values are mostly too complicated
+to warrant repeating here.
+\begin{align*}
+\xi\left(\mathfig{0.05}{knotted-theta}\right) & = 
+\frac{\left(v^4+1\right) \left(v^6-w\right) \left(v^6+w\right) \left(v^5 w-1\right)\left(v^5 w+1\right) }{v^{36} (w-1) w^4 (w+1) (v-w) (v+w)} \times \\
+& \quad \times
+\big(v^{30} w^4-v^{30} w^2+v^{30}-v^{28} w^6+v^{28} w^4+v^{26} w^8-v^{26} w^4+v^{26} w^2+v^{24} w^6+v^{24} w^4 
+   \\ 
+& \qquad -2 v^{24} w^2+v^{24}-2 v^{22} w^6+3 v^{22} w^4-v^{22} w^2+v^{20} w^8-v^{20} w^6-2 v^{20} w^4+2 v^{20} w^2 \\
+& \qquad -v^{20} +2 v^{18} w^6-2 v^{18} w^4-v^{16} w^8+3 v^{16} w^4-2 v^{16} w^2-2 v^{14} w^6+2 v^{14} w^2-v^{14} \\
+& \qquad +2 v^{12} w^6-5 v^{12} w^4 +2 v^{12} w^2-v^{10} w^8+2 v^{10} w^6-v^{10}
+   w^2-v^8 w^6+2 v^8 w^4-v^6 w^4 \\
+& \qquad +v^6 w^2+v^4 w^6-v^4 w^4+v^2 w^4-v^2 w^2-w^6+w^4\big)
+\end{align*}
+Each of the random selections from the list of 7-crossing knotted thetas
+\cite{MR2507922} we tried is computable. We can also compute the value of the
+dodecahedron --- even though we haven't explicitly written down
+any relation that reduces the docadecahedron, one can easily check it has girth 6, and
+can be written in terms of the planar operations discussed above.
 
 \subsubsection{Comparisons}
-\nn{Compare to Mironov--Mkrtchyan--Morozov \texttt{1510.05884},
-  Westbury \texttt{arXiv:1510.08307} and Mironov--Morozov
-  \texttt{arXiv:1511.09077}\dots}
+\nn{Compare to Mironov--Mkrtchyan--Morozov \cite{MR3491191},
+  Westbury \cite{1510.08307} and Mironov--Morozov \cite{MR3475991} \dots}
 
 \section{Special values}
 \label{sec:special-values}
@@ -2487,7 +2522,7 @@ Since $v$ is not a $10$th root of unity $\alpha$ is non-zero.  Also $b+[3]\alpha
 QESquare becomes:
 $$\symcross+\frac{\sqrt{-3}}{2\alpha} \left(\drawI + \drawH \right) -\frac{1}{2} \left(\twostrandid + \cupcap \right) = 0.$$
 
-After rescaling the trivalent vertex, this becomes precisely the Hurwitz relation (or classical $G_2$ relation) of \cite{???}.  The main result of that paper is that either $d = 7$ and $\cC$ is classical $G_2$ or $d=3$ and $\cC$ is $SO(3)$.
+After rescaling the trivalent vertex, this becomes precisely the Hurwitz relation (or classical $G_2$ relation) of \cite{}.  The main result of that paper is that either $d = 7$ and $\cC$ is classical $G_2$ or $d=3$ and $\cC$ is $SO(3)$.
 \end{proof}
 
 \subsection{The case \texorpdfstring{$v$}{v} is a primitive fourth root of unity}
@@ -2500,7 +2535,7 @@ If $b+[3]\alpha \neq 0$ then $\cC$ satisfies the relations of the classical F4 r
 \end{proposition}
 \begin{proof}
 If $b+[3]\alpha \neq 0$, then QECrossing says the crossing is symmetric.   QEJacobi becomes
-$$\drawsymcrossX + \drawI + \drawH = \alpha i \left(\symcross + \twostrandid + \cupcap \right).$$  If we rescale the trivalent vertex so that $\alpha i = 2$ then $b = d+2$ we have exactly the classical F4 relation.  The main result of \cite{???} is that this forces one of the following possibilities:
+$$\drawsymcrossX + \drawI + \drawH = \alpha i \left(\symcross + \twostrandid + \cupcap \right).$$  If we rescale the trivalent vertex so that $\alpha i = 2$ then $b = d+2$ we have exactly the classical F4 relation.  The main result of \cite{F4E6} is that this forces one of the following possibilities:
 
 \nn{TABLE}
 
@@ -2590,7 +2625,7 @@ gives a non-trivial category $\cF$ with $\dim \cF_k = 1,0,1,1,5$ for $k = 0,1,2,
 \end{conjecture}
 
 Here $\cF$ is the classical F4 family at $d=2$ without taking the non-
-degenerate quotient.  There is some evidence given in \cite{???} that these
+degenerate quotient.  There is some evidence given in \cite{F4E6} that these
 relations are enough to simplify closed diagrams.  In this case it's possible
 that these relations collapse all the way down to $\mathsf{Rep}(S_3)$ with
 $\dim \cF_4 = 4$ or that $\dim \cF_4 = 4$.
@@ -2598,7 +2633,7 @@ $\dim \cF_4 = 4$ or that $\dim \cF_4 = 4$.
 \begin{remark}
 We expect that $\cF$ has an infinitesimal deformation defined over
 $\mathbf{C}[\varepsilon]/\varepsilon^2$ where $d = 2+\varepsilon$ as suggested
-by the double root in \cite{???}.  This infinitesimal deformation should have
+by the double root in \cite[p. 3]{F4E6}.  This infinitesimal deformation should have
 a (non-braided) quotient to an infinitesimal deformation of
 $(G_2)_{\zeta_{12}}$.
 \end{remark}
