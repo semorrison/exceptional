@@ -36,14 +36,15 @@
   We find a conjectural basis for the space of diagrams with $n$ loose
   ends modulo the quantum exceptional relation for $n \le 7$, with
   dimensions agreeing with the classical computations, and compute
-  the matrix of inner products. \nn{(Dimensions of idempotents?)}
+  the matrix of inner products, and the quantum dimensions of idempotents.
   We use the
   skein relation to compute the conjectural quantum exceptional
   polynomial for many knots, in particular
   determining (unconditionally) the values of the quantum polynomials
   for the exceptional Lie algebras on
-  these knots. The knots we can compute for include all knots with up
-  to 11 (12?) crossings.
+  these knots. We can compute these for all links of Conway width less 
+  than $6$, which includes all prime links with 11 or fewer crossings, and 
+  all prime knots with 12 or fewer crossings.
 \end{abstract}
 
 %\subjclass[2000]{Primary xxx; Secondary xxx}
@@ -636,12 +637,17 @@ The quantum exceptional crossing relation:
 
 \end{theorem}
 
+We now make a nice change of variables which is motivated by the Kontsevich integral approach.  We first remind the reader of some very elementary mathematics which we nonetheless found quite confusing.
+
+\begin{remark}
+Consider the rational change of variables $w= \frac{y}{x+y}$ (retaining $x$ as a variable) which makes sense when $y \neq x$.  The inverse change of variables is given by the rational function $y = \frac{wx}{1-w}$ which makes sense when $w \neq 1$.  However, in order for them to be inverse we need to calculate that
+$$y = \frac{x\frac{y}{x+y}}{1-\frac{y}{x+y}} = \frac{xy}{x}$$ which requires in addition that $x \neq 0$.  By the inverse function theorem this phenomenon happens exactly when $\frac{(x+y)-y}{(x+y)^2} = \partial_w y = 0$.  The same phenomenon also occurs for algebraic functions.
+\end{remark}
 
 When $b+[3]\alpha$ is non-zero and the relevant square root exists in $R$ we can make the change of variables
 \begin{equation}\label{eq:change-variables}
   w^2 = \frac{v}{2(b+[3]\alpha)}\left(b \{1\} -\alpha [3] \{5\} + \sqrt{-4 (b+[3]\alpha)^2 + (b \{1\} -[3]\{5\}\alpha)^2} \right).
 \end{equation}
-\NStodo{Explain how this is happening, why derivatives are relevant}
 We see that $\partial_\alpha w^2 = 0$ exactly if $v$ is a $12$th root of
 unity, so away from these points the change of variables is invertible, given
 by
