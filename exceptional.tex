@@ -225,21 +225,21 @@ empty diagram.  In particular, any two ways of simplifying the same closed
 diagram to give an element of $R$ will give the same element of $R$.
 \end{conjecture}
 
+\begin{remark}
+It is possible that classical consistency holds even without inverting any polynomials
+except for $\lambda$ and $1-\lambda$.  A natural weaker speculation is that one need
+only invert elements of the form $r+s\lambda$ for integers $r$ and $s$.
+\end{remark}
+
 Note that if $d = -2\frac{(\lambda+5)(6-\lambda)}{\lambda(1-\lambda)}$ is 
 invertible in $R$, it follows from classical consistency
 that $R$ injects into $\mathsf{Exc}_{R,\lambda}(1,1)$ as multiples of the
 strand.  Similarly if $b = 12$ and $d$ are invertible in $R$, it follows from
 classical consistency that $R$ injects into $\mathsf{Exc}_{R,\lambda}(2,1)$ as
-multiples of the trivalent vertex.  Finally if 
-
-Similarly, if $2$, $3$, $\lambda-3$, $\lambda-2$, 
-$\lambda-1$, $\lambda$, $\lambda+1$, $\lambda+2$, 2\lambda+1, 2\lambda+4$
-
-\nn{what polynomials?}
+multiples of the trivalent vertex.  Finally if in addition
+$5$, $\lambda-6$, $\lambda-4$, $\lambda+3$, and $\lambda+5$ are invertible
 are invertible, then $R^5$ injects into $\mathsf{Exc}_{R,\lambda}(2,2)$ as
 linear combinations of the above five diagrams.
-
-\nn{Do we have any speculations about what elements of $R$ need to be inverted.}
 
 If both consistency and sufficiency hold, it is also natural to conjecture
 that $\mathsf{Exc}_{R,\lambda}(n,m)$ is always a free $R$-module of finite
@@ -278,18 +278,9 @@ right of Table~\ref{tab:lambda-group}.
   \label{tab:lambda-group}
 \end{table}
 
-\NStodo{Move this sketch to special values, add quantum version. Cite Pavel's paper.}
+Classical specialization is proved in Section \ref{sec:special-values} following
+and idea appearing in \cite{1709.01278}.
 
-Here's a rough sketch of the proof given in Section \ref{sec:special-values}.
-(Some modification is
-needed for $\mathrm{OSp}(1|2)$.)  All the skein relations in
-$\mathsf{Exc}_{\mathbb{C},\lambda}$ do hold in the corresponding
-representation categories, so we get a functor which is injective on morphisms
-and essentially surjective on objects.  By Tannaka--Krein duality and
-unitarity, the image of this functor is the category of representations of a
-subgroup of the orthogonal group $\mathrm{O}(\mathfrak{g})$ preserving the bracket and containing
-the group.  But each of these groups is the maximal such unitary group
-preserving the bracket, so the functor is surjective on morphisms.
 
 \begin{conjecture}[Classical semisimplicity]
 There is a dense open subset $U \subset \mathbb{C}$ so that, for
@@ -343,7 +334,7 @@ $\mathsf{Exc}^D_{R,\lambda}$.
   Deligne's conjecture (private communication). Note that it
   is possible for the quantum
   Conjectures~\ref{conj:quant-suffic} and~\ref{conj:quant-consist} to
-  hold while the classical conjectures do not.
+  hold even if the classical conjectures do not.
 \end{remark}
 
 \subsection{Laurent polynomial conventions}
@@ -544,9 +535,13 @@ equivalent to the category of representations of the quantum version
 the corresponding group.
 \end{proposition}
 
-We expect that this will also be true at roots of unity, perhaps excluding some small roots of unity and some parities.
+Quantum specialization is stated precisely and proved in Section 
+\ref{sec:special-values} again following an idea appearing in \cite{1709.01278}. 
+In order to make the precise statement we need to give the correspondence
+between the parameters $q$ and $v$ which is somewhat subtle.
 
-\NStodo{Make ``quantum versions" more precise in special values section, add a forward pointer}
+We expect that quantum specialization this will also be true at roots of unity, 
+perhaps excluding some small roots of unity and some parities.s
 
 \begin{conjecture}[Quantum semisimplicity]
 There is a dense open subset $U \subset \mathbb{C}^2$ for which the idempotent
@@ -648,8 +643,8 @@ The quantum exceptional crossing relation:
 We now make a nice change of variables which is motivated by the Kontsevich integral approach.  We first remind the reader of some very elementary mathematics which we nonetheless found quite confusing.
 
 \begin{remark}
-Consider the rational change of variables $w= \frac{y}{x+y}$ (retaining $x$ as a variable) which makes sense when $y \neq x$.  The inverse change of variables is given by the rational function $y = \frac{wx}{1-w}$ which makes sense when $w \neq 1$.  However, in order for them to be inverse we need to calculate that
-$$y = \frac{x\frac{y}{x+y}}{1-\frac{y}{x+y}} = \frac{xy}{x}$$ which requires in addition that $x \neq 0$.  By the inverse function theorem this phenomenon happens exactly when $\frac{(x+y)-y}{(x+y)^2} = \partial_w y = 0$.  The same phenomenon also occurs for algebraic functions.
+Consider the rational change of variables $w= \frac{y}{x+y}$ (retaining $x$ as a variable) which makes sense when $y \neq x$.  The inverse change of variables is given by the rational function $y = \frac{wx}{1-w}$ which makes sense when $w \neq 1$.  However, in order for them to be inverse we need to calculate that $y$ is equal to
+$$\frac{x\frac{y}{x+y}}{1-\frac{y}{x+y}} = \frac{xy}{x}$$ which requires in addition that $x \neq 0$.  By the inverse function theorem this phenomenon happens exactly when $\frac{(x+y)-y}{(x+y)^2} = \partial_w y = 0$.  The same phenomenon also occurs for algebraic functions.
 \end{remark}
 
 When $b+[3]\alpha$ is non-zero and the relevant square root exists in $R$ we can make the change of variables
@@ -697,9 +692,6 @@ quantum consistency over a suitable power series ring.
 
 
 \subsection{Calculations}
-
-\nn{Finish writing this section to reflect what appears in the body of the paper}
-
 Assuming our main conjectures, we calculate some properties of
 $\mathsf{QExc}_{\mathbb{C},v,w}$ and the corresponding $2$-variable knot
 polynomial.
@@ -717,12 +709,11 @@ conjectural quantum exception invariant of all links of Conway width 6.
 Note that unconditionally, these 2-variable knot polynomials must specialize
 at particular values of $w$ to give the quantum invariants of the adjoint
 representations of the actual Lie algebras.  To our knowledge these are the
-first calculations of the quantum knot polynomials of large knots for the
+first calculations of the quantum knot polynomials of non-torus knots for the
 adjoint representations of any of the exceptional Lie algebras, and they are
-much more efficient than doing the calculations directly in
-$U_q(\mathfrak{g})$.  Also unconditionally we show that our skein relations
-give a well-defined $80$-dimensional representation of the affine $6$-strand
-braid group.
+much more efficient than doing the calculations directly in $U_q(\mathfrak{g})$.
+(For torus knots these calculations can be done using the Rosso--Jones formula
+\cite{MR1209320}, see \cite{1510.05884}.)
 
 Using our skein relations, we also compute the quantum versions of Cohen--De
 Man's formulas for the dimensions of the objects appearing in the third tensor
@@ -754,6 +745,18 @@ into planar forests.
 \item Kontsevich integral
 \end{itemize}
 }
+
+Here's a rough sketch of the proof given in Section \ref{sec:special-values}.
+(Some modification is
+needed for $\mathrm{OSp}(1|2)$.)  All the skein relations in
+$\mathsf{Exc}_{\mathbb{C},\lambda}$ do hold in the corresponding
+representation categories, so we get a functor which is injective on morphisms
+and essentially surjective on objects.  By Tannaka--Krein duality and
+unitarity, the image of this functor is the category of representations of a
+subgroup of the orthogonal group $\mathrm{O}(\mathfrak{g})$ preserving the bracket and containing
+the group.  But each of these groups is the maximal such unitary group
+preserving the bracket, so the functor is surjective on morphisms.
+
 
 \subsection{Quantum group conventions}
 
