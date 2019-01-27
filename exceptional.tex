@@ -373,10 +373,10 @@ symmetrized cyclotomic polynomials.  (Strictly speaking we should use
 a similar convention for factoring $[k \lambda]$, but this is not needed
 in practice.)  Let
 \begin{align*}
-  \Psi_n &= \prod_{\zeta: \zeta^{2n} = 1 \text{ and } (\pm \zeta)^m \neq 1 \text{ for $m < 2n$}}
+  \Psi_n &= \prod_{\zeta: \zeta^{n} = \pm 1 \text{ and } \zeta^m \neq \pm 1 \text{ for $m < n$}}
   (v^{\frac{1}{2}}-\zeta v^{-\frac{1}{2}}),\\
   \intertext{or, in terms of the usual cyclotomic polynomials,}
-  \Psi_n(v) &= v^{-\varphi(2n)/2} \Phi_{2n}(v^2).
+  \Psi_n(v) &= v^{-\varphi(n)} \Phi_{n}(v^2).
 \end{align*}
 In particular, when $n$ is odd $\Psi_n$ vanishes exactly at primitive
 $n$-th and primitive $2n$-th roots of unity, while when $n$ even,
@@ -386,12 +386,15 @@ for $n$ an odd prime,
 $\{n\} = \Psi_{2n}(v)$. For convenience, here are the values of $\Psi_n$ that
 appear in this paper.
 \begin{align*}
-  \Psi_1 = [1] &= v - v^{-1} &
-  \Psi_2 = \{1\} &= v + v^{-1}\\
-  \Psi_3 = \frac{[3]}{[1]} &= v^2 + 1 + v^{-2}&
-  \Psi_4 = \{2\} &= v^2 + v^{-2}\\
-  \Psi_5 = \frac{[5]}{[1]} &= v^4 + v^2 + 1 + v^{-2} + v^{-4}&
-  \Psi_6 = \frac{[6][1]}{[3][2]} &= v^2 - 1 + v^{-2}
+  \Psi_1 & = [1] = v - v^{-1} &
+  \Psi_2 & = \{1\} = v + v^{-1}\\
+  \Psi_3 & = \frac{[3]}{[1]} = v^2 + 1 + v^{-2}&
+  \Psi_4 & = \{2\} = v^2 + v^{-2}\\
+  \Psi_5 & = \frac{[5]}{[1]} = v^4 + v^2 + 1 + v^{-2} + v^{-4}&
+  \Psi_6 & = \frac{[6][1]}{[3][2]} = v^2 - 1 + v^{-2}\\
+  \Psi_7 & = v^6 + v^4 + v^2 + 1 + v^{-2} + v^{-4} + v^{-6} &
+  \Psi_8 & = v^4 + v^{-4} \\
+  \Psi_{12} & = v^4 + 1 + v^{-4} &&
 \end{align*}
 
 
@@ -643,7 +646,7 @@ The quantum exceptional crossing relation:
 We now make a nice change of variables which is motivated by the Kontsevich integral approach.  We first remind the reader of some very elementary mathematics which we nonetheless found quite confusing.
 
 \begin{remark}
-Consider the rational change of variables $w= \frac{y}{x+y}$ (retaining $x$ as a variable) which makes sense when $y \neq x$.  The inverse change of variables is given by the rational function $y = \frac{wx}{1-w}$ which makes sense when $w \neq 1$.  However, in order for them to be inverse we need to calculate that $y$ is equal to
+Consider the rational change of variables $w= \frac{y}{x+y}$ (retaining $x$ as a variable) which makes sense when $y \neq -x$.  The inverse change of variables is given by the rational function $y = \frac{wx}{1-w}$ which makes sense when $w \neq 1$.  However, in order for them to be inverse we need to calculate that $y$ is equal to
 $$\frac{x\frac{y}{x+y}}{1-\frac{y}{x+y}} = \frac{xy}{x}$$ which requires in addition that $x \neq 0$.  By the inverse function theorem this phenomenon happens exactly when $\frac{(x+y)-y}{(x+y)^2} = \partial_w y = 0$.  The same phenomenon also occurs for algebraic functions.
 \end{remark}
 
@@ -802,7 +805,10 @@ Here $\unknot = q^2+1+q^{-2}$ is $\frac{1\pm \sqrt{5}}{2}$.
 For $q$ not a primitive $3$rd, $6$th, $7$th, $14$th, $16$th, or $24$th root of unity, let $(G_2)_q$ be the trivalent ribbon category defined by the following relations.
 
 \begin{align*}
-\unknot\; &= \Psi_7(q) \Psi_{12}(q) &\qquad
+\unknot\; &= \Psi_7(q) \Psi_{12}(q) = q^{10} + q^8 + q^2 + 1 + q^{-2} + q^{-8} + q^{-10}
+\end{align*}
+
+\begin{align*}
       \twist\; &= q^{12}  \;\drawcup&\qquad
         \twistvertex\; &= -q^6 \;\threevertex\\[5pt]
     \loopvertex\;&=0&
@@ -824,7 +830,7 @@ For $q$ not a primitive $3$rd, $6$th, $7$th, $14$th, $16$th, or $24$th root of u
 
 Note that the complicated relation for simplifying pentagons actually follows from the others as in \cite{MR3624901}.
 
-The usual normalization is $b = \Psi_3(q) \Psi_{8}(q)$ which makes the coefficients of the pentagon relation both $1$ as in \cite{MR1403861} and simplifies the crossing relation.  In \cite{MR3624901} as usual we normalized so that $b=1$.
+The usual normalization is $b = -\Psi_3(q) \Psi_{8}(q)$ which makes the coefficients of the pentagon relation $+1$ and $-1$ (not quite as in \cite{MR1403861}, which contains an error; see \cite[\S 1.1.3]{MR3624901}) and simplifies the crossing relation.  In \cite{MR3624901} we normalized so that $b=1$.
 
 When $q = \pm i$, we have that $(G_2)_{\pm i}$ has a quotient to $SO(3)_{\pm i}$, which is the value corresponding to $OSp(1|2)$.  Recall that in \cite{MR3624901} we always take the non-degenerate quotient, but we do not do so here, so $(G_2)_{\pm i}$ and $SO(3)_{\pm i}$ denote different trivalent ribbon categories. 
 
@@ -843,7 +849,7 @@ $$\braidcross  =  \invbraidcross$$
 \end{align*}
 \end{definition}
 
-The category $S_{d+1}$ is Deligne's interpolated symmetric group category, but instead of the permutation representation as the generator we use the irreducible representation corresponding to the partition $(d,1)$ which is the permutation representation minus the trivial representation.  The endomorphism algebras in this category are called the Quasi-partition algebra in \cite{MR3177889}.  Since this example is not the main thrust of this paper we will delay the details of its trivalent ribbon presentation to a future paper.
+The category $S_{d+1}$ is Deligne's interpolated symmetric group category, but instead of the permutation representation as the generator we use the irreducible representation corresponding to the partition $(d,1)$ which is the permutation representation minus the trivial representation.  The endomorphism algebras in this category are called the quasi-partition algebras in \cite{MR3177889}.  Since this example is not the main thrust of this paper we will delay the details of its trivalent ribbon presentation to a future paper.
 
 \begin{warning}
 When $d=-1$ our $S_0$ does not agree with Deligne's $S_0$, because in our category the permutation breaks up as a direct sum of the standard and the trivial, whereas for Deligne's the permutation will be a nontrivial extension of the trivial and the standard.  This is closely analogous to what happens for $SO(3)_q$ at $q=\pm i$.  Again we will address this further in a later paper.
@@ -1153,13 +1159,13 @@ We apply the tetrahedral symmetry to the relation to get:
 $$-s^{-1} \drawH + s^{-1} \drawcrossX -\frac{b}{d-1} \left(\; \braidcross - s^{-2} \twostrandid \; \right) = 0$$
 $$s^{-2} \drawcrossX + s^{-1} \drawI -\frac{b}{d-1} \left(\; \cupcap -s^{-2} \braidcross \; \right) = 0.$$
 
-Multiply the first equation by $-s^{-1}$ and then add to the second relation to make the $\drawcrossX$ terms vanish.
+Multiply the first equation by $-s^{-1}$ and then add to the second relation to make the $\raisebox{0.8mm}{\scalebox{0.5}{\drawcrossX}}$ terms vanish. We obtain
 
 $$s^{-1} \drawI + s^{-2} \drawH - \frac{b}{d-1} \left(\cupcap -s^{-2} \braidcross -s^{-1}\braidcross + s^{-3}\braidcross  \right).$$
 
-Unless $s$ is $-1$, this says that $\scalebox{0.5}{\braidcross}$ simplifies.  So we split into two cases.
+Unless $s$ is $-1$, this says that $\raisebox{0.8mm}{\scalebox{0.5}{\braidcross}}$ simplifies.  So we split into two cases.
 
-If $\scalebox{0.5}{\braidcross}$ simplifies, then we need only solve for all braidings for
+If $\raisebox{0.8mm}{\scalebox{0.5}{\braidcross}}$ simplifies, then we need only solve for all braidings for
 $SO(3)_q$, which yields only the usual braiding or when $d=2$ the
 additional braiding giving $\Rep(S_3)$ (see \cite[Example 8.6]{MR3624901}).
 
@@ -1260,14 +1266,14 @@ $-1$, $w^2$, and $\frac{v^2}{w^2}$, where $w$ is given by
 Equation~\eqref{eq:change-variables}.
 \end{lemma}
 \begin{proof}
-First note that $\displaystyle\frac{1}{d} \cupcap$ and $\displaystyle\frac{1}{b} \drawI$ are projections
+First note that $\frac{1}{d} \raisebox{0.8mm}{\scalebox{0.5}{\cupcap}}$ and $\frac{1}{b} \raisebox{0.8mm}{\scalebox{0.5}{\drawI}}$ are projections
 and are eigenvectors for the crossing with eigenvalues $v^{12}$ and
 $-v^{-6}$, respectively. We expect three more eigenvalues.
 To find them, we look at the action of the crossing
 on the image of the projection
 $$\pi = \;\twostrandid\; -\frac{1}{d}\;\cupcap\; -\frac{1}{b}\;\drawI\;.$$
 Start with QECrossing and multiply by a crossing, then use QEJacobi to remove
-the $\drawcrossX$ term, and QECrossing to remove the $\drawH$ term.  Multiply
+the $\raisebox{0.8mm}{\scalebox{0.5}{\drawcrossX}}$ term, and QECrossing to remove the $\raisebox{0.8mm}{\scalebox{0.5}{\drawH}}$ term.  Multiply
 again by the crossing and then by $\pi$ to get a cubic equation in the
 crossing acting on the image of $\pi$.  By Lemma \ref{lem:lin-ind-w}, the
 crossing does not satisfy a quadratic equation, so this cubic polynomial is
@@ -1277,18 +1283,18 @@ $w^2$, and $\frac{v^2}{w^2}$.
 \end{proof}
 
 \begin{remark}
-Recall that the following operators commute:
-$$\braidcross,\quad\drawH.$$
+Recall that the operators $\raisebox{0.8mm}{\scalebox{0.5}{\braidcross}}$ and 
+$\raisebox{0.8mm}{\scalebox{0.5}{\drawH}}$ commute.
 Thus the eigenvectors for the former (which all have multiplicity $1$
 generically) must also be eigenvectors for the latter.  The eigenvalues are
-$(v^{12}, b)$, $(-v^{-6},t)$, $(-1, [\lambda][\lambda-1])$, $(w^2,
-\frac{[\lambda][\lambda+2]}{[1]})$, and $(\frac{v^2}{w^2},
--\frac{[\lambda-1][\lambda-3]}{[1]})$.
+$$\left(v^{12}, b\right), \left(-v^{-6},t\right), \left(-1, [\lambda][\lambda-1]\right), \left(w^2,
+\frac{[\lambda][\lambda+2]}{[1]}\right), \text{ and } \left(\frac{v^2}{w^2},
+-\frac{[\lambda-1][\lambda-3]}{[1]}\right).$$
 
 There is a nice argument that the above eigenvalues are the only possible
 ones.  Namely, suppose $v$ is an eigenvector in the image of $\pi$
 with eigenvalues $(\beta, \gamma)$. Multiply $v$ by QEJacobi and reduce
-using the know eigenvalues. We find:
+using the known eigenvalues. We find:
 $$v^{-3} \beta \gamma -v^{-1} \gamma + \alpha \beta + \alpha v^{-4} = 0.$$
 Similarly, multiplying by QECrossing we find:
 $$\beta-\beta^{-1} - \frac{\Psi_1 \Psi_3^2 \Psi_2 \Psi_4}{b+[3]\alpha} \gamma - \frac{\Psi_1^2 \Psi_3 \Psi_2 \Psi_4 \alpha}{b+[3]\alpha} = 0.$$
@@ -1316,10 +1322,10 @@ edges.
 
 Let $\mathsf{TriTrangle}$ be the category of framed, unoriented, trivalent
 graph tangles. \nn{Maybe this definition should be earlier.} Then, for ring
-$R$ containing~$\QQ$ and $d,b \in R$, $Z$ is a functor from
+$R$ containing~$\QQ$ and $d,b \in R$, we have a functor $Z$ from
 $\mathsf{TriTangle}$ to $\mathsf{Jac}_{R[[h]],d,b}$. The variable $h$
 is used to keep track of
-the grading. $Z$ is usually defined as a functor from the category of
+the grading. The functor $Z$ is usually defined as a functor from the category of
 parenthesized (non-associative) tangles; to define it as a functor from our
 category, where the objects are just integers, for each~$n \ge 3$, pick
 arbitrarily a parenthesization of $n$ objects and apply the usual functor.
@@ -1350,7 +1356,7 @@ $\CC(\lambda)((h))$.
   \mathsf{Exc}^D_{R[[h]],d,b}
 \]
 
-By hypothesis, the $k$-box space of $\mathsf{Except}((h))$ for $k \le 4$
+By hypothesis, the $k$-box spaces of $\mathsf{Except}((h))$ for $k \le 4$
 have the required dimensions for a ribbon trivalent category. By
 property~\eqref{item:Kontsevich-perturb} of~$Z$,
 $\mathsf{Except}((h))$
@@ -1359,8 +1365,8 @@ trivalent vertex.
 Furthermore, Equation~\eqref{eq:Kontsevich-crossing} shows that
  that
 \begin{align*}
-  \Qeval\biggl(\;\twist\;\biggr) &= e^{hb/2}\eval\biggl(\;\drawcup\;\biggr)\\
-  \Qeval\biggl(\;\twistvertex\;\biggr) &= e^{hb/4}\eval\biggl(\;\threevertex\;\biggr)
+  \Qeval\biggl(\twist\;\biggr) &= e^{hb/2}\eval\biggl(\;\drawcup\;\biggr)\\
+  \Qeval\biggl(\! \twistvertex\;\biggr) &= e^{hb/4}\eval\biggl(\threevertex\biggr)
 \end{align*}
 Comparison with Equation~\eqref{eq:simple-rels-spec} shows that we
 should choose $v = e^{hb/24} \in R((h))$. Then by Theorem~\ref{thm:Jacobi}, the
@@ -1451,6 +1457,8 @@ inequivalent rotations.
 
 \DPTtodo{The graphs look good, but the lines should be thicker at this
 size}
+\SMtodo{unfortunately it's going to be a hassle (an hour's work at least?) to change
+the line size, as I've lost a key file}
 We define `braided' bases, which use crossings but not squares, as:
 \begin{align*}
 \cB^{\text{braided}}_0 & = \cB^{\text{planar}}_0 = \left\{ \diagram
@@ -2553,7 +2561,7 @@ Since $v$ is not a $10$th root of unity $\alpha$ is non-zero.  Also $b+[3]\alpha
 QESquare becomes:
 $$\symcross+\frac{\sqrt{-3}}{2\alpha} \left(\drawI + \drawH \right) -\frac{1}{2} \left(\twostrandid + \cupcap \right) = 0.$$
 
-After rescaling the trivalent vertex, this becomes precisely the Hurwitz relation (or classical $G_2$ relation) of \cite{}.  The main result of that paper is that either $d = 7$ and $\cC$ is classical $G_2$ or $d=3$ and $\cC$ is $SO(3)$.
+After rescaling the trivalent vertex, this becomes precisely the Hurwitz relation (or classical $G_2$ relation) of \cite{1011.6197}.  The main result of that paper is that either $d = 7$ and $\cC$ is classical $G_2$ or $d=3$ and $\cC$ is $SO(3)$.
 \end{proof}
 
 \subsection{The case \texorpdfstring{$v$}{v} is a primitive fourth root of unity}
@@ -2562,7 +2570,7 @@ Since $v$ is not a $10$th root of unity $\alpha$ is nonzero.  We have that $d+2 
 We need to split into two cases based on whether $b+[3]\alpha = 0$.  
 
 \begin{proposition}
-If $b+[3]\alpha \neq 0$ then $\cC$ satisfies the relations of the classical F4 relation.  In particular the non-degenerate quotient of $\cC$ must be one of LIST.
+If $b+[3]\alpha \neq 0$ then $\cC$ satisfies the relations of the classical F4 relation.  In particular the non-degenerate quotient of $\cC$ must be one of \nn{LIST}.
 \end{proposition}
 \begin{proof}
 If $b+[3]\alpha \neq 0$, then QECrossing says the crossing is symmetric.   QEJacobi becomes
@@ -2576,16 +2584,16 @@ We exclude the $\Rep(S_3)$ case because it satisfies $b+[3]\alpha = 0$.
 Since we do not know whether the classical F4 relation is sufficient for evaluating all closed diagrams, we do not know whether there are any additional degenerate $\cC$ whose non-degenerate quotient is one of the above categories.
 
 If $b+[3]\alpha = 0$, then $\alpha = -\frac{bi}{2}$ and $d = 2$.  QEJacobi becomes
-$$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \right).$$
+$$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \;\right).$$
 QESquare becomes
-$$\fourgon = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right).$$
+$$\fourgon = -\frac{1}{2} \left(\drawI + \drawH \;\right) + \frac{1}{2} \left(\;\twostrandid + \cupcap \;\right).$$
 
 \begin{lemma}
 The following diagrams are negligible in $\cC$:
 \begin{itemize}
-\item $$\braidcross + \invbraidcross - 2 \left(\drawI + \drawH \right)$$
+\item $$\braidcross + \invbraidcross - 2 \left(\drawI + \drawH \;\right)$$
 \item $$\braidcross - \invbraidcross$$
-\item $$\left(\drawI - \drawH - \twostrandid + \cupcap\right).$$
+\item $$\left(\drawI - \drawH - \twostrandid + \cupcap\;\right).$$
 \end{itemize}
 \end{lemma}
 \begin{proof}
@@ -2604,8 +2612,8 @@ If $\cC$ is non-degenerate then it must be $\mathsf{Rep}(S_3)$.
 \begin{corollary}
 Either
 \begin{itemize}
-\item $$\braidcross + \invbraidcross = 2 \left(\drawI + \drawH \right).$$
-\item $$\braidcross - \invbraidcross = x \left(\drawI - \drawH - \twostrandid + \cupcap\right).$$
+\item $$\braidcross + \invbraidcross = 2 \left(\drawI + \drawH \;\right).$$
+\item $$\braidcross - \invbraidcross = x \left(\drawI - \drawH - \twostrandid + \cupcap\;\right).$$
 \end{itemize}
 \end{corollary}
 
@@ -2619,9 +2627,9 @@ ribbon categories, but they're equivalent as pivotal categories.
 
 \begin{conjecture}
 Trivalent ribbon graphs modulo $d=2$ and the following relations:
-$$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \right)$$
-$$\fourgon = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right)$$
-$$\braidcross + \invbraidcross = 2 \left(\drawI + \drawH \right)$$
+$$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \;\right)$$
+$$\fourgon = -\frac{1}{2} \left(\drawI + \drawH \;\right) + \frac{1}{2} \left(\twostrandid + \cupcap\;\right)$$
+$$\braidcross + \invbraidcross = 2 \left(\drawI + \drawH \;\right)$$
 gives a category $\cG$ with finite dimensional Hom-spaces and $\dim \cG_k = 1,0,1,1,5$ for $k = 0,1,2,3,4$.  
 \end{conjecture}
 
