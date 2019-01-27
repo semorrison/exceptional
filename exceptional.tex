@@ -655,6 +655,7 @@ We see that $\partial_\alpha w^2 = 0$ exactly if $v$ is a $12$th root of
 unity, so away from these points the change of variables is invertible, given
 by
 $$\alpha =  -\frac{b[\lambda][\lambda-1]}{\{\lambda+2\}\{\lambda-3\}\Psi_1\Psi_3}.$$
+Note that there are four values of $w$ for each value of $\alpha$.
 %% see code2/ChangeOfVariables.nb and code2/ChangeOfVariables2.nb for these calculations
 
 Finally, we observe that upon setting $b =
@@ -1223,7 +1224,7 @@ make the formulas simpler) is
 \begin{align*}
 \frac
 {
-d^5 v^8 [2][3]^2[6] (d-(v^{6}+1+v^{-6}))^2 (d + \{8\})) (d-p_{G_2}(\zeta_3 v)) (d-p_{G_2}(\zeta_3^2 v))
+d^5 v^8 [2][3]^2[6] (d-(v^{6}+1+v^{-6}))^2 (d + \{8\})) (d-P_{G_2}(\zeta_3 v)) (d-P_{G_2}(\zeta_3^2 v))
 }
 {
 [1]^{2}(d + \{4\})^{2}
@@ -1236,16 +1237,24 @@ that $v$ is a $10$th root of unity.
 \end{proof}
 
 \begin{remark}
+Note that in the cases $d = v^6+1+v^{-6}$, $d=P_{G_2}(\zeta_3 q)$, and 
+$d=P_{G_2}(\zeta_3^2 q)$ there are trivalent ribbon categories where the
+above diagrams are linearly independent.  Namely, $SO(3)_{v^3}$ satisfies
+the quantum exceptional relation with $d = v^6+1+v^{-6}$, while 
+$(G_2)_{\zeta_3 q}$
+
 Note that $d = v^6+1+v^{-6}$ corresponds to $SO(3)_{v^3}$, $d=P_{G_2}(\zeta_3 q)$ 
 corresponds to $(G_2)_{q}$, and $d=P_{G_2}(\zeta_3^2 q)$ corresponds to
 $(G_2)_{q^{-1}}$.  In these examples, the above five diagrams are linearly
 dependent.  \NStodo{Check $\zeta$ vs. $\zeta^2$}
 \end{remark}
 
+%$(G_2)_q$ satisfies two instances of the QEJacobi relation, $\alpha = b \frac{1-\zeta q^2}{-\zeta^2 q}$ and $v = \zeta q$ for $\zeta$ a primitive cube root of unity.
+
+
 
 \begin{lemma}\label{lem:eigenvalues-twist}
-If $v$ is not a $10$th or $12$th root of unity \nn{and the square root
-exists}, then the crossing acts
+If $v$ is not a $10$th or $12$th root of unity, then the crossing acts
 diagonalizably on the $4$-box space with eigenvalues $v^{12}$, $-v^{-6}$,
 $-1$, $w^2$, and $\frac{v^2}{w^2}$, where $w$ is given by
 Equation~\eqref{eq:change-variables}.
