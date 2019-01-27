@@ -51,8 +51,8 @@
 %\keywords{}
 
 \maketitle
-
-\tableofcontents
+{ \hypersetup{linkcolor=black}
+  \tableofcontents }
 
 \section{Introduction}
 \label{sec:introduction}
@@ -704,7 +704,8 @@ from the braid group actions on these $5$- and $6$-boundary point diagrams.
 
 Using this, we give a divide-and-conquer algorithm for computing for the
 conjectural quantum exception invariant of all links of Conway width 6.
-\nn{Perhaps mention, if they make the cut, knotted trivalent graphs}
+This includes all prime knots and nearly all prime links of at most 12 crossings,
+and many non-algebraic examples.
 
 Note that unconditionally, these 2-variable knot polynomials must specialize
 at particular values of $w$ to give the quantum invariants of the adjoint
@@ -713,7 +714,7 @@ first calculations of the quantum knot polynomials of non-torus knots for the
 adjoint representations of any of the exceptional Lie algebras, and they are
 much more efficient than doing the calculations directly in $U_q(\mathfrak{g})$.
 (For torus knots these calculations can be done using the Rosso--Jones formula
-\cite{MR1209320}, see \cite{1510.05884}.)
+\cite{MR1209320}, see \cite{MR3491191}.)
 
 Using our skein relations, we also compute the quantum versions of Cohen--De
 Man's formulas for the dimensions of the objects appearing in the third tensor
