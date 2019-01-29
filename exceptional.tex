@@ -392,9 +392,9 @@ appear in this paper.
   \Psi_4 & = \{2\} = v^2 + v^{-2}\\
   \Psi_5 & = \frac{[5]}{[1]} = v^4 + v^2 + 1 + v^{-2} + v^{-4}&
   \Psi_6 & = \frac{[6][1]}{[3][2]} = v^2 - 1 + v^{-2}\\
-  \Psi_7 & = v^6 + v^4 + v^2 + 1 + v^{-2} + v^{-4} + v^{-6} &
-  \Psi_8 & = v^4 + v^{-4} \\
-  \Psi_{12} & = v^4 + 1 + v^{-4} &&
+  \Psi_7 & = \frac{[7]}{[1]} = v^6 + v^4 + v^2 + 1 + v^{-2} + v^{-4} + v^{-6} &
+  \Psi_8 & = \frac{[8]}{[4]} = v^4 + v^{-4} \\
+  \Psi_{12} & = \frac{[6]}{[2]} = v^4 + 1 + v^{-4} &&
 \end{align*}
 
 
@@ -402,7 +402,7 @@ appear in this paper.
 \label{sec:intro-quantum}
 We now turn to our main conjectures.  Our first goal is to give a definition
 of a tensor category $\mathsf{QExc}$ which looks like a quantum deformation of
-$\mathsf{Exc}$, in particular we need skein relations which deform the Jacobi
+$\mathsf{Exc}$. In particular we need skein relations which deform the Jacobi
 relation, the classical exceptional relation, and the symmetric relation
 between the overcrossing and undercrossing.  Our specific choices of relations
 will be motivated below by our main theorems.
@@ -416,7 +416,7 @@ of $n$ points on a line, and whose morphisms spaces from $n$ to $m$ consist of
 $R$-linear combinations of planar graphs in a rectangle with $n$ boundary
 points on the bottom, $m$ boundary points at the top, and consisting of
 trivalent vertices and $4$-valent braided crossings modulo planar isotopy, the
-usual Reidemeister 2 and 3 relations for a symmetric crossing, and the
+usual Reidemeister 2 and 3 relations for a crossing, and the
 following circle, lollipop, bigon, triangle, quantum anti-symmetry, and
 quantum Killing symmetry relations.
 
@@ -693,6 +693,7 @@ quantum consistency over a suitable power series ring.
     h/4}$ as formal Laurent series.
 \end{theorem}
 
+This is proved in \S \ref{sec:classical-quantum}.
 
 \subsection{Calculations}
 Assuming our main conjectures, we calculate some properties of
@@ -705,12 +706,12 @@ $16$-dimensional representation of the $5$-strand affine braid group, and an
 $80$-dimensional representation of the $6$-strand affine braid group, obtained
 from the braid group actions on these $5$- and $6$-boundary point diagrams.
 
-Using this, we give a divide-and-conquer algorithm for computing for the
+Using this, we give a divide-and-conquer algorithm for computing the
 conjectural quantum exception invariant of all links of Conway width 6.
-This includes all prime knots and nearly all prime links of at most 12 crossings,
-and many non-algebraic examples.
+This includes all prime knots of at most 12 crossings, and nearly all prime links of at most 12 crossings,
+including many non-algebraic examples.
 
-Note that unconditionally, these 2-variable knot polynomials must specialize
+Note that, unconditionally, these 2-variable knot polynomials must specialize
 at particular values of $w$ to give the quantum invariants of the adjoint
 representations of the actual Lie algebras.  To our knowledge these are the
 first calculations of the quantum knot polynomials of non-torus knots for the
@@ -786,11 +787,11 @@ $$\braidcross  =  q^{-2} \twostrandid + (q^2 - 1) \cupcap - \frac{(q^2+q^{-2})}{
 \end{align*}
 \end{definition}
 
-As usual we can choose any non-zero value of $b$ without changing the category.  Also sending $q \mapsto -q$ doesn't change the category.  Sending $q \mapsto q^{-1}$ doesn't change the underlying pivotal category but does change the braiding.  The standard normalization of $b$ coming from thinking of $SO(3)_q$ as coming from the second Jones-Wenzl projection is $b = \frac{q^2+q^{-2}}{q+q^{-1}}$, in \cite{MR3624901} we normalize so that $b=1$.
+As usual we can choose any non-zero value of $b$ without changing the category.  Also sending $q \mapsto -q$ doesn't change the category.  Sending $q \mapsto q^{-1}$ doesn't change the underlying pivotal category but does change the braiding.  The standard normalization of $b$ coming from thinking of $SO(3)_q$ as coming from the second Jones-Wenzl projection is $b = \frac{q^2+q^{-2}}{q+q^{-1}}$. In \cite{MR3624901} we normalize so that $b=1$.
 
 When $q=\pm i$ this category comes from $OSp(1|2)$ instead of $SO(3)$, see \cite{MR3624901} for more details.
 
-Note that here we have not semisimplified, so when $q$ is a root of unity this category will be degenerate.  For all but a few small roots of unity it will agree with the category of tilting modules for quantum $SO(3)$ defined algebraically.
+Note that here we have not semisimplified, so when $q$ is a root of unity this category will be degenerate.  For all but a few small roots of unity it will agree with the category of tilting modules for quantum $SO(3)$ defined algebraically. \cite{???}
 
 \begin{definition}
 When $q$ is a primitive $5$th or $10$th root of unity then $SO(3)_q$ has an additional quotient called the golden category with the extra relation:
@@ -2633,9 +2634,9 @@ spanning sets.
 
 \begin{conjecture}
 Trivalent ribbon graphs modulo $d=2$ and the following relations:
-$$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \right)$$
-$$\fourgon = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right)$$
-$$\braidcross - \invbraidcross = \frac{2}{\sqrt{-3}} \left(\drawI - \drawH - \twostrandid + \cupcap\right).$$
+$$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \;\right)$$
+$$\fourgon = -\frac{1}{2} \left(\drawI + \drawH \;\right) + \frac{1}{2} \left(\twostrandid + \cupcap\;\right)$$
+$$\braidcross - \invbraidcross = \frac{2}{\sqrt{-3}} \left(\drawI - \drawH - \twostrandid + \cupcap\;\right).$$
 
 gives a non-trivial category $\cH$ with $\dim \cH_k = 1,0,1,1,5$ for $k = 0,1,2,3,4$.  
 \end{conjecture}
@@ -2647,8 +2648,8 @@ to simplify diagrams down to the appropriate spanning sets.
 
 \begin{conjecture}
 Trivalent ribbon graphs modulo $d=2$ and the following relations:
-$$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \right)$$
-$$\fourgon = -\frac{1}{2} \left(\drawI + \drawH \right) + \frac{1}{2} \left(\twostrandid + \cupcap\right)$$
+$$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \;\right)$$
+$$\fourgon = -\frac{1}{2} \left(\drawI + \drawH \;\right) + \frac{1}{2} \left(\twostrandid + \cupcap\;\right)$$
 $$\braidcross - \invbraidcross = 0.$$
 
 gives a non-trivial category $\cF$ with $\dim \cF_k = 1,0,1,1,5$ for $k = 0,1,2,3,4$.
