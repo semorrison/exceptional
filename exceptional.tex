@@ -394,8 +394,9 @@ appear in this paper.
   \Psi_6 & = \frac{[6][1]}{[3][2]} = v^2 - 1 + v^{-2}\\
   \Psi_7 & = v^6 + v^4 + v^2 + 1 + v^{-2} + v^{-4} + v^{-6} &
   \Psi_8 & = v^4 + v^{-4} \\
-  \Psi_{12} & = v^4 + 1 + v^{-4} & \Psi_{24} & = v^4 - 1 + v^{-4}
+  \Psi_{12} & = v^4 - 1 + v^{-4} & &
 \end{align*}
+\NStodo{Fixed a typo in $\Psi_{12}$.}
 
 
 \subsection{Quantum exceptional conjectures}
@@ -795,11 +796,10 @@ Note that here we have not semisimplified, so when $q$ is a root of unity this c
 
 \begin{definition}
 When $q$ is a primitive $5$th or $10$th root of unity then $SO(3)_q$ has an additional quotient called the golden category with the extra relation:
-$$\drawI = \twostrandid -\frac{1}{q^2+1+q^{-2}} \cupcap.$$
+$$\drawI = b \twostrandid - b \frac{1}{q^2+1+q^{-2}} \cupcap.$$
 
 Here $\unknot = q^2+1+q^{-2}$ is $\frac{1\pm \sqrt{5}}{2}$.
 \end{definition}
-
 
 \begin{definition}
 For $q$ not a primitive $3$rd, $6$th, $7$th, $14$th, $16$th, or $24$th root of unity, let $(G_2)_q$ be the trivalent ribbon category defined by the following relations.
@@ -2387,32 +2387,36 @@ We will also say that the QEJacobi relation holds with $\alpha=\infty$ if
 Each of the following lemmas is proved the same way.  We compute the value of the trivalent twist which gives the value of $-v^6$.  This leaves three options (up to sign) for $v$.  Then we take a relation $X$ between the six diagrams and compute $X+v^{4} R(X)+ v^{-4}R^2(X)$ to get QEJacobi relations. 
 
 \begin{lemma}
-$SO(3)_q$ satisfies three instances of the QEJacobi relation with $\alpha = -b \frac{\Psi_1}{\Psi_{24}} $ for $v$ a cube root of $q$.  Under the change of variables we see that this value of $\alpha$ corresponds to $w = \pm v^4$ or $w = \pm v^{-3}$.
+$SO(3)_q$ satisfies three instances of the QEJacobi relation with $\alpha = -b \frac{\Psi_1(v)}{\Psi_{12}(v)} $ for $v$ a cube root of $q$.  Under the change of variables we see that this value of $\alpha$ corresponds to $w = \pm v^4$ or $w = \pm v^{-3}$.
 \end{lemma}
 
 \begin{lemma}
-The golden category satisfies four instances of the QEJacobi relation:
- \begin{itemize}
- \item $\alpha=\infty$ and $v = e^{\frac{2 \pi i}{5}}$
-  \item $\alpha = b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right)$ and $v = e^{\frac{2 \pi i}{5}}$
- \item $\alpha = b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right)$ and $v = e^{3 \frac{2 \pi i}{10}}$
- \item $\alpha = b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right)$ and $v = e^{7 \frac{2 \pi i}{10}}$ 
- \end{itemize}
+The golden categories are quotients of $SO(3)_q$ at $q$ a fifth or tenth root of unity.  In addition to the three relations in the previous lemma there's an additional relation $\alpha=\infty$ and $v = q^{\frac{1}{2}}$ (any choice square root gives the same relation).
+%I don't think these are quite right
+% \begin{itemize}
+% \item $\alpha=\infty$ and $v = e^{\frac{2 \pi i}{5}}$
+%  \item $\alpha = b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right)$ and $v = e^{\frac{2 \pi i}{5}}$
+% \item $\alpha = b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right)$ and $v = e^{3 \frac{2 \pi i}{10}}$
+% \item $\alpha = b\left(1-\frac{v^{-3}}{v^{12}-v^{-12}}\right)$ and $v = e^{7 \frac{2 \pi i}{10}}$ 
+%\end{itemize}
  \end{lemma}
+ \begin{proof}
+Plug the golden category formula for the $I$-diagram into the $SO(3)_q$ braiding relation to get a formula for the crossing in terms of the Temperley-Lieb diagrams.
+ \end{proof}
 
 \begin{lemma}
 $(G_2)_q$ satisfies two instances of the QEJacobi relation, $\alpha = b \frac{1-\zeta q^2}{-\zeta^2 q}$ and $v = \zeta q$ for $\zeta$ a primitive cube root of unity.  This value of $\alpha$ corresponds to $w = \pm q^{-1} = \pm \zeta v^{-1}$ or $w = \pm \zeta q^2 = \pm \zeta^2 v^2$.
 \end{lemma}
 
 \begin{lemma}
-$S_{d+1}$ satisfies two instances of the QEJacobi relation $\alpha = v \frac{b}{d-1}$ for $v$ a primitive $12$th root of unity.
+$S_{d+1}$ satisfies two instances of the QEJacobi relation $\alpha = -v^3 \frac{b}{d-1}$ for $v$ a primitive $12$th root of unity.
 \end{lemma}
 
 \begin{lemma}
 $\Rep(S_3)$ satisfies three instances of the QEJacobi relation
 \begin{itemize}
-\item $v = e^{\frac{2 \pi i}{12}}$ and $\alpha = i b$
-\item $v = e^{\frac{-2 \pi i}{12}}$ and $\alpha = -i b$
+\item $v = e^{\frac{2 \pi i}{12}}$ and $\alpha = -i b$
+\item $v = e^{\frac{-2 \pi i}{12}}$ and $\alpha = i b$
 \item $v = i$ and $\alpha = -\frac{i}{2} b$.
 \end{itemize}
 \end{lemma}
