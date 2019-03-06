@@ -284,7 +284,7 @@ Classical specialization is proved in Section \ref{sec:special-values} following
 an idea appearing in \cite{1709.01278}.
 
 
-\begin{conjecture}[Classical semisimplicity]
+\begin{conjecture}[Classical semisimplicity]\label{conj:class-semisimple}
 There is a dense open subset $U \subset \mathbb{C}$ so that, for
 $\lambda \in U$, the idempotent
 completion of $\mathsf{Exc}_{\mathbb{C},\lambda}$ is
@@ -296,7 +296,10 @@ needs to invert infinitely many polynomials.  For example, for the idempotent
 completion of $\mathrm{GL}_t$ to be semisimple you need to invert $t-n$ for
 every positive integer $n$.  From the dimension formulas of Cohen--De Man and
 others, we might speculate that for classical semisimplicity it is
-enough to invert $k\lambda-\ell$ for $k, \ell \in \mathbb{Z}$.
+enough to invert $k\lambda-\ell$ for $k, \ell \in \mathbb{Z}$. It
+follows from Conjecture~\ref{conj:class-semisimple} that the
+idempotent completion of the generic category
+$\mathsf{Exc}_{\mathbb{C}(\lambda),\lambda}$ is semisimple.
 
 Deligne's conjecture \cite{MR1378507} is in terms of the existence of
 a suitable category. This was
@@ -311,18 +314,27 @@ Here is a version of the conjecture.
 There exists
   \begin{itemize}
   \item a ring $R$ which is a localization of $\mathbb{Q}[\lambda]$ at finitely many polynomials;
-  \item a \DPTtodo{rigid symmetric monoidal?}category
+  \item a rigid symmetric monoidal category
     $\mathsf{Exc}^D_{R,\lambda}$ where the objects are
-    integers and morphism spaces are finitely-generated $R$-modules; and
-  \item a braided functor $\eval$ from $\mathsf{Exc}_{R,\lambda}$ to $\mathsf{Exc}^D_{R,\lambda}$, that is the identity on objects and surjective on morphisms and sends the trivalent vertex to the generator of the $3$-boundary point space.
+    integers and morphism spaces are finitely-generated
+    $R$-modules; and
+  \item a symmetric monoidal functor $\eval$ from
+    $\mathsf{Exc}_{R,\lambda}$ to $\mathsf{Exc}^D_{R,\lambda}$, that
+    is the identity on objects and surjective on morphisms and sends
+    the trivalent vertex to the generator of the $3$-boundary point
+    space.
+    \DPTtodo{This is assuming the 3-bdy point space is rank 1}
   \end{itemize}
 For any map $\varphi\colon R \rightarrow S$ we can define a base
 extension $\mathsf{Exc}^D_{S,\varphi(\lambda)} =
-\mathsf{Exc}^D_{R,\lambda} \otimes_\varphi S$.  Furthermore $\mathsf{Exc}^D$ has the following properties.
+\mathsf{Exc}^D_{R,\lambda} \otimes_\varphi S$.  Furthermore
+$\mathsf{Exc}^D$ has the following properties for an open dense subset
+$U \subset \mathbb{C}$.
 \begin{itemize}
-\item The idempotent completion of $\mathsf{Exc}^D_{\mathbb{C}(\lambda),\lambda}$ is semisimple.
-\item $\mathsf{Exc}^D_{\mathbb{C}(\lambda),\lambda}(n,m)$ has dimension $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
-for $n+m=0,1,2,3,4,5,6$, respectively.
+\item The idempotent completion of
+  $\mathsf{Exc}^D_{\mathbb{C},\lambda}$ is semisimple for $\lambda \in U$.
+\item $\mathsf{Exc}^D_{\mathbb{C},\lambda}(n,m)$ has dimension $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
+for $\lambda \in U$ and $n+m=0,1,2,3,4,5,6$, respectively.
 \item If $\lambda$ is one of the special values in
   Table~\ref{tab:lambda-group}, then the idempotent completion of the
   quotient of
@@ -332,12 +344,16 @@ for $n+m=0,1,2,3,4,5,6$, respectively.
 \end{itemize}
 \end{conjecture}
 
-Conjecture~\ref{conj:Deligne} is formally independent of
-Conjectures~\ref{conj:class-suffic} and~\ref{conj:class-consist}. (For
-instance, the earlier conjectures do not guarantee a map from
-$\mathsf{Exc}_{R,\lambda}(0,0)$ to $R$.) Nevertheless it should be
+Conjecture~\ref{conj:Deligne} follows from
+Conjectures~\ref{conj:class-suffic}, \ref{conj:class-consist},
+and~\ref{conj:class-semisimple} (using
+Proposition~\ref{prop:quant-spec}).
+Conjecture~\ref{conj:Deligne} should be
 viewed as closer to Conjecture~\ref{conj:class-consist}, since it
-doesn't say anything about the kernel of $\eval$.
+doesn't say anything about the kernel of $\eval$;
+Conjecture~\ref{conj:class-suffic} says that the classical exceptional
+relation is the only skein relation needed to define
+$\mathsf{Exc}^D_{R,\lambda}$.
 
 \begin{remark}
   We have learned that Vogel has computational evidence against
@@ -349,13 +365,16 @@ doesn't say anything about the kernel of $\eval$.
 
 \subsection{Laurent polynomial conventions}
 
-\DPTtodo{These can't be ``main results''}
-The main results of this paper are quantum versions of the sufficiency and
-consistency conjectures.   Before stating these conjecture we fix some
+The bulk of this paper deals with quantum versions of the sufficiency and
+consistency conjectures.   Before stating these conjectures we fix some
 notation for certain Laurent polynomials appearing in our formulas.  On the
 one hand, we would like to use formulas that are irreducible as Laurent
 polynomials in $v$ and $w$, so that we can easily read off from formulas which
-primes need to be inverted.  On the other hand the Laurent polynomials that
+primes need to be inverted.%
+\footnote{We avoid the letter $q$, because the relation of our
+  parameters to the quantum group parameters is not obvious; see
+  Section XXX.}
+On the other hand the Laurent polynomials that
 occur in our formulas are often even or odd under $v \rightarrow v^{-1}, w
 \rightarrow w^{-1}$, so we would also like our formulas to have this symmetry.
 So we often combine two irreducible factors into a single expression.  For
@@ -556,9 +575,6 @@ between the parameters $q$ and $v$ which is somewhat subtle.
 We expect that quantum specialization this will also be true at roots of unity, 
 perhaps excluding some small roots of unity and some parities.
 
-\DPTtodo{Make another conjecture parallel to Deligne's conjecture,
-  since this is what classical $\Rightarrow$ quantum actually shows}
-
 \begin{conjecture}[Quantum semisimplicity]
 There is a dense open subset $U \subset \mathbb{C}^2$ for which the idempotent
 completion of $\mathsf{QExc}_{\mathbb{C},v,w}$, for $(v,w) \in U$, is
@@ -697,12 +713,45 @@ the quantum conjectures from Section~\ref{sec:intro-quantum} are
 related, but there are not formal implications. From the point of view
 of the quantum conjectures, the classical case $v=1$ is in any case
 one of the excluded polynomials for any of our concrete results. There
-is an implication the other direction: classical consistency implies
-quantum consistency over a suitable power series ring.
+is an implication the other direction: Conjecture~\ref{conj:Deligne}
+implies a corresponding quantum conjecture.
+
+\begin{conjecture}[Quantum version of Deligne's conjecture]\label{conj:quant-Deligne}
+There exists
+  \begin{itemize}
+  \item a ring $R$ satisfying the hypotheses of Definition~\ref{def:qexc};
+  \item a trivalent ribbon category
+    $\mathsf{QExc}^D_{R,v,w}$ where the objects are
+    integers and morphism spaces are finitely-generated
+    $R$-modules; and
+  \item a ribbon functor $\mathrm{Qeval}$ from
+    $\mathsf{QExc}_{R,v,w}$ to $\mathsf{QExc}^D_{R,v,w}$, that
+    is the identity on objects, surjective on morphisms, and sends
+    the trivalent vertex to the trivalent vertex.
+  \end{itemize}
+As before, we can extend the base. Furthermore
+$\mathsf{QExc}^D$ has the following properties.
+\begin{itemize}
+\item The idempotent completion of
+  $\mathsf{QExc}^D_{\mathbb{C},v,w}$ is semisimple for \dots
+  \DPTtodo{Need to modify this, don't have a map to $\mathbb{C}$}
+\item $\mathsf{QExc}^D_{\mathbb{C},v,w}(n,m)$ has dimension $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
+for \dots and $n+m=0,1,2,3,4,5,6$, respectively.
+\item If $\lambda$ is one of the special values in
+  Table~\ref{tab:lambda-group}\DPTtodo{EDIT}, then the idempotent
+  completion of the
+  quotient of
+  $\mathsf{Exc}^D_{\mathbb{C},\lambda}$ by negligible elements is
+  equivalent to the category of representations of the corresponding
+  supergroup.
+\end{itemize}
+\end{conjecture}
+
+
 \begin{theorem}\label{thm:classical-quantum}
-  If Conjecture~\ref{conj:class-consist} is true
+  If Conjecture~\ref{conj:Deligne} is true
   for $\mathsf{Exc}_{R,\lambda}$, then
-  Conjecture~\ref{conj:quant-consist} is true for
+  Conjecture~\ref{conj:quant-Deligne} is true for
   $\mathsf{QExc}_{R((h)),v,w}$ for $v=e^{h/4}$ and $w=e^{\lambda
     h/4}$ as formal Laurent series.
 \end{theorem}
@@ -773,6 +822,7 @@ If $\mathfrak{g}$ is a complex semisimple Lie algebra, let $U_s(\mathfrak{g})$
 denote the Drinfel'd-Jimbo quantum group, and let $\Rep{U_s(\mathfrak{g})}$
 denote its ribbon category of representations.
 
+\DPTtodo{We have a different $s$ in Lemma~\ref{lem:constants}}
 We follow the conventions from \cite{MR2286123}.  See \cite[p. 2]{MR2286123}
 for a comprehensive summary of how his conventions line up with those in other
 sources. (In particular, our $q$ is the same as both Sawin's $q$ and Lusztig's
@@ -892,7 +942,7 @@ trivalent ribbon tangle may be interpreted as a morphism in $\cC$.
 
 \begin{lemma} \label{lem:constants}
   For some numbers $d, b, t, s \in \mathbb{C}$ we have the following relations.
-  \DPTtodo{Does $s$ here agree with earlier conventiones?}
+  \DPTtodo{Does $s$ here agree with earlier conventions?}
   \begin{equation}
     \label{eq:simple-rels}
   \begin{aligned}
@@ -1319,8 +1369,6 @@ Solving these equations for $\beta$ and $\gamma$ give the list of possible eigen
 
 \section{From the classical to the quantum conjecture}
 \label{sec:classical-quantum}
-\DPTtodo{This is all written in terms of evaluation functors, which
-  are not at all the way the conjectures are written}
 This section is devoted to a proof of
 Theorem~\ref{thm:classical-quantum}. Let $\eval$ be the functor from
 $\mathsf{Jac}_{R,d,b}$ to $\mathsf{Exc}^D_{R,\lambda}$ given by hypothesis.
