@@ -320,9 +320,9 @@ There exists
   \item a symmetric monoidal functor $\eval$ from
     $\mathsf{Exc}_{R,\lambda}$ to $\mathsf{Exc}^D_{R,\lambda}$, that
     is the identity on objects and surjective on morphisms.  
-    \NStodo{Removed a sentence that Dylan objected to about the image of the trivalent vertex,
-    which follows from the below bullet points.}
   \end{itemize}
+   \NStodo{Removed a sentence that Dylan objected to about the image of the trivalent vertex,
+    which follows from the below bullet points.}
 For any map $\varphi\colon R \rightarrow S$ we can define a base
 extension $\mathsf{Exc}^D_{S,\varphi(\lambda)} =
 \mathsf{Exc}^D_{R,\lambda} \otimes_\varphi S$.  Furthermore
@@ -922,7 +922,7 @@ $S_{3}$ has a further quotient $\mathrm{Rep}(S_3)$ with the extra relation:
 $$\symcross = \frac{1}{b}\drawI + \frac{1}{b}\drawH.$$
 \end{definition}
 
-Note that as a pivotal category $\mathrm{Rep}(S_3)$ agrees with the semisimplification of $SO(3)_q$ for $q$ a primitive $12$th root of unity, but the ribbon structures are different (the former is symmetric while the latter is not).  See Lemma \nn{add reference once it exists}.
+Note that as a pivotal category $\mathrm{Rep}(S_3)$ agrees with the semisimplification of $SO(3)_q$ for $q$ a primitive $12$th root of unity, but the ribbon structures are different (the former is symmetric while the latter is not).  See \nn{add reference to trivalent paper}.
 
 
 
@@ -940,14 +940,14 @@ $X$ as an unoriented strand, $\tau$ as a trivalent vertex, and then any
 trivalent ribbon tangle may be interpreted as a morphism in $\cC$.
 
 \begin{lemma} \label{lem:constants}
-  For some numbers $d, b, t, s \in \mathbb{C}$ we have the following relations.
-  \DPTtodo{Does $s$ here agree with earlier conventions?}
+  For some numbers $b, d, t, u \in \mathbb{C}$ we have the following relations.
+  \DPTtodo{Changed $s$ to $u$ to not conflict with notation used elsewhere.}
   \begin{equation}
     \label{eq:simple-rels}
   \begin{aligned}
     \unknot\; &= d&\qquad
-      \twist\; &= s^2\;\drawcup&\qquad
-        \twistvertex\; &= -s\;\threevertex\\[5pt]
+      \twist\; &= u^2\;\drawcup&\qquad
+        \twistvertex\; &= -u\;\threevertex\\[5pt]
     \loopvertex\;&=0&
       \twogon\;&= b\;\onestrandid&
         \threegon\; &= t\;\threevertex
@@ -967,7 +967,7 @@ constant for the twisted vertex.  This follows, as in
 
 \begin{proposition}\label{prop:Jacobi}
 If $\dim \cC_4 \leq 5$, then for some $\beta, \alpha \in \bbC$ and some choice
-of~$v \in \bbC$ with $v^6 = s$, we have
+of~$v \in \bbC$ with $v^6 = u$, we have
 
 \begin{equation}
 \beta \left[\; v^{-3} \;
@@ -1510,11 +1510,11 @@ $\mathfrak{f}_4$ do not degenerate up to $\cP_6$:
 \newcommand{\diagram}[2]{\mathfig{#1}{graphs/urn_sha1_#2.pdf}}
 
 In order to write our proposed bases compactly, we introduce the following
-notations: $D_{*k}$ denotes the diagram $D$ along with all $k$ of its
-inequivalent rotations (when $D$ has $n$ boundary points, $k$ divides $n$),
-and $D_{*k \clubsuit}$ denotes the diagram $D$ along with the first $k$ of its
-counterclockwise rotations, even though these do not exhaust all of the
-inequivalent rotations.
+notations.  Let $D_{*k}$ denote the set of all $k$ inequivalent rotations of the diagram $D$, 
+including $D$ itself (when $D$ has $n$ boundary points, $k$ divides $n$).
+Let $D_{*k \clubsuit}$ denote the set of the first $k$ counterclockwise rotations of the
+diagram $D$ (including $D$ itself), even though these do not exhaust all of the
+inequivalent rotations.  In particular, $D_{*1 \clubsuit}$ denotes just the diagram itself.
 
 \DPTtodo{The graphs look good, but the lines should be thicker at this
 size}
@@ -1540,7 +1540,7 @@ We define `braided' bases, which use crossings but not squares, as:
   \diagram{0.1}{e55fafbd03afa4f32c7a584ff8fc14d93149f64e}_{*5},
   \diagram{0.1}{7852166906e0c69e28a717a274dd63ebb2dd14bf}_{*5},
   \diagram{0.1}{25d22603781a5a699a84b26b177c0c228abe0e7a}_{*5},
-  \diagram{0.1}{6c16eee9baf0b996fa06ef435e4f0229abade522}_{*1!}
+  \diagram{0.1}{6c16eee9baf0b996fa06ef435e4f0229abade522}_{*1\clubsuit}
   \right\} \displaybreak[1]\\
 \cB^{\text{braided}}_6 & = \Bigg\{ 
   \diagram{0.1}{a906b4797b1a0522970b8c97cdb5415a37a14d50}_{*2},
@@ -1577,21 +1577,36 @@ diagram, it is because the other rotations are already isotopic (using
 take 4 out of the 6 possible rotations of
 $$\diagram{0.1}{8a27a57e82333b072ffb4d5b78de022da5c0852b}.$$
 
-The following heuristic produces these proposed bases. First pick a partition of the boundary points
-into parts with at least two elements. For each such partition, and for each part with $k$ elements, pick an abstract (unembedded) tree with those
-$k$ points as the leaves, and form the $(k-2)!$ trees (still unembedded) obtained by the symmetric group action on the leaves. \nn{Explain why?} For each such unembedded tree, pick an embedding in the plane, with over- and under-crossings chosen arbitrarily.
+The following heuristic produces these proposed bases.  Consider the classical
+setting where the overcrossing and undercrossing are equal.  Now focus on the case
+of a graph hose underlying graph is a tree with $k$ leaves.  If you fix the last vertex 
+as a root vertex and label the remaining vertices clockwise as $x_1, x_2, \ldots x_{k-1}$, 
+then such a diagram can be interpreted as a bracket formula like $[x_2,[x_1, x_3]]$ in
+the free Lie algebra on $k-1$ letters.  But due to the Jacobi and antisymmetry relation we should expect these
+$(k-1)!$ diagrams to span a space that's smaller than $(k-1)!$ dimensional.  In fact, by 
+\cite{???}\NStodo{find a reference}, they span an $(k-2)!$ dimensional space which has as a basis
+the diagrams obtained by starting with a fixed tree and permuting $k-2$ of the leaves arbitrarily.
+
+More generally for forests pick a partition of the boundary points into parts with 
+at least two elements. For each such partition, and for each part with $k$ elements, 
+pick an abstract (unembedded) tree with those $k$ points as the leaves, and form 
+the $(k-2)!$ trees (still unembedded) obtained by the symmetric group action on the leaves.
+For each such unembedded tree, pick an embedding in the plane which involves as few crossings
+as possible.  Finally in the quantum setting we arbitrarily choose over- and under-crossings arbitrarily.
 
 The first line of the proposed basis $\cB^{\text{braided}}_6$ above comes from the partition $6=2+2+2$,
 the second line from $6=3+3$, the third line from $6=4+2$, and the fourth line from $6=6$.
 (Note that in the first three rows, the `omitted' diagrams marked with $\clubsuit$ are omitted because the additional rotations differ from the included ones just by changing under- and over-crossings, while in the fourth row two diagrams are omitted because we've already reached the expected $(6-2)!$ diagrams.)
 
 Finally, we observe that this procedure only gives 79 elements, and so we throw in the hexagon to get the desired
-count of 80.
+count of 80.  As one can tell from this step, we do not have a general procedure for producing conjectural
+bases (or even the dimensions) when there's more than six boundary diagrams.
 
-The calculations below further allow one to verify that if we add in any of these `omitted' diagrams, the rank of the matrix of pairwise inner products between these diagrams does not increase. (Because we have no argument that the
-inner product is nondegenerate, this observation itself does not lead to new relations.)
+The calculations below further allow one to verify that if we add in any natural small diagram not on this list,
+the rank of the matrix of pairwise inner products between these diagrams does not increase. (Because we 
+have no argument that the inner product is nondegenerate, this observation itself does not lead to new relations.)
 
-We then define the matching `planar' bases:
+We then define corresponding `planar' bases:
 
 \begin{align*}
 \cB^{\text{planar}}_4 & = \left\{ 
@@ -1637,10 +1652,13 @@ One way to understand the relationship between these proposed bases is to observ
 by taking a braided basis diagram, replacing each crossing with a square, and if necessary replacing any adjacent pentagon and square with a single pentagon. We've chosen not to display the diagrams in the order given by this bijection,
 but rather by the apparent planar complexity of the diagrams.
 
-
-
-\nn{We should discuss the pentapent \diagram{0.1}{55f53ebaabfb09b3d4727e4b45c3637b0ed8f84c} and \diagram{0.1}{c44c9c3e568ce2218151df6d19f09681f6a6e4d8} below?}
-
+\begin{remark}
+If you ignore our heuristic which starts with the non-planar basis and instead simply guess an appropriate
+number of relatively simple planar diagrams you can easily wind up with a set which is
+linearly dependent for the $6$-boundary point diagrams.  In particular, if you replace the 
+final five diagrams (involving a hexagon and more than one square)
+with the five diagrams $$\left\{\diagram{0.1}{55f53ebaabfb09b3d4727e4b45c3637b0ed8f84c}_{*3}, \diagram{0.1}{c44c9c3e568ce2218151df6d19f09681f6a6e4d8}_{*2}\right\}$$ then those $80$ diagrams are linearly dependent!
+\end{remark}
 
 \subsection{Linear independence}
 We first check that these bases are linearly independent. 
