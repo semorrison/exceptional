@@ -1764,14 +1764,15 @@ We have to be careful here, as we don't know that $\cB^{\text{braided}}$
 actually spans $\V_n$, or even that the braiding and rotation operators map
 the span of $\cB^{\text{braided}}$ to itself.
 
-The second of these questions is relatively tractable; it would just be a
-matter of applying a braiding or rotation to each element, and showing that it
+Showing the braiding and rotation  preserve the span of $\cB^{\text{braided}}$ 
+is much more tractable than proving our main conjectures; we would only need to
+apply braiding or rotation to each element, and show that it
 is possible to use the relations to rewrite the result as a linear combination
-of elements of $\cB^{\text{braided}}$. We take a slightly different approach,
+of elements of $\cB^{\text{braided}}$.  For practical computational reasons we 
+take a slightly different approach,
 computing via pairings the matrix which \emph{would} be associated to each of the
 operations \emph{if} $\cB^{\text{braided}}$ really were a basis, and then
 verifying that these matrices satisfy the expected properties.
-
 
 Given an operator $T: \V_n \to \V_m$, if the $\cB^{\text{braided}}_n$
 are bases, the associated matrix for $T$ would be $AM_m^{-1}$, where
