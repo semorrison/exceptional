@@ -2447,7 +2447,31 @@ preserving the bracket, so the functor is surjective on morphisms.
 
 \subsection{Specialisations to exceptional Lie algebras}%
 
-\nn{words}
+We begin by proving classical specialization.  This argument is essentially the same as the one in \nn{Etingof-Neshveyev}
+
+\begin{proposition}[Classical specialization]
+If Conjecture \ref{conj:class-suffic} holds and $\lambda$ is one of
+the values on the left of Table~\ref{tab:lambda-group}, then the
+idempotent completion of the quotient of
+$\mathsf{Exc}_{\mathbb{C},\lambda}$ by negligible elements is equivalent
+to the category of representations of the corresponding group on the
+right of Table~\ref{tab:lambda-group}.
+\end{proposition}
+\begin{proof}
+Let $G$ be one of the compact groups in the table and $\lambda$ the corresponding special value.
+$\mathrm{Rep}(G)$ is a symmetric monoidal category and the Killing form shows that the adjoint representation is symmetrically self-dual.   
+Since $\mathfrak{g}$ is a Lie algebra, we have a bracket map of $G$-reps $\mathfrak{g} \otimes \mathfrak{g} \rightarrow \mathfrak{g}$.  Hence we have a monoidal functor from the TriCat \nn{notation} to $\mathrm{Rep}(G)$ sending the strand to the adjoint representation and the trivalent vertex to the bracket. Since $\mathfrak{g}$ is a Lie algebra, the Jacobi and anti-symmetry relations hold.  By results of \nn{add citations} the classical exceptional relation with parameter $\lambda$ holds.  Hence the functor descends to one out of $\mathsf{Exc}_{\mathbb{C},\lambda}$.  %By Conjecture \ref{conj:class-suffic} we have that the unit object in $\mathsf{Exc}_{\mathbb{C},\lambda}$ is simple. 
+By postcomposing with the fiber functor for $\mathrm{Rep}(G)$, we see that $\mathsf{Exc}_{\mathbb{C},\lambda}$ has a fiber functor to vector spaces.  By Tannaka-Krein duality, we see that 
+\end{proof}
+
+
+
+
+
+
+
+
+ 
 
 \begin{center}
 \begin{tabular}{llll}
