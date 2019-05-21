@@ -29,9 +29,9 @@
   (classical) exceptional series is true, then this relation
   holds for a new two-variable quantum exceptional polynomial, at
   least as a power series near $q=1$. The
-  single quantum exceptional relation implies both the
+  single quantum exceptional relation implies both a deformation of the
   Jacobi relation (true for every Lie algebra) and
-  the Vogel relation holding for the exceptional series.
+ a deformation of the Vogel relation holding for the exceptional series.
 
   We find a conjectural basis for the space of diagrams with $n$ loose
   ends modulo the quantum exceptional relation for $n \le 7$, with
@@ -225,9 +225,10 @@ diagram to give an element of $R$ will give the same element of $R$.
 \end{conjecture}
 
 \begin{remark}
-  It is possible that classical consistency
+  It is possible that classical sufficiency and consistency
   \DPTtodo{Not sufficiency?}
-  holds even without inverting any polynomials
+  \NStodo{Added sufficiency.}
+  hold even without inverting any polynomials
 except for $\lambda$ and $1-\lambda$.  A natural weaker speculation is that one need
 only invert elements of the form $r+s\lambda$ for integers $r$ and $s$.
 \end{remark}
@@ -306,9 +307,7 @@ a suitable category. This was
 improved by Cohen--De Man \cite{MR1714606} who incorporated the
 Cvitanović--Vogel exceptional
 relation. They would give a construction of an exceptional series passing
-through each of the exceptional Lie algebras.\DPTtodo{Not sure what
-  this last sentence is doing}
-Here is a version of the conjecture.
+through each of the exceptional Lie algebras.
 
 \begin{conjecture}[Deligne's conjecture]\label{conj:Deligne}
 There exists
@@ -320,10 +319,9 @@ There exists
     $R$-modules; and
   \item a symmetric monoidal functor $\eval$ from
     $\mathsf{Exc}_{R,\lambda}$ to $\mathsf{Exc}^D_{R,\lambda}$, that
-    is the identity on objects and surjective on morphisms and sends
-    the trivalent vertex to the generator of the $3$-boundary point
-    space.
-    \DPTtodo{This is assuming the 3-bdy point space is rank 1}
+    is the identity on objects and surjective on morphisms.  
+    \NStodo{Removed a sentence that Dylan objected to about the image of the trivalent vertex,
+    which follows from the below bullet points.}
   \end{itemize}
 For any map $\varphi\colon R \rightarrow S$ we can define a base
 extension $\mathsf{Exc}^D_{S,\varphi(\lambda)} =
@@ -730,21 +728,22 @@ There exists
     the trivalent vertex to the trivalent vertex.
   \end{itemize}
 As before, we can extend the base. Furthermore
-$\mathsf{QExc}^D$ has the following properties.
+$\mathsf{QExc}^D$ has the following properties for an open subset
+$U \subset \mathbb{C}^2$
 \begin{itemize}
 \item The idempotent completion of
-  $\mathsf{QExc}^D_{\mathbb{C},v,w}$ is semisimple for \dots
-  \DPTtodo{Need to modify this, don't have a map to $\mathbb{C}$}
+  $\mathsf{QExc}^D_{\mathbb{C},v,w}$ is semisimple for $(v,w) \in U$
 \item $\mathsf{QExc}^D_{\mathbb{C},v,w}(n,m)$ has dimension $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
-for \dots and $n+m=0,1,2,3,4,5,6$, respectively.
+for $(v,w) \in U$ and $n+m=0,1,2,3,4,5,6$, respectively.
 \item If $\lambda$ is one of the special values in
-  Table~\ref{tab:lambda-group}\DPTtodo{EDIT}, then the idempotent
+  Table~\ref{tab:lambda-group} and $(v,w=v^\lambda \in U$, then the idempotent
   completion of the
   quotient of
   $\mathsf{Exc}^D_{\mathbb{C},\lambda}$ by negligible elements is
   equivalent to the category of representations of the corresponding
   supergroup.
 \end{itemize}
+\NStodo{Dylan left a few todos here, which I think I have to-done.}
 \end{conjecture}
 
 
