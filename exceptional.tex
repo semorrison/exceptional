@@ -259,27 +259,32 @@ right of Table~\ref{tab:lambda-group}.
 \end{proposition}
 
 \begin{table}
-  \begin{tabular}{rl}
+  \begin{tabular}{clc}
     \toprule
-    $\lambda$ & Supergroup \\ \midrule
-    $-5$ & Trivial group \\
-    $-4$ & $\mathrm{OSP}(1|2)$ \\
-    $-3$ & $\mathrm{PSL}(2)$ \\
-    $-2$ & $\mathrm{PSL}(3) \rtimes \ZZ/2$ \\
-    $-3/2$ & $G_2$ \\
-    $-1$ & $\mathrm{PSO}(8) \rtimes S_3$ \\
-    $-2/3$ & $F_4$ \\
-    $-1/2$ & $E_6 \rtimes \ZZ_2$ \\
-    $-1/3$ & $E_7$ \\
-    $-1/5$ & $E_8$ \\
+    $\lambda$ & Supergroup & v \\ \midrule
+    $-5$ & Trivial group & \\
+    $-4$ & $\mathrm{OSP}(1|2)$ & \\
+    $-3$ & $\mathrm{PSL}(2)$ & $q^{\frac{1}{3}}$\\
+    $-2$ & $\mathrm{PSL}(3) \rtimes \ZZ/2$ & $q^{\frac{1}{2}}$ \\
+    $-3/2$ & $G_2$ & $q^2$ \\
+    $-1$ & $\mathrm{PSO}(8) \rtimes S_3$ & $q$ \\
+    $-2/3$ & $F_4$ & $q^3$ \\
+    $-1/2$ & $E_6 \rtimes \ZZ_2$ & $q^2$\\
+    $-1/3$ & $E_7$ & $q^3$\\
+    $-1/5$ & $E_8$ & $q^5$\\
     \bottomrule
   \end{tabular}
   \caption{Values of $\lambda$ and the supergroup with related category
     representations. In each case, take the Lie group
     with trivial center, semidirect product with its group of outer
-    automorphisms.}
+    automorphisms.  The last column gives the relationship between our
+    parameter $v$ and the usual quantum group parameter $q$, note $v = q^{-\frac{L}{\lambda}}$
+    (see Section \ref{sec:QGConventions} for quantum group conventions).}
   \label{tab:lambda-group}
 \end{table}
+\NStodo{Fill in the missing two rows.  Decide whether to move the last column 
+to a different table.  Work out what to say about conventions for quantum supergroups
+which aren't in Sawin.}
 
 Classical specialization is proved in Section \ref{sec:special-values} following
 an idea appearing in \cite{1709.01278}.
@@ -741,10 +746,9 @@ for $(v,w) \in U$ and $n+m=0,1,2,3,4,5,6$, respectively.
   quotient of
   $\mathsf{Exc}^D_{\mathbb{C},\lambda}$ by negligible elements is
   equivalent to the category of representations of the corresponding
-  quantum supergroup at an appropriate value of $q$ \nn{add reference to table once it's there}.
+  quantum supergroup.
 \end{itemize}
-\NStodo{Dylan left a few todos here, which I think I have to-done, except the note at the end.  
-That table has to come later because it depends on our quantum group conventions.}
+\NStodo{Dylan left a few todos here, which I think I have to-done}
 \end{conjecture}
 
 
@@ -817,6 +821,7 @@ into planar forests.
 
 
 \subsection{Quantum group conventions}
+\label{sec:QGConventions}
 
 If $\mathfrak{g}$ is a complex semisimple Lie algebra, let $U_s(\mathfrak{g})$
 denote the Drinfel'd-Jimbo quantum group, and let $\Rep{U_s(\mathfrak{g})}$
@@ -851,11 +856,11 @@ then this gives a group of braided autoequivalence of the corresponding
 ribbon tensor category, and hence we can take the equivariantization by this
 action to get a new braided tensor category.  We will again abuse notation
 by referring to this as the quantum analogue of the corresponding semidirect
-product group.  For example $(PSU(3) \rtimes \mathbb{Z}/2\mathbb{Z})_q$ denotes the
+product group.  For example $(PSL(3) \rtimes \mathbb{Z}/2\mathbb{Z})_q$ denotes the
 equivariantization of the category of the subcategory  of representations of $U_q(\mathbb{su}_2$
 which are supported on the root lattice by the group of Dynkin diagram automorphisms of $A_2$.
 This category deforms the category of representations of  the compact group 
-$PSU(3) \rtimes \mathbb{Z}/2\mathbb{Z}$.
+$PSL(3) \rtimes \mathbb{Z}/2\mathbb{Z}$.
 
 \subsection{Some braided trivalent categories}
 
