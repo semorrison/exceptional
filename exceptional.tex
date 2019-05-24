@@ -859,10 +859,15 @@ which are supported on the root lattice by the group of Dynkin diagram automorph
 This category deforms the category of representations of  the compact group 
 $PSL(3) \rtimes \mathbb{Z}/2\mathbb{Z}$.
 
+The only quantum supergroup which we will need to understand in detail is the quantum analogue of $OSP(1|2)$.
+Instead of introducing general conventions for quantum supergroups, we will use the close relationship between
+quantum $OSp(1|2)$ and quantum $SO(3)$ to deal with the former in an ad hoc manner, see the next subsection.
+
 \subsection{Some braided trivalent categories}
 
 In this section we recall the definitions and fix conventions for some braided tensor categories.
 
+\subsubsection{$SO(3)_q$}
 \begin{definition}
 When $q$ is not a primitive $8$th root of unity, $SO(3)_q$ be the trivalent ribbon category given by the following relations.
 
@@ -880,9 +885,20 @@ $$\braidcross  =  q^{-2} \twostrandid + (q^2 - 1) \cupcap - \frac{(q^2+q^{-2})}{
 
 As usual we can choose any non-zero value of $b$ without changing the category.  Also sending $q \mapsto -q$ doesn't change the category.  Sending $q \mapsto q^{-1}$ doesn't change the underlying pivotal category but does change the braiding.  The standard normalization of $b$ coming from thinking of $SO(3)_q$ as coming from the second Jones-Wenzl projection is $b = \frac{q^2+q^{-2}}{q+q^{-1}}$. In \cite{MR3624901} we normalize so that $b=1$.
 
-When $q=\pm i$ this category comes from $OSp(1|2)$ instead of $SO(3)$, see \cite{MR3624901} for more details.
-
 Note that here we have not semisimplified, so when $q$ is a root of unity this category will be degenerate.  For all but a few small roots of unity it will agree with the category of tilting modules for quantum $SO(3)$ defined algebraically. \cite{???}
+
+
+\subsubsection{$OSp(1|2)$}
+When $q=\pm i$ the diagrammatic category defined in the previous subsection above comes from $OSp(1|2)$ instead of $SO(3)$, see \cite{MR3624901}.  We want to explain this correspondence in more detail to clarify conventions and to explain the relationship between the quantized versions of $OSp(1|2)$ and $SO(3)$. 
+
+The Lie algebra $\mathfrak{osp}(1|2)$ consists of supermatrices $X \in \mathfrak{gl}(1|2)$ which satisfy $X^T J + J X =0$ under the superbracket $[x,y] = xy - (-1)^{|x||y|} yx$, where 
+$$J = \begin{pmatrix} 1 &  &  \\  & 0 & -1 \\  & 1 & 0 \end{pmatrix}$$ and $T$ denotes the super transpose
+$$\begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{pmatrix}^T = \begin{pmatrix} a_{11} & -a_{21} & -a_{31} \\ a_{12} & a_{22} & a_{32} \\ a_{13} & a_{23} & a_{33} \end{pmatrix}.$$
+
+Explicit generators are given by:
+$$Q_3 = \begin{pmatrix} 0 &  &  \\  & 1 &  \\  &  & -1 \end{pmatrix}, \space{.2in} Q_+ = \begin{pmatrix}  &  &  \\  &  &  1 \\  &  &  \end{pmatrix}, \space{.2in}  Q_- = \begin{pmatrix}  &  &  \\  &  &   \\  &  1 &  \end{pmatrix}, \space{.2in} V_+ = \begin{pmatrix}  &  & 1 \\ -1 &  &   \\  &  &  \end{pmatrix}, \space{.2in}  V_- = \begin{pmatrix}  & 1 & \\  &  &   \\ 1 &  &  \end{pmatrix}.$$
+
+The defining relations that these generators satisfy under the supercommutator are: $[Q_3, Q_\pm] = \pm 2 Q_\pm$, $[Q_3, V_\pm] = \pm V_\pm$, $[Q_+, Q_-] = Q_3$, $[V_+, V_-] = -Q_3$.
 
 \begin{definition}
 When $q$ is a primitive $5$th or $10$th root of unity then $SO(3)_q$ has an additional quotient called the golden category with the extra relation:
