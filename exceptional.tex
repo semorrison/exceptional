@@ -943,22 +943,29 @@ $$\Omega = \begin{pmatrix} 0 & 0 & 1 \\ 0 & 1 & 0 \\ -1 & 0 & 0 \end{pmatrix}$$
 An explicit basis of root vectors is given by:
 $$H = \begin{pmatrix} 1 & \hspace{.1in}& \hspace{.1in} \\   & 0 &  \\  &  & -1 \end{pmatrix},\,
 E_+ = \frac{1}{2} \begin{pmatrix} \hspace{.1in} & 1 & \hspace{.1in} \\   &  & 1 \\  &  &  \end{pmatrix}, \,
-E_- = \frac{1}{2} \begin{pmatrix} \hspace{.1in} & \hspace{.1in} & \hspace{.1in} \\ -1  &  &  \\  & 1 &  \end{pmatrix}, \,
+E_- = \frac{1}{2} \begin{pmatrix} \hspace{.1in} & \hspace{.1in} & \hspace{.1in} \\ 1  &  &  \\  & -1 &  \end{pmatrix}, \,
 J_+ = \begin{pmatrix} \hspace{.1in} & \hspace{.1in} & 1 \\   &  &  \\  & &  \end{pmatrix}, \,
-J_- = \begin{pmatrix} \hspace{.1in} & \hspace{.1in} & \hspace{.1in} \\   &  &  \\ -1 & &  \end{pmatrix}.
+J_- = \begin{pmatrix} \hspace{.1in} & \hspace{.1in} & \hspace{.1in} \\   &  &  \\ 1 & &  \end{pmatrix}.
 $$
 
-Here $H, J_+, J_-$ are even and $E_+, E_-$ are odd.  The defining relations that these generators satisfy under the supercommutator are: 
-$$[H, E_\pm] = \pm E_\pm, \hspace{.2in} [H, J_\pm] = \pm 2 J_\pm, \hspace{.2in}, [J_\pm, E_\pm] = 0, \hspace{.2in} [J_+,J_-] = H, \hspace{.2in} [E_\pm,E_\pm] = \pm \frac{1}{2} J_\pm, \hspace{.2in} [J_\pm, E_\mp] = E_\pm, \hspace{.2in} [E_+,E_-] = -\frac{1}{4} H.$$
+Here $H, J_+, J_-$ are even and $E_+, E_-$ are odd.  The elements $E_\pm$ are the simple roots, while $J_\pm$ are the root vectors for twice the simple roots.  We have chosen the normalizations to agree with the usual Chevalley-Serre conventions on $H, E_\pm$, and also to satisfy $[J_+,J_-]=H$.  The defining relations that these generators satisfy under the supercommutator are: 
+\begin{multline*}[H, E_\pm] = \pm E_\pm, \hspace{.2in} [H, J_\pm] = \pm 2 J_\pm, \hspace{.2in} 
+[J_\pm, E_\pm] = 0, \hspace{.2in} [J_+,J_-] = H, \hspace{.2in} [E_+,E_-] = H, \\ [E_\pm,E_\pm] = \pm 2 J_\pm, \hspace{.2in} [J_\pm, E_\mp] = -E_\pm.\end{multline*}
 
+Note that this Lie superalgebra is generated just by $H, E_+, E_-$ without any need for $J_+$ and $J_-$, furthermore using only the relations between $H, E_+, E_-$ gives a presentation of the Lie superalgebra.
 
-
-Every finite dimensional representation of $\mathfrak{osp}(1|2)$ is semisimple and the irreducible representations are $V_\lambda^\pm$ which have a highest weight vector of weight a non-negative integer $\lambda$ (i.e. $H w = \lambda w$) and parity $\pm$.  Note that $V_\lambda^\pm$ has graded dimension $(\lambda+1 | \lambda)$ in the positive case and $(\lambda | \lambda+1)$ in the negative case.  The tensor product rules are the usual $\mathfrak{sl}_2$ rules $W_\lambda^\sigma \otimes W_\mu^\tau =  \bigoplus_{i=|\lambda-\mu}^{\lambda+\mu} W_i^{{-1}^i \sigma \tau}$.
+Every finite dimensional representation of $\mathfrak{osp}(1|2)$ is semisimple and the irreducible representations are $V_\lambda^\pm$ which have a highest weight vector of weight a non-negative integer $\lambda$ (i.e. $H w = \lambda w$) and parity $\pm$.  Half-integer weights are inconsistent with the superbracket between $E_+$ and $E_-$.  Note that $V_\lambda^\pm$ has graded dimension $(\lambda+1 | \lambda)$ in the positive case and $(\lambda | \lambda+1)$ in the negative case.  The tensor product rules are $W_\lambda^\sigma \otimes W_\mu^\tau =  \bigoplus_{i=|\lambda-\mu}^{\lambda+\mu} W_i^{{-1}^i \sigma \tau}$.
 
 In particular, the defining representation $X = W_1^-$ has graded dimension $(1|2)$ and thus super dimension $-1$, and satisfies
 $$X \otimes X \cong 1 \oplus X \oplus W_2^+.$$  In particular, it is a trivalent category with $\dim \Hom(X^{\otimes 2}, X^{\otimes 2}) = 3$. and so must have a skein theory which is $SO(3)_q$ as defined in the previous section for some $q$, and it is easy to see from the dimension that $q = \pm i$.
 
+By \cite{MR2849718,MR3000482} the category of representations of a Lie supergroup can be equivalently described as the category  of super Harish-Chandra pairs, and this is explained for the special case of $OSp$ and $SOSp$ in \cite[\S 7.1]{MR3633307}.  One typically studies a pair $G$ a supergroup and $\varepsilon$ a fixed involution whose conjugation map is the parity automorphism, and denotes $\mathrm{Rep}(G,\varepsilon)$ the category of representations where $\varepsilon$ acts by the parity map.  In particular, $OSp(1|2)$ consists of representations of $\mathbb{osp}(1|2)$ together with a lift to $O(1)\times Sp(2)$ while $SOSp(1|2)$ consists of representations of $\mathbb{osp}(1|2)$ together with a lift to $SO(1)\times Sp(2)$.  We fix $\varepsilon$ to be the diagonal matrix with $1,-1,1$ along the diagonal.  The corresponding category  of representations of $SOSp(1|2)$ is exactly the representations of $\mathbb{osp}(1|2)$ which appear in the tensor powers of the vector representation, while representations of $OSp(1|2)$ are have an additional parity coming from the $O(1) = \mathbb{Z}/2\mathbb{Z}$ which is required to be congruent modulo 2 to the highest weight.  In particular, the invariant spaces for the vector representation $\Hom(V^{\otimes a}, V^{\otimes b}$ for $OSp(1|2)$ vanish unless $a \equiv b \mod 2$ but there's no such restriction for $SOSp(1|2)$.   In particular, $SOSp(1|2)$ is a trivalent category, while $OSp(1|2)$ is a quotient of a BMW category.
 
+We now fix conventions for the quantum version of $\mathbb{osp}(1|2)$.  The $h$-adic version is generated by $H, E_\pm$, with $E_\pm$ odd, subject to the relations $[H,E_\pm] = \pm E_\pm$ and $[E_+,E_-] = \frac{e^{hH}-q^{-hH}}{e^h-e^{-h}}$.  This is a Hopf superalgebra with $\Delta(H) = H \otimes 1 + 1 \otimes H$, $\Delta(E_+) = e^{hH} \otimes E_+ + 1\otimes E_+$, and $\Delta(E_-) = E_-\otimes 1 - e^{-hH} \otimes E_-$.  This has a universal $R$-matrix given by the formula:
+
+
+
+Namely it has generators $K, E_\pm$ (again $E_\pm$ are fermionic) which satisfy the relations $K E_\pm K^{-1} = q E_\pm$, $E_+ E_- +  E_- E_+ = \frac{K-K^{-1}}{q-q^{-1}}$.  This has a Hopf superalgebra structure
 
 
 \subsection{Golden categories}
