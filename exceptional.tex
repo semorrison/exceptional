@@ -263,7 +263,7 @@ right of Table~\ref{tab:lambda-group}.
     \toprule
     $\lambda$ & Supergroup  \\ \midrule
     $-5$ & Trivial group \\
-    $-4$ & $\mathrm{OSP}(1|2)$ \\
+    $-4$ & $\mathrm{SOSp}(1|2)$ \\
     $-3$ & $\mathrm{PSL}(2)$ \\
     $-2$ & $\mathrm{PSL}(3) \rtimes \ZZ/2$ \\
     $-3/2$ & $G_2$  \\
@@ -859,13 +859,46 @@ which are supported on the root lattice by the group of Dynkin diagram automorph
 This category deforms the category of representations of  the compact group 
 $PSL(3) \rtimes \mathbb{Z}/2\mathbb{Z}$.
 
-The only quantum supergroup which we will need to understand in detail is the quantum analogue of $OSP(1|2)$.
-Instead of introducing general conventions for quantum supergroups, we will use the close relationship between
-quantum $OSp(1|2)$ and quantum $SO(3)$ to deal with the former in an ad hoc manner, see the next subsection.
+\begin{remark}
+The main source of different $q$ conventions in the literature is that there's
+variables $q_i$ for each simple root $\alpha_i$ where the formula for $q_i$
+depends on the length of $\alpha_i$.  Our choice of $q$ corresponds to 
+$q = q_{\mathrm{short}}$, so that $q_{\mathrm{long}} = q_{\mathrm{short}}^D = q^D$.
+It is also common to pick $q_{\mathrm{long}}$ as $q$.   The former convention is natural
+if you normalize the inner product on the root space so that short roots have length $2$, while the latter
+convention is natural if you normalize the inner product on the root spaces so that long roots have length $2$.
+Similarly, if you're studying a family like $\mathbb{so}(2n+1)$, if you uniformly choose $q$ to be $q_{\mathrm{long}}$, 
+then $q_n = \sqrt{q}$ and if you specialize to $\mathbb{so}(3)$ you'll end up with a choice of $q$ which is neither
+$q_{\mathrm{short}}$ nor $q_{\mathrm{long}}$ (which are equal because there's only one root).
+
+In addition to the conventions for $q$, 
+there are many slight variants one can give for the generators and relations, but these typically
+do not change the category of representations at generic $q$ at all because they just correspond to rescaling the
+choices of $E_i$ and $F_i$ either by scalars or by powers of $K$ and so generate the same algebra $h$-adically.
+Because of this rescaling freedom it can sometimes be difficult to work out what $q$ conventions are being used,
+because the $[E_i,F_i] = \frac{K_i-K_i^{-1}}{q_i-q_i^{-1}}$ relation changes under rescaling $E_i$ which allows
+you to change the denominator on the righthand side.  However, if you look at the Serre relation normalized
+so that the leading coefficient is one, then the coefficient of the next term is $-[1-a_{ij}]_{q_i}$, which does not change
+under rescaling of $E_i$ and so will tell you what conventions are being used.  For example, in \cite{MR1188811}
+the generators and relations for quantum $\mathfrak{so}_{2n+1}$ given use a non-standard normalization of the
+final $E_n$, but by looking at the Serre relations we see that $[2]_{q_i} = q+q^{-1}$  for 
+$i < n$ but $[3]_{q_n} = q+1+q^{-1}$ so they've chosen $q=q_i=q_{\mathrm{long}}$ and $q_n = q_{\mathrm{long}} = q^{\frac{1}{2}} = q^{\frac{1}{D}}$, so Zhang's $q$ is our $q^2$.
+\end{remark}
+
+We use similar conventions for quantum enveloping algebras attached to simple basic Lie superalgebras.  See \cite{MR1266383,MR1892766}, but note that their $q$ is $q_{\mathrm{long}}$ because of the normalization of the inner product.  
+Note that in general the quantum enveloping algebras depend not just on the Lie superalgebra but on the choice of simple roots.
+For a collection of conventions for simple basic Lie superalgebras see \cite{MR1773773}.  Again, as in the classical case, by the 
+quantum analogue of a Lie supergroup, we will mean the appropriate equivariantization of the appropriate subcategory
+of representations of the quantized enveloping algebra.  For example, $SOSp(m|2n)_q$ denotes the subcategory of vector representations of $U_q(\mathfrak{so}(m|2n))$, while $OSp(m|2n)_q$ is a $\mathbb{Z}/2\mathbb{Z}$-equivariantization of this category.
+
+In fact, thee only quantum supergroup which we will need to understand in detail is $SOSp(1|2)_q$.
+In the next subsection, we will explain how this relates to $SO(3)_q$, and so understanding the general conventions for
+quantum supergroups will not be important for this paper.  (Warning: in \cite{MR3624901} we denoted this category $OSp(1|2)_q$,
+but this was a poor choice of notation which is not compatible with how we denote categories attached to groups.)
+
 
 \subsection{Some braided trivalent categories}
-
-In this section we recall the definitions and fix conventions for some braided tensor categories.
+In this section, we recall the definitions and fix conventions for some braided tensor categories.
 
 \subsubsection{$SO(3)_q$}
 \begin{definition}
@@ -888,17 +921,47 @@ As usual we can choose any non-zero value of $b$ without changing the category. 
 Note that here we have not semisimplified, so when $q$ is a root of unity this category will be degenerate.  For all but a few small roots of unity it will agree with the category of tilting modules for quantum $SO(3)$ defined algebraically. \cite{???}
 
 
-\subsubsection{$OSp(1|2)$}
-When $q=\pm i$ the diagrammatic category defined in the previous subsection above comes from $OSp(1|2)$ instead of $SO(3)$, see \cite{MR3624901}.  We want to explain this correspondence in more detail to clarify conventions and to explain the relationship between the quantized versions of $OSp(1|2)$ and $SO(3)$. 
+\subsubsection{$SOSp(1|2)$}
+When $q=\pm i$ the diagrammatic category defined in the previous subsection above comes from the supergroup $SOSp(1|2)$ instead of $SO(3)$, see \cite{MR3624901}.  We want to explain this correspondence in more detail to clarify conventions and to explain the relationship between the quantized versions of $SOSp(1|2)_t$ and $SO(3)_q$.
 
-The Lie algebra $\mathfrak{osp}(1|2)$ consists of supermatrices $X \in \mathfrak{gl}(1|2)$ which satisfy $X^T J + J X =0$ under the superbracket $[x,y] = xy - (-1)^{|x||y|} yx$, where 
-$$J = \begin{pmatrix} 1 &  &  \\  & 0 & -1 \\  & 1 & 0 \end{pmatrix}$$ and $T$ denotes the super transpose
-$$\begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{pmatrix}^T = \begin{pmatrix} a_{11} & -a_{21} & -a_{31} \\ a_{12} & a_{22} & a_{32} \\ a_{13} & a_{23} & a_{33} \end{pmatrix}.$$
+We order the three vectors of a $(1|2)$ super vector spaces so that they go odd, even, odd.  With this ordering, the super transpose on $\mathfrak{gl}(1|2)$ is given by:
+$$\begin{pmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{pmatrix}^{st} = 
+\begin{pmatrix}
+a_{11} & a_{21} & a_{31} \\
+-a_{12} & a_{22} & -a_{32} \\
+a_{31} & a_{23} & a_{33} 
+\end{pmatrix}
+$$
 
-Explicit generators are given by:
-$$Q_3 = \begin{pmatrix} 0 &  &  \\  & 1 &  \\  &  & -1 \end{pmatrix}, \space{.2in} Q_+ = \begin{pmatrix}  &  &  \\  &  &  1 \\  &  &  \end{pmatrix}, \space{.2in}  Q_- = \begin{pmatrix}  &  &  \\  &  &   \\  &  1 &  \end{pmatrix}, \space{.2in} V_+ = \begin{pmatrix}  &  & 1 \\ -1 &  &   \\  &  &  \end{pmatrix}, \space{.2in}  V_- = \begin{pmatrix}  & 1 & \\  &  &   \\ 1 &  &  \end{pmatrix}.$$
+The Lie algebra $\mathfrak{osp}(1|2)$ consists of supermatrices $X \in \mathfrak{gl}(1|2)$ which satisfy $X^{st} \Omega + \Omega X =0$ under the superbracket $[x,y] = xy - (-1)^{|x||y|} yx$, where 
+$$\Omega = \begin{pmatrix} 0 & 0 & 1 \\ 0 & 1 & 0 \\ -1 & 0 & 0 \end{pmatrix}$$
 
-The defining relations that these generators satisfy under the supercommutator are: $[Q_3, Q_\pm] = \pm 2 Q_\pm$, $[Q_3, V_\pm] = \pm V_\pm$, $[Q_+, Q_-] = Q_3$, $[V_+, V_-] = -Q_3$.
+An explicit basis of root vectors is given by:
+$$H = \begin{pmatrix} 1 & \hspace{.1in}& \hspace{.1in} \\   & 0 &  \\  &  & -1 \end{pmatrix},\,
+E_+ = \frac{1}{2} \begin{pmatrix} \hspace{.1in} & 1 & \hspace{.1in} \\   &  & 1 \\  &  &  \end{pmatrix}, \,
+E_- = \frac{1}{2} \begin{pmatrix} \hspace{.1in} & \hspace{.1in} & \hspace{.1in} \\ -1  &  &  \\  & 1 &  \end{pmatrix}, \,
+J_+ = \begin{pmatrix} \hspace{.1in} & \hspace{.1in} & 1 \\   &  &  \\  & &  \end{pmatrix}, \,
+J_- = \begin{pmatrix} \hspace{.1in} & \hspace{.1in} & \hspace{.1in} \\   &  &  \\ -1 & &  \end{pmatrix}.
+$$
+
+Here $H, J_+, J_-$ are even and $E_+, E_-$ are odd.  The defining relations that these generators satisfy under the supercommutator are: 
+$$[H, E_\pm] = \pm E_\pm, \hspace{.2in} [H, J_\pm] = \pm 2 J_\pm, \hspace{.2in}, [J_\pm, E_\pm] = 0, \hspace{.2in} [J_+,J_-] = H, \hspace{.2in} [E_\pm,E_\pm] = \pm \frac{1}{2} J_\pm, \hspace{.2in} [J_\pm, E_\mp] = E_\pm, \hspace{.2in} [E_+,E_-] = -\frac{1}{4} H.$$
+
+
+
+Every finite dimensional representation of $\mathfrak{osp}(1|2)$ is semisimple and the irreducible representations are $V_\lambda^\pm$ which have a highest weight vector of weight a non-negative integer $\lambda$ (i.e. $H w = \lambda w$) and parity $\pm$.  Note that $V_\lambda^\pm$ has graded dimension $(\lambda+1 | \lambda)$ in the positive case and $(\lambda | \lambda+1)$ in the negative case.  The tensor product rules are the usual $\mathfrak{sl}_2$ rules $W_\lambda^\sigma \otimes W_\mu^\tau =  \bigoplus_{i=|\lambda-\mu}^{\lambda+\mu} W_i^{{-1}^i \sigma \tau}$.
+
+In particular, the defining representation $X = W_1^-$ has graded dimension $(1|2)$ and thus super dimension $-1$, and satisfies
+$$X \otimes X \cong 1 \oplus X \oplus W_2^+.$$  In particular, it is a trivalent category with $\dim \Hom(X^{\otimes 2}, X^{\otimes 2}) = 3$. and so must have a skein theory which is $SO(3)_q$ as defined in the previous section for some $q$, and it is easy to see from the dimension that $q = \pm i$.
+
+
+
+
+\subsection{Golden categories}
 
 \begin{definition}
 When $q$ is a primitive $5$th or $10$th root of unity then $SO(3)_q$ has an additional quotient called the golden category with the extra relation:
