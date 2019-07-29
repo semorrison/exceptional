@@ -226,8 +226,6 @@ diagram to give an element of $R$ will give the same element of $R$.
 
 \begin{remark}
   It is possible that classical sufficiency and consistency
-  \DPTtodo{Not sufficiency?}
-  \NStodo{Added sufficiency.}
   hold even without inverting any polynomials
 except for $\lambda$ and $1-\lambda$.  A natural weaker speculation is that one need
 only invert elements of the form $r+s\lambda$ for integers $r$ and $s$.
@@ -239,10 +237,11 @@ that $R$ injects into $\mathsf{Exc}_{R,\lambda}(1,1)$ as multiples of the
 strand.  Similarly if $b = 12$ and $d$ are invertible in $R$, it follows from
 classical consistency that $R$ injects into $\mathsf{Exc}_{R,\lambda}(2,1)$ as
 multiples of the trivalent vertex.  Finally if in addition
-$5$, $\lambda-6$, $\lambda-4$, $\lambda+3$, and $\lambda+5$ are invertible
-are invertible, then $R^5$ injects into $\mathsf{Exc}_{R,\lambda}(2,2)$ as
+$5$, $\lambda-6$, $\lambda-4$, $\lambda+3$, and $\lambda+5$ are invertible, 
+then $R^5$ injects into $\mathsf{Exc}_{R,\lambda}(2,2)$ as
 linear combinations of the five diagrams in~\eqref{eq:4-box-gen}.
-\nn{Is this last statement proved somewhere?}
+(This is a consequence of the $w = v^\lambda, v \to 1$ limit
+of the quantum inner product formulas given in \S \ref{sec:independence}.)
 
 If both consistency and sufficiency hold, it is also natural to conjecture
 that $\mathsf{Exc}_{R,\lambda}(n,m)$ is always a free $R$-module of finite
@@ -1775,6 +1774,7 @@ with the five diagrams $$\left\{\diagram{0.1}{55f53ebaabfb09b3d4727e4b45c3637b0e
 \end{remark}
 
 \subsection{Linear independence}
+\label{sec:independence}
 We first check that these bases are linearly independent. 
 We have a pairing $\langle - , - \rangle: \V_n \otimes \V_n \to \V_0$ defined
 by 
@@ -1798,10 +1798,12 @@ determinants of these matrices, obtaining
 %% These are calculated in determinants-of-inner-products.nb
 \begin{align*}
 \det M_3 & = - \frac{
-	           \{2\} [\lambda + 5] [\lambda - 6]
+	           \{2\} [\lambda - 6] [\lambda + 5] 
              }{
-               [\lambda] [\lambda - 1]
+               [\lambda - 1] [\lambda] 
              } \\
+\lim_{\substack{w = v^\lambda \\ v \to 1}} \det M_3 & =
+         -2 \frac{(\lambda - 6) (\lambda + 5)}{(\lambda - 1)\lambda} \displaybreak[1] \\
 % -((brk[0, 1] brk[0, 4]^5 brk[0, 5]^3 brk[0, 6]^4 brk[1, -6]^5 brk[
 %       1, -4]^2 brk[1, -3] brk[1, 2] brk[1, 3]^2 brk[1, 5]^5 brk[
 %       3, -6] brk[3, 3])/(brk[0, 2]^7 brk[0, 3]^4 brk[1, -2] brk[
@@ -1813,6 +1815,10 @@ determinants of these matrices, obtaining
               [2]^7 [3]^4 [\lambda - 2] [\lambda - 1]^8 [\lambda]^8 [\lambda + 1]
               [2 \lambda - 6] [2\lambda + 4]
              } \displaybreak[1]\\
+\lim_{\substack{w = v^\lambda \\ v \to 1}} \det M_4 & =
+      - 2^5 3^2 5^3 
+      \frac{(\lambda -6)^5 (\lambda -4)^2 (\lambda + 3)^2 (\lambda + 5)^5}
+           {(\lambda-1)^8 \lambda^8} \displaybreak[1]\\
 % -((brk[0, 1]^7 brk[0, 4]^16 brk[0, 5]^13 brk[0, 6]^20 brk[
 %       1, -6]^16 brk[1, -4]^10 brk[1, -3]^12 brk[1, 2]^12 brk[1, 
 %       3]^10 brk[1, 5]^16 brk[3, -6]^6 brk[3, 3]^6 brk[4, -6] brk[4, 
@@ -1830,6 +1836,10 @@ determinants of these matrices, obtaining
              } \times \\
          & \qquad \times [3\lambda - 6]^6 [3\lambda + 3]^6
               [4 \lambda - 6] [4\lambda + 2] \displaybreak[1]\\
+\lim_{\substack{w = v^\lambda \\ v \to 1}} \det M_5 & =
+  - 2^6 5^13 
+  \frac{(\lambda -6)^{16} (\lambda -4)^{10} (\lambda + 3)^{10} (\lambda + 5)^{16}}
+        {(\lambda-1)^{26} \lambda^{26}} \displaybreak[1]\\
 \det M_6 & = \frac{
               -v^{12} [1]^{67} [4]^{80} [5]^{75} [6]^{165} [\lambda - 6]^{80} [\lambda - 5]^{15} [\lambda - 4]^{65} [\lambda - 3]^{112} [\lambda + 3]^{65} [\lambda + 4]^{15} [\lambda + 5]^{80} 
              }{
