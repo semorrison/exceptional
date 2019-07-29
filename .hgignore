@@ -29,3 +29,5 @@ notes/*.pdf
 *.blg
 *.bcf
 *.run.xml
+*.dvi
+*.xdv
