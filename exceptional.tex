@@ -319,8 +319,6 @@ There exists
     $\mathsf{Exc}_{R,\lambda}$ to $\mathsf{Exc}^D_{R,\lambda}$, that
     is the identity on objects and surjective on morphisms.  
   \end{itemize}
-   \NStodo{Removed a sentence that Dylan objected to about the image of the trivalent vertex,
-    which follows from the below bullet points.}
 For any map $\varphi\colon R \rightarrow S$ we can define a base
 extension $\mathsf{Exc}^D_{S,\varphi(\lambda)} =
 \mathsf{Exc}^D_{R,\lambda} \otimes_\varphi S$.  Furthermore
@@ -744,7 +742,6 @@ for $(v,w) \in U$ and $n+m=0,1,2,3,4,5,6$, respectively.
   form of a group and of a semidirect product.  See Section \ref{sec:} for the 
   precise statements of the relationship between the parameters $q$ and $v$).}
 .\end{itemize}
-\NStodo{Dylan left a few todos here, which I think I have to-done}
 \end{conjecture}
 
 
@@ -833,8 +830,8 @@ The quantum group itself and its representation theory
 only depend on $q$, while the braiding and the ribbon category depend on the
 additional choice of $s$.   More generally, for $s$ not a root of unity,
 the braiding between irreps $V_\lambda$ and $V_\mu$ depends only on 
-$s^{L\langle \lambda, \mu\rangle}$ and so if $\lambda$ is in the
-root lattice then the braiding depends only on $q$.
+$s^{L\langle \lambda, \mu\rangle}$ and so for $\lambda$ in the
+root lattice the braiding depends only on $q$.
 
 If $s$ is not a root of unity, and $\Lambda'$ is a sublattice of the root lattice,
 then the representations whose weights lie in $\Lambda'$ form a tensor
@@ -845,7 +842,7 @@ the adjoint subcategory as a ribbon tensor category depends only on $q$ and not 
 We will abuse notation often by referring to subcategories supported on $\Lambda'$
 as quantum versions of the group for which representations supported $\Lambda'$ lift
 to representations of the group.   For example, $SO(3)_q$ denotes the adjoint subcategory
-of the category of Type I finite dimensional representations of $U_q(\mathbb{su}_2)$.
+of the category of Type I finite dimensional representations of $U_q(\mathfrak{su}_2)$.
 
 Finally, if we have a group of automorphisms of the Dynkin diagram,
 then this gives a group of braided autoequivalence of the corresponding
@@ -853,12 +850,26 @@ ribbon tensor category, and hence we can take the equivariantization by this
 action to get a new braided tensor category.  We will again abuse notation
 by referring to this as the quantum analogue of the corresponding semidirect
 product group.  For example $(PSL(3) \rtimes \mathbb{Z}/2\mathbb{Z})_q$ denotes the
-equivariantization of the category of the subcategory  of representations of $U_q(\mathbb{su}_2$
+equivariantization \cite[\S2.7]{MR3242743} of the category of the subcategory  of representations of $U_q(\mathbb{su}_2$
 which are supported on the root lattice by the group of Dynkin diagram automorphisms of $A_2$.
 This category deforms the category of representations of  the compact group 
 $PSL(3) \rtimes \mathbb{Z}/2\mathbb{Z}$.
 
-\begin{remark}
+We use similar conventions for quantum enveloping algebras attached to simple basic Lie superalgebras.  See \cite{MR1266383,MR1892766}, but note that their $q$ is $q_{\mathrm{long}}$ because of the normalization of the inner product.  
+Note that in general the quantum enveloping algebras depend not just on the Lie superalgebra but on the choice of simple roots.
+For a collection of conventions for simple basic Lie superalgebras see \cite{MR1773773}.  Again, as in the classical case, by the 
+quantum analogue of a Lie supergroup, we will mean the appropriate equivariantization of the appropriate subcategory
+of representations of the quantized enveloping algebra.  For example, $SOSp(m|2n)_q$ denotes the subcategory of vector representations of $U_q(\mathfrak{so}(m|2n))$, while $OSp(m|2n)_q$ is a $\mathbb{Z}/2\mathbb{Z}$-equivariantization of this category.
+
+In fact, thee only quantum supergroup which we will need to understand in detail is $SOSp(1|2)_q$.
+In the next subsection, we will explain how this relates to $SO(3)_q$, and so understanding the general conventions for
+quantum supergroups will not be important for this paper.  (Warning: in \cite{MR3624901} we denoted this category $OSp(1|2)_q$,
+but this was a poor choice of notation which is not compatible with how we denote categories attached to groups.)
+
+\subsection{Explicitly comparing conventions}
+
+It can sometimes be difficult to work out what conventions another paper is using, and thus to find the right change of variables between our conventions and their conventions.  In this subsection we'll explain why other conventions occur and how to find the correct change of variables.
+
 The main source of different $q$ conventions in the literature is that there's
 variables $q_i$ for each simple root $\alpha_i$ where the formula for $q_i$
 depends on the length of $\alpha_i$.  Our choice of $q$ corresponds to 
@@ -866,8 +877,8 @@ $q = q_{\mathrm{short}}$, so that $q_{\mathrm{long}} = q_{\mathrm{short}}^D = q^
 It is also common to pick $q_{\mathrm{long}}$ as $q$.   The former convention is natural
 if you normalize the inner product on the root space so that short roots have length $2$, while the latter
 convention is natural if you normalize the inner product on the root spaces so that long roots have length $2$.
-Similarly, if you're studying a family like $\mathbb{so}(2n+1)$, if you uniformly choose $q$ to be $q_{\mathrm{long}}$, 
-then $q_n = \sqrt{q}$ and if you specialize to $\mathbb{so}(3)$ you'll end up with a choice of $q$ which is neither
+Similarly, if you're studying a family like $\mathfrak{so}(2n+1)$, if you uniformly choose $q$ to be $q_{\mathrm{long}}$, 
+then $q_n = \sqrt{q}$ and if you specialize to $\mathfrak{so}(3)$ you'll end up with a choice of $q$ which is neither
 $q_{\mathrm{short}}$ nor $q_{\mathrm{long}}$ (which are equal because there's only one root).
 
 In addition to the conventions for $q$, 
@@ -882,18 +893,7 @@ under rescaling of $E_i$ and so will tell you what conventions are being used.  
 the generators and relations for quantum $\mathfrak{so}_{2n+1}$ given use a non-standard normalization of the
 final $E_n$, but by looking at the Serre relations we see that $[2]_{q_i} = q+q^{-1}$  for 
 $i < n$ but $[3]_{q_n} = q+1+q^{-1}$ so they've chosen $q=q_i=q_{\mathrm{long}}$ and $q_n = q_{\mathrm{long}} = q^{\frac{1}{2}} = q^{\frac{1}{D}}$, so Zhang's $q$ is our $q^2$.
-\end{remark}
 
-We use similar conventions for quantum enveloping algebras attached to simple basic Lie superalgebras.  See \cite{MR1266383,MR1892766}, but note that their $q$ is $q_{\mathrm{long}}$ because of the normalization of the inner product.  
-Note that in general the quantum enveloping algebras depend not just on the Lie superalgebra but on the choice of simple roots.
-For a collection of conventions for simple basic Lie superalgebras see \cite{MR1773773}.  Again, as in the classical case, by the 
-quantum analogue of a Lie supergroup, we will mean the appropriate equivariantization of the appropriate subcategory
-of representations of the quantized enveloping algebra.  For example, $SOSp(m|2n)_q$ denotes the subcategory of vector representations of $U_q(\mathfrak{so}(m|2n))$, while $OSp(m|2n)_q$ is a $\mathbb{Z}/2\mathbb{Z}$-equivariantization of this category.
-
-In fact, thee only quantum supergroup which we will need to understand in detail is $SOSp(1|2)_q$.
-In the next subsection, we will explain how this relates to $SO(3)_q$, and so understanding the general conventions for
-quantum supergroups will not be important for this paper.  (Warning: in \cite{MR3624901} we denoted this category $OSp(1|2)_q$,
-but this was a poor choice of notation which is not compatible with how we denote categories attached to groups.)
 
 
 \subsection{Some braided trivalent categories}
@@ -923,7 +923,7 @@ Note that here we have not semisimplified, so when $q$ is a root of unity this c
 \subsubsection{$SOSp(1|2)$}
 When $q=\pm i$ the diagrammatic category defined in the previous subsection above comes from the supergroup $SOSp(1|2)$ instead of $SO(3)$, see \cite{MR3624901}.  We want to explain this correspondence in more detail to clarify conventions and to explain the relationship between the quantized versions of $SOSp(1|2)_t$ and $SO(3)_q$.
 
-We order the three vectors of a $(1|2)$ super vector spaces so that they go odd, even, odd.  With this ordering, the super transpose on $\mathfrak{gl}(1|2)$ is given by:
+We order the three vectors of a $(1|2)$ super vector spaces in the order: odd, even, odd.  With this ordering, the super transpose on $\mathfrak{gl}(1|2)$ is given by:
 $$\begin{pmatrix}
 a_{11} & a_{12} & a_{13} \\
 a_{21} & a_{22} & a_{23} \\
@@ -953,16 +953,15 @@ Here $H, J_+, J_-$ are even and $E_+, E_-$ are odd.  The elements $E_\pm$ are th
 
 Note that this Lie superalgebra is generated just by $H, E_+, E_-$ without any need for $J_+$ and $J_-$, furthermore using only the relations between $H, E_+, E_-$ gives a presentation of the Lie superalgebra.
 
-Every finite dimensional representation of $\mathfrak{osp}(1|2)$ is semisimple and the irreducible representations are $V_\lambda^\pm$ which have a highest weight vector of weight a non-negative integer $\lambda$ (i.e. $H w = \lambda w$) and parity $\pm$.  Half-integer weights are inconsistent with the superbracket between $E_+$ and $E_-$.  Note that $V_\lambda^\pm$ has graded dimension $(\lambda+1 | \lambda)$ in the positive case and $(\lambda | \lambda+1)$ in the negative case.  The tensor product rules are $W_\lambda^\sigma \otimes W_\mu^\tau =  \bigoplus_{i=|\lambda-\mu}^{\lambda+\mu} W_i^{{-1}^i \sigma \tau}$.
+Every finite dimensional representation of $\mathfrak{osp}(1|2)$ is semisimple and the irreducible representations are $V_\lambda^\pm$ which have a highest weight vector of weight a non-negative integer $\lambda$ (i.e. $H w = \lambda w$) and parity $\pm$.  Half-integer weights are inconsistent with the superbracket between $E_+$ and $E_-$.  Note that $V_\lambda^\pm$ has graded dimension $(\lambda+1 | \lambda)$ in the positive case and $(\lambda | \lambda+1)$ in the negative case.  The tensor product rules are $W_\lambda^\sigma \otimes W_\mu^\tau =  \bigoplus_{i=|\lambda-\mu}^{\lambda+\mu} W_i^{{(-1)}^i \sigma \tau}$.
 
 In particular, the defining representation $X = W_1^-$ has graded dimension $(1|2)$ and thus super dimension $-1$, and satisfies
 $$X \otimes X \cong 1 \oplus X \oplus W_2^+.$$  In particular, it is a trivalent category with $\dim \Hom(X^{\otimes 2}, X^{\otimes 2}) = 3$. and so must have a skein theory which is $SO(3)_q$ as defined in the previous section for some $q$, and it is easy to see from the dimension that $q = \pm i$.
 
-By \cite{MR2849718,MR3000482} the category of representations of a Lie supergroup can be equivalently described as the category  of super Harish-Chandra pairs, and this is explained for the special case of $OSp$ and $SOSp$ in \cite[\S 7.1]{MR3633307}.  One typically studies a pair $G$ a supergroup and $\varepsilon$ a fixed involution whose conjugation map is the parity automorphism, and denotes $\mathrm{Rep}(G,\varepsilon)$ the category of representations where $\varepsilon$ acts by the parity map.  In particular, $OSp(1|2)$ consists of representations of $\mathbb{osp}(1|2)$ together with a lift to $O(1)\times Sp(2)$ while $SOSp(1|2)$ consists of representations of $\mathbb{osp}(1|2)$ together with a lift to $SO(1)\times Sp(2)$.  We fix $\varepsilon$ to be the diagonal matrix with $1,-1,1$ along the diagonal.  The corresponding category  of representations of $SOSp(1|2)$ is exactly the representations of $\mathbb{osp}(1|2)$ which appear in the tensor powers of the vector representation, while representations of $OSp(1|2)$ are have an additional parity coming from the $O(1) = \mathbb{Z}/2\mathbb{Z}$ which is required to be congruent modulo 2 to the highest weight.  In particular, the invariant spaces for the vector representation $\Hom(V^{\otimes a}, V^{\otimes b}$ for $OSp(1|2)$ vanish unless $a \equiv b \mod 2$ but there's no such restriction for $SOSp(1|2)$.   In particular, $SOSp(1|2)$ is a trivalent category, while $OSp(1|2)$ is a quotient of a BMW category.
+By \cite{MR2849718,MR3000482} the category of representations of a Lie supergroup can be equivalently described as the category  of super Harish-Chandra pairs, and this is explained for the special case of $OSp$ and $SOSp$ in \cite[\S 7.1]{MR3633307}.  One typically studies a pair $G$ a supergroup and $\varepsilon$ a fixed involution whose conjugation map is the parity automorphism, and denotes $\mathrm{Rep}(G,\varepsilon)$ the category of representations where $\varepsilon$ acts by the parity map.  In particular, $OSp(1|2)$ consists of representations of $\mathfrak{osp}(1|2)$ together with a lift to $O(1)\times Sp(2)$ while $SOSp(1|2)$ consists of representations of $\mathfrak{osp}(1|2)$ together with a lift to $SO(1)\times Sp(2)$.  We fix $\varepsilon$ to be the diagonal matrix with $1,-1,1$ along the diagonal.  The corresponding category  of representations of $SOSp(1|2)$ is exactly the representations of $\mathfrak{osp}(1|2)$ which appear in the tensor powers of the vector representation, while representations of $OSp(1|2)$ are have an additional parity coming from the $O(1) = \mathbb{Z}/2\mathbb{Z}$ which is required to be congruent modulo 2 to the highest weight.  In particular, the invariant spaces for the vector representation $\Hom(V^{\otimes a}, V^{\otimes b})$ for $OSp(1|2)$ vanish unless $a \equiv b \mod 2$ but there's no such restriction for $SOSp(1|2)$.   In particular, $SOSp(1|2)$ is a trivalent category, while $OSp(1|2)$ is a quotient of a BMW category.
 
-We now fix conventions for the quantum version of $\mathbb{osp}(1|2)$.  The $h$-adic version is generated by $H, E_\pm$, with $E_\pm$ odd, subject to the relations $[H,E_\pm] = \pm E_\pm$ and $[E_+,E_-] = \frac{e^{hH}-q^{-hH}}{e^h-e^{-h}}$.  This is a Hopf superalgebra with $\Delta(H) = H \otimes 1 + 1 \otimes H$, $\Delta(E_+) = e^{hH} \otimes E_+ + 1\otimes E_+$, and $\Delta(E_-) = E_-\otimes 1 - e^{-hH} \otimes E_-$.  This has a universal $R$-matrix given by the formula:
-
-
+We now fix conventions for the quantum version of $\mathfrak{osp}(1|2)$.  The $h$-adic version is generated by $H, E_\pm$, with $E_\pm$ odd, subject to the relations $[H,E_\pm] = \pm E_\pm$ and $[E_+,E_-] = \frac{e^{hH}-q^{-hH}}{e^h-e^{-h}}$.  This is a Hopf superalgebra with $\Delta(H) = H \otimes 1 + 1 \otimes H$, $\Delta(E_+) = e^{hH} \otimes E_+ + 1\otimes E_+$, and $\Delta(E_-) = E_-\otimes 1 - e^{-hH} \otimes E_-$.  This has a universal $R$-matrix given by the formula:
+$$ $$
 
 Namely it has generators $K, E_\pm$ (again $E_\pm$ are fermionic) which satisfy the relations $K E_\pm K^{-1} = q E_\pm$, $E_+ E_- +  E_- E_+ = \frac{K-K^{-1}}{q-q^{-1}}$.  This has a Hopf superalgebra structure
 
