@@ -850,18 +850,17 @@ ribbon tensor category, and hence we can take the equivariantization by this
 action to get a new braided tensor category.  We will again abuse notation
 by referring to this as the quantum analogue of the corresponding semidirect
 product group.  For example $(PSL(3) \rtimes \mathbb{Z}/2\mathbb{Z})_q$ denotes the
-equivariantization \cite[\S2.7]{MR3242743} of the category of the subcategory  of representations of $U_q(\mathbb{su}_2$
+equivariantization \cite[\S2.7]{MR3242743} of the category of the subcategory  of representations of $U_q(\mathfrak{su}_2)$
 which are supported on the root lattice by the group of Dynkin diagram automorphisms of $A_2$.
 This category deforms the category of representations of  the compact group 
 $PSL(3) \rtimes \mathbb{Z}/2\mathbb{Z}$.
 
-We use similar conventions for quantum enveloping algebras attached to simple basic Lie superalgebras.  See \cite{MR1266383,MR1892766}, but note that their $q$ is $q_{\mathrm{long}}$ because of the normalization of the inner product.  
-Note that in general the quantum enveloping algebras depend not just on the Lie superalgebra but on the choice of simple roots.
+We use similar conventions for quantum enveloping algebras attached to simple basic Lie superalgebras.  See \cite{MR1266383,MR1892766}, except that we always normalize the inner product so that the short root has length two and use $q = q_{\mathrm{short}}$.  Also note that in \cite{MR1266383} their coproduct is opposite from ours.  Iin general the quantum enveloping algebras depend not just on the Lie superalgebra but on the choice of simple roots.
 For a collection of conventions for simple basic Lie superalgebras see \cite{MR1773773}.  Again, as in the classical case, by the 
 quantum analogue of a Lie supergroup, we will mean the appropriate equivariantization of the appropriate subcategory
 of representations of the quantized enveloping algebra.  For example, $SOSp(m|2n)_q$ denotes the subcategory of vector representations of $U_q(\mathfrak{so}(m|2n))$, while $OSp(m|2n)_q$ is a $\mathbb{Z}/2\mathbb{Z}$-equivariantization of this category.
 
-In fact, thee only quantum supergroup which we will need to understand in detail is $SOSp(1|2)_q$.
+In fact, the only quantum supergroup which we will need to understand in detail is $SOSp(1|2)_q$.
 In the next subsection, we will explain how this relates to $SO(3)_q$, and so understanding the general conventions for
 quantum supergroups will not be important for this paper.  (Warning: in \cite{MR3624901} we denoted this category $OSp(1|2)_q$,
 but this was a poor choice of notation which is not compatible with how we denote categories attached to groups.)
@@ -875,8 +874,8 @@ variables $q_i$ for each simple root $\alpha_i$ where the formula for $q_i$
 depends on the length of $\alpha_i$.  Our choice of $q$ corresponds to 
 $q = q_{\mathrm{short}}$, so that $q_{\mathrm{long}} = q_{\mathrm{short}}^D = q^D$.
 It is also common to pick $q_{\mathrm{long}}$ as $q$.   The former convention is natural
-if you normalize the inner product on the root space so that short roots have length $2$, while the latter
-convention is natural if you normalize the inner product on the root spaces so that long roots have length $2$.
+if you normalize the inner product on the root space so that short roots have self inner product $2$, while the latter
+convention is natural if you normalize the inner product on the root spaces so that long roots have self inner product $2$.
 Similarly, if you're studying a family like $\mathfrak{so}(2n+1)$, if you uniformly choose $q$ to be $q_{\mathrm{long}}$, 
 then $q_n = \sqrt{q}$ and if you specialize to $\mathfrak{so}(3)$ you'll end up with a choice of $q$ which is neither
 $q_{\mathrm{short}}$ nor $q_{\mathrm{long}}$ (which are equal because there's only one root).
@@ -892,7 +891,7 @@ so that the leading coefficient is one, then the coefficient of the next term is
 under rescaling of $E_i$ and so will tell you what conventions are being used.  For example, in \cite{MR1188811}
 the generators and relations for quantum $\mathfrak{so}_{2n+1}$ given use a non-standard normalization of the
 final $E_n$, but by looking at the Serre relations we see that $[2]_{q_i} = q+q^{-1}$  for 
-$i < n$ but $[3]_{q_n} = q+1+q^{-1}$ so they've chosen $q=q_i=q_{\mathrm{long}}$ and $q_n = q_{\mathrm{long}} = q^{\frac{1}{2}} = q^{\frac{1}{D}}$, so Zhang's $q$ is our $q^2$.
+$i < n$ but $[3]_{q_n} = q+1+q^{-1}$ so they've chosen $q=q_i=q_{\mathrm{long}}$ and $q_n = q_{\mathrm{short}} = q^{\frac{1}{2}} = q^{\frac{1}{D}}$, so Zhang's $q$ is our $q^2$.
 
 
 
@@ -921,7 +920,9 @@ Note that here we have not semisimplified, so when $q$ is a root of unity this c
 
 
 \subsubsection{$SOSp(1|2)$}
-When $q=\pm i$ the diagrammatic category defined in the previous subsection above comes from the supergroup $SOSp(1|2)$ instead of $SO(3)$, see \cite{MR3624901}.  We want to explain this correspondence in more detail to clarify conventions and to explain the relationship between the quantized versions of $SOSp(1|2)_t$ and $SO(3)_q$.
+When $q=\pm i$ the diagrammatic category defined in the previous subsection above comes from the supergroup $SOSp(1|2)$ instead of $SO(3)$, see \cite{MR3624901}.  We want to explain this correspondence in more detail to clarify conventions and to explain the relationship between the quantized versions of $SOSp(1|2)_t$ and $SO(3)_q$.  This is based on the descriptions in \cite{MR1010993, MR1057559}, but modified to match our conventions.  %In particular, $\mathrm{osp}(1|2)$ has two positive roots, an odd root $\alpha$ and an even root $2 \alpha$.  Our general convention is to normalize the short root so that $(\alpha,\alpha) = 2$, and so $(2 \alpha, 2\alpha = 8$.  This is an unusual convention when studying $\mathrm{osp}(1|2)$ specifically, and leads to our formulas having slightly different $q$-conventions from what is in the literature.
+
+We first recall the definition of $\mathrm{osp}(1|2)$ together with some facts about its representation theory, so that we can explain why $SOSp(1|2)$ is the relevant supergroup.
 
 We order the three vectors of a $(1|2)$ super vector spaces in the order: odd, even, odd.  With this ordering, the super transpose on $\mathfrak{gl}(1|2)$ is given by:
 $$\begin{pmatrix}
@@ -940,30 +941,35 @@ The Lie algebra $\mathfrak{osp}(1|2)$ consists of supermatrices $X \in \mathfrak
 $$\Omega = \begin{pmatrix} 0 & 0 & 1 \\ 0 & 1 & 0 \\ -1 & 0 & 0 \end{pmatrix}$$
 
 An explicit basis of root vectors is given by:
-$$H = \begin{pmatrix} 1 & \hspace{.1in}& \hspace{.1in} \\   & 0 &  \\  &  & -1 \end{pmatrix},\,
-E_+ = \frac{1}{2} \begin{pmatrix} \hspace{.1in} & 1 & \hspace{.1in} \\   &  & 1 \\  &  &  \end{pmatrix}, \,
-E_- = \frac{1}{2} \begin{pmatrix} \hspace{.1in} & \hspace{.1in} & \hspace{.1in} \\ 1  &  &  \\  & -1 &  \end{pmatrix}, \,
-J_+ = \begin{pmatrix} \hspace{.1in} & \hspace{.1in} & 1 \\   &  &  \\  & &  \end{pmatrix}, \,
-J_- = \begin{pmatrix} \hspace{.1in} & \hspace{.1in} & \hspace{.1in} \\   &  &  \\ 1 & &  \end{pmatrix}.
+$$H = 2 \begin{pmatrix} 1 & \hspace{.1in}& \hspace{.1in} \\   & 0 &  \\  &  & -1 \end{pmatrix},\,
+E_+ = \sqrt{2} \begin{pmatrix} \hspace{.1in} & 1 & \hspace{.1in} \\   &  & 1 \\  &  &  \end{pmatrix}, \,
+E_- = \sqrt{2} \begin{pmatrix} \hspace{.1in} & \hspace{.1in} & \hspace{.1in} \\ 1  &  &  \\  & -1 &  \end{pmatrix}, \,
+J_+ = 2 \begin{pmatrix} \hspace{.1in} & \hspace{.1in} & 1 \\   &  &  \\  & &  \end{pmatrix}, \,
+J_- = 2 \begin{pmatrix} \hspace{.1in} & \hspace{.1in} & \hspace{.1in} \\   &  &  \\ 1 & &  \end{pmatrix}.
 $$
 
-Here $H, J_+, J_-$ are even and $E_+, E_-$ are odd.  The elements $E_\pm$ are the simple roots, while $J_\pm$ are the root vectors for twice the simple roots.  We have chosen the normalizations to agree with the usual Chevalley-Serre conventions on $H, E_\pm$, and also to satisfy $[J_+,J_-]=H$.  The defining relations that these generators satisfy under the supercommutator are: 
-\begin{multline*}[H, E_\pm] = \pm E_\pm, \hspace{.2in} [H, J_\pm] = \pm 2 J_\pm, \hspace{.2in} 
-[J_\pm, E_\pm] = 0, \hspace{.2in} [J_+,J_-] = H, \hspace{.2in} [E_+,E_-] = H, \\ [E_\pm,E_\pm] = \pm 2 J_\pm, \hspace{.2in} [J_\pm, E_\mp] = -E_\pm.\end{multline*}
+Here $H, J_+, J_-$ are even and $E_+, E_-$ are odd.  The elements $E_\pm$ are the simple roots, while $J_\pm$ are the root vectors for twice the simple roots.  We have chosen the normalizations to agree with the usual general Chevalley-Serre conventions for $H$ and $E_\pm$, and set $J_\pm$ to be the half the supercommutator $\frac{1}{2} [E_\pm, E_\pm]$.  The normalizations are somewhat awkward and disagree with most sources for $\mathbb{osp}(1|2)$ which instead choose normalizations so that the even subalgebra looks like $\mathbb{su}_2$, but we want to match our general convention that the short roots have length $2$.
+  
+The defining relations that these generators satisfy under the supercommutator are: 
+\begin{multline*}[H, E_\pm] = \pm 2 E_\pm, \hspace{.2in} [H, J_\pm] = \pm 4 J_\pm, \hspace{.2in} 
+[J_\pm, E_\pm] = 0, \hspace{.2in} [J_+,J_-] = -H, \hspace{.2in} [E_+,E_-] = H, \\ [E_\pm,E_\pm] = \pm 2 J_\pm, \hspace{.2in} [J_\pm, E_\mp] = -2 E_\pm.\end{multline*}
 
-Note that this Lie superalgebra is generated just by $H, E_+, E_-$ without any need for $J_+$ and $J_-$, furthermore using only the relations between $H, E_+, E_-$ gives a presentation of the Lie superalgebra.
+Note that this Lie superalgebra is generated just by $H, E_+, E_-$ without any need for $J_+$ and $J_-$.
 
-Every finite dimensional representation of $\mathfrak{osp}(1|2)$ is semisimple and the irreducible representations are $V_\lambda^\pm$ which have a highest weight vector of weight a non-negative integer $\lambda$ (i.e. $H w = \lambda w$) and parity $\pm$.  Half-integer weights are inconsistent with the superbracket between $E_+$ and $E_-$.  Note that $V_\lambda^\pm$ has graded dimension $(\lambda+1 | \lambda)$ in the positive case and $(\lambda | \lambda+1)$ in the negative case.  The tensor product rules are $W_\lambda^\sigma \otimes W_\mu^\tau =  \bigoplus_{i=|\lambda-\mu}^{\lambda+\mu} W_i^{{(-1)}^i \sigma \tau}$.
+Every finite dimensional representation of $\mathfrak{osp}(1|2)$ is semisimple and the irreducible representations are $V_\lambda^\pm$ which have a highest weight vector of weight a non-negative even integer $\lambda$ (i.e. $H w = \lambda w$) and parity $\pm$.  Integer weights are inconsistent with the superbracket between $E_+$ and $E_-$.  Note that $V_2\lambda^\pm$ has graded dimension $(\lambda+1 | \lambda)$ in the positive case and $(\lambda | \lambda+1)$ in the negative case.  The tensor product rules are 
+$$W_\lambda^\sigma \otimes W_\mu^\tau =  \bigoplus_{\{|\lambda-\mu| \leq i \leq \lambda+\mu, i \equiv \lambda + \mu \mod 2\}} W_i^{{(-1)}^i \sigma \tau}.$$
 
-In particular, the defining representation $X = W_1^-$ has graded dimension $(1|2)$ and thus super dimension $-1$, and satisfies
-$$X \otimes X \cong 1 \oplus X \oplus W_2^+.$$  In particular, it is a trivalent category with $\dim \Hom(X^{\otimes 2}, X^{\otimes 2}) = 3$. and so must have a skein theory which is $SO(3)_q$ as defined in the previous section for some $q$, and it is easy to see from the dimension that $q = \pm i$.
+In particular, the defining representation $X = W_2^-$ has graded dimension $(1|2)$ and thus super dimension $-1$, and satisfies
+$$X \otimes X \cong 1 \oplus X \oplus W_4^+.$$  In particular, it is a trivalent category with $\dim \Hom(X^{\otimes 2}, X^{\otimes 2}) = 3$. and so must have a skein theory which agrees with some specialization of the $SO(3)_q$ skein theory defined in the previous section for some $q$, and it is easy to see from the dimension that $q = \pm i$.
 
 By \cite{MR2849718,MR3000482} the category of representations of a Lie supergroup can be equivalently described as the category  of super Harish-Chandra pairs, and this is explained for the special case of $OSp$ and $SOSp$ in \cite[\S 7.1]{MR3633307}.  One typically studies a pair $G$ a supergroup and $\varepsilon$ a fixed involution whose conjugation map is the parity automorphism, and denotes $\mathrm{Rep}(G,\varepsilon)$ the category of representations where $\varepsilon$ acts by the parity map.  In particular, $OSp(1|2)$ consists of representations of $\mathfrak{osp}(1|2)$ together with a lift to $O(1)\times Sp(2)$ while $SOSp(1|2)$ consists of representations of $\mathfrak{osp}(1|2)$ together with a lift to $SO(1)\times Sp(2)$.  We fix $\varepsilon$ to be the diagonal matrix with $1,-1,1$ along the diagonal.  The corresponding category  of representations of $SOSp(1|2)$ is exactly the representations of $\mathfrak{osp}(1|2)$ which appear in the tensor powers of the vector representation, while representations of $OSp(1|2)$ are have an additional parity coming from the $O(1) = \mathbb{Z}/2\mathbb{Z}$ which is required to be congruent modulo 2 to the highest weight.  In particular, the invariant spaces for the vector representation $\Hom(V^{\otimes a}, V^{\otimes b})$ for $OSp(1|2)$ vanish unless $a \equiv b \mod 2$ but there's no such restriction for $SOSp(1|2)$.   In particular, $SOSp(1|2)$ is a trivalent category, while $OSp(1|2)$ is a quotient of a BMW category.
 
-We now fix conventions for the quantum version of $\mathfrak{osp}(1|2)$.  The $h$-adic version is generated by $H, E_\pm$, with $E_\pm$ odd, subject to the relations $[H,E_\pm] = \pm E_\pm$ and $[E_+,E_-] = \frac{e^{hH}-q^{-hH}}{e^h-e^{-h}}$.  This is a Hopf superalgebra with $\Delta(H) = H \otimes 1 + 1 \otimes H$, $\Delta(E_+) = e^{hH} \otimes E_+ + 1\otimes E_+$, and $\Delta(E_-) = E_-\otimes 1 - e^{-hH} \otimes E_-$.  This has a universal $R$-matrix given by the formula:
-$$ $$
+Fixing conventions for the quantum versio of $\mathrm{osp}(1|2)$ is somewhat miserable, so instead we explain the correct parameterization for $SOSp(1|2)_t$ indirectly.  Any deformation $SOSp(1|2)_t$ will again be a trivalent category and hence a $SO(3)_q$ for some change of variables between $q$ and $t$, the only issue is to get the $q$-conventions correct.  
 
-Namely it has generators $K, E_\pm$ (again $E_\pm$ are fermionic) which satisfy the relations $K E_\pm K^{-1} = q E_\pm$, $E_+ E_- +  E_- E_+ = \frac{K-K^{-1}}{q-q^{-1}}$.  This has a Hopf superalgebra structure
+
+
+
+
 
 
 \subsection{Golden categories}
