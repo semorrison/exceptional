@@ -442,6 +442,10 @@ usual Reidemeister 2 and 3 relations for a crossing, and the
 following circle, lollipop, bigon, triangle, quantum anti-symmetry, and
 quantum Killing symmetry relations.
 
+\nn{The ``classical to quantum'' section is quite hard to write if we
+  use $d$, $b$, and $t$ in both the quantum and classical case. Can we
+capitalize one of them, maybe?}
+
  \begin{equation}
     \label{eq:simple-rels-spec}
   \begin{aligned}
@@ -1361,7 +1365,7 @@ $S_t$.)
 
 \begin{lemma} \label{lem:bplus3alpha}
 Suppose $\cC$ satisfies QEJacobi for some $v$ and $\alpha$ with $v$ not a
-primitive $4$th or $12$th root of unity, then $b+[3]\alpha$ is
+primitive $4$th or $12$th root of unity. Then $b+[3]\alpha$ is
 non-zero.
 \end{lemma}
 \begin{proof}
@@ -1553,15 +1557,24 @@ Furthermore, Equation~\eqref{eq:Kontsevich-crossing} shows that
 Comparison with Equation~\eqref{eq:simple-rels-spec} shows that we
 should choose $v = e^{hb/24} \in R((h))$. Then by Theorem~\ref{thm:Jacobi}, the
 functor $\eval$ satisfies Equation~\eqref{eq:quant-except-gen} for
-some value of~$\alpha$. Note that $v^n - 1$ is
-invertible for all $n \ne 1$. Thus by Lemma~\ref{lem:bplus3alpha} and
-Theorem~\ref{thm:square-crossing} we renormalize~$b$ and make the
+some value of~$\alpha$. For this value of~$v$, note that $v^n - 1$ is
+invertible in $R((h))$ for all $n \ne 1$. Thus by Lemma~\ref{lem:bplus3alpha} and
+Theorem~\ref{thm:square-crossing} we have quantum exceptional square
+and crossing relations. Since $v$ is not a root of unity, we can
+renormalize~$b$ and make the
 change of variables
 from Equation~\eqref{eq:change-variables} to get the category
 $\mathsf{QExc}_{R((h^t)),v,w}$ for some rational~$t$ and some choice
-of~$w$. To identify~$w$ (and see that we can take $t=1$), 
+of~$w$. (The possible exponent~$t$ comes from the square root.) To
+identify~$w$ and see that we can take $t=1$,
 we find the eigenvalues
 of the twist operator on the 4-box space.
+
+\nn{Someplace around here, explain about Killing forms: a Lie algebra
+  with an invertible inner product gives a way of evaluating Jacobi
+  diagrams. Almost by definition, the Killing form corresponds to
+  $b=1$. We take $b=12$, which corresponds to taking the inner product
+  to be $1/12$ of the Killing form.}
 
 \DPTtodo{This needs more explanation.}
 \DPTtodo{Double-check these eigenvalues vs $b=12$}
