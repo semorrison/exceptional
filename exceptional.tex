@@ -121,13 +121,15 @@ We start by giving a skein theoretic
 description of the classical exceptional series following Cvitanović, Deligne,
 and Vogel.
 
+\NStodo{Per Dylan's request I've changed the classical parameters to $D$, $B$, $T$ to make the ``classical to quantum'' section easier to write.  Someone check that I didn't miss any.}
+
 We begin with the symmetric tensor category of Jacobi
-diagrams, $\mathsf{Jac}_d$.
+diagrams, $\mathsf{Jac}_D$.
 
 \begin{definition}
-Let $R$ be an algebra over $\mathbb{C}$, let $d$ be an element of $R$
+Let $R$ be an algebra over $\mathbb{C}$, let $D$ be an element of $R$
 and let
-$b$ be an invertible element of $R$.  The objects of $\mathsf{Jac}_{R,d,b}$ are
+$B$ be an invertible element of $R$.  The objects of $\mathsf{Jac}_{R,D,B}$ are
 collections of $n$ points on the line and the morphism space from $n$ to $m$
 consists of $R$-linear combinations of planar graphs in a rectangle with $n$
 boundary points on the bottom, $m$ boundary points at the top, and consisting
@@ -139,8 +141,8 @@ for a symmetric crossing and a trivalent vertex, and the following
 circle, lollipop, bigon,
 triangle, anti-symmetry, symmetry of the Killing form, and Jacobi relations.
 \begin{align}
-\label{eq:classical-loop-lollipop}  \unknot \; &= d &  \loopvertex \; &=0 \\
-\label{eq:classical-bigon-trigon}  \twogon\; &= b \;\onestrandid  & \threegon\; &= \frac{b}{2} \;\threevertex \\
+\label{eq:classical-loop-lollipop}  \unknot \; &= D &  \loopvertex \; &=0 \\
+\label{eq:classical-bigon-trigon}  \twogon\; &= B \;\onestrandid  & \threegon\; &= \frac{B}{2} \;\threevertex \\
 \label{eq:classical-symmetry-antisymmetry}   \symtwistvertex\; &= - \threevertex & \symtwist\; &= \drawcup
 \end{align}
 \begin{equation}
@@ -150,18 +152,18 @@ triangle, anti-symmetry, symmetry of the Killing form, and Jacobi relations.
 \end{definition}
 
 By rescaling the trivalent vertex, it is easy to see that
-$\mathsf{Jac}_{R,d,b}$ is equivalent as a spherical tensor category to
-$\mathsf{Jac}_{R,d,bx^2}$ for any invertible $x$ in $R$.  In particular, if $R
-= \mathbb{C}$ then $\mathsf{Jac}_{R,d,b}$ does not depend on the choice of
-$b$.  A standard normalization is $b=12$.
+$\mathsf{Jac}_{R,D,B}$ is equivalent as a spherical tensor category to
+$\mathsf{Jac}_{R,D,Bx^2}$ for any invertible $x$ in $R$.  In particular, if $R
+= \mathbb{C}$ then $\mathsf{Jac}_{R,D,B}$ does not depend on the choice of
+$B$.  A standard normalization is $B=12$.
 
 If $\mathfrak{g}$ is a simple Lie algebra object in a symmetric tensor
 category with dimension $d$, by the diagram calculus  the symmetric tensor
 category of finite dimensional representations of $\mathfrak{g}$ is the target
-of a functor from $\mathsf{Jac}_{R,d,b}$, where we interpret each strand as a
+of a functor from $\mathsf{Jac}_{R,B,D}$, where we interpret each strand as a
 copy of $\mathfrak{g}$, each cup or cap using the Killing form, each trivalent
 vertex as the Lie bracket, and each crossing as the usual symmetric braiding.
-The skein theory for $\mathsf{Jac}_{R,d,b}$ is somewhat poorly behaved
+The skein theory for $\mathsf{Jac}_{R,B,D}$ is somewhat poorly behaved
 since the space of $0$-boundary
 point diagrams is infinite dimensional.
 
@@ -171,22 +173,22 @@ representations of the exceptional Lie algebras satisfy another relation, the
 \emph{classical exceptional relation}.
 
 \begin{definition}
-If $2+d$ is invertible in $R$, let $\mathsf{Exc}_{R,d,b}$ be symmetric tensor category which is the quotient of 
-$\mathsf{Jac}_{R,d,b}$ modulo the exceptional relation.
+If $2+D$ is invertible in $R$, let $\mathsf{Exc}_{R,D,B}$ be symmetric tensor category which is the quotient of 
+$\mathsf{Jac}_{R,D,B}$ modulo the exceptional relation.
 \begin{equation}
-\fourgon\; = \frac{b}{6} \left(\;\drawI\; + \;\drawH\; \right)
- + \frac{5}{6}\frac{b^2}{2+d} \left( \;\cupcap\; + \;\twostrandid\; + \;\symcross\; \right)
+\fourgon\; = \frac{B}{6} \left(\;\drawI\; + \;\drawH\; \right)
+ + \frac{5}{6}\frac{B^2}{2+D} \left( \;\cupcap\; + \;\twostrandid\; + \;\symcross\; \right)
 \label{eq:classical-except}
 \end{equation}
 \end{definition}
 
 The parameter $d$ is somewhat poorly behaved, and so Deligne instead
-introduced a parameter $\lambda$ such that $d = -2
+introduced a parameter $\lambda$ such that $D = -2
 \frac{(\lambda+5)(6-\lambda)}{\lambda(1-\lambda)}$.  This makes sense so long
 as $\lambda$ and $1-\lambda$ are invertible in $R$, and such a $\lambda$ can
-be found when $2+d$ is invertible and $(2+d)(242+d)$ has a square root in $R$.
-Note that $\lambda$ and $1-\lambda$ correspond to the same $d$ and thus to the
-same category.  If we normalize $b=12$ then the exceptional relation for
+be found when $2+D$ is invertible and $(2+D)(242+D)$ has a square root in $R$.
+Note that $\lambda$ and $1-\lambda$ correspond to the same $D$ and thus to the
+same category.  If we normalize $B=12$ then the exceptional relation for
 $\mathsf{Exc}_{R,-2   \frac{(\lambda+5)(6-\lambda)}{\lambda(1-\lambda)},12}$
 (also written $\mathsf{Exc}_{R,\lambda}$) has the following form.
 
@@ -231,10 +233,10 @@ except for $\lambda$ and $1-\lambda$.  A natural weaker speculation is that one 
 only invert elements of the form $r+s\lambda$ for integers $r$ and $s$.
 \end{remark}
 
-Note that if $d = -2\frac{(\lambda+5)(6-\lambda)}{\lambda(1-\lambda)}$ is 
+Note that if $D = -2\frac{(\lambda+5)(6-\lambda)}{\lambda(1-\lambda)}$ is 
 invertible in $R$, it follows from classical consistency
 that $R$ injects into $\mathsf{Exc}_{R,\lambda}(1,1)$ as multiples of the
-strand.  Similarly if $b = 12$ and $d$ are invertible in $R$, it follows from
+strand.  Similarly if $D$ is invertible in $R$, it follows from
 classical consistency that $R$ injects into $\mathsf{Exc}_{R,\lambda}(2,1)$ as
 multiples of the trivalent vertex.  Finally if in addition
 $5$, $\lambda-6$, $\lambda-4$, $\lambda+3$, and $\lambda+5$ are invertible, 
@@ -312,27 +314,27 @@ There exists
   \begin{itemize}
   \item a ring $R$ which is a localization of $\mathbb{Q}[\lambda]$ at finitely many polynomials;
   \item a rigid symmetric monoidal category
-    $\mathsf{Exc}^D_{R,\lambda}$ where the objects are
+    $\mathsf{Exc}^{Del}_{R,\lambda}$ where the objects are
     integers and morphism spaces are finitely-generated
     $R$-modules; and
   \item a symmetric monoidal functor $\eval$ from
-    $\mathsf{Exc}_{R,\lambda}$ to $\mathsf{Exc}^D_{R,\lambda}$, that
+    $\mathsf{Exc}_{R,\lambda}$ to $\mathsf{Exc}^{Del}_{R,\lambda}$, that
     is the identity on objects and surjective on morphisms.  
   \end{itemize}
 For any map $\varphi\colon R \rightarrow S$ we can define a base
-extension $\mathsf{Exc}^D_{S,\varphi(\lambda)} =
-\mathsf{Exc}^D_{R,\lambda} \otimes_\varphi S$.  Furthermore
-$\mathsf{Exc}^D$ has the following properties for an open dense subset
+extension $\mathsf{Exc}^{Del}_{S,\varphi(\lambda)} =
+\mathsf{Exc}^{Del}_{R,\lambda} \otimes_\varphi S$.  Furthermore
+$\mathsf{Exc}^{Del}$ has the following properties for an open dense subset
 $U \subset \mathbb{C}$.
 \begin{itemize}
 \item The idempotent completion of
-  $\mathsf{Exc}^D_{\mathbb{C},\lambda}$ is semisimple for $\lambda \in U$.
-\item $\mathsf{Exc}^D_{\mathbb{C},\lambda}(n,m)$ has dimension $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
+  $\mathsf{Exc}^{Del}_{\mathbb{C},\lambda}$ is semisimple for $\lambda \in U$.
+\item $\mathsf{Exc}^{Del}_{\mathbb{C},\lambda}(n,m)$ has dimension $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
 for $\lambda \in U$ and $n+m=0,1,2,3,4,5,6$, respectively.
 \item If $\lambda$ is one of the special values in
   Table~\ref{tab:lambda-group}, then the idempotent completion of the
   quotient of
-  $\mathsf{Exc}^D_{\mathbb{C},\lambda}$ by negligible elements is
+  $\mathsf{Exc}^{Del}_{\mathbb{C},\lambda}$ by negligible elements is
   equivalent to the category of representations of the corresponding
   supergroup.
 \end{itemize}
@@ -347,7 +349,7 @@ viewed as closer to Conjecture~\ref{conj:class-consist}, since it
 doesn't say anything about the kernel of $\eval$;
 Conjecture~\ref{conj:class-suffic} says that the classical exceptional
 relation is the only skein relation needed to define
-$\mathsf{Exc}^D_{R,\lambda}$.
+$\mathsf{Exc}^{Del}_{R,\lambda}$.
 
 \begin{remark}
   We have learned that Vogel has computational evidence against
@@ -441,10 +443,6 @@ trivalent vertices and $4$-valent braided crossings modulo planar isotopy, the
 usual Reidemeister 2 and 3 relations for a crossing, and the
 following circle, lollipop, bigon, triangle, quantum anti-symmetry, and
 quantum Killing symmetry relations.
-
-\nn{The ``classical to quantum'' section is quite hard to write if we
-  use $d$, $b$, and $t$ in both the quantum and classical case. Can we
-capitalize one of them, maybe? Or use a subscript when we need to distinguish.}
 
  \begin{equation}
     \label{eq:simple-rels-spec}
@@ -590,6 +588,7 @@ QEJacobi relation implies QESquare and QECrossing.
 %With some mild assumptions on the base ring, any skein theory where the $n$-box space has dimension at most $1,0,1,1,5$ for $n=0,1,2,3,4$ satisfies a version of relation~\eqref{eq:quant-except-spec}. %See Theorem~\ref{thm:quant-except} in Section~\ref{sec:relation} for a precise statement.
 
 \begin{definition}
+\label{def:TrivalentRibbon}
 A \emph{trivalent ribbon} category $(\cC, X, \tau)$ is a ribbon category over
 $R$ with  an object $X$ such that
 the 1-box space is zero, and the 0-, 2-, and 3-box spaces are rank 1 free $R$-modules
@@ -719,27 +718,27 @@ There exists
   \begin{itemize}
   \item a ring $R$ satisfying the hypotheses of Definition~\ref{def:qexc};
   \item a trivalent ribbon category
-    $\mathsf{QExc}^D_{R,v,w}$ where the objects are
+    $\mathsf{QExc}^{Del}_{R,v,w}$ where the objects are
     integers and morphism spaces are finitely-generated
     $R$-modules; and
   \item a ribbon functor $\mathrm{Qeval}$ from
-    $\mathsf{QExc}_{R,v,w}$ to $\mathsf{QExc}^D_{R,v,w}$, that
+    $\mathsf{QExc}_{R,v,w}$ to $\mathsf{QExc}^{Del}_{R,v,w}$, that
     is the identity on objects, surjective on morphisms, and sends
     the trivalent vertex to the trivalent vertex.
   \end{itemize}
 As before, we can extend the base. Furthermore
-$\mathsf{QExc}^D$ has the following properties for an open subset
+$\mathsf{QExc}^{Del}$ has the following properties for an open subset
 $U \subset \mathbb{C}^2$
 \begin{itemize}
 \item The idempotent completion of
-  $\mathsf{QExc}^D_{\mathbb{C},v,w}$ is semisimple for $(v,w) \in U$
-\item $\mathsf{QExc}^D_{\mathbb{C},v,w}(n,m)$ has dimension $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
+  $\mathsf{QExc}^{Del}_{\mathbb{C},v,w}$ is semisimple for $(v,w) \in U$
+\item $\mathsf{QExc}^{Del}_{\mathbb{C},v,w}(n,m)$ has dimension $1,\allowbreak0,\allowbreak1,\allowbreak1,\allowbreak5,\allowbreak16,\allowbreak80$
 for $(v,w) \in U$ and $n+m=0,1,2,3,4,5,6$, respectively.
 \item If $\lambda$ is one of the special values in
   Table~\ref{tab:lambda-group} and $(v,v^\lambda) \in U$, then the idempotent
   completion of the
   quotient of
-  $\mathsf{Exc}^D_{\mathbb{C},\lambda}$ by negligible elements is
+  $\mathsf{Exc}^{Del}_{\mathbb{C},\lambda}$ by negligible elements is
   equivalent to the category of representations of the corresponding
   quantum supergroup \footnote{See Section \ref{sec:QGConventions} for quantum 
   group conventions, including what we mean by quantum analogue of an adjoint
@@ -802,20 +801,6 @@ example related to the ABA free product from \cite{MR3624901}.
 
 
 \section{Background}
-\nn{
-Recall:
-\begin{itemize}
-\item Category of trivalent tangles, perhaps more
-\item results from the trivalent paper we need?
-\item $SO(3)_{\zeta_{12}}$ plus the
-symmetric braiding relation is actually $\mathsf{Rep}(S_3)$ without needing to
-semisimplify.  The proof is that R2.5 move implies that the 5-trees simplify
-into planar forests.
-\item Kontsevich integral
-\end{itemize}
-}
-
-
 
 \subsection{Quantum group conventions}
 \label{sec:QGConventions}
@@ -897,6 +882,11 @@ the generators and relations for quantum $\mathfrak{so}_{2n+1}$ given use a non-
 final $E_n$, but by looking at the Serre relations we see that $[2]_{q_i} = q+q^{-1}$  for 
 $i < n$ but $[3]_{q_n} = q+1+q^{-1}$ so they've chosen $q=q_i=q_{\mathrm{long}}$ and $q_n = q_{\mathrm{short}} = q^{\frac{1}{2}} = q^{\frac{1}{D}}$, so Zhang's $q$ is our $q^2$.
 
+\subsection{Trivalent tangles and braided trivalent categories}
+
+Let $R$ be a ring and let $\mathsf{Tri}_R$ denote the ribbon category of $R$-linear combinations of framed unoriented trivalent graphs.  I.e. its objects are points on the line, and its moprhisms are formal linear combinations of framed unoriented trivalent graphs with composition given by vertical gluing, and tensor product given by horizontal disjoint union.  Note in particular that the trivalent vertex is rotationally invariant.
+
+If $\cC$ is a ribbon category in the sense of Definition \ref{def:TrivalentRibbon}, then by \cite[Lemma 8.2]{MR3624901} there's a ribbon functor $\mathsf{Tri}_{\mathbb{C}} \rightarrow \cC$.
 
 
 \subsection{Some braided trivalent categories}
@@ -920,7 +910,7 @@ $$\braidcross  =  q^{-2} \twostrandid + (q^2 - 1) \cupcap - \frac{(q^2+q^{-2})}{
 
 As usual we can choose any non-zero value of $b$ without changing the category.  Also sending $q \mapsto -q$ doesn't change the category.  Sending $q \mapsto q^{-1}$ doesn't change the underlying pivotal category but does change the braiding.  The standard normalization of $b$ coming from thinking of $SO(3)_q$ as coming from the second Jones-Wenzl projection is $b = \frac{q^2+q^{-2}}{q+q^{-1}}$. In \cite{MR3624901} we normalize so that $b=1$.
 
-Note that here we have not semisimplified, so when $q$ is a root of unity this category will be degenerate.  For all but a few small roots of unity it will agree with the category of tilting modules for quantum $SO(3)$ defined algebraically. \cite{???}
+Note that here we have not semisimplified, so when $q$ is a root of unity this category will be degenerate.  For all but a few small roots of unity it will agree with the category of tilting modules for quantum $SO(3)$ defined algebraically (this is well-known and appears many places in the literature, a particularly nice argument is given by Webster in \cite[Lemma A.7]{MR3624396}).
 
 
 \subsubsection{$SOSp(1|2)$}
@@ -968,15 +958,10 @@ $$X \otimes X \cong 1 \oplus X \oplus W_4^+.$$  In particular, it is a trivalent
 
 By \cite{MR2849718,MR3000482} the category of representations of a Lie supergroup can be equivalently described as the category  of super Harish-Chandra pairs, and this is explained for the special case of $OSp$ and $SOSp$ in \cite[\S 7.1]{MR3633307}.  One typically studies a pair $G$ a supergroup and $\varepsilon$ a fixed involution whose conjugation map is the parity automorphism, and denotes $\mathrm{Rep}(G,\varepsilon)$ the category of representations where $\varepsilon$ acts by the parity map.  In particular, $OSp(1|2)$ consists of representations of $\mathfrak{osp}(1|2)$ together with a lift to $O(1)\times Sp(2)$ while $SOSp(1|2)$ consists of representations of $\mathfrak{osp}(1|2)$ together with a lift to $SO(1)\times Sp(2)$.  We fix $\varepsilon$ to be the diagonal matrix with $1,-1,1$ along the diagonal.  The corresponding category  of representations of $SOSp(1|2)$ is exactly the representations of $\mathfrak{osp}(1|2)$ which appear in the tensor powers of the vector representation, while representations of $OSp(1|2)$ are have an additional parity coming from the $O(1) = \mathbb{Z}/2\mathbb{Z}$ which is required to be congruent modulo 2 to the highest weight.  In particular, the invariant spaces for the vector representation $\Hom(V^{\otimes a}, V^{\otimes b})$ for $OSp(1|2)$ vanish unless $a \equiv b \mod 2$ but there's no such restriction for $SOSp(1|2)$.   In particular, $SOSp(1|2)$ is a trivalent category, while $OSp(1|2)$ is a quotient of a BMW category.
 
-Fixing conventions for the quantum versio of $\mathrm{osp}(1|2)$ is somewhat miserable, so instead we explain the correct parameterization for $SOSp(1|2)_t$ indirectly.  Any deformation $SOSp(1|2)_t$ will again be a trivalent category and hence a $SO(3)_q$ for some change of variables between $q$ and $t$, the only issue is to get the $q$-conventions correct.  
+Fixing conventions for the quantum version of $\mathrm{osp}(1|2)$ is somewhat miserable, so instead we explain the correct parameterization for $SOSp(1|2)_t$ indirectly.  Any deformation $SOSp(1|2)_t$ will again be a trivalent category and hence a $SO(3)_q$ for some change of variables between $q$ and $t$, the only issue is to get the $q$-conventions correct.  
 
 
-
-
-
-
-
-\subsection{Golden categories}
+\subsubsection{Golden categories}
 
 \begin{definition}
 When $q$ is a primitive $5$th or $10$th root of unity then $SO(3)_q$ has an additional quotient called the golden category with the extra relation:
@@ -984,6 +969,8 @@ $$\drawI = b \twostrandid - b \frac{1}{q^2+1+q^{-2}} \cupcap.$$
 
 Here $\unknot = q^2+1+q^{-2}$ is $\frac{1\pm \sqrt{5}}{2}$.
 \end{definition}
+
+\subsection{$(G_2)_q$}
 
 \begin{definition}
 For $q$ not a primitive $3$rd, $6$th, $7$th, $14$th, $16$th, or $24$th root of unity, let $(G_2)_q$ be the trivalent ribbon category defined by the following relations.
@@ -1008,8 +995,6 @@ For $q$ not a primitive $3$rd, $6$th, $7$th, $14$th, $16$th, or $24$th root of u
 	- \frac{1}{b} \frac{\Psi_3(q) \Psi_8(q)}{\Psi_2(q)} 
 	\left( q^{-1} \drawH + q \drawI \right).
 \end{align*}
-
-
 \end{definition}
 
 Note that the complicated relation for simplifying pentagons actually follows from the others as in \cite{MR3624901}.
@@ -1017,6 +1002,8 @@ Note that the complicated relation for simplifying pentagons actually follows fr
 The usual normalization is $b = -\Psi_3(q) \Psi_{8}(q)$ which makes the coefficients of the pentagon relation $+1$ and $-1$ (not quite as in \cite{MR1403861}, which contains an error; see \cite[\S 1.1.3]{MR3624901}) and simplifies the crossing relation.  In \cite{MR3624901} we normalized so that $b=1$.
 
 When $q = \pm i$, we have that $(G_2)_{\pm i}$ has a quotient to $SO(3)_{\pm i}$, which is the value corresponding to $OSp(1|2)$.  Recall that in \cite{MR3624901} we always take the non-degenerate quotient, but we do not do so here, so $(G_2)_{\pm i}$ and $SO(3)_{\pm i}$ denote different trivalent ribbon categories. 
+
+\subsubsection{$S_t$}
 
 \begin{definition}
 For $d \neq 1$, let  $S_{d+1}$ be the trivalent ribbon category given by the following relations.
@@ -1039,17 +1026,17 @@ The category $S_{d+1}$ is Deligne's interpolated symmetric group category, but i
 When $d=-1$ our $S_0$ does not agree with Deligne's $S_0$, because in our category the permutation breaks up as a direct sum of the standard and the trivial, whereas for Deligne's the permutation will be a nontrivial extension of the trivial and the standard.  This is closely analogous to what happens for $SO(3)_q$ at $q=\pm i$.  Again we will address this further in a later paper.
 \end{warning}
 
+
+
+\subsubsection{$\text{Rep}(S_3)$}
+
+
 \begin{definition}
 $S_{3}$ has a further quotient $\mathrm{Rep}(S_3)$ with the extra relation:
 $$\symcross = \frac{1}{b}\drawI + \frac{1}{b}\drawH.$$
 \end{definition}
 
-Note that as a pivotal category $\mathrm{Rep}(S_3)$ agrees with the semisimplification of $SO(3)_q$ for $q$ a primitive $12$th root of unity, but the ribbon structures are different (the former is symmetric while the latter is not).  See \nn{add reference to trivalent paper}.
-
-
-
-
-
+Note that as a pivotal category $\mathrm{Rep}(S_3)$ takes a functor from $SO(3)_{\zeta_{12}}$, but this functor is not a ribbon structure because they have different braidings (the former is symmetric while the latter is not) \cite[Ex. 8.6]{MR3624901}.  This functor is clearly essentially surjective, and is full because the formula simplifying the crossing.  However, this functor is not faithful, because $\mathrm{Rep}(S_3)$ is semisimple, and so every negligble morphism in $SO(3)_{\zeta_{12}}$ must be killed and we see that $\mathrm{Rep}(S_3)$ is the semisimplification of $SO(3)_{\zeta_{12}}$.
 
 \section{Main results}
 
@@ -1718,7 +1705,7 @@ as a root vertex and label the remaining vertices clockwise as $x_1, x_2, \ldots
 then such a diagram can be interpreted as a bracket formula like $[x_2,[x_1, x_3]]$ in
 the free Lie algebra on $k-1$ letters.  But due to the Jacobi and antisymmetry relation we should expect these
 $(k-1)!$ diagrams to span a space that's smaller than $(k-1)!$ dimensional.  In fact, by 
-\cite{???}\NStodo{find a reference}, they span an $(k-2)!$ dimensional space which has as a basis
+the Witt Dimension Formula applied to words of degree $(1,1,\ldots)$ \cite[Satz 3]{MR1581553}, they span an $(k-2)!$ dimensional space which has as a basis
 the diagrams obtained by starting with a fixed tree and permuting $k-2$ of the leaves arbitrarily.
 
 More generally for forests pick a partition of the boundary points into parts with 
@@ -2578,24 +2565,24 @@ $8_{18}$.)
 \section{Special values}
 \label{sec:special-values}
 
-\DPTtodo{Made this section more general, since it seems other special cases
-  naturally go here}
 The goal of this section is to analyze several special cases,
 including
 \begin{itemize}
 \item When $v$ is a $10$th or $12$th root of unity, the
-  derivation of the QESquare and QECrossing relations break down.
-\item When $\fg$ is in Deligne's list, in the adjoint
-  representation, the conjectural 2-variable polynomial specializes
-  correctly.
-\item The $7$-dimensional representation of $U_q(\fg_2)$ also
-  satisfies the given assumptions on the dimension of the 4-box space.
-\item For $U_q(\fg)$ for $\fg$ in the $F_4$ family, we again have a
-  trivalent vertex. At $q=1$ we have $v^6 = -1$, since the trivalent
-  vertex is symmetric, not anti-symmetric. This family has only a
-  finite number of points.
-  \DPTtodo{Also classical $S_t$?}
+  derivation of the QESquare and QECrossing relations break down.  We consider
+  what happens separately when $v^2$ is a primitive $1$st, $3$rd, $2$nd, $5$th or $6$th
+  root of unity.  The case of $v^2$ is a $6$th roots of unity has a different flavor and will be 
+  considered in more detail in a later paper.
+\item When $v^2=1$ we show that the classical exceptional relations hold.
+\item When $v^2$ is a primitive $3$rd root of unity, we show that the classical $G_2$-family relations hold.
+\item When $v^2$ is a primitive $2$nd root of unity we show that the classical $F_4$-family relations hold.
+\item When $v^2$ is a primitive $5$th root of unity we show...
+\item If $\fg$ is a Lie algebra lying in the exceptional, $F_4$, or $G_2$ families we show that the category of representations of $U_q(\fg)$ is equivalent to the idempotent completion of the quotient of $\mathsf{QExc}_{\mathbb{C},v,w}$ by negligible elements for the appropriate choice of $v$ and $w$.
 \end{itemize}
+
+
+
+\subsection{Specialisations to exceptional Lie algebras}%
 
 Here's a rough sketch of the proof given in Section \ref{sec:special-values}.
 (Some modification is
@@ -2608,8 +2595,6 @@ subgroup of the orthogonal group $\mathrm{O}(\mathfrak{g})$ preserving the brack
 the group.  But each of these groups is the maximal such unitary group
 preserving the bracket, so the functor is surjective on morphisms.
 
-
-\subsection{Specialisations to exceptional Lie algebras}%
 
 We begin by proving classical specialization.  This argument is essentially the same as the one in \nn{Etingof-Neshveyev}
 
