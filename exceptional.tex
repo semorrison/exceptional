@@ -1203,6 +1203,8 @@ that:
 which are the defining relations of the Golden category.  The values for $v$ and $\alpha$ given in the theorem come from calculating $\sum_{i=0}^2 \lambda^i R^i(\psi)$ for $\lambda$ a cube root of unity.
 \end{proof}
 
+When $\beta \neq 0$, wlog we assume that $\beta = 1$.
+
 \begin{lemma} \label{lem:dandtvalues}
 Suppose $\cC$ satisfies QEJacobi for some $v$ and~$\alpha$. Then 
 \begin{align}
@@ -2849,7 +2851,7 @@ Recall $t = \frac{b-[5]\alpha}{\{2\}} = \frac{b}{2}$.  We also have that $0= [5]
 There are no $\cC$ with $\alpha \neq 0$.
 \end{lemma}
 \begin{proof}
-Since $d+\{8\}=0$, we have that $d=-2$.  The QECrossing relation says that:
+Since $d+\{8\}=0$, we have that $d=-2$.  The QESquare relation says that:
 $$\braidcross + \cupcap + \twostrandid = 0.$$
 This is exactly the case excluded in Lemma \ref{lem:betazero}.
 \end{proof}
@@ -2858,7 +2860,7 @@ This is exactly the case excluded in Lemma \ref{lem:betazero}.
 If $\alpha = 0$, then $\cC$ satisfies the defining relations of the classical exceptional series.
 \end{lemma}
 \begin{proof}
-QECrossing says that the crossing is symmetric, and then QEJacobi becomes the usual Jacobi relation. 
+QECrossing says that the crossing is symmetric\NStodo{this step is incorrect}, and then QEJacobi becomes the usual Jacobi relation. 
 
 Since $\dim \cC_4 \leq 5$, there must be some relation of the following form:
 $$0 = \fourgon + x \symcross + y \left(\drawI + \drawH \right) + z\left(\twostrandid + \cupcap \right).$$
