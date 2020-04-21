@@ -2836,12 +2836,12 @@ Strictly speaking in \cite{MR3624901} we only considered non-degenerate trivalen
 
 \subsection{The case \texorpdfstring{$v = \pm 1$}{v = pm 1}}
 
-Throughout this section we assume $v=1$.
+Throughout this section we assume WLOG $v=1$.
 
 Recall $t = \frac{b-[5]\alpha}{\{2\}} = \frac{b}{2}$.  We also have that $0= [5]b = -\alpha (d+\{8\})$, so we split into two cases based on whether $\alpha = 0$.
 
 \begin{lemma}
-There are no $\cC$ with $\alpha \neq 0$.
+There are no trivalent ribbon categories $\cC$ satisfying QEJacobi with $v=1$ and $\alpha \neq 0$.
 \end{lemma}
 \begin{proof}
 Since $d+\{8\}=0$, we have that $d=-2$.  The QESquare relation says that:
@@ -2849,11 +2849,42 @@ $$\braidcross + \cupcap + \twostrandid = 0.$$
 This is exactly the case excluded in Lemma \ref{lem:betazero}.
 \end{proof}
 
-\begin{lemma}
-If $\alpha = 0$, then $\cC$ satisfies the defining relations of the classical exceptional series.
-\end{lemma}
+\begin{theorem}
+If $\cC$ is trivalent ribbon category satisfying $QEJacobi$ with $v=1$, $\alpha =0$, and $\dim \cC_4 \leq 5$, then $\cC$ satisfies the relations of the classical exceptional series.
+\end{theorem}
 \begin{proof}
-QECrossing says that the crossing is symmetric\NStodo{this step is incorrect}, and then QEJacobi becomes the usual Jacobi relation. 
+First note that if there's a linear dependence between the diagrams
+ \[
+  \cupcap\;,\qquad\twostrandid\;,
+    \qquad\drawI\;,\qquad\drawH\; \]
+then Lemma \ref{lem:IequalsH} implies that the category is a quotient of some $SO(3)_q$ or is $\mathrm{Rep}(S_3)$.  In order to have $v=1$, we must have $q = v^3 = 1$, and so it's classical $SO(3)$ or $\mathrm{Rep}(S_3)$.  Both of these satisfy the classical exceptional relations.
+
+QEJacobi says that the Jacobi relation holds using an overcrossing.  Composing this relation with the undercrossing shows that the Jacobi relation also holds using an undercrossing.
+
+Since $\dim \cC_4 \leq 5$, we may assume that the following six diagrams are linearly dependent:
+ \[
+  \cupcap\;,\qquad\twostrandid\;,
+    \qquad\drawI\;,\qquad\drawH\;,\qquad\braidcross\;,\qquad \invbraidcross\;
+   \]
+More specifically, we can assume that such a relation is a rotational eigenvector with eignevalue $\pm 1$.  We consider each case separately.
+
+If
+\[\invbraidcross + \braidcross + x\left(\drawI + \drawH\right) + y \left(\twostrandid+\cupcap\right)=0\]
+we can attach an $H$ to the top and use the Jacobi relations to get:
+\[ x \fourgon +(\frac{bx}{2} -2) \drawI + (2+y)\drawH + b y \cupcap = 0\].
+Subtracting this relation from its rotation we get:
+\[(\frac{bx}{2} -y -4) \left(\drawI-\drawH\right) -b y \left(\twostrandid - \cupcap\right) = 0.\]
+By \ref{???} this relation must be trivial, so we see that $y=0$ and $x = 8/b$.  But capping off our original relation we get $0 = 2+bx+(d+1)y = 2+8 = 10$, which is a contradiction.  So the relation cannot have rotational eigenvalue $+1$.
+
+Now we turn to rotational eigenvalue $-1$ and apply the same argument.
+\[\invbraidcross - \braidcross + x\left(\drawI - \drawH\right) + y \left(\twostrandid-\cupcap\right)=0\] implies
+\[-x \fourgon + (\frac{xb}{2} -y) \drawI + y \drawH - b y \cupcap\] which anti-symmetrizes to
+\[(\frac{xb}{2}-y) \left(\drawI - \drawH\right) + b y \left(\twostrandid - \cupcap\right) = 0\]
+which implies that $x = 0$ and $y=0$.
+
+Thus we see that the crossing must be symmetric, and in particular the QEJacobi relation becomes exactly the usual Jacobi relation.
+
+Now we turn to the square relation.
 
 Since $\dim \cC_4 \leq 5$, there must be some relation of the following form:
 $$0 = \fourgon + x \symcross + y \left(\drawI + \drawH \right) + z\left(\twostrandid + \cupcap \right).$$
@@ -2866,8 +2897,11 @@ Multiplying this by a crossing and using the Jacobi relation:
 If these two relations are distinct, then Proposition \ref{prop:dim4} applies, and the only case with $v=1$ is classical $SO(3)$ (note that there is not trivalent category $(G_2)_{\zeta_3}$), which satisfies the classical exceptional relation.  Otherwise, we have $x=z$ and $y = -\frac{b}{6}$.  
 
 Capping off this relation gives $0 = b^2 + x -\frac{b^2}{6}+x(1+d) =  (2+d)x +\frac{5 b^2}{6}$, so we have $x = -\frac{5 b^2}{6(2+d)}$.  This gives the classical exceptional square relation.
-\end{proof}
+\end{proof}\NStodo{Should this be broken up into lemmas in some way?}
 
+\begin{remark}
+One can think of the classical exceptional series as a limit of the quantum exceptional series where you set $w = v^\lambda$ and then take the limit as $v$ goes to $1$.
+\end{remark}
 
 \subsection{The case \texorpdfstring{$v$}{v} is a primitive third or sixth root of unity}
 
@@ -2876,7 +2910,6 @@ If $v$ is a primitive third root of unity, then $\cC$ is classical $SO(3)$ or cl
 \end{proposition}
 \begin{proof}
 Since $v$ is not a $10$th root of unity $\alpha$ is non-zero.  Also $b+[3]\alpha = b \neq 0$.  QECrossing says that the braiding is symmetric.  
-%QEJacobi becomes $$\drawsymcrossX + v \drawI - v^2 \drawH + \alpha \left(\symcross + v^2 \twostrandid +v \cupcap \right) = 0.$$
 
 QESquare becomes:
 $$\symcross+\frac{\sqrt{-3}}{2\alpha} \left(\drawI + \drawH \right) -\frac{1}{2} \left(\twostrandid + \cupcap \right) = 0.$$
