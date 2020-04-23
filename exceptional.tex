@@ -1300,7 +1300,7 @@ the QESquare relation.  The QESquare relation minus its 90-degree rotation
 gives the QECrossing equation.
 \end{proof}
 
-When $v$ is not a $12$th root of unity we can divide by $[3]$,
+When $v$ is not a $6$th root of unity we can divide by $[3]$,
 and if $v$ is not a $10$th root of unity we can divide by $\alpha$.  All that remains in order to prove Theorem
 \ref{thm:square-crossing} is to show that when $v$ is not a $10$th or $12$th
 root of unity that $b+[3]\alpha$ is non-zero.  Note that if $v$ is not a
@@ -2710,22 +2710,32 @@ We will also say that the QEJacobi relation holds with $\alpha=\infty$ if
 Each of the following lemmas is proved the same way.  We compute the value of the trivalent twist which gives the value of $-v^6$.  This leaves three options (up to sign) for $v$.  Then we take a relation $X$ between the six diagrams and compute $X+v^{4} R(X)+ v^{-4}R^2(X)$ to get QEJacobi relations. 
 
 \begin{lemma}
-$SO(3)_q$ satisfies three instances of the QEJacobi relation with $\alpha = -b \frac{\Psi_1(v)}{\Psi_{12}(v)} $ for $v$ a cube root of $q$.  Under the change of variables we see that this value of $\alpha$ corresponds to $w = \pm v^4$ or $w = \pm v^{-3}$.
+$SO(3)_q$ (for $q$ not a primitive $8$th root of unity) satisfies three instances of the QEJacobi relation with $\alpha = -b \frac{\Psi_1(v)}{\Psi_{12}(v)} $ for $v$ a cube root of $q$.  Under the change of variables we see that this value of $\alpha$ corresponds to $w = \pm v^4$ or $w = \pm v^{-3}$.
+\end{lemma}
+
+Note that $q$ a primitive $8$th root of unity is exactly the values for which the standard normalization of $b$ for $SO(3)_q$ vanishes.  
+
+Specializing the previous lemma to $q=i$ yields.
+
+\begin{lemma}
+$SOSp(1|2)$ satisfies three instances of the QEJacobi relation: $v=i$ with $\alpha = 2 i b$, $v = e^{2 \pi i/12}$ with $\alpha = \frac{i b}{2}$, and $v=e^{2 \pi i/12}$ with $\alpha = -\frac{i b}{2}$.
 \end{lemma}
 
 \begin{lemma}
-The golden categories are quotients of $SO(3)_q$ at $q$ a fifth or tenth root of unity.  The three relations in the previous lemma correspond to $v = q^2, q^2 \omega, q^2 \omega^2$ for a primitive cube root $\omega$.  For the golden category, there's a $2$-dimensional space of relations with $v = q^2$, i.e. there's such a relation for every $\alpha$ including $0$ and $\infty$.
+The golden categories are quotients of $SO(3)_q$ at $q$ a fifth or tenth root of unity.  The three relations above correspond to $v = q^2, q^2 \omega, q^2 \omega^2$ for a primitive cube root $\omega$.  For the golden category, there's a $2$-dimensional space of relations with $v = q^2$, i.e. there's such a relation for every $\alpha$ including $0$ and $\infty$.
  \end{lemma}
  \begin{proof}
 Plug the golden category formula for the $I$-diagram into the $SO(3)_q$ braiding relation to get a formula for the crossing in terms of the Temperley-Lieb diagrams, this gives a relation with $\alpha=\infty$ and $v=q^2$.  Linear combinations of this relation with the $v = q^2$ relation from the previous lemma gives relations with $v = q^2$ and $\alpha$ arbitrary.
  \end{proof}
 
 \begin{lemma}
-$(G_2)_q$ satisfies two instances of the QEJacobi relation, $\alpha = b \frac{1-\zeta q^2}{-\zeta^2 q}$ and $v = \zeta q$ for $\zeta$ a primitive cube root of unity.  This value of $\alpha$ corresponds to $w = \pm q^{-1} = \pm \zeta v^{-1}$ or $w = \pm \zeta q^2 = \pm \zeta^2 v^2$.
+$(G_2)_q$ (for $q$ not a primitive $3$rd, $6$th, or $16$th root of unity) satisfies two instances of the QEJacobi relation, $\alpha = \frac{b}{\Psi_3 \Psi_8} \frac{1-\zeta q^2}{-\zeta^2 q}$ and $v = \zeta q$ for $\zeta$ a primitive cube root of unity.  This value of $\alpha$ corresponds to $w = \pm q^{-1} = \pm \zeta v^{-1}$ or $w = \pm \zeta q^2 = \pm \zeta^2 v^2$.
 \end{lemma}
 
+Note that $q$ a primitive $3$rd, $6$th, or $16$th root of unity are exactly the values for which the standard normalization of $b$ for $(G_2)_q$ vanishes.
+
 \begin{lemma}
-$S_{d+1}$ satisfies two instances of the QEJacobi relation $\alpha = -v^3 \frac{b}{d-1}$ for $v$ a primitive $12$th root of unity.
+$S_{d+1}$ (for $d \neq 1$) satisfies two instances of the QEJacobi relation $\alpha = -v^3 \frac{b}{d-1}$ for $v$ a primitive $12$th root of unity.
 \end{lemma}
 
 \begin{lemma}
@@ -2917,13 +2927,17 @@ $$\symcross+\frac{\sqrt{-3}}{2\alpha} \left(\drawI + \drawH \right) -\frac{1}{2}
 After rescaling the trivalent vertex, this becomes precisely the Hurwitz relation (or classical $G_2$ relation) of \cite{1011.6197}.  The main result of that paper is that either $d = 7$ and $\cC$ is classical $G_2$ or $d=3$ and $\cC$ is $SO(3)$.
 \end{proof}
 
+\begin{remark}
+The classical $G_2$ family relations can be thought of as a limit of the quantum exceptional series by setting $w = \omega v^n$ and taking the limit as $v \rightarrow 1$.
+\end{remark}
+
 \subsection{The case \texorpdfstring{$v$}{v} is a primitive fourth root of unity}
 
 Since $v$ is not a $10$th root of unity $\alpha$ is nonzero.  We have that $d+2 = \frac{-2ib}{\alpha}$.
 We need to split into two cases based on whether $b+[3]\alpha = 0$.  
 
 \begin{proposition}
-If $b+[3]\alpha \neq 0$ then $\cC$ satisfies the relations of the classical F4 relation.  In particular the non-degenerate quotient of $\cC$ must be one of \nn{LIST}.
+If $\cC$ is a trivalent ribbon category satisfying QEJacobi with $v = i$ and $b+[3]\alpha \neq 0$, then $\cC$ satisfies the defining relations of the classical F4 relation.  In particular the non-degenerate quotient of $\cC$ must be one of \nn{LIST}.
 \end{proposition}
 \begin{proof}
 If $b+[3]\alpha \neq 0$, then QECrossing says the crossing is symmetric.   QEJacobi becomes
@@ -2936,13 +2950,18 @@ We exclude the $\Rep(S_3)$ case because it satisfies $b+[3]\alpha = 0$.
 
 Since we do not know whether the classical F4 relation is sufficient for evaluating all closed diagrams, we do not know whether there are any additional degenerate $\cC$ whose non-degenerate quotient is one of the above categories.
 
-If $b+[3]\alpha = 0$, then $\alpha = -\frac{bi}{2}$ and $d = 2$.  QEJacobi becomes
+\begin{lemma}
+If $\cC$ is a trivalent ribbon category satisfying the QEJacobi relation with $v=i$ and $b+[3]\alpha = 0$, then $\alpha = -\frac{bi}{2}$, $d = 2$, and the relations
 $$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \;\right).$$
-QESquare becomes
-$$\fourgon = -\frac{1}{2} \left(\drawI + \drawH \;\right) + \frac{1}{2} \left(\;\twostrandid + \cupcap \;\right).$$
+and 
+$$\fourgon = -\frac{1}{2} \left(\drawI + \drawH \;\right) + \frac{1}{2} \left(\;\twostrandid + \cupcap \;\right).$$ hold.
+\end{lemma}
+\begin{proof}
+This follows immediately from specializing the relations for general $v$.
+\end{proof}
 
 \begin{lemma}
-The following diagrams are negligible in $\cC$:
+If $\cC$ is a trivalent ribbon category satisfying the QEJacobi relation with $v=i$ and $b+[3]\alpha = 0$, then the following diagrams are negligible in $\cC$:
 \begin{itemize}
 \item $$\braidcross + \invbraidcross - 2 \left(\drawI + \drawH \;\right)$$
 \item $$\braidcross - \invbraidcross$$
@@ -2959,16 +2978,19 @@ If the diagrams
 \end{proof}
 
 \begin{corollary}
-If $\cC$ is non-degenerate then it must be $\mathsf{Rep}(S_3)$.
+If $\cC$ is a non-degenerate trivalent ribbon category satisfying the QEJacobi relation with $v=i$ and $b+[3]\alpha = 0$, then it must be $\mathsf{Rep}(S_3)$.
 \end{corollary}
 
 \begin{corollary}
-Either
+If $\cC$ is a trivalent ribbon category with $\dim \cC_4 \leq 5$ satisfying the QEJacobi relation with $v=i$ and $b+[3]\alpha = 0$ then etiher
 \begin{itemize}
-\item $$\braidcross + \invbraidcross = 2 \left(\drawI + \drawH \;\right).$$
-\item $$\braidcross - \invbraidcross = x \left(\drawI - \drawH - \twostrandid + \cupcap\;\right).$$
+\item $$\braidcross + \invbraidcross = 2 \left(\drawI + \drawH \;\right)$$ 
+\item or $$\braidcross - \invbraidcross = x \left(\drawI - \drawH - \twostrandid + \cupcap\;\right)$$ for some $x$.
 \end{itemize}
 \end{corollary}
+\begin{proof}
+By the dimension bound there must be some relation between these $6$ diagrams, and in particular a relation must hold which is a rotational eigenvector with eigenvalue $\pm 1$.  Such a relation must be negligible, and so we have one of the above form.
+\end{proof}
 
 If both relations hold, then the crossing simplifies.  By \ref{prop:dim4}, we
 see that $\cC$ is $\mathsf{Rep}(S_3)$ (which satisfies the latter relation for
@@ -2988,10 +3010,9 @@ gives a category $\cG$ with finite dimensional Hom-spaces and $\dim \cG_k = 1,0,
 
 Note that these generators and relations can't define a trivial category
 because it has a quotient to  $(G_2)_{\zeta_{12}}$, and they also can't define
-can't define $(G_2)_{\zeta_{12}}$ because it has braided quotient maps to both
-$(G_2)_{\zeta_{12}}$ and $(G_2)_{-\zeta_{12}}$.  So the content of this conjecture
+can't define $(G_2)_{\zeta_{12}}$ because it also has a braided quotient maptod $(G_2)_{-\zeta_{12}}$.  So the content of this conjecture
 is that these relations suffice to simplify diagrams down to the appropriate
-spanning sets.
+spanning sets.  This is closely analogous to the quantum exceptional sufficiency conjecture.
 
 \begin{conjecture}
 Trivalent ribbon graphs modulo $d=2$ and the following relations:
@@ -3016,7 +3037,7 @@ $$\braidcross - \invbraidcross = 0.$$
 gives a non-trivial category $\cF$ with $\dim \cF_k = 1,0,1,1,5$ for $k = 0,1,2,3,4$.
 \end{conjecture}
 
-Here $\cF$ is the classical F4 family at $d=2$ without taking the non-
+Here $\cF$ is the classical F4 family at $d=2$ without tak ing the non-
 degenerate quotient.  There is some evidence given in \cite{F4E6} that these
 relations are enough to simplify closed diagrams.  In this case it's possible
 that these relations collapse all the way down to $\mathsf{Rep}(S_3)$ with
@@ -3034,8 +3055,16 @@ We have no idea what to expect if you impose the relation
 $$\braidcross - \invbraidcross = x \left(\;\drawI - \drawH - \twostrandid + \cupcap \; \right)$$ 
 for some $x$ that is neither $0$ nor $\pm \frac{2}{\sqrt{-3}}$.
 
+\begin{remark}
+The classical $G_2$ family relations can be thought of as a limit of the quantum exceptional series by setting $w = \omega v^n$ and taking the limit as $v \rightarrow 1$.
+\end{remark}
 
-\nn{Several cases missing, as mentioned at the beginning of this section}
+
+\subsection{The case \texorpdfstring{$v$}{v} is a primitive tenth root of unity}
+
+
+\subsection{The case \texorpdfstring{$v$}{v} is a primitive twelth root of unity}
+
 
 
 \appendix
