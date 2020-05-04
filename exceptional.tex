@@ -1006,24 +1006,23 @@ When $q = \pm i$, we have that $(G_2)_{\pm i}$ has a quotient to $SO(3)_{\pm i}$
 \subsubsection{$S_t$}
 
 \begin{definition}
-For $d \neq 1$, let  $S_{d+1}$ be the trivalent ribbon category given by the following relations.
+For $d \neq 1$, let  $S_{d+1}$ be the symmetric trivalent ribbon category given by the following relations.
 
 $$  \drawH \; - \; \drawI \; + \frac{b}{d-1}\; \twostrandid \; -  \frac{b}{d-1}\; \cupcap = 0$$
-$$\braidcross  =  \invbraidcross$$
 \begin{align*}
     \unknot\; &= d &\qquad
-      \twist\; &=  \;\drawcup&\qquad
-        \twistvertex\; &=  \;\threevertex\\[5pt]
+      \symtwist\; &=  \;\drawcup&\qquad
+        \symtwistvertex\; &=  \;\threevertex\\[5pt]
     \loopvertex\;&=0&
       \twogon\;&= b\;\onestrandid&
         \threegon\; &= b \frac{d-2}{d-1}\;\threevertex
 \end{align*}
 \end{definition}
 
-The category $S_{d+1}$ is Deligne's interpolated symmetric group category, but instead of the permutation representation as the generator we use the irreducible representation corresponding to the partition $(d,1)$ which is the permutation representation minus the trivial representation.  The endomorphism algebras in this category are called the quasi-partition algebras in \cite{MR3177889}.  Since this example is not the main thrust of this paper we will delay the details of its trivalent ribbon presentation to a future paper.
+The category $S_{d+1}$ is Deligne's interpolated symmetric group category, but instead of the permutation representation as the generator we use the irreducible representation corresponding to the partition $(d,1)$ which is the permutation representation minus the trivial representation.  The endomorphism algebras in this category are called the quasi-partition algebras in \cite{MR3177889}.  Since this example is not the main thrust of this paper we will delay the details of its trivalent ribbon presentation to a future paper.  The standard normalization for $b$ is $b=\frac{d-1}{d+1}$.
 
 \begin{warning}
-When $d=-1$ our $S_0$ does not agree with Deligne's $S_0$, because in our category the permutation breaks up as a direct sum of the standard and the trivial, whereas for Deligne's the permutation will be a nontrivial extension of the trivial and the standard.  This is closely analogous to what happens for $SO(3)_q$ at $q=\pm i$.  Again we will address this further in a later paper.
+When $d=-1$ our $S_0$ does not agree with Deligne's $S_0$, because in our category the permutation breaks up as a direct sum of the standard and the trivial, whereas for Deligne's the permutation will be a nontrivial extension of the trivial and the standard.  Relatedly, at $d=-1$ the standard normalization of the bigon is $0$.  This is closely analogous to what happens for $SO(3)_q$ at $q=\pm i$.  Again we will address this further in a later paper.
 \end{warning}
 
 
@@ -1037,6 +1036,173 @@ $$\symcross = \frac{1}{b}\drawI + \frac{1}{b}\drawH.$$
 \end{definition}
 
 Note that as a pivotal category $\mathrm{Rep}(S_3)$ takes a functor from $SO(3)_{\zeta_{12}}$, but this functor is not a ribbon structure because they have different braidings (the former is symmetric while the latter is not) \cite[Ex. 8.6]{MR3624901}.  This functor is clearly essentially surjective, and is full because the formula simplifying the crossing.  However, this functor is not faithful, because $\mathrm{Rep}(S_3)$ is semisimple, and so every negligble morphism in $SO(3)_{\zeta_{12}}$ must be killed and we see that $\mathrm{Rep}(S_3)$ is the semisimplification of $SO(3)_{\zeta_{12}}$.
+
+\subsection{Trivalent ribbon categories with small $4$-box space}
+
+The main focus of this paper is on trivalent ribbon categories with $\dim \cC_4 = 5$.  Here we collect some results when $\dim \cC_4$ is even smaller.  These are minor modifications of results from \cite{MR3624901}.
+
+\begin{lemma}
+In a trivalent ribbon category $\cC$, the diagrams
+$$\cupcap \text{ and } \twostrandid$$
+are non-zero and are linearly independent.
+\end{lemma}
+\begin{proof}
+If either diagram is zero then by multiplying by a crossing on the appropriate side you get that the trivalent vertex is zero, which is a contradiction.  If the two diagrams are linearly dependent, then again multiplying by a trivalent vertex would show that the trivalent vertex is zero.
+\end{proof}
+
+%The following lemma is a mild generalization of \nn{Noah: what did you intend to cite here? \cite[Theorem 3.4]{MR3449240}?} where we have relaxed the non-degeneracy assumption.
+
+\begin{lemma}
+If $\cC$ is a trivalent ribbon category where the diagrams   
+  \[
+  \cupcap\;,\qquad\twostrandid\;,
+    \qquad\drawI\;,\qquad\drawH\;\;
+   \]
+are linearly dependent, then
+ 
+$$\drawI\; - \; \drawH - \frac{1}{d-1} \left(\; \twostrandid - \cupcap \; \right) = 0.$$
+\end{lemma}
+\begin{proof}
+By the previous lemma, we must have a relation of the form:
+$$\drawI\;\pm \; \drawH = z \left(\; \twostrandid \pm \cupcap \;\right).$$
+
+Capping off we see that $b= z (d \pm 1)$, so $z = \frac{b}{d \pm 1}$.  So all we need to do is exclude the $+$-sign case.
+
+Attaching a trivalent vertex we see that $t + b = \frac{b}{d + 1}$, so $t =  -\frac{b d}{d + 1}$.  Adding $\drawH$ to the top gives:
+
+$$t \drawI + \fourgon = \frac{b}{d+1} \left(\; \drawH + b \cupcap \; \right).$$
+
+If we take this relation minus its $90$-degree rotation the square term will vanish yielding:
+$$ b \frac{d-1}{d+1} \left(\; \drawI -\drawH \; \right) = \frac{b^2}{d+1} \left(\; \twostrandid - \cupcap \; \right).$$
+Dividing by $b \frac{d-1}{d+1}$ yields the desired equation.
+\end{proof}
+
+By Lemma \ref{lem:IequalsH} we have the following Corollary.
+
+\begin{corollary}
+If $\cC$ is a trivalent ribbon category, and the diagrams   
+  \[
+  \cupcap\;,\qquad\twostrandid\;,
+    \qquad\drawI\;,\qquad\drawH\;\;
+   \]
+are linearly dependent, then
+\begin{itemize}
+\item $v$ is a primitive $12$th root of unity
+\item $\cC$ is a quotient of $SO(3)_q$ with the usual braiding
+\item $\cC$ is $\mathsf{Rep}(S_3)$ with its symmetric braiding.
+\end{itemize}
+\end{corollary}
+
+
+\begin{proposition} \label{prop:dim4}
+If $\cC$ is a trivalent ribbon category and the diagrams  
+  \[
+  \cupcap\;,\qquad\twostrandid\;,
+    \qquad\drawI\;,\qquad\drawH\;,\qquad\braidcross\;,\qquad\fourgon\;
+   \]
+span a space of dimension $4$ or smaller, then
+\begin{itemize}
+\item $v$ is a primitive $12$th root of unity
+\item $\cC$ is a quotient of $SO(3)_q$ with the usual braiding.
+\item $\cC$ is $\mathsf{Rep}(S_3)$ with its symmetric braiding.
+\item $\cC$ is a quotient of $(G_2)_q$ with the usual braiding.
+\end{itemize}
+\end{proposition}
+\begin{proof}
+If the first four diagrams are linearly dependent then we're in one of the
+first three cases.  Otherwise, we have a relation simplifying both the
+crossing and the square in terms of the first four diagrams.  This means that
+$\cC$ is generated by the trivalent vertex and $\dim \cC_4 \leq 4$, and thus
+by a modification, explained in the next remark, of \cite[\S 5]{MR3624901} we see that $\cC$ is a
+quotient of $(G_2)_q$.
+\end{proof}
+
+\begin{remark}
+Strictly speaking in \cite{MR3624901} we only considered non-degenerate trivalent categories, but this can be avoided as follows.  The argument that the pentagon reduces still applies, so all small faces reduce, and non-elliptic diagrams span all $\cC_k$.  If the $10$ non-elliptic diagrams in $\cC_5$ are independent then Kuperberg \cite{MR1265145} says that $\cC$ is a quotient of $(G_2)_q$.  If there's a relation between these ten diagrams, the relation must be negligible.  By \cite{MR3624901} either there's a single relation and the category is a quotient of $(G_2)_{\zeta_{10}}$, or the non-degenerate quotient of $\cC$ is an $ABA$ category which contradicts $\cC$ being braided.
+\end{remark}
+
+\subsection{The classical $G2$ and $F4$ families}
+
+\subsubsection{Classical $G2$ family}
+\begin{definition}
+The classical $G2_d$ family is the symmetric tensor category generated by a trivalent vertex modulo the following relations
+
+\begin{align*}
+    \unknot\; &= d &\qquad
+      \twist\; &=  \;\drawcup&\qquad
+        \twistvertex\; &=  \;\threevertex\\[5pt]
+    \loopvertex\;&=0&
+      \twogon\;&= (1-d) \;\onestrandid&
+        \threegon\; &=  (d-4) \;\threevertex
+\end{align*}
+$$\drawI + \drawH = 2 \symcross - \twostrandid - \cupcap $$
+\end{definition}
+
+The following lemma proves sufficiency.
+
+\begin{lemma}
+The hom spaces for the classical $G2$-family are spanned by non-eliptic diagrams and thus are bounded by the dimensions of the hom spaces for the category of representations of $G_2$.
+\end{lemma}
+\begin{proof}
+By \cite{???}, these relations imply a relation simplifying the square into a sum of planar terms with no faces, and by \cite{???} the pentagon also simplifies into a sum of planar terms with no faces.  Thus, by Euler characteristic (see \cite{???}) every hom space is spanned by the non-eliptic diagrams.
+\end{proof}
+
+The following theorem shows that consistency is false, and proves specialization at the points that are consistent.
+
+\begin{theorem}[\cite{???}]
+$G2_d$ is zero unless $d=3$ or $d=7$.  When $d=3$ it becomes $SO(3)$ while when $d=7$ it becomes $G_2$.
+\end{theorem}
+
+\subsubsection{Classical $F4$ family}
+
+\begin{definition}
+The classical $F4_d$ family is the symmetric tensor category generated by a trivalent vertex modulo the following relations
+
+\begin{align*}
+    \unknot\; &= d &\qquad
+      \twist\; &=  \;\drawcup&\qquad
+        \twistvertex\; &=  \;\threevertex\\[5pt]
+    \loopvertex\;&=0&
+      \twogon\;&= (d+2) \;\onestrandid&
+        \threegon\; &=  \frac{2-d}{2} \;\threevertex
+\end{align*}
+$$\drawI + \drawH + \drawsymcrossX = 2 \left(\symcross + \twostrandid + \cupcap \right)$$
+\end{definition}
+
+As in the case of the classical exceptional family, we can change variables $\eta = (d+10)/6$ to get a somewhat better behaved parameter as in \cite{???}.  For our purposes an even better parameterization is by $\frac{\eta}{2} - 1 = \frac{d-2}{12}$.
+
+We have the following sufficiency conjecture, with some partial evidence is given in \cite{???}.
+
+\begin{conjecture}
+$F4_d$ has finite dimensional hom spaces with dimensions bounded by the dimensions of the same hom space for $\mathrm{Rep}(F4)$.
+\end{conjecture}
+
+As with the $G2$ family, the consistency fails.
+
+\begin{theorem}
+$F4_d$ is the zero category unless $d = -2, -1, 0, 2, 5, 8, 14, 26.$
+\end{theorem}
+
+In \S \ref{sec:???} we will show that at these special values of $d$ we have that the idempotent completion of the quotient of $F4_d$ by negligible morphisms is equivalent to the category of representations of the corresponding group on the right of Table \ref{???}
+
+\begin{table}
+  \begin{tabular}{rlll}
+    \toprule
+    $d$ & $\frac{d-2}{12}$ & Supergroup & Representation  \\ \midrule
+    $26$ & $2$ & $(0,0,0,1)$ & $F_4$   \\
+    $14$ & $1$ & $(0,1,0)$ & $C_3$   \\
+    $8$ & $\frac{1}{2}$ & $(1,1)$ & $A_2^{\mathbb{Z}/2\mathbb{Z}}$   \\
+    $5$ & $\frac{1}{4}$ & $(3)$ & $A_1$ \\
+    $2$ & $0$ & defining & $S_3$ \\
+    $0$ & $-\frac{1}{6}$ & trivial & trivial \\
+    $-1$ & $-\frac{1}{4}$ & defining & $SOsp(1|2)$ \\ 
+    $-2$ & $-\frac{1}{3}$ & zero & $A_1$ \\        
+    \bottomrule
+  \end{tabular}
+  \caption{}
+\end{table}
+
+
 
 \section{Main results}
 
@@ -1311,7 +1477,7 @@ brief detour to analyze this situation.
 
 \begin{lemma} \label{lem:IequalsH}
 Suppose that 
-$$\drawI\;- \; \drawH - \frac{1}{d-1} \left(\; \twostrandid - \cupcap \;\right) = 0$$
+$$\drawI\;- \; \drawH - \frac{b}{d-1} \left(\; \twostrandid - \cupcap \;\right) = 0$$
 
 then one of the following occurs
 
@@ -1330,20 +1496,20 @@ $\cC$ is  $\mathsf{Rep}(S_3)$.
 \begin{proof}
 We apply the tetrahedral symmetry to the relation to get:
 
-$$-s^{-1} \drawH + s^{-1} \drawcrossX -\frac{b}{d-1} \left(\; \braidcross - s^{-2} \twostrandid \; \right) = 0$$
-$$s^{-2} \drawcrossX + s^{-1} \drawI -\frac{b}{d-1} \left(\; \cupcap -s^{-2} \braidcross \; \right) = 0.$$
+$$-u^{-1} \drawH + u^{-1} \drawcrossX -\frac{b}{d-1} \left(\; \braidcross - u^{-2} \twostrandid \; \right) = 0$$
+$$u^{-2} \drawcrossX + u^{-1} \drawI -\frac{b}{d-1} \left(\; \cupcap -u^{-2} \braidcross \; \right) = 0.$$
 
-Multiply the first equation by $-s^{-1}$ and then add to the second relation to make the $\raisebox{0.8mm}{\scalebox{0.5}{\drawcrossX}}$ terms vanish. We obtain
+Multiply the first equation by $-u^{-1}$ and then add to the second relation to make the $\raisebox{0.8mm}{\scalebox{0.5}{\drawcrossX}}$ terms vanish. We obtain
 
-$$s^{-1} \drawI + s^{-2} \drawH - \frac{b}{d-1} \left(\cupcap -s^{-2} \braidcross -s^{-1}\braidcross + s^{-3}\braidcross  \right).$$
+$$u^{-1} \drawI + u^{-2} \drawH - \frac{b}{d-1} \left(\cupcap -u^{-2} \braidcross -u^{-1}\braidcross + u^{-3}\twostrandid  \right).$$
 
-Unless $s$ is $-1$, this says that $\raisebox{0.8mm}{\scalebox{0.5}{\braidcross}}$ simplifies.  So we split into two cases.
+Unless $u$ is $-1$, this says that $\raisebox{0.8mm}{\scalebox{0.5}{\braidcross}}$ simplifies.  So we split into two cases.
 
 If $\raisebox{0.8mm}{\scalebox{0.5}{\braidcross}}$ simplifies, then we need only solve for all braidings for
 $SO(3)_q$, which yields only the usual braiding or when $d=2$ the
 additional braiding giving $\Rep(S_3)$ (see \cite[Example 8.6]{MR3624901}).
 
-If $s = -1$, then we want to figure out which sixth roots $v$ of $s$ give a
+If $u = -1$, then we want to figure out which sixth roots $v$ of $s$ give a
 relation.  That is, we need to figure out which of the rotational eigenvalues
 $v^{-4} = \lambda = 1, \omega, \omega^2$ give non-trivial relations.  When
 $\lambda = 1$, the sum of the above three relations is trivial.  When $\lambda
@@ -2570,8 +2736,7 @@ $8_{18}$.)
 The goal of this section is to analyze several special cases,
 including
 \begin{itemize}
-\item When $v$ is a $10$th or $12$th root of unity, the
-  derivation of the QESquare and QECrossing relations break down.  We consider
+\item When $v$ is a $10$th or $12$th root of unity, the proof of our main theorem breaks down.  We consider
   what happens separately when $v^2$ is a primitive $1$st, $3$rd, $2$nd, $5$th or $6$th
   root of unity.  The case of $v^2$ is a $6$th roots of unity has a different flavor and will be 
   considered in more detail in a later paper.
@@ -2710,10 +2875,9 @@ We will also say that the QEJacobi relation holds with $\alpha=\infty$ if
 Each of the following lemmas is proved the same way.  We compute the value of the trivalent twist which gives the value of $-v^6$.  This leaves three options (up to sign) for $v$.  Then we take a relation $X$ between the six diagrams and compute $X+v^{4} R(X)+ v^{-4}R^2(X)$ to get QEJacobi relations. 
 
 \begin{lemma}
-$SO(3)_q$ (for $q$ not a primitive $8$th root of unity) satisfies three instances of the QEJacobi relation with $\alpha = -b \frac{\Psi_1(v)}{\Psi_{12}(v)} $ for $v$ a cube root of $q$.  Under the change of variables we see that this value of $\alpha$ corresponds to $w = \pm v^4$ or $w = \pm v^{-3}$.
+$SO(3)_q$ satisfies three instances of the QEJacobi relation with $\alpha = -b \frac{\Psi_1(v)}{\Psi_{12}(v)} $ for $v$ a cube root of $q$.  Under the change of variables we see that this value of $\alpha$ corresponds to $w = \pm v^4$ or $w = \pm v^{-3}$.
 \end{lemma}
 
-Note that $q$ a primitive $8$th root of unity is exactly the values for which the standard normalization of $b$ for $SO(3)_q$ vanishes.  
 
 Specializing the previous lemma to $q=i$ yields.
 
@@ -2729,13 +2893,11 @@ Plug the golden category formula for the $I$-diagram into the $SO(3)_q$ braiding
  \end{proof}
 
 \begin{lemma}
-$(G_2)_q$ (for $q$ not a primitive $3$rd, $6$th, or $16$th root of unity) satisfies two instances of the QEJacobi relation, $\alpha = \frac{b}{\Psi_3 \Psi_8} \frac{1-\zeta q^2}{-\zeta^2 q}$ and $v = \zeta q$ for $\zeta$ a primitive cube root of unity.  This value of $\alpha$ corresponds to $w = \pm q^{-1} = \pm \zeta v^{-1}$ or $w = \pm \zeta q^2 = \pm \zeta^2 v^2$.
+$(G_2)_q$ satisfies two instances of the QEJacobi relation, $\alpha = \frac{b}{\Psi_3 \Psi_8} \frac{1-\zeta q^2}{-\zeta^2 q}$ and $v = \zeta q$ for $\zeta$ a primitive cube root of unity.  This value of $\alpha$ corresponds to $w = \pm q^{-1} = \pm \zeta v^{-1}$ or $w = \pm \zeta q^2 = \pm \zeta^2 v^2$.
 \end{lemma}
 
-Note that $q$ a primitive $3$rd, $6$th, or $16$th root of unity are exactly the values for which the standard normalization of $b$ for $(G_2)_q$ vanishes.
-
 \begin{lemma}
-$S_{d+1}$ (for $d \neq 1$) satisfies two instances of the QEJacobi relation $\alpha = -v^3 \frac{b}{d-1}$ for $v$ a primitive $12$th root of unity.
+$S_{d+1}$ satisfies two instances of the QEJacobi relation $\alpha = -v^3 \frac{b}{d-1}$ for $v$ a primitive $12$th root of unity.
 \end{lemma}
 
 \begin{lemma}
@@ -2747,100 +2909,20 @@ $\Rep(S_3)$ satisfies three instances of the QEJacobi relation
 \end{itemize}
 \end{lemma}
 
-
-
-
-
-
-
-
-
-
-
-\subsection{Corner cases with small 4-box space}
-
-\begin{lemma}
-The diagrams
-$$\cupcap \text{ and } \twostrandid$$
-are non-zero and are linearly independent.
-\end{lemma}
-\begin{proof}
-If either diagram is zero then by multiplying by a crossing on the appropriate side you get that the trivalent vertex is zero, which is a contradiction.  If the two diagrams are linearly dependent, then again multiplying by a trivalent vertex would show that the trivalent vertex is zero.
-\end{proof}
-
-
-\nn{Move the following to the background section}
-The following lemma is a mild generalization of \nn{Noah: what did you intend to cite here? \cite[Theorem 3.4]{MR3449240}?} where we have relaxed the non-degeneracy assumption.
-
-
-\begin{lemma}
-Suppose that the diagrams   
-  \[
-  \cupcap\;,\qquad\twostrandid\;,
-    \qquad\drawI\;,\qquad\drawH\;\;
-   \]
-are linearly dependent, then
- 
-$$\drawI\; - \; \drawH - \frac{1}{d-1} \left(\; \twostrandid - \cupcap \; \right) = 0.$$
-\end{lemma}
-\begin{proof}
-By the previous lemma, we must have a relation of the form:
-$$\drawI\;\pm \; \drawH = z \left(\; \twostrandid \pm \cupcap \;\right).$$
-
-Capping off we see that $b= z (d \pm 1)$, so $z = \frac{b}{d \pm 1}$.  So all we need to do is exclude the $+$-sign case.
-
-Attaching a trivalent vertex we see that $t + b = \frac{b}{d + 1}$, so $t =  -\frac{b d}{d + 1}$.  Adding $\drawH$ to the top gives:
-
-$$t \drawI + \fourgon = \frac{b}{d+1} \left(\; \drawH + b \cupcap \; \right).$$
-
-If we take this relation minus its $90$-degree rotation the square term will vanish yielding:
-$$ b \frac{d-1}{d+1} \left(\; \drawI -\drawH \; \right) = \frac{b^2}{d+1} \left(\; \twostrandid - \cupcap \; \right).$$
-Dividing by $b \frac{d-1}{d+1}$ yields the desired equation.
-\end{proof}
-
-By Lemma \ref{lem:IequalsH} we have the following Corollary.
-
-\begin{corollary}
-If the diagrams   
-  \[
-  \cupcap\;,\qquad\twostrandid\;,
-    \qquad\drawI\;,\qquad\drawH\;\;
-   \]
-are linearly dependent, then
-\begin{itemize}
-\item $v$ is a primitive $12$th root of unity
-\item $\cC$ is a quotient of $SO(3)_q$ with the usual braiding
-\item $\cC$ is $\mathsf{Rep}(S_3)$ with its symmetric braiding.
-\end{itemize}
-\end{corollary}
-
-
-\begin{proposition} \label{prop:dim4}
-If the diagrams  
-  \[
-  \cupcap\;,\qquad\twostrandid\;,
-    \qquad\drawI\;,\qquad\drawH\;,\qquad\braidcross\;,\qquad\fourgon\;
-   \]
-span a space of dimension $4$ or smaller, then
-\begin{itemize}
-\item $v$ is a primitive $12$th root of unity
-\item $\cC$ is a quotient of $SO(3)_q$ with the usual braiding.
-\item $\cC$ is $\mathsf{Rep}(S_3)$ with its symmetric braiding.
-\item $\cC$ is a quotient of $(G_2)_q$ with the usual braiding.  \NStodo{Which QEJacobi hold?}
-\end{itemize}
-\end{proposition}
-\begin{proof}
-If the first four diagrams are linearly dependent then we're in one of the
-first three cases.  Otherwise, we have a relation simplifying both the
-crossing and the square in terms of the first four diagrams.  This means that
-$\cC$ is generated by the trivalent vertex and $\dim \cC_4 \leq 4$, and thus
-by a modification, explained in the next remark, of \cite[\S 5]{MR3624901} we see that $\cC$ is a
-quotient of $(G_2)_q$.
-\end{proof}
-
 \begin{remark}
-Strictly speaking in \cite{MR3624901} we only considered non-degenerate trivalent categories, but this can be avoided as follows.  The argument that the pentagon reduces still applies, so all small faces reduce, and non-elliptic diagrams span all $\cC_k$.  If the $10$ non-elliptic diagrams in $\cC_5$ are independent then Kuperberg \cite{MR1265145} says that $\cC$ is a quotient of $(G_2)_q$.  If there's a relation between these ten diagrams, the relation must be negligible.  By \cite{MR3624901} either there's a single relation and the category is a quotient of $(G_2)_{\zeta_{10}}$, or the non-degenerate quotient of $\cC$ is an $ABA$ category which contradicts $\cC$ being braided.
+In all the above propositions, the definition of the category already excluded the special values for which the denominators vanish.  In all cases if one uses the standard normalization for $b$ these values correspond to $b=0$.  With the standard normalization for $b$ you can cancel the denominators and get QEJacobi relations that hold even at these special values.
 \end{remark}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2881,15 +2963,15 @@ More specifically, we can assume that such a relation is a rotational eigenvecto
 If
 \[\invbraidcross + \braidcross + x\left(\drawI + \drawH\right) + y \left(\twostrandid+\cupcap\right)=0\]
 we can attach an $H$ to the top and use the Jacobi relations to get:
-\[ x \fourgon +(\frac{bx}{2} -2) \drawI + (2+y)\drawH + b y \cupcap = 0\].
+\[ x \fourgon +\left(\frac{bx}{2} -2\right) \drawI + (2+y)\drawH + b y \cupcap = 0\].
 Subtracting this relation from its rotation we get:
-\[(\frac{bx}{2} -y -4) \left(\drawI-\drawH\right) -b y \left(\twostrandid - \cupcap\right) = 0.\]
+\[\left(\frac{bx}{2} -y -4\right) \left(\drawI-\drawH\right) -b y \left(\twostrandid - \cupcap\right) = 0.\]
 By \ref{???} this relation must be trivial, so we see that $y=0$ and $x = 8/b$.  But capping off our original relation we get $0 = 2+bx+(d+1)y = 2+8 = 10$, which is a contradiction.  So the relation cannot have rotational eigenvalue $+1$.
 
 Now we turn to rotational eigenvalue $-1$ and apply the same argument.
 \[\invbraidcross - \braidcross + x\left(\drawI - \drawH\right) + y \left(\twostrandid-\cupcap\right)=0\] implies
-\[-x \fourgon + (\frac{xb}{2} -y) \drawI + y \drawH - b y \cupcap\] which anti-symmetrizes to
-\[(\frac{xb}{2}-y) \left(\drawI - \drawH\right) + b y \left(\twostrandid - \cupcap\right) = 0\]
+\[-x \fourgon + \left(\frac{xb}{2} -y\right) \drawI + y \drawH - b y \cupcap\] which anti-symmetrizes to
+\[\left(\frac{xb}{2}-y\right) \left(\drawI - \drawH\right) + b y \left(\twostrandid - \cupcap\right) = 0\]
 which implies that $x = 0$ and $y=0$.
 
 Thus we see that the crossing must be symmetric, and in particular the QEJacobi relation becomes exactly the usual Jacobi relation.
@@ -2951,10 +3033,10 @@ We exclude the $\Rep(S_3)$ case because it satisfies $b+[3]\alpha = 0$.
 Since we do not know whether the classical F4 relation is sufficient for evaluating all closed diagrams, we do not know whether there are any additional degenerate $\cC$ whose non-degenerate quotient is one of the above categories.
 
 \begin{lemma}
-If $\cC$ is a trivalent ribbon category satisfying the QEJacobi relation with $v=i$ and $b+[3]\alpha = 0$, then $\alpha = -\frac{bi}{2}$, $d = 2$, and the relations
-$$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \;\right).$$
+If $\cC$ is a trivalent ribbon category satisfying the QEJacobi relation with $v=i$ and $b+[3]\alpha = 0$, then $\alpha = -\frac{bi}{2}$, $d = 2$, $t=0$, and the relations
+$$\drawcrossX + \drawI + \drawH = \frac{b}{2} \left(\braidcross + \twostrandid + \cupcap \;\right).$$
 and 
-$$\fourgon = -\frac{1}{2} \left(\drawI + \drawH \;\right) + \frac{1}{2} \left(\;\twostrandid + \cupcap \;\right).$$ hold.
+$$\fourgon = -\frac{b}{2} \left(\drawI + \drawH \;\right) + \frac{b^2}{2} \left(\;\twostrandid + \cupcap \;\right).$$ hold.
 \end{lemma}
 \begin{proof}
 This follows immediately from specializing the relations for general $v$.
@@ -2963,9 +3045,9 @@ This follows immediately from specializing the relations for general $v$.
 \begin{lemma}
 If $\cC$ is a trivalent ribbon category satisfying the QEJacobi relation with $v=i$ and $b+[3]\alpha = 0$, then the following diagrams are negligible in $\cC$:
 \begin{itemize}
-\item $$\braidcross + \invbraidcross - 2 \left(\drawI + \drawH \;\right)$$
+\item $$\braidcross + \invbraidcross - \frac{2}{b} \left(\drawI + \drawH \;\right)$$
 \item $$\braidcross - \invbraidcross$$
-\item $$\left(\drawI - \drawH - \twostrandid + \cupcap\;\right).$$
+\item $$\left(\drawI - \drawH - b \twostrandid + b \cupcap\;\right).$$
 \end{itemize}
 \end{lemma}
 \begin{proof}
@@ -2984,8 +3066,8 @@ If $\cC$ is a non-degenerate trivalent ribbon category satisfying the QEJacobi r
 \begin{corollary}
 If $\cC$ is a trivalent ribbon category with $\dim \cC_4 \leq 5$ satisfying the QEJacobi relation with $v=i$ and $b+[3]\alpha = 0$ then etiher
 \begin{itemize}
-\item $$\braidcross + \invbraidcross = 2 \left(\drawI + \drawH \;\right)$$ 
-\item or $$\braidcross - \invbraidcross = x \left(\drawI - \drawH - \twostrandid + \cupcap\;\right)$$ for some $x$.
+\item $$\braidcross + \invbraidcross = \frac{2}{b} \left(\drawI + \drawH \;\right)$$ 
+\item or $$\braidcross - \invbraidcross = x \left(\frac{1}{b} \drawI - \frac{1}{b} \drawH - \twostrandid + \cupcap\;\right)$$ for some $x$.
 \end{itemize}
 \end{corollary}
 \begin{proof}
@@ -3001,7 +3083,7 @@ ribbon categories, but they're equivalent as pivotal categories.
 \NStodo{Check sign, and find relationship between $\zeta$ and $v$}
 
 \begin{conjecture}
-Trivalent ribbon graphs modulo $d=2$ and the following relations:
+Trivalent ribbon graphs modulo the circle is $2$, the lollipop is $0$, the bigon is $1$, the triangle is $0$ and the following relations:
 $$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \;\right)$$
 $$\fourgon = -\frac{1}{2} \left(\drawI + \drawH \;\right) + \frac{1}{2} \left(\twostrandid + \cupcap\;\right)$$
 $$\braidcross + \invbraidcross = 2 \left(\drawI + \drawH \;\right)$$
@@ -3015,7 +3097,7 @@ is that these relations suffice to simplify diagrams down to the appropriate
 spanning sets.  This is closely analogous to the quantum exceptional sufficiency conjecture.
 
 \begin{conjecture}
-Trivalent ribbon graphs modulo $d=2$ and the following relations:
+Trivalent ribbon graphs modulo the circle is $2$, the lollipop is $0$, the bigon is $1$, the triangle is $0$ and the following relations:
 $$\drawcrossX + \drawI + \drawH = \frac{1}{2} \left(\braidcross + \twostrandid + \cupcap \;\right)$$
 $$\fourgon = -\frac{1}{2} \left(\drawI + \drawH \;\right) + \frac{1}{2} \left(\twostrandid + \cupcap\;\right)$$
 $$\braidcross - \invbraidcross = \frac{2}{\sqrt{-3}} \left(\drawI - \drawH - \twostrandid + \cupcap\;\right).$$
@@ -3037,18 +3119,16 @@ $$\braidcross - \invbraidcross = 0.$$
 gives a non-trivial category $\cF$ with $\dim \cF_k = 1,0,1,1,5$ for $k = 0,1,2,3,4$.
 \end{conjecture}
 
-Here $\cF$ is the classical F4 family at $d=2$ without tak ing the non-
-degenerate quotient.  There is some evidence given in \cite{F4E6} that these
+Here $\cF$ is the classical F4 family at $d=2$ without taking the 
+non-degenerate quotient.  There is some evidence given in \cite{F4E6} that these
 relations are enough to simplify closed diagrams.  In this case it's possible
 that these relations collapse all the way down to $\mathsf{Rep}(S_3)$ with
-$\dim \cF_4 = 4$ or that $\dim \cF_4 = 4$.
+$\dim \cF_4 = 3$ or that $\dim \cF_4 = 4$.
 
 \begin{remark}
 We expect that $\cF$ has an infinitesimal deformation defined over
 $\mathbf{C}[\varepsilon]/\varepsilon^2$ where $d = 2+\varepsilon$ as suggested
-by the double root in \cite[p. 3]{F4E6}.  This infinitesimal deformation should have
-a (non-braided) quotient to an infinitesimal deformation of
-$(G_2)_{\zeta_{12}}$.
+by the double root in \cite[p. 3]{F4E6}.  It would also be interesting to look at infinitesimal deformations of $(G_2)_{\zeta_{12}}$.
 \end{remark}
 
 We have no idea what to expect if you impose the relation
@@ -3056,15 +3136,26 @@ $$\braidcross - \invbraidcross = x \left(\;\drawI - \drawH - \twostrandid + \cup
 for some $x$ that is neither $0$ nor $\pm \frac{2}{\sqrt{-3}}$.
 
 \begin{remark}
-The classical $G_2$ family relations can be thought of as a limit of the quantum exceptional series by setting $w = \omega v^n$ and taking the limit as $v \rightarrow 1$.
+The classical $F_4$ family relations can be thought of as a limit of the quantum exceptional series by setting $w = i v^n$ and taking the limit as $v \rightarrow 1$.
 \end{remark}
 
 
 \subsection{The case \texorpdfstring{$v$}{v} is a primitive tenth root of unity}
 
 
-\subsection{The case \texorpdfstring{$v$}{v} is a primitive twelth root of unity}
 
+\subsection{The case \texorpdfstring{$v$}{v} is a primitive twelfth root of unity}
+
+This case is somewhat more complicated and so we will delay a full treatment to a future paper.  In this case the QESquare relation becomes:
+
+\begin{align*}
+\fourgon &= \left(\frac{b}{2} - i \alpha\right) \left(\drawI + \drawH\right) + \frac{i b \alpha}{2} \left(\twostrandid + \cupcap\right) \\
+&= \frac{b}{2}\frac{d-3}{d-1} \left(\;\drawI + \drawH\;\right) + \frac{b^2}{2(d-1)} \left(\;\twostrandid + \cupcap\;\right)
+\end{align*}
+
+\begin{lemma}
+If $\cC$ is a trivalent ribbon category with $\dim \cC_4 \leq 5$ 
+\end{lemma}
 
 
 \appendix
