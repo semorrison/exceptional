@@ -970,7 +970,7 @@ $$\drawI = b \twostrandid - b \frac{1}{q^2+1+q^{-2}} \cupcap.$$
 Here $\unknot = q^2+1+q^{-2}$ is $\frac{1\pm \sqrt{5}}{2}$.
 \end{definition}
 
-\subsection{$(G_2)_q$}
+\subsubsection{$(G_2)_q$}
 
 \begin{definition}
 For $q$ not a primitive $3$rd, $6$th, $7$th, $14$th, $16$th, or $24$th root of unity, let $(G_2)_q$ be the trivalent ribbon category defined by the following relations.
@@ -1578,17 +1578,11 @@ d^5 v^8 [2][3]^2[6] (d-(v^{6}+1+v^{-6}))^2 (d + \{8\})) (d-P_{G_2}(\zeta_3 v)) (
 \end{align*}
 %% This is calculated in code/20170522-a-special-case.nb
 By our assumptions none of those factors can vanish except possibly
-$(d+\{8\})$.  If $d+\{8\} = 0$, then $\frac{[5]b}{\alpha} = 0$ which implies
+$(d+\{8\})$.  If $d+\{8\} = 0$, then $[5]b = -\alpha(d+\{8\})= 0$ which implies
 that $v$ is a $10$th root of unity.
 \end{proof}
 
 \begin{remark}
-Note that in the cases $d = v^6+1+v^{-6}$, $d=P_{G_2}(\zeta_3 q)$, and 
-$d=P_{G_2}(\zeta_3^2 q)$ there are trivalent ribbon categories where the
-above diagrams are linearly independent.  Namely, $SO(3)_{v^3}$ satisfies
-the quantum exceptional relation with $d = v^6+1+v^{-6}$, while 
-$(G_2)_{\zeta_3 q}$
-
 Note that $d = v^6+1+v^{-6}$ corresponds to $SO(3)_{v^3}$, $d=P_{G_2}(\zeta_3 q)$ 
 corresponds to $(G_2)_{q}$, and $d=P_{G_2}(\zeta_3^2 q)$ corresponds to
 $(G_2)_{q^{-1}}$.  In these examples, the above five diagrams are linearly
@@ -2893,7 +2887,7 @@ Plug the golden category formula for the $I$-diagram into the $SO(3)_q$ braiding
  \end{proof}
 
 \begin{lemma}
-$(G_2)_q$ satisfies two instances of the QEJacobi relation, $\alpha = \frac{b}{\Psi_3 \Psi_8} \frac{1-\zeta q^2}{-\zeta^2 q}$ and $v = \zeta q$ for $\zeta$ a primitive cube root of unity.  This value of $\alpha$ corresponds to $w = \pm q^{-1} = \pm \zeta v^{-1}$ or $w = \pm \zeta q^2 = \pm \zeta^2 v^2$.
+$(G_2)_q$ satisfies two instances of the QEJacobi relation, $\alpha = \frac{b}{\Psi_3 \Psi_8} q \omega (1-\omega q^2)$ and $v = \omega q$ for $\omega$ a primitive cube root of unity.  This $\alpha$ corresponds to $w = \pm q^{-1} = \pm \omega v^{-1}$ or $w = \pm \omega q^2 = \pm \omega^2 v^2$.
 \end{lemma}
 
 \begin{lemma}
@@ -2915,6 +2909,37 @@ In all the above propositions, the definition of the category already excluded t
 
 
 
+\subsection{Classification when $v$ is a $10$th or $12$th root of unity}
+
+
+\subsubsection{A lemma about crossing relations}
+
+One problem that appears at a few small roots of unity, is that the QECrossing relation no longer follows from the QEJacobi relation.  Under the assumption that $\dim \cC_4 \leq 5$ there still often must be a relation of the same form as the QECrossing relation, but with the caveat that it could have rotational eigenvalue $-1$ (as it does for the usual QECrossing) or rotational eigenvalue $+1$.  The following lemma allows us to remove the $+1$ eigenvalue case in several situations.
+
+\begin{proposition}\label{prop:EigenvalueOfCrossingRelation}
+Suppose that $\cC$ is a trivalent ribbon category.  Let $W \subset \cC_4$ be the span of the four diagrams:
+\[\drawI, \drawH, \twostrandid, \cupcap\]
+If $\cC$ satisfies Jacobi, square, and crossing relations of the following form
+\[\braidcross \in W, \fourgon \in W, \braidcross + \braidcross \in W\]
+then
+\[\braidcross \in W\]
+\end{proposition}
+\begin{proof}
+The idea of the argument is to analyze the behavior of a crossing near a trivalent vertex there will be a sign issue where it is equal to its own negative plus some simpler terms.  This forces the crossing to simplify.
+
+Let $U \subset \cC_5$ be the span of the following twelve diagrams:
+\[\mathfig{0.1}{tree4}, \mathfig{0.1}{tree3}, \mathfig{0.1}{tree2} \mathfig{0.1}{tree1}, \mathfig{0.1}{tree5},\] 
+\[\mathfig{.1}{forest1}, \mathfig{.1}{forest2}, \mathfig{.1}{forest3}, \mathfig{.1}{forest4}, \mathfig{.1}{forest5},\]
+\[\undercrossingforktwoleft, \overcrossingforktworight, \twisttreefiveone, \twisttreethreefour.\]
+
+
+Using $\equiv$ to denote terms that are equal modulo $U$, we have, by applying the crossing relation
+\[\overcrossingfork \equiv -\undercrossingfork \equiv -\underunderfork \equiv  \overunderfork \equiv -\overoverfork \equiv -\overcrossingfork\]
+where for the last two steps you need to use a Jacobi relation on one term.  Thus,
+\[\overcrossingfork \in U.\]
+
+Now we attach a trivalent vertex to the two edges at the bottom, showing that the crossing is a sum of terms in $U$ with a trivalent vertex attached at the bottom.  We need to check that for each of the vectors spanning $U$ that adding a vertex to the bottom gives an element of $W$.  This is obvious for all but the first vector and the last two.  For the first vector this follows from the square relation, and for the last two it follows from the Jacobi relation and then using the square relation on one of the resulting terms.
+\end{proof}
 
 
 
@@ -2925,8 +2950,7 @@ In all the above propositions, the definition of the category already excluded t
 
 
 
-
-\subsection{The case \texorpdfstring{$v = \pm 1$}{v = pm 1}}
+\subsubsection{The case \texorpdfstring{$v = \pm 1$}{v = pm 1}}
 
 Throughout this section we assume WLOG $v=1$.
 
@@ -3012,10 +3036,10 @@ If we rescale the trivalent vertex to make $b= 1-d$, and use that $\alpha = \fra
 \end{proof}
 
 \begin{remark}
-The classical $G_2$ family relations cannot be thought of as a limit the quantum exceptional series, unless you rescale $b$.  If you rescale $b$ appropriately, then you can set $v = \omega w^{\frac{1-d}{6}}$ for $\omega$ a primitive cube root of unity and taking the limit as $w \rightarrow 1$ to recover the $G2$ family.
+The classical $G_2$ family relations cannot be thought of as a limit of the quantum exceptional series, unless you rescale $b$.  If you rescale $b$ appropriately, then you can set $v = \omega w^{\frac{1-d}{6}}$ for $\omega$ a primitive cube root of unity and taking the limit as $w \rightarrow 1$ to recover the $G2$ family.
 \end{remark}
 
-\subsection{The case \texorpdfstring{$v$}{v} is a primitive fourth root of unity}
+\subsubsection{The case \texorpdfstring{$v$}{v} is a primitive fourth root of unity}
 
 Since $v$ is not a $10$th root of unity $\alpha$ is nonzero.  We have that $d+2 = \frac{-2ib}{\alpha}$.
 We need to split into two cases based on whether $b+[3]\alpha = 0$.  
@@ -3038,6 +3062,7 @@ Since we do not know whether the classical F4 relation is sufficient for evaluat
 The classical $F_4$ family cannot be thought of as a limit of the quantum exceptional series unless you rescale $b$.  If you rescale $b$ appropriately, then the classical $F_4$ family can be thought of as a limit of the quantum exceptional series by setting $w = i v^{\frac{2-d}{12}} = i v^{-\mu}$ and taking the limit as $v \rightarrow 1$.
 \end{remark}
 
+
 \begin{lemma}
 If $\cC$ is a trivalent ribbon category satisfying the QEJacobi relation with $v=i$ and $b+[3]\alpha = 0$, then $\alpha = -\frac{bi}{2}$, $d = 2$, $t=0$, and the relations
 $$\drawcrossX + \drawI + \drawH = \frac{b}{2} \left(\braidcross + \twostrandid + \cupcap \;\right).$$
@@ -3050,11 +3075,11 @@ This follows immediately from specializing the relations for general $v$.
 
 \begin{lemma}
 If $\cC$ is a trivalent ribbon category satisfying the QEJacobi relation with $v=i$ and $b+[3]\alpha = 0$, then the following diagrams are negligible in $\cC$:
-\begin{itemize}
+\begin{enumerate}
 \item $$\braidcross + \invbraidcross - \frac{2}{b} \left(\drawI + \drawH \;\right)$$
 \item $$\braidcross - \invbraidcross$$
 \item $$\left(\drawI - \drawH - b \twostrandid + b \cupcap\;\right).$$
-\end{itemize}
+\end{enumerate}
 \end{lemma}
 \begin{proof}
 If the diagrams
@@ -3142,22 +3167,189 @@ $$\braidcross - \invbraidcross = x \left(\;\drawI - \drawH - \twostrandid + \cup
 for some $x$ that is neither $0$ nor $\pm \frac{2}{\sqrt{-3}}$.
 
 
-\subsection{The case \texorpdfstring{$v$}{v} is a primitive tenth root of unity}
+\subsubsection{The case \texorpdfstring{$v$}{v} is a primitive fifth or tenth root of unity}
+
+In this section we assume WLOG that $v = \zeta$ is a primitive $5$th root of unity.  We split into two cases based on whether $\alpha = 0$.
+
+\begin{proposition}
+Suppose that $\cC$ satisfies QEJacobi for $v$ a primitive $5$th root of unity and $\alpha$ nonzero, then $\cC$ satisfies the defining relations of the quantum exceptional series for an appropriate $w$.
+\end{proposition}
+\begin{proof}
+The only places where $v^{10} \neq 1$ is used in the proof of Theorem \ref{thm:square-crossing} is to see that $\alpha \neq 0$.
+\end{proof}
+
+\begin{proposition}\label{prop:5throot}
+Suppose that $\cC$ is a trivalent ribbon category with $\dim \cC_4 \leq 5$ which satisfies the circle is $d$, the bigon is $b$, and QEJacobi for $v = \zeta$ a primitive $5$th root of unity and $\alpha = 0$, then the following relations hold (where $\tau = -\zeta^2-\zeta^3$ is the Golden ratio and $\tau'$ is its Galois conjugate):
+
+  \begin{align*}
+    \unknot\; &= d&\qquad
+      \twist\; &= \zeta^2 \;\drawcup&\qquad
+        \twistvertex\; &= -\zeta\;\threevertex\\[5pt]
+    \loopvertex\;&=0&
+      \twogon\;&= b\;\onestrandid&
+        \threegon\; &= \tau' b \;\threevertex
+  \end{align*}
+
+
+\[\;
+\drawcrossX
+\; = - \zeta^{-1} \;
+\drawI
+\; + \zeta^2 \;
+ \drawH
+\]
+
+\[
+\fourgon =  b \drawI + b \drawH 
+\]
+
+\[
+\braidcross - \invbraidcross = \frac{-\zeta^2 + \zeta^{-2}}{b} \left(\drawI + \drawH\right)
+\]
+\end{proposition}
+\begin{proof}
+We first note that by applying a crossing to the Jacobi relation we get another Jacobi relation:
+\[\;
+\drawinvcrossX
+\; = - \zeta \;
+\drawI
+\; + \zeta^{-2} \;
+ \drawH
+\]
+
+We only need to prove the last two equations.  The second-to-last follows immediately from the QESquare relation.  So we turn our attention to the crossing relation, which does not follow from the general QECrossing relation which vanishes.
+
+
+First note that if there's a linear dependence between the diagrams
+ \[
+  \cupcap\;,\qquad\twostrandid\;,
+    \qquad\drawI\;,\qquad\drawH\; \]
+then Lemma \ref{lem:IequalsH} implies that the category is a quotient of some $SO(3)_q$, and the value of the twist forces $q = \zeta$\NStodo{check this}.  This means it is either $SO(3)_{\zeta}$ or the Golden category.
+
+Since $\dim \cC_4 \leq 5$, we may assume that the following six diagrams are linearly dependent:
+ \[
+  \cupcap\;,\qquad\twostrandid\;,
+    \qquad\drawI\;,\qquad\drawH\;,\qquad\braidcross\;,\qquad \invbraidcross\;
+   \]
+More specifically, we can assume that such a relation is a rotational eigenvector with eignevalue $\pm 1$.  By Proposition \ref{prop:EigenvalueOfCrossingRelation} and our linear independence assumption, it follows that the rotational eigenvalue must be $-1$.  So there exist numbers $x$ and $y$ such that
+\[\invbraidcross - \braidcross + x\left(\drawI - \drawH\right) + y \left(\twostrandid -\cupcap\right)=0\]
+we can attach an $H$ to the top and use the Jacobi relation and the square relation to get:
+\[
+(-\zeta^{-1} + \zeta)\drawI + (\zeta^2 - \zeta^{-2})\drawH + x \tau' b \drawI - x b \drawH - x b \drawI + y \drawH - y b \cupcap = 0.
+\]
+Comparing coefficients we see that $y=0$ and $x = \frac{\zeta^2-\zeta^{-2}}{b}$, thus we have the crossing relation
+
+\[\invbraidcross - \braidcross = \frac{-\zeta^2-\zeta^{-2}}{b} \left(\drawI - \drawH\right).\]
+\end{proof}
 
 
 
-\subsection{The case \texorpdfstring{$v$}{v} is a primitive twelfth root of unity}
+\begin{proposition}
+If $\cC$ is a ribbon category satisfying the relations of Proposition \ref{prop:5throot}, and $\dim \cC_5 \leq 16$, then the following elements are negligible.
 
-This case is somewhat more complicated and so we will delay a full treatment to a future paper.  In this case the QESquare relation becomes:
+\begin{align}
+\mathfig{0.1}{tree1} + \zeta \mathfig{0.1}{tree2} + \zeta^2 \mathfig{0.1}{tree3} + \zeta^3 \mathfig{0.1}{tree4} + \zeta^4 \mathfig{0.1}{tree5}  \\
+\mathfig{0.1}{tree1} + \zeta^{-1} \mathfig{0.1}{tree2} + \zeta^{-2} \mathfig{0.1}{tree3} + \zeta^{-3} \mathfig{0.1}{tree4} + \zeta^{-4} \mathfig{0.1}{tree5} 
+\end{align}
+\end{proposition}
+\begin{proof}
+Checked by computer.\NStodo{Scott how hard is it to put a brief summary here?}
+\end{proof}
+
+\begin{conjecture}
+Trivalent framed graphs modulo the following relations define a trivalent ribbon category with $\dim \cC_k = 1,0,1,1,5,14$ for $k \leq 5$:
+  \begin{align*}
+    \unknot\; &= d&\qquad
+      \twist\; &= \zeta^2 \;\drawcup&\qquad
+        \twistvertex\; &= -\zeta\;\threevertex\\[5pt]
+    \loopvertex\;&=0&
+      \twogon\;&= b\;\onestrandid&
+        \threegon\; &= \tau' b \;\threevertex
+  \end{align*}
+
+
+\[\;
+\drawcrossX
+\; = - \zeta^{-1} \;
+\drawI
+\; + \zeta^2 \;
+ \drawH
+\]
+
+\[
+\fourgon =  b \drawI + b \drawH 
+\]
+
+\[
+\braidcross - \invbraidcross = \frac{-\zeta^2 + \zeta^{-2}}{b} \left(\drawI + \drawH\right)
+\]
+
+\begin{align}
+\mathfig{0.1}{tree1} + \zeta \mathfig{0.1}{tree2} + \zeta^2 \mathfig{0.1}{tree3} + \zeta^3 \mathfig{0.1}{tree4} + \zeta^4 \mathfig{0.1}{tree5}  \\
+\mathfig{0.1}{tree1} + \zeta^{-1} \mathfig{0.1}{tree2} + \zeta^{-2} \mathfig{0.1}{tree3} + \zeta^{-3} \mathfig{0.1}{tree4} + \zeta^{-4} \mathfig{0.1}{tree5} 
+\end{align}
+\end{conjecture}
+
+\begin{remark}
+Unlike the other conjectures in this paper which are beyond our current skein theoretic techniques, this one should be accessible using a modification of Zhengwei Liu's results about Yang-Baxter relation planar algebras \cite{???}.  We aim to return to this in further work.
+\end{remark}
+
+\begin{remark}
+Planar diagrams form a subcategory of $\cC$, which is exactly the ABA free product category from \cite{???}.  There is a second interesting subcategory, which is the full subcategory of $\cC$ generated by the irreducible projection on two strands in $ABA$ which appears to be Deligne's $S_t$ for $t = \frac{d}{\tau}$.  This suggests that $\cC$ might come from a modification of the construction of ABA using $S_t$ in the place of Temperley-Lieb, but we were unable to find such a modified construction.
+\end{remark}
+
+
+
+
+\subsubsection{The case \texorpdfstring{$v$}{v} is a primitive twelfth root of unity}
+
+This case is more difficult than the others, and we are only able to get comparable results to the rest of the paper by making the stronger assumption that $\dim \cC_4 \leq 4$.
+
+In this case the QESquare relation becomes:
 
 \begin{align*}
 \fourgon &= \left(\frac{b}{2} - i \alpha\right) \left(\drawI + \drawH\right) + \frac{i b \alpha}{2} \left(\twostrandid + \cupcap\right) \\
 &= \frac{b}{2}\frac{d-3}{d-1} \left(\;\drawI + \drawH\;\right) + \frac{b^2}{2(d-1)} \left(\;\twostrandid + \cupcap\;\right)
 \end{align*}
 
-\begin{lemma}
-If $\cC$ is a trivalent ribbon category with $\dim \cC_4 \leq 5$ 
-\end{lemma}
+\begin{proposition}
+There are no trivalent ribbon categories satisfying the QEJacobi relation with $v$ a primitive $12$th root of unity, $\dim \cC_4 \leq 5$ and such that the following diagrams are linearly independent
+\[\drawI, \drawH, \twostrandid, \cupcap.\]
+\end{proposition}
+\begin{proof}
+We assume that those four diagrams are linearly independent and derive a contradiction.  Since $\dim \cC_4 \leq 5$ we must have a relation between
+
+
+ \[
+  \cupcap\;,\qquad\twostrandid\;,
+    \qquad\drawI\;,\qquad\drawH\;,\qquad\braidcross\;,\qquad \invbraidcross\;
+   \]
+More specifically, we can assume that such a relation is a rotational eigenvector with eignevalue $\pm 1$.  We consider each case separately.
+
+If
+\[\invbraidcross + \braidcross = x\left(\drawI + \drawH\right) + y \left(\twostrandid+\cupcap\right)\]
+we can attach an $H$ to the top and use the Jacobi relations to get:
+\begin{multline*}
+x \left(t \drawI + \fourgon \right) + y \left(\drawH + b \cupcap \right) = \\ - (v^4 + v^{-4}) \drawI + (v^2 + v^{-2}) \drawH - \alpha \left(v^3 \braidcross - v^{-3} \invbraidcross \right) - \alpha(v^7-v^{-7}) \cupcap - \alpha (v^{-1} + v) \twostrandid
+\end{multline*}
+
+Since $v^3 = i = -v^{-3}$, using the crossing and square relations we get:
+\begin{align*}
+0 = &\left(-i \alpha x -v^4 -v^{-4} - x t - x \left(\frac{b}{2} - i \alpha \right)  \right) \drawI \\
+& + \left(-i \alpha x -x \left(\frac{b}{2} - i \alpha\right) - y + v^2 + v^{-2} \right) \drawH \\
+& + \left(-\alpha i y -alpha(v^{-1}-v) - x \frac{i b \alpha}{2}\right) \twostrandid \\
+& + \left( -\alpha i y - \alpha (v^7-v^{-7}) - b y - x \frac{i b \alpha}{2} \right) \cupcap \\
+\end{align*}
+
+By linear independence all the coefficients must be zero, which implies that $\alpha = -i b$, $x = \frac{2}{b}$, and $y=0$.  Pluggin into the formula for $t$ we get $t=0$.
+
+
+
+Now we turn to rotational eigenvalue $-1$ and apply the same argument.
+
+
+\end{proof}
+
 
 
 \appendix
